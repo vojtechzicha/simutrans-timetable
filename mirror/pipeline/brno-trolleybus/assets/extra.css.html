@@ -1,0 +1,44 @@
+<style>
+/* Trolleybus additions to the Brno tram sheet style (pipeline/brno/assets/style.css.html): three depots, battery and bus marks. */
+:root{ --hl:#ffe27a; --kom:#2b5f9e; --kom-soft:#dfe9f5; --hus:#2f7d4f; --hus-soft:#dff0e5; --sla:#8a4f9e; --sla-soft:#efe2f4; --bat:#0f7a78; --bat-soft:#d9f0ef; }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --hl:#6b5a12; --kom:#7fb0ea; --kom-soft:#1d2e42; --hus:#6fc48f; --hus-soft:#18311f; --sla:#c99ae0; --sla-soft:#33223b; --bat:#5fd0cc; --bat-soft:#133634; } }
+:root[data-theme="dark"]{ --hl:#6b5a12; --kom:#7fb0ea; --kom-soft:#1d2e42; --hus:#6fc48f; --hus-soft:#18311f; --sla:#c99ae0; --sla-soft:#33223b; --bat:#5fd0cc; --bat-soft:#133634; }
+.dot.kom{background:var(--kom)} .dot.hus{background:var(--hus)} .dot.sla{background:var(--sla)}
+.chip.bat{background:var(--bat-soft);color:var(--bat)}
+.chip.bus{background:var(--warn-soft);color:var(--warn)}
+.chip.pool{background:var(--sla-soft);color:var(--sla)}
+.chip.des{background:var(--warn-soft);color:var(--warn)}
+.batmark{font:600 10.5px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--bat);margin-left:6px}
+tr.busrow td{background:var(--warn-soft)}
+.pooltext{font-size:12.5px;color:var(--ink2);padding:8px 14px;border-bottom:1px solid var(--rule);background:var(--surface2);max-width:none}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink2);margin-bottom:14px}
+.batgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:14px;margin-bottom:10px}
+.batcard{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.batcard h3{display:flex;gap:10px;align-items:center;font-size:20px}
+.batcard p{font-size:13.5px;color:var(--ink2)}
+.batcard .sec{font:600 15px var(--font-display);color:var(--bat)}
+/* Sticky header: line badges, depots + sections, vehicle search (same as the Prague tram sheet). */
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center}
+.nav{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.nav .lab{font:600 12px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding-inline:2px 6px}
+.nav a.badge{text-decoration:none;height:22px;min-width:30px;font-size:14px;padding-inline:5px}
+.dnav a{font:600 14px var(--font-display);text-decoration:none;color:var(--ink2);background:var(--surface2);padding:3px 8px;border-radius:4px}
+.dnav a b{color:var(--accent)}
+input[type=search]{font:14px var(--font-body);padding:6px 10px;border:1px solid var(--rule2);border-radius:6px;background:var(--surface);color:var(--ink);width:min(100%,230px)}
+input[type=search]:focus-visible,a:focus-visible{outline:2px solid var(--info);outline-offset:2px}
+#hits{font-size:13px;color:var(--muted)}
+.veh{border-radius:3px;padding-inline:2px}
+.veh.hit{background:var(--hl);outline:2px solid var(--accent)}
+.card,.batcard,.depot,h2[id],[id]{scroll-margin-top:var(--stick,110px)}   /* --stick = measured bar height, set by the search script */
+/* Keep the sticky bar short on phones: line badges scroll sideways on one row; under 700 px the depot/section row too
+   (as on the Prague and Ostrava bus sheets). */
+.controls .nav.lines{flex-wrap:nowrap;overflow-x:auto;max-width:100%;min-width:0}
+.controls .nav.lines a{flex-shrink:0}
+@media (max-width:700px){.controls .nav.dnav{flex-wrap:nowrap;overflow-x:auto;max-width:100%;min-width:0}.controls .nav.dnav a{flex-shrink:0;white-space:nowrap}}
+.dot.ext{background:var(--warn)}
+.chip.ext{background:var(--warn-soft);color:var(--warn)}
+.chip.req{background:var(--warn-soft);color:var(--warn)}
+/* Surplus vehicles marked "not needed" (user rule, 29 Sep): dimmed, not counted */
+tr.spare td{opacity:.55}
+.chip.spare{background:var(--surface2);color:var(--muted)}
+</style>

@@ -1,0 +1,38 @@
+{
+  "train_line": {},
+  "line_A": {
+    "Ex1": "Praha hl. n.",
+    "Ex4": "Břeclav",
+    "R8": "Brno-Kr. Pole"
+  },
+  "line_names": {
+    "RJ-OVA": [
+      "RJ",
+      "RegioJet Praha – Ostrava"
+    ],
+    "RJ-BRV": [
+      "RJ",
+      "RegioJet Praha – Brno – Břeclav"
+    ],
+    "LE-OVA": [
+      "LE",
+      "Leo Express Praha – Ostrava"
+    ],
+    "LE-BRV": [
+      "LE",
+      "Leo Express Praha – Přerov – Břeclav"
+    ],
+    "CD-OVA": [
+      "SC",
+      "České dráhy commercial Praha – Ostrava (SC Pendolino)"
+    ],
+    "CD-BRV": [
+      "EC",
+      "České dráhy commercial Praha – Břeclav"
+    ],
+    "R1-R": [
+      "R",
+      "Rychlík Ostrava – Žilina (state line 1)"
+    ]
+  }
+}

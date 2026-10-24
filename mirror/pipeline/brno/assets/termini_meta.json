@@ -1,0 +1,349 @@
+{
+ "Řečkovice": {
+  "tracks": 2,
+  "type": "loop",
+  "terminus": true,
+  "confidence": "high",
+  "note": "End of the Řečkovice radial (line 1). Two-track loop on the 2015 DPMB track plan; the original storage siding was removed in 1972 and a passing track added later. Small loop with one boarding stop. Two loop tracks confirmed on OpenStreetMap (2026).",
+  "source": "https://cs.wikipedia.org/wiki/Tramvajov%C3%A1_tra%C5%A5_Moravsk%C3%A9_n%C3%A1m%C4%9Bst%C3%AD_%E2%80%93_%C5%98e%C4%8Dkovice"
+ },
+ "Ečerova": {
+  "tracks": 2,
+  "type": "loop, clockwise since 2026",
+  "terminus": true,
+  "status": "new",
+  "statusText": "rebuilt, reopened 1 Sep 2026",
+  "confidence": "medium",
+  "note": "Bystrc terminus of line 1, completely rebuilt Oct 2025 – Aug 2026 for the Kamechy extension (opening end of 2027): trams now enter from the left and run clockwise, unique in Brno. Two tracks on the pre-rebuild plan; the rebuilt track count is not published, assumed unchanged. Two loop tracks confirmed on OpenStreetMap (2026).",
+  "source": "https://brnensky.denik.cz/zpravy-region/brno-smycka-ecerova-modernizace-salina-kamechy-opacny-smer/"
+ },
+ "Rakovecká": {
+  "tracks": 2,
+  "type": "loop",
+  "terminus": true,
+  "confidence": "high",
+  "note": "Bystrc loop of 1983 beside the ZOO road, end of line 3 (and of line 10 until Oct 2025). Two tracks on the 2015 DPMB track plan. Two loop tracks confirmed on OpenStreetMap (2026).",
+  "source": "https://static.bmhd.cz/data/bmhd-souc/kolejova-sit/koleje_1505.pdf"
+ },
+ "Stará osada": {
+  "tracks": 2,
+  "type": "loop, transfer terminal",
+  "terminus": true,
+  "confidence": "high",
+  "note": "Židenice terminal, rebuilt with the bus terminal in 2025. Inner and outer track, each with its own boarding stop (stops 1 and 2 in the feed); since Sep 2025 line 2 uses the inner track and line 3 the outer one.",
+  "source": "https://www.dpmb.cz/en/zmeny-v-doprave"
+ },
+ "Modřice, smyčka": {
+  "tracks": 2,
+  "type": "loop",
+  "terminus": true,
+  "confidence": "high",
+  "note": "End of line 2 beyond the city boundary; two tracks on the 2015 DPMB track plan, boarding stop 3 in the feed. Two loop tracks confirmed on OpenStreetMap (2026).",
+  "source": "https://static.bmhd.cz/data/bmhd-souc/kolejova-sit/koleje_1505.pdf"
+ },
+ "Ústřední hřbitov - smyčka": {
+  "tracks": 2,
+  "type": "loop",
+  "terminus": true,
+  "confidence": "high",
+  "note": "Inner and outer track with a connecting crossover so trams can overtake or be parked; rebuilt Sep–Dec 2020 (790 m of new track, new island at the inner track, both platforms step-free). End of line 5, short workings of line 2.",
+  "source": "https://www.dpmb.cz/smycka-ustredni-hrbitov-po-opravach-opet-slouzi-tramvajim-cestujicim"
+ },
+ "Babická": {
+  "aka": "Obřany, Babická",
+  "tracks": 2,
+  "type": "loop",
+  "terminus": true,
+  "confidence": "high",
+  "note": "Obřany terminus of line 4; two tracks on the 2015 DPMB track plan. Some evening trips of 4 turn at Maloměřický most instead. Two loop tracks confirmed on OpenStreetMap (2026).",
+  "source": "https://static.bmhd.cz/data/bmhd-souc/kolejova-sit/koleje_1505.pdf"
+ },
+ "Náměstí Míru": {
+  "tracks": 2,
+  "type": "single-track loop with two-track exit stop",
+  "terminus": true,
+  "confidence": "high",
+  "note": "Loop of 1929 on the square in front of the church, single-track, with a short passing track at the exit stop added in 1970 (fits one tram beside a two-car set). Two trams can therefore stand: one at the exit stop, one on the loop. A rebuild is planned.",
+  "source": "https://cs.wikipedia.org/wiki/Tramvajov%C3%A1_tra%C5%A5_Komensk%C3%A9ho_n%C3%A1m%C4%9Bst%C3%AD_%E2%80%93_Masarykova_%C4%8Dtvr%C5%A5,_n%C3%A1m%C4%9Bst%C3%AD_M%C3%ADru"
+ },
+ "Štefánikova čtvrť": {
+  "tracks": 2,
+  "type": "loop",
+  "terminus": true,
+  "confidence": "high",
+  "note": "End of line 5 at the top of Merhautova; two tracks on the 2015 DPMB track plan. Two loop tracks confirmed on OpenStreetMap (2026).",
+  "source": "https://static.bmhd.cz/data/bmhd-souc/kolejova-sit/koleje_1505.pdf"
+ },
+ "Mendlovo náměstí": {
+  "tracks": 2,
+  "type": "loop in the square (1966)",
+  "terminus": true,
+  "confidence": "low",
+  "note": "Loop built in 1966 in the middle of the square; two tracks on the 2015 DPMB plan, OpenStreetMap shows one running loop track plus a stabling track. Used by the short workings of line 5 (boarding stop 5). Depot runs to Pisárky no longer need it since the depot got its own loop in 2024.",
+  "source": "https://cs.wikipedia.org/wiki/Tramvajov%C3%A1_tra%C5%A5_Mendlovo_n%C3%A1m%C4%9Bst%C3%AD_%E2%80%93_%C5%A0ilingrovo_n%C3%A1m%C4%9Bst%C3%AD_%E2%80%93_n%C3%A1m%C4%9Bst%C3%AD_Svobody"
+ },
+ "Královo Pole, nádraží": {
+  "tracks": 2,
+  "type": "loop under the Svitavská radiála flyover",
+  "terminus": true,
+  "confidence": "high",
+  "note": "Loop of 1952, passing track added 1965 and a storage track 1967, rebuilt 1984–87 under the flyover; a 290 m manipulation track links it to the railway station siding. Two boarding stops (1 and 2 in the feed); end of line 6.",
+  "source": "https://cs.wikipedia.org/wiki/Tramvajov%C3%A1_tra%C5%A5_Semilasso_%E2%80%93_Kr%C3%A1lovo_Pole,_n%C3%A1dra%C5%BE%C3%AD"
+ },
+ "Starý Lískovec, smyčka": {
+  "tracks": 2,
+  "type": "loop",
+  "terminus": true,
+  "confidence": "high",
+  "note": "Terminus of 1982 for lines 6 and 7, made step-free in 2022; two tracks on the 2015 DPMB track plan. Two loop tracks confirmed on OpenStreetMap (2026).",
+  "source": "https://brnensky.denik.cz/zpravy_region/omezeni-v-brnenske-mhd-dopravni-podnik-opravi-usek-do-smycky-stary-liskovec-2022.html"
+ },
+ "Čertova rokle": {
+  "aka": "Lesná, Čertova rokle",
+  "tracks": 2,
+  "type": "loop",
+  "terminus": true,
+  "confidence": "high",
+  "note": "Lesná terminus of lines 7 and 9; two tracks on the 2015 DPMB track plan. Two loop tracks confirmed on OpenStreetMap (2026).",
+  "source": "https://static.bmhd.cz/data/bmhd-souc/kolejova-sit/koleje_1505.pdf"
+ },
+ "Juliánov": {
+  "tracks": 2,
+  "type": "loop",
+  "terminus": true,
+  "confidence": "high",
+  "note": "End of line 9; two tracks on the 2015 DPMB track plan. Two loop tracks confirmed on OpenStreetMap (2026).",
+  "source": "https://static.bmhd.cz/data/bmhd-souc/kolejova-sit/koleje_1505.pdf"
+ },
+ "Mifkova": {
+  "aka": "Líšeň, Mifkova",
+  "tracks": 2,
+  "type": "stub terminus (úvrať)",
+  "terminus": true,
+  "confidence": "high",
+  "note": "Dead-end terminus of 2004 with two stub tracks; line 8 is worked with bidirectional trams because both of its ends (Mifkova, Nemocnice Bohunice) are stubs.",
+  "source": "https://cs.wikipedia.org/wiki/Tramvajov%C3%A1_doprava_v_Brn%C4%9B"
+ },
+ "Nemocnice Bohunice": {
+  "tracks": 2,
+  "type": "stub terminus (úvrať) with 2 storage tracks",
+  "terminus": true,
+  "status": "new",
+  "statusText": "opened 11 Dec 2022",
+  "confidence": "high",
+  "note": "Underground-approach terminus at the hospital campus, opened 11 Dec 2022: two platform tracks worked as a stub plus two storage tracks along the tunnel portal. Line 8 with bidirectional trams.",
+  "source": "https://cs.wikipedia.org/wiki/Tramvajov%C3%A1_tra%C5%A5_Osov%C3%A1_%E2%80%93_Nemocnice_Bohunice"
+ },
+ "Novolíšeňská": {
+  "tracks": 2,
+  "type": "loop",
+  "terminus": false,
+  "confidence": "medium",
+  "note": "Loop in Líšeň mapped as a siding with two tracks on OpenStreetMap; used by a few short workings of line 10 and depot runs of line 8.",
+  "source": "https://www.openstreetmap.org/"
+ },
+ "Technologický park": {
+  "tracks": 2,
+  "type": "loop with passing track",
+  "terminus": true,
+  "confidence": "high",
+  "note": "Terminus of 17 May 2008 at the technology park in Medlánky, a loop with a passing track (two tracks); end of line 12. The Medlánky depot is linked to it by a 350 m manipulation track.",
+  "source": "https://cs.wikipedia.org/wiki/Tramvajov%C3%A1_tra%C5%A5_Kone%C4%8Dn%C3%A9ho_n%C3%A1m%C4%9Bst%C3%AD_%E2%80%93_Technologick%C3%BD_park"
+ },
+ "Komárov": {
+  "tracks": 2,
+  "type": "loop",
+  "terminus": true,
+  "confidence": "high",
+  "note": "End of line 12 on the Plotní line reopened 1 Jul 2021; two tracks on the 2015 DPMB track plan. Two loop tracks confirmed on OpenStreetMap (2026).",
+  "source": "https://static.bmhd.cz/data/bmhd-souc/kolejova-sit/koleje_1505.pdf"
+ },
+ "Stránská skála - smyčka": {
+  "tracks": 1,
+  "type": "loop",
+  "terminus": true,
+  "confidence": "medium",
+  "note": "Eastern end of line 10. OpenStreetMap shows a single loop track (the 2015 DPMB plan drew two), with a manipulation crossover on the approach; the planned extension to Muzeum dopravy would start here.",
+  "source": "https://www.openstreetmap.org/"
+ },
+ "Sochorova": {
+  "tracks": 0,
+  "type": "temporary reversing point",
+  "terminus": true,
+  "status": "diverted",
+  "confidence": "low",
+  "note": "Not a terminus: during the Kníničská reconstruction (phase 3, 1–30 Sep 2026) line 10 ends at the Sochorova street stop, one stop short of its Vozovna Komín loop, and reverses there. Switch to the second dataset for the regular state.",
+  "source": "https://brnensky.denik.cz/zpravy-region/brno-bystrc-saliny-tramvaje-vyluka-zmena-zari-2026-ecerova/"
+ },
+ "Vozovna Komín": {
+  "aka": "Komín, smyčka",
+  "tracks": 2,
+  "type": "loop by the former depot",
+  "terminus": true,
+  "confidence": "high",
+  "note": "Loop at the former Komín depot, two tracks on the 2015 DPMB track plan. Regular western end of line 10 since 18 Oct 2025 (before that line 10 ran on to Bystrc, Rakovecká); also evening short workings of line 3. Two loop tracks confirmed on OpenStreetMap (2026).",
+  "source": "https://static.bmhd.cz/data/bmhd-souc/kolejova-sit/koleje_1505.pdf"
+ },
+ "Zemědělská": {
+  "tracks": 1,
+  "type": "single-track loop",
+  "terminus": true,
+  "confidence": "high",
+  "note": "Single-track loop at Zemědělská used by the off-peak short workings of line 7 (in the peak 7 runs through to Čertova rokle). Confirmed single-track on OpenStreetMap (2026).",
+  "source": "https://static.bmhd.cz/data/bmhd-souc/kolejova-sit/koleje_1505.pdf"
+ },
+ "ARENA BRNO": {
+  "tracks": 1,
+  "type": "loop in the Pisárky depot (2024)",
+  "terminus": false,
+  "status": "new",
+  "statusText": "opened 2024",
+  "confidence": "low",
+  "note": "Turning loop built inside the Pisárky depot in 2023–24 (with a stop for the ARENA BRNO hall); used by depot runs, so trams no longer turn at Mendlovo náměstí. Track count not published; assumed one running track plus depot tracks.",
+  "source": "https://www.dpmb.cz/dpmb-dokoncil-treti-fazi-modernizace-tramvajove-vozovny-pisarky-behem-19-mesicu-vybudoval-vratnou"
+ },
+ "Vozovna Medlánky": {
+  "tracks": 1,
+  "type": "depot",
+  "terminus": false,
+  "confidence": "medium",
+  "note": "Main tram depot; pull-ins and pull-outs only.",
+  "source": "https://cs.wikipedia.org/wiki/Vozovna_Medl%C3%A1nky"
+ },
+ "Osová": {
+  "tracks": 1,
+  "type": "loop",
+  "terminus": false,
+  "confidence": "low",
+  "note": "Loop at the Osová junction used by a few depot-related trips of line 6; single-track on OpenStreetMap (two on the 2015 plan).",
+  "source": "https://www.openstreetmap.org/"
+ },
+ "Červinkova": {
+  "tracks": 1,
+  "type": "mid-line loop",
+  "terminus": false,
+  "confidence": "high",
+  "note": "Loop of 1961 on the Technologický park line, single-track since 2011 when the inner switch was removed; a few trips of line 12 turn here.",
+  "source": "https://cs.wikipedia.org/wiki/Tramvajov%C3%A1_tra%C5%A5_Kone%C4%8Dn%C3%A9ho_n%C3%A1m%C4%9Bst%C3%AD_%E2%80%93_Technologick%C3%BD_park"
+ },
+ "Maloměřický most": {
+  "tracks": 1,
+  "type": "single-track loop",
+  "terminus": false,
+  "confidence": "medium",
+  "note": "Single-track loop used by some evening trips of line 4 instead of Babická.",
+  "source": "https://static.bmhd.cz/data/bmhd-souc/kolejova-sit/koleje_1505.pdf"
+ },
+ "Konečného náměstí": {
+  "tracks": null,
+  "type": "junction",
+  "terminus": false,
+  "confidence": "low",
+  "note": "Junction only; a few depot-related trips of 10 and 12 start or end here.",
+  "source": ""
+ },
+ "Hlavní nádraží": {
+  "tracks": null,
+  "type": "junction",
+  "terminus": false,
+  "confidence": "low",
+  "note": "Central junction; a few trips of 2 and 10 start or end here.",
+  "source": ""
+ },
+ "lines": {
+  "1": {
+   "status": "permanent",
+   "short": "permanent",
+   "note": "Řečkovice – Bystrc, Ečerova, back on its full route since 1 Sep 2026 after the Ečerova rebuild (Oct 2025 – Aug 2026 it turned at Rakovecká). Up to 5 min delay possible on the single-track Kníničská section until 30 Sep 2026."
+  },
+  "2": {
+   "status": "permanent",
+   "short": "permanent",
+   "note": "Stará osada – Modřice; about a quarter of the trips turn at Ústřední hřbitov."
+  },
+  "3": {
+   "status": "permanent",
+   "short": "permanent",
+   "note": "Stará osada – Bystrc, Rakovecká; evening short workings to Vozovna Komín."
+  },
+  "4": {
+   "status": "permanent",
+   "short": "permanent",
+   "note": "Náměstí Míru – Obřany, Babická; some evening trips turn at Maloměřický most."
+  },
+  "5": {
+   "status": "permanent",
+   "short": "permanent",
+   "note": "Štefánikova čtvrť – Ústřední hřbitov; roughly every third trip is a short working to Mendlovo náměstí."
+  },
+  "6": {
+   "status": "permanent",
+   "short": "permanent",
+   "note": "Královo Pole, nádraží – Starý Lískovec."
+  },
+  "7": {
+   "status": "permanent",
+   "short": "permanent",
+   "note": "Lesná, Čertova rokle – Starý Lískovec in the peaks; off-peak the line is shortened to Zemědělská."
+  },
+  "8": {
+   "status": "permanent",
+   "short": "permanent",
+   "note": "Líšeň, Mifkova – Nemocnice Bohunice (since 11 Dec 2022), the only line with two stub termini, worked by bidirectional trams."
+  },
+  "9": {
+   "status": "permanent",
+   "short": "permanent",
+   "note": "Lesná, Čertova rokle – Juliánov."
+  },
+  "10": {
+   "status": "temporary",
+   "short": "closure to 30 Sep",
+   "note": "Permanent routing (Wikipedia, Jan 2026): Stránská skála – Bystrc, Rakovecká. Since 18 Oct 2025 it ends at the Vozovna Komín loop because of the Bystrc works; during the Kníničská phase 3 closure (1–30 Sep 2026) it goes only to Sochorova. Every 20 min all day in the current timetable."
+  },
+  "12": {
+   "status": "permanent",
+   "short": "permanent",
+   "note": "Technologický park – Komárov."
+  }
+ },
+ "scenario_lines": {
+  "10": {
+   "status": "longterm",
+   "short": "Bystrc works",
+   "note": "Projected: line 10 back at the Vozovna Komín loop as in the timetable of 18 Oct 2025 – 26 Jun 2026 (times shifted by 2 min for the extra stop). Its pre-works terminus Bystrc, Rakovecká returns only after the Kamechy line opens (end of 2027)."
+  }
+ },
+ "Jírova": {
+  "tracks": 2,
+  "type": "underground stub (úvrať)",
+  "terminus": false,
+  "confidence": "medium",
+  "note": "Underground reversing stub of 1998 under the Jírova stop in Líšeň, used for night stabling and a few short workings of line 8.",
+  "source": "https://cs.wikipedia.org/wiki/Tramvajov%C3%A1_doprava_v_Brn%C4%9B"
+ },
+ "Komenského náměstí": {
+  "tracks": null,
+  "type": "junction",
+  "terminus": false,
+  "confidence": "low",
+  "note": "Junction and weekend end of the historic line H4; a few trips of line 4 start here.",
+  "source": ""
+ },
+ "Česká": {
+  "tracks": null,
+  "type": "junction with crossover",
+  "terminus": false,
+  "confidence": "low",
+  "note": "Central junction with a manipulation crossover; a few trips start or end here.",
+  "source": ""
+ },
+ "Malinovského náměstí": {
+  "tracks": null,
+  "type": "block loop (manipulation)",
+  "terminus": false,
+  "confidence": "low",
+  "note": "Block loop around the theatre passable from three directions, used for a few depot-related trips.",
+  "source": "https://cs.wikipedia.org/wiki/Seznam_tramvajov%C3%BDch_obrati%C5%A1%C5%A5_v_Brn%C4%9B"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "_doc": "Terminus kind for the loop -1 min rule. Trolleybuses cannot reverse, so every terminus is a turn: a turning loop, a bus-station circuit or a block. The Prague tram sheet counts block loops as loops (Březiněveská), so all trolleybus termini here are kind=loop: departures set 1 min early. The arrival and departure stands are from PID GTFS stops.txt (platform_code); in every case the trolleybus arrives at one stand and leaves from another.",
+ "termini": {
+  "Palmovka": {"kind": "loop", "description": "arrives at stand F, turns, departs from stand D"},
+  "Miškovice": {"kind": "loop", "description": "arrives at stand A, turns off-wire, departs from stand B"},
+  "Čakovice": {"kind": "loop", "description": "arrives at stand F (alighting continues to stand B), turns off-wire, departs from stand C"},
+  "Na Knížecí": {"kind": "loop", "description": "bus station: arrives at stand V, departs from stand O"},
+  "Waltrovka": {"kind": "loop", "description": "arrives at stand C, turns, departs from stand D on the other side of the street"},
+  "Jinonice": {"kind": "loop", "description": "arrives at stand L, turns off-wire, departs from stand B"},
+  "Nádraží Veleslavín": {"kind": "loop", "description": "bus terminal: arrives at stand V, departs from stand 2"},
+  "Terminál 1": {"kind": "loop", "description": "airport one-way circuit: the trip ends at Letiště (stand A, after Terminál 1 C and Terminál 2 C); the trolleybus departs from Terminál 1 stand E. Letiště is merged into Terminál 1 (stop_aliases)."},
+  "Hradčanská": {"kind": "loop", "description": "arrives at stand D, departs from stand C"},
+  "Bořislavka": {"kind": "loop", "description": "arrives at stand D, departs from stand F"},
+  "Karlovo náměstí": {"kind": "loop", "description": "arrives at stand H, departs from stand G"},
+  "Stadion Strahov": {"kind": "loop", "description": "arrives at stand A, departs from stand B"},
+  "Sídliště Čakovice": {"kind": "loop", "description": "line 275 only (not modelled)"},
+  "Náměstí Jiřího Berana": {"kind": "loop", "description": "line 275 only (not modelled)"}
+ }
+}

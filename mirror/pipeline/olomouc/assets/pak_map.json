@@ -1,0 +1,70 @@
+{
+ "_doc": "Real car -> VZ-DPOlomouc object (pak128 main 7be7413, confirmed with the pak128 session). One real car = one object. Bidirectional pairs: the 2nd car is the -reverse object (position 2). VarioLFR.S / VarioLFR.E / VarioLF.E share the VarioLF body: an exact match. One livery only (DPMO white-blue-red); advert wraps are ignored.",
+ "pak_commit": "7be7413",
+ "pak_file": "VZ-DPOlomouc-tram.pak",
+ "livery_words": {
+  "dpmobilomodrocervena": "DPMO white-blue-red"
+ },
+ "multi_livery_types": [],
+ "carunits": {
+  "EVO1o": 12,
+  "EVO1o-reverse": 12,
+  "VarioLF_plus_o": 12,
+  "VarioLF_plus_o-reverse": 12,
+  "EVO1": 12,
+  "VarioLF": 12,
+  "T3R_P": 11,
+  "01_Trio": 13
+ },
+ "paint_names": {
+  "DPMO, bílo-modro-červená": "DPMO white-blue-red"
+ },
+ "section_suffix": "_{i}",
+ "rules": [
+  {
+   "type": "EVO 1/o",
+   "position": 2,
+   "object": "VZ-DPOlomouc-EVO1_o-dpmobilomodrocervena-EVO1o-reverse"
+  },
+  {
+   "type": "EVO 1/o",
+   "object": "VZ-DPOlomouc-EVO1_o-dpmobilomodrocervena-EVO1o"
+  },
+  {
+   "type": "VarioLF+/o",
+   "position": 2,
+   "object": "VZ-DPOlomouc-VarioLF_plus_o-dpmobilomodrocervena-VarioLF_plus_o-reverse"
+  },
+  {
+   "type": "VarioLF+/o",
+   "object": "VZ-DPOlomouc-VarioLF_plus_o-dpmobilomodrocervena-VarioLF_plus_o"
+  },
+  {
+   "type": "EVO 1",
+   "object": "VZ-DPOlomouc-EVO1-dpmobilomodrocervena-EVO1"
+  },
+  {
+   "type": "T3R.P",
+   "object": "VZ-DPOlomouc-T3R_P-dpmobilomodrocervena-T3R_P"
+  },
+  {
+   "type": "VarioLFR.S",
+   "object": "VZ-DPOlomouc-VarioLF-dpmobilomodrocervena-VarioLF"
+  },
+  {
+   "type": "VarioLFR.E",
+   "object": "VZ-DPOlomouc-VarioLF-dpmobilomodrocervena-VarioLF"
+  },
+  {
+   "type": "VarioLF.E",
+   "object": "VZ-DPOlomouc-VarioLF-dpmobilomodrocervena-VarioLF"
+  },
+  {
+   "type": "Trio 2001",
+   "object": "VZ-DPOlomouc-01_Trio-dpmobilomodrocervena-01_Trio",
+   "sections": 3
+  }
+ ],
+ "sets": {},
+ "livery_from_object": true
+}

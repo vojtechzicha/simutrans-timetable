@@ -1,0 +1,59 @@
+<title>S75 Beroun Rakovník</title>
+<style>
+/* Layout: one plain column, the same tables as in chat. */
+:root{
+  --bg:#f6f7f8; --fg:#1d2125; --muted:#66707a; --rule:#d8dde2; --head:#eceff2; --accent:#1f5f8b; --mark:#fff2cc; --mark-fg:#6b4d00;
+  --font:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --mono:Consolas,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16191c; --fg:#e4e8ec; --muted:#97a1ab; --rule:#30363c; --head:#22272c; --accent:#7ab8e6; --mark:#3a3015; --mark-fg:#f0d58a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16191c; --fg:#e4e8ec; --muted:#97a1ab; --rule:#30363c; --head:#22272c; --accent:#7ab8e6; --mark:#3a3015; --mark-fg:#f0d58a;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--font);padding-inline:16px;padding-block:24px 64px}
+main{max-width:920px;margin-inline:auto;display:flex;flex-direction:column;gap:14px}
+h1{font-size:28px;margin:0;text-wrap:balance}
+h2{font-size:22px;margin:30px 0 0;padding-top:14px;border-top:2px solid var(--accent);text-wrap:balance}
+h3{font-size:18px;margin:18px 0 0;text-wrap:balance}
+h4{font-size:15px;margin:6px 0 0}
+p,ul{margin:0}
+ul{padding-inline-start:20px;display:flex;flex-direction:column;gap:3px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+nav a{color:var(--accent)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 10px;border:1px solid var(--rule);vertical-align:top}
+thead th{background:var(--head);font-weight:600;white-space:nowrap}
+td.n,th.n{text-align:right;font-family:var(--mono);white-space:nowrap}
+.t{font-family:var(--mono);white-space:nowrap}
+tr.total td{font-weight:700}
+.stations{line-height:1.7}
+.wait{background:var(--mark);color:var(--mark-fg);padding:0 4px;border-radius:3px;font-weight:600}
+.fix{background:var(--mark);color:var(--mark-fg);padding:8px 12px;border-radius:6px}
+</style>
+<main>
+<h1>S75 · Beroun – Nižbor – Křivoklát – Rakovník</h1>
+<p class="muted">Simutrans design for the workday S75 (PID, KJŘ 174), the trains north of Beroun up to S5 (S5 not included). Times are real JR2026 times from the national CIS JŘ timetable, for trains that run on all five days Mon–Fri 5–9 October 2026. Unit types are from vagonweb.cz. All the track is built in the game, so the line runs to its real termini.</p>
+<p>Notation: every 60, the offset is the minute of every hour. (x) = request stop. <span class="wait">Highlighted</span> rows are timed stops with a longer stay. "Leave up to" is automatic.</p>
+<nav><a href="#vehicles">Vehicles</a><a href="#s75">S75</a><a href="#coverage">Every train</a><a href="#notmodelled">Not modelled</a></nav>
+<h2 id="vehicles">Vehicles</h2><div class="scroll"><table><thead><tr><th>Line</th><th>Route</th><th class="n">Every</th><th class="n">Round trip</th><th class="n">Vehicles</th></tr></thead><tbody><tr><td><a href="#s75">S75</a></td><td>Beroun – Rakovník</td><td class="n">60</td><td class="n">3 h</td><td class="n">3</td></tr><tr class="total"><td colspan="4">S75 Beroun – Křivoklát – Rakovník</td><td class="n">3</td></tr><tr class="total"><td colspan="4">All lines</td><td class="n">3</td></tr></tbody></table></div>
+<p class="small muted">Vehicles = round trip ÷ interval. A train waits at the terminus for its line's next slot, so the round trip is a whole number of intervals.</p>
+<h2>S75 Beroun – Křivoklát – Rakovník</h2><ul><li>S75 meets the Praha – Plzeň line at Beroun. It turns there in 10 min: in at :49, out at :59. Beyond Beroun-Závodí it has the track to itself, all the way up the Berounka to Rakovník.</li><li>At Rakovník it meets the lines to Kladno and Praha (S50, R24), to Jesenice and Žlutice, to Louny and to Žatec. None of them are on this sheet.</li></ul>
+<h3 id="s75">S75 · Beroun – Rakovník · 3 vehicles</h3>
+<p class="stations"><b>Stations:</b> Beroun – Beroun-Závodí – Hýskov – Nižbor – Žloukovice (x) – Račice nad Berounkou (x) – Zbečno – Újezd nad Zbečnem (x) – Roztoky u Křivoklátu – Křivoklát (x) – Městečko u Křivoklátu (x) – Pustověty (x) – Lašovice – Chlum u Rakovníka (x) – Rakovník, then the same back.</p>
+<h4>Timetable entries</h4><div class="scroll"><table><thead><tr><th>Stop</th><th>Direction</th><th class="n">Departure every</th><th class="n">Offset</th><th>Real time</th><th>Stay</th></tr></thead><tbody><tr><td>Beroun</td><td>towards Rakovník</td><td class="n">60</td><td class="n">59</td><td class="t">:59 every hour</td><td>terminus, 10 min</td></tr><tr><td>Zbečno</td><td>towards Rakovník</td><td class="n">60</td><td class="n">26</td><td class="t">:26 every hour</td><td>crossing with the train to Beroun, arrives :22, 4 min</td></tr><tr><td>Rakovník</td><td>towards Beroun</td><td class="n">60</td><td class="n">56</td><td class="t">:56 every hour</td><td>terminus, 59 min</td></tr></tbody></table></div>
+<h4>Round trip (3 h, so 3 vehicles at every 60)</h4><div class="scroll"><table><thead><tr><th>Station</th><th class="n">Arrives</th><th class="n">Departs</th></tr></thead><tbody><tr><td>Beroun</td><td class="n"></td><td class="n">15:59</td></tr><tr class="wait"><td>Zbečno</td><td class="n">16:22</td><td class="n">16:26</td></tr><tr class="wait"><td>Rakovník</td><td class="n">16:57</td><td class="n">17:56</td></tr><tr><td>Zbečno</td><td class="n">18:25</td><td class="n">18:26</td></tr><tr class="wait"><td>Beroun</td><td class="n">18:49</td><td class="n">18:59</td></tr></tbody></table></div>
+<ul class="small"><li>PID S75 (KJŘ 174), along the Berounka through Nižbor, Zbečno and Křivoklát. In the afternoon peak a train leaves Beroun every hour at :59 (14:59, 15:59, 16:59; Rakovník :57) and Rakovník at :56 (14:57, 15:56; Beroun :49). The game runs that pattern every hour all day.</li><li>The line is single track. The two directions cross at Zbečno: the train to Rakovník waits there 4 min (:22 – :26) for the train to Beroun (:25 – :26), so Zbečno is timed towards Rakovník. The other direction waits only 1 min there and is not timed.</li><li>Three vehicles. It turns in 10 min at Beroun (in :49, out :59) and 59 min at Rakovník (in :57, out :56 an hour later): the real minutes. The train arriving at Rakovník at :57 just misses the :56 back.</li><li>Why the :56 return and not the :12 (17:12, 19:12): the :12 trains cross the :59 at Roztoky u Křivoklátu instead (the 16:59 waits there 17:31 – 17:33). That pattern also needs 3 vehicles, but it puts the long wait at Beroun (54 min) instead of Rakovník. Beroun is the main-line station, so its stay stays short.</li><li>Vehicles: ČD 847 RegioFox (vagonweb 2026, planned on Os 7717, 7718, 7745, 7716 and 7720; 847 019 seen on Os 7718).</li></ul>
+<p class="small muted">Real workday trains. From Beroun to Rakovník: 4:11 (Os 7701), 4:36 (Os 7703, from Zdice), 6:19 (Os 7705), 7:52 (Os 7707), 9:01 (Os 7709), 10:56 (Os 7711), 12:15 (Os 7713, to Rakovník západ), 14:17 (Os 7715), 14:59 (Os 7745), 15:59 (Os 7717), 16:59 (Os 7719), 18:12 (Os 7721), 19:14 (Os 7723), 20:15 (Os 7725, to Rakovník západ), 21:55 (Os 7729), 23:12 (Os 7727). From Rakovník to Beroun: 4:03 (Os 7700), 5:09 (Os 7702), 5:52 (Os 7728), 6:34 (Os 7704), 8:03 (Os 7706), 10:01 (Os 7708), 11:48 (Os 7710), 13:13 (Os 7712), 14:11 (Os 7714), 14:57 (Os 7716), 15:56 (Os 7718), 17:12 (Os 7720), 18:05 (Os 7740), 19:12 (Os 7722), 20:30 (Os 7724), 22:35 (Os 7726).</p>
+<h2 id="coverage">Every workday train on these lines</h2><p class="small muted">Each row is a stretch of these lines that real workday trains run, with how many trains a day and where they really start and end. Every stretch is either modelled or listed under Not modelled.</p><div class="scroll"><table><thead><tr><th>Stretch</th><th class="n">Trains</th><th>Real ends</th><th>In the game</th></tr></thead><tbody><tr><td>Beroun – Rakovník</td><td class="n">16</td><td>Beroun – Rakovník; Beroun – Rakovník západ; Zdice – Rakovník</td><td>modelled</td></tr><tr><td>Rakovník – Beroun</td><td class="n">16</td><td>Rakovník – Beroun</td><td>modelled</td></tr></tbody></table></div>
+<h2 id="notmodelled">Not modelled</h2><ul><li><b>S75 outside the hourly pattern:</b> the real S75 is hourly only in the afternoon peak, and the game runs :59 / :56 all day. Real afternoon trains at other minutes: from Beroun 14:17 (Os 7715, an extra train that crosses Rakovník 14:11 at Zbečno and stops 2 min at Lašovice), 18:12, 19:14, 20:15, 21:55 and 23:12; from Rakovník 14:11, 17:12, 18:05, 19:12, 20:30 and 22:35. Morning and midday: from Beroun 4:11, 6:19, 7:52, 9:01, 10:56 and 12:15; from Rakovník 4:03, 5:09, 5:52, 6:34, 8:03, 10:01, 11:48 and 13:13.</li><li><b>Rakovník západ:</b> Os 7713 (Beroun 12:15) and Os 7725 (Beroun 20:15) run one stop further, to Rakovník západ. In the game every S75 ends at Rakovník.</li><li><b>Os 7703 Zdice 4:36 → Beroun → Rakovník:</b> the early S60 train that runs on to Rakovník (it waits at Beroun 4:47 – 5:14).</li><li><b>Not part of this sheet (your choice, 13 October: only S75):</b> in JR2026, S5 is Praha Masarykovo nádraží – Kladno – Kralupy nad Vltavou (CIS 1005, with 1045 and R45 = 1145 on the same track). Kladno – Rakovník is S50 (1050) together with R24 Praha – Kladno – Rakovník; they count as the S5 family. Also out: S54 Hostivice – Středokluky – Noutonice, and every line beyond Rakovník (Jesenice – Žlutice / Bečov nad Teplou, Louny – Most, Lužná u Rakovníka – Žatec – Chomutov).</li></ul>
+</main>

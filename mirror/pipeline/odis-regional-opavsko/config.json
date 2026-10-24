@@ -1,0 +1,2578 @@
+{
+ "snapshot": "2026-10-20",
+ "vehicle_day": "2026-10-20",
+ "vehicle_day_label_en": "Tuesday 20 Oct 2026",
+ "network_state_label": "20 Oct 2026",
+ "fitwin": [
+  300,
+  1380
+ ],
+ "cycle_lay": 3,
+ "all_termini_are_loops": true,
+ "stop_name_expansions": [
+  [
+   "aut.st.pod",
+   "autobusová stanice pod"
+  ],
+  [
+   "EDĚ aut.st.",
+   "Elektrárna Dětmarovice, autobusová stanice"
+  ],
+  [
+   "aut.nádr.",
+   "autobusové nádraží"
+  ],
+  [
+   "aut.st.",
+   "autobusová stanice"
+  ],
+  [
+   "rozc.k žel.st.",
+   "rozcestí k železniční stanici"
+  ],
+  [
+   "žel.st.",
+   "železniční stanice"
+  ],
+  [
+   "žel.zast.",
+   "železniční zastávka"
+  ],
+  [
+   "rozc.",
+   "rozcestí "
+  ],
+  [
+   "pož.zbroj.",
+   "požární zbrojnice"
+  ],
+  [
+   "rest.",
+   "restaurace "
+  ],
+  [
+   "zast.",
+   "zastávka "
+  ],
+  [
+   "J.Kotase",
+   "Josefa Kotase"
+  ],
+  [
+   "H.Malířové",
+   "Heleny Malířové"
+  ],
+  [
+   "M.Pujmanové",
+   "Marie Pujmanové"
+  ],
+  [
+   "Kpt.Jasioka",
+   "Kapitána Jasioka"
+  ],
+  [
+   "Nám.Republiky",
+   "Náměstí Republiky"
+  ],
+  [
+   "Národní tř.",
+   "Národní třída"
+  ],
+  [
+   "Děl.dům",
+   "Dělnický dům"
+  ],
+  [
+   "nákup.stř.",
+   "nákupní středisko"
+  ],
+  [
+   "čerp.st.",
+   "čerpací stanice"
+  ],
+  [
+   "čist.st.",
+   "čisticí stanice"
+  ],
+  [
+   "kult.dům",
+   "kulturní dům"
+  ],
+  [
+   "obch.dům",
+   "obchodní dům"
+  ],
+  [
+   "rehab.sanatorium",
+   "rehabilitační sanatorium"
+  ],
+  [
+   "sídl.",
+   "sídliště "
+  ],
+  [
+   "křiž.",
+   "křižovatka "
+  ],
+  [
+   "Pr.Suchá",
+   "Prostřední Suchá"
+  ],
+  [
+   "nám.",
+   "náměstí"
+  ],
+  [
+   "2.etapa",
+   "2. etapa"
+  ]
+ ],
+ "stop_name_fixed": {},
+ "jdf": {
+  "zip": "../havirov-karvina-orlova/data/raw/2026-10-20/JDF.zip",
+  "export_label": "CIS JŘ bus JDF export of 20 Oct 2026 (stored by the Havířov/Karviná/Orlová pipeline)",
+  "operator_ic": "45192120",
+  "why": "The kraj numbers each contract area's licences with its own prefix: 902 Opavsko and 903 Vítkovsko (Z-Group bus), 904 Hlučínsko (Transdev Slezsko); the Opava town lines are 905 (Městský dopravní podnik Opava).",
+  "extra_zips": [
+   "data/raw/2026-10-20/JDF_mestske.zip"
+  ],
+  "extra_label": "CIS JŘ city-transport JDF (draha/mestske) downloaded 21 Oct 2026, for the Opava trolleybus lines 905201–905204"
+ },
+ "title": "ODIS Opavsko Vítkovsko Hlučínsko",
+ "output_html": "ODIS Opavsko Vitkovsko Hlucinsko.html",
+ "artifact_url": "https://claude.ai/artifact/K5ZeDCY2YYqV1Sz3tQwj3j",
+ "areas": [
+  {
+   "id": "opavsko",
+   "name": "Opavsko",
+   "prefix": "902",
+   "kind": "regional",
+   "operator": "Z-Group bus",
+   "branch": "Z-Group, pr. Opava",
+   "depot": "provozovna Opava",
+   "fleet": [
+    "22"
+   ],
+   "near": [
+    "22",
+    "23"
+   ],
+   "note": ""
+  },
+  {
+   "id": "vitkovsko",
+   "name": "Vítkovsko",
+   "prefix": "903",
+   "kind": "regional",
+   "operator": "Z-Group bus",
+   "branch": "Z-Group, pr. Opava",
+   "depot": "provozovna Opava (Vítkov buses 23-)",
+   "fleet": [
+    "23"
+   ],
+   "near": [
+    "23",
+    "22"
+   ],
+   "note": ""
+  },
+  {
+   "id": "hlucinsko",
+   "name": "Hlučínsko",
+   "prefix": "904",
+   "kind": "regional",
+   "ic": "45192081",
+   "operator": "Transdev Slezsko",
+   "branch": "Transdev Slezsko pr. Ostrava",
+   "depot": "provozovna Ostrava",
+   "fleet": [
+    "24"
+   ],
+   "near": [
+    "24"
+   ],
+   "note": "Some of the 24- buses are registered under Transdev Morava."
+  },
+  {
+   "id": "mhd-opava-trol",
+   "name": "MHD Opava (trolleybuses)",
+   "prefix": "90520",
+   "kind": "mhd",
+   "traction": "T",
+   "ic": "64610250",
+   "town": "Opava",
+   "operator": "Městský dopravní podnik Opava",
+   "branch": "MDPO",
+   "depot": "depot",
+   "fleet": [],
+   "near": [],
+   "note": "Trolleybus lines; timetables from CIS JŘ's city-transport JDF. Trolleybuses take VZ-DPOpava-trolleybus. 201, 202 and 203 run under the wire all the way; 204 leaves it on Vrchní street (Ratibořská – Divadlo) and at Kylešovice, škola, so MDPO runs it with trolleybuses that have an auxiliary drive: the ten 32 Tr 314–323 with traction batteries, or the two 26 Tr 305 and 306 with diesel generators (each card has an Overhead wire table).",
+   "licences": "Licences 905201–905204 (trolleybus lines 201–204)",
+   "operator_short": "MDPO"
+  },
+  {
+   "id": "mhd-opava",
+   "name": "MHD Opava (buses)",
+   "prefix": "905",
+   "kind": "mhd",
+   "ic": "64610250",
+   "town": "Opava",
+   "operator": "Městský dopravní podnik Opava",
+   "branch": "MDPO",
+   "depot": "depot",
+   "fleet": [],
+   "near": [],
+   "note": "Town buses take VZ-DPOpava-bus.",
+   "operator_short": "MDPO"
+  }
+ ],
+ "live": {
+  "dir": "../havirov-karvina-orlova/data/raw/2026-10-20/live",
+  "fleet": "data/derived/fleet.json",
+  "label": "Tue 20 Oct 2026",
+  "note": "ODIS live map (mpvnet.cz): every bus with licence, line, trip number (= JDF spoj) and number plate; polled every minute 13:05–19:30 on Tue 20 Oct 2026, whole region, by the Havířov/Karviná/Orlová pipeline.",
+  "carriers": [
+   "Z-Group",
+   "Transdev Slezsko",
+   "MDPO"
+  ]
+ },
+ "fleet": {
+  "carriers": [
+   {
+    "id": 240,
+    "name": "Z-Group bus",
+    "tractions": [
+     "autobus",
+     "elektrobus"
+    ]
+   },
+   {
+    "id": 28,
+    "name": "Transdev Slezsko",
+    "tractions": [
+     "autobus",
+     "elektrobus"
+    ]
+   },
+   {
+    "id": 338,
+    "name": "MDPO",
+    "tractions": [
+     "autobus",
+     "elektrobus",
+     "trolejbus"
+    ],
+    "live_plate": "MDPO{num}"
+   },
+   {
+    "id": 7546,
+    "name": "Transdev Morava",
+    "tractions": [
+     "autobus",
+     "elektrobus"
+    ]
+   }
+  ]
+ },
+ "plate_lookup": true,
+ "designed_same_area": true,
+ "terminus_alias": {
+  "Opava, Jaktař škola": "Opava, Jaktař, škola"
+ },
+ "terminus_alias_why": "The Opava town JDF writes Opava, Jaktař škola, the regional JDFs Opava, Jaktař, škola: one stop.",
+ "lines": {
+  "201": {
+   "core": [
+    "Opava, Kylešovice, Bílovecká",
+    "Opava, Praskova",
+    "Opava, Městský hřbitov"
+   ],
+   "sim": [
+    {
+     "name": "201",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Kylešovice, Bílovecká",
+       "to": "Opava, Městský hřbitov",
+       "at": "auto"
+      },
+      {
+       "fr": "Opava, Městský hřbitov",
+       "to": "Opava, Kylešovice, Bílovecká",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Trolleybus Kylešovice, Bílovecká – Městský hřbitov every 12 in the afternoon (Bílovecká :07 / :19 / :31 / :43 / :55), every 15 at midday; regular route under wire."
+  },
+  "202": {
+   "core": [
+    "Opava, Kateřinky",
+    "Opava, Divadlo",
+    "Opava, Albert hypermarket"
+   ],
+   "sim": [
+    {
+     "name": "202",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Kateřinky",
+       "to": "Opava, Albert hypermarket",
+       "at": "auto"
+      },
+      {
+       "fr": "Opava, Albert hypermarket",
+       "to": "Opava, Kateřinky",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Trolleybus Kateřinky – Albert hypermarket every 12 (Kateřinky :07, Albert :02 …); the Holasická short trips are off the pattern."
+  },
+  "203": {
+   "core": [
+    "Opava, Globus",
+    "Opava, Divadlo",
+    "Opava, Jaktař"
+   ],
+   "sim": [
+    {
+     "name": "203",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Globus",
+       "to": "Opava, Jaktař",
+       "at": "auto"
+      },
+      {
+       "fr": "Opava, Jaktař",
+       "to": "Opava, Globus",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Trolleybus Globus – Jaktař every 12 (Globus :07, Jaktař :11 …)."
+  },
+  "204": {
+   "core": [
+    "Opava, Kylešovice, škola",
+    "Opava, Praskova",
+    "Opava, Englišova"
+   ],
+   "sim": [
+    {
+     "name": "204",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Opava, Kylešovice, škola",
+       "to": "Opava, Englišova",
+       "at": [
+        0,
+        24,
+        36
+       ]
+      },
+      {
+       "fr": "Opava, Englišova",
+       "to": "Opava, Kylešovice, škola",
+       "at": [
+        9,
+        33,
+        57
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Trolleybus Kylešovice, škola – Englišova, three trips an hour at :00, :24 and :36 (back :09, :33, :57), as every 60 with three slots. On 20 Oct it ran with replacement buses via Partyzánská (Vrchní street closure to 23 Oct), so its trolleybuses are designed: MDPO trolleybuses not in service that afternoon. It leaves the wire on Vrchní street and at Kylešovice, škola, so they are trolleybuses with an auxiliary drive: 32 Tr with traction batteries, or a 26 Tr with a diesel generator."
+  },
+  "211": {
+   "core": [
+    "Opava, Praskova",
+    "Opava, Podvihov Na Nové"
+   ],
+   "sim": [
+    {
+     "name": "211",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Praskova",
+       "to": "Opava, Podvihov Na Nové",
+       "at": "auto"
+      },
+      {
+       "fr": "Opava, Podvihov Na Nové",
+       "to": "Opava, Praskova",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Praskova – Podvihov about hourly (Praskova :27, Podvihov :00); several afternoon trips are off the pattern."
+  },
+  "212": {
+   "core": [
+    "Opava, Divadlo",
+    "Opava, Milostovice",
+    "Opava, Vlaštovičky"
+   ],
+   "sim": [
+    {
+     "name": "212",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Divadlo",
+       "to": "Opava, Vlaštovičky",
+       "at": "auto",
+       "core_to": "Opava, Milostovice"
+      },
+      {
+       "fr": "Opava, Vlaštovičky",
+       "to": "Opava, Divadlo",
+       "at": "auto",
+       "knot": "Opava, Milostovice"
+      }
+     ]
+    }
+   ],
+   "note": "Divadlo – Milostovice – Vlaštovičky about every 40 at irregular minutes; trips that end at Milostovice count there (the bus passes Milostovice on the real times)."
+  },
+  "213": {
+   "core": [
+    "Opava, Kylešovice, SÚS",
+    "Opava, Divadlo",
+    "Opava, Vávrovice, Karlovec"
+   ],
+   "sim": [
+    {
+     "name": "213",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Kylešovice, SÚS",
+       "to": "Opava, Vávrovice, Karlovec",
+       "at": "auto"
+      },
+      {
+       "fr": "Opava, Vávrovice, Karlovec",
+       "to": "Opava, Kylešovice, SÚS",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Kylešovice, SÚS – Vávrovice, Karlovec every 30 (:26 / :56 at both ends)."
+  },
+  "215": {
+   "core": [
+    "Opava, Liliová",
+    "Opava, Kylešovice, škola",
+    "Opava, Globus"
+   ],
+   "sim": [
+    {
+     "name": "215",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Liliová",
+       "to": "Opava, Globus",
+       "at": "auto",
+       "core_to": "Opava, Kylešovice, škola"
+      },
+      {
+       "fr": "Opava, Globus",
+       "to": "Opava, Liliová",
+       "at": "auto",
+       "knot": "Opava, Kylešovice, škola"
+      }
+     ]
+    }
+   ],
+   "note": "Liliová – Kylešovice, škola – Globus about hourly at irregular minutes; trips that end at Kylešovice, škola count there."
+  },
+  "216": {
+   "core": [
+    "Opava, Dolní náměstí",
+    "Opava, Vávrovice, Držkovice"
+   ],
+   "sim": [
+    {
+     "name": "216",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Dolní náměstí",
+       "to": "Opava, Vávrovice, Držkovice",
+       "at": "auto",
+       "stops_via": [
+        "Opava, Vávrovice, OPAVIA"
+       ]
+      },
+      {
+       "fr": "Opava, Vávrovice, Držkovice",
+       "to": "Opava, Dolní náměstí",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Dolní náměstí – Vávrovice, Držkovice about every 35–40 at irregular minutes; modelled every 30, via Vávrovice, OPAVIA (as a third of the trips run)."
+  },
+  "217": {
+   "core": [
+    "Opava, Koupaliště",
+    "Opava, Divadlo",
+    "Slavkov"
+   ],
+   "sim": [
+    {
+     "name": "217",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Opava, Koupaliště",
+       "to": "Slavkov",
+       "at": [
+        4
+       ],
+       "stops_via": [
+        "Otice, Slavkovská"
+       ],
+       "rt": 20
+      },
+      {
+       "fr": "Slavkov",
+       "to": "Opava, Koupaliště",
+       "at": [
+        25
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Koupaliště – Slavkov hourly (:04 / :25) most of the day, routed once via Otice; the early-afternoon trips Divadlo – Slavkov (about every 32 min, 14:12–16:10) are off the pattern (owner check)."
+  },
+  "218": {
+   "core": [
+    "Opava, Koupaliště",
+    "Opava, Dolní náměstí",
+    "Chvalíkovice"
+   ],
+   "sim": [
+    {
+     "name": "218",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Koupaliště",
+       "to": "Chvalíkovice",
+       "at": "auto"
+      },
+      {
+       "fr": "Chvalíkovice",
+       "to": "Opava, Koupaliště",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Koupaliště – Chvalíkovice about hourly at irregular minutes (more often 14:00–16:30); the Koupaliště – Dolní náměstí short trips are on the trunk path."
+  },
+  "219": {
+   "core": [
+    "Opava, Malé Hoštice",
+    "Opava, Praskova",
+    "Otice, kaple"
+   ],
+   "sim": [
+    {
+     "name": "219",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Malé Hoštice",
+       "to": "Otice, kaple",
+       "at": "auto"
+      },
+      {
+       "fr": "Otice, kaple",
+       "to": "Opava, Malé Hoštice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Malé Hoštice – Otice every 30 (Malé Hoštice :16 / :46, Otice :12 / :42)."
+  },
+  "220": {
+   "core": [
+    "Opava, Praskova",
+    "Opava, Suché Lazce, Přerovec"
+   ],
+   "sim": [
+    {
+     "name": "220",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Praskova",
+       "to": "Opava, Suché Lazce, Přerovec",
+       "at": "auto"
+      },
+      {
+       "fr": "Opava, Suché Lazce, Přerovec",
+       "to": "Opava, Praskova",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Praskova – Suché Lazce, Přerovec about every 30 at uneven minutes (Praskova :15 / :45, Přerovec :18 / :48)."
+  },
+  "222": {
+   "core": [
+    "Raduň, škola",
+    "Opava, Podvihov Na Nové"
+   ],
+   "sim": [
+    {
+     "name": "222",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Raduň, škola",
+       "to": "Opava, Podvihov Na Nové",
+       "at": "auto"
+      },
+      {
+       "fr": "Opava, Podvihov Na Nové",
+       "to": "Raduň, škola",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Raduň – Podvihov: a few short trips (13:48 from Podvihov, 14:05 back), every 480. Raduň, Komárovská and Podvihov, Kom.Chal. have no other line."
+  },
+  "223": {
+   "core": [
+    "Opava, Praskova",
+    "Opava, Komárov, TEVA 2"
+   ],
+   "sim": [
+    {
+     "name": "223",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Opava, Praskova",
+       "to": "Opava, Komárov, TEVA 2",
+       "at": "auto"
+      },
+      {
+       "fr": "Opava, Komárov, TEVA 2",
+       "to": "Opava, Praskova",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Praskova – Komárov, TEVA 2: shift trips (14:13 from TEVA 2; 5:22 and 21:27 out), every 480. It also covers TEVA 2 for 214."
+  },
+  "232": {
+   "core": [
+    "Vítkov, autobusová stanice",
+    "Fulnek, železniční stanice",
+    "Odry, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "232",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Odry, autobusová stanice",
+       "to": "Vítkov, autobusová stanice",
+       "at": "auto",
+       "stops_via": [
+        "Odry, Hvězdová"
+       ]
+      },
+      {
+       "fr": "Vítkov, autobusová stanice",
+       "to": "Odry, autobusová stanice",
+       "at": "auto",
+       "core_to": "Fulnek, železniční stanice"
+      }
+     ]
+    }
+   ],
+   "note": "Odry – Fulnek – Vítkov: a few trips a day, every 480 on the afternoon ones (Odry 14:37 via Hvězdová and Fulnek; Vítkov 13:30 to Fulnek). Vlkovice and Hvězdová have no other line."
+  },
+  "233": {
+   "core": [
+    "Vítkov, autobusová stanice",
+    "Melč, střed"
+   ],
+   "sim": [
+    {
+     "name": "233",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Vítkov, autobusová stanice",
+       "to": "Melč, střed",
+       "at": "auto"
+      },
+      {
+       "fr": "Melč, střed",
+       "to": "Vítkov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Vítkov – Moravice – Melč every 1½ h (Vítkov 14:45, 16:15); the Melč end is set 15 min off its best fit for one bus."
+  },
+  "234": {
+   "core": [
+    "Vítkov, autobusová stanice",
+    "Březová, škola"
+   ],
+   "sim": [
+    {
+     "name": "234",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Vítkov, autobusová stanice",
+       "to": "Březová, Leskovec, škola",
+       "at": "auto",
+       "core_to": "Březová, škola"
+      },
+      {
+       "fr": "Březová, Leskovec, škola",
+       "to": "Vítkov, autobusová stanice",
+       "at": "auto",
+       "knot": "Březová, škola"
+      }
+     ]
+    }
+   ],
+   "note": "Vítkov – Jelenice – Březová with the Leskovec loop, every 3 h (Vítkov 14:45, Březová 15:49); timed so the bus passes Březová, škola on time. The diversion to 11 Dec (Březová, střed not served) runs."
+  },
+  "235": {
+   "core": [
+    "Vítkov, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "235",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Vítkov, autobusová stanice",
+       "to": "Vítkov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Vítkov – Klokočov loop about every 1½ h (13:05, 14:20, 16:55)."
+  },
+  "236": {
+   "core": [
+    "Vítkov, autobusová stanice",
+    "Budišov n.Bud., autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "236",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Vítkov, autobusová stanice",
+       "to": "Budišov n.Bud., autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Budišov n.Bud., autobusová stanice",
+       "to": "Vítkov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "236 Podlesí",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Budišov n.Bud., autobusová stanice",
+       "to": "Budišov n.Bud., Podlesí, točna",
+       "at": "auto"
+      },
+      {
+       "fr": "Budišov n.Bud., Podlesí, točna",
+       "to": "Budišov n.Bud., autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Vítkov – Budišov about every 40 at irregular minutes; the Podlesí trips are 236 Podlesí (Budišov 15:20, Podlesí 13:06), every 480. Podlesí has no other line."
+  },
+  "237": {
+   "core": [
+    "Budišov n.Bud., autobusová stanice",
+    "Budišov n.Bud., St.Oldřůvky, točna",
+    "Dvorce, náměstí"
+   ],
+   "sim": [
+    {
+     "name": "237",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Budišov n.Bud., autobusová stanice",
+       "to": "Budišov n.Bud., St.Oldřůvky, točna",
+       "at": "auto"
+      },
+      {
+       "fr": "Budišov n.Bud., St.Oldřůvky, točna",
+       "to": "Budišov n.Bud., autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "237 Dvorce",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Budišov n.Bud., autobusová stanice",
+       "to": "Dvorce, náměstí",
+       "at": "auto"
+      },
+      {
+       "fr": "Dvorce, náměstí",
+       "to": "Budišov n.Bud., autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Budišov – Staré Oldřůvky every 2 h and Budišov – Dvorce every 3 h (237 Dvorce), local school-time trips. Guntramovice has no other line."
+  },
+  "238": {
+   "core": [
+    "Vítkov, autobusová stanice",
+    "Odry, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "238",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Vítkov, autobusová stanice",
+       "to": "Odry, autobusová stanice",
+       "at": "auto",
+       "stops_via": [
+        "Odry, Loučky, škola"
+       ]
+      },
+      {
+       "fr": "Odry, autobusová stanice",
+       "to": "Vítkov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Vítkov – Jakubčovice – Odry about hourly at irregular minutes, routed via Klokočůvek and Loučky, škola (as some trips run)."
+  },
+  "678": {
+   "core": [
+    "Ostrava, Svinov, nádraží",
+    "Fulnek, náměstí",
+    "Vítkov, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "678",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Ostrava, Svinov, nádraží",
+       "to": "Vítkov, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Vítkov, autobusová stanice",
+       "to": "Ostrava, Svinov, nádraží",
+       "at": "auto",
+       "stops_via": [
+        "Bravantice, Lidl"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Ostrava, Svinov – Bílovec – Fulnek – Vítkov every 2 h (Svinov 16:55 / 18:55, Vítkov 14:45), back via Bravantice, Lidl."
+  },
+  "240": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Hradec n.Moravicí, železniční stanice",
+    "Melč, střed",
+    "Vítkov, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "240",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Vítkov, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Vítkov, autobusová stanice",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Hradec – Melč – Vítkov about hourly (Opava :06, Vítkov :40); the Melč short trips are off the pattern."
+  },
+  "241": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Melč, střed",
+    "Vítkov, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "241",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Vítkov, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Vítkov, autobusová stanice",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto",
+       "stops_via": [
+        "Vítkov, Zálužné"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "241 Lipina",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Štáblovice, Lipina, střed",
+       "at": [
+        "14:28"
+       ]
+      },
+      {
+       "fr": "Štáblovice, Lipina, střed",
+       "to": "Opava, Bílovecká TQM",
+       "at": [
+        "15:01"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Štáblovice – Melč – Vítkov every 1½ h, back via Vítkov, Zálužné (as some trips run); the Štáblovice, Lipina trips are 241 Lipina (14:28 / 15:01), every 480. Regular route via Psychiatrická léčebna (owner check)."
+  },
+  "242": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Vítkov, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "242",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Vítkov, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Vítkov, autobusová stanice",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Hradec – Březová – Vítkov hourly (Opava :40, Vítkov :15). The diversion to 11 Dec (Březová, střed not served) runs."
+  },
+  "243": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Budišov n.Bud., autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "243",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Budišov n.Bud., autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Budišov n.Bud., autobusová stanice",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Melč – Kružberk – Budišov: a few trips a day, every 480 (Opava 16:37, Budišov 12:10). Mokřinky and Jánské Koupele have no other line."
+  },
+  "245": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Hradec n.Moravicí, Benkovice, střed"
+   ],
+   "sim": [
+    {
+     "name": "245",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Hradec n.Moravicí, Benkovice, střed",
+       "at": "auto"
+      },
+      {
+       "fr": "Hradec n.Moravicí, Benkovice, střed",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "245 zámek",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Hradec n.Moravicí, Benkovice, střed",
+       "to": "Hradec n.Moravicí, zámek",
+       "at": [
+        "13:15"
+       ]
+      },
+      {
+       "fr": "Hradec n.Moravicí, zámek",
+       "to": "Hradec n.Moravicí, Benkovice, střed",
+       "at": [
+        "13:52"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Hradec – Benkovice every 3 h (Opava 15:23, Benkovice 15:55); the local Benkovice – zámek trips are 245 zámek (13:15 / 13:52), every 480."
+  },
+  "244": {
+   "core": [
+    "Hradec n.Moravicí, škola",
+    "Opava, Východní nádraží"
+   ],
+   "sim": [
+    {
+     "name": "244",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Hradec n.Moravicí, škola",
+       "to": "Opava, Východní nádraží",
+       "at": [
+        "14:20"
+       ]
+      },
+      {
+       "fr": "Opava, Východní nádraží",
+       "to": "Hradec n.Moravicí, škola",
+       "untimed": true
+      }
+     ]
+    }
+   ],
+   "note": "Hradec n.Moravicí, škola – Opava: one afternoon trip (14:20), every 480, back empty. Branka u Opavy, škola has no other line."
+  },
+  "246": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Dolní Životice, hor.konec",
+    "Jakartovice, Hoř.Kunčice, točna"
+   ],
+   "sim": [
+    {
+     "name": "246",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Jakartovice, Hoř.Kunčice, točna",
+       "at": "auto",
+       "core_to": "Dolní Životice, hor.konec"
+      },
+      {
+       "fr": "Jakartovice, Hoř.Kunčice, točna",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto",
+       "knot": "Dolní Životice, hor.konec"
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Slavkov – Dolní Životice – Litultovice – Jakartovice, Hořejší Kunčice hourly in the early afternoon (Opava :18), timed so trips that end at Dolní Životice count there."
+  },
+  "247": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Moravice, střed"
+   ],
+   "sim": [
+    {
+     "name": "247",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Moravice, střed",
+       "at": [
+        "15:00"
+       ]
+      },
+      {
+       "fr": "Moravice, střed",
+       "to": "Opava, Bílovecká TQM",
+       "at": [
+        "17:00"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Stěbořice – Litultovice – Moravice: a few trips a day, every 480 on the afternoon pair (Opava 15:00, Moravice 17:00). Jezdkovice, restaurace has no other line."
+  },
+  "248": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Svobodné Heřmanice, rozcestí"
+   ],
+   "sim": [
+    {
+     "name": "248",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Svobodné Heřmanice, rozcestí",
+       "at": [
+        53
+       ]
+      },
+      {
+       "fr": "Svobodné Heřmanice, rozcestí",
+       "to": "Opava, Bílovecká TQM",
+       "at": [
+        45
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Stěbořice – Hlavnice – Svobodné Heřmanice hourly (Opava :53, Heřmanice :45)."
+  },
+  "249": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Velké Heraltice, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "249",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Velké Heraltice, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Velké Heraltice, autobusová stanice",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "249 Tábor",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Velké Heraltice, škola",
+       "to": "Velké Heraltice, Tábor, střed",
+       "at": [
+        "13:28"
+       ]
+      },
+      {
+       "fr": "Velké Heraltice, Tábor, střed",
+       "to": "Velké Heraltice, škola",
+       "at": [
+        "13:35"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Jaktař – Velké Heraltice every 2 h; the Velké Heraltice škola – Tábor shuttle is 249 Tábor (13:28 / 13:35), every 480."
+  },
+  "250": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Brumovice, Úblo, točna",
+    "Krnov, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "250",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Brumovice, Úblo, točna",
+       "at": "auto"
+      },
+      {
+       "fr": "Brumovice, Úblo, točna",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "250 Krnov",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Krnov, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "250 Holasovice",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Holasovice, mateřská škola",
+       "at": [
+        "14:53"
+       ]
+      },
+      {
+       "fr": "Holasovice, mateřská škola",
+       "to": "Opava, Bílovecká TQM",
+       "at": [
+        "15:38"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Holasovice – Brumovice, Úblo and Opava – Krnov, each every 480 on their afternoon trips (Úblo 15:40 / 16:27; Krnov 16:32 / 18:25); 250 Holasovice (14:53 / 15:38) serves Holasovice, mateřská škola and Štemplovec, Charita."
+  },
+  "251": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Chlebičov, točna"
+   ],
+   "sim": [
+    {
+     "name": "251",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Chlebičov, točna",
+       "at": "auto"
+      },
+      {
+       "fr": "Chlebičov, točna",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Velké Hoštice – Chlebičov hourly (Opava :35, Chlebičov :05)."
+  },
+  "252": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Kravaře, Nádražní",
+    "Kobeřice, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "252",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Kobeřice, autobusová stanice",
+       "at": "auto",
+       "stops_via": [
+        "Štěpánkovice, Albertovec"
+       ]
+      },
+      {
+       "fr": "Kobeřice, autobusová stanice",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Kravaře – Štěpánkovice – Kobeřice hourly (Opava :25, Kobeřice :45), out via Štěpánkovice, Albertovec (as one trip runs)."
+  },
+  "253": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Služovice, škola",
+    "Kobeřice, autobusová stanice",
+    "Služovice, Vrbka, točna"
+   ],
+   "sim": [
+    {
+     "name": "253",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Kobeřice, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Kobeřice, autobusová stanice",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "253 Vrbka",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Služovice, Vrbka, točna",
+       "at": "auto"
+      },
+      {
+       "fr": "Služovice, Vrbka, točna",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Oldřišov – Hněvošice – Kobeřice hourly (Opava :30, Kobeřice :20); the Služovice, Vrbka trips every 2 h are 253 Vrbka. Regular route via Služovice, obecní úřad (the diversion ends 31 Oct)."
+  },
+  "254": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Kravaře, Nádražní",
+    "Chuchelná, rehabilitační ústav"
+   ],
+   "sim": [
+    {
+     "name": "254",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Chuchelná, rehabilitační ústav",
+       "at": "auto"
+      },
+      {
+       "fr": "Chuchelná, rehabilitační ústav",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Kravaře – Bolatice – Chuchelná every 1½ h (Opava 14:58, Chuchelná 14:30 …)."
+  },
+  "255": {
+   "core": [
+    "Kobeřice, autobusová stanice",
+    "Chuchelná, rehabilitační ústav"
+   ],
+   "sim": [
+    {
+     "name": "255",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Kobeřice, autobusová stanice",
+       "to": "Chuchelná, rehabilitační ústav",
+       "at": "auto"
+      },
+      {
+       "fr": "Chuchelná, rehabilitační ústav",
+       "to": "Kobeřice, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Kobeřice – Třebom – Chuchelná every 2 h (Kobeřice 15:09, Chuchelná 14:18)."
+  },
+  "257": {
+   "core": [
+    "Opava, Suché Lazce, střed",
+    "Kravaře, Kouty, Olšinky"
+   ],
+   "sim": [
+    {
+     "name": "257",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Opava, Suché Lazce, střed",
+       "to": "Kravaře, Kouty, Olšinky",
+       "at": "auto"
+      },
+      {
+       "fr": "Kravaře, Kouty, Olšinky",
+       "to": "Opava, Suché Lazce, střed",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Suché Lazce – Nové Sedlice – Štítina – Kravaře: a few trips, every 480 on the afternoon pair (15:30 / 15:00). Nové Sedlice and Kravaře, Dvořisko have no other line."
+  },
+  "259": {
+   "core": [
+    "Litultovice, kostel",
+    "Jakartovice, Hoř.Kunčice, točna"
+   ],
+   "sim": [
+    {
+     "name": "259",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Jakartovice, Hoř.Kunčice, točna",
+       "to": "Litultovice, kostel",
+       "at": "auto"
+      },
+      {
+       "fr": "Litultovice, kostel",
+       "to": "Jakartovice, Hoř.Kunčice, točna",
+       "untimed": true
+      }
+     ]
+    }
+   ],
+   "note": "Jakartovice, Hořejší Kunčice – Litultovice: local school trips, every 480 on 14:42, back empty. Litultovice, kostel and Mladecko, škola have no other line."
+  },
+  "260": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Velké Heraltice, autobusová stanice",
+    "Horní Benešov, autobusová stanice",
+    "Bruntál, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "260",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Bruntál, autobusová stanice",
+       "at": "auto",
+       "core_to": "Horní Benešov, autobusová stanice"
+      },
+      {
+       "fr": "Bruntál, autobusová stanice",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto",
+       "knot": "Horní Benešov, autobusová stanice"
+      }
+     ]
+    },
+    {
+     "name": "260 Heřmanice",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Velké Heraltice, autobusová stanice",
+       "to": "Svobodné Heřmanice, rozcestí",
+       "at": "auto",
+       "stops_via": [
+        "Velké Heraltice, Košetice, náves"
+       ]
+      },
+      {
+       "fr": "Svobodné Heřmanice, rozcestí",
+       "to": "Velké Heraltice, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Velké Heraltice – Horní Benešov – Bruntál every 4 h, timed so the bus passes Horní Benešov on time; the Velké Heraltice – Svobodné Heřmanice trips via Košetice, náves are 260 Heřmanice (14:32 / 14:48), every 480. The Horní Benešov – Velké Heraltice short trips are off the pattern."
+  },
+  "261": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Fulnek, železniční stanice",
+    "Nový Jičín, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "261",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Nový Jičín, autobusové nádraží",
+       "at": [
+        "14:22"
+       ],
+       "stops_via": [
+        "Hladké Životice, železniční stanice"
+       ]
+      },
+      {
+       "fr": "Nový Jičín, autobusové nádraží",
+       "to": "Opava, Bílovecká TQM",
+       "at": [
+        "14:35"
+       ],
+       "stops_via": [
+        "Březová, Gručovice, střed"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Hradec – Březová – Fulnek – Nový Jičín every 2 h (Opava 14:22, Nový Jičín 14:35), out via Hladké Životice and back via Březová, Gručovice (as some trips run)."
+  },
+  "262": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Hradec n.Moravicí, železniční stanice",
+    "Bílovec, železniční stanice"
+   ],
+   "sim": [
+    {
+     "name": "262",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Bílovec, železniční stanice",
+       "at": "auto",
+       "stops_via": [
+        "Slatina"
+       ]
+      },
+      {
+       "fr": "Bílovec, železniční stanice",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "262 Skřipov",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Skřipov, Hrabství, točna",
+       "at": "auto",
+       "stops_via": [
+        "Otice, Rybníčky"
+       ],
+       "notvia": [
+        "Bílovec, železniční stanice"
+       ]
+      },
+      {
+       "fr": "Skřipov, Hrabství, točna",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto",
+       "notvia": [
+        "Bílovec, železniční stanice"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Hradec – Skřipov – Bílovec every 1½ h, out via Slatina; the Skřipov, Hrabství trips are 262 Skřipov (15:42 via Otice, Rybníčky), every 480. Regular route via Psychiatrická léčebna (owner check)."
+  },
+  "263": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Pustá Polom, autobusová stanice",
+    "Těškovice, střed"
+   ],
+   "sim": [
+    {
+     "name": "263",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Těškovice, střed",
+       "at": "auto",
+       "core_to": "Pustá Polom, autobusová stanice"
+      },
+      {
+       "fr": "Těškovice, střed",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto",
+       "knot": "Pustá Polom, autobusová stanice"
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Hrabyně – Pustá Polom – Těškovice every 2 h, timed so trips that end at Pustá Polom count there."
+  },
+  "264": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Těškovice, střed"
+   ],
+   "sim": [
+    {
+     "name": "264",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Těškovice, střed",
+       "at": "auto"
+      },
+      {
+       "fr": "Těškovice, střed",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Hlubočec – Pustá Polom – Těškovice every 2 h (Opava 14:21 / 16:21)."
+  },
+  "267": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Nové Lublice, střed"
+   ],
+   "sim": [
+    {
+     "name": "267",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Nové Lublice, střed",
+       "at": "auto"
+      },
+      {
+       "fr": "Nové Lublice, střed",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto",
+       "stops_via": [
+        "Jezdkovice, rozcestí"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Litultovice – Moravice – Nové Lublice: two trips a day each way, every 480 (back 18:02 via Jezdkovice, rozcestí, which has no other line)."
+  },
+  "270": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Ostrava, Svinov, nádraží"
+   ],
+   "sim": [
+    {
+     "name": "270",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Ostrava, Svinov, nádraží",
+       "at": "auto"
+      },
+      {
+       "fr": "Ostrava, Svinov, nádraží",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Mokré Lazce – Hrabyně – Ostrava, Svinov every 1½ h (Opava 15:19, Svinov 14:08 …)."
+  },
+  "920": {
+   "core": [
+    "Ostrava, Svinov, nádraží",
+    "Opava, Bílovecká TQM",
+    "Bruntál, autobusová stanice",
+    "Rýmařov, autobusová stanice",
+    "Šumperk, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "920",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Ostrava, Svinov, nádraží",
+       "to": "Šumperk, autobusová stanice",
+       "at": [
+        "14:17"
+       ]
+      },
+      {
+       "fr": "Šumperk, autobusová stanice",
+       "to": "Ostrava, Svinov, nádraží",
+       "at": [
+        "14:35"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "920 Rýmařov",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Ostrava, Svinov, nádraží",
+       "to": "Rýmařov, autobusová stanice",
+       "at": [
+        "13:17"
+       ],
+       "notvia": [
+        "Šumperk, autobusová stanice"
+       ]
+      },
+      {
+       "fr": "Rýmařov, autobusová stanice",
+       "to": "Ostrava, Svinov, nádraží",
+       "at": [
+        "17:32"
+       ],
+       "notvia": [
+        "Šumperk, autobusová stanice"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "920 Opava",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Rýmařov, autobusová stanice",
+       "at": [
+        "13:24"
+       ],
+       "stops_via": [
+        "Rýmařov, Jamartice, hřbitov"
+       ]
+      },
+      {
+       "fr": "Rýmařov, autobusová stanice",
+       "to": "Opava, Bílovecká TQM",
+       "at": [
+        "15:02"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Ostrava, Svinov – Opava – Bruntál – Rýmařov – Šumperk: hourly at :17 from Svinov, alternately to Šumperk (920, even hours) and Rýmařov (920 Rýmařov, odd hours), each every 120. 920 Opava (Opava 13:24 → Rýmařov via Jamartice, 15:02 back) serves Holasovice, Kamenec, rozcestí and Bruntál, nemocnice."
+  },
+  "923": {
+   "core": [
+    "Opava, Bílovecká TQM",
+    "Olomouc, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "923",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Opava, Bílovecká TQM",
+       "to": "Olomouc, autobusové nádraží",
+       "at": "auto"
+      },
+      {
+       "fr": "Olomouc, autobusové nádraží",
+       "to": "Opava, Bílovecká TQM",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Opava – Dvorce – Šternberk – Olomouc: two trips each way a day, every 480 (Opava 14:23, Olomouc 18:00)."
+  },
+  "075": {
+   "core": [
+    "Hlučín, sídliště OKD",
+    "Ostrava, Poruba, Studentská"
+   ],
+   "sim": [
+    {
+     "name": "075",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Hlučín, sídliště OKD",
+       "to": "Ostrava, Poruba, Studentská",
+       "at": "auto"
+      },
+      {
+       "fr": "Ostrava, Poruba, Studentská",
+       "to": "Hlučín, sídliště OKD",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Hlučín, sídliště OKD – Ostrava, Poruba, Studentská every 20 (Hlučín :12 / :32 / :52, Poruba :19 / :39 / :59); extra trips at :02 / :22 before 14:00 are off the pattern."
+  },
+  "281": {
+   "core": [
+    "Třebom, náměstí",
+    "Kobeřice, autobusová stanice",
+    "Hlučín, autobusové nádraží",
+    "Ostrava, Přívoz, sad B.Němcové"
+   ],
+   "sim": [
+    {
+     "name": "281",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třebom, náměstí",
+       "to": "Ostrava, Přívoz, sad B.Němcové",
+       "at": "auto"
+      },
+      {
+       "fr": "Ostrava, Přívoz, sad B.Němcové",
+       "to": "Třebom, náměstí",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Třebom – Kobeřice – Hlučín – Ostrava, Přívoz hourly at irregular minutes; the Hlučín – Bolatice and Strahovice short trips are off the pattern."
+  },
+  "282": {
+   "core": [
+    "Píšť, kostel",
+    "Hlučín, autobusové nádraží",
+    "Ostrava, Přívoz, sad B.Němcové"
+   ],
+   "sim": [
+    {
+     "name": "282",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Píšť, kostel",
+       "to": "Ostrava, Přívoz, sad B.Němcové",
+       "at": "auto"
+      },
+      {
+       "fr": "Ostrava, Přívoz, sad B.Němcové",
+       "to": "Píšť, kostel",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Píšť – Bohuslavice – Hlučín – Ostrava every 3 h (Píšť 15:55, Ostrava 16:54). Bohuslavice has no other line."
+  },
+  "284": {
+   "core": [
+    "Hlučín, autobusové nádraží",
+    "Štěpánkovice, Svoboda"
+   ],
+   "sim": [
+    {
+     "name": "284",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Hlučín, autobusové nádraží",
+       "to": "Štěpánkovice, Svoboda",
+       "at": "auto"
+      },
+      {
+       "fr": "Štěpánkovice, Svoboda",
+       "to": "Hlučín, autobusové nádraží",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Hlučín – Kravaře – Štěpánkovice every 2 h (the Hlučín end set 23 min off for one bus). Regular route via Dolní Benešov, Zábřeh, Mexiko (diversion 16–21 Oct)."
+  },
+  "285": {
+   "core": [
+    "Ostrava, Poruba, Dílny DP Ostrava",
+    "Štítina, škola",
+    "Dobroslavice"
+   ],
+   "sim": [
+    {
+     "name": "285",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Ostrava, Poruba, Dílny DP Ostrava",
+       "to": "Štítina, škola",
+       "at": "auto"
+      },
+      {
+       "fr": "Štítina, škola",
+       "to": "Ostrava, Poruba, Dílny DP Ostrava",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "285 Dobroslavice",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Ostrava, Poruba, Dílny DP Ostrava",
+       "to": "Dobroslavice",
+       "at": "auto"
+      },
+      {
+       "fr": "Dobroslavice",
+       "to": "Ostrava, Poruba, Dílny DP Ostrava",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Ostrava, Poruba – Děhylov – Štítina every 1½ h, and the Dobroslavice short line hourly (285 Dobroslavice, :08 / :21)."
+  },
+  "290": {
+   "core": [
+    "Hať, točna",
+    "Hlučín, autobusové nádraží",
+    "Ostrava, Přívoz, sad B.Němcové"
+   ],
+   "sim": [
+    {
+     "name": "290",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Hať, točna",
+       "to": "Ostrava, Přívoz, sad B.Němcové",
+       "at": "auto"
+      },
+      {
+       "fr": "Ostrava, Přívoz, sad B.Němcové",
+       "to": "Hať, točna",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Hať – Hlučín – Ostrava, Přívoz every 20–40; modelled every 40 (Hať :07 / :47 / :27)."
+  },
+  "292": {
+   "core": [
+    "Ostrava, Přívoz, sad B.Němcové",
+    "Hlučín, autobusové nádraží",
+    "Strahovice, kaple",
+    "Chuchelná, železniční stanice"
+   ],
+   "sim": [
+    {
+     "name": "292",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Ostrava, Přívoz, sad B.Němcové",
+       "to": "Chuchelná, železniční stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Chuchelná, železniční stanice",
+       "to": "Ostrava, Přívoz, sad B.Němcové",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Ostrava, Přívoz – Hlučín – Chuchelná every 1½ h; the Strahovice and Píšť trips are off the pattern (their stops are on 281, 254 and 282)."
+  },
+  "293": {
+   "core": [
+    "Hlučín, autobusové nádraží",
+    "Bohumín, Nový Bohumín, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "293",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Hlučín, autobusové nádraží",
+       "to": "Bohumín, Nový Bohumín, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Bohumín, Nový Bohumín, autobusová stanice",
+       "to": "Hlučín, autobusové nádraží",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "293 ŽD",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Hlučín, autobusové nádraží",
+       "to": "Bohumín, Nový Bohumín, ŽD vrát.III",
+       "at": [
+        "13:05"
+       ]
+      },
+      {
+       "fr": "Bohumín, Nový Bohumín, ŽD vrát.III",
+       "to": "Hlučín, autobusové nádraží",
+       "at": [
+        "14:13"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Hlučín – Šilheřovice – Bohumín every 1½ h; the shift trips to Bohumín ŽD gate III are 293 ŽD (13:05 / 14:13), every 480."
+  },
+  "555": {
+   "core": [
+    "Bohumín, Starý Bohumín, náměstíSvobody",
+    "Ostrava, Mor.Ostrava, Náměstí Republiky"
+   ],
+   "sim": [
+    {
+     "name": "555",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Bohumín, Starý Bohumín, náměstíSvobody",
+       "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "at": "auto"
+      },
+      {
+       "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "to": "Bohumín, Starý Bohumín, náměstíSvobody",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bohumín, Starý Bohumín – Ostrava, Náměstí Republiky every 30 (Bohumín :28 / :58, Ostrava :20 / :50)."
+  }
+ },
+ "unmodelled": {
+  "214": "Shift trips Dobrovského → Komárov, TEVA 2 (5:03, 5:30, 6:30, 13:03; one back at 6:15). Its stops are on other town lines (211, 220, 203, 213); TEVA 2 is on 223.",
+  "228": "Night line (Divadlo – Kylešovice, 23:20 – 0:57); no afternoon trips.",
+  "229": "Night line (23:33 – 3:15); no afternoon trips.",
+  "256": "Opava – Dolní Benešov – Píšť / Kravaře, Kouty: 10 trips a day, in the afternoon 14:02 and 14:11 out, 14:30 and 15:10 back. Its stops are on 282, 254, 252, 253 and 257.",
+  "275": "Opava – Dolní Benešov – Hlučín: 13 trips, mostly before 8:00; in the afternoon 14:33 and 15:21 out, 14:47 back. Its stops are on 254, 252, 253, 284 and 281.",
+  "283": "Two trips a day (Kobeřice 18:48 → Ostrava, Ostrava 21:05 → Kobeřice). Its stops are on 252, 284 and 281."
+ },
+ "network_state": [
+  [
+   "in",
+   "Three regional contract areas and the Opava town network",
+   "Opavsko (licences 902xxx) and Vítkovsko (903xxx) of Z-Group bus, Hlučínsko (904xxx) of Transdev Slezsko, and the town lines of Opava (905xxx) of Městský dopravní podnik Opava. Each has its own section below; the trolleybuses are a section of their own."
+  ],
+  [
+   "in",
+   "Opava trolleybuses 201–204",
+   "Their timetables are in CIS JŘ's city-transport JDF (traction T), not in the bus export; they are read the same way and modelled as trolleybus lines (the owner asked for them)."
+  ],
+  [
+   "in",
+   "Overhead wire",
+   "Each trolleybus route (OpenStreetMap route relations) was checked against the wire mapped in OpenStreetMap, every 10 m, 25 m tolerance. 201, 202 and 203 are under the wire all the way. 204 has two unwired stretches: Ratibořská – Vrchní – U Cukrovaru – Pekařská – Divadlo (about 2.0 km without wire) and Kylešovice, Bílovecká – Hlavní – škola (0.6 km in a straight line between the stops, about 1 km by the timetable; the OSM relation stops at Bílovecká, so this end was added from the timetable's stops, which have no wire within 100 m). Wikipedia marks the same stops as partial-trolleybus stops. 202's single daily trip to Malé Hoštice also leaves the wire; it is not modelled."
+  ],
+  [
+   "out",
+   "Trolleybus 204: Vrchní street closure (12–23 Oct)",
+   "Road repairs on Vrchní street in Kateřinky: one-way 12–20 Oct, full closure 21–23 Oct. On the vehicle day 204 ran with replacement buses via Partyzánská (trips 40xx on the live map, MDPO Citelis 150–157). The closure ends this week, so 204 is modelled as the regular trolleybus line with designed trolleybuses (owner check)."
+  ],
+  [
+   "out",
+   "Short diversions: the regular routes are modelled",
+   "241 and 243 (Opava, Psychiatrická léčebna not served, 28 Sep – 23 Nov), 262 (the same stop, 5 Oct – 23 Nov), 253 (Služovice, obecní úřad, 7 Sep – 31 Oct) and 284 (Dolní Benešov, Zábřeh, Mexiko, 16–21 Oct; also 256 and 275, which are listed). Short works are modelled as the regular state."
+  ],
+  [
+   "in",
+   "Diversions to the end of the timetable year",
+   "234, 242 and 261 skip Březová, střed until 11 Dec; 263 and 264 run diversion versions with the same stops until 12 Dec. They are modelled as they run."
+  ],
+  [
+   "out",
+   "Lines shared with other sheets",
+   "615, 620, 691, 692 and 693 (minor Vítkovsko/Opavsko licences) are on the Novojičínsko/Bílovecko sheet. This sheet models 260 and 920 (also Bruntálsko/Rýmařovsko licences), 261, 263, 270, 285 and 678 (also Novojičínsko/Bílovecko licences) and 555 (the Havířovsko/Karvinsko/Orlovsko sheet lists it as Hlučínsko's)."
+  ]
+ ],
+ "owner_checks": [
+  [
+   "204",
+   "modelled as the regular trolleybus line (Kylešovice, škola – Englišova, every 60 with three slots :00 / :24 / :36), with designed MDPO trolleybuses that have an auxiliary drive, battery or diesel generator (about 2.6 km of the 10 km route has no wire); on the vehicle day it ran with replacement buses during the Vrchní street closure (to 23 Oct).",
+   "model it as it ran: buses via Partyzánská (Citelis 150–157 were seen), skipping U Cukrovaru, Vrchní and Ratibořská."
+  ],
+  [
+   "217",
+   "the hourly Koupaliště – Slavkov pattern (:04 / :25) is the line; the early-afternoon trips Divadlo – Slavkov (about every 32 min, 14:12–16:10) are off the pattern.",
+   "add 217 Divadlo every 480 with four slots (Divadlo 14:35, 15:07, 15:40, 16:10; Slavkov 14:12, 14:50, 15:22, 15:55), one more bus."
+  ],
+  [
+   "241",
+   "the regular routes of 241, 243 and 262, via Opava, Psychiatrická léčebna, not their diversions to 23 Nov.",
+   "model the diversions as they run until 23 Nov (the stop not served)."
+  ],
+  [
+   "920",
+   "three Simutrans lines: Svinov – Šumperk and Svinov – Rýmařov every 120 each (together hourly at :17 from Svinov) and Opava – Rýmařov every 480 (13:24 / 15:02); the Bruntál short trips (11:17, 12:17; back 13:03, 14:43) are off the pattern.",
+   "one Svinov – Bruntál trunk every 60 with the Rýmařov and Šumperk ends as variants."
+  ]
+ ],
+ "texts": {
+  "eyebrow": "ODIS regional buses and Opava town buses and trolleybuses · Opavsko · Vítkovsko · Hlučínsko · MHD Opava · vypravenost",
+  "lede_who": "The ODIS bus lines of three regional contract areas (Opavsko and Vítkovsko of Z-Group bus, Hlučínsko of Transdev Slezsko) and the Opava town network of Městský dopravní podnik Opava, buses and trolleybuses",
+  "swap_places": "Opava, Vítkov and Hlučín",
+  "scope": "Licences with the area prefixes 902 (Opavsko) and 903 (Vítkovsko) of Z-Group bus, 904 (Hlučínsko) of Transdev Slezsko and 905 (MHD Opava) of Městský dopravní podnik Opava; the trolleybus lines 201–204 (905201–905204) from CIS JŘ's city-transport JDF (draha/mestske, downloaded 21 Oct 2026), the rest",
+  "scope_check": "The prefixes match the live map (Z-Group, pr. Opava; Transdev Slezsko pr. Ostrava; MDPO) and the fleet numbers (22-, 23-, 24-). A line holding a second licence on the Bruntálsko or Novojičínsko sheet is modelled on the sheet with most of its trips.",
+  "buses_extra": " MDPO's vehicles appear on the live map as MDPO<fleet number> and are joined to the MDPO register by number. Trolleybus 204 ran with replacement buses on the day (Vrchní street closure, 12–23 Oct); it is modelled as the regular trolleybus line, and its trolleybuses are designed: MDPO trolleybuses not in service that afternoon, with an auxiliary drive for its unwired sections. A trolleybus with an auxiliary drive shows it after its type (+ battery, + diesel generator), from its register page.",
+  "search_example": "22-1016",
+  "depots": "Z-Group bus's Opava branch (22- Opavsko, 23- Vítkov), Transdev Slezsko pr. Ostrava (Hlučínsko's 24- buses) and MDPO's Opava depot (buses and trolleybuses). A seen bus counts at the branch the live map reports for it; a designed one at its home branch.",
+  "sources_extra": ", <a href=\"https://portal.cisjr.cz/pub/draha/mestske/JDF.zip\">CIS JŘ city-transport JDF</a> (Opava trolleybuses), <a href=\"https://seznam-autobusu.cz/seznam?prov=1&amp;trakce=autobus&amp;iddopravce=240\">Z-Group bus</a>, <a href=\"https://seznam-autobusu.cz/seznam?prov=1&amp;trakce=autobus&amp;iddopravce=338\">MDPO</a> and <a href=\"https://seznam-autobusu.cz/seznam?prov=1&amp;trakce=autobus&amp;iddopravce=7546\">Transdev Morava</a> registers, <a href=\"https://www.mdpo.cz/pro-cestujici/aktuality-doprava/omezeni-provozu-mhd-na-ul-vrchni-v-opave\">MDPO notice on the Vrchní closure</a>, overhead wire and trolleybus routes from <a href=\"https://www.openstreetmap.org/relation/1295057\">OpenStreetMap</a> (Overpass, 22 Oct 2026), checked against <a href=\"https://cs.wikipedia.org/wiki/Trolejbusov%C3%A1_doprava_v_Opav%C4%9B\">Wikipedia</a>’s partial-trolleybus stops; battery and diesel-generator trolleybuses from their <a href=\"https://seznam-autobusu.cz/vuz/78818\">register pages</a> (“alternativní pohon”)"
+ },
+ "pak": {
+  "repo": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
+  "package": "VZ-ODIS-bus",
+  "packages": [
+   "VZ-ODIS-bus",
+   "VZ-DPOpava-bus",
+   "VZ-DPOpava-trolleybus",
+   "VZ-MHDHavirov-bus"
+  ],
+  "why": "Fleet desk (pak session simutrans-custom-czech-pak128-35), 21 Oct 2026: regional buses take VZ-ODIS-bus; Z-Group's white with the kraj logo is bila, Transdev Slezsko's Hlučínsko scheme is the red ring (bilacervenykruh) or the red Transdev logo (transdev); MDPO's buses take VZ-DPOpava-bus and its trolleybuses VZ-DPOpava-trolleybus (advertising wraps run in the plain livery, final). 22 Oct: the battery 32 Tr (314–323) take 32Tr_battery and the diesel-generator 26 Tr (305–306) 26TrDG, which can leave the wire (204's Vrchní street and Kylešovice škola).",
+  "types": {},
+  "paints": [],
+  "special": {},
+  "rules": [
+   [
+    "*",
+    "32 Tr battery",
+    "",
+    "VZ-DPOpava-32Tr-mdpobilocervena-32Tr_battery"
+   ],
+   [
+    "*",
+    "26 Tr diesel generator",
+    "",
+    "VZ-DPOpava-26Tr-mdpobilocervena-26TrDG"
+   ],
+   [
+    "*",
+    "26 Tr",
+    "",
+    "VZ-DPOpava-26Tr-mdpobilocervena-26Tr"
+   ],
+   [
+    "*",
+    "32 Tr",
+    "",
+    "VZ-DPOpava-32Tr-mdpobilocervena-32Tr"
+   ],
+   [
+    "*",
+    "36 Tr",
+    "",
+    "VZ-DPOpava-36Tr-mdpobilocervena-36Tr"
+   ],
+   [
+    "*",
+    "Citelis 12M",
+    "",
+    "VZ-DPOpava-Citelis_12M-mdpobilocervena-Citelis_12M"
+   ],
+   [
+    "*",
+    "Urbanway 10,5M",
+    "městské",
+    "VZ-DPOpava-Urbanway_10_5M-mdpobilocervena-Urbanway_10_5M"
+   ],
+   [
+    "*",
+    "Urbanway 12M",
+    "městské",
+    "VZ-DPOpava-Urbanway_12M-mdpobilocervena-Urbanway_12M"
+   ],
+   [
+    "*",
+    "SOR NSG 12",
+    "MDPO",
+    "VZ-DPOpava-SOR_NSG_12-mdpobilocervena-SOR_NSG_12"
+   ],
+   [
+    "*",
+    "SOR NS 12 electric",
+    "elektrobus",
+    "VZ-DPOpava-SOR_NS_12_electric-mdpobilagrafika-SOR_NS_12_electric"
+   ],
+   [
+    "*",
+    "SOR CNG 12",
+    "Transdev",
+    "VZ-ODIS-SOR_CNG_12-transdev-SOR_CNG_12"
+   ],
+   [
+    "*",
+    "SOR CNG 12",
+    "3ČSAD",
+    "VZ-ODIS-SOR_CNG_12-3csadbilozelena-SOR_CNG_12"
+   ],
+   [
+    "*",
+    "SOR CNG 12",
+    "bílá & logo dopravy",
+    "VZ-ODIS-SOR_CNG_12-bila-SOR_CNG_12"
+   ],
+   [
+    "*",
+    "SOR CNG 12",
+    "logo dopravy",
+    "~VZ-ODIS-SOR_CNG_12-bilazelenykruh-SOR_CNG_12"
+   ],
+   [
+    "*",
+    "SOR CNG 10,5",
+    "logo dopravy",
+    "VZ-ODIS-SOR_CNG_10_5-bila-SOR_CNG_10_5"
+   ],
+   [
+    "*",
+    "SOR BNG 10,5",
+    "",
+    "~VZ-MHDHavirov-SOR_BNG_10_5-havirovmodra-SOR_BNG_10_5"
+   ],
+   [
+    "*",
+    "Crossway LE LINE 12M",
+    "logo dopravy",
+    "VZ-ODIS-Crossway_LE_Line_12M_NP-bilacervenykruh-Crossway_LE_Line_12M_NP"
+   ],
+   [
+    "*",
+    "Citywide LE 13,7M",
+    "",
+    "VZ-ODIS-Citywide_LE_13_7M_CNG-bilacervenykruh-Citywide_LE_13_7M_CNG"
+   ],
+   [
+    "*",
+    "Citywide Suburban LE 12,6M",
+    "",
+    "VZ-ODIS-Citywide_Suburban_LE_12_6M_CNG-bila-Citywide_Suburban_LE_12_6M_CNG"
+   ],
+   [
+    "*",
+    "Citywide LE 12M",
+    "",
+    "VZ-ODIS-Citywide_LE_12M_CNG-bila-Citywide_LE_12M_CNG"
+   ],
+   [
+    "*",
+    "Lion",
+    "",
+    "VZ-ODIS-Lions_City_U_CNG-bila-Lions_City_U_CNG"
+   ]
+  ]
+ },
+ "other_sheets": {
+  "ostrava": {
+   "lines": [],
+   "label": "Ostrava Bus Vypravenost, section All lines at Hranečník",
+   "derived": "../ostrava-bus/data/derived/odis.json",
+   "url": "https://claude.ai/artifact/6rNwavbbnG4H2aJVZPNx8R"
+  },
+  "hko": {
+   "label": "Havířov Karviná Orlová Bus Vypravenost (town lines)",
+   "derived": "../havirov-karvina-orlova/data/derived/roster.json",
+   "url": "https://claude.ai/artifact/UmPg6guEAbmSune5YnFTVb"
+  },
+  "hko_regional": {
+   "lines": [],
+   "label": "ODIS Regional Havířovsko Karvinsko Orlovsko",
+   "derived": "../odis-regional-hko/data/derived/roster.json",
+   "schedule": "../odis-regional-hko/data/derived/schedule.json",
+   "url": "https://claude.ai/artifact/SFgd2KE6xRv9PLKtS5qMnw",
+   "heading": "On the Havířovsko/Karvinsko/Orlovsko regional sheet",
+   "why": "365 Havířov – Frýdek-Místek holds a licence in Havířovsko (912365) and one here in Frýdecko-Místecko (863365). It is one line, modelled once with its buses on the"
+  },
+  "tfj": {
+   "lines": [],
+   "label": "ODIS Těšínsko Třinecko Frýdecko",
+   "short": "Těšínsko/Třinecko/Frýdecko sheet",
+   "derived": "../odis-regional-tfj/data/derived/roster.json",
+   "schedule": "../odis-regional-tfj/data/derived/schedule.json",
+   "url": "https://claude.ai/artifact/2LecoKwCYb2Lmk1sRDTjrx"
+  },
+  "novojicinsko": {
+   "lines": [
+    "615",
+    "620",
+    "691",
+    "692",
+    "693"
+   ],
+   "label": "ODIS Novojičínsko Bílovecko",
+   "short": "Novojičínsko/Bílovecko sheet",
+   "heading": "On the Novojičínsko/Bílovecko sheet",
+   "why": "These lines hold a licence here and one in Novojičínsko or Bílovecko, where most of their trips are; they are modelled once, with their buses, on the",
+   "url": "https://claude.ai/artifact/YFgUu62jD8YqfpuoL8FZpp"
+  }
+ },
+ "towns": [
+  "Bernartice n.Odrou",
+  "Bohumín",
+  "Bohuslavice",
+  "Bolatice",
+  "Branka u Opavy",
+  "Bratříkovice",
+  "Bravantice",
+  "Brumovice",
+  "Bruntál",
+  "Budišov n.Bud.",
+  "Budišovice",
+  "Bílov",
+  "Bílovec",
+  "Bílčice",
+  "Bítov",
+  "Bělkovice-Lašťany",
+  "Bělá",
+  "Březová",
+  "Chalupki",
+  "Chlebičov",
+  "Chuchelná",
+  "Chvalíkovice",
+  "Darkovice",
+  "Dobroslavice",
+  "Dolany",
+  "Dolní Benešov",
+  "Dolní Životice",
+  "Dvorce",
+  "Děhylov",
+  "Fulnek",
+  "Hať",
+  "Heřmanice u Oder",
+  "Heřmánky",
+  "Hladké Životice",
+  "Hlavnice",
+  "Hlubočec",
+  "Hlučín",
+  "Hněvošice",
+  "Holasovice",
+  "Horní Benešov",
+  "Horní Loděnice",
+  "Horní Životice",
+  "Hrabyně",
+  "Hradec n.Moravicí",
+  "Háj ve Slezsku",
+  "Jakartovice",
+  "Jakubčovice n.Odrou",
+  "Jeseník n.Odrou",
+  "Jezdkovice",
+  "Klimkovice",
+  "Kobeřice",
+  "Kozmice",
+  "Kravaře",
+  "Krnov",
+  "Kružberk",
+  "Kujavy",
+  "Kunín",
+  "Kyjovice",
+  "Lhotka u Litultovic",
+  "Lipina",
+  "Litultovice",
+  "Ludgeřovice",
+  "Malá Štáhle",
+  "Mankovice",
+  "Markvartovice",
+  "Melč",
+  "Mikolajice",
+  "Milotice n.Opavou",
+  "Mladecko",
+  "Mokré Lazce",
+  "Moravice",
+  "Moravský Beroun",
+  "Neplachovice",
+  "Nové Lublice",
+  "Nové Sedlice",
+  "Nový Jičín",
+  "Nowe Chalupki",
+  "Odry",
+  "Olbramice",
+  "Oldřišov",
+  "Olomouc",
+  "Opava",
+  "Ostrava",
+  "Otice",
+  "Petrov n.Des.",
+  "Pustá Polom",
+  "Píšť",
+  "Radkov",
+  "Raduň",
+  "Rapotín",
+  "Rohov",
+  "Rýmařov",
+  "Skřipov",
+  "Slatina",
+  "Slavkov",
+  "Služovice",
+  "Sobotín",
+  "Sosnová",
+  "Stará Ves",
+  "Staré Heřminovy",
+  "Staré Těchanovice",
+  "Strahovice",
+  "Stěbořice",
+  "Suchdol n.Odrou",
+  "Sudice",
+  "Svatoňovice",
+  "Svobodné Heřmanice",
+  "Tísek",
+  "Těškovice",
+  "Třebom",
+  "Uhlířov",
+  "Velká Polom",
+  "Velké Albrechtice",
+  "Velké Heraltice",
+  "Velké Hoštice",
+  "Vražné",
+  "Vrchy",
+  "Vršovice",
+  "Václavov",
+  "Vítkov",
+  "Větřkovice",
+  "Vřesina",
+  "Závada",
+  "Úvalno",
+  "Čermná ve Slezsku",
+  "Šenov u N.Jičína",
+  "Šilheřovice",
+  "Šternberk",
+  "Štáblovice",
+  "Štítina",
+  "Štěpánkovice",
+  "Šumperk"
+ ],
+ "towns_why": "the first part of every stop of the regional licences (new_sheet.py)",
+ "fill_designed": {
+  "204": {
+   "carrier": "MDPO",
+   "type_contains": " Tr",
+   "alt": [
+    "battery",
+    "diesel generator"
+   ],
+   "why": "designed: an MDPO trolleybus with an auxiliary drive ({alt}) for 204’s unwired sections, not in service {w0}–{w1} (204 ran with replacement buses during the Vrchní street closure, 12–23 Oct)"
+  }
+ },
+ "regular_not_diversion": {
+  "902241": "Opava, Psychiatrická léčebna not served 28 Sep – 23 Nov 2026: short works, the regular route is modelled.",
+  "903241": "Opava, Psychiatrická léčebna not served 28 Sep – 23 Nov 2026: short works, the regular route is modelled.",
+  "902243": "Opava, Psychiatrická léčebna not served 28 Sep – 23 Nov 2026: short works, the regular route is modelled.",
+  "903243": "Opava, Psychiatrická léčebna not served 28 Sep – 23 Nov 2026: short works, the regular route is modelled.",
+  "902262": "Opava, Psychiatrická léčebna not served 5 Oct – 23 Nov 2026: short works, the regular route is modelled.",
+  "902253": "Služovice, obecní úřad not served 7 Sep – 31 Oct 2026: short works, the regular route is modelled.",
+  "902256": "Dolní Benešov, Zábřeh, Mexiko not served 16–21 Oct 2026: short works, the regular route is modelled.",
+  "902275": "Dolní Benešov, Zábřeh, Mexiko not served 16–21 Oct 2026: short works, the regular route is modelled.",
+  "904284": "Dolní Benešov, Zábřeh, Mexiko not served 16–21 Oct 2026: short works, the regular route is modelled."
+ },
+ "area_home": {
+  "233": "vitkovsko",
+  "240": "vitkovsko",
+  "241": "vitkovsko",
+  "242": "vitkovsko",
+  "243": "vitkovsko",
+  "254": "opavsko",
+  "285": "hlucinsko",
+  "292": "hlucinsko"
+ },
+ "post_roster": [
+  "authoring/offwire.py",
+  "authoring/alt_drive.py",
+  "authoring/fill_designed.py"
+ ]
+}

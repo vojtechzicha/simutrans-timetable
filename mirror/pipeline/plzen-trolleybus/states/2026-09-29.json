@@ -1,0 +1,474 @@
+{
+ "title": "Plzeň Trolleybus Peak Fleet",
+ "output": "Plzeň Trolleybus Peak Fleet.html",
+ "vehicles_date": "2026-09-18",
+ "register_date": "2026-09-29",
+ "gtfs_date": "2026-09-29",
+ "service_date": "20260929",
+ "route_type": "11",
+ "osm_date": "2026-09-29",
+ "all_loops": true,
+ "depot_stops": [
+  "Karlov"
+ ],
+ "line_order": [
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "18",
+  "22",
+  "49"
+ ],
+ "fit": {
+  "core": [
+   930,
+   990
+  ],
+  "overrides": {
+   "10|10|Tylova|Čechurov": {
+    "I": 24,
+    "auto": true
+   },
+   "10|10|Čechurov|Tylova": {
+    "I": 24,
+    "auto": true
+   },
+   "10|10|Tylova|Černice": {
+    "I": 24,
+    "auto": true
+   },
+   "10|10|Černice|Tylova": {
+    "I": 24,
+    "auto": true
+   },
+   "22|22|Koterov|Škoda VIII. brána": {
+    "I": 30,
+    "auto": true
+   }
+  }
+ },
+ "turnaround_default": 3,
+ "links": {},
+ "simutrans_lines": [
+  {
+   "id": "10",
+   "name": "10 Tylova – Čechurov / Černice (one line)",
+   "records": "10",
+   "entries": [
+    [
+     "10",
+     "Tylova",
+     "Čechurov"
+    ],
+    [
+     "10",
+     "Čechurov",
+     "Tylova"
+    ],
+    [
+     "10",
+     "Tylova",
+     "Černice"
+    ],
+    [
+     "10",
+     "Černice",
+     "Tylova"
+    ]
+   ],
+   "kind": "circuit",
+   "text": "Trolleybuses alternate between the two branches: in the 15:00–17:30 chaining, 6 of 7 Černice → Tylova arrivals go on to Čechurov and 4 of 6 Čechurov → Tylova arrivals go on to Černice. So it is one Simutrans line, Tylova → Čechurov → Tylova → Černice (→ Tylova), with Tylova in the schedule twice, as on the Plzeň tram line 4."
+  },
+  {
+   "id": "11",
+   "name": "11 Ústřední hřbitov – Křimice / Malesice (one line)",
+   "records": "11",
+   "entries": [
+    [
+     "11",
+     "Ústřední hřbitov",
+     "Křimice"
+    ],
+    [
+     "11",
+     "Křimice",
+     "Ústřední hřbitov"
+    ],
+    [
+     "11",
+     "Ústřední hřbitov",
+     "Malesice"
+    ],
+    [
+     "11",
+     "Malesice",
+     "Ústřední hřbitov"
+    ]
+   ],
+   "kind": "circuit",
+   "text": "Trolleybuses alternate between the branches: 5 of 6 Křimice arrivals at Ústřední hřbitov go on to Malesice, and 5 of 6 Malesice arrivals go on to Křimice. One Simutrans line with Ústřední hřbitov twice, every 30 each."
+  },
+  {
+   "id": "12",
+   "name": "12 Nová Hospoda – Božkov",
+   "records": "12",
+   "entries": [
+    [
+     "12",
+     "Nová Hospoda",
+     "Božkov"
+    ],
+    [
+     "12",
+     "Božkov",
+     "Nová Hospoda"
+    ]
+   ],
+   "note": "The battery branch to Letkov, V Podlesí has 5 trips a day each way and none in 15:00–17:59 on 29 Sep, so it is not a peak trip and not modelled.",
+   "rate": 8
+  },
+  {
+   "id": "13",
+   "name": "13 Na Dlouhých – NC Černice",
+   "records": "13",
+   "entries": [
+    [
+     "13",
+     "Na Dlouhých",
+     "NC Černice"
+    ],
+    [
+     "13",
+     "NC Černice",
+     "Na Dlouhých"
+    ]
+   ],
+   "note": "Na Dlouhých → Černice (2 trips, 16:41 and 17:17) is the post-peak form, not modelled.",
+   "rate": 5
+  },
+  {
+   "id": "14",
+   "name": "14 Pařížská – Sídliště Bory",
+   "records": "14",
+   "entries": [
+    [
+     "14",
+     "Pařížská",
+     "Sídliště Bory"
+    ],
+    [
+     "14",
+     "Sídliště Bory",
+     "Pařížská"
+    ]
+   ]
+  },
+  {
+   "id": "15",
+   "name": "15 Lobzy – Borská pole",
+   "records": "15",
+   "entries": [
+    [
+     "15",
+     "Lobzy",
+     "Borská pole"
+    ],
+    [
+     "15",
+     "Borská pole",
+     "Lobzy"
+    ]
+   ]
+  },
+  {
+   "id": "15N",
+   "name": "15 Lobzy – Nová Hospoda (branch)",
+   "records": "15",
+   "entries": [
+    [
+     "15",
+     "Lobzy",
+     "Nová Hospoda"
+    ],
+    [
+     "15",
+     "Nová Hospoda",
+     "Lobzy"
+    ]
+   ],
+   "kind": "branch",
+   "text": "A peak branch: 4 trips from Lobzy (15:48, 16:14, 16:44, 17:44) and 3 back in 15:00–17:59, no depot at either end, running alongside the Borská pole pattern. Its own Simutrans line.",
+   "need": {
+    "vehicles": 2,
+    "why": "The real branch trips are hourly and irregular, so following one around 16:00 waits almost an hour at Nová Hospoda (cycle 156 min). The Simutrans line runs the modelled every-60 pattern: 28 + 29 min running plus two 3-minute turns is 63 min, so 2 trolleybuses."
+   }
+  },
+  {
+   "id": "16",
+   "name": "16 Doubravka – Sídliště Bory",
+   "records": "16",
+   "entries": [
+    [
+     "16",
+     "Doubravka",
+     "Sídliště Bory"
+    ],
+    [
+     "16",
+     "Sídliště Bory",
+     "Doubravka"
+    ]
+   ]
+  },
+  {
+   "id": "18",
+   "name": "18 CAN Husova – Borská pole",
+   "records": "18",
+   "entries": [
+    [
+     "18",
+     "CAN Husova",
+     "Borská pole"
+    ],
+    [
+     "18",
+     "Borská pole",
+     "CAN Husova"
+    ]
+   ]
+  },
+  {
+   "id": "22",
+   "name": "22 Malvíny – Koterov – Škoda VIII. brána",
+   "records": "22",
+   "entries": [
+    [
+     "22",
+     "Malvíny",
+     "Koterov"
+    ],
+    [
+     "22",
+     "Koterov",
+     "Škoda VIII. brána"
+    ]
+   ],
+   "empty_return": {
+    "Škoda VIII. brána": [
+     "Malvíny",
+     5
+    ]
+   },
+   "kind": "oneway",
+   "text": "In the 16:00 hour every Koterov departure runs to Škoda VIII. brána (16:09, 16:26, 16:45), and no trip comes back from there after 15:22. The trolleybus returns empty to Malvíny (about 5 min, a guess) for its next Malvíny → Koterov trip. Koterov → Malvíny runs at 15:17, 15:26, 15:56 and 17:12, outside the 16:00 hour, so it is not modelled."
+  },
+  {
+   "id": "49",
+   "name": "49 Hlavní nádraží – Areál FN",
+   "records": "49",
+   "entries": [
+    [
+     "49",
+     "Hlavní nádraží",
+     "Areál FN"
+    ],
+    [
+     "49",
+     "Areál FN",
+     "Hlavní nádraží"
+    ]
+   ]
+  }
+ ],
+ "osm": {
+  "tolerance_m": 60,
+  "loop_m": 200,
+  "query": "way[\"trolley_wire\"=\"yes\"](49.68,13.25,49.80,13.50); way[\"railway\"=\"trolleybus_wire\"](same box); out geom;"
+ },
+ "traction": "trolleybus",
+ "holidays": [
+  "2026-09-28",
+  "2026-07-06",
+  "2026-07-05",
+  "2026-05-08",
+  "2026-05-01",
+  "2026-04-06",
+  "2026-04-03"
+ ],
+ "battery_rules": [
+  {
+   "type": "Škoda 26 TrNU"
+  },
+  {
+   "type": "Škoda 27 TrNU"
+  },
+  {
+   "type": "Škoda 26 Tr",
+   "from": 565,
+   "to": 582
+  }
+ ],
+ "diesel_rules": [
+  {
+   "type": "Škoda 26 Tr",
+   "from": 551,
+   "to": 552
+  },
+  {
+   "type": "Škoda 27 Tr",
+   "from": 527,
+   "to": 530
+  },
+  {
+   "type": "Škoda 27 Tr",
+   "from": 540,
+   "to": 540
+  }
+ ],
+ "fleet": {
+  "secondary": [
+   "18"
+  ],
+  "secondary_why": "line 18 serves the Škoda works shifts, and these cars were logged on it with no note as well as on a regular line. In the afternoon 18 runs hourly and needs one trolleybus.",
+  "note_overrides": {}
+ },
+ "pak": {
+  "package": "VZ-PMDP-trolleybus",
+  "other_package": "VZ-Plzen-trolleybus",
+  "articulated_style": "B",
+  "checkouts": [
+   "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
+   "C:/Users/vojte/Developer/simutrans-custom-czech-pak128-mhd"
+  ],
+  "liveries": {
+   "PMDP, zeleno-bílá": "pmdpzelenobila"
+  },
+  "default_livery": "pmdpzelenobila",
+  "livery_names": {
+   "pmdpzelenobila": "PMDP green-white"
+  },
+  "types": {
+   "Škoda 24 Tr Citelis 1B": {
+    "token": "24Tr",
+    "core": "24Tr",
+    "m": 12,
+    "len": 8
+   },
+   "Škoda 25 Tr Citelis 1B": {
+    "token": "25Tr",
+    "core": "25Tr",
+    "m": 18,
+    "len": 16,
+    "articulated": true
+   },
+   "Škoda 26 Tr": {
+    "token": "26Tr",
+    "core": "26Tr",
+    "m": 12,
+    "len": 8
+   },
+   "Škoda 26 TrNU": {
+    "token": "26TrNU",
+    "core": "26TrNU",
+    "m": 12,
+    "len": 8
+   },
+   "Škoda 27 Tr": {
+    "token": "27Tr",
+    "core": "27Tr",
+    "m": 18,
+    "len": 16,
+    "articulated": true
+   },
+   "Škoda 27 TrNU": {
+    "token": "27TrNU",
+    "core": "27TrNU",
+    "m": 18,
+    "len": 16,
+    "articulated": true
+   }
+  },
+  "request_intro": "PMDP (Plzeňské městské dopravní podniky) trolleybuses. There is no VZ-PMDP-trolleybus package yet: every object below is new. All run in the PMDP green-white trolleybus livery (zeleno-bílá); an advert wrap (the register has one, a 27 TrNU in CVR Flector, not in this peak) maps to it. Articulated: front <core> + rear <core>-B, as VZ-DPBrno-trolleybus 27Tr. Body generations differ: 26 Tr / 27 Tr (2010–2018) have the Solaris Urbino III body, 26 TrNU / 27 TrNU (2019 on, traction battery for off-wire running) the Urbino IV body, so they are separate objects. 24 Tr / 25 Tr Citelis 1B are the Irisbus Citelis body (2008–2009).",
+  "request_notes": "Battery: 26 TrNU, 27 TrNU and the 26 Tr 565–582 carry traction batteries and run the battery lines 11, 13, 22 and 49 (the sheet checks this). In Simutrans every trolleybus object is a road vehicle with electric traction, so the battery is information only; no separate battery object is needed unless the pak wants one."
+ },
+ "depots": [
+  "Karlov"
+ ],
+ "garages": {
+  "Kar": "Karlov"
+ },
+ "accent": {
+  "light": [
+   "#0a7a3e",
+   "#e0f1e6"
+  ],
+  "dark": [
+   "#4cc27f",
+   "#15301f"
+  ]
+ },
+ "words": {
+  "vehicle": "trolleybus",
+  "vehicles": "trolleybuses",
+  "Vehicle": "Trolleybus",
+  "Vehicles": "Trolleybuses",
+  "example": "608",
+  "depot_prefix": "Depot "
+ },
+ "battery_text": {
+  "intro": "Stretches run off the wire, on the traction battery. The PMDP GTFS has no route shapes, so every stop of each stop pattern is tested against the OpenStreetMap overhead wire (trolley_wire, read 29 Sep 2026): a stop more than 60 m from any wire is off the wire, and consecutive such stops form a stretch, named from the last stop under the wire. Lengths are straight lines between stops, so the road distance is a little longer. Battery-capable trolleybuses (marked battery in the lists): every Škoda 26 TrNU and 27 TrNU, and the Škoda 26 Tr 565–582 (Wikipedia, Škoda 26Tr and 27Tr fleet lists). The 26 Tr 551–552 and 27 Tr 527–530 and 540 have an auxiliary diesel unit instead (marked diesel auxiliary). In the pak every trolleybus object is a road vehicle with electric traction, so the game needs no wire; the check below is what the real operation requires.",
+  "lines": {
+   "11": "Both branches beyond CAN Husova run on the battery, about 6 km out to Malesice or Křimice (partial trolleybus operation; Wikipedia: CAN Husova – Malesice – Křimice).",
+   "12": "Only the Letkov, V Podlesí trips run beyond Božkov on the battery (Wikipedia: Božkov – Letkov, V Podlesí).",
+   "13": "Every 13 trip runs the last stretch to NC Černice on the battery (Wikipedia: Černice – NC Černice).",
+   "22": "OSM has the wire from Vodárna towards the centre; Wikipedia also lists Tyršův most – Vodárna as a battery stretch, which the OSM wire does not show. Either way the whole line needs battery trolleybuses.",
+   "49": "Beyond U Práce the line runs on the battery up to the Lochotín hospital (Wikipedia: U Práce – Areál FN)."
+  },
+  "unmodelled": {
+   "12": "the Letkov branch has 5 trips a day and none in 15:00–17:59, so the Simutrans line 12 stays under the wire."
+  },
+  "outro": "Lines 10, 14, 15, 16 and 18 run under the wire from end to end (a lone terminus platform away from the wire, such as Lobzy, Na Dlouhých or Nová Hospoda, is a turning loop under the wire). The check fails a Simutrans line if any counted trolleybus on it is not battery-capable; on a battery line a car without a battery is also the first to be marked not needed."
+ },
+ "texts": {
+  "eyebrow": "Plzeň · PMDP trolleybuses · Simutrans reference",
+  "lede": "Every PMDP trolleybus line in the afternoon peak of the timetable in force on Tue 29 Sep 2026, with the vehicles logged on Fri 18 Sep 2026 (the latest complete Friday; 23–25 Sep have almost no records), the Simutrans schedule for each line, the battery sections, and the pak128 object for every trolleybus.",
+  "network": "PMDP GTFS (jizdnirady.pmdp.cz/jr/gtfs, fetched 29 Sep 2026), trolleybus routes (route_type 11), service day Tue 29 Sep 2026. Departures are the trips starting from each terminus between 16:00 and 16:59. Headway is the median gap between 15:00 and 18:00, runtime the average scheduled time from first to last stop. Depot runs (to and from Karlov) and patterns with fewer than 3 trips in 15:00–18:00 are left out.",
+  "not_modelled": "17 (Doubravka – Nová Hospoda, 3 trips in 15:00–18:00), 19 (Karlov – Nová Hospoda, none) and the night line N7 have no afternoon-peak service. The 12 branch to Letkov, V Podlesí has no trip in 15:00–17:59.",
+  "schedule": "Values to type into the fork’s Scheduling tab, on the stop entries listed for each Simutrans line. Units are calendar minutes; the offset is minutes after midnight, modulo the interval; Leave up to stays automatic. Every PMDP trolleybus terminus is a turning loop (as on the Brno, Prague and Ostrava trolleybus sheets), so every departure is set 1 min before the timetable departure to clear the loop on time: offset and each Also at value are the real minute − 1 (mod the interval), with the real minutes shown underneath. Put the timetable on the entry the trolleybus leaves from. Branches that trolleybuses alternate between (10, 11) are one Simutrans line with the shared terminus twice; the 15 branch to Nová Hospoda is its own line. Each line is fitted at one rate, the number of 16:00–16:59 departures most of its entries share, so no end sends more trolleybuses than the other. Plzeň’s afternoon timetable is irregular (gaps of 5 to 9 min on 12 and 16, 12 and 24 on 10), so many entries cannot be exact: they are marked approximate with their largest deviation and the real 16:xx minutes. Depot runs are not modelled.",
+  "need": "Trolleybuses needed at 16:00: follow a trolleybus leaving the first entry around 16:00 through every leg of its line, taking at each terminus the first departure at least 3 min after arriving, or less where the timetable itself turns faster; a round trip waiting longer than the line’s interval (at least 30 min) is skipped. The need is never below the most trolleybuses on the road at once between 16:00 and 16:59 (each trip holding its vehicle until arrival plus min(3 min, the terminus’s shortest timetabled turnaround)); this adds one on 13, 16 and 22. Where more were logged than the need, exactly the need stays counted and the rest is marked not needed (dimmed, left out of every count, the depot and the pak totals): one of every type of the line first, then afternoon-only kurzy and the highest kurz numbers are dropped first (user rule, 29 Sep 2026; pipeline/brno-trolleybus common.mark_spares). Where fewer were logged, real cars from the line’s own history are designed in; on 18 Sep no trolleybus line was short.",
+  "lines": "One row per kurz out in the afternoon peak on Fri 18 Sep 2026, grouped by Simutrans line. Each vehicle shows its number and depot, its full type and length, battery capability, and the pak128 core (requested = the object is not in the pak yet). Kurz numbers are PMDP’s, written record line / kurz. No note on the record means the car was out all day; ráno i odpoledne is a split duty out in both peaks; odpoledne is the afternoon car of a kurz whose morning car is listed under Not counted.",
+  "pak": "Each type counted in the peak, mapped to the object the VZ pak session is asked to make in VZ-PMDP-trolleybus. There is no PMDP trolleybus package yet, so every object is requested, never a stand-in from another city. Full names follow VZ-PMDP-<type>-<livery>-<core>; an articulated trolleybus is the front object plus its -B rear, and the lists show the first core only. Car units per vehicle (16 = one tile). Every PMDP trolleybus is in the green-white livery; advert wraps map to it. The request list is pipeline/plzen-trolleybus/pak_request.md.",
+  "depots": "PMDP keeps all its trolleybuses at the Karlov depot (opened 29 Aug 2014, shared with the buses), by the seznam-autobusu.cz register read on 29 Sep 2026.",
+  "termini": "Every terminus trolleybuses leave from between 16:00 and 16:59, busiest first. All are turning loops.",
+  "method": [
+   [
+    "Which day",
+    "The network is the timetable in force on Tue 29 Sep 2026 (PMDP GTFS, service day 29 Sep; line 12 shifts by a minute from 1 Oct). The vehicles are from Fri 18 Sep 2026: seznam-autobusu.cz has one or no trolleybus record on 23, 24, 25 and 29 Sep, and 28 Sep was a holiday, so 18 Sep is the latest complete Friday (Mon 21 and Tue 22 Sep are complete too). The Plzeň tram sheet uses the same day."
+   ],
+   [
+    "Vehicles",
+    "seznam-autobusu.cz vypravenost (mhd-plzen), one list per line, e.g. <a href=\"https://seznam-autobusu.cz/vypravenost/mhd-plzen/vypis?datum=2026-09-18&amp;linka=16\">line 16 on 18 Sep</a>. The site files 22 and 49 among the buses, but the cars logged on them are trolleybuses, and the GTFS marks them as trolleybus routes. Three cars logged on 18 with no note also worked 10, 12 and 13 that day; they are counted there."
+   ],
+   [
+    "Types, depots, liveries",
+    "seznam-autobusu.cz fleet register of PMDP (trolleybuses in service), read 29 Sep 2026. Car ids are the key, because PMDP trolleybus and bus numbers overlap. Battery capability: Wikipedia (Škoda 26Tr, Škoda 27Tr, Trolejbusová doprava v Plzni)."
+   ],
+   [
+    "Battery sections",
+    "OpenStreetMap trolley_wire (Overpass, 29 Sep 2026) against the GTFS stops, cross-checked with Wikipedia’s list of partial-trolleybus stretches."
+   ],
+   [
+    "Simutrans schedule",
+    "Fitted in whole calendar minutes with the fork’s Departure every / Offset / Also at fields, using the shared rule in pipeline/README.md (core 15:30–16:30, longest exact run, simplest pattern, one rate per line). Line 10 is fitted every 24 min per branch, its real pattern, and 22 from Koterov every 30."
+   ],
+   [
+    "Rebuild",
+    "Generated by pipeline/plzen-trolleybus (state “2026-09-29”), which imports helpers from the Plzeň tram pipeline (pipeline/plzen) and the Brno trolleybus pipeline; see pipeline/plzen-trolleybus/README.md. The Plzeň bus sheet is built by the same scripts."
+   ]
+  ]
+ }
+}

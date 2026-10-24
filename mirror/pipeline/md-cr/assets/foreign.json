@@ -1,0 +1,23 @@
+{
+  "_comment": "Foreign ends as the Czech data names them (often the stabling point beyond the passenger terminus) -> the terminal used to design the Simutrans line. City-level where the data names a depot.",
+  "terminal": {
+    "Budapest-Nyugati": "Budapest-Nyugati", "Budapest-Déli": "Budapest-Déli",
+    "Žilina": "Žilina", "Košice": "Košice", "Prešov": "Prešov", "Púchov": "Púchov", "Nové Zámky": "Nové Zámky",
+    "Bratislava hl. st.": "Bratislava hlavná stanica", "Bratislava-Petržalka": "Bratislava-Petržalka",
+    "München Hbf": "München Hauptbahnhof", "Schwandorf": "Schwandorf",
+    "Wien Hbf": "Wien Hauptbahnhof", "Wien Westbf": "Wien Westbahnhof", "Wien Franz-Josefs-Bf": "Wien Franz-Josefs-Bahnhof",
+    "Linz Hbf": "Linz Hauptbahnhof", "Graz Hbf": "Graz Hauptbahnhof", "Villach Hbf": "Villach Hauptbahnhof",
+    "Warszawa Grochów": "Warszawa (stabled at Grochów)", "Warszawa Wschodnia": "Warszawa Wschodnia",
+    "Gdynia Postojowa": "Gdynia (stabled at Postojowa)",
+    "Kraków Płaszów": "Kraków Płaszów", "Kraków Gł. osobowy": "Kraków Główny",
+    "Przemyśl Gł.": "Przemyśl Główny", "Przemyśl Bakończyce": "Przemyśl (stabled at Bakończyce)",
+    "Katowice Zawodzie": "Katowice (stabled at Zawodzie)",
+    "Hamburg-Langenfelde": "Hamburg (stabled at Langenfelde)", "Kiel Hbf": "Kiel Hauptbahnhof",
+    "Kobenhavn H": "København Hovedbanegård", "Zürich Hbf": "Zürich Hauptbahnhof",
+    "Dresden Hbf": "Dresden Hauptbahnhof", "Elsterwerda": "Elsterwerda"
+  },
+  "city": {
+    "Warszawa": "Warszawa", "Wien": "Wien", "Budapest": "Budapest", "Bratislava": "Bratislava", "Kraków": "Kraków",
+    "Przemyśl": "Przemyśl", "Hamburg": "Hamburg"
+  }
+}

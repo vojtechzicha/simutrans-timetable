@@ -1,0 +1,134 @@
+{
+ "_source": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128 build/VZ-DPBrno-bus (main b84c15c) and VZ-Brno-bus (main fb42eb7, list in data/derived/2026-09-29/vz_installed_objects.txt), read-only. Every object is in the DPMB white-red livery (dpmbbilocervena).",
+ "SOR NS 12": {
+  "objs": [
+   "VZ-DPBrno-SOR_NS_12-dpmbbilocervena-SOR_NS_12"
+  ],
+  "len": 8,
+  "m": 12,
+  "note": ""
+ },
+ "SOR NBG 12": {
+  "objs": [
+   "VZ-DPBrno-SOR_NBG_12-dpmbbilocervena-SOR_NBG_12"
+  ],
+  "len": 8,
+  "m": 12,
+  "note": "CNG."
+ },
+ "Iveco Urbanway 12M": {
+  "objs": [
+   "VZ-DPBrno-Urbanway_12M-dpmbbilocervena-Urbanway_12M"
+  ],
+  "len": 8,
+  "m": 12,
+  "note": ""
+ },
+ "Iveco Urbanway 12M CNG": {
+  "objs": [
+   "VZ-DPBrno-Urbanway_12M_CNG-dpmbbilocervena-Urbanway_12M_CNG"
+  ],
+  "len": 8,
+  "m": 12,
+  "note": ""
+ },
+ "Iveco Urbanway 18M CNG": {
+  "objs": [
+   "VZ-DPBrno-Urbanway_18M_CNG-dpmbbilocervena-Urbanway_18M_CNG-A",
+   "VZ-DPBrno-Urbanway_18M_CNG-dpmbbilocervena-Urbanway_18M_CNG-B"
+  ],
+  "len": 12,
+  "m": 18,
+  "note": "Articulated: front (-A) + rear (-B)."
+ },
+ "Solaris Urbino 18 III": {
+  "objs": [
+   "VZ-DPBrno-Solaris_Urbino_18-dpmbbilocervena-Urbino_18-A",
+   "VZ-DPBrno-Solaris_Urbino_18-dpmbbilocervena-Urbino_18-B"
+  ],
+  "len": 12,
+  "m": 18,
+  "note": "Articulated: front (-A) + rear (-B). One Urbino 18 object covers generations III and IV."
+ },
+ "Solaris Urbino 18 IV": {
+  "objs": [
+   "VZ-DPBrno-Solaris_Urbino_18-dpmbbilocervena-Urbino_18-A",
+   "VZ-DPBrno-Solaris_Urbino_18-dpmbbilocervena-Urbino_18-B"
+  ],
+  "len": 12,
+  "m": 18,
+  "note": "Articulated: front (-A) + rear (-B). One Urbino 18 object covers generations III and IV."
+ },
+ "SOR ICN 9,5": {
+  "objs": [
+   "VZ-DPBrno-ICN_9_5-dpmbbilocervena-ICN_9_5"
+  ],
+  "len": 7,
+  "m": 9.5,
+  "note": "Midibus."
+ },
+ "Iveco Crossway LE CITY 14,5M": {
+  "objs": [
+   "VZ-DPBrno-Crossway_LE_City_14_5M-dpmbbilocervena-Crossway_LE_City_14_5M"
+  ],
+  "len": 10,
+  "m": 14.5,
+  "note": ""
+ },
+ "Iveco Crossway LE LINE 12M": {
+  "objs": [
+   "VZ-DPBrno-Crossway_LE_Line_12M-dpmbbilocervena-Crossway_LE_Line_12M"
+  ],
+  "len": 8,
+  "m": 12,
+  "note": ""
+ },
+ "Iveco Crossway LE CITY 12M NP": {
+  "objs": [
+   "VZ-DPBrno-Crossway_LE_City_12M-dpmbbilocervena-Crossway_LE_City_12M"
+  ],
+  "len": 8,
+  "m": 12,
+  "note": ""
+ },
+ "Irisbus Citelis 12M CNG": {
+  "objs": [
+   "VZ-DPBrno-Citelis_12M_CNG-dpmbbilocervena-Citelis_12M_CNG"
+  ],
+  "len": 8,
+  "m": 12,
+  "note": ""
+ },
+ "BDS-BUS|Iveco Crossway LE CITY 12M": {
+  "objs": [
+   "VZ-Brno-Crossway_LE_City_12M-idsjmk-Crossway_LE_City_12M"
+  ],
+  "len": 8,
+  "m": 12,
+  "note": "VZ-Brno-bus.pak (non-DPMB Brno city vehicles; operator in the display text only), built by the pak session, main fb42eb7, installed 29 Sep 2026. IDS JMK scheme: white-grey with a red roof (idsjmk)."
+ },
+ "BDS-BUS|MAN NL 283 Lion’s City": {
+  "objs": [
+   "VZ-Brno-Lions_City_NL283-idsjmk-Lions_City_NL283"
+  ],
+  "len": 8,
+  "m": 12,
+  "note": "VZ-Brno-bus.pak (non-DPMB Brno city vehicles; operator in the display text only), built by the pak session, main fb42eb7, installed 29 Sep 2026. IDS JMK scheme: white-grey with a red roof (idsjmk)."
+ },
+ "BDS-BUS|SOR CN 12": {
+  "objs": [
+   "VZ-Brno-SOR_CN_12-idsjmk-SOR_CN_12"
+  ],
+  "len": 8,
+  "m": 12,
+  "note": "VZ-Brno-bus.pak (non-DPMB Brno city vehicles; operator in the display text only), built by the pak session, main fb42eb7, installed 29 Sep 2026. IDS JMK scheme: white-grey with a red roof (idsjmk)."
+ },
+ "BDS-BUS|Iveco Urbanway 12M": {
+  "objs": [
+   "VZ-Brno-Urbanway_12M-bila-Urbanway_12M"
+  ],
+  "len": 8,
+  "m": 12,
+  "note": "VZ-Brno-bus.pak (non-DPMB Brno city vehicles; operator in the display text only), built by the pak session, main fb42eb7, installed 29 Sep 2026. Plain white (bila)."
+ }
+}

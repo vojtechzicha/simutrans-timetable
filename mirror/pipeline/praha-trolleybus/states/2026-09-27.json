@@ -1,0 +1,198 @@
+{
+ "name": "2026-09-27",
+ "title": "Prague Trolleybus Peak Fleet",
+ "network_date": "2026-09-27",
+ "vehicle_date": "2026-09-25",
+ "route_type": "11",
+ "gtfs": {
+  "raw": "2026-09-28",
+  "url": "https://data.pid.cz/PID_GTFS.zip",
+  "service_date": "20260929",
+  "_why": "Same feed and service date as the Prague tram sheet: the first weekday on the 27 Sep network (28 Sep is a public holiday)."
+ },
+ "osm": {
+  "raw": "2026-09-29",
+  "query": "[out:json][timeout:120];(way[\"trolley_wire\"=\"yes\"](49.94,14.22,50.18,14.71););out geom tags;",
+  "url": "https://overpass-api.de/api/interpreter",
+  "tolerance_m": 25
+ },
+ "register": {
+  "raw": "2026-09-29",
+  "operator_id": 106,
+  "trakce": "trolejbus",
+  "depots": {
+   "all": null
+  },
+  "depot_codes": {
+   "Klí": "Klíčov",
+   "Řep": "Řepy",
+   "Stře": "Střešovice"
+  }
+ },
+ "vypravenost": {
+  "slug": "pid",
+  "lines": [
+   "51",
+   "52",
+   "53",
+   "58",
+   "59",
+   "275"
+  ],
+  "history_since": "2026-09-14",
+  "history_lines": [
+   "51",
+   "52",
+   "53",
+   "58",
+   "59"
+  ]
+ },
+ "stop_aliases": {
+  "Letiště": "Terminál 1"
+ },
+ "night_from": 1000,
+ "description": "Network as of Sunday 27 Sep 2026 (PID timetable of Tue 29 Sep); trolleybuses from the Friday 25 Sep afternoon peak.",
+ "fit_core": [
+  960,
+  1020
+ ],
+ "_fit_core_why": "The shared runfit prefers runs overlapping 15:30-16:30 by 30 min. Line 58's inbound 12-minute pattern starts at 16:20, so that window picked a 40-minute, 3-4 slot pattern fitted to only 4 departures (4.5 trips an hour instead of 5). The 16:00 reference hour of the shared rules is used instead; lines 52 and 59 give the same values either way.",
+ "schedule_override": {
+  "51": {
+   "every": 60,
+   "why": "One trolleybus with irregular gaps (44-72 min); the exact fit is only 2 departures, so an hourly pattern with its deviation is given."
+  },
+  "53": {
+   "every": 60,
+   "why": "One trolleybus with gaps of 53-83 min; hourly pattern with its deviation."
+  }
+ },
+ "turnaround_min": {
+  "51": 2,
+  "_why": "The timetable itself turns the line-51 trolleybus in 2 min at Hradčanská (15:30 arrival, 15:32 departure); with the default 3 min the need came out at 2 instead of the 1 that runs."
+ },
+ "depot_stops": {
+  "prefix": [
+   "Garáž",
+   "Vozovna"
+  ],
+  "names": []
+ },
+ "line_order": [
+  "51",
+  "52",
+  "53",
+  "58",
+  "59"
+ ],
+ "splits": {
+  "52": [
+   {
+    "label": "52 Na Knížecí – Jinonice",
+    "route": [
+     "Na Knížecí",
+     "Jinonice"
+    ],
+    "courses": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     10
+    ],
+    "line": "52",
+    "why": "Not recorded: the records give no branch, and both branches run all week with the same low course numbers. Needs 5 by round trip; courses 1–5 in course order (14 min each way). Course 10, also logged, is surplus to both branches and is marked not needed."
+   },
+   {
+    "label": "52 Na Knížecí – Waltrovka",
+    "route": [
+     "Na Knížecí",
+     "Waltrovka"
+    ],
+    "courses": [
+     6,
+     7,
+     8
+    ],
+    "line": "52",
+    "why": "Not recorded: a choice, as for the other branch. Needs 3 by round trip (9 min each way)."
+   }
+  ],
+  "58": [
+   {
+    "label": "58 Palmovka – Miškovice",
+    "route": [
+     "Palmovka",
+     "Miškovice"
+    ],
+    "courses": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "line": "58",
+    "why": "Not recorded: the records give no branch. Needs 7 by round trip; courses 1–7 in course order."
+   },
+   {
+    "label": "58 Palmovka – Čakovice",
+    "route": [
+     "Palmovka",
+     "Čakovice"
+    ],
+    "courses": [
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14
+    ],
+    "line": "58",
+    "why": "Not recorded: a choice, as for the other branch. Needs 7 by round trip; courses 8–14 (the courses that do not run at weekends)."
+   }
+  ]
+ },
+ "flags": {
+  "51": [
+   "info",
+   "One trolleybus (course 51/2, SOR TNS 12 511, recorded every day of the last two weeks). The timetable turns it in 2 min at Hradčanská, so one vehicle is enough; the gaps are irregular (44–72 min), so the Simutrans values are an hourly approximation."
+  ],
+  "53": [
+   "info",
+   "One trolleybus (course 53/3 on weekdays, 53/2 at weekends; SOR TNS 12). Gaps of 53–83 min, so the Simutrans values are an hourly approximation."
+  ],
+  "52": [
+   "info",
+   "Line 52 has two branches from Na Knížecí, each every 8 min, together every 4 min on the shared section to Waltrovka. Each branch is its own Simutrans line. The records do not say which course runs which branch, so the split below is a choice sized by round trip (5 + 3 = 8; 9 recorded). Course 52/9 runs on other weekdays (24 and 29 Sep) but is not recorded on 25 Sep. The alternative, one line running Na Knížecí → Waltrovka → Na Knížecí → Jinonice → Na Knížecí, would need 9, the number recorded."
+  ],
+  "58": [
+   "info",
+   "Line 58 has two branches from Palmovka, each every 12 min, together every 6 min to Čakovice. Each branch is its own Simutrans line. The records do not say which course runs which branch, so the split below is a choice sized by round trip (7 + 7 = 14, all 14 recorded). One line alternating the branches would need 13."
+  ],
+  "59": [
+   "info",
+   "Airport line with bi-articulated 24 m trolleybuses, every 3 min at the peak. On 25 Sep courses 59/6 and 59/14 are not recorded (both are recorded on Tue 29 Sep). The 15 recorded courses cover the 14 needed by round trip, so no trolleybus is designed. 59/8 changed vehicle during the day (401 → 413)."
+  ]
+ },
+ "depot_order": [
+  "Klíčov",
+  "Řepy",
+  "Střešovice"
+ ],
+ "depot_notes": {
+  "Klíčov": "Bus garage Klíčov with the trolleybus base for line 58 (SOR TNS 18).",
+  "Řepy": "Bus garage Řepy: trolleybuses for lines 51, 52, 53 and 59."
+ },
+ "not_modelled_lines": {
+  "275": "Trolleybus line Sídliště Čakovice – Náměstí Jiřího Berana (2.1 km, entirely off-wire): 5 trips on weekdays, the last at 14:05, none in the afternoon peak. Not recorded on 25 Sep. Left out, like other off-peak-only lines."
+ },
+ "output_html": "Prague Trolleybus Peak Fleet.html",
+ "artifact_url": "https://claude.ai/artifact/7P7BZSczRixGop15Fd6zmX"
+}

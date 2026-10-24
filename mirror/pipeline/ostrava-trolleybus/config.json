@@ -1,0 +1,583 @@
+{
+  "city": "Ostrava",
+  "mode": "trolleybus",
+  "operator": "Dopravní podnik Ostrava a.s. (DPO), IČO 61974757",
+  "title": "Ostrava Trolleybus Vypravenost",
+  "output_html": "Ostrava Trolleybus Vypravenost.html",
+  "artifact_url": "https://claude.ai/artifact/HFHXt2UZ1NE1SE6KYQAMXp",
+  "snapshot": "2026-09-29",
+  "vehicle_day": "2026-09-29",
+  "vehicle_day_label": "úterý 29. 9. 2026",
+  "vehicle_day_label_en": "Tuesday 29 Sep 2026",
+  "network_state_day": "2026-09-29",
+  "network_state_label": "29 Sep 2026",
+  "peak_minute": 960,
+  "peak_label": "16:30",
+  "jdf": {
+    "url": "https://portal.cisjr.cz/pub/draha/mestske/JDF.zip",
+    "lines": {
+      "915101": "101",
+      "915102": "102",
+      "915103": "103",
+      "915104": "104",
+      "915105": "105",
+      "915106": "106",
+      "915107": "107",
+      "915108": "108",
+      "915109": "109"
+    },
+    "excluded_lines": {
+      "915111": "night line 111",
+      "915112": "night line 112",
+      "915113": "night line 113"
+    },
+    "export_label": "JDF export downloaded 29 Sep 2026"
+  },
+  "fleet": {
+    "carrier_id": 133,
+    "depot_code": "TR",
+    "depot": "Vozovna trolejbusů",
+    "list_url": "https://seznam-autobusu.cz/seznam?prov=1&trakce=trolejbus&iddopravce=133&vcetneSluzebnich=1"
+  },
+  "records": {
+    "url": "https://seznam-autobusu.cz/vypravenost/odis/vypis?datum={date}",
+    "days": [
+      "2026-09-25",
+      "2026-09-29"
+    ]
+  },
+  "fit": {
+    "window": [
+      900,
+      1080
+    ],
+    "core": [
+      930,
+      990
+    ],
+    "lo": 780,
+    "hi": 1200
+  },
+  "cycle_t0": 960,
+  "cycle_lay": 3,
+  "table_window": [
+    900,
+    1020
+  ],
+  "branches": {
+    "101": [
+      [
+        "Hlavní nádraží",
+        "Hranečník"
+      ],
+      [
+        "Hlavní nádraží",
+        "Radvanice, Ludvíkova"
+      ]
+    ],
+    "102": [
+      [
+        "Hlavní nádraží",
+        "Hulváky"
+      ]
+    ],
+    "103": [
+      [
+        "Moravská Ostrava, Náměstí Republiky",
+        "Koblov"
+      ]
+    ],
+    "104": [
+      [
+        "Moravská Ostrava, Náměstí Republiky",
+        "Michálkovice"
+      ]
+    ],
+    "105": [
+      [
+        "Moravská Ostrava, Karolina U lávky",
+        "Koblov"
+      ]
+    ],
+    "106": [
+      [
+        "Hlavní nádraží",
+        "Heřmanice, Důl Heřmanice"
+      ]
+    ],
+    "107": [
+      [
+        "Moravská Ostrava, sídliště Fifejdy",
+        "Hranečník"
+      ],
+      [
+        "Moravská Ostrava, sídliště Fifejdy",
+        "Bartovice, Ještěrka"
+      ]
+    ],
+    "108": [
+      [
+        "Hlavní nádraží",
+        "Hulváky"
+      ]
+    ],
+    "109": [
+      [
+        "Hulváky",
+        "Heřmanice, Důl Heřmanice"
+      ]
+    ]
+  },
+  "pullin_branches": {
+    "101": [
+      "Moravská Ostrava, Vozovna trolejbusů"
+    ],
+    "102": [
+      "Moravská Ostrava, Vozovna trolejbusů"
+    ],
+    "103": [
+      "Moravská Ostrava, Vozovna trolejbusů"
+    ],
+    "104": [
+      "Moravská Ostrava, Vozovna trolejbusů"
+    ],
+    "108": [
+      "Moravská Ostrava, Vozovna trolejbusů"
+    ]
+  },
+  "all_termini_are_loops": true,
+  "stop_name_strip_prefix": "Ostrava,",
+  "stop_name_fixed": {
+    "hlavní nádraží": "Hlavní nádraží",
+    "Poruba,vozovna": "Poruba, vozovna",
+    "Poruba,Vřesinská": "Poruba, Vřesinská",
+    "Budišovice,Zátiší": "Budišovice, Zátiší"
+  },
+  "stop_name_expansions": [
+    [
+      "Horn.poliklinika",
+      "Hornická poliklinika"
+    ],
+    [
+      "Stan.záchr.služby",
+      "Stanice záchranné služby"
+    ],
+    [
+      "Stodolní žel.zast.",
+      "Stodolní železniční zastávka"
+    ],
+    [
+      "sad B.Němcové",
+      "sad Boženy Němcové"
+    ],
+    [
+      "Revírní br. pokladna",
+      "Revírní bratrská pokladna"
+    ],
+    [
+      "VŠ podnikání",
+      "Vysoká škola podnikání"
+    ],
+    [
+      "most M.Sýkory",
+      "most Miloše Sýkory"
+    ],
+    [
+      "nám.J.Gagarina",
+      "náměstí Jurije Gagarina"
+    ],
+    [
+      "Radvanice, LDN",
+      "Radvanice, Léčebna dlouhodobě nemocných"
+    ],
+    [
+      "Mor.Ostrava, ",
+      "Moravská Ostrava, "
+    ],
+    [
+      "Sl.Ostrava, ",
+      "Slezská Ostrava, "
+    ],
+    [
+      "Mor. Ostrava,",
+      "Moravská Ostrava,"
+    ],
+    [
+      "Mor.Plynárny",
+      "Moravská Ostrava, Plynárny"
+    ],
+    [
+      "Mor.",
+      "Moravská Ostrava, "
+    ],
+    [
+      "Sl.",
+      "Slezská Ostrava, "
+    ],
+    [
+      "Mar.Hory,",
+      "Mariánské Hory,"
+    ],
+    [
+      "NH hl.brána",
+      "Nová huť hlavní brána"
+    ],
+    [
+      "NH ",
+      "Nová huť "
+    ],
+    [
+      "nám.Ostrava-Jih",
+      "náměstí Ostrava-Jih"
+    ],
+    [
+      "Telekom.škola",
+      "Telekomunikační škola"
+    ],
+    [
+      "nám.S.Čecha",
+      "náměstí Svatopluka Čecha"
+    ],
+    [
+      "Mírové nám.",
+      "Mírové náměstí"
+    ],
+    [
+      "most Čs. armády",
+      "most Československé armády"
+    ],
+    [
+      "Ředitel.Vítkovic",
+      "Ředitelství Vítkovic"
+    ],
+    [
+      "29.dubna",
+      "29. dubna"
+    ],
+    [
+      "Kpt.Vajdy",
+      "Kapitána Vajdy"
+    ],
+    [
+      "Třebovice, OC",
+      "Třebovice, obchodní centrum"
+    ]
+  ],
+  "live": {
+    "url": "https://dashboard.dpo.cz/api/server",
+    "label": "Tue 29 Sep",
+    "window": [
+      "16:29",
+      "16:50"
+    ],
+    "note": "DPO live feed (vehicleType troll): vehicleNumber, routeID (line), serviceID (course), trip from/to. No history, so it is polled into data/raw/<date>/live/."
+  },
+  "type_rules": [
+    [
+      "Solaris Trollino 12 II AC",
+      "Trollino 12",
+      "Solaris Trollino 12 II AC"
+    ],
+    [
+      "Solaris Trollino 12 III AC",
+      "Trollino 12",
+      "Solaris Trollino 12 III AC"
+    ],
+    [
+      "Škoda 26 Tr",
+      "26Tr",
+      "Škoda 26Tr Solaris"
+    ],
+    [
+      "Škoda 36 Tr T'CITY",
+      "36Tr",
+      "Škoda 36Tr T'CITY"
+    ],
+    [
+      "Škoda 27 TrNU",
+      "27Tr",
+      "Škoda 27Tr Solaris IV"
+    ],
+    [
+      "Škoda 27 Tr",
+      "27Tr",
+      "Škoda 27Tr Solaris"
+    ],
+    [
+      "SOR TNB 12",
+      "TNB 12",
+      "SOR TNB 12"
+    ]
+  ],
+  "battery_cars": {
+    "ranges": [
+      [
+        3731,
+        3740
+      ],
+      [
+        3741,
+        3758
+      ]
+    ],
+    "why": "Traction batteries: Škoda 26Tr 3731–3740 (2017, partial trolleybuses) and every Škoda 36Tr (3741–3758). The 27Tr of 2015–2024, including the fourth generation 3813–3818, carry supercapacitors only (mhd-ostrava.cz, cs.wikipedia)."
+  },
+  "types": {
+    "Trollino 12": [
+      "Solaris Trollino 12 II AC / III AC",
+      "12 m",
+      "standard, 2 axles",
+      "28–36 + 56–68"
+    ],
+    "26Tr": [
+      "Škoda 26Tr Solaris",
+      "12 m",
+      "standard, 2 axles; 3731–3740 with traction battery",
+      "34 + 68"
+    ],
+    "36Tr": [
+      "Škoda 36Tr T'CITY",
+      "12 m",
+      "standard, 2 axles, traction battery",
+      "26 + 54"
+    ],
+    "27Tr": [
+      "Škoda 27Tr Solaris",
+      "18 m",
+      "articulated, 3 axles, supercapacitors",
+      "45–50 + 91–117"
+    ],
+    "TNB 12": [
+      "SOR TNB 12",
+      "12 m",
+      "standard, 2 axles",
+      "—"
+    ]
+  },
+  "battery_sections": [
+    [
+      "101",
+      "Hlavní nádraží ⇄ Radvanice, Ludvíkova",
+      "Hranečník – Radvanice, U Švasty – Radvanice, U Káňů – Radvanice, Léčebna dlouhodobě nemocných – Petřvald – Radvanice, Míroděv – Radvanice, Ludvíkova",
+      "every trip of the Radvanice branch (every 30 min); the Hranečník trips stay under the wire",
+      "since 2 Sep 2018, continuous since 15 Dec 2019"
+    ],
+    [
+      "106",
+      "Hlavní nádraží ⇄ Heřmanice, Důl Heřmanice",
+      "Slezská Ostrava, Bazaly – Všehrdův sad – Revírní bratrská pokladna (streets Dědičná and Michálkovická, about 750 m, wire removed; new wire planned)",
+      "every trip, so only battery trolleybuses work line 106",
+      "since 4 Sep 2023 for every trip"
+    ],
+    [
+      "107",
+      "Moravská Ostrava, sídliště Fifejdy ⇄ Bartovice, Ještěrka",
+      "Hranečník – Radvanice, U Švasty – Radvanice, škola – Radvanice, Dalimilova – Radvanice, Bajger – Bartovice, Olšák – Bartovice, Bartovická – Bartovice, U Samoobsluhy – Bartovice, Ještěrka",
+      "every trip of the Bartovice branch (every 20 min); the Hranečník trips stay under the wire",
+      "since 2 Jan 2023"
+    ]
+  ],
+  "pak": {
+    "file": "VZ-DPOstrava-trolleybus (custom Czech pak128, main b84c15c, 28 Sep 2026)",
+    "prefix": "VZ-DPOstrava-",
+    "objects": {
+      "Solaris Trollino 12 II AC": [
+        "SolarisTrollino_12AC",
+        [
+          "dpomodrozluta"
+        ],
+        [
+          "SolarisTrollino_12AC"
+        ],
+        true,
+        "electric"
+      ],
+      "Solaris Trollino 12 III AC": [
+        "SolarisTrollino_12AC",
+        [
+          "dpomodrozluta"
+        ],
+        [
+          "SolarisTrollino_12AC"
+        ],
+        true,
+        "electric"
+      ],
+      "Škoda 26Tr Solaris": [
+        "26TrSolaris",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "26TrSolaris"
+        ],
+        true,
+        "electric"
+      ],
+      "Škoda 26Tr Solaris battery": [
+        "26TrSolaris_partial",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "26TrSolaris_partial"
+        ],
+        true,
+        "battery"
+      ],
+      "Škoda 36Tr T'CITY": [
+        "36TrSolaris",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "36TrSolaris"
+        ],
+        true,
+        "battery"
+      ],
+      "Škoda 27Tr Solaris": [
+        "27TrSolaris",
+        [
+          "dpomodrozluta",
+          "dpotyrkysova"
+        ],
+        [
+          "27TrSolaris",
+          "27TrSolaris_2"
+        ],
+        true,
+        "electric"
+      ],
+      "Škoda 27Tr Solaris IV": [
+        "27TrSolaris_partial",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "27TrSolaris_partial",
+          "27TrSolaris_partial_2"
+        ],
+        true,
+        "electric"
+      ],
+      "SOR TNB 12": [
+        "SolarisTrollino_12AC",
+        [
+          "dpomodrozluta"
+        ],
+        [
+          "SolarisTrollino_12AC"
+        ],
+        false,
+        "electric"
+      ]
+    },
+    "lengths": {
+      "SolarisTrollino_12AC": "8",
+      "26TrSolaris": "8",
+      "26TrSolaris_partial": "8",
+      "36TrSolaris": "8",
+      "27TrSolaris": "8 + 6",
+      "27TrSolaris_partial": "8 + 6"
+    },
+    "unused_objects": [
+      "21Tr (retired type)",
+      "27TrSolaris_partial (no battery 27Tr in the fleet)",
+      "SolarisTrollino_15AC (DPO's only Trollino 15 is a museum car)",
+      "SolarisTrollino_18AC (retired)"
+    ],
+    "livery_names": {
+      "dpotyrkysova": "turquoise (dpotyrkysova)",
+      "dpomodrozluta": "blue-yellow (dpomodrozluta)"
+    },
+    "paint_rules": [
+      [
+        "modrá s bílým proužkem",
+        "DPO blue with white stripe",
+        "dpotyrkysova"
+      ],
+      [
+        "modro-bílo-žlutá",
+        "DPO blue-white-yellow",
+        "dpomodrozluta"
+      ],
+      [
+        "žlutými dveřmi",
+        "DPO blue-white with yellow doors",
+        "dpomodrozluta"
+      ],
+      [
+        "bílá s modrou střechou",
+        "white with blue roof",
+        null
+      ]
+    ],
+    "changes_note": [
+      "20 Oct 2026 (pak main 2cdf3f3): 27Tr Solaris in both liveries (3805-3810 blue-yellow, 3811-3812 turquoise); the 2024 batch 3813-3818 (Urbino IV body, supercapacitors only) on 27TrSolaris_partial, now engine_type electric, shown in game as '27Tr (2024)'; 27Tr rear section length 6 per the pak's dat"
+    ]
+  },
+  "battery_branches": [
+    [
+      "101",
+      1
+    ],
+    [
+      "106",
+      0
+    ],
+    [
+      "107",
+      1
+    ]
+  ],
+  "branch_by_position": {
+    "lng": 18.322,
+    "window": [
+      "16:29",
+      "17:15"
+    ],
+    "why": "Hranečník loop is at about 18.318 E. Only the battery branches (101 Radvanice, 107 Bartovice) run east of it."
+  },
+  "who_text": "DPO works its trolleybuses in cross-line duties: a course of the 1xx group runs on 101, 106 and 107 in turn, the 2xx group on 102, 103, 105, 108 and 109, and the articulated 8xx group on 104 with a few 101 trips. Seznam-autobusu records such moves as 'přejezd na linku …' (moves to line …). Simutrans cannot change a vehicle's line, so each bus is placed on the line it was working at the peak, which is the line of its first live sighting between 16:29 and 16:50.",
+  "branches_why": "Lines 101 and 107 each have a branch under the wire to Hranečník and a battery branch beyond it (101 to Radvanice, Ludvíkova every 30 min; 107 to Bartovice, Ještěrka every 20 min). The branches have different termini and different headways, and a route cannot change with 'Also at', so each branch is its own Simutrans line (A = Hranečník, B = battery branch). The real minutes are kept, so they interleave on the shared section as in the timetable. A bus seen east of Hranečník between 16:29 and 17:15 is on the battery branch.",
+  "interlining": "At the peak each bus stays on one line long enough to be placed, but the duties hand buses between lines at shared termini: 107 to Hranečník ends at 16:33 and those buses continue as 101, and 105 buses continue as 103 at Koblov. The depot table shows each bus's later lines. No Simutrans line spans two DPO lines.",
+  "network_state": [
+    [
+      "in",
+      "Battery operation on 101, 106 and 107",
+      "Long-term: 101 to Radvanice and 107 to Bartovice run beyond the wire from Hranečník, and all of line 106 crosses the unwired Dědičná – Michálkovická stretch by Všehrdův sad. New wire there is planned but not built. See Battery sections."
+    ],
+    [
+      "in",
+      "Náměstí Republiky: trolleybus boarding moved",
+      "From 17 Sep 2026, during the interchange rebuild, lines 103 and 104 board at the provisional stop Náměstí Republiky C on Českobratrská street. Routes and running times are as in the timetable."
+    ],
+    [
+      "out",
+      "Lines 106 (and 22, night 113), Dědičná street repair",
+      "5–16 Oct 2026: one direction was diverted via Jaklovecká and Stadion Bazaly. It was short-term and has ended (checked 20 Oct 2026), so line 106 keeps its regular route."
+    ],
+    [
+      "out",
+      "Night lines 111, 112, 113",
+      "Night trolleybus lines, not in the afternoon peak."
+    ]
+  ],
+  "line_notes": {
+    "101": "Two Simutrans lines: 101A Hlavní nádraží – Hranečník (:00 :20 :30 :50 from Hlavní nádraží) and 101B to Radvanice, Ludvíkova on battery beyond Hranečník (:10 :40). Together they give a 10-minute trunk. The 27Tr courses 801/802 come from the 104 duty group.",
+    "102": "Every 10 min: Hlavní nádraží – Přívoz – Nová radnice – Českobratrská – Mariánské Hory – Hulváky, the direct route.",
+    "103": "Every 20 min to Koblov. Its duties also work line 105.",
+    "104": "The articulated line: Škoda 27Tr Solaris, every 10 min, Náměstí Republiky – Stadion Bazaly – Michálkovice.",
+    "105": "Every 20 min, Karolina U lávky – Koblov; buses continue as 103 at Koblov.",
+    "106": "Every 10 min, all on battery trolleybuses because of the unwired stretch by Všehrdův sad.",
+    "107": "Two Simutrans lines: 107A sídliště Fifejdy – Hranečník (under the wire, until 16:33 from Hranečník) and 107B to Bartovice, Ještěrka on battery beyond Hranečník, each every 20 min and interleaved to 10 min.",
+    "108": "Every 20 min: a long semicircle from Hulváky via Mariánské Hory, sídliště Fifejdy, the centre, Stadion Bazaly and Muglinov to Hlavní nádraží (about 38 min against 102's 24).",
+    "109": "Every 20 min: Heřmanice, Důl Heřmanice – Hrušov – Muglinov – Stadion Bazaly – centre (Husův sad) – sídliště Fifejdy – Mariánské Hory – Hulváky."
+  },
+  "history": {
+    "url": "https://seznam-autobusu.cz/vypravenost/odis/vypis?linka={line}",
+    "since": "2026-03-01",
+    "note": "weekday ODIS records; used for the line rosters (designed trolleybuses and not-needed spares)"
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "city": "Most–Litvínov",
+  "operator": "Dopravní podnik měst Mostu a Litvínova, a.s. (DPmML), IČO 62242504",
+  "title": "Most–Litvínov Tram Vypravenost",
+  "output_html": "Most-Litvinov Tram Vypravenost.html",
+  "artifact_url": "https://claude.ai/artifact/FxHCAC84oCJA7qkbCKiQZi",
+  "snapshot": "2026-09-28",
+  "vehicle_day": "2026-09-25",
+  "vehicle_day_label": "pátek 25. 9. 2026",
+  "vehicle_day_label_en": "Friday 25 Sep 2026",
+  "network_state_label": "27 Sep 2026",
+  "jdf": {
+    "url": "https://portal.cisjr.cz/pub/draha/mestske/JDF.zip",
+    "export_label": "JDF export of 25 Sep 2026",
+    "lines": {
+      "575001": "1",
+      "575002": "2",
+      "575003": "3",
+      "575004": "4"
+    },
+    "excluded_lines": {
+      "night 40": "run entirely by replacement buses while the Litvínov track is modernised"
+    }
+  },
+  "cut_trips": {
+    "stop_contains": "Chempark",
+    "beyond": "Citadela",
+    "why": "Since 1 Mar 2026 Záluží, Chemopetrol – Litvínov, Citadela is run by replacement buses (dpmost.cz/zvd2026001); the register still lists trips to Citadela with the note 'V úseku Litvínov,Citadela - Záluží,CHEMOPETROL je provoz zajišťován NAD'."
+  },
+  "peak_minute": {
+    "1": 960,
+    "2": 960,
+    "3": 360,
+    "4": 960
+  },
+  "peak_label": {
+    "1": "16:00",
+    "2": "16:00",
+    "3": "06:00",
+    "4": "16:00"
+  },
+  "peak_why": "16:00 is the shared reference hour. Line 1 (the Chempark shift line) has 5 trams at 15:00 but only 1 at 16:00; on 28 Sep 2026 the user decided to keep line 1 with that one tram and a designed frequency. Line 3 runs only in the morning and is shown at 06:00 (the rule for morning-only lines, confirmed by the user on 28 Sep 2026).",
+  "pullin_branches": {},
+  "all_termini_are_loops": true,
+  "stop_name_strip_prefix": "",
+  "stop_name_fixed": {},
+  "stop_name_expansions": [
+    [
+      "1.nám.",
+      "1. náměstí"
+    ],
+    [
+      "Čs.mládeže",
+      "Československé mládeže"
+    ]
+  ],
+  "fleet": {
+    "carrier_id": 399,
+    "depot": "Most (Dopravní podnik)",
+    "list_url": "https://seznam-autobusu.cz/seznam?trakce=tramvaj&iddopravce=399&prov=1"
+  },
+  "live": {
+    "url": "https://mapy.mesto-most.cz/koop/rest/services/mhd/FeatureServer/0/query?where=1%3D1&outFields=CISLO_VOZIDLA,CISLO_LINKY,CILOVA_ZASTAVKA_NAME,POSLEDNI_ZASTAVKA_NAME,State,RouteID&returnGeometry=false&f=json",
+    "note": "City of Most live layer 'Poloha vozidel MHD'. It returned 0 features on 16 Sep and 28 Sep 2026; poll it on a weekday before trusting it."
+  },
+  "car_notes": {
+    "329": "collided with 330 at the Chemopetrol loop on 3 Aug 2026",
+    "330": "collided with 329 at the Chemopetrol loop on 3 Aug 2026"
+  },
+  "roster_mode": "designed",
+  "roster_why": "No DPmML allocation data exists: seznam-autobusu has no records for any DPmML tram and the city live layer is empty. Cars are placed by the operator's rules below.",
+  "roster": {
+    "4": {
+      "why": "EVO2 were bought for line 4; 2 of its 4 turns carry a low-floor guarantee on every trip; 9 EVO2 are active (320–328). The newest, delivered in 2026, were picked.",
+      "cars": [
+        [
+          325
+        ],
+        [
+          326
+        ],
+        [
+          327
+        ],
+        [
+          328
+        ]
+      ]
+    },
+    "2": {
+      "why": "VarioLF plus 314 and 315 are registered as used on line 2 only; the guaranteed turn and one other get them, the third turn VarioLFR.S 253.",
+      "cars": [
+        [
+          314
+        ],
+        [
+          315
+        ],
+        [
+          253
+        ]
+      ]
+    },
+    "1": {
+      "why": "Kept with one tram (user decision 28 Sep 2026): the fixed T3M.3 pair 236 + 237, one of the five pairs the register lists as coupled sets. The shift runs before 16:00 (5 pairs at 15:00) are not in the peak and are not modelled.",
+      "cars": [
+        [
+          236,
+          237
+        ]
+      ]
+    },
+    "3": {
+      "why": "Morning-only line, no guarantee: three solo T3M.3 in the standard livery.",
+      "cars": [
+        [
+          302
+        ],
+        [
+          305
+        ],
+        [
+          308
+        ]
+      ]
+    }
+  },
+  "pak": {
+    "file": "VZ-DPMostLitvinov-tram.pak (custom Czech pak128)",
+    "prefix": "VZ-DPMostLitvinov-",
+    "livery": "mostzlutocervena",
+    "objects": {
+      "Pragoimex EVO2": [
+        "EVO2",
+        [
+          "EVO2",
+          "EVO2b"
+        ],
+        "9 + 7"
+      ],
+      "Tatra T3M.3": [
+        "T3M_3",
+        [
+          "T3M_3"
+        ],
+        "11"
+      ],
+      "Pragoimex VarioLF plus": [
+        "Vario_LF_plus",
+        [
+          "VarioLFplus"
+        ],
+        "12"
+      ],
+      "Pragoimex VarioLFR.S": [
+        "VarioLFR_S",
+        [
+          "VarioLFR_S"
+        ],
+        "12"
+      ],
+      "Pragoimex EVO1": [
+        "EVO1",
+        [
+          "EVO1"
+        ],
+        "12"
+      ]
+    },
+    "notes": {
+      "Tatra T3M.3": "placeholder art: the classic Most T3 body in the right paint; the T3M.3 dash and doors are not drawn yet"
+    },
+    "couplings": "Different types never couple. T3M.3 and VarioLFR.S couple with the same type; EVO2 can run as two coupled sets."
+  },
+  "line_notes": {
+    "1": "Shift line for the Chempark (Orlen Unipetrol) works, weekdays about 06:30–07:40 and 13:00–16:00. At 15:00 five coupled T3M.3 pairs run it; at 16:00 one tram is left. As decided, it is modelled as that one tram shuttling Dopravní podnik – Chempark every 60 min (designed frequency, the timetable's last minutes).",
+    "2": "Town line inside Most every 15 min. One of the three turns is timetabled with a low-floor guarantee on every trip. The VarioLF plus cars 314 and 315 are registered as used on line 2 only.",
+    "3": "Morning-only line, about 05:00–06:45, with no afternoon trips. It is shown at the morning peak (06:00), following the rule for lines without afternoon service.",
+    "4": "The main Most – Litvínov line, every 15 min, cut back to Záluží, Chempark while the Litvínov track is modernised. Two of the four turns carry a low-floor guarantee on every trip."
+  },
+  "line_titles": {
+    "1": "Most, Dopravní podnik – Litvínov, Záluží, Chempark",
+    "2": "Most, nádraží – Most, Velebudická",
+    "3": "Most, nádraží – Litvínov, Záluží, Chempark",
+    "4": "Most, Dopravní podnik – Litvínov, Záluží, Chempark"
+  },
+  "network_state": [
+    [
+      "in",
+      "Litvínov modernisation",
+      "Since 1 Mar 2026 (23:15) the section Záluží, Chemopetrol – Litvínov, Citadela is run by replacement buses, and lines 1, 3 and 4 turn at the Záluží, Chempark loop. Night line 40 is all buses and is left out. The trams keep their timetable times."
+    ],
+    [
+      "out",
+      "One-day closure of 11 Jul 2026",
+      "A full-day closure for track maintenance at Sportovní hala. Over long ago; not in the model."
+    ]
+  ],
+  "fit": {
+    "default": {
+      "window": [
+        900,
+        1080
+      ],
+      "core": [
+        930,
+        990
+      ],
+      "lo": 780,
+      "hi": 1200
+    },
+    "3": {
+      "window": [
+        300,
+        480
+      ],
+      "core": [
+        330,
+        390
+      ],
+      "lo": 240,
+      "hi": 480
+    }
+  },
+  "fit_why": "Fits use the shared runfit rule around 16:00 (core 15:30–16:30); the morning-only line 3 uses 05:30–06:30. Line 1's schedule is designed (see schedule_override).",
+  "cycle_lay": 3,
+  "branches": {
+    "1": [
+      [
+        "Most, Dopravní podnik",
+        "Litvínov, Záluží, Chempark"
+      ]
+    ],
+    "2": [
+      [
+        "Most, nádraží",
+        "Most, Velebudická"
+      ]
+    ],
+    "3": [
+      [
+        "Most, nádraží",
+        "Litvínov, Záluží, Chempark"
+      ]
+    ],
+    "4": [
+      [
+        "Most, Dopravní podnik",
+        "Litvínov, Záluží, Chempark"
+      ]
+    ]
+  },
+  "branches_why": "Every DPmML line runs between two termini at the peak, so each is one Simutrans line.",
+  "shared_pools": "None. Each line keeps its own trams at the peak.",
+  "type_lengths": {
+    "Pragoimex EVO2": "21.7 m",
+    "Pragoimex EVO1": "15.1 m",
+    "Pragoimex VarioLF plus": "15.1 m",
+    "Pragoimex VarioLFR.S": "15.1 m",
+    "Tatra T3M.3": "15.1 m"
+  },
+  "type_lengths_source": "EVO2 21,650 mm without couplers (cs.wikipedia.org/wiki/EVO2); EVO1 body 15.1 m (Pragoimex); T3 family and Vario single cars 15.1 m.",
+  "peak_rule": "User ruling of 28 Sep 2026: a short working gets its own Simutrans line only with at least 3 trips in 15:00–17:59, no depot at either end and at least one departure in the 16:00–16:59 hour; otherwise it is listed as not modelled, with no values.",
+  "schedule_override": {
+    "1": {
+      "why": "Designed frequency, user decision 28 Sep 2026: keep line 1 with the one tram it has at 16:00. One round trip Dopravní podnik – Chempark – Dopravní podnik takes 20 + 20 min running plus layovers, so one tram can hold every 60 min. The minutes are the timetable's last shift trips: 15:08 from Dopravní podnik and 15:42 from Chempark.",
+      "rows": [
+        {
+          "fr": "Most, Dopravní podnik",
+          "to": "Litvínov, Záluží, Chempark",
+          "every": 60,
+          "real": [
+            8
+          ]
+        },
+        {
+          "fr": "Litvínov, Záluží, Chempark",
+          "to": "Most, Dopravní podnik",
+          "every": 60,
+          "real": [
+            42
+          ]
+        }
+      ],
+      "need": 1,
+      "cycle": 60
+    }
+  },
+  "not_needed": {
+    "1": {
+      "why": "The other four fixed T3M.3 pairs of line 1's register roster. Only one tram runs at 16:00 (user decision 28 Sep 2026), so they are not needed. Shown per the roster coverage and spares rule (user, 29 Sep 2026), not counted.",
+      "cars": [
+        [
+          244,
+          245
+        ],
+        [
+          247,
+          282
+        ],
+        [
+          205,
+          240
+        ],
+        [
+          301,
+          306
+        ]
+      ]
+    }
+  }
+}

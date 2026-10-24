@@ -1,0 +1,177 @@
+{
+ "_source": "VZ pak session objects, checked against simutrans-custom-czech-pak128 main, simutrans-custom-czech-pak128-mhd mhd-fleets, simutrans-custom-czech-pak128-pidops bus-pid-oper. Status \"requested\" = not yet in any local pak build; the name is the one asked for in pak_request.md.",
+ "objects": {
+  "PMDP|SOR NB 12|pmdpcervenobila": {
+   "package": "VZ-PMDP-bus",
+   "objs": [
+    "VZ-PMDP-SOR_NB_12-pmdpcervenobila-SOR_NB_12"
+   ],
+   "core": "SOR_NB_12",
+   "livery": "pmdpcervenobila",
+   "m": 12,
+   "len": 8,
+   "status": "requested",
+   "core_shown": "SOR_NB_12"
+  },
+  "PMDP|SOR NS 12|pmdpcervenocernobila": {
+   "package": "VZ-PMDP-bus",
+   "objs": [
+    "VZ-PMDP-SOR_NS_12-pmdpcervenocernobila-SOR_NS_12"
+   ],
+   "core": "SOR_NS_12",
+   "livery": "pmdpcervenocernobila",
+   "m": 12,
+   "len": 8,
+   "status": "requested",
+   "core_shown": "SOR_NS_12"
+  },
+  "PMDP|Solaris Urbino 18 IV|pmdpcervenobila": {
+   "package": "VZ-PMDP-bus",
+   "objs": [
+    "VZ-PMDP-Urbino_18_IV-pmdpcervenobila-Urbino_18_IV-A",
+    "VZ-PMDP-Urbino_18_IV-pmdpcervenobila-Urbino_18_IV-B"
+   ],
+   "core": "Urbino_18_IV",
+   "livery": "pmdpcervenobila",
+   "m": 18,
+   "len": 16,
+   "status": "requested",
+   "core_shown": "Urbino_18_IV"
+  },
+  "PMDP|SOR NS 18|pmdpcervenocernobila": {
+   "package": "VZ-PMDP-bus",
+   "objs": [
+    "VZ-PMDP-SOR_NS_18-pmdpcervenocernobila-SOR_NS_18-A",
+    "VZ-PMDP-SOR_NS_18-pmdpcervenocernobila-SOR_NS_18-B"
+   ],
+   "core": "SOR_NS_18",
+   "livery": "pmdpcervenocernobila",
+   "m": 18,
+   "len": 16,
+   "status": "requested",
+   "core_shown": "SOR_NS_18"
+  },
+  "PMDP|Solaris Urbino 18 III|pmdpcervenobila": {
+   "package": "VZ-PMDP-bus",
+   "objs": [
+    "VZ-PMDP-Urbino_18_III-pmdpcervenobila-Urbino_18_III-A",
+    "VZ-PMDP-Urbino_18_III-pmdpcervenobila-Urbino_18_III-B"
+   ],
+   "core": "Urbino_18_III",
+   "livery": "pmdpcervenobila",
+   "m": 18,
+   "len": 16,
+   "status": "requested",
+   "core_shown": "Urbino_18_III"
+  },
+  "PMDP|ROŠERO - P First FCLLI|pmdpcervenobila": {
+   "package": "VZ-PMDP-bus",
+   "objs": [
+    "VZ-PMDP-RoseroFirst-pmdpcervenobila-RoseroFirst"
+   ],
+   "core": "RoseroFirst",
+   "livery": "pmdpcervenobila",
+   "m": 8,
+   "len": 5,
+   "status": "requested",
+   "core_shown": "RoseroFirst"
+  },
+  "PMDP|Isuzu NOVO Citi Life Class I.|pmdpcervenobila": {
+   "package": "VZ-PMDP-bus",
+   "objs": [
+    "VZ-PMDP-NovoCiti_Life-pmdpcervenobila-NovoCiti_Life"
+   ],
+   "core": "NovoCiti_Life",
+   "livery": "pmdpcervenobila",
+   "m": 8,
+   "len": 5,
+   "status": "requested",
+   "core_shown": "NovoCiti_Life"
+  }
+ },
+ "by_car": {
+  "41352": "PMDP|SOR NB 12|pmdpcervenobila",
+  "31993": "PMDP|SOR NB 12|pmdpcervenobila",
+  "44285": "PMDP|SOR NB 12|pmdpcervenobila",
+  "130890": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "44280": "PMDP|SOR NB 12|pmdpcervenobila",
+  "107717": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "146049": "PMDP|SOR NS 18|pmdpcervenocernobila",
+  "30716": "PMDP|Solaris Urbino 18 III|pmdpcervenobila",
+  "82178": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "79990": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "44290": "PMDP|SOR NB 12|pmdpcervenobila",
+  "79478": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "38321": "PMDP|SOR NB 12|pmdpcervenobila",
+  "16518": "PMDP|SOR NB 12|pmdpcervenobila",
+  "66841": "PMDP|SOR NB 12|pmdpcervenobila",
+  "44291": "PMDP|SOR NB 12|pmdpcervenobila",
+  "130891": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "32630": "PMDP|SOR NB 12|pmdpcervenobila",
+  "145011": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "145012": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "44287": "PMDP|SOR NB 12|pmdpcervenobila",
+  "44288": "PMDP|SOR NB 12|pmdpcervenobila",
+  "44279": "PMDP|SOR NB 12|pmdpcervenobila",
+  "44269": "PMDP|SOR NB 12|pmdpcervenobila",
+  "84179": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "79533": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "121597": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "82179": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "30300": "PMDP|Solaris Urbino 18 III|pmdpcervenobila",
+  "78966": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "84260": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "82182": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "114852": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "107715": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "30714": "PMDP|Solaris Urbino 18 III|pmdpcervenobila",
+  "84176": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "148163": "PMDP|SOR NS 18|pmdpcervenocernobila",
+  "114854": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "139438": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "107718": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "148164": "PMDP|SOR NS 18|pmdpcervenocernobila",
+  "41349": "PMDP|Solaris Urbino 18 III|pmdpcervenobila",
+  "78967": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "44295": "PMDP|Solaris Urbino 18 III|pmdpcervenobila",
+  "121596": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "82180": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "41346": "PMDP|Solaris Urbino 18 III|pmdpcervenobila",
+  "84180": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "148160": "PMDP|SOR NS 18|pmdpcervenocernobila",
+  "66839": "PMDP|SOR NB 12|pmdpcervenobila",
+  "145121": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "130887": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "44275": "PMDP|SOR NB 12|pmdpcervenobila",
+  "44278": "PMDP|SOR NB 12|pmdpcervenobila",
+  "44282": "PMDP|SOR NB 12|pmdpcervenobila",
+  "84191": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "101192": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "85283": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "145119": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "84189": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "44292": "PMDP|SOR NB 12|pmdpcervenobila",
+  "66840": "PMDP|SOR NB 12|pmdpcervenobila",
+  "65113": "PMDP|SOR NB 12|pmdpcervenobila",
+  "44274": "PMDP|SOR NB 12|pmdpcervenobila",
+  "117980": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "96514": "PMDP|ROŠERO - P First FCLLI|pmdpcervenobila",
+  "117978": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "125997": "PMDP|Isuzu NOVO Citi Life Class I.|pmdpcervenobila",
+  "139440": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "146050": "PMDP|SOR NS 18|pmdpcervenocernobila",
+  "41350": "PMDP|Solaris Urbino 18 III|pmdpcervenobila",
+  "107714": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "41351": "PMDP|Solaris Urbino 18 III|pmdpcervenobila",
+  "78965": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "121382": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "44293": "PMDP|Solaris Urbino 18 III|pmdpcervenobila",
+  "79989": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "57251": "PMDP|Solaris Urbino 18 IV|pmdpcervenobila",
+  "146047": "PMDP|SOR NS 18|pmdpcervenocernobila",
+  "44297": "PMDP|Solaris Urbino 18 III|pmdpcervenobila",
+  "117979": "PMDP|SOR NS 12|pmdpcervenocernobila",
+  "44276": "PMDP|SOR NB 12|pmdpcervenobila",
+  "54652": "PMDP|SOR NB 12|pmdpcervenobila"
+ }
+}

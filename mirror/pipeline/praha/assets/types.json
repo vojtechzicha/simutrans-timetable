@@ -1,0 +1,90 @@
+{
+ "_doc": "Real vehicle types as named in the seznam-autobusu.cz register -> full name, length of one car, and the unit class used for colours and the summary table.",
+ "full_names": {
+  "14T": "Škoda 14T Elektra",
+  "52T": "Škoda 52T ForCity Plus",
+  "KT8D5.RN2P": "Tatra KT8D5.RN2P",
+  "T3R.P": "Tatra T3R.P",
+  "T3R.PLF": "Tatra T3R.PLF",
+  "T3R.PV": "Tatra T3R.PV",
+  "T3M.2": "Tatra T3M.2",
+  "T2R": "Tatra T2R",
+  "T1": "Tatra T1",
+  "série 359-498": "Ringhoffer motor car (series 359–498)",
+  "série 2001-2317": "motor car (series 2001–2317)",
+  "?": "museum trailer",
+  "15T*": "Škoda 15T ForCity Alfa ({t})"
+ },
+ "car_length_m": {
+  "15T*": 31.4,
+  "14T": 30.3,
+  "52T": 32.0,
+  "KT8D5.RN2P": 30.3,
+  "T3R.P": 15.1,
+  "T3R.PLF": 15.1,
+  "T3R.PV": 15.1,
+  "T3M.2": 15.1,
+  "T2R": 14.0,
+  "T1": 14.0
+ },
+ "classes": {
+  "15T": [
+   "Škoda 15T",
+   "Škoda 15T ForCity Alfa, series 15T0 to 15T7",
+   "31.4 m",
+   "low-floor"
+  ],
+  "14T": [
+   "Škoda 14T",
+   "Škoda 14T Elektra",
+   "30.3 m",
+   "part low-floor"
+  ],
+  "52T": [
+   "Škoda 52T",
+   "Škoda 52T ForCity Plus",
+   "32.0 m",
+   "low-floor"
+  ],
+  "KT8": [
+   "Tatra KT8D5.RN2P",
+   "Tatra KT8D5.RN2P articulated tram",
+   "30.3 m",
+   "part low-floor"
+  ],
+  "T3LF": [
+   "Tatra T3 pair with a T3R.PLF",
+   "Tatra T3R.PLF + Tatra T3R.P coupled (or + Tatra T3R.PV)",
+   "2 × 15.1 m",
+   "one car low-floor"
+  ],
+  "T3": [
+   "Tatra T3 pair",
+   "Tatra T3R.P + Tatra T3R.P coupled (also T3R.PV, retro T3M.2)",
+   "2 × 15.1 m",
+   "high-floor"
+  ],
+  "T3S": [
+   "Tatra T3R.PLF single",
+   "one Tatra T3R.PLF car",
+   "15.1 m",
+   "part low-floor"
+  ],
+  "HIST": [
+   "Museum cars",
+   "Tatra T2R, Tatra T3M.2, Tatra T1 and pre-war cars",
+   "",
+   "high-floor"
+  ]
+ },
+ "class_order": [
+  "15T",
+  "14T",
+  "52T",
+  "KT8",
+  "T3LF",
+  "T3",
+  "T3S",
+  "HIST"
+ ]
+}

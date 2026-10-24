@@ -1,0 +1,205 @@
+{
+ "_doc": "Terminus kind for the loop -1 min rule. kind=loop: departures set 1 min early; anything else keeps the timetable minute. Taken from the Prague Tram Termini sheet (META) with the overrides noted in the descriptions.",
+ "termini": {
+  "Sídliště Petřiny": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Výstaviště": {
+   "kind": "loop",
+   "description": "mid-line loop, entry from both sides"
+  },
+  "Albertov": {
+   "kind": "through",
+   "description": "street block, no loop"
+  },
+  "Březiněveská": {
+   "kind": "loop",
+   "description": "block loop Střelničná – Zdibská – Březiněveská"
+  },
+  "Levského": {
+   "kind": "loop",
+   "description": "loop with 2 holding tracks"
+  },
+  "Libuš": {
+   "kind": "other",
+   "description": "temporary stub"
+  },
+  "Radlická": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Čechovo náměstí": {
+   "kind": "loop",
+   "description": "block loop Minská"
+  },
+  "Slivenec": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Nádraží Holešovice": {
+   "kind": "through",
+   "description": "line-number change, no loop"
+  },
+  "Kubánské náměstí": {
+   "kind": "loop",
+   "description": "loop, triangle entry from both sides"
+  },
+  "Kotlářka": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Lehovec": {
+   "kind": "loop",
+   "description": "loop in the road median"
+  },
+  "Nádraží Podbaba": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Starý Hloubětín": {
+   "kind": "loop",
+   "description": "counter-directional loop"
+  },
+  "Sídliště Řepy": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Spojovací": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Sídliště Ďáblice": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Spořilov": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Sídliště Barrandov": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Zvonařka": {
+   "kind": "other",
+   "description": "reversing triangle (two stubs)"
+  },
+  "Olšanské hřbitovy": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Ústřední dílny DP": {
+   "kind": "loop",
+   "description": "two-track bidirectional loop"
+  },
+  "Vozovna Kobylisy": {
+   "kind": "loop",
+   "description": "loop by the depot"
+  },
+  "Vozovna Pankrác": {
+   "kind": "loop",
+   "description": "loop by the depot"
+  },
+  "Depo Hostivař": {
+   "kind": "loop",
+   "description": "circular loop"
+  },
+  "Pankrác": {
+   "kind": "other",
+   "description": "temporary stub with switch"
+  },
+  "Dědina": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Bílá Hora": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Vypich": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Zahradní Město": {
+   "kind": "loop",
+   "description": "loop under the Jižní spojka bridge"
+  },
+  "Nádraží Hostivař": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Královka": {
+   "kind": "loop",
+   "description": "mid-line loop, entry from both sides"
+  },
+  "Vysočanská": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Nádraží Braník": {
+   "kind": "loop",
+   "description": "loop with covered platforms"
+  },
+  "Divoká Šárka": {
+   "kind": "loop",
+   "description": "loop"
+  },
+  "Vozovna Strašnice": {
+   "kind": "other",
+   "description": "depot bypass"
+  },
+  "Vozovna Žižkov": {
+   "kind": "loop",
+   "description": "block loop Loudova – Biskupcova – Na Vápence"
+  },
+  "Vozovna Motol": {
+   "kind": "other",
+   "description": "depot bypass"
+  },
+  "Vozovna Hloubětín": {
+   "kind": "other",
+   "description": "depot bypass with triangle"
+  },
+  "Vozovna Vokovice": {
+   "kind": "other",
+   "description": "depot bypass"
+  },
+  "Hotel Golf": {
+   "kind": "loop",
+   "description": "loop (the Termini sheet lists it as a diversion terminus)"
+  },
+  "Nad Džbánem": {
+   "kind": "loop",
+   "description": "loop (the Termini sheet lists it as a diversion terminus)"
+  },
+  "Brusnice": {
+   "kind": "other",
+   "description": "triangle and manipulation track"
+  },
+  "Staré Strašnice": {
+   "kind": "loop",
+   "description": "mid-line loop, entry from Průběžná"
+  },
+  "Vinice": {
+   "kind": "other",
+   "description": "junction"
+  },
+  "Krematorium Strašnice": {
+   "kind": "other",
+   "description": "diversion terminus"
+  },
+  "Náměstí Bratří Synků": {
+   "kind": "loop",
+   "description": "block loop via Na Zámecké"
+  },
+  "Bílá labuť": {
+   "kind": "through",
+   "description": "street stop, turning via Těšnov loop (inferred); departs from a street stop after the Těšnov loop, so no loop shift"
+  },
+  "Nákladové nádraží Žižkov": {
+   "kind": "through",
+   "description": "through stop during the Nákladové nádraží Žižkov – Ohrada closure (11 Oct – 18 Dec 2026): 9 and 10 run through each other in the same minute (GTFS block pairs), no loop shift"
+  }
+ }
+}

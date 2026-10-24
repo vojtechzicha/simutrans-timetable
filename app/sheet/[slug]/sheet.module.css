@@ -1,0 +1,59 @@
+.layout {
+  display: grid; grid-template-columns: 380px minmax(0, 1fr);
+  height: calc(100dvh - 56px);
+}
+.layout:has(.wide) { grid-template-columns: minmax(0, 1fr); }
+.layout:has(.wide) .panel { display: none; }
+
+.panel {
+  overflow-y: auto; padding: 20px 22px 60px; border-right: 2px solid var(--rule-strong); background: var(--card);
+}
+.back { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 14px; text-decoration: none; color: var(--muted); }
+.back:hover { color: var(--signal); }
+.badges { display: flex; flex-wrap: wrap; gap: 5px; margin: 14px 0 6px; align-items: center; }
+.panel h1 { margin: 0; font-size: 34px; line-height: 0.98; font-weight: 800; text-transform: uppercase; }
+.summary { margin: 10px 0 0; color: var(--ink-2); font-size: 14px; }
+.callout { margin: 12px 0 0; padding: 8px 10px; background: var(--warn-soft); border-left: 3px solid var(--warn); font-size: 14px; }
+.callout a { color: inherit; font-weight: 600; }
+
+.panel h2 {
+  margin: 24px 0 8px; padding-top: 8px; border-top: 2px solid var(--rule-strong);
+  font-family: var(--font-display); font-size: 17px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;
+}
+.facts { display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: 6px 10px; margin: 0; font-size: 13.5px; }
+.facts dt { font-family: var(--font-display); font-weight: 700; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding-top: 1px; }
+.facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.facts dd small, .sources small { display: block; color: var(--muted); font-family: var(--font-body); font-size: 12px; }
+.facts a, .sources a, .list a { color: var(--signal); }
+.code { font-family: var(--font-mono); font-size: 12px; background: var(--paper-2); padding: 2px 5px; border-radius: 2px; display: inline-block; overflow-wrap: anywhere; }
+
+.sources { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; }
+.sources li { padding-left: 10px; border-left: 3px solid var(--rule); }
+.role { display: block; font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.list { margin: 0; padding-left: 18px; font-size: 13.5px; display: flex; flex-direction: column; gap: 3px; }
+.recipe { margin: 10px 0 0; padding-left: 20px; font-size: 13px; display: flex; flex-direction: column; gap: 4px; color: var(--ink-2); }
+.p { margin: 0 0 8px; font-size: 13.5px; color: var(--ink-2); }
+.muted { color: var(--muted); font-size: 13px; margin: 0; }
+
+.frameWrap { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+.frameBar {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  padding: 6px 12px; font-size: 12px; color: var(--muted); border-bottom: 1px solid var(--rule); background: var(--paper);
+}
+.frameBar > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.frameActions { display: flex; gap: 8px; flex-shrink: 0; }
+.frameActions button, .frameActions a {
+  font-family: var(--font-display); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;
+  padding: 3px 9px; border: 1.5px solid var(--rule-strong); border-radius: 3px; background: transparent; color: var(--ink);
+  cursor: pointer; text-decoration: none;
+}
+.frameActions a { background: var(--ink); color: var(--paper); }
+.frame { flex: 1; width: 100%; border: 0; background: #fff; }
+
+@media (max-width: 900px) {
+  .layout { display: block; height: auto; }
+  .panel { border-right: 0; border-bottom: 2px solid var(--rule-strong); padding: 18px 16px 24px; overflow: visible; }
+  .frameWrap { height: 85dvh; }
+  .layout:has(.wide) .panel { display: block; }
+  .frameActions button { display: none; }
+}

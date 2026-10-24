@@ -1,0 +1,487 @@
+{
+ "title": "Olomouc Bus Peak Fleet",
+ "output": "Olomouc Bus Peak Fleet.html",
+ "network_date": "2026-09-29",
+ "vehicle_date": "2026-09-29",
+ "gtfs": {
+  "raw": "2026-09-17",
+  "url": "https://www.dpmo.cz/doc/dpmo-olomouc-cz.zip",
+  "service_date": "20260929"
+ },
+ "register": {
+  "raw": "2026-09-29",
+  "operator_id": 134,
+  "tractions": [
+   "autobus",
+   "elektrobus"
+  ]
+ },
+ "vypravenost": {
+  "slug": "mhd-ol",
+  "history_since": "2025-01-01",
+  "history_max_pages": 12
+ },
+ "lines": [
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "17",
+  "18",
+  "19",
+  "20",
+  "21",
+  "22",
+  "24",
+  "25",
+  "26",
+  "27",
+  "28",
+  "29",
+  "31",
+  "42",
+  "50",
+  "51",
+  "52"
+ ],
+ "simutrans_lines": [
+  {
+   "id": "11R",
+   "records": "11",
+   "name": "11 Hlavní nádraží – Radíkov",
+   "entries": [
+    [
+     "11",
+     "Hlavní nádraží",
+     "Radíkov"
+    ],
+    [
+     "11",
+     "Radíkov",
+     "Hlavní nádraží"
+    ]
+   ],
+   "chip": "split, a choice",
+   "text": "DPMO line 11 runs from Hlavní nádraží to two ends, Radíkov (3 an hour) and Lošov, Svolinského (2 an hour), and its buses switch between them (chaining the timetable: of the Radíkov arrivals, 4 go back to Radíkov and 3 to Lošov). Also at cannot change the route, so the two ends are separate Simutrans lines, each sized by its own round trip. The record of 29 Sep does not say which end the logged bus ran; it is put on 11 Radíkov, a choice."
+  },
+  {
+   "id": "11L",
+   "records": "11",
+   "name": "11 Hlavní nádraží – Lošov, Svolinského",
+   "entries": [
+    [
+     "11",
+     "Hlavní nádraží",
+     "Lošov, Svolinského"
+    ],
+    [
+     "11",
+     "Lošov, Svolinského",
+     "Hlavní nádraží"
+    ]
+   ],
+   "chip": "split, a choice",
+   "text": "The Lošov end of line 11 as its own Simutrans line (see 11 Radíkov). No bus of line 11 was logged for this end, so all of its buses are designed."
+  },
+  {
+   "id": "12",
+   "records": "12",
+   "name": "12 Řepčín, železárny – Holice / Průmyslová",
+   "entries": [
+    [
+     "12",
+     "Řepčín, železárny",
+     "Holice"
+    ],
+    [
+     "12",
+     "Holice",
+     "Řepčín, železárny"
+    ]
+   ],
+   "chip": "terminus",
+   "text": "Holice and Průmyslová are one terminus here: 12 turns at Holice or runs on two stops to Průmyslová (5 of the 7 departures back to Řepčín start at Průmyslová). The Simutrans line ends at Holice; the Průmyslová minutes are used as they are."
+  },
+  {
+   "id": "13",
+   "records": "13",
+   "name": "13 Hlavní nádraží – Šlechtitelů",
+   "entries": [
+    [
+     "13",
+     "Hlavní nádraží",
+     "Šlechtitelů"
+    ],
+    [
+     "13",
+     "Šlechtitelů",
+     "Hlavní nádraží"
+    ]
+   ]
+  },
+  {
+   "id": "14",
+   "records": "14",
+   "name": "14 Panelárna – Hlavní nádraží – Ahold",
+   "entries": [
+    [
+     "14",
+     "Panelárna",
+     "Ahold"
+    ],
+    [
+     "14",
+     "Ahold",
+     "Panelárna",
+     {
+      "merge": [
+       [
+        "14",
+        "Ahold",
+        "Hlavní nádraží"
+       ]
+      ]
+     }
+    ]
+   ],
+   "chip": "irregular",
+   "text": "14 runs Panelárna – Hlavní nádraží – Ahold, but in the peak many trips run only part of it: Ahold (or Čistička, one stop before) to Hlavní nádraží, Hlavní nádraží to Panelárna, and a pull-out from Civilní obrana. The Simutrans line runs the whole route; the Ahold row takes the Ahold → Hlavní nádraží departures; the Hlavní nádraží → Panelárna short trips are not modelled, and their bus is counted by the on-the-road rule."
+  },
+  {
+   "id": "15",
+   "records": "15",
+   "name": "15 Hlavní nádraží – Bukovany",
+   "entries": [
+    [
+     "15",
+     "Hlavní nádraží",
+     "Bukovany"
+    ],
+    [
+     "15",
+     "Bukovany",
+     "Hlavní nádraží"
+    ]
+   ]
+  },
+  {
+   "id": "16",
+   "records": "16",
+   "name": "16 Tabulový vrch – Nové Sady – Centrum Haná",
+   "entries": [
+    [
+     "16",
+     "Tabulový vrch",
+     "Nové Sady"
+    ],
+    [
+     "16",
+     "Nové Sady",
+     "Centrum Haná"
+    ],
+    [
+     "16",
+     "Centrum Haná",
+     "Nové Sady"
+    ],
+    [
+     "16",
+     "Nové Sady",
+     "Tabulový vrch"
+    ]
+   ],
+   "chip": "through line",
+   "text": "The feed splits 16 at Nové Sady: buses run Tabulový vrch – Nové Sady – Centrum Haná and back (4 of 6 trips chain straight through). One Simutrans line with Nové Sady twice as a through stop (real minute)."
+  },
+  {
+   "id": "17",
+   "records": "17",
+   "name": "17 Farmak – Nemilany",
+   "entries": [
+    [
+     "17",
+     "Farmak",
+     "Nemilany"
+    ],
+    [
+     "17",
+     "Nemilany",
+     "Farmak"
+    ]
+   ]
+  },
+  {
+   "id": "18",
+   "records": "18",
+   "name": "18 Tržnice – Horka, U Přejezdu",
+   "entries": [
+    [
+     "18",
+     "Tržnice",
+     "Horka, U Přejezdu"
+    ],
+    [
+     "18",
+     "Horka, U Přejezdu",
+     "Tržnice"
+    ]
+   ]
+  },
+  {
+   "id": "19",
+   "records": "19",
+   "name": "19 Holice / Průmyslová – Tabulový vrch",
+   "entries": [
+    [
+     "19",
+     "Holice",
+     "Tabulový vrch"
+    ],
+    [
+     "19",
+     "Tabulový vrch",
+     "Holice"
+    ]
+   ],
+   "chip": "terminus",
+   "text": "Holice and Průmyslová are one terminus here: half the trips from Tabulový vrch run on from Holice to Průmyslová (two stops). The Simutrans line ends at Holice."
+  },
+  {
+   "id": "20",
+   "records": "20",
+   "name": "20 Farmak – Chomoutov, škola",
+   "entries": [
+    [
+     "20",
+     "Farmak",
+     "Chomoutov, škola"
+    ],
+    [
+     "20",
+     "Chomoutov, škola",
+     "Farmak"
+    ]
+   ],
+   "chip": "short workings",
+   "text": "Two peak trips run Chomoutov → Tržnice only (15:08, 16:08); they are not a separate line (2 trips), and the bus they need is counted by the on-the-road rule."
+  },
+  {
+   "id": "21",
+   "records": "21",
+   "name": "21 Hlavní nádraží – Aquapark",
+   "entries": [
+    [
+     "21",
+     "Hlavní nádraží",
+     "Aquapark",
+     {
+      "merge": [
+       [
+        "21",
+        "Hlavní nádraží",
+        "Tabulový vrch"
+       ]
+      ]
+     }
+    ],
+    [
+     "21",
+     "Aquapark",
+     "Hlavní nádraží",
+     {
+      "merge": [
+       [
+        "21",
+        "Tabulový vrch",
+        "Hlavní nádraží"
+       ]
+      ]
+     }
+    ]
+   ],
+   "rate": 2,
+   "chip": "post-peak change",
+   "text": "21 runs Hlavní nádraží – Aquapark every 30 min until 16:21; from 16:42 it runs every hour and some trips turn at Tabulový vrch or run to the garage. The Tabulový vrch trips are folded into the rows; Aquapark is set every 30 as in the peak (the real 16:51 runs to the garage)."
+  },
+  {
+   "id": "22",
+   "records": "22",
+   "name": "22 Černovír – Šlechtitelů",
+   "entries": [
+    [
+     "22",
+     "Černovír",
+     "Šlechtitelů"
+    ],
+    [
+     "22",
+     "Šlechtitelů",
+     "Černovír"
+    ]
+   ]
+  },
+  {
+   "id": "25",
+   "records": "25",
+   "name": "25 Hlavní nádraží – Nový Dvůr",
+   "entries": [
+    [
+     "25",
+     "Hlavní nádraží",
+     "Nový Dvůr"
+    ],
+    [
+     "25",
+     "Nový Dvůr",
+     "Hlavní nádraží"
+    ]
+   ],
+   "chip": "irregular",
+   "text": "25 is an hourly, irregular line: Hlavní nádraží (or Kaufland next door) – Hamerská – Holice – Nový Dvůr, with short trips to Hamerská, Holice and Kaufland, sklad. The Simutrans line is Hlavní nádraží – Nový Dvůr; the short trips are not modelled and their bus is counted by the on-the-road rule."
+  },
+  {
+   "id": "26",
+   "records": "26",
+   "name": "26 Hlavní nádraží – Topolany",
+   "entries": [
+    [
+     "26",
+     "Hlavní nádraží",
+     "Topolany"
+    ],
+    [
+     "26",
+     "Topolany",
+     "Hlavní nádraží"
+    ]
+   ]
+  },
+  {
+   "id": "27",
+   "records": "27",
+   "name": "27 Tržnice – Globus – Tržnice (circular)",
+   "entries": [
+    [
+     "27",
+     "Tržnice",
+     "Tržnice"
+    ]
+   ],
+   "chip": "circular",
+   "text": "27 is a circular line from Tržnice via Globus and back, every 45 min in the afternoon. One stop entry, set every 45 (45 divides 1440)."
+  },
+  {
+   "id": "28",
+   "records": "28",
+   "name": "28 Tržnice – Technologický park",
+   "entries": [
+    [
+     "28",
+     "Tržnice",
+     "Technologický park"
+    ],
+    [
+     "28",
+     "Technologický park",
+     "Tržnice"
+    ]
+   ],
+   "chip": "terminus",
+   "text": "28 ends at Tržnice, plocha (the bus stand next to Tržnice) on the way back; it is folded into Tržnice. Hourly, one bus."
+  },
+  {
+   "id": "31",
+   "records": "31",
+   "name": "31 Hlavní nádraží – Sigma",
+   "entries": [
+    [
+     "31",
+     "Hlavní nádraží",
+     "Sigma"
+    ],
+    [
+     "31",
+     "Sigma",
+     "Hlavní nádraží"
+    ]
+   ],
+   "chip": "variants",
+   "text": "31 alternates between Sigma and Týneček with one bus; the Simutrans line is Hlavní nádraží – Sigma (the end with most peak trips), and the Týneček trips are not modelled."
+  }
+ ],
+ "depot_stops": [
+  "Ladova",
+  "Na Střelnici"
+ ],
+ "alias": {
+  "12": {
+   "Průmyslová": "Holice"
+  },
+  "19": {
+   "Průmyslová": "Holice"
+  },
+  "25": {
+   "Kaufland": "Hlavní nádraží"
+  },
+  "28": {
+   "Tržnice, plocha": "Tržnice"
+  },
+  "14": {
+   "Čistička": "Ahold",
+   "Civilní obrana": "Panelárna"
+  }
+ },
+ "fit": {
+  "core": [
+   930,
+   990
+  ],
+  "overrides": {
+   "21|Aquapark": {
+    "I": 30,
+    "R": [
+     21
+    ],
+    "first": 891,
+    "last": 981,
+    "_why": "every 30 as in the peak (14:51-16:21); the 16:51 runs to the garage (Ladova) in reality, so the Simutrans line keeps one more return trip than the timetable"
+   }
+  }
+ },
+ "turnaround_default": 3,
+ "through": [],
+ "turn": [],
+ "not_peak": {
+  "10": "last departure 15:55",
+  "24": "last departure 15:20",
+  "29": "morning only",
+  "42": "last departure 15:44",
+  "50": "night line",
+  "51": "night line",
+  "52": "night line"
+ },
+ "texts": {
+  "eyebrow": "DPMO city buses · afternoon peak · Simutrans reference",
+  "lede": "Every Olomouc city bus line with afternoon-peak service in the timetable in force on Tue 29 Sep 2026, with the buses that run it at 16:00: the buses logged on Tue 29 Sep 2026 (the only weekday with a useful number of bus records), and designed buses with real car numbers from each line’s history for the rest. All lines are run by DPMO (Dopravní podnik města Olomouce) from one garage; no subcontractor runs a city line.",
+  "day": "Coverage of DPMO bus records is thin. Fri 25 Sep, the day the other sheets use, has <b>no bus record at all</b>, and neither has Fri 18 Sep, the day of the Olomouc tram sheet. No weekday of September is complete. <b>Tue 29 Sep 2026</b>, the network day itself, has by far the most: 29 buses on 15 of the 17 afternoon lines, so it is the vehicle day: one real day, not a mix of days. The records carry no kurz and no time of day, so every logged bus counts for its line. Lines and slots the day does not cover get designed buses with real car numbers (see Buses by line). Records for 29 Sep may still be added tonight: re-running the pipeline picks them up.",
+  "network": "Bus lines of the DPMO GTFS (version 17 Sep 2026, valid to 12 Dec 2026) on the service day Tue 29 Sep 2026, trips 15:00–18:00 per terminus pair, garage runs (Ladova, Na Střelnici) left out. Departures are the trips starting between 16:00 and 16:59; headway is the median gap between 15:00 and 18:00, and runtime the average scheduled time.",
+  "schedule": "Values to type into the fork’s Scheduling tab, on the stop entries listed for each Simutrans line. Units are calendar minutes; the offset is minutes after midnight modulo the interval, and Leave up to stays automatic. <b>Where the bus turns, every departure is set 1 min before the timetable departure</b> so it leaves the turning point on time (as on every bus and trolleybus sheet since 29 Sep): offset and Also at are the real minute − 1, with the real minutes underneath. <b>Through stops</b> (Nové Sady on 16) keep the real minute. Each Simutrans line is fitted at one rate (the 16:00–16:59 departures most of its entries share) so that no end sends more buses than the other; where an end runs a different number, the row is marked partial and lists the minutes left out or added. A “+” line under a stop names a variant whose departures are folded into that row.",
+  "need": "Buses needed at 16:00: follow a bus leaving the first entry around 16:00 through every leg of its line, taking the first departure at least 3 min after arriving, or less where the timetable itself turns faster (the timetable cycle); a round trip that would wait longer than the line’s interval (at least 30 min) is skipped. As on the Prague, Ostrava and Brno bus sheets, a real line never gets fewer buses than the most it has on the road at once between 16:00 and 16:59 (each trip holding its bus until arrival plus the terminus’s shortest turnaround, at most 3 min); the difference goes to the line’s first Simutrans line.",
+  "lines": "One row per bus, grouped by Simutrans line. <span class=\"chip ok\">logged</span> buses were recorded on the line on Tue 29 Sep 2026 (seznam-autobusu.cz). <span class=\"chip des\">designed</span> buses are not recorded that day: each is a real DPMO bus that ran the line on weekdays before (dates given), is in service, and was not logged anywhere on 29 Sep. The picks first cover every bus type of the line’s roster that the other buses lack, then take the buses that ran the line most recently. Rows marked <span class=\"chip spare\">not needed</span> are dimmed at the bottom: logged buses beyond the line’s need (one of every type kept first; with no kurz numbers, the buses listed later on the record page go first), and free buses from the line history that the need does not use. They are left out of every count, the depot and the pak totals (user rule, 29 Sep). Every bus shows its number and garage, its full type and length, and the pak128 core.",
+  "pak": "Each type and livery in the peak, mapped to the objects of the custom Czech pak128, package VZ-DPOlomouc-bus (DPMO buses, imported and completed in pak commit 0c2cc6a; read from the local checkout, main b84c15c). Full names follow VZ-DPOlomouc-&lt;family&gt;-&lt;livery&gt;-&lt;core&gt;. Urbino 12 II and III share one body (Urbino_12). The livery comes from the register paint: DPMO white-blue-red, plain lime green (616–618) or plain white (615); an advert wrap (CVR) uses the type’s normal livery, as the pak session does. The Urbino_12 family has more than one livery object, so its core shows the livery. Articulated buses are two objects (front -A, rear -B), shown by the first core. Car units per vehicle (16 = one tile).",
+  "depot": "DPMO keeps every bus at one garage, Dolní Hejčínská (register code DH; the trams are at Koželužská). Counted buses only.",
+  "notcounted": "Buses shown on the line cards but not counted: logged surplus and free history buses the need does not use (user rule, 29 Sep).",
+  "method": [
+   "<b>Which day.</b> Network: the DPMO timetable in force on Tue 29 Sep 2026. Buses: Tue 29 Sep 2026, the only September weekday with a useful number of DPMO bus records (Fri 25 Sep and Fri 18 Sep have none). See “Which day”.",
+   "<b>Buses.</b> seznam-autobusu.cz vypravenost, MHD Olomouc (<a href=\"https://seznam-autobusu.cz/vypravenost/mhd-ol?datum=2026-09-29\">day overview</a>), one page per line. The records name no kurz, no time and no note for buses.",
+   "<b>Designed buses.</b> The line histories since 1 Jan 2025 (all pages), weekdays only. Roster of a line: the logged types plus every type with at least two weekday records on it in 2026 (a single record is treated as a one-off substitute). A designed bus is in service in the register, was not in the 29 Sep day overview, and is used once. Order: recent history (2026), then 2025 history, then free buses of the line’s types; the picks first cover roster types the line lacks.",
+   "<b>Types and garage.</b> seznam-autobusu.cz fleet register of DPMO (iddopravce=134, buses, in service), read on 29 Sep 2026; 501 (SOR NS 12 electric) and 625 (Urbino 12 III, laid up long-term) are not in the listing and come from their vehicle pages.",
+   "<b>Timetable.</b> DPMO GTFS (dpmo.cz, version 17 Sep 2026, the file stored by the Olomouc tram pipeline; the current download is identical), bus routes (route_type 3), service day 29 Sep 2026. The feed has no vehicle blocks; the order of legs on 16 and the split of 11 come from chaining trips (scripts/propose.py).",
+   "<b>Simutrans schedule.</b> Shared fit rule (pipeline/README.md): the longest exact run of one Departure every / Offset / Also at pattern (at most 8 slots) around the peak core 15:30–16:30, one rate per Simutrans line; turning points −1 min.",
+   "<b>Rebuild.</b> Generated by pipeline/olomouc-bus (state “2026-09-29”), stdlib-only Python; see its README for every decision and the update recipe."
+  ]
+ }
+}

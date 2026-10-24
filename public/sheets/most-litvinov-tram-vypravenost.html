@@ -1,0 +1,237 @@
+<title>Most–Litvínov Tram Vypravenost</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f5f2f1; --surface:#ffffff; --surface2:#efe9e8; --ink:#201b1c; --ink2:#4d4446; --muted:#786e70; --rule:#e2d9da; --rule2:#cfc4c5;
+  --accent:#d0021b; --accent-ink:#ffffff; --accent-soft:#f8e3e4;
+  --vp:#2b5f9e; --vp-soft:#dfe9f5; --vmo:#8a5a12; --vmo-soft:#f7ebd5; --ok:#2f7d4f; --warn:#b7791f; --warn-soft:#fbefd9;
+  --font-display:"Barlow Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --font-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#151213; --surface:#1f1b1c; --surface2:#2a2425; --ink:#f1ebeb; --ink2:#cbc1c2; --muted:#9d9193; --rule:#372f30; --rule2:#4a4041;
+    --accent:#e4383e; --accent-ink:#ffffff; --accent-soft:#3d1c1e;
+    --vp:#7fb0ea; --vp-soft:#1d2e42; --vmo:#e0a94a; --vmo-soft:#3b2d14; --ok:#6fc48f; --warn:#e0a94a; --warn-soft:#3b2d14;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#151213; --surface:#1f1b1c; --surface2:#2a2425; --ink:#f1ebeb; --ink2:#cbc1c2; --muted:#9d9193; --rule:#372f30; --rule2:#4a4041;
+  --accent:#e4383e; --accent-ink:#ffffff; --accent-soft:#3d1c1e;
+  --vp:#7fb0ea; --vp-soft:#1d2e42; --vmo:#e0a94a; --vmo-soft:#3b2d14; --ok:#6fc48f; --warn:#e0a94a; --warn-soft:#3b2d14;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.45;padding-inline:clamp(16px,3vw,40px);padding-block:0 64px}
+h1,h2,h3,h4{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:1.05}
+h1{font-size:clamp(34px,5vw,54px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:28px;font-weight:600;margin-block:44px 6px}
+h2+.sub{color:var(--muted);max-width:70ch;margin-bottom:16px}
+p{margin:0}
+a{color:var(--vp)}
+.mono{font-family:var(--font-mono);font-size:.92em}
+header.top{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-end;padding-block:36px 20px;border-bottom:3px solid var(--accent)}
+header.top .lede{max-width:66ch;color:var(--ink2);font-size:16px;margin-top:10px}
+.eyebrow{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:13px;color:var(--accent)}
+.stats{display:flex;gap:28px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat b{font-family:var(--font-display);font-size:34px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.nav .lab{font:600 12px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-right:4px}
+.nav .sep{flex:1}
+.nav a.txt{font:600 14px var(--font-display);letter-spacing:.02em;color:var(--ink2);text-decoration:none;padding:4px 8px;border-radius:4px;background:var(--surface2)}
+.badge{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 6px;border-radius:6px;background:var(--accent);color:var(--accent-ink);font:700 24px var(--font-display);font-variant-numeric:tabular-nums;text-decoration:none;flex-shrink:0}
+.badge.sm{min-width:32px;height:28px;font-size:17px;border-radius:4px}
+.state{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;margin-top:20px}
+.st{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px 14px}
+.st h4{font-size:17px;font-weight:600;margin-bottom:4px}
+.st .tag{font:600 11px var(--font-display);text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;border-radius:999px;margin-right:6px;vertical-align:1px}
+.tag.in{background:var(--accent-soft);color:var(--accent)}
+.tag.out{background:var(--surface2);color:var(--muted)}
+.st p{font-size:14px;color:var(--ink2)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;font-size:13px;color:var(--ink2);align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:18px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;overflow:hidden;scroll-margin-top:60px}
+.card>header{display:flex;align-items:flex-start;gap:12px;padding:14px 16px 10px}
+.hd{flex:1;min-width:0}
+.hd h3{font-size:23px;font-weight:700}
+.hd p{font-size:13px;color:var(--muted);margin-top:3px}
+.cnt{display:flex;flex-direction:column;align-items:flex-end;text-align:right;flex-shrink:0}
+.cnt b{font-family:var(--font-display);font-size:32px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.cnt span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);max-width:14em}
+.tw{overflow-x:auto;padding-inline:16px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font:600 11px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left;padding:4px 6px;border-bottom:1px solid var(--rule)}
+td{padding:4px 6px;border-bottom:1px solid var(--rule);vertical-align:top}
+td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.arr{color:var(--muted);padding-inline:0}
+.sched{margin:10px 16px 0;padding:8px 10px;background:var(--surface2);border-radius:6px}
+.sched h4{font:600 12px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:2px}
+.tw0{overflow-x:auto}
+.st2 td,.st2 th{border-bottom-color:var(--rule2);font-size:13px}
+.st2 td.sv{font-weight:600;white-space:nowrap}
+.st2 tr.all td{color:var(--ink2);font-style:italic}
+.st2 tr:last-child td{border-bottom:0}
+.st2 .win{font-size:11.5px;color:var(--muted)}
+.st2 .warn{color:var(--warn)}
+.lnote{padding:8px 16px 0;font-size:13px;color:var(--ink2)}
+ul.vs{list-style:none;margin:0;padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px}
+li.v{display:flex;flex-direction:column;gap:1px;max-width:100%;border:1px solid var(--rule2);border-radius:5px;padding:3px 7px;background:var(--surface);font-size:13px}
+li.v.seen{border-color:var(--ok)}
+li.v .num{font-family:var(--font-mono);font-size:14px;font-variant-numeric:tabular-nums}
+li.v .num b{font-weight:500}
+li.v .vt{color:var(--ink2)}
+.dp{font:600 10px var(--font-display);letter-spacing:.08em;padding:1px 5px;border-radius:3px}
+.d-VP{background:var(--vp-soft);color:var(--vp)}
+.d-VMO{background:var(--vmo-soft);color:var(--vmo)}
+.dt td.vc .num{font-family:var(--font-mono);font-size:14px}
+.dt td{font-size:13px}
+.dt td.stc{color:var(--muted)}
+.core{font-family:var(--font-mono);font-weight:500}
+.pak{font-size:11.5px;color:var(--muted);font-family:var(--font-mono)}
+.pak.miss,.pak.subst em{color:var(--warn)}
+.pak em{font-style:normal;font-family:var(--font-body)}
+i.m{font-style:normal;font-size:11px;line-height:1}
+i.m.on{color:var(--ok)}
+i.m.any{color:var(--ok)}
+details{border-top:1px solid var(--rule);padding:8px 16px 12px}
+summary{cursor:pointer;font:600 13px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+summary:focus-visible,a:focus-visible{outline:2px solid var(--vp);outline-offset:2px}
+details p{font-size:13px;color:var(--ink2);margin-top:6px}
+.depots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:18px;align-items:start}
+.depot{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:14px 16px}
+.depot>header{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;margin-bottom:6px}
+.depot h3{font-size:26px;font-weight:700}
+.depot h3 small{font:600 13px var(--font-display);letter-spacing:.08em;color:var(--muted);margin-left:6px}
+.mixline{font-size:13px;color:var(--muted);margin-bottom:6px}
+.dl{display:grid;grid-template-columns:34px 28px 1fr;gap:4px 8px;align-items:start;padding-block:8px;border-top:1px solid var(--rule)}
+.dl .dc{font:700 20px var(--font-display);color:var(--muted);text-align:right;font-variant-numeric:tabular-nums;padding-top:2px}
+.dl ul.vs{padding:0}
+.spares{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px}
+.sp h4{font-size:19px;font-weight:600;margin-bottom:6px}
+.sp p{font-size:13px;color:var(--ink2);margin-bottom:6px}
+.types{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:8px 12px;overflow-x:auto}
+.notes{max-width:78ch;display:flex;flex-direction:column;gap:10px;color:var(--ink2);font-size:14.5px}
+.notes b{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+html{scroll-behavior:smooth}
+li.v.spare{opacity:.55;border-style:dotted}
+</style>
+<style>
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center}
+.controls .nav{position:static;padding:0;border:0;background:none;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.controls .lab{font:600 12px var(--font-display,sans-serif);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding-inline:2px 6px}
+.controls .lnk{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:24px;padding-inline:5px;border-radius:4px;background:var(--accent);color:var(--accent-ink,#fff);font:700 15px var(--font-display,sans-serif);text-decoration:none;font-variant-numeric:tabular-nums}
+.controls .dnav a{font:600 14px var(--font-display,sans-serif);text-decoration:none;color:var(--ink2);background:var(--surface2);padding:3px 8px;border-radius:4px}
+.controls .dnav a b{color:var(--accent)}
+.controls input[type=search]{font:14px var(--font-body,sans-serif);padding:6px 10px;border:1px solid var(--rule2);border-radius:6px;background:var(--surface);color:var(--ink);width:min(100%,230px)}
+.controls a:focus-visible,.controls input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.controls #hits{font-size:13px;color:var(--muted)}
+[id]{scroll-margin-top:var(--stick,110px)}
+[data-v].hit{background:color-mix(in srgb,var(--accent) 22%,transparent);outline:2px solid var(--accent);border-radius:3px}
+</style>
+<style>.brsub{margin:10px 16px 0;font:600 13px var(--font-display);letter-spacing:.02em;color:var(--ink2)}
+.brsub+ul.vs{padding-top:6px}
+tr.brh td{font:600 12px var(--font-display);letter-spacing:.04em;color:var(--accent);background:var(--surface);padding-top:8px}
+.notes ul{margin:6px 0 0;padding-left:20px}.dp{background:var(--surface2);color:var(--ink2)}</style>
+<header class="top">
+  <div style="flex:1;min-width:min(100%,420px)">
+    <p class="eyebrow">Most a Litvínov · tramvaje · vypravenost · pátek 25. 9. 2026 · 16:00</p>
+    <h1>Most–Litvínov Tram Vypravenost</h1>
+    <p class="lede">Every DPmML tram line as it ran on the Friday afternoon peak: route, headway and departure minutes, the Simutrans schedule, and the specific trams on each line with their pak128 objects. The network is shown as it stood on 27 Sep 2026.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>11</b><span>trams out (units)</span></div>
+    <div class="stat"><b>12</b><span>cars incl. coupled</span></div>
+    <div class="stat"><b>4</b><span>lines</span></div>
+    <div class="stat"><b>1</b><span>depot</span></div>
+  </div>
+</header>
+
+<div class="controls"><nav class="nav" aria-label="Lines"><span class="lab">Lines</span><a class="lnk" href="#l1">1</a><a class="lnk" href="#l2">2</a><a class="lnk" href="#l3">3</a><a class="lnk" href="#l4">4</a></nav><nav class="nav dnav" aria-label="Depots and sections"><span class="lab">Depots</span><a href="#d-most" data-dep="most">Most (Dopravní podnik) <b>11</b></a><a href="#pak">Pak128 objects</a><a href="#method">How this was built</a></nav><input type="search" id="q" placeholder="Find vehicle, e.g. 236" aria-label="Find vehicle number" inputmode="numeric"><span id="hits" aria-live="polite"></span></div>
+
+<h2>Network state, 27 Sep 2026</h2>
+<p class="sub">Long-term changes are part of the model. Short closures are left out.</p>
+<div class="state">
+  <div class="st"><h4><span class="tag in">modelled</span>Litvínov modernisation</h4><p>Since 1 Mar 2026 (23:15) the section Záluží, Chemopetrol – Litvínov, Citadela is run by replacement buses, and lines 1, 3 and 4 turn at the Záluží, Chempark loop. Night line 40 is all buses and is left out. The trams keep their timetable times.</p></div>
+  <div class="st"><h4><span class="tag out">not modelled</span>One-day closure of 11 Jul 2026</h4><p>A full-day closure for track maintenance at Sportovní hala. Over long ago; not in the model.</p></div>
+</div>
+<div class="legend"><span>Each vehicle shows its number, full type and pak128 core name. Coupled cars are joined with “ + ”. All trams belong to the one DPmML tram depot in Most.</span></div>
+
+<h2>Lines</h2>
+<p class="sub">Headway, runtime and departure minutes are for the hour around each line’s peak moment. 16:00 is the shared reference hour. Line 1 (the Chempark shift line) has 5 trams at 15:00 but only 1 at 16:00; on 28 Sep 2026 the user decided to keep line 1 with that one tram and a designed frequency. Line 3 runs only in the morning and is shown at 06:00 (the rule for morning-only lines, confirmed by the user on 28 Sep 2026). User ruling of 28 Sep 2026: a short working gets its own Simutrans line only with at least 3 trips in 15:00–17:59, no depot at either end and at least one departure in the 16:00–16:59 hour; otherwise it is listed as not modelled, with no values. The count is the number of vehicle units at that moment; a coupled T3M.3 pair counts as one unit.</p>
+<p class="sub"><b>Tram counts.</b> Every DPmML line runs between two termini at the peak, so each is one Simutrans line. Fits use the shared runfit rule around 16:00 (core 15:30–16:30); the morning-only line 3 uses 05:30–06:30. Line 1&#x27;s schedule is designed (see schedule_override). Each line card shows how many trams are assigned and how many the line needs. “Needed” follows one tram round the line at its peak moment, with 3 min layovers or the terminus’s own shorter timetabled turnaround. “Minimum by runtime” is the two running times divided by the headway. <b>Shared pools:</b> None. Each line keeps its own trams at the peak.</p>
+<p class="sub">The Simutrans schedule holds the values to type into the Scheduling tab of each terminus entry, with the calendar switched on. Each branch is its own Simutrans line. Each row is the longest stretch around the peak that one pattern reproduces exactly (shown as “exact from–to”). Among stretches of similar length the simplest pattern wins, and intervals that divide 60 come first. <b>Loop departures one minute early:</b> every DPmML terminus is a loop (smyčka), so each Offset and “Also at” value is set 1 min before the timetable departure, and the real minutes are listed under each entry. If a loop is built with a separate all-off arrival stop and a boarding stop, put the timetable on the boarding entry. “Leave up to” stays on automatic.</p>
+<div class="grid">
+<article class="card" id="l1"><header><span class="badge">1</span><div class="hd"><h3>Most, Dopravní podnik – Litvínov, Záluží, Chempark</h3><p>1× coupled pair of Tatra T3M.3</p></div><div class="cnt"><b>1</b><span>tram at 16:00</span></div></header>
+<div class="tw"><table class="tt"><thead><tr><th>From</th><th></th><th>To</th><th class="n">Headway</th><th class="n">Leaves 16:xx</th><th class="n">Runtime</th></tr></thead><tbody><tr><td>Litvínov, Záluží, Chempark</td><td class='arr'>&rarr;</td><td>Most, Dopravní podnik</td><td class='n'>every 15 min</td><td class='n mono'>&mdash;</td><td class='n'>20 min</td></tr><tr><td>Most, Dopravní podnik</td><td class='arr'>&rarr;</td><td>Litvínov, Záluží, Chempark</td><td class='n'>single trip</td><td class='n mono'>&mdash;</td><td class='n'>20 min</td></tr></tbody></table></div>
+<div class="sched"><h4>Simutrans schedule · loop departures set 1 min early</h4><div class="tw0"><table class="st2"><thead><tr><th>Terminus entry</th><th class="n">Departure every (min)</th><th class="n">Offset (min)</th><th>Also at (min)</th><th class="n">Leave up to</th></tr></thead><tbody><tr><td>Most, Dopravní podnik &rarr; Litvínov, Záluží, Chempark<div class='win'>loop: 1 min before timetable :08 · designed frequency, see the line note</div></td><td class='n sv'>60</td><td class='n sv'>7</td><td class='mono'>&mdash;</td><td class='n'>auto</td></tr><tr><td>Litvínov, Záluží, Chempark &rarr; Most, Dopravní podnik<div class='win'>loop: 1 min before timetable :42 · designed frequency, see the line note</div></td><td class='n sv'>60</td><td class='n sv'>41</td><td class='mono'>&mdash;</td><td class='n'>auto</td></tr><tr class='all'><td>Litvínov, Záluží, Chempark &rarr; Most, Velebudická</td><td colspan='4'>not modelled (not in the 16:00 peak): 13:12, 13:27</td></tr><tr class='all'><td>Most, Velebudická &rarr; Litvínov, Záluží, Chempark</td><td colspan='4'>not modelled (not in the 16:00 peak): 13:03, 13:18, 13:33, 13:48, 14:03</td></tr></tbody></table></div></div>
+<p class="lnote">Shift line for the Chempark (Orlen Unipetrol) works, weekdays about 06:30–07:40 and 13:00–16:00. At 15:00 five coupled T3M.3 pairs run it; at 16:00 one tram is left. As decided, it is modelled as that one tram shuttling Dopravní podnik – Chempark every 60 min (designed frequency, the timetable&#x27;s last minutes).</p><p class="brsub">Most, Dopravní podnik ⇄ Litvínov, Záluží, Chempark · 1 assigned, 1 needed (round trip 60 min with 3 min layovers; minimum by runtime 1)</p><ul class="vs"><li class="v"><div class="num"><span data-v="236">236</span> + <span data-v="237">237</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Tatra T3M.3 + Tatra T3M.3 · 15.1 m + 15.1 m</div><div class="pak">T3M_3 + T3M_3</div></li><li class="v spare"><div class="num"><span data-v="244">244</span> + <span data-v="245">245</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Tatra T3M.3 + Tatra T3M.3 · 15.1 m + 15.1 m</div><div class="pak">T3M_3 + T3M_3</div><div class="vt">not needed · The other four fixed T3M</div></li><li class="v spare"><div class="num"><span data-v="247">247</span> + <span data-v="282">282</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Tatra T3M.3 + Tatra T3M.3 · 15.1 m + 15.1 m</div><div class="pak">T3M_3 + T3M_3</div><div class="vt">not needed · The other four fixed T3M</div></li><li class="v spare"><div class="num"><span data-v="205">205</span> + <span data-v="240">240</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Tatra T3M.3 + Tatra T3M.3 · 15.1 m + 15.1 m</div><div class="pak">T3M_3 + T3M_3</div><div class="vt">not needed · The other four fixed T3M</div></li><li class="v spare"><div class="num"><span data-v="301">301</span> + <span data-v="306">306</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Tatra T3M.3 + Tatra T3M.3 · 15.1 m + 15.1 m</div><div class="pak">T3M_3 + T3M_3</div><div class="vt">not needed · The other four fixed T3M</div></li></ul>
+<details><summary>Stops</summary><p><b>Litvínov, Záluží, Chempark &rarr; Most, Dopravní podnik</b> (12 stops): Litvínov, Záluží, Chempark · Litvínov, Záluží, čerpací stanice · Litvínov, Záluží, doprava · Most, rozcestí Kopisty · Most, Železničářů · Most, Souš · Most, Zimní stadion · Most, Sportovní hala · Most, Obchodní dům PRIOR · Most, 1. náměstí · Most, Československé mládeže · Most, Dopravní podnik</p></details></article>
+<article class="card" id="l2"><header><span class="badge">2</span><div class="hd"><h3>Most, nádraží – Most, Velebudická</h3><p>2× Pragoimex VarioLF plus, 1× Pragoimex VarioLFR.S</p></div><div class="cnt"><b>3</b><span>trams at 16:00</span></div></header>
+<div class="tw"><table class="tt"><thead><tr><th>From</th><th></th><th>To</th><th class="n">Headway</th><th class="n">Leaves 16:xx</th><th class="n">Runtime</th></tr></thead><tbody><tr><td>Most, nádraží</td><td class='arr'>&rarr;</td><td>Most, Velebudická</td><td class='n'>every 15 min</td><td class='n mono'>:05 :20 :35 :50</td><td class='n'>16 min</td></tr><tr><td>Most, Velebudická</td><td class='arr'>&rarr;</td><td>Most, nádraží</td><td class='n'>every 15 min</td><td class='n mono'>:07 :22 :37 :52</td><td class='n'>16 min</td></tr></tbody></table></div>
+<div class="sched"><h4>Simutrans schedule · loop departures set 1 min early</h4><div class="tw0"><table class="st2"><thead><tr><th>Terminus entry</th><th class="n">Departure every (min)</th><th class="n">Offset (min)</th><th>Also at (min)</th><th class="n">Leave up to</th></tr></thead><tbody><tr><td>Most, nádraží &rarr; Most, Velebudická<div class='win'>loop: 1 min before timetable :05, :20, :35, :50 · exact 13:05–18:50</div></td><td class='n sv'>15</td><td class='n sv'>4</td><td class='mono'>&mdash;</td><td class='n'>auto</td></tr><tr><td>Most, Velebudická &rarr; Most, nádraží<div class='win'>loop: 1 min before timetable :07, :22, :37, :52 · exact 13:07–19:22</div></td><td class='n sv'>15</td><td class='n sv'>6</td><td class='mono'>&mdash;</td><td class='n'>auto</td></tr></tbody></table></div></div>
+<p class="lnote">Town line inside Most every 15 min. One of the three turns is timetabled with a low-floor guarantee on every trip. The VarioLF plus cars 314 and 315 are registered as used on line 2 only.</p><p class="brsub">Most, nádraží ⇄ Most, Velebudická · 3 assigned, 3 needed (round trip 45 min with 3 min layovers; minimum by runtime 3)</p><ul class="vs"><li class="v"><div class="num"><span data-v="314">314</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex VarioLF plus · 15.1 m</div><div class="pak">VarioLFplus</div></li><li class="v"><div class="num"><span data-v="315">315</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex VarioLF plus · 15.1 m</div><div class="pak">VarioLFplus</div></li><li class="v"><div class="num"><span data-v="253">253</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex VarioLFR.S · 15.1 m</div><div class="pak">VarioLFR_S</div></li></ul>
+<details><summary>Stops</summary><p><b>Most, nádraží &rarr; Most, Velebudická</b> (11 stops): Most, nádraží · Most, Tesco · Most, Zimní stadion · Most, Sportovní hala · Most, Obchodní dům PRIOR · Most, 1. náměstí · Most, Československé mládeže · Most, Dopravní podnik · Most, Zahradní · Most, Velebudická škola · Most, Velebudická</p><p><b>Most, Velebudická &rarr; Most, nádraží</b> (10 stops): Most, Velebudická · Most, Zahradní · Most, Dopravní podnik · Most, Československé mládeže · Most, 1. náměstí · Most, Obchodní dům PRIOR · Most, Sportovní hala · Most, Zimní stadion · Most, Tesco · Most, nádraží</p></details></article>
+<article class="card" id="l3"><header><span class="badge">3</span><div class="hd"><h3>Most, nádraží – Litvínov, Záluží, Chempark</h3><p>3× Tatra T3M.3</p></div><div class="cnt"><b>3</b><span>trams at 06:00</span></div></header>
+<div class="tw"><table class="tt"><thead><tr><th>From</th><th></th><th>To</th><th class="n">Headway</th><th class="n">Leaves 06:xx</th><th class="n">Runtime</th></tr></thead><tbody><tr><td>Most, nádraží</td><td class='arr'>&rarr;</td><td>Litvínov, Záluží, Chempark</td><td class='n'>every 15 min</td><td class='n mono'>:00 :15 :30</td><td class='n'>13 min</td></tr><tr><td>Litvínov, Záluží, Chempark</td><td class='arr'>&rarr;</td><td>Most, nádraží</td><td class='n'>every 15 min</td><td class='n mono'>:12</td><td class='n'>13 min</td></tr></tbody></table></div>
+<div class="sched"><h4>Simutrans schedule · loop departures set 1 min early</h4><div class="tw0"><table class="st2"><thead><tr><th>Terminus entry</th><th class="n">Departure every (min)</th><th class="n">Offset (min)</th><th>Also at (min)</th><th class="n">Leave up to</th></tr></thead><tbody><tr><td>Most, nádraží &rarr; Litvínov, Záluží, Chempark<div class='win'>loop: 1 min before timetable :00, :15, :30, :45 · exact 5:00–6:30</div></td><td class='n sv'>15</td><td class='n sv'>14</td><td class='mono'>&mdash;</td><td class='n'>auto</td></tr><tr><td>Litvínov, Záluží, Chempark &rarr; Most, nádraží<div class='win'>loop: 1 min before timetable :12, :27, :42, :57 · exact 5:12–6:12</div></td><td class='n sv'>15</td><td class='n sv'>11</td><td class='mono'>&mdash;</td><td class='n'>auto</td></tr></tbody></table></div></div>
+<p class="lnote">Morning-only line, about 05:00–06:45, with no afternoon trips. It is shown at the morning peak (06:00), following the rule for lines without afternoon service.</p><p class="brsub">Most, nádraží ⇄ Litvínov, Záluží, Chempark · 3 assigned, 3 needed (round trip 45 min with 3 min layovers; minimum by runtime 2)</p><ul class="vs"><li class="v"><div class="num"><span data-v="302">302</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Tatra T3M.3 · 15.1 m</div><div class="pak">T3M_3</div></li><li class="v"><div class="num"><span data-v="305">305</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Tatra T3M.3 · 15.1 m</div><div class="pak">T3M_3</div></li><li class="v"><div class="num"><span data-v="308">308</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Tatra T3M.3 · 15.1 m</div><div class="pak">T3M_3</div></li></ul>
+<details><summary>Stops</summary><p><b>Most, nádraží &rarr; Litvínov, Záluží, Chempark</b> (9 stops): Most, nádraží · Most, Tesco · Most, Chomutovská · Most, Souš · Most, Železničářů · Most, rozcestí Kopisty · Litvínov, Záluží, doprava · Litvínov, Záluží, čerpací stanice · Litvínov, Záluží, Chempark</p><p><b>Litvínov, Záluží, Chempark &rarr; Most, nádraží</b> (9 stops): Litvínov, Záluží, Chempark · Litvínov, Záluží, čerpací stanice · Litvínov, Záluží, doprava · Most, rozcestí Kopisty · Most, Železničářů · Most, Souš · Most, Chomutovská · Most, Tesco · Most, nádraží</p></details></article>
+<article class="card" id="l4"><header><span class="badge">4</span><div class="hd"><h3>Most, Dopravní podnik – Litvínov, Záluží, Chempark</h3><p>4× Pragoimex EVO2</p></div><div class="cnt"><b>4</b><span>trams at 16:00</span></div></header>
+<div class="tw"><table class="tt"><thead><tr><th>From</th><th></th><th>To</th><th class="n">Headway</th><th class="n">Leaves 16:xx</th><th class="n">Runtime</th></tr></thead><tbody><tr><td>Litvínov, Záluží, Chempark</td><td class='arr'>&rarr;</td><td>Most, Dopravní podnik</td><td class='n'>every 15 min</td><td class='n mono'>:06 :21 :36 :51</td><td class='n'>20 min</td></tr><tr><td>Most, Dopravní podnik</td><td class='arr'>&rarr;</td><td>Litvínov, Záluží, Chempark</td><td class='n'>every 15 min</td><td class='n mono'>:02 :17 :32 :47</td><td class='n'>20 min</td></tr></tbody></table></div>
+<div class="sched"><h4>Simutrans schedule · loop departures set 1 min early</h4><div class="tw0"><table class="st2"><thead><tr><th>Terminus entry</th><th class="n">Departure every (min)</th><th class="n">Offset (min)</th><th>Also at (min)</th><th class="n">Leave up to</th></tr></thead><tbody><tr><td>Most, Dopravní podnik &rarr; Litvínov, Záluží, Chempark<div class='win'>loop: 1 min before timetable :02, :17, :32, :47 · exact 13:02–19:32</div></td><td class='n sv'>15</td><td class='n sv'>1</td><td class='mono'>&mdash;</td><td class='n'>auto</td></tr><tr><td>Litvínov, Záluží, Chempark &rarr; Most, Dopravní podnik<div class='win'>loop: 1 min before timetable :06, :21, :36, :51 · exact 13:06–19:21</div></td><td class='n sv'>15</td><td class='n sv'>5</td><td class='mono'>&mdash;</td><td class='n'>auto</td></tr></tbody></table></div></div>
+<p class="lnote">The main Most – Litvínov line, every 15 min, cut back to Záluží, Chempark while the Litvínov track is modernised. Two of the four turns carry a low-floor guarantee on every trip.</p><p class="brsub">Most, Dopravní podnik ⇄ Litvínov, Záluží, Chempark · 4 assigned, 4 needed (round trip 60 min with 3 min layovers; minimum by runtime 3)</p><ul class="vs"><li class="v"><div class="num"><span data-v="325">325</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex EVO2 · 21.7 m</div><div class="pak">EVO2</div></li><li class="v"><div class="num"><span data-v="326">326</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex EVO2 · 21.7 m</div><div class="pak">EVO2</div></li><li class="v"><div class="num"><span data-v="327">327</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex EVO2 · 21.7 m</div><div class="pak">EVO2</div></li><li class="v"><div class="num"><span data-v="328">328</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex EVO2 · 21.7 m</div><div class="pak">EVO2</div></li></ul>
+<details><summary>Stops</summary><p><b>Litvínov, Záluží, Chempark &rarr; Most, Dopravní podnik</b> (12 stops): Litvínov, Záluží, Chempark · Litvínov, Záluží, čerpací stanice · Litvínov, Záluží, doprava · Most, rozcestí Kopisty · Most, Železničářů · Most, Souš · Most, Zimní stadion · Most, Sportovní hala · Most, Obchodní dům PRIOR · Most, 1. náměstí · Most, Československé mládeže · Most, Dopravní podnik</p><p><b>Most, Dopravní podnik &rarr; Litvínov, Záluží, Chempark</b> (12 stops): Most, Dopravní podnik · Most, Československé mládeže · Most, 1. náměstí · Most, Obchodní dům PRIOR · Most, Sportovní hala · Most, Zimní stadion · Most, Souš · Most, Železničářů · Most, rozcestí Kopisty · Litvínov, Záluží, doprava · Litvínov, Záluží, čerpací stanice · Litvínov, Záluží, Chempark</p></details></article>
+</div>
+
+<h2 id="depots">Depot</h2>
+<p class="sub">DPmML has one tram depot, in the operator's yard at the Most, Dopravní podnik loop. Every line runs from it.</p>
+<div class="depots"><section class="depot" id="d-most" data-depot="most"><header><h3>Vozovna Most (Dopravní podnik)</h3><div class="cnt"><b>11</b><span>units out at the peak</span></div></header>
+<div class="tw0"><table class="dt"><thead><tr><th>Vehicle</th><th>Status</th></tr></thead><tbody><tr class='brh'><td colspan='2'><a class='badge sm' href='#l1'>1</a> Most, Dopravní podnik ⇄ Litvínov, Záluží, Chempark · 1 trams, afternoon peak 16:00</td></tr><tr><td class='vc'><div class="num"><span data-v="236">236</span> + <span data-v="237">237</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Tatra T3M.3 + Tatra T3M.3 · 15.1 m + 15.1 m</div><div class="pak">T3M_3 + T3M_3</div></td><td class='stc'>designed</td></tr><tr class='brh'><td colspan='2'><a class='badge sm' href='#l2'>2</a> Most, nádraží ⇄ Most, Velebudická · 3 trams, afternoon peak 16:00</td></tr><tr><td class='vc'><div class="num"><span data-v="314">314</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex VarioLF plus · 15.1 m</div><div class="pak">VarioLFplus</div></td><td class='stc'>designed</td></tr><tr><td class='vc'><div class="num"><span data-v="315">315</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex VarioLF plus · 15.1 m</div><div class="pak">VarioLFplus</div></td><td class='stc'>designed</td></tr><tr><td class='vc'><div class="num"><span data-v="253">253</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex VarioLFR.S · 15.1 m</div><div class="pak">VarioLFR_S</div></td><td class='stc'>designed</td></tr><tr class='brh'><td colspan='2'><a class='badge sm' href='#l3'>3</a> Most, nádraží ⇄ Litvínov, Záluží, Chempark · 3 trams, morning peak 06:00</td></tr><tr><td class='vc'><div class="num"><span data-v="302">302</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Tatra T3M.3 · 15.1 m</div><div class="pak">T3M_3</div></td><td class='stc'>designed</td></tr><tr><td class='vc'><div class="num"><span data-v="305">305</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Tatra T3M.3 · 15.1 m</div><div class="pak">T3M_3</div></td><td class='stc'>designed</td></tr><tr><td class='vc'><div class="num"><span data-v="308">308</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Tatra T3M.3 · 15.1 m</div><div class="pak">T3M_3</div></td><td class='stc'>designed</td></tr><tr class='brh'><td colspan='2'><a class='badge sm' href='#l4'>4</a> Most, Dopravní podnik ⇄ Litvínov, Záluží, Chempark · 4 trams, afternoon peak 16:00</td></tr><tr><td class='vc'><div class="num"><span data-v="325">325</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex EVO2 · 21.7 m</div><div class="pak">EVO2</div></td><td class='stc'>designed</td></tr><tr><td class='vc'><div class="num"><span data-v="326">326</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex EVO2 · 21.7 m</div><div class="pak">EVO2</div></td><td class='stc'>designed</td></tr><tr><td class='vc'><div class="num"><span data-v="327">327</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex EVO2 · 21.7 m</div><div class="pak">EVO2</div></td><td class='stc'>designed</td></tr><tr><td class='vc'><div class="num"><span data-v="328">328</span> <span class="dp">Most (Dopravní podnik)</span></div><div class="vt">Pragoimex EVO2 · 21.7 m</div><div class="pak">EVO2</div></td><td class='stc'>designed</td></tr></tbody></table></div></section></div>
+
+<h2>Not in service at the peak</h2>
+<div class="spares"><div class="sp"><p><b>reserve</b> (27) 204 Tatra T3M.3 · 205 Tatra T3M.3 · 222 Tatra T3M.3 · 240 Tatra T3M.3 · 242 Tatra T3M.3 · 244 Tatra T3M.3 · 245 Tatra T3M.3 · 246 Tatra T3M.3 · 247 Tatra T3M.3 · 248 Tatra T3M.3 · 254 Tatra T3M.3 · 257 Tatra T3M.3 · 266 Pragoimex VarioLFR.S · 282 Tatra T3M.3 · 301 Tatra T3M.3 · 304 Tatra T3M.3 · 306 Tatra T3M.3 · 309 Tatra T3M.3 · 310 Tatra T3M.3 · 312 Tatra T3M.3 · 313 Tatra T3M.3 · 316 Pragoimex EVO1 · 320 Pragoimex EVO2 · 321 Pragoimex EVO2 · 322 Pragoimex EVO2 · 323 Pragoimex EVO2 · 324 Pragoimex EVO2</p><p><b>in workshops</b> (3) 311 Tatra T3M.3 · 329 Pragoimex EVO2 (collided with 330 at the Chemopetrol loop on 3 Aug 2026) · 330 Pragoimex EVO2 (collided with 329 at the Chemopetrol loop on 3 Aug 2026)</p></div></div>
+
+<h2 id="pak">Pak128 objects</h2>
+<p class="sub">Every real type in the DPmML fleet, with its object chain in VZ-DPMostLitvinov-tram.pak (custom Czech pak128). All objects come in the one DPmML yellow-red livery. Length is in car units (16 = one tile). Different types never couple with each other; T3M.3 and VarioLFR.S can couple with the same type, and EVO2 can run as two coupled sets.</p>
+<div class="types"><table><thead><tr><th>Real type</th><th>Pak128 object</th><th>Object livery</th><th class="n">Length</th><th class="n">Cars at the peak</th></tr></thead><tbody><tr><td>Pragoimex EVO2</td><td><b class='core'>EVO2</b><div class='pak'>VZ-DPMostLitvinov-EVO2-mostzlutocervena-EVO2 → VZ-DPMostLitvinov-EVO2-mostzlutocervena-EVO2b</div></td><td>yellow-red (mostzlutocervena)<div class='lv'>real: 4× DPmML yellow-red</div></td><td class='n'>9 + 7</td><td class='n'>4</td></tr><tr><td>Tatra T3M.3</td><td><b class='core'>T3M_3</b><div class='pak'>VZ-DPMostLitvinov-T3M_3-mostzlutocervena-T3M_3</div><div class='pak subst'>placeholder art: the classic Most T3 body in the right paint; the T3M.3 dash and doors are not drawn yet</div></td><td>yellow-red (mostzlutocervena)<div class='lv'>real: 5× DPmML yellow-red</div></td><td class='n'>11</td><td class='n'>5</td></tr><tr><td>Pragoimex VarioLF plus</td><td><b class='core'>VarioLFplus</b><div class='pak'>VZ-DPMostLitvinov-Vario_LF_plus-mostzlutocervena-VarioLFplus</div></td><td>yellow-red (mostzlutocervena)<div class='lv'>real: 2× DPmML yellow-red</div></td><td class='n'>12</td><td class='n'>2</td></tr><tr><td>Pragoimex VarioLFR.S</td><td><b class='core'>VarioLFR_S</b><div class='pak'>VZ-DPMostLitvinov-VarioLFR_S-mostzlutocervena-VarioLFR_S</div></td><td>yellow-red (mostzlutocervena)<div class='lv'>real: 1× DPmML yellow-red</div></td><td class='n'>12</td><td class='n'>1</td></tr><tr><td>Pragoimex EVO1</td><td><b class='core'>EVO1</b><div class='pak'>VZ-DPMostLitvinov-EVO1-mostzlutocervena-EVO1</div></td><td>yellow-red (mostzlutocervena)<div class='lv'>real: none at the peak</div></td><td class='n'>12</td><td class='n'>0</td></tr></tbody></table></div>
+
+<h2 id="method">How this was built</h2>
+<div class="notes">
+<p><b>The roster is designed, not observed.</b> Nobody publishes which DPmML car ran which turn. seznam-autobusu.cz has no allocation records for any DPmML tram. The city's live vehicle map (mapy.mesto-most.cz, “Poloha vozidel MHD”) returned an empty layer, and dpmost.cz shows no vehicle positions. The trams were therefore placed by the operator's own rules and the timetable, as below.</p>
+<p><b>How many trams.</b> CIS JŘ timetable (JDF export of 25 Sep 2026, lines 575001–575004, versions valid from 14 Jun 2026), evaluated for Friday 25 Sep 2026. Trips were cut at Záluží, Chempark, where the trams now turn. They were then chained into vehicle turns at their termini (layover up to 40 min), and the turns running at the peak moment were counted.</p>
+<p><b>Which trams.</b></p><ul><li>Line 4: EVO2 were bought for line 4; 2 of its 4 turns carry a low-floor guarantee on every trip; 9 EVO2 are active (320–328). The newest, delivered in 2026, were picked. Cars: 325, 326, 327, 328.</li><li>Line 2: VarioLF plus 314 and 315 are registered as used on line 2 only; the guaranteed turn and one other get them, the third turn VarioLFR.S 253. Cars: 314, 315, 253.</li><li>Line 1: Kept with one tram (user decision 28 Sep 2026): the fixed T3M.3 pair 236 + 237, one of the five pairs the register lists as coupled sets. The shift runs before 16:00 (5 pairs at 15:00) are not in the peak and are not modelled. Cars: 236 + 237.</li><li>Line 3: Morning-only line, no guarantee: three solo T3M.3 in the standard livery. Cars: 302, 305, 308.</li></ul><p>Only cars the register lists as active are used. In the workshops: 311 (Tatra T3M.3), 329 (Pragoimex EVO2), 330 (Pragoimex EVO2).</p>
+<p><b>pak128 objects.</b> Matched with the pak128 session to VZ-DPMostLitvinov-tram.pak. All five DPmML types have an exact object. Advertising-wrapped cars appear in the standard yellow-red livery, the only one in the pak.</p>
+<p>Sources: <a href="https://portal.cisjr.cz/pub/draha/mestske/JDF.zip">CIS JŘ JDF</a>, <a href="https://seznam-autobusu.cz/typy/dopravni-podnik-mest-mostu-a-litvinova/tramvaje">DPmML fleet register</a>, <a href="https://www.dpmost.cz/zvd2026001">DPmML: modernisation closure from 1 Mar 2026</a>, <a href="https://www.dpmost.cz/doprava-zmeny">DPmML changes</a>, <a href="https://mapy.mesto-most.cz/app/mhd/">Most live map</a>.</p>
+</div>
+
+<script>
+(function(){
+  var c=document.querySelector('.controls'); if(!c) return;
+  function h(){ document.documentElement.style.setProperty('--stick',(c.offsetHeight+8)+'px'); }
+  h(); window.addEventListener('resize',h);
+  var q=document.getElementById('q'), hits=document.getElementById('hits');
+  var all=[].slice.call(document.querySelectorAll('[data-v]'));
+  q.addEventListener('input',function(){
+    var s=q.value.trim(), first=null, n=0;
+    all.forEach(function(el){
+      var on=s.length>=3 && el.offsetParent!==null && el.getAttribute('data-v').split('+').some(function(x){return x.indexOf(s)===0;});
+      el.classList.toggle('hit',on);
+      if(on){ n++; if(!first) first=el; }
+    });
+    hits.textContent = s.length>=3 ? (n ? n+' found' : 'not found') : '';
+    if(first) first.scrollIntoView({block:'center'});
+  });
+  [].forEach.call(c.querySelectorAll('a[data-dep]'),function(a){
+    a.addEventListener('click',function(e){
+      var t=[].slice.call(document.querySelectorAll('[data-depot="'+a.getAttribute('data-dep')+'"]')).filter(function(x){return x.offsetParent!==null;})[0];
+      if(t){ e.preventDefault(); t.scrollIntoView({block:'start'}); }
+    });
+  });
+})();
+</script>

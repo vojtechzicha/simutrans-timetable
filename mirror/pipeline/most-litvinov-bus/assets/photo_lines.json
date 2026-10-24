@@ -1,0 +1,575 @@
+{
+ "_doc": "Lines read by eye off the destination display in seznam-autobusu photos (data/raw/photos/<snapshot>/<id>.jpg), newest photos of every city bus. Key = photo id, or '<photo id>#<car>' for a second bus in the same photo. line = the DPmML line shown ('NAD' for a tram replacement bus, which shows the tram line number), or null when the display is off, unreadable or the bus is parked. read = what the display says.",
+ "photos": {
+  "447593": {
+   "car": 4,
+   "line": "23",
+   "read": "23 Litvínov, poliklinika"
+  },
+  "386803": {
+   "car": 4,
+   "line": null,
+   "read": "parked at the garage (also 31 and 48), display off"
+  },
+  "378305": {
+   "car": 5,
+   "line": null,
+   "read": "display unreadable"
+  },
+  "444456": {
+   "car": 6,
+   "line": "15",
+   "read": "15 Janov, škola (49 beside it, display unreadable)"
+  },
+  "374228": {
+   "car": 7,
+   "line": null,
+   "read": "display unreadable"
+  },
+  "424917": {
+   "car": 8,
+   "line": null,
+   "read": "display unreadable (road by Jezero Most)"
+  },
+  "386809": {
+   "car": 9,
+   "line": "9",
+   "read": "rear display 9"
+  },
+  "390579": {
+   "car": 10,
+   "line": null,
+   "read": "display unreadable (road by Jezero Most)"
+  },
+  "411024": {
+   "car": 11,
+   "line": "12",
+   "read": "12 Most, nádraží"
+  },
+  "411048": {
+   "car": 11,
+   "line": "12",
+   "read": "12 Most, nádraží"
+  },
+  "411610": {
+   "car": 11,
+   "line": "12",
+   "read": "12 Chemopetrol přes Komořany"
+  },
+  "358895": {
+   "car": 13,
+   "line": null,
+   "read": "display unreadable"
+  },
+  "415474": {
+   "car": 14,
+   "line": null,
+   "read": "display unreadable"
+  },
+  "451743": {
+   "car": 15,
+   "line": null,
+   "read": "display unreadable"
+  },
+  "439583": {
+   "car": 16,
+   "line": "12",
+   "read": "12 Záluží, Chemopetrol"
+  },
+  "398118": {
+   "car": 16,
+   "line": "22",
+   "read": "22 Souš, Matylda"
+  },
+  "359003": {
+   "car": 18,
+   "line": "17",
+   "read": "17 Zahražany"
+  },
+  "389343": {
+   "car": 20,
+   "line": null,
+   "read": "display unreadable"
+  },
+  "439581": {
+   "car": 21,
+   "line": "12",
+   "read": "12 Most, nádraží"
+  },
+  "439582": {
+   "car": 21,
+   "line": "12",
+   "read": "12 Most, nádraží"
+  },
+  "389079": {
+   "car": 21,
+   "line": "31",
+   "read": "31 Havraň"
+  },
+  "371440": {
+   "car": 22,
+   "line": "16",
+   "read": "16 Jezero Most"
+  },
+  "425266": {
+   "car": 23,
+   "line": "20",
+   "read": "20 Muzeum (79 beside it on 16)"
+  },
+  "445648": {
+   "car": 25,
+   "line": "15",
+   "read": "15 Janov, škola"
+  },
+  "398887": {
+   "car": 25,
+   "line": null,
+   "read": "parked at the garage (also 77)"
+  },
+  "444078": {
+   "car": 27,
+   "line": "15",
+   "read": "15 Janov, škola (38 beside it shows 1 Most: tram replacement)"
+  },
+  "402035": {
+   "car": 27,
+   "line": null,
+   "read": "display unreadable, at Záluží, Chemopetrol"
+  },
+  "451657": {
+   "car": 28,
+   "line": null,
+   "read": "parked at the garage"
+  },
+  "450182": {
+   "car": 29,
+   "line": "14",
+   "read": "14 Horní Jiřetín"
+  },
+  "364112": {
+   "car": 30,
+   "line": null,
+   "read": "Most, Dopravní podnik, line number unreadable"
+  },
+  "425820": {
+   "car": 32,
+   "line": null,
+   "read": "display unreadable (road by Jezero Most)"
+  },
+  "371495": {
+   "car": 33,
+   "line": "30",
+   "read": "30 Nemocnice"
+  },
+  "419275": {
+   "car": 34,
+   "line": "30",
+   "read": "30 Nemocnice"
+  },
+  "425266#79": {
+   "car": 79,
+   "line": "16",
+   "read": "16 Nad Jezerem Most (beside 23)"
+  },
+  "444078#38": {
+   "car": 38,
+   "line": "NAD",
+   "read": "1 Most, a tram line 1 replacement bus (beside 27)"
+  },
+  "364746": {
+   "car": 41,
+   "line": null,
+   "read": "parked, rear view (also 5)"
+  },
+  "364746#5": {
+   "car": 5,
+   "line": null,
+   "read": "parked, rear view (beside 41)"
+  },
+  "421702": {
+   "car": 24,
+   "line": null,
+   "read": "display unreadable"
+  },
+  "389005": {
+   "car": 24,
+   "line": "16",
+   "read": "16 Nádraží"
+  },
+  "359252": {
+   "car": 35,
+   "line": "NAD",
+   "read": "1 Litvínov, Citadela (a tram line 1 journey by bus, 2023)"
+  },
+  "440832": {
+   "car": 37,
+   "line": null,
+   "read": "parked in the Litvínov garage (also 47 and 52)"
+  },
+  "440832#47": {
+   "car": 47,
+   "line": null,
+   "read": "parked in the Litvínov garage"
+  },
+  "440832#52": {
+   "car": 52,
+   "line": null,
+   "read": "parked in the Litvínov garage"
+  },
+  "424961": {
+   "car": 39,
+   "line": "15",
+   "read": "15 Litvínov, nádraží"
+  },
+  "385645": {
+   "car": 39,
+   "line": null,
+   "read": "display unreadable"
+  },
+  "433294": {
+   "car": 40,
+   "line": "13",
+   "read": "13 Loučná, Libkovická"
+  },
+  "451697": {
+   "car": 42,
+   "line": null,
+   "read": "parked at the Most garage"
+  },
+  "385644": {
+   "car": 42,
+   "line": "20",
+   "read": "20 Muzeum"
+  },
+  "421986": {
+   "car": 43,
+   "line": null,
+   "read": "display unreadable"
+  },
+  "451642": {
+   "car": 44,
+   "line": null,
+   "read": "parked at the Most garage"
+  },
+  "402562": {
+   "car": 45,
+   "line": null,
+   "read": "display unreadable"
+  },
+  "417797": {
+   "car": 46,
+   "line": "16",
+   "read": "16 Jezero Most"
+  },
+  "447145": {
+   "car": 47,
+   "line": "14",
+   "read": "14 Litvínov, nádraží"
+  },
+  "381466": {
+   "car": 51,
+   "line": null,
+   "read": "display unreadable"
+  },
+  "398116": {
+   "car": 54,
+   "line": "16",
+   "read": "16 (display partly readable)"
+  },
+  "398211": {
+   "car": 59,
+   "line": "5",
+   "read": "5 Zázvorová (54 and 97 beside it, displays unreadable)"
+  },
+  "412868": {
+   "car": 56,
+   "line": "12",
+   "read": "12 Obránců míru přes DUK"
+  },
+  "389003": {
+   "car": 57,
+   "line": "20",
+   "read": "20 Muzeum"
+  },
+  "415442": {
+   "car": 58,
+   "line": "5",
+   "read": "5 Okružní Shell"
+  },
+  "385627": {
+   "car": 59,
+   "line": "30",
+   "read": "30 Nemocnice"
+  },
+  "447254": {
+   "car": 71,
+   "line": null,
+   "read": "rear view at Meziboří (line 23 territory), number not visible"
+  },
+  "356501": {
+   "car": 72,
+   "line": "13",
+   "read": "13 (destination unreadable)"
+  },
+  "372753": {
+   "car": 74,
+   "line": null,
+   "read": "display unreadable (Litvínov, nádraží)"
+  },
+  "427168": {
+   "car": 76,
+   "line": "30",
+   "read": "30 Nádraží"
+  },
+  "389082": {
+   "car": 76,
+   "line": null,
+   "read": "display unreadable"
+  },
+  "427766": {
+   "car": 77,
+   "line": "14",
+   "read": "14 Horní Jiřetín"
+  },
+  "411049": {
+   "car": 78,
+   "line": "5",
+   "read": "5 Okružní Shell"
+  },
+  "427770": {
+   "car": 79,
+   "line": "16",
+   "read": "16 (display partly readable)"
+  },
+  "378309": {
+   "car": 80,
+   "line": "20",
+   "read": "20 Nádraží"
+  },
+  "358334": {
+   "car": 81,
+   "line": null,
+   "read": "display unreadable"
+  },
+  "439584": {
+   "car": 83,
+   "line": "12",
+   "read": "12 (destination unreadable), Záluží road"
+  },
+  "427768": {
+   "car": 83,
+   "line": "20",
+   "read": "20 (destination unreadable)"
+  },
+  "411609": {
+   "car": 83,
+   "line": "30",
+   "read": "30 Nemocnice"
+  },
+  "419510": {
+   "car": 84,
+   "line": "17",
+   "read": "17 Dopravní podnik"
+  },
+  "410567": {
+   "car": 84,
+   "line": "17",
+   "read": "17 Dopravní podnik"
+  },
+  "427769": {
+   "car": 97,
+   "line": "30",
+   "read": "30 Nemocnice"
+  },
+  "413677": {
+   "car": 97,
+   "line": "30",
+   "read": "30 Nemocnice"
+  },
+  "411608": {
+   "car": 97,
+   "line": "30",
+   "read": "30 Nemocnice"
+  },
+  "451696": {
+   "car": 98,
+   "line": null,
+   "read": "interior (driver's cab)"
+  },
+  "450318": {
+   "car": 98,
+   "line": "31",
+   "read": "31 Havraň, Joseph II"
+  },
+  "450424": {
+   "car": 98,
+   "line": "30",
+   "read": "30 Nádraží"
+  },
+  "451644": {
+   "car": 99,
+   "line": null,
+   "read": "parked, event display (Mostecká slavnost)"
+  },
+  "447282": {
+   "car": 99,
+   "line": "NAD",
+   "read": "4 Litvínov, Citadela, a tram line 4 replacement bus on road I/27"
+  },
+  "417978": {
+   "car": 99,
+   "line": null,
+   "read": "display not clearly readable (10 or 30)"
+  },
+  "450303": {
+   "car": 153,
+   "line": "16",
+   "read": "driver terminal shows line 16"
+  },
+  "445172": {
+   "car": 153,
+   "line": "16",
+   "read": "16 Jezero Most"
+  },
+  "439586": {
+   "car": 153,
+   "line": null,
+   "read": "parked in the Most garage (also 154)"
+  },
+  "439586#154": {
+   "car": 154,
+   "line": null,
+   "read": "parked in the Most garage"
+  },
+  "406778": {
+   "car": 154,
+   "line": "30",
+   "read": "30 Nemocnice (Olympic festival wrap)"
+  },
+  "408521": {
+   "car": 154,
+   "line": "16",
+   "read": "16 (Olympic festival wrap)"
+  },
+  "438797": {
+   "car": 189,
+   "line": null,
+   "read": "still in Prague (DPP 6668), before delivery"
+  },
+  "448165": {
+   "car": 191,
+   "line": "NAD",
+   "read": "4 Most, Dopravní podnik, a tram line 4 replacement bus at a tram loop in Litvínov"
+  },
+  "449580": {
+   "car": 192,
+   "line": null,
+   "read": "B01 (a special tram replacement in Most, 29 Jul 2026), not a regular line"
+  },
+  "425268": {
+   "car": 79,
+   "line": "16",
+   "read": "16 Nad Jezerem Most"
+  },
+  "402241": {
+   "car": 193,
+   "line": null,
+   "read": "parked at the Most garage (also 98, 99, 194)"
+  },
+  "402241#98": {
+   "car": 98,
+   "line": null,
+   "read": "parked"
+  },
+  "402241#99": {
+   "car": 99,
+   "line": null,
+   "read": "parked"
+  },
+  "402241#194": {
+   "car": 194,
+   "line": null,
+   "read": "parked"
+  },
+  "395443": {
+   "car": 195,
+   "line": null,
+   "read": "parked on delivery, still in Prague red-white (also 192)"
+  },
+  "395443#192": {
+   "car": 192,
+   "line": null,
+   "read": "parked on delivery"
+  },
+  "395444": {
+   "car": 195,
+   "line": null,
+   "read": "parked on delivery (also 192)"
+  },
+  "395444#192": {
+   "car": 192,
+   "line": null,
+   "read": "parked on delivery"
+  },
+  "451554": {
+   "car": 193,
+   "line": null,
+   "read": "display unreadable, Litvínov, Podkrušnohorská on 8 Sep 2026 (tram replacement route)"
+  },
+  "445071": {
+   "car": 193,
+   "line": "NAD",
+   "read": "4 Most, Dopravní podnik, a tram line 4 replacement bus on road I/27"
+  },
+  "451525": {
+   "car": 194,
+   "line": "NAD",
+   "read": "display not visible; on road I/27 beside the closed tram track at Záluží on 8 Sep 2026, the tram replacement route"
+  },
+  "447651": {
+   "car": 194,
+   "line": "NAD",
+   "read": "4 Most, Dopravní podnik, a tram line 4 replacement bus"
+  },
+  "418104": {
+   "car": 194,
+   "line": "30",
+   "read": "30 Nádraží"
+  },
+  "397703": {
+   "car": 195,
+   "line": null,
+   "read": "parked on delivery"
+  },
+  "451523": {
+   "car": 196,
+   "line": "NAD",
+   "read": "on road I/27 at Záluží on 8 Sep 2026, the tram replacement route (display too small)"
+  },
+  "449588": {
+   "car": 196,
+   "line": "NAD",
+   "read": "4 Litvínov, Citadela at the Záluží, Chemopetrol replacement bus stop"
+  },
+  "442637": {
+   "car": 196,
+   "line": "NAD",
+   "read": "4 Most, Dopravní podnik, 'Náhradní doprava' plate, Litvínov"
+  },
+  "397704": {
+   "car": 198,
+   "line": null,
+   "read": "parked at the Most garage"
+  },
+  "449587": {
+   "car": 199,
+   "line": "NAD",
+   "read": "4 Most, Dopravní podnik on road I/27 at Záluží"
+  },
+  "447395": {
+   "car": 199,
+   "line": "NAD",
+   "read": "4 Most, Dopravní podnik, 'Náhradní doprava' plate, Litvínov"
+  }
+ }
+}

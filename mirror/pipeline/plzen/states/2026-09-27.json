@@ -1,0 +1,206 @@
+{
+ "title": "Plzeň Tram Peak Fleet",
+ "output": "Plzeň Tram Peak Fleet.html",
+ "artifact": "https://claude.ai/artifact/J5W3n79YLXAjgruuhtSjam",
+ "vehicles_date": "2026-09-18",
+ "register_date": "2026-09-28",
+ "gtfs_date": "2026-09-28",
+ "service_date": "20260925",
+ "line_order": [
+  "1",
+  "2",
+  "4"
+ ],
+ "route": {
+  "1": "Bolevec – Slovany",
+  "2": "Skvrňany – Světovar",
+  "4": "Košutka – Bory / Univerzita"
+ },
+ "depot": "Slovany",
+ "nonloop": {},
+ "fit": {
+  "core_default": [
+   900,
+   960
+  ],
+  "core": {
+   "4": [
+    960,
+    1050
+   ]
+  },
+  "depot_trips_counted": {
+   "Bolevec": "Slovany"
+  }
+ },
+ "simutrans_lines": [
+  {
+   "id": "1",
+   "name": "1 Bolevec – Slovany",
+   "entries": [
+    [
+     "1",
+     "Bolevec",
+     "Slovany"
+    ],
+    [
+     "1",
+     "Slovany",
+     "Bolevec"
+    ]
+   ],
+   "note": "At Bolevec the fit counts the two 15:46 and 15:56 trips that end at Vozovna Slovany, because they leave Bolevec in the 5-minute pattern. After 16:05 the real line runs every 6 min."
+  },
+  {
+   "id": "2",
+   "name": "2 Skvrňany – Světovar",
+   "entries": [
+    [
+     "2",
+     "Skvrňany",
+     "Světovar"
+    ],
+    [
+     "2",
+     "Světovar",
+     "Skvrňany"
+    ]
+   ],
+   "note": "After about 16:20 the real line runs every 6 min."
+  },
+  {
+   "id": "4",
+   "name": "4 Košutka – Bory / Univerzita (one line)",
+   "entries": [
+    [
+     "4",
+     "Košutka",
+     "Bory"
+    ],
+    [
+     "4",
+     "Bory",
+     "Košutka"
+    ],
+    [
+     "4",
+     "Košutka",
+     "Univerzita"
+    ],
+    [
+     "4",
+     "Univerzita",
+     "Košutka"
+    ]
+   ],
+   "circuit": true,
+   "note": "Build one line whose schedule runs Košutka → Bory → Košutka → Univerzita (→ Košutka). 17 of the 22 trams out at 16:00 alternate between the branches like this, so both branches share one pool of trams. Košutka appears twice in the schedule, with the two offsets 4 min apart. The every-8 pattern is exact from 16:00; between 15:00 and 16:00 the real timetable is denser and irregular (3, 6 and 9 min gaps), and Bory and Univerzita settle into it only from about 16:50."
+  }
+ ],
+ "pak": {
+  "Pragoimex VarioLFR.S": {
+   "core": "VarioLFR_S",
+   "objs": "VZ-PMDP-VarioLFR_S-pmdpzlutosedobila-VarioLFR_S",
+   "pak": "Plzeň",
+   "status": "installed",
+   "note": "One car, length 12; solo or a pair of itself. Displays as “Pragoimex VarioLFR.S / VarioLF plus”."
+  },
+  "Pragoimex EVO2": {
+   "core": "EVO2",
+   "objs": "VZ-PMDP-EVO2-pmdpzlutosedobila-EVO2 + …-EVO2b",
+   "pak": "Plzeň",
+   "status": "installed",
+   "note": "Two sections, length 9 + 7; solo, or a second set behind for 2 × EVO2."
+  },
+  "Pragoimex T3R.PLF": {
+   "core": "T3R_PLF",
+   "objs": "VZ-PMDP-T3R_PLF-pmdpzlutosedobila-T3R_PLF",
+   "pak": "Plzeň",
+   "status": "installed",
+   "note": "One car, length 12; solo or T3R.PLF + T3R.PLF."
+  },
+  "ČKD Tatra KT8D5.RN2P": {
+   "core": "KT8D5R_N2P",
+   "objs": "VZ-PMDP-KT8D5R_N2P-pmdpzlutosedobila-KT8D5R_N2P + …_2 + …_3",
+   "pak": "Plzeň",
+   "status": "installed",
+   "note": "Three sections, length 8 + 5 + 8; solo only."
+  },
+  "Škoda ForCity Smart 40T0": {
+   "core": "40T",
+   "objs": "VZ-PMDP-40T-pmdpzlutosedobila-40T + …-40T_2 + …-40T_3",
+   "pak": "Plzeň",
+   "status": "installed",
+   "note": "One object for 40T0, 40T1 and 40T2, which look the same. Three sections, length 7 + 8 + 7; solo only."
+  },
+  "Škoda ForCity Smart 40T1": {
+   "core": "40T",
+   "objs": "VZ-PMDP-40T-pmdpzlutosedobila-40T + …-40T_2 + …-40T_3",
+   "pak": "Plzeň",
+   "status": "installed",
+   "note": "One object for 40T0, 40T1 and 40T2, which look the same. Three sections, length 7 + 8 + 7; solo only."
+  },
+  "Škoda ForCity Smart 40T2": {
+   "core": "40T",
+   "objs": "VZ-PMDP-40T-pmdpzlutosedobila-40T + …-40T_2 + …-40T_3",
+   "pak": "Plzeň",
+   "status": "installed",
+   "note": "One object for 40T0, 40T1 and 40T2, which look the same. Three sections, length 7 + 8 + 7; solo only."
+  },
+  "Pragoimex VarioLF+": {
+   "core": "VarioLFR_S",
+   "objs": "VZ-PMDP-VarioLFR_S-pmdpzlutosedobila-VarioLFR_S",
+   "pak": "Plzeň",
+   "status": "installed",
+   "note": "Shares the VarioLFR.S object, which looks the same at this scale; pairs of itself work, so 336 + 337 and 367 + 355 are that object twice."
+  },
+  "Pragoimex VarioLF2/2IN": {
+   "core": "VarioLF2_2IN",
+   "objs": "VZ-PMDP-VarioLF2_2IN-pmdpzlutosedobila-VarioLF2_2IN + …-VarioLF2_2IN-rear",
+   "pak": "Plzeň",
+   "status": "installed",
+   "note": "Two sections, length 8 + 8, cab at both ends; solo only."
+  }
+ },
+ "length_m": {
+  "Pragoimex VarioLFR.S": 15,
+  "Pragoimex EVO2": 20,
+  "Pragoimex T3R.PLF": 15,
+  "ČKD Tatra KT8D5.RN2P": 30,
+  "Škoda ForCity Smart 40T0": 20,
+  "Škoda ForCity Smart 40T1": 20,
+  "Škoda ForCity Smart 40T2": 20,
+  "Pragoimex VarioLF+": 15,
+  "Pragoimex VarioLF2/2IN": 20
+ },
+ "fleet": {
+  "morning_notes": [
+   "ráno"
+  ],
+  "note_extra": {
+   "1/3": " 361 had worked 1/25 in the morning."
+  }
+ },
+ "line_notes": {
+  "1": "Bolevec – Slovany. Every 5 min in the peak until about 16:05, then every 6.",
+  "2": "Skvrňany – Světovar. Every 5 min in the peak, every 6 from about 16:20.",
+  "4": "Košutka – Bory, with every other trip to Univerzita instead of Bory. The two branches together run every 3–4 min at Košutka."
+ },
+ "texts": {
+  "eyebrow": "Plzeň · tramvaje · PMDP · pátek 18. 9. 2026 · odpolední špička",
+  "lede": "The trams on each kurz in the Friday afternoon peak, set on the tram network as it stood on Sun 27 Sep 2026, for the Simutrans model: line list, schedule, fleet and pak objects. The vehicles are from Fri 18 Sep 2026, because Plzeň has no records at all for 23–25 Sep; 18 Sep is the latest complete Friday. The timetable is the PMDP one in force on 27 Sep.",
+  "nav_network": "Network 27 Sep",
+  "network_heading": "Network on 27 Sep 2026",
+  "network_intro": "The weekday timetable in force on 27 Sep (PMDP GTFS, valid from 22 Sep; service day Fri 25 Sep). Departures are the trips starting from each terminus between 16:00 and 16:59. Headway is the median gap between 15:00 and 18:00, runtime the average scheduled time from first to last stop. Depot runs are left out. All termini are loops: the whole fleet except the Tatra KT8D5 is single-ended.",
+  "pak_intro": "The pak owner is adding the whole PMDP fleet to VZ-PMDP-tram.pak in the PMDP yellow-grey-white livery (pmdpzlutosedobila). Every type in the peak now has its own object (pak128 main 6547eb6): T3R.PLF, VarioLFR.S / VarioLF plus (one object), KT8D5R.N2P, EVO2, 40T (one object for 40T0/1/2) and VarioLF2/2 IN. There are no stand-ins left. The lists above show only the pak core, the last part of the object name.",
+  "method": [
+   "<p><b>Vehicles.</b> seznam-autobusu.cz vypravenost for MHD Plzeň, Fri 18 Sep 2026, lines 1, 2 and 4 (<a href=\"https://seznam-autobusu.cz/vypravenost/mhd-plzen/vypis?datum=2026-09-18&amp;linka=1\">line 1</a>). The site has no Plzeň tram records for 23, 24 or 25 Sep; Mon 21 and Tue 22 Sep are complete too and show the same kurz structure. <i>Ráno</i> marks a morning-only car, <i>odpoledne</i> the afternoon car, <i>ráno i odpoledne</i> a split duty, <i>výměna za X</i> a car replaced by X, and <i>náhrada za Y</i> the replacement.</p>",
+   "<p><b>Cross-check.</b> Chaining the Fri 25 Sep timetable gives 14, 14 and 22 trams in service at 16:00 on lines 1, 2 and 4, against 14, 15 and 22 kurzy recorded on 18 Sep. One line 2 split duty is probably already back in the depot at 16:00.</p>",
+   "<p><b>Types, depot, livery.</b> The seznam-autobusu register for PMDP trams, read on 28 Sep 2026. Lengths for the model are approximate: 15 m per car for T3R.PLF, VarioLFR.S and VarioLF+, about 20 m for EVO2, 40T and VarioLF2/2IN, and 30 m for KT8D5.RN2P.</p>",
+   "<p><b>Timetable.</b> PMDP GTFS (jizdnirady.pmdp.cz/jr/gtfs), valid from 22 Sep 2026; trips running on Fri 25 Sep.</p>",
+   "<p><b>Simutrans schedule.</b> Fitted to the afternoon peak in whole calendar minutes with the fork’s Departure every / Offset / Also at fields: the longest stretch that one pattern reproduces exactly, around 15:00–16:00 for lines 1 and 2 and from 16:00 for line 4. Loop terminus: set 1 min before the timetable departure so the tram clears the loop on time. Every Plzeň terminus is a loop, so every entry is the real minute − 1.</p>",
+   "<p><b>Pak objects.</b> From the pak128 session: VZ-PMDP-tram.pak, pak128 main 6547eb6, all in PMDP yellow-grey-white (pmdpzlutosedobila). Every type in the peak has an exact object.</p>",
+   "<p><b>Rebuild.</b> This sheet is generated by pipeline/plzen; see pipeline/plzen/README.md.</p>"
+  ]
+ }
+}

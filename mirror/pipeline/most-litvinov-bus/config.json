@@ -1,0 +1,294 @@
+{
+ "city": "Most–Litvínov",
+ "mode": "bus",
+ "operator": "Dopravní podnik měst Mostu a Litvínova, a.s. (DPmML), IČO 62242504",
+ "title": "Most–Litvínov Bus Vypravenost",
+ "output_html": "Most-Litvinov Bus Vypravenost.html",
+ "snapshot": "2026-09-29",
+ "vehicle_day": "2026-09-25",
+ "vehicle_day_label": "pátek 25. 9. 2026",
+ "vehicle_day_label_en": "Friday 25 Sep 2026",
+ "service_day": "2026-09-29",
+ "network_state_label": "29 Sep 2026",
+ "peak_label": "16:00",
+ "jdf": {
+  "bus_url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
+  "tram_url": "https://portal.cisjr.cz/pub/draha/mestske/JDF.zip",
+  "bus_zip": "../ostrava-bus/data/raw/2026-09-29/JDF.zip",
+  "tram_zip": "../most-litvinov/data/raw/2026-09-28/JDF.zip",
+  "bus_label": "CIS JŘ bus JDF export of 28 Sep 2026 (stored by pipeline/ostrava-bus on 29 Sep)",
+  "tram_label": "CIS JŘ city JDF export of 25 Sep 2026 (stored by pipeline/most-litvinov on 28 Sep)",
+  "operator_ic": "62242504",
+  "line_prefixes": [
+   "575",
+   "576"
+  ],
+  "tram_lines": {
+   "575001": "1",
+   "575003": "3",
+   "575004": "4"
+  },
+  "all_codes": [
+   "575005",
+   "575009",
+   "575010",
+   "575012",
+   "575016",
+   "575017",
+   "575018",
+   "575020",
+   "575022",
+   "575025",
+   "575030",
+   "575031",
+   "575050",
+   "575051",
+   "575053",
+   "576008",
+   "576013",
+   "576014",
+   "576015",
+   "576021",
+   "576023",
+   "576027",
+   "576028",
+   "576060",
+   "575040"
+  ]
+ },
+ "fleet": {
+  "carrier_id": 399,
+  "list_url": "https://seznam-autobusu.cz/seznam?prov=1&trakce=autobus&iddopravce=399&vcetneSluzebnich=1",
+  "depots": {
+   "Mos": "Most",
+   "Lit": "Litvínov"
+  },
+  "depot_names": {
+   "Mos": "Most garage",
+   "Lit": "Litvínov garage"
+  },
+  "other_depot_codes": {
+   "ZD-M": "coach and contract fleet, Most",
+   "ZD-L": "coach and contract fleet, Litvínov"
+  }
+ },
+ "photos": {
+  "per_car": 3,
+  "since": "2024-01-01",
+  "fallback_since": "2023-01-01",
+  "image_url": "https://foto-busy.eu-central-1.linodeobjects.com/{id}.jpg"
+ },
+ "operator_pages": {
+  "zvd2026001": "https://www.dpmost.cz/zvd2026001",
+  "vozovy-park": "https://www.dpmost.cz/vozovy-park",
+  "doprava-zmeny": "https://www.dpmost.cz/doprava-zmeny",
+  "zvd2026020": "https://www.dpmost.cz/zvd2026020",
+  "zvd2026016": "https://www.dpmost.cz/zvd2026016",
+  "zvd2026006": "https://www.dpmost.cz/zvd2026006",
+  "zvd2026002": "https://www.dpmost.cz/zvd2026002"
+ },
+ "nad": {
+  "label": "NAD",
+  "badge": "Tram replacement",
+  "title": "Tram replacement bus Litvínov, Záluží, Chempark – Litvínov, Citadela",
+  "cut_stop": "Chempark",
+  "far_end": "Citadela",
+  "drop_stops": [],
+  "drop_stops_towards_most": [],
+  "why": "Since 1 Mar 2026 (23:15) the tram section Záluží, Chemopetrol – Litvínov, Citadela is closed for the modernisation of the Litvínov track, and replacement buses run it 'in full, copying the current tram timetables' (dpmost.cz/zvd2026001). It is a long-term closure, so it is modelled as it runs: the buses are one Simutrans line at the tram minutes."
+ },
+ "cycle_t0": 960,
+ "cycle_lay": 3,
+ "table_window": [
+  900,
+  1020
+ ],
+ "branch_rule": {
+  "window": [
+   900,
+   1080
+  ],
+  "min_trips": 3,
+  "hour": [
+   960,
+   1020
+  ]
+ },
+ "fit": {
+  "window": [
+   900,
+   1080
+  ],
+  "core": [
+   930,
+   990
+  ],
+  "lo": 780,
+  "hi": 1200
+ },
+ "depot_stops": [],
+ "all_termini_are_loops": true,
+ "stop_name_strip_prefix": "",
+ "stop_name_fixed": {},
+ "stop_name_expansions": [
+  [
+   "1.nám.",
+   "1. náměstí"
+  ],
+  [
+   "Čs.mládeže",
+   "Československé mládeže"
+  ],
+  [
+   "Čs.armády",
+   "Československé armády"
+  ],
+  [
+   "1.ZŠ",
+   "1. základní škola"
+  ],
+  [
+   "14.ZŠ",
+   "14. základní škola"
+  ],
+  [
+   "18.ZŠ",
+   "18. základní škola"
+  ],
+  [
+   "rozc.",
+   "rozcestí"
+  ],
+  [
+   "odb.Centrum",
+   "odbočka Centrum"
+  ],
+  [
+   "pož.zbroj.",
+   "požární zbrojnice"
+  ],
+  [
+   "P.Holého",
+   "Prokopa Holého"
+  ],
+  [
+   "1.máje",
+   "1. máje"
+  ],
+  [
+   "nám.Míru",
+   "náměstí Míru"
+  ],
+  [
+   "Osek, nám.",
+   "Osek, náměstí"
+  ],
+  [
+   "MěÚ",
+   "městský úřad"
+  ],
+  [
+   "8.května",
+   "8. května"
+  ],
+  [
+   "9.května",
+   "9. května"
+  ],
+  [
+   "J.Skupy",
+   "Josefa Skupy"
+  ],
+  [
+   "Zd.Štěpánka",
+   "Zdeňka Štěpánka"
+  ],
+  [
+   "Sv.Čecha",
+   "Svatopluka Čecha"
+  ],
+  [
+   "věž.domy",
+   "věžové domy"
+  ],
+  [
+   "K.H.Máchy",
+   "Karla Hynka Máchy"
+  ],
+  [
+   "rozcestí1.0",
+   "rozcestí 1.0"
+  ],
+  [
+   "rozcestí0.5",
+   "rozcestí 0.5"
+  ],
+  [
+   "Horní Lom rozcestí",
+   "Horní Lom, rozcestí"
+  ]
+ ],
+ "home_garage": {
+  "5": "Mos",
+  "9": "Mos",
+  "10": "Mos",
+  "12": "Mos",
+  "16": "Mos",
+  "17": "Mos",
+  "18": "Mos",
+  "20": "Mos",
+  "22": "Mos",
+  "25": "Mos",
+  "30": "Mos",
+  "31": "Mos",
+  "50": "Mos",
+  "51": "Mos",
+  "53": "Mos",
+  "8": "Lit",
+  "13": "Lit",
+  "14": "Lit",
+  "15": "Lit",
+  "21": "Lit",
+  "23": "Lit",
+  "27": "Lit",
+  "28": "Lit",
+  "60": "Lit",
+  "NAD": "Lit"
+ },
+ "branches_why": "Branches are found by rule, as on the Ostrava bus sheet. Within 15:00–18:00, each pair of termini a line serves is its own Simutrans line when it has at least 6 trips (about 3 each way; a loop line that starts and ends at one stop needs 3), a departure in the 16 o'clock hour and no garage at either end. The busiest pair always counts. Smaller pairs (extensions, short workings) are not separate lines, because “Also at” cannot change the route; their minutes are folded into the main row from the same terminus, and their buses are added to the main branch. Where a line has two Simutrans lines, they are lettered A and B by trips.",
+ "line_titles": {
+  "NAD": "Tram replacement bus: Litvínov, Záluží, Chempark – Litvínov, Citadela"
+ },
+ "line_notes": {
+  "NAD": "Replacement buses for tram lines 1, 3 and 4 while the Litvínov track is rebuilt (since 1 Mar 2026). They copy the tram timetable between Záluží, Chempark and Citadela, so the minutes are the trams'. Buses show the tram line number and a “Náhradní doprava” plate. At 16:00 only tram line 4 runs, every 15 min.",
+  "13": "The trunk Litvínov, Janov – Litvínov – Lom with branches: most trips go on to Lom, Loučná; single trips run to Osek, Kolonie and to Lom, Československé armády, and a few start at Litvínov, Křížatky. One Simutrans line on the main pair, with the other trips' buses added to it.",
+  "16": "Summer timetable to Jezero Most (1 May – 30 Sep 2026). From 1 Oct the line runs its winter version.",
+  "30": "Summer timetable (1 May – 30 Sep 2026): a loop Nádraží – Nemocnice – Nádraží every 15 min, and every 30 min on to Jezero Most. From 1 Oct 2026 the line changes: the winter version, and all trips end at Rudolická, MUS a.s. while the station forecourt is closed.",
+  "12": "The Chempark works line: a diversion version valid 14 Jun – 30 Sep 2026. The last trips of the afternoon shift leave Chempark at 15:21 and 15:51; after that the line is sparse, so the schedule covers the shift trips.",
+  "9": "A short loop from Most, Dopravní podnik through Čepirohy, a few trips a day. One bus.",
+  "27": "Litvínov, nádraží – Šumná: a few trips a day, back on its full route since 1 Sep 2026 (dpmost.cz/zvd2026016). One bus.",
+  "31": "Most, nádraží – Havraň, Joseph industrial zone: shift trips about every hour."
+ },
+ "network_state": [
+  [
+   "in",
+   "Litvínov tram modernisation: replacement buses",
+   "Since 1 Mar 2026 (23:15) the tram section Záluží, Chemopetrol – Litvínov, Citadela is closed and replacement buses run it at the tram minutes (dpmost.cz/zvd2026001). Long-term, so it is modelled as it runs: one Simutrans bus line, shown as “Tram replacement” (the operator calls it náhradní autobusová doprava). The Litvínov, poliklinika stop towards Citadela moved to the line 23 stop on 30 Mar 2026."
+  ],
+  [
+   "in",
+   "Summer service to Jezero Most on lines 16 and 30",
+   "1 May – 30 Sep 2026 (dpmost.cz/zvd2026006): more trips on 16 and selected 30 trips extended from Nádraží to Jezero Most. The timetable in force on 29 Sep. The double-decker runs only at weekends and is not used on this weekday sheet."
+  ],
+  [
+   "in",
+   "Line 27 back on its full route",
+   "From 1 Sep 2026 all weekday trips run to Šumná, konečná again, except the 9:35 and 13:35 (dpmost.cz/zvd2026016)."
+  ],
+  [
+   "out",
+   "Most station forecourt closed from 1 Oct 2026",
+   "The bus station rebuild closes Nádražní street from Thu 1 Oct 2026 (dpmost.cz/zvd2026020): line 30 will end at Rudolická, MUS a.s. like the other lines. It starts after the modelled day, and lines 16 and 30 change to their winter versions the same day, so the sheet keeps the 29 Sep network."
+  ]
+ ]
+}

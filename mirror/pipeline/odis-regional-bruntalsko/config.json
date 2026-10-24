@@ -1,0 +1,1891 @@
+{
+ "snapshot": "2026-10-20",
+ "vehicle_day": "2026-10-20",
+ "vehicle_day_label_en": "Tuesday 20 Oct 2026",
+ "network_state_label": "20 Oct 2026",
+ "fitwin": [
+  300,
+  1380
+ ],
+ "cycle_lay": 3,
+ "all_termini_are_loops": true,
+ "stop_name_expansions": [
+  [
+   "aut.st.pod",
+   "autobusová stanice pod"
+  ],
+  [
+   "EDĚ aut.st.",
+   "Elektrárna Dětmarovice, autobusová stanice"
+  ],
+  [
+   "aut.nádr.",
+   "autobusové nádraží"
+  ],
+  [
+   "aut.st.",
+   "autobusová stanice"
+  ],
+  [
+   "rozc.k žel.st.",
+   "rozcestí k železniční stanici"
+  ],
+  [
+   "žel.st.",
+   "železniční stanice"
+  ],
+  [
+   "žel.zast.",
+   "železniční zastávka"
+  ],
+  [
+   "rozc.",
+   "rozcestí "
+  ],
+  [
+   "pož.zbroj.",
+   "požární zbrojnice"
+  ],
+  [
+   "rest.",
+   "restaurace "
+  ],
+  [
+   "zast.",
+   "zastávka "
+  ],
+  [
+   "J.Kotase",
+   "Josefa Kotase"
+  ],
+  [
+   "H.Malířové",
+   "Heleny Malířové"
+  ],
+  [
+   "M.Pujmanové",
+   "Marie Pujmanové"
+  ],
+  [
+   "Kpt.Jasioka",
+   "Kapitána Jasioka"
+  ],
+  [
+   "Nám.Republiky",
+   "Náměstí Republiky"
+  ],
+  [
+   "Národní tř.",
+   "Národní třída"
+  ],
+  [
+   "Děl.dům",
+   "Dělnický dům"
+  ],
+  [
+   "nákup.stř.",
+   "nákupní středisko"
+  ],
+  [
+   "čerp.st.",
+   "čerpací stanice"
+  ],
+  [
+   "čist.st.",
+   "čisticí stanice"
+  ],
+  [
+   "kult.dům",
+   "kulturní dům"
+  ],
+  [
+   "obch.dům",
+   "obchodní dům"
+  ],
+  [
+   "rehab.sanatorium",
+   "rehabilitační sanatorium"
+  ],
+  [
+   "sídl.",
+   "sídliště "
+  ],
+  [
+   "křiž.",
+   "křižovatka "
+  ],
+  [
+   "Pr.Suchá",
+   "Prostřední Suchá"
+  ],
+  [
+   "nám.",
+   "náměstí"
+  ],
+  [
+   "2.etapa",
+   "2. etapa"
+  ]
+ ],
+ "stop_name_fixed": {},
+ "jdf": {
+  "zip": "../havirov-karvina-orlova/data/raw/2026-10-20/JDF.zip",
+  "export_label": "CIS JŘ bus JDF export of 20 Oct 2026 (stored by the Havířov/Karviná/Orlová pipeline)",
+  "operator_ic": "06738346",
+  "why": "The kraj numbers each contract area's licences with its own prefix: 852 Krnovsko, 853 Bruntálsko, 854 Rýmařovsko (Transdev Morava); town lines 856 (MHD Krnov) and 855 (MHD Bruntál), Transdev Morava."
+ },
+ "title": "ODIS Bruntálsko Krnovsko Rýmařovsko",
+ "output_html": "ODIS Bruntalsko Krnovsko Rymarovsko.html",
+ "artifact_url": "https://claude.ai/artifact/ApSB65b8skppcUGCfFHtnZ",
+ "areas": [
+  {
+   "id": "krnovsko",
+   "name": "Krnovsko",
+   "prefix": "852",
+   "kind": "regional",
+   "operator": "Transdev Morava",
+   "branch": "Transdev Morava, pr. Bruntál",
+   "depot": "provozovna Bruntál",
+   "fleet": [
+    "82"
+   ],
+   "near": [
+    "82",
+    "83",
+    "81",
+    "84"
+   ],
+   "note": "Krnovsko is the Osoblaha and Zlaté Hory side of Krnov; its buses carry 82- fleet numbers."
+  },
+  {
+   "id": "bruntalsko",
+   "name": "Bruntálsko",
+   "prefix": "853",
+   "kind": "regional",
+   "operator": "Transdev Morava",
+   "branch": "Transdev Morava, pr. Bruntál",
+   "depot": "provozovna Bruntál",
+   "fleet": [
+    "83"
+   ],
+   "near": [
+    "83",
+    "84",
+    "82"
+   ],
+   "note": "Bruntálsko holds the Krnov – Bruntál corridor, the Krnov villages and the Jeseníky lines out of Bruntál; 83- buses."
+  },
+  {
+   "id": "rymarovsko",
+   "name": "Rýmařovsko",
+   "prefix": "854",
+   "kind": "regional",
+   "operator": "Transdev Morava",
+   "branch": "Transdev Morava, pr. Bruntál",
+   "depot": "provozovna Bruntál",
+   "fleet": [
+    "84"
+   ],
+   "near": [
+    "84",
+    "83"
+   ],
+   "note": "Rýmařovsko holds the Rýmařov lines and Bruntál – Moravský Beroun; 84- buses."
+  },
+  {
+   "id": "mhd-krnov",
+   "name": "MHD Krnov",
+   "prefix": "856",
+   "kind": "mhd",
+   "town": "Krnov",
+   "operator": "Transdev Morava",
+   "branch": "Transdev Morava, pr. Bruntál",
+   "depot": "provozovna Bruntál",
+   "fleet": [
+    "81"
+   ],
+   "near": [
+    "81",
+    "82",
+    "83"
+   ],
+   "note": "Town buses (81-, white with the blue-yellow Krnov wrap) take the town pak VZ-MHDKrnov-bus; regional buses lent to town lines keep their VZ-ODIS-bus object."
+  },
+  {
+   "id": "mhd-bruntal",
+   "name": "MHD Bruntál",
+   "prefix": "855",
+   "kind": "mhd",
+   "town": "Bruntál",
+   "operator": "Transdev Morava",
+   "branch": "Transdev Morava, pr. Bruntál",
+   "depot": "provozovna Bruntál",
+   "fleet": [],
+   "near": [
+    "83",
+    "84"
+   ],
+   "note": "On the vehicle day the two Bruntál town loops were worked by regional buses, which keep their VZ-ODIS-bus object."
+  }
+ ],
+ "live": {
+  "dir": "../havirov-karvina-orlova/data/raw/2026-10-20/live",
+  "fleet": "data/derived/fleet.json",
+  "label": "Tue 20 Oct 2026",
+  "note": "ODIS live map (mpvnet.cz): every bus with licence, line, trip number (= JDF spoj) and number plate; polled every minute 13:05–19:30 on Tue 20 Oct 2026, whole region, by the Havířov/Karviná/Orlová pipeline.",
+  "carriers": [
+   "Transdev Morava"
+  ]
+ },
+ "fleet": {
+  "carriers": [
+   {
+    "id": 7546,
+    "name": "Transdev Morava",
+    "tractions": [
+     "autobus",
+     "elektrobus"
+    ]
+   }
+  ]
+ },
+ "plate_lookup": true,
+ "designed_same_area": true,
+ "terminus_alias": {},
+ "terminus_alias_why": "",
+ "lines": {
+  "822": {
+   "core": [
+    "Krnov, autobusová stanice",
+    "Hošťálkovy, Staré Purkartice, točna"
+   ],
+   "sim": [
+    {
+     "name": "822",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Hošťálkovy, Staré Purkartice, točna",
+       "at": "auto"
+      },
+      {
+       "fr": "Hošťálkovy, Staré Purkartice, točna",
+       "to": "Krnov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Krnov – Hošťálkovy, Staré Purkartice every 1½ h in the afternoon (Krnov 14:25, 15:45, 17:25; Purkartice 14:55, 16:15, 17:55): one bus every 90."
+  },
+  "831": {
+   "core": [
+    "Krnov, autobusová stanice",
+    "Město Albrechtice, autobusová stanice",
+    "Slezské Pavlovice"
+   ],
+   "sim": [
+    {
+     "name": "831",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Slezské Pavlovice",
+       "at": "auto"
+      },
+      {
+       "fr": "Slezské Pavlovice",
+       "to": "Krnov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Krnov – Město Albrechtice – Dívčí Hrad – Osoblaha – Slezské Pavlovice every 4 h (Krnov 14:45; Pavlovice 12:17, 16:17), on the minute. The Bohušov and Povelice stops are on no other line."
+  },
+  "832": {
+   "core": [
+    "Krnov, autobusová stanice",
+    "Město Albrechtice, autobusová stanice",
+    "Osoblaha, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "832",
+     "every": 180,
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Osoblaha, autobusová stanice",
+       "at": [
+        "16:20"
+       ]
+      },
+      {
+       "fr": "Osoblaha, autobusová stanice",
+       "to": "Krnov, autobusová stanice",
+       "at": [
+        "15:41"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Krnov – Slezské Rudoltice – Rusín – Osoblaha at irregular times (Krnov 12:35, 16:20, 18:25; Osoblaha 12:51, 15:41). Every 180 on the real 16:20 and 15:41 with two buses; the shortest round would take one bus but leave every departure an hour off (owner check)."
+  },
+  "833": {
+   "core": [
+    "Krnov, autobusová stanice",
+    "Jindřichov, železniční stanice",
+    "Osoblaha, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "833",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Jindřichov, železniční stanice",
+       "at": "auto",
+       "stops_via": [
+        "Město Albrechtice, rozcestí Dakon"
+       ]
+      },
+      {
+       "fr": "Jindřichov, železniční stanice",
+       "to": "Krnov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "833 Osoblaha",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Jindřichov, železniční stanice",
+       "to": "Osoblaha, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Osoblaha, autobusová stanice",
+       "to": "Jindřichov, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Krnov – Město Albrechtice – Jindřichov, station every 3 h (Krnov 14:25), the stop list via Město Albrechtice, rozcestí Dakon; the back slot is set 34 min off so one bus works both ends. Jindřichov – Vysoká – Osoblaha is 833 Osoblaha every 180 (Jindřichov 15:39, Osoblaha 16:44)."
+  },
+  "824": {
+   "core": [
+    "Krnov, autobusová stanice",
+    "Město Albrechtice, autobusová stanice",
+    "Vrbno p.Prad., zámeček"
+   ],
+   "sim": [
+    {
+     "name": "824",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Vrbno p.Prad., zámeček",
+       "at": [
+        "12:05"
+       ]
+      },
+      {
+       "fr": "Vrbno p.Prad., zámeček",
+       "to": "Krnov, autobusová stanice",
+       "at": [
+        "14:18"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Krnov – Město Albrechtice – Heřmanovice – Vrbno, zámeček: one afternoon round (Krnov 12:05, Vrbno 14:18), every 480. Vrbno, Železná, rozcestí has no other line. The diversion timetable (to 12 Dec) runs."
+  },
+  "913": {
+   "core": [
+    "Krnov, autobusová stanice",
+    "Olomouc, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "913",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Olomouc, autobusové nádraží",
+       "at": "auto"
+      },
+      {
+       "fr": "Olomouc, autobusové nádraží",
+       "to": "Krnov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Krnov – Horní Benešov – Šternberk – Olomouc: one return a day (Krnov 5:55, Olomouc 14:10). Every 480 with Olomouc 14:10 on the minute; the Krnov departure is set to 12:07 so one bus works it (owner check). Lipina, Horní Loděnice and Bílčice, bytovky have no other line."
+  },
+  "901": {
+   "core": [
+    "Krnov, autobusová stanice",
+    "Město Albrechtice, autobusová stanice",
+    "Zlaté Hory, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "901",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Zlaté Hory, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Zlaté Hory, autobusová stanice",
+       "to": "Krnov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Krnov – Heřmanovice – Zlaté Hory every 2 h (Krnov 15:15, 17:15; Zlaté Hory 15:44, 17:44): two buses. The diversion timetable (29 Sep – 19 Dec) runs."
+  },
+  "902": {
+   "core": [
+    "Jindřichov, železniční stanice",
+    "Petrovice, restaurace U hájenky",
+    "Zlaté Hory, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "902",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Jindřichov, železniční stanice",
+       "to": "Petrovice, restaurace U hájenky",
+       "at": [
+        "15:41"
+       ]
+      },
+      {
+       "fr": "Petrovice, restaurace U hájenky",
+       "to": "Jindřichov, železniční stanice",
+       "at": [
+        "16:06"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "902 Zlaté Hory",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Jindřichov, železniční stanice",
+       "to": "Zlaté Hory, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Zlaté Hory, autobusová stanice",
+       "to": "Jindřichov, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Jindřichov, station – Petrovice, U hájenky every 2 h (station :41, Petrovice :06; 11:41, 15:41, 17:46 and 12:06, 16:06, 18:06). The trips on to Zlaté Hory (Jindřichov 13:21, Zlaté Hory 14:36) are 902 Zlaté Hory every 240; Petrovy Boudy, hřeben has no other line."
+  },
+  "811": {
+   "core": [
+    "Krnov, autobusová stanice",
+    "Horní Benešov, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "811",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Horní Benešov, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Horní Benešov, autobusová stanice",
+       "to": "Krnov, autobusová stanice",
+       "at": "auto",
+       "stops_via": [
+        "Lichnov, Dubnice, pohostinství"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "811 Sosnová",
+     "every": 90,
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Sosnová, Obecní úřad",
+       "at": [
+        "14:10"
+       ]
+      },
+      {
+       "fr": "Sosnová, Obecní úřad",
+       "to": "Krnov, autobusová stanice",
+       "at": [
+        "14:40"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Krnov – Horní Benešov every 2 h at irregular minutes (Krnov 13:00, 15:05, 17:40; Horní Benešov 12:45, 14:17, 15:50): one bus every 120, back via Lichnov, Dubnice, pohostinství as some trips run. The Sosnová trips (Krnov 14:10, 15:40; Sosnová 14:40, 16:10) are 811 Sosnová every 90, on the minute."
+  },
+  "814": {
+   "core": [
+    "Krnov, autobusová stanice",
+    "Čaková, konečná",
+    "Zátor, točna"
+   ],
+   "sim": [
+    {
+     "name": "814",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Čaková, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Čaková, konečná",
+       "to": "Krnov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "814 Zátor",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Zátor, točna",
+       "at": [
+        "15:00"
+       ]
+      },
+      {
+       "fr": "Zátor, točna",
+       "to": "Krnov, autobusová stanice",
+       "untimed": true
+      }
+     ]
+    }
+   ],
+   "note": "Krnov – Zátor – Čaková every 3 h (Krnov 15:25, 18:20; Čaková 15:55, 18:50). The trip to Zátor, točna (Krnov 15:00) is 814 Zátor every 480 with an empty return; Zátor village stops have no other line."
+  },
+  "816": {
+   "core": [
+    "Krnov, železniční stanice",
+    "Krasov, točna"
+   ],
+   "sim": [
+    {
+     "name": "816",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Krnov, železniční stanice",
+       "to": "Krasov, točna",
+       "at": "auto"
+      },
+      {
+       "fr": "Krasov, točna",
+       "to": "Krnov, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Krnov, station – Krasov every 3 h (station 13:50; Krasov 15:45): one bus."
+  },
+  "817": {
+   "core": [
+    "Krnov, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "817",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Krnov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Krnov – Úvalno – Býkov – Krnov loop every 1–1½ h until 16:30 (14:00, 15:05, 16:30): one bus every 90."
+  },
+  "818": {
+   "core": [
+    "Krnov, autobusová stanice",
+    "Brumovice, Úblo, točna",
+    "Brumovice, Skrochovice, most"
+   ],
+   "sim": [
+    {
+     "name": "818",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Brumovice, Úblo, točna",
+       "at": "auto"
+      },
+      {
+       "fr": "Brumovice, Úblo, točna",
+       "to": "Krnov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "818 Skrochovice",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Brumovice, Úblo, točna",
+       "to": "Brumovice, Skrochovice, most",
+       "at": "auto"
+      },
+      {
+       "fr": "Brumovice, Skrochovice, most",
+       "to": "Brumovice, Úblo, točna",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "818 Neplachovice",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Brumovice, Úblo, točna",
+       "to": "Neplachovice, škola",
+       "at": [
+        "12:30",
+        "13:30"
+       ]
+      },
+      {
+       "fr": "Neplachovice, škola",
+       "to": "Brumovice, Úblo, točna",
+       "at": [
+        "13:05",
+        "14:10"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Krnov – Brumovice, Úblo every 3 h (Krnov 15:10; Úblo 15:03, 17:40), the Úblo end set 26 min off so one bus works both. The Úblo – Skrochovice shuttle runs about every 1½ h (818 Skrochovice), and the school trips Úblo – Neplachovice (12:30, 13:30; back 13:05, 14:10) are 818 Neplachovice every 480."
+  },
+  "819": {
+   "core": [
+    "Krnov, autobusová stanice",
+    "Bruntál, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "819",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Krnov, autobusová stanice",
+       "to": "Bruntál, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Bruntál, autobusová stanice",
+       "to": "Krnov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Krnov – Bruntál about hourly at irregular minutes (Krnov 12:00, 12:40, 14:25, 14:35, 16:00, 17:15; Bruntál :40 mostly): every 60 with two buses, both ends set a few minutes off their best fit for the shortest round; most Krnov departures are off the pattern."
+  },
+  "861": {
+   "core": [
+    "Bruntál, železniční stanice",
+    "Vrbno p.Prad., zámeček"
+   ],
+   "sim": [
+    {
+     "name": "861",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Bruntál, železniční stanice",
+       "to": "Vrbno p.Prad., zámeček",
+       "at": [
+        40
+       ]
+      },
+      {
+       "fr": "Vrbno p.Prad., zámeček",
+       "to": "Bruntál, železniční stanice",
+       "at": [
+        54
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Bruntál, station – Vrbno – Karlova Studánka – Vrbno, zámeček hourly (station :40; zámeček :54, as 16:54 and 14:49). Three buses. The diversion timetable (12 Oct – 20 Dec) runs."
+  },
+  "862": {
+   "core": [
+    "Bruntál, železniční stanice",
+    "Karlova Studánka, dolní parkoviště"
+   ],
+   "sim": [
+    {
+     "name": "862",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Bruntál, železniční stanice",
+       "to": "Karlova Studánka, dolní parkoviště",
+       "at": [
+        10
+       ]
+      },
+      {
+       "fr": "Karlova Studánka, dolní parkoviště",
+       "to": "Bruntál, železniční stanice",
+       "at": [
+        10
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Bruntál, station – Malá Morávka – Karlova Studánka, dolní parkoviště about hourly in the afternoon (15:15, 16:05, 18:20, 19:10; back 15:10, 16:05, 17:15, 19:15): every 60 at :10 both ends, two buses."
+  },
+  "863": {
+   "core": [
+    "Bruntál, autobusová stanice",
+    "Vrbno p.Prad., rozcestí Ludvíkov",
+    "Karlova Studánka, Hvězda autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "863",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Bruntál, autobusová stanice",
+       "to": "Vrbno p.Prad., rozcestí Ludvíkov",
+       "at": "auto"
+      },
+      {
+       "fr": "Vrbno p.Prad., rozcestí Ludvíkov",
+       "to": "Bruntál, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bruntál, bus station – Široká Niva – Vrbno, rozcestí Ludvíkov every 1½ h (Bruntál 15:00, 16:25; Ludvíkov 14:40, 16:15). The trips to Karlova Studánka, Hvězda have no line of their own: their stops are on 861, 862 and 885."
+  },
+  "865": {
+   "core": [
+    "Bruntál, železniční stanice",
+    "Světlá Hora, Dětřichovice, točna",
+    "Světlá Hora, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "865",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Bruntál, železniční stanice",
+       "to": "Světlá Hora, Dětřichovice, točna",
+       "at": [
+        "15:05"
+       ]
+      },
+      {
+       "fr": "Světlá Hora, Dětřichovice, točna",
+       "to": "Světlá Hora, autobusová stanice",
+       "at": [
+        "15:37"
+       ]
+      },
+      {
+       "fr": "Světlá Hora, autobusová stanice",
+       "to": "Bruntál, železniční stanice",
+       "untimed": true,
+       "lines": [
+        "866",
+        "865"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Bruntál, station – Dětřichovice: one afternoon round (Bruntál 15:05 → Dětřichovice, 15:37 → Světlá Hora, bus station), back to Bruntál empty; every 480. Dětřichovice has no other line."
+  },
+  "866": {
+   "core": [
+    "Světlá Hora, autobusová stanice",
+    "Světlá Hora, Podlesí"
+   ],
+   "sim": [
+    {
+     "name": "866",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Světlá Hora, autobusová stanice",
+       "to": "Světlá Hora, Podlesí",
+       "at": [
+        "13:40",
+        "14:20",
+        "15:50"
+       ]
+      },
+      {
+       "fr": "Světlá Hora, Podlesí",
+       "to": "Světlá Hora, autobusová stanice",
+       "at": [
+        "13:55",
+        "14:35"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Světlá Hora local: bus station – Stará Voda – Suchá Rudná – Podlesí at 13:40, 14:20 and 15:50, back 13:54 and 14:35 (on to Bruntál). Every 480 with all five trips; two buses, as the 15:50 is the 865 bus. Suchá Rudná and Podlesí have no other line."
+  },
+  "872": {
+   "core": [
+    "Bruntál, autobusová stanice",
+    "Milotice n.Opavou, škola"
+   ],
+   "sim": [
+    {
+     "name": "872",
+     "every": 90,
+     "legs": [
+      {
+       "fr": "Bruntál, autobusová stanice",
+       "to": "Milotice n.Opavou, škola",
+       "at": [
+        "13:50"
+       ]
+      },
+      {
+       "fr": "Milotice n.Opavou, škola",
+       "to": "Bruntál, autobusová stanice",
+       "at": [
+        "14:10"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Bruntál – Milotice nad Opavou: two afternoon rounds (Bruntál 13:50, 15:15; Milotice 14:10, 15:35); every 90 on 13:50 and 14:10 with one bus (15:20 and 15:40 a few minutes off)."
+  },
+  "874": {
+   "core": [
+    "Horní Benešov, autobusová stanice",
+    "Horní Životice, střed",
+    "Svobodné Heřmanice, obecní úřad"
+   ],
+   "sim": [
+    {
+     "name": "874",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Horní Benešov, autobusová stanice",
+       "to": "Horní Životice, střed",
+       "at": "auto"
+      },
+      {
+       "fr": "Horní Životice, střed",
+       "to": "Horní Benešov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Horní Benešov – Svobodné Heřmanice – Horní Životice every 3 h (Horní Benešov 15:10, Životice 15:44). The Heřmanice short trips have no line of their own: their stops are on 874."
+  },
+  "885": {
+   "core": [
+    "Bruntál, železniční stanice",
+    "Malá Morávka, Ovčárna točna"
+   ],
+   "sim": [
+    {
+     "name": "885",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Bruntál, železniční stanice",
+       "to": "Malá Morávka, Ovčárna točna",
+       "at": "auto"
+      },
+      {
+       "fr": "Malá Morávka, Ovčárna točna",
+       "to": "Bruntál, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bruntál, station – Malá Morávka, Ovčárna (Praděd) every 2 h, on the minute (Bruntál 14:40, 16:40; Ovčárna 13:30, 15:30, 17:30)."
+  },
+  "907": {
+   "core": [
+    "Vrbno p.Prad., železniční stanice",
+    "Zlaté Hory, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "907",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Vrbno p.Prad., železniční stanice",
+       "to": "Zlaté Hory, autobusová stanice",
+       "at": [
+        "15:15"
+       ]
+      },
+      {
+       "fr": "Zlaté Hory, autobusová stanice",
+       "to": "Vrbno p.Prad., železniční stanice",
+       "at": [
+        "16:25"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Vrbno, station – Vidly – Zlaté Hory about every 2 h (Vrbno 15:15, 17:30; Zlaté Hory 14:25, 16:30, 18:20): every 120 on 15:15 and 16:25, one bus. The diversion timetable (29 Sep – 19 Dec) runs."
+  },
+  "873": {
+   "core": [
+    "Bruntál, železniční stanice",
+    "Václavov, dolní"
+   ],
+   "sim": [
+    {
+     "name": "873",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Bruntál, železniční stanice",
+       "to": "Václavov, dolní",
+       "at": "auto"
+      },
+      {
+       "fr": "Václavov, dolní",
+       "to": "Bruntál, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bruntál, station – Václavov: two afternoon rounds (13:38 / 14:05; 12:35 to Václavov, střed); every 240 on the minute. Václavov has no other line."
+  },
+  "877": {
+   "core": [
+    "Rýmařov, autobusová stanice",
+    "Bruntál, železniční stanice",
+    "Bruntál, KARLA"
+   ],
+   "sim": [
+    {
+     "name": "877",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Rýmařov, autobusová stanice",
+       "to": "Bruntál, železniční stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Bruntál, železniční stanice",
+       "to": "Rýmařov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "877 KARLA",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Rýmařov, autobusová stanice",
+       "to": "Bruntál, KARLA",
+       "at": [
+        "12:40"
+       ]
+      },
+      {
+       "fr": "Bruntál, KARLA",
+       "to": "Rýmařov, autobusová stanice",
+       "at": [
+        "14:17"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Rýmařov – Břidličná – Bruntál, station hourly (Rýmařov :40, Bruntál :20 mostly): every 60 with two buses at :34 and :24, 6 and 4 min before the real minutes, for the shortest round (owner check). The trips to and from Bruntál, KARLA (Rýmařov 12:40, KARLA 14:17, also 4:40/6:17 and 20:40/22:17) are 877 KARLA every 480, on the minute."
+  },
+  "878": {
+   "core": [
+    "Rýmařov, autobusová stanice",
+    "Malá Morávka, Karlov, garáž"
+   ],
+   "sim": [
+    {
+     "name": "878",
+     "every": 90,
+     "legs": [
+      {
+       "fr": "Rýmařov, autobusová stanice",
+       "to": "Malá Morávka, Karlov, garáž",
+       "at": [
+        "15:30"
+       ]
+      },
+      {
+       "fr": "Malá Morávka, Karlov, garáž",
+       "to": "Rýmařov, autobusová stanice",
+       "at": [
+        "16:10"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Rýmařov – Malá Morávka, Karlov two rounds in the afternoon (Rýmařov 14:10, 15:30; Karlov 14:55, 16:10): every 90 on 15:30 and 16:10, one bus."
+  },
+  "879": {
+   "core": [
+    "Rýmařov, autobusová stanice",
+    "Dolní Moravice, Nová Ves, konečná"
+   ],
+   "sim": [
+    {
+     "name": "879",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Rýmařov, autobusová stanice",
+       "to": "Dolní Moravice, Nová Ves, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Dolní Moravice, Nová Ves, konečná",
+       "to": "Rýmařov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Rýmařov – Dolní Moravice, Nová Ves: three rounds a day (Rýmařov 6:45, 12:00, 13:50); every 240 on 13:50 / 14:20. Nová Ves has no other line."
+  },
+  "880": {
+   "core": [
+    "Rýmařov, autobusová stanice",
+    "Stará Ves, Anenská Huť"
+   ],
+   "sim": [
+    {
+     "name": "880",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Rýmařov, autobusová stanice",
+       "to": "Stará Ves, Anenská Huť",
+       "at": "auto"
+      },
+      {
+       "fr": "Stará Ves, Anenská Huť",
+       "to": "Rýmařov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Rýmařov – Stará Ves, Anenská Huť about every 45–90 min (Rýmařov 14:25, 15:15, 16:00; Anenská Huť 14:45, 15:35, 16:15): one bus every 90. The diversion timetable (20 Jul – 14 Dec) runs."
+  },
+  "909": {
+   "core": [
+    "Bruntál, železniční stanice",
+    "Moravský Beroun, náměstí"
+   ],
+   "sim": [
+    {
+     "name": "909",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Bruntál, železniční stanice",
+       "to": "Moravský Beroun, náměstí",
+       "at": [
+        "14:45"
+       ]
+      },
+      {
+       "fr": "Moravský Beroun, náměstí",
+       "to": "Bruntál, železniční stanice",
+       "at": [
+        "15:10"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "909 Leskovec",
+     "every": 180,
+     "legs": [
+      {
+       "fr": "Bruntál, železniční stanice",
+       "to": "Leskovec n.Moravicí, rozcestí Bohdanovice",
+       "at": [
+        "15:10"
+       ]
+      },
+      {
+       "fr": "Leskovec n.Moravicí, rozcestí Bohdanovice",
+       "to": "Bruntál, železniční stanice",
+       "at": [
+        "12:50"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Bruntál, station – Razová – Bílčice – Moravský Beroun, náměstí about every 2 h (Bruntál 12:50, 14:45; Beroun 13:30, 15:10, 17:15): every 120 on 14:45 and 15:10, two buses. The short trips to Leskovec, rozcestí Bohdanovice (Bruntál 12:25, 15:10, 18:35; back 12:50, 19:05) are 909 Leskovec every 180 (one bus)."
+  },
+  "910": {
+   "core": [
+    "Bruntál, železniční stanice",
+    "Moravský Beroun, náměstí",
+    "Moravský Beroun, železniční stanice"
+   ],
+   "sim": [
+    {
+     "name": "910",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Bruntál, železniční stanice",
+       "to": "Moravský Beroun, železniční stanice",
+       "at": "auto",
+       "core_to": "Moravský Beroun, náměstí"
+      },
+      {
+       "fr": "Moravský Beroun, železniční stanice",
+       "to": "Bruntál, železniční stanice",
+       "at": "auto",
+       "knot": "Moravský Beroun, náměstí"
+      }
+     ]
+    }
+   ],
+   "note": "Bruntál, station – Roudno – Dvorce – Moravský Beroun, station every 2 h (Bruntál 12:45, 16:45; Beroun 14:25, 16:25), timed so the bus passes Moravský Beroun, náměstí on time."
+  },
+  "911": {
+   "core": [
+    "Bruntál, železniční stanice",
+    "Moravský Beroun, Granitol"
+   ],
+   "sim": [
+    {
+     "name": "911",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Bruntál, železniční stanice",
+       "to": "Moravský Beroun, Granitol",
+       "at": "auto"
+      },
+      {
+       "fr": "Moravský Beroun, Granitol",
+       "to": "Bruntál, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bruntál, station – Dětřichov – Moravský Beroun, Granitol every 4 h, on the minute (Bruntál 12:58, 16:58; Granitol 14:15, 18:15)."
+  },
+  "912": {
+   "core": [
+    "Rýmařov, autobusová stanice",
+    "Šternberk, Dvorská"
+   ],
+   "sim": [
+    {
+     "name": "912",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Rýmařov, autobusová stanice",
+       "to": "Šternberk, Dvorská",
+       "at": "auto"
+      },
+      {
+       "fr": "Šternberk, Dvorská",
+       "to": "Rýmařov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Rýmařov – Jiříkov, Sovinec – Šternberk every 4 h (Rýmařov 13:40, Šternberk 15:25). The diversion timetable (15 – 21 Oct) ends the next day, so the regular one is modelled."
+  },
+  "921": {
+   "core": [
+    "Rýmařov, autobusová stanice",
+    "Olomouc, autobusové nádraží",
+    "Břidličná, Kovohutě",
+    "Ryžoviště, náměstí"
+   ],
+   "sim": [
+    {
+     "name": "921",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Rýmařov, autobusová stanice",
+       "to": "Olomouc, autobusové nádraží",
+       "at": [
+        "12:25"
+       ]
+      },
+      {
+       "fr": "Olomouc, autobusové nádraží",
+       "to": "Rýmařov, autobusová stanice",
+       "at": [
+        "16:55"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Rýmařov – Břidličná – Huzová – Šternberk – Olomouc: two returns a day, every 480 on the afternoon pair (Rýmařov 12:25, Olomouc 16:55; 8:55 fits too). The Břidličná – Huzová – Ryžoviště local trips have no line of their own. Regular timetable (the diversion ends 23 Oct)."
+  },
+  "922": {
+   "core": [
+    "Rýmařov, železniční stanice",
+    "Rýmařov, autobusová stanice",
+    "Tvrdkov, Ruda, restaurace",
+    "Uničov, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "922",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Rýmařov, železniční stanice",
+       "to": "Tvrdkov, Ruda, restaurace",
+       "at": "auto",
+       "knot": "Rýmařov, autobusová stanice"
+      },
+      {
+       "fr": "Tvrdkov, Ruda, restaurace",
+       "to": "Rýmařov, železniční stanice",
+       "at": "auto",
+       "core_to": "Rýmařov, autobusová stanice"
+      }
+     ]
+    },
+    {
+     "name": "922 Uničov",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Rýmařov, autobusová stanice",
+       "to": "Uničov, autobusová stanice",
+       "at": [
+        "12:30"
+       ]
+      },
+      {
+       "fr": "Uničov, autobusová stanice",
+       "to": "Rýmařov, železniční stanice",
+       "at": [
+        "15:09"
+       ]
+      },
+      {
+       "fr": "Rýmařov, železniční stanice",
+       "to": "Rýmařov, autobusová stanice",
+       "untimed": true,
+       "rt": 5
+      }
+     ]
+    }
+   ],
+   "note": "Rýmařov, station – bus station – Tvrdkov, Ruda every 1½ h (station 15:45, 17:20; Ruda 16:20, 17:50), timed so the bus passes the bus station on time. The Uničov trips (Rýmařov 12:30, also 4:30 and 20:30; Uničov 15:09) are 922 Uničov every 480; the Uničov region stops have no other line."
+  },
+  "801": {
+   "core": [
+    "Krnov, Nemocnice hl.brána",
+    "Krnov, Petrův důl",
+    "Krnov, průmyslová zóna II, točna"
+   ],
+   "sim": [
+    {
+     "name": "801",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Krnov, Nemocnice hl.brána",
+       "to": "Krnov, Petrův důl",
+       "at": "auto"
+      },
+      {
+       "fr": "Krnov, Petrův důl",
+       "to": "Krnov, Nemocnice hl.brána",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "801 PZ",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Krnov, Petrův důl",
+       "to": "Krnov, průmyslová zóna II, Hájnický potok",
+       "core_to": "Krnov, průmyslová zóna II, točna",
+       "at": [
+        "13:05",
+        "13:30",
+        "14:05",
+        "14:34",
+        "15:22",
+        "15:52"
+       ]
+      },
+      {
+       "fr": "Krnov, průmyslová zóna II, Hájnický potok",
+       "to": "Krnov, Petrův důl",
+       "knot": "Krnov, průmyslová zóna II, točna",
+       "knot_at": [
+        "13:15",
+        "13:42",
+        "14:16",
+        "14:43",
+        "15:34",
+        "16:06"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Nemocnice, hlavní brána – bus stand – Petrův důl every 30 (:06 / :36, back :07 / :37), two buses. At the shift changes (12:48–16:05, 4:49–6:30) trips run on from Petrův důl to the industrial zone II: that is 801 PZ, a Petrův důl – průmyslová zóna II shuttle every 480 at their times there (13:05, 13:30, 14:05, 14:34, 15:22, 15:52; back 13:15–16:06 at the točna), so the trunk is not doubled (owner check)."
+  },
+  "802": {
+   "core": [
+    "Krnov, Aut.stanoviště",
+    "Krnov, Ježník, sanatorium"
+   ],
+   "sim": [
+    {
+     "name": "802",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Krnov, Aut.stanoviště",
+       "to": "Krnov, Ježník, sanatorium",
+       "at": "auto"
+      },
+      {
+       "fr": "Krnov, Ježník, sanatorium",
+       "to": "Krnov, Aut.stanoviště",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bus stand – Ježník, sanatorium hourly in the afternoon (13:10, 13:55, 14:55, 16:34; back 13:30, 14:15, 15:19, 16:55): every 60 at :55 / :15, one bus."
+  },
+  "805": {
+   "core": [
+    "Krnov, Hlubčická Na špici",
+    "Krnov, Chomýž, točna"
+   ],
+   "sim": [
+    {
+     "name": "805",
+     "every": 90,
+     "legs": [
+      {
+       "fr": "Krnov, Hlubčická Na špici",
+       "to": "Krnov, Chomýž, točna",
+       "at": [
+        "14:40"
+       ]
+      },
+      {
+       "fr": "Krnov, Chomýž, točna",
+       "to": "Krnov, Hlubčická Na špici",
+       "at": [
+        "15:35"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Hlubčická, Na špici – Chomýž, točna every 1½ h (Hlubčická 14:40, 16:10; Chomýž 14:03, 15:35): every 90 on 14:40 / 15:35, one bus."
+  },
+  "806": {
+   "core": [
+    "Krnov, Aut.stanoviště",
+    "Krnov, Cvilín točna",
+    "Krnov, st.hranice CLO"
+   ],
+   "sim": [
+    {
+     "name": "806",
+     "every": 90,
+     "legs": [
+      {
+       "fr": "Krnov, Aut.stanoviště",
+       "to": "Krnov, Cvilín točna",
+       "at": [
+        "14:45"
+       ]
+      },
+      {
+       "fr": "Krnov, Cvilín točna",
+       "to": "Krnov, Aut.stanoviště",
+       "at": [
+        "15:05"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "806 CLO",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Krnov, Aut.stanoviště",
+       "to": "Krnov, st.hranice CLO",
+       "at": [
+        "17:50"
+       ]
+      },
+      {
+       "fr": "Krnov, st.hranice CLO",
+       "to": "Krnov, Cvilín točna",
+       "at": [
+        "18:04"
+       ]
+      },
+      {
+       "fr": "Krnov, Cvilín točna",
+       "to": "Krnov, Aut.stanoviště",
+       "untimed": true
+      }
+     ]
+    }
+   ],
+   "note": "Bus stand – Cvilín every 1½ h (14:45, 16:00; Cvilín 15:05, 16:20): every 90 on 14:45 / 15:05. The trip via the state border (bus stand 17:50 → st. hranice CLO, 18:04 → Cvilín) is 806 CLO every 480; those stops have no other line."
+  },
+  "807": {
+   "core": [
+    "Krnov, Nemocnice hl.brána",
+    "Krnov, Guntramovice, točna",
+    "Krnov, Aut.stanoviště"
+   ],
+   "sim": [
+    {
+     "name": "807",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Krnov, Nemocnice hl.brána",
+       "to": "Krnov, Guntramovice, točna",
+       "at": [
+        "14:13"
+       ]
+      },
+      {
+       "fr": "Krnov, Guntramovice, točna",
+       "to": "Krnov, Aut.stanoviště",
+       "at": [
+        "14:33"
+       ]
+      },
+      {
+       "fr": "Krnov, Aut.stanoviště",
+       "to": "Krnov, Nemocnice hl.brána",
+       "untimed": true,
+       "rt": 7
+      }
+     ]
+    }
+   ],
+   "note": "Nemocnice – Guntramovice – bus stand: one afternoon trip (14:13, back 14:33), every 480. Guntramovice has no other line."
+  },
+  "851": {
+   "core": [
+    "Bruntál, železniční stanice",
+    "Bruntál, KARLA"
+   ],
+   "sim": [
+    {
+     "name": "851",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Bruntál, železniční stanice",
+       "to": "Bruntál, KARLA",
+       "at": "auto",
+       "stops_via": [
+        "Bruntál, nový hřbitov"
+       ]
+      },
+      {
+       "fr": "Bruntál, KARLA",
+       "to": "Bruntál, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bruntál town: station – nový hřbitov – KARLA (12:50, 16:40) and KARLA – station (14:12, 17:27): every 180 with one bus, the station end set 14 min off for the shortest round. The second loop, 852, has no line of its own: its stops are on 851 and the regional lines."
+  }
+ },
+ "unmodelled": {
+  "803": "Krnov town line to Červený dvůr: five trips a day (4:40, 5:45, 6:35, 21:29, 22:10), none in the afternoon.",
+  "815": "Krnov – Krasov – Čaková – Zátor: three trips a day (6:10; Krasov 14:30 and Zátor, škola 15:40 back to Krnov). Its stops are on 814, 814 Zátor and 816.",
+  "852": "Bruntál town loop via U Rybníka: eight trips a day, in the afternoon only KARLA 15:12 and 18:27 to the station. Its afternoon stops are on 851 and the regional lines.",
+  "876": "Rýmařov – Břidličná – Lomnice: five trips a day, the last at 12:44; none in the afternoon. Its stops are on 877, 911 and 921.",
+  "914": "Bruntál – Šternberk – Olomouc: two trips a day (6:35, back 11:50), none in the afternoon."
+ },
+ "network_state": [
+  [
+   "in",
+   "Three regional contract areas and two town networks",
+   "Krnovsko (licences 852xxx), Bruntálsko (853xxx) and Rýmařovsko (854xxx), the Krnov town lines (856xxx) and the two Bruntál town loops (855xxx), all Transdev Morava, branch Bruntál. Lines running into the Olomouc region (913 and 921 to Olomouc, 922 to Uničov, 912 to Šternberk) are modelled to their ends: in this data no other line serves their stops there."
+  ],
+  [
+   "in",
+   "Diversion timetables to the timetable change or beyond",
+   "The CIS JŘ export has diversion versions valid on the vehicle day for 824 (to 12 Dec), 880 (20 Jul – 14 Dec), 901 and 907 (29 Sep – 19 Dec) and 861 (12 Oct – 20 Dec). They run to the end of the timetable year or past it, so they are modelled as they run."
+  ],
+  [
+   "out",
+   "Short diversions of 876, 912 and 921",
+   "876 (to 23 Oct), 912 (15 – 21 Oct) and 921 (to 23 Oct) ran diversion timetables on the vehicle day that end within days, so their regular timetables are modelled (shared rule: short works as the regular state). 912 regular adds Jiříkov, Těchanov; 921 regular runs its Břidličná local trips to Huzová."
+  ],
+  [
+   "out",
+   "260 and 920",
+   "260 Opava – Horní Benešov – Bruntál and 920 Opava – Bruntál – Rýmařov hold a licence here and one in Opavsko (902260: 28 trips, 902920: 34 trips on the day, against 3 and 14 here). They are modelled once, on the Opavsko/Vítkovsko/Hlučínsko sheet."
+  ],
+  [
+   "in",
+   "A new 909 timetable from 22 Oct",
+   "The export already holds a new version of 909 valid from 22 Oct 2026, two days after the vehicle day; the sheet keeps the version of the vehicle day."
+  ]
+ ],
+ "owner_checks": [
+  [
+   "877",
+   "Rýmařov – Bruntál every 60 at Rýmařov :34 and Bruntál :24, 6 and 4 min before the real :40 and :20, so two buses work it (shortest round).",
+   "keep the real :40 / :20 and give the line a third bus."
+  ],
+  [
+   "801 PZ",
+   "the industrial-zone trips are a Petrův důl – průmyslová zóna II shuttle every 480 at their times there (one bus), so the every-30 trunk is not doubled at the shift changes (as 302 Tesco on the Těšínsko sheet).",
+   "run the zone trips from Nemocnice as they do (every 480, six slots), two Simutrans buses leaving Nemocnice together six times a shift."
+  ],
+  [
+   "913",
+   "Krnov – Olomouc (one return a day) is every 480 with the Krnov departure at 12:07 instead of the real 5:55, so one bus works it.",
+   "keep 5:55 (13:55, 21:55) and give it a second bus, or leave 913 out and list its three stops (Lipina, Horní Loděnice in the Olomouc region; Bílčice, bytovky)."
+  ],
+  [
+   "832",
+   "Krnov – Osoblaha is every 180 on the real 16:20 and 15:41 with two buses, against the default shortest round.",
+   "the shortest round: one bus, every departure about an hour off the real times."
+  ]
+ ],
+ "texts": {
+  "eyebrow": "ODIS regional and town buses · Krnovsko · Bruntálsko · Rýmařovsko · MHD Krnov · MHD Bruntál · vypravenost",
+  "lede_who": "The ODIS bus lines of three regional contract areas around Krnov, Bruntál and Rýmařov (Krnovsko, Bruntálsko, Rýmařovsko) and the town lines of Krnov and Bruntál, all run by Transdev Morava from its Bruntál branch",
+  "swap_places": "Krnov, Bruntál, Rýmařov and Moravský Beroun",
+  "scope": "Transdev Morava licences with the area prefixes 852 (Krnovsko), 853 (Bruntálsko), 854 (Rýmařovsko), 856 (MHD Krnov) and 855 (MHD Bruntál)",
+  "scope_check": "The prefixes match the live map (Transdev Morava, pr. Bruntál) and the fleet numbers: 82- buses run 852, 83- run 853, 84- run 854 and 81- are the Krnov town buses. 260 and 920 also hold Opavsko licences and are on that sheet.",
+  "buses_extra": " The fleet is the seznam-autobusu register of Transdev Morava (01c_fleet.py); every bus seen on these licences is in it.",
+  "search_example": "82-2003",
+  "depots": "Transdev Morava, branch Bruntál (with its Krnov and Rýmařov outstations). A seen bus counts at the branch the live map reports for it; a designed bus at its home branch.",
+  "sources_extra": ", <a href=\"https://seznam-autobusu.cz/seznam?prov=1&amp;trakce=autobus&amp;iddopravce=7546\">Transdev Morava register</a>",
+  "unmodelled_intro": "Sparse lines whose stops other lines already serve (method Step 8: a long-interval line only where it is a place’s only service) and lines with no afternoon trips."
+ },
+ "pak": {
+  "repo": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
+  "package": "VZ-ODIS-bus",
+  "packages": [
+   "VZ-ODIS-bus",
+   "VZ-MHDKrnov-bus"
+  ],
+  "why": "Regional buses take VZ-ODIS-bus; Transdev Morava's white with the red Transdev logo and the kraj logo is the transdev livery. Krnov's town buses take the town package VZ-MHDKrnov-bus (krnovbila). A regional bus lent to a town line keeps its VZ-ODIS-bus object. The pak fleet desk confirmed every object on 21 Oct 2026 (transdev is Transdev Morava's white with the red Transdev figure and the kraj ring; krnovbila is the Krnov white with blue-yellow chevrons); nothing new is needed.",
+  "types": {},
+  "paints": [],
+  "special": {},
+  "rules": [
+   [
+    "*",
+    "Streetway 12M",
+    "Krnov",
+    "VZ-MHDKrnov-Streetway_12M-krnovbila-Streetway_12M"
+   ],
+   [
+    "*",
+    "SOR BN 9,5",
+    "Krnov",
+    "VZ-MHDKrnov-SOR_BN_9_5-krnovbila-SOR_BN_9_5"
+   ],
+   [
+    "*",
+    "SOR NS 12",
+    "Krnov",
+    "VZ-MHDKrnov-SOR_NS_12-krnovbila-SOR_NS_12"
+   ],
+   [
+    "*",
+    "SOR CN 10,5",
+    "",
+    "VZ-ODIS-SOR_CN_10_5-transdev-SOR_CN_10_5"
+   ],
+   [
+    "*",
+    "SOR CN 12",
+    "",
+    "VZ-ODIS-SOR_CN_12-transdev-SOR_CN_12"
+   ],
+   [
+    "*",
+    "SOR CN 9,5",
+    "",
+    "VZ-ODIS-SOR_CN_9_5-transdev-SOR_CN_9_5"
+   ],
+   [
+    "*",
+    "SOR CNG 12",
+    "",
+    "VZ-ODIS-SOR_CNG_12-transdev-SOR_CNG_12"
+   ],
+   [
+    "*",
+    "SOR CNG 10,5",
+    "",
+    "VZ-ODIS-SOR_CNG_10_5-transdev-SOR_CNG_10_5"
+   ],
+   [
+    "*",
+    "SOR C 12",
+    "",
+    "VZ-ODIS-SOR_C_12-transdev-SOR_C_12"
+   ],
+   [
+    "*",
+    "SOR ICNG 12",
+    "",
+    "VZ-ODIS-SOR_ICNG_12-transdev-SOR_ICNG_12"
+   ],
+   [
+    "*",
+    "Crossway LE LINE 12M",
+    "",
+    "VZ-ODIS-Crossway_LE_Line_12M-transdev-Crossway_LE_Line_12M"
+   ]
+  ]
+ },
+ "other_sheets": {
+  "ostrava": {
+   "lines": [],
+   "label": "Ostrava Bus Vypravenost, section All lines at Hranečník",
+   "derived": "../ostrava-bus/data/derived/odis.json",
+   "url": "https://claude.ai/artifact/6rNwavbbnG4H2aJVZPNx8R"
+  },
+  "hko": {
+   "label": "Havířov Karviná Orlová Bus Vypravenost (town lines)",
+   "derived": "../havirov-karvina-orlova/data/derived/roster.json",
+   "url": "https://claude.ai/artifact/UmPg6guEAbmSune5YnFTVb"
+  },
+  "hko_regional": {
+   "lines": [],
+   "label": "ODIS Regional Havířovsko Karvinsko Orlovsko",
+   "derived": "../odis-regional-hko/data/derived/roster.json",
+   "schedule": "../odis-regional-hko/data/derived/schedule.json",
+   "url": "https://claude.ai/artifact/SFgd2KE6xRv9PLKtS5qMnw",
+   "heading": "On the Havířovsko/Karvinsko/Orlovsko regional sheet",
+   "why": "365 Havířov – Frýdek-Místek holds a licence in Havířovsko (912365) and one here in Frýdecko-Místecko (863365). It is one line, modelled once with its buses on the"
+  },
+  "tfj": {
+   "lines": [],
+   "label": "ODIS Těšínsko Třinecko Frýdecko",
+   "short": "Těšínsko/Třinecko/Frýdecko sheet",
+   "derived": "../odis-regional-tfj/data/derived/roster.json",
+   "schedule": "../odis-regional-tfj/data/derived/schedule.json",
+   "url": "https://claude.ai/artifact/2LecoKwCYb2Lmk1sRDTjrx"
+  },
+  "opavsko": {
+   "lines": [
+    "260",
+    "920"
+   ],
+   "label": "ODIS Opavsko Vítkovsko Hlučínsko",
+   "short": "Opavsko/Vítkovsko/Hlučínsko sheet",
+   "heading": "On the Opavsko/Vítkovsko/Hlučínsko sheet",
+   "why": "These lines hold a licence here and one in Opavsko, where most of their trips are; they are modelled once, with their buses, on the",
+   "url": "https://claude.ai/artifact/K5ZeDCY2YYqV1Sz3tQwj3j",
+   "derived": "../odis-regional-opavsko/data/derived/roster.json",
+   "schedule": "../odis-regional-opavsko/data/derived/schedule.json"
+  },
+  "novojicinsko": {
+   "lines": [],
+   "label": "ODIS Novojičínsko Bílovecko",
+   "short": "Novojičínsko/Bílovecko sheet",
+   "derived": "../odis-regional-novojicinsko/data/derived/roster.json",
+   "url": "https://claude.ai/artifact/YFgUu62jD8YqfpuoL8FZpp"
+  }
+ },
+ "towns": [
+  "Andělská Hora",
+  "Babice",
+  "Bohušov",
+  "Brantice",
+  "Brumovice",
+  "Bruntál",
+  "Bílčice",
+  "Býkov",
+  "Bělkovice-Lašťany",
+  "Břidličná",
+  "Dlouhá Loučka",
+  "Dlouhá Stráň",
+  "Dolany",
+  "Dolní Moravice",
+  "Dvorce",
+  "Dívčí Hrad",
+  "Dětřichov n.Bystř.",
+  "Heřmanovice",
+  "Hlinka",
+  "Hlásnice",
+  "Holasovice",
+  "Holčovice",
+  "Horní Benešov",
+  "Horní Loděnice",
+  "Horní Město",
+  "Horní Životice",
+  "Hošťálkovy",
+  "Huzová",
+  "Janov",
+  "Jindřichov",
+  "Jiříkov",
+  "Karlova Studánka",
+  "Karlovice",
+  "Komárov",
+  "Krasov",
+  "Krnov",
+  "Křišťanovice",
+  "Leskovec n.Moravicí",
+  "Lichnov",
+  "Lipina",
+  "Liptaň",
+  "Lomnice",
+  "Ludvíkov",
+  "Malá Morávka",
+  "Malá Štáhle",
+  "Mezina",
+  "Milotice n.Opavou",
+  "Moravskoslezský Kočov",
+  "Moravský Beroun",
+  "Mutkov",
+  "Město Albrechtice",
+  "Neplachovice",
+  "Nová Pláň",
+  "Nové Heřminovy",
+  "Oborná",
+  "Olomouc",
+  "Opava",
+  "Osoblaha",
+  "Paseka",
+  "Petrovice",
+  "Razová",
+  "Roudno",
+  "Rudná p.Prad.",
+  "Rusín",
+  "Ryžoviště",
+  "Rýmařov",
+  "Slezské Pavlovice",
+  "Slezské Rudoltice",
+  "Sosnová",
+  "Stará Ves",
+  "Staré Heřminovy",
+  "Staré Město",
+  "Svobodné Heřmanice",
+  "Světlá Hora",
+  "Tovéř",
+  "Tvrdkov",
+  "Třemešná",
+  "Uničov",
+  "Valšov",
+  "Velká Štáhle",
+  "Velké Heraltice",
+  "Vrbno p.Prad.",
+  "Vysoká",
+  "Václavov",
+  "Zlaté Hory",
+  "Zátor",
+  "Úvalno",
+  "Čaková",
+  "Řídeč",
+  "Široká Niva",
+  "Šternberk"
+ ],
+ "towns_why": "the first part of every stop of the regional licences (new_sheet.py)",
+ "regular_not_diversion": {
+  "854876": "The diversion of 876 (1 Sep – 23 Oct 2026) ends two days after the vehicle day, so the regular timetable is modelled (shared rule: short-term closures as the regular state).",
+  "854912": "The diversion of 912 (15 – 21 Oct 2026) ends the day after the vehicle day, so the regular timetable is modelled.",
+  "854921": "The diversion of 921 (1 Sep – 23 Oct 2026) ends two days after the vehicle day, so the regular timetable is modelled."
+ }
+}

@@ -1,0 +1,41 @@
+
+/* Layout: one plain column, the same tables as in chat. */
+:root{
+  --bg:#f6f7f8; --fg:#1d2125; --muted:#66707a; --rule:#d8dde2; --head:#eceff2; --accent:#1f5f8b; --mark:#fff2cc; --mark-fg:#6b4d00;
+  --font:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --mono:Consolas,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16191c; --fg:#e4e8ec; --muted:#97a1ab; --rule:#30363c; --head:#22272c; --accent:#7ab8e6; --mark:#3a3015; --mark-fg:#f0d58a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16191c; --fg:#e4e8ec; --muted:#97a1ab; --rule:#30363c; --head:#22272c; --accent:#7ab8e6; --mark:#3a3015; --mark-fg:#f0d58a;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--font);padding-inline:16px;padding-block:24px 64px}
+main{max-width:920px;margin-inline:auto;display:flex;flex-direction:column;gap:14px}
+h1{font-size:28px;margin:0;text-wrap:balance}
+h2{font-size:22px;margin:30px 0 0;padding-top:14px;border-top:2px solid var(--accent);text-wrap:balance}
+h3{font-size:18px;margin:18px 0 0;text-wrap:balance}
+h4{font-size:15px;margin:6px 0 0}
+p,ul{margin:0}
+ul{padding-inline-start:20px;display:flex;flex-direction:column;gap:3px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+nav a{color:var(--accent)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 10px;border:1px solid var(--rule);vertical-align:top}
+thead th{background:var(--head);font-weight:600;white-space:nowrap}
+td.n,th.n{text-align:right;font-family:var(--mono);white-space:nowrap}
+.t{font-family:var(--mono);white-space:nowrap}
+tr.total td{font-weight:700}
+.stations{line-height:1.7}
+.wait{background:var(--mark);color:var(--mark-fg);padding:0 4px;border-radius:3px;font-weight:600}
+tr.trip td{background:var(--head);font-weight:600}
+.fix{background:var(--mark);color:var(--mark-fg);padding:8px 12px;border-radius:6px}

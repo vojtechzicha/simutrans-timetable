@@ -1,0 +1,22 @@
+{
+ "_doc": "Real trolleybus (type, paint from the register) -> custom Czech pak128 object in VZ-DPPraha-trolleybus.pak. First matching rule wins. 'chain' = every object in order (articulated vehicles are several objects built as one); 'core' = the name shown in the vehicle cell. Read from the pak128 checkout (build/VZ-DPPraha-trolleybus/*.dat, main b84c15c, 28 Sep 2026). All objects are waytype=road, engine_type=electric: the game needs no overhead wire, so the battery sections are information only.",
+ "pak_commit": "b84c15c",
+ "pak_file": "VZ-DPPraha-trolleybus.pak",
+ "livery_words": {"pidsedocervena": "PID grey-red"},
+ "multi_livery_types": [],
+ "livery_from_object": true,
+ "carunits": {"TNS_18": 14, "TNS_12": 8, "Skoda_Solaris_24m": 19, "SNG_12T": 8, "36Tr": 8},
+ "paint_names": {"schéma PID, šedá s červenými svislými pruhy": "PID grey-red"},
+ "rules": [
+  {"type": "TNS 18", "object": "VZ-DPPraha-TNS_18-pidsedocervena-TNS_18-A", "core": "TNS_18",
+   "chain": ["VZ-DPPraha-TNS_18-pidsedocervena-TNS_18-A", "VZ-DPPraha-TNS_18-pidsedocervena-TNS_18-B"]},
+  {"type": "TNS 12", "object": "VZ-DPPraha-TNS_12-pidsedocervena-TNS_12", "core": "TNS_12"},
+  {"type": "Škoda-Solaris 24m", "object": "VZ-DPPraha-Skoda_Solaris_24m-pidsedocervena-Skoda_Solaris_24m-A", "core": "Skoda_Solaris_24m",
+   "chain": ["VZ-DPPraha-Skoda_Solaris_24m-pidsedocervena-Skoda_Solaris_24m-A", "VZ-DPPraha-Skoda_Solaris_24m-pidsedocervena-Skoda_Solaris_24m-B", "VZ-DPPraha-Skoda_Solaris_24m-pidsedocervena-Skoda_Solaris_24m-C"]},
+  {"type": "SNG 12T", "object": "VZ-DPPraha-SNG_12T-pidsedocervena-SNG_12T", "core": "SNG_12T"},
+  {"type": "36 Tr T'CITY", "paint_contains": "fialová", "object": "VZ-DPPraha-36Tr-pidsedocervena-36Tr", "core": "36Tr", "exact": false,
+   "note": "car 509 wears the purple '90 years of Prague trolleybuses' wrap; the pak has only the PID grey-red livery"},
+  {"type": "36 Tr T'CITY", "object": "VZ-DPPraha-36Tr-pidsedocervena-36Tr", "core": "36Tr"}
+ ],
+ "sets": {}
+}

@@ -1,0 +1,27 @@
+{
+  "_comment": "CIS JR station names are abbreviated; the sheets use full names. Applied in order, longest first.",
+  "replace": [
+    ["Praha Masaryk. n.", "Praha Masarykovo nádraží"],
+    ["St. Město u U.H.", "Staré Město u Uherského Hradiště"],
+    ["Rychnov u Jabl.n.N.", "Rychnov u Jablonce nad Nisou"],
+    ["Ž. Ruda-Alžbětín", "Železná Ruda-Alžbětín"],
+    ["Planá u M.L.", "Planá u Mariánských Lázní"],
+    ["Brno-Kr. Pole", "Brno-Královo Pole"],
+    ["Hradec Král.", "Hradec Králové"],
+    ["Benešov n.Pl.", "Benešov nad Ploučnicí"],
+    ["Březová n. Svit.", "Březová nad Svitavou"],
+    ["Skalice n. Svit.", "Skalice nad Svitavou"],
+    ["Kralupy n.V.", "Kralupy nad Vltavou"],
+    ["Kynšperk n.O.", "Kynšperk nad Ohří"],
+    ["Rosice n.L.", "Rosice nad Labem"],
+    ["Světlá n.S.", "Světlá nad Sázavou"],
+    ["Žďár n.S.", "Žďár nad Sázavou"],
+    ["Ústí n. L.", "Ústí nad Labem"],
+    ["Ústí n.L.", "Ústí nad Labem"],
+    ["hl. n.", "hlavní nádraží"],
+    ["hl. st.", "hlavná stanica"],
+    ["Gł. osobowy", "Główny Osobowy"],
+    ["Gł.", "Główny"],
+    [" zast.", " zastávka"]
+  ]
+}

@@ -1,0 +1,903 @@
+{
+ "title": "Brno Bus Peak Fleet",
+ "output": "Brno Bus Peak Fleet.html",
+ "vehicles_date": "2026-09-25",
+ "register_date": "2026-09-29",
+ "gtfs_date": "2026-09-28",
+ "service_date": "20260929",
+ "line_order": [
+  "40",
+  "41",
+  "42",
+  "44",
+  "46",
+  "47",
+  "48",
+  "49",
+  "50",
+  "52",
+  "54",
+  "55",
+  "57",
+  "58",
+  "62",
+  "64",
+  "65",
+  "66",
+  "67",
+  "68",
+  "69",
+  "70",
+  "72",
+  "74",
+  "75",
+  "77",
+  "78",
+  "84",
+  "E50",
+  "E56",
+  "E75",
+  "x75"
+ ],
+ "depots": [
+  "Medlánky",
+  "Slatina",
+  "BDS-BUS"
+ ],
+ "fleet": {
+  "morning_notes": [
+   "ráno",
+   "ranní kurz",
+   "pouze ranní služba",
+   "ráno, před výměnou",
+   "ráno, po výměně"
+  ],
+  "afternoon_notes": [
+   "odpoledne",
+   "odpolední kurz"
+  ],
+  "both_notes": [
+   "ráno i odpoledne",
+   "ráno a odpoledne"
+  ],
+  "resolved_swaps": {},
+  "note_overrides": {},
+  "keep_before": {
+   "52/28": "Swapped during the day. 7729 took over later, but it worked 41/12 as a split duty in the afternoon peak, so 7718 (before the swap) is taken as the peak bus.",
+   "67/7": "Swapped during the day. 7116 took over later, but it worked 67/11 in the afternoon, so the bus before the swap is taken as the peak bus."
+  }
+ },
+ "fit": {
+  "core": [
+   930,
+   990
+  ],
+  "overrides": {}
+ },
+ "turnaround_default": 3,
+ "links": {},
+ "through": [],
+ "turn": [
+  "E50|Areál Slatina"
+ ],
+ "simutrans_lines": [
+  {
+   "id": "40",
+   "name": "40 Tovární – Tuřany, smyčka (via Úzká)",
+   "records": "40",
+   "entries": [
+    [
+     "40",
+     "Tovární",
+     "Úzká"
+    ],
+    [
+     "40",
+     "Úzká",
+     "Tuřany, smyčka"
+    ],
+    [
+     "40",
+     "Tuřany, smyčka",
+     "Úzká"
+    ],
+    [
+     "40",
+     "Úzká",
+     "Tovární"
+    ]
+   ]
+  },
+  {
+   "id": "41V",
+   "name": "41 Ivanovice, Globus – Vranov, myslivna",
+   "records": "41",
+   "entries": [
+    [
+     "41",
+     "Ivanovice, Globus",
+     "Královo Pole, nádraží",
+     {
+      "mod": 60,
+      "keep": [
+       16
+      ]
+     }
+    ],
+    [
+     "41",
+     "Královo Pole, nádraží",
+     "Vranov, myslivna"
+    ],
+    [
+     "41",
+     "Vranov, myslivna",
+     "Královo Pole, nádraží"
+    ],
+    [
+     "41",
+     "Královo Pole, nádraží",
+     "Ivanovice, Globus",
+     {
+      "mod": 60,
+      "keep": [
+       55
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "id": "41L",
+   "name": "41 Ivanovice, Globus – Lelekovice, u kříže",
+   "records": "41",
+   "entries": [
+    [
+     "41",
+     "Ivanovice, Globus",
+     "Královo Pole, nádraží",
+     {
+      "mod": 60,
+      "keep": [
+       46
+      ]
+     }
+    ],
+    [
+     "41",
+     "Královo Pole, nádraží",
+     "Lelekovice, u kříže"
+    ],
+    [
+     "41",
+     "Lelekovice, u kříže",
+     "Královo Pole, nádraží"
+    ],
+    [
+     "41",
+     "Královo Pole, nádraží",
+     "Ivanovice, Globus",
+     {
+      "mod": 60,
+      "keep": [
+       25
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "id": "41M",
+   "name": "41 Královo Pole, nádraží – Mácova",
+   "records": "41",
+   "entries": [
+    [
+     "41",
+     "Královo Pole, nádraží",
+     "Mácova"
+    ],
+    [
+     "41",
+     "Mácova",
+     "Královo Pole, nádraží"
+    ]
+   ]
+  },
+  {
+   "id": "42",
+   "name": "42 Královo Pole, nádraží – Ivanovice, Globus",
+   "records": "42",
+   "entries": [
+    [
+     "42",
+     "Královo Pole, nádraží",
+     "Ivanovice, Globus"
+    ],
+    [
+     "42",
+     "Ivanovice, Globus",
+     "Královo Pole, nádraží"
+    ]
+   ]
+  },
+  {
+   "id": "44",
+   "name": "44 ÚAN Zvonařka – ÚAN Zvonařka (circular)",
+   "records": "44",
+   "entries": [
+    [
+     "44",
+     "ÚAN Zvonařka",
+     "ÚAN Zvonařka"
+    ]
+   ]
+  },
+  {
+   "id": "46",
+   "name": "46 Haškova – Erbenova",
+   "records": "57",
+   "entries": [
+    [
+     "46",
+     "Haškova",
+     "Erbenova"
+    ],
+    [
+     "46",
+     "Erbenova",
+     "Haškova"
+    ]
+   ],
+   "text": "46 is worked by 57 kurzy (jrbrno.cz; inferred). It starts at Haškova on the Lesná loop, and 57 has more kurzy than its own lines need.",
+   "kind": "pool",
+   "unconfirmed": true
+  },
+  {
+   "id": "47",
+   "name": "47 Hlavní nádraží – Staré Černovice",
+   "records": "47",
+   "entries": [
+    [
+     "47",
+     "Hlavní nádraží",
+     "Staré Černovice"
+    ],
+    [
+     "47",
+     "Staré Černovice",
+     "Hlavní nádraží"
+    ]
+   ]
+  },
+  {
+   "id": "48",
+   "name": "48 Úzká – Prace, točna",
+   "records": "48",
+   "entries": [
+    [
+     "48",
+     "Úzká",
+     "Prace, točna"
+    ],
+    [
+     "48",
+     "Prace, točna",
+     "Úzká"
+    ]
+   ]
+  },
+  {
+   "id": "49M",
+   "name": "49 Hlavní nádraží – Modřice, Olympia",
+   "records": "49",
+   "entries": [
+    [
+     "49",
+     "Hlavní nádraží",
+     "Modřice, Olympia"
+    ],
+    [
+     "49",
+     "Modřice, Olympia",
+     "Hlavní nádraží"
+    ]
+   ]
+  },
+  {
+   "id": "49P",
+   "name": "49 Mariánské náměstí – Přízřenice, smyčka",
+   "records": "49",
+   "entries": [
+    [
+     "49",
+     "Mariánské náměstí",
+     "Přízřenice, smyčka"
+    ],
+    [
+     "49",
+     "Přízřenice, smyčka",
+     "Mariánské náměstí"
+    ]
+   ]
+  },
+  {
+   "id": "50",
+   "name": "50 Mariánské náměstí – Zoologická zahrada",
+   "records": "50",
+   "entries": [
+    [
+     "50",
+     "Mariánské náměstí",
+     "Zoologická zahrada"
+    ],
+    [
+     "50",
+     "Zoologická zahrada",
+     "Mariánské náměstí"
+    ]
+   ]
+  },
+  {
+   "id": "52",
+   "name": "52 Mendlovo náměstí – Zoologická zahrada",
+   "records": "52",
+   "entries": [
+    [
+     "52",
+     "Mendlovo náměstí",
+     "Zoologická zahrada"
+    ],
+    [
+     "52",
+     "Zoologická zahrada",
+     "Mendlovo náměstí"
+    ]
+   ]
+  },
+  {
+   "id": "54",
+   "name": "54 Kamechy – Zoologická zahrada",
+   "records": "52",
+   "entries": [
+    [
+     "54",
+     "Kamechy",
+     "Zoologická zahrada"
+    ],
+    [
+     "54",
+     "Zoologická zahrada",
+     "Kamechy"
+    ]
+   ],
+   "text": "DPMB works 54 with 52 kurzy: the 54 timetable says some trips continue as 52 and others as E50, and jrbrno.cz publishes a joint 52 + 54 timetable. bmhd.cz files the buses under 52, which has 7 kurzy more than its own cycle needs.",
+   "kind": "pool"
+  },
+  {
+   "id": "55",
+   "name": "55 Židenice, nádraží – Mariánské údolí",
+   "records": "58",
+   "entries": [
+    [
+     "55",
+     "Židenice, nádraží",
+     "Mariánské údolí"
+    ],
+    [
+     "55",
+     "Mariánské údolí",
+     "Židenice, nádraží"
+    ]
+   ],
+   "text": "The 55 timetable says it runs as line 58, and bmhd.cz files its buses under 58 kurzy.",
+   "kind": "pool"
+  },
+  {
+   "id": "57L",
+   "name": "57 + 66 Poliklinika Lesná – Haškova – Halasovo náměstí (Lesná loop)",
+   "records": "57",
+   "kind": "pool",
+   "entries": [
+    [
+     "57",
+     "Poliklinika Lesná",
+     "Haškova"
+    ],
+    [
+     "57",
+     "Haškova",
+     "Halasovo náměstí"
+    ],
+    [
+     "66",
+     "Halasovo náměstí",
+     "Haškova"
+    ],
+    [
+     "66",
+     "Haškova",
+     "Poliklinika Lesná"
+    ]
+   ],
+   "text": "A 57 bus becomes a 66 at Halasovo náměstí, and a 66 becomes a 57 at Poliklinika Lesná (both timetables say so), so the Lesná loop is one Simutrans line. 66 runs on school weekdays only."
+  },
+  {
+   "id": "57U",
+   "name": "57 Haškova – Útěchov (via Maloměřický most)",
+   "records": "57",
+   "entries": [
+    [
+     "57",
+     "Haškova",
+     "Maloměřický most"
+    ],
+    [
+     "57",
+     "Maloměřický most",
+     "Útěchov"
+    ],
+    [
+     "57",
+     "Útěchov",
+     "Maloměřický most"
+    ],
+    [
+     "57",
+     "Maloměřický most",
+     "Haškova"
+    ]
+   ]
+  },
+  {
+   "id": "57V",
+   "name": "57 Maloměřický most – Vranov, smyčka",
+   "records": "57",
+   "entries": [
+    [
+     "57",
+     "Maloměřický most",
+     "Vranov, smyčka"
+    ],
+    [
+     "57",
+     "Vranov, smyčka",
+     "Maloměřický most"
+    ]
+   ]
+  },
+  {
+   "id": "58Z",
+   "name": "58 Líšeň, hřbitov – Židenice, nádraží",
+   "records": "58",
+   "entries": [
+    [
+     "58",
+     "Líšeň, hřbitov",
+     "Židenice, nádraží"
+    ],
+    [
+     "58",
+     "Židenice, nádraží",
+     "Líšeň, hřbitov"
+    ]
+   ]
+  },
+  {
+   "id": "58N",
+   "name": "58 Líšeň, hřbitov – Novolíšeňská",
+   "records": "58",
+   "entries": [
+    [
+     "58",
+     "Líšeň, hřbitov",
+     "Novolíšeňská"
+    ],
+    [
+     "58",
+     "Novolíšeňská",
+     "Líšeň, hřbitov"
+    ]
+   ]
+  },
+  {
+   "id": "62",
+   "name": "62 Mendlovo náměstí – Červený kopec",
+   "records": "62",
+   "entries": [
+    [
+     "62",
+     "Mendlovo náměstí",
+     "Červený kopec"
+    ],
+    [
+     "62",
+     "Červený kopec",
+     "Mendlovo náměstí"
+    ]
+   ]
+  },
+  {
+   "id": "64",
+   "name": "64 Červený písek – Chrlice, smyčka",
+   "records": "64",
+   "entries": [
+    [
+     "64",
+     "Červený písek",
+     "Chrlice, smyčka"
+    ],
+    [
+     "64",
+     "Chrlice, smyčka",
+     "Červený písek"
+    ]
+   ]
+  },
+  {
+   "id": "65",
+   "name": "65 Řečkovice, nádraží – Záhřebská",
+   "records": "65",
+   "entries": [
+    [
+     "65",
+     "Řečkovice, nádraží",
+     "Záhřebská"
+    ],
+    [
+     "65",
+     "Záhřebská",
+     "Řečkovice, nádraží"
+    ]
+   ]
+  },
+  {
+   "id": "67",
+   "name": "67 Jundrov – Avion Shopping Park",
+   "records": "67",
+   "entries": [
+    [
+     "67",
+     "Jundrov",
+     "Avion Shopping Park"
+    ],
+    [
+     "67",
+     "Avion Shopping Park",
+     "Jundrov"
+    ]
+   ]
+  },
+  {
+   "id": "68",
+   "name": "68 NC Královo Pole – Pisárky",
+   "records": "68",
+   "entries": [
+    [
+     "68",
+     "NC Královo Pole",
+     "Pisárky"
+    ],
+    [
+     "68",
+     "Pisárky",
+     "NC Královo Pole"
+    ]
+   ]
+  },
+  {
+   "id": "68M",
+   "name": "68 NC Královo Pole – Myslivna",
+   "records": "68",
+   "entries": [
+    [
+     "68",
+     "NC Královo Pole",
+     "Myslivna"
+    ],
+    [
+     "68",
+     "Myslivna",
+     "NC Královo Pole"
+    ]
+   ]
+  },
+  {
+   "id": "69",
+   "name": "69 Ústřední hřbitov – Bosonohy",
+   "records": "69",
+   "entries": [
+    [
+     "69",
+     "Ústřední hřbitov",
+     "Bosonohy"
+    ],
+    [
+     "69",
+     "Bosonohy",
+     "Ústřední hřbitov"
+    ]
+   ]
+  },
+  {
+   "id": "70",
+   "name": "70 Královo Pole, nádraží – Ořešín",
+   "records": "42",
+   "entries": [
+    [
+     "70",
+     "Královo Pole, nádraží",
+     "Ořešín"
+    ],
+    [
+     "70",
+     "Ořešín",
+     "Královo Pole, nádraží"
+    ]
+   ],
+   "text": "42 and 70 share kurzy: jrbrno.cz publishes a joint 42 + 70 timetable, unchanged since 1 Sep 2025.",
+   "kind": "pool"
+  },
+  {
+   "id": "72L",
+   "name": "72 Poliklinika Lesná – Technologický park",
+   "records": "72",
+   "entries": [
+    [
+     "72",
+     "Poliklinika Lesná",
+     "Technologický park"
+    ],
+    [
+     "72",
+     "Technologický park",
+     "Poliklinika Lesná"
+    ]
+   ]
+  },
+  {
+   "id": "72S",
+   "name": "72 Technologický park – Areál Slatina",
+   "records": "72",
+   "entries": [
+    [
+     "72",
+     "Technologický park",
+     "Areál Slatina"
+    ],
+    [
+     "72",
+     "Areál Slatina",
+     "Technologický park"
+    ]
+   ]
+  },
+  {
+   "id": "74",
+   "name": "74 ÚAN Zvonařka – Újezd u Brna, městský úřad",
+   "records": "74",
+   "entries": [
+    [
+     "74",
+     "ÚAN Zvonařka",
+     "Újezd u Brna, městský úřad"
+    ],
+    [
+     "74",
+     "Újezd u Brna, městský úřad",
+     "ÚAN Zvonařka"
+    ]
+   ]
+  },
+  {
+   "id": "75",
+   "name": "75 Tomkovo náměstí – Slatina, nádraží",
+   "records": "75",
+   "entries": [
+    [
+     "75",
+     "Tomkovo náměstí",
+     "Slatina, nádraží"
+    ],
+    [
+     "75",
+     "Slatina, nádraží",
+     "Tomkovo náměstí"
+    ]
+   ]
+  },
+  {
+   "id": "x75",
+   "name": "x75 Obřanský most – Bílovice nad Svitavou (replacement)",
+   "records": "x75",
+   "entries": [
+    [
+     "x75",
+     "Obřanský most",
+     "Bílovice nad Svitavou, žel. stanice"
+    ],
+    [
+     "x75",
+     "Bílovice nad Svitavou, žel. stanice",
+     "Obřanský most"
+    ]
+   ],
+   "text": "Long-term closure of Fryčajova in Obřany (1 Nov 2025 – 31 Oct 2027): 75 runs only Slatina – Tomkovo náměstí and x75 covers Obřanský most – Obřany – Bílovice with midibuses (75 kurzy 52, 54, 56). Long-term closures are modelled as they run."
+  },
+  {
+   "id": "77S",
+   "name": "77 Úzká – Slatinka",
+   "records": "77",
+   "entries": [
+    [
+     "77",
+     "Úzká",
+     "Slatinka"
+    ],
+    [
+     "77",
+     "Slatinka",
+     "Úzká"
+    ]
+   ]
+  },
+  {
+   "id": "77L",
+   "name": "77 Úzká – Letiště Tuřany",
+   "records": "77",
+   "entries": [
+    [
+     "77",
+     "Úzká",
+     "Letiště Tuřany - terminál"
+    ],
+    [
+     "77",
+     "Letiště Tuřany - terminál",
+     "Úzká"
+    ]
+   ]
+  },
+  {
+   "id": "77A",
+   "name": "77 Areál Slatina → Úzká (one-way peak)",
+   "records": "77",
+   "kind": "oneway",
+   "entries": [
+    [
+     "77",
+     "Areál Slatina",
+     "Úzká"
+    ]
+   ],
+   "empty_return": {
+    "Úzká": [
+     "Areál Slatina",
+     16
+    ]
+   }
+  },
+  {
+   "id": "78N",
+   "name": "78 Novolíšeňská – Areál Slatina",
+   "records": "78",
+   "entries": [
+    [
+     "78",
+     "Novolíšeňská",
+     "Areál Slatina"
+    ],
+    [
+     "78",
+     "Areál Slatina",
+     "Novolíšeňská"
+    ]
+   ]
+  },
+  {
+   "id": "78M",
+   "name": "78 Židenice, nádraží – Modřice, Olympia",
+   "records": "78",
+   "entries": [
+    [
+     "78",
+     "Židenice, nádraží",
+     "Modřice, Olympia"
+    ],
+    [
+     "78",
+     "Modřice, Olympia",
+     "Židenice, nádraží"
+    ]
+   ]
+  },
+  {
+   "id": "84",
+   "name": "84 Stará osada – Stará osada (circular)",
+   "records": "84",
+   "entries": [
+    [
+     "84",
+     "Stará osada",
+     "Stará osada"
+    ]
+   ]
+  },
+  {
+   "id": "E50",
+   "name": "E50 Kamechy → Areál Slatina → Říčanská (peak express)",
+   "records": "50",
+   "kind": "oneway",
+   "entries": [
+    [
+     "E50",
+     "Kamechy",
+     "Areál Slatina"
+    ],
+    [
+     "E50",
+     "Areál Slatina",
+     "Říčanská"
+    ]
+   ],
+   "empty_return": {
+    "Říčanská": [
+     "Kamechy",
+     20
+    ]
+   },
+   "period": 30,
+   "text": "E50 is worked by line 50's kurzy 21–32 (morning-only and afternoon-only duties; jrbrno.cz trip codes 050/10–32). It carries workers from the Černovická terasa industrial zone (Areál Slatina) back to Bystrc in the afternoon."
+  },
+  {
+   "id": "E56",
+   "name": "E56 Královo Pole, nádraží – Nemocnice Bohunice (peak express)",
+   "records": "56",
+   "entries": [
+    [
+     "E56",
+     "Královo Pole, nádraží",
+     "Nemocnice Bohunice"
+    ],
+    [
+     "E56",
+     "Nemocnice Bohunice",
+     "Královo Pole, nádraží"
+    ]
+   ],
+   "text": "E56 has its own kurzy, which bmhd.cz files under 56: 56/2, 4 and 6 run all day with 12 m buses, and 56/11–13 are morning-only articulated buses. E56 runs Nemocnice Bohunice – Pisárky – the ring-road tunnels – Královo Pole, nádraží.",
+   "kind": "pool"
+  },
+  {
+   "id": "E75",
+   "name": "E75 Areál Slatina → Židenice, nádraží (peak express)",
+   "records": "58",
+   "kind": "oneway",
+   "entries": [
+    [
+     "E75",
+     "Areál Slatina",
+     "Židenice, nádraží"
+    ]
+   ],
+   "empty_return": {
+    "Židenice, nádraží": [
+     "Areál Slatina",
+     15
+    ]
+   },
+   "text": "Afternoon E75 trips run on 58 kurzy (jrbrno.cz trip codes; inferred, as jrbrno still carries the winter 2025/26 timetable). E75 serves the Areál Slatina industrial zone and does not run on school holidays.",
+   "unconfirmed": true
+  }
+ ],
+ "texts": {
+  "eyebrow": "Brno city buses · afternoon peak · Simutrans reference",
+  "lede": "Every bus out in the Friday afternoon peak (25 Sep 2026) on the Brno city bus lines, on the network running from 29 Sep. Each line lists its vehicles with type, length, depot or operator and custom pak128 object, followed by the schedule values for the Simutrans fork."
+ },
+ "not_peak": {
+  "72 Technologický park > Královo Pole, nádraží": "Starts at 16:48, when 72 stops running Poliklinika Lesná – Technologický park: it is the line's post-peak form, not a peak trip (shared short-working rule).",
+  "63 Novolíšeňská – Pod Hády": "New line, runs from 1 Oct 2026 (bmhd.cz news 1854), so not in the network of 29 Sep."
+ },
+ "slack_text": {
+  "47": "47 and 49 share kurzy (jrbrno.cz publishes a joint 47 + 49 timetable), so part of this surplus may work 49 trips."
+ }
+}

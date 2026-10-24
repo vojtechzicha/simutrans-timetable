@@ -1,0 +1,328 @@
+<title>Local Trains 010 062 064 260</title>
+<style>
+/* Layout: one plain column, the same tables as in chat. */
+:root{
+  --bg:#f6f7f8; --fg:#1d2125; --muted:#66707a; --rule:#d8dde2; --head:#eceff2; --accent:#1f5f8b; --mark:#fff2cc; --mark-fg:#6b4d00;
+  --font:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --mono:Consolas,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16191c; --fg:#e4e8ec; --muted:#97a1ab; --rule:#30363c; --head:#22272c; --accent:#7ab8e6; --mark:#3a3015; --mark-fg:#f0d58a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16191c; --fg:#e4e8ec; --muted:#97a1ab; --rule:#30363c; --head:#22272c; --accent:#7ab8e6; --mark:#3a3015; --mark-fg:#f0d58a;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--font);padding-inline:16px;padding-block:24px 64px}
+main{max-width:920px;margin-inline:auto;display:flex;flex-direction:column;gap:14px}
+h1{font-size:28px;margin:0;text-wrap:balance}
+h2{font-size:22px;margin:30px 0 0;padding-top:14px;border-top:2px solid var(--accent);text-wrap:balance}
+h3{font-size:18px;margin:18px 0 0;text-wrap:balance}
+h4{font-size:15px;margin:6px 0 0}
+p,ul{margin:0}
+ul{padding-inline-start:20px;display:flex;flex-direction:column;gap:3px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+nav a{color:var(--accent)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 10px;border:1px solid var(--rule);vertical-align:top}
+thead th{background:var(--head);font-weight:600;white-space:nowrap}
+td.n,th.n{text-align:right;font-family:var(--mono);white-space:nowrap}
+.t{font-family:var(--mono);white-space:nowrap}
+tr.total td{font-weight:700}
+.stations{line-height:1.7}
+.wait{background:var(--mark);color:var(--mark-fg);padding:0 4px;border-radius:3px;font-weight:600}
+.fix{background:var(--mark);color:var(--mark-fg);padding:8px 12px;border-radius:6px}
+</style>
+
+<main>
+<h1>Local trains 010 · 062 · 064 · 260</h1>
+<p class="muted">Simutrans design for the workday Os and Sp trains around Mladá Boleslav and Česká Třebová. Times come from the national CIS JŘ timetable JR2026 (workday, 6 October 2026). Long-distance trains (R, rj, EC, RegioJet, Arriva R22) are not included.</p>
+<p>Notation: <b>L</b> = odd hours, <b>S</b> = even hours. "Offset" in the fork: odd hours come first, so offset 4 means every 2 h at L:04, and even hours add 60 (offset 66 means S:06). (x) = request stop. <span class="wait">Highlighted</span> rows are timed stops with a longer stay, which the train needs to keep to time.</p>
+<nav>
+  <a href="#vehicles">Vehicles</a>
+  <a href="#l062">062</a>
+  <a href="#l064">064</a>
+  <a href="#l064n">064N</a>
+  <a href="#l010s">010S</a>
+  <a href="#l010">010</a>
+  <a href="#l260os">260 Os</a>
+  <a href="#l260sp">260 Sp</a>
+  <a href="#notmodelled">Not modelled</a>
+</nav>
+
+<h2 id="vehicles">Vehicles</h2>
+<div class="scroll"><table>
+<thead><tr><th>Line</th><th>Route</th><th class="n">Every</th><th class="n">Round trip</th><th class="n">Vehicles</th></tr></thead>
+<tbody>
+<tr><td><a href="#l062">062</a></td><td>Nymburk hl. n. – Mladá Boleslav město</td><td class="n">120</td><td class="n">2 h</td><td class="n">1</td></tr>
+<tr><td><a href="#l064">064</a></td><td>Mladá Boleslav hl. n. – Mladějov v Čechách</td><td class="n">120</td><td class="n">4 h</td><td class="n">2</td></tr>
+<tr><td><a href="#l064n">064N</a></td><td>Nymburk hl. n. – Mladá Boleslav – Mladějov v Čechách</td><td class="n">120</td><td class="n">4 h</td><td class="n">2</td></tr>
+<tr class="total"><td colspan="4">Mladá Boleslav area</td><td class="n">5</td></tr>
+<tr><td><a href="#l010s">010S</a></td><td>Kolín – Česká Třebová – Svitavy</td><td class="n">120</td><td class="n">8 h</td><td class="n">4</td></tr>
+<tr><td><a href="#l010">010</a></td><td>Kolín – Česká Třebová</td><td class="n">120</td><td class="n">6 h</td><td class="n">3</td></tr>
+<tr><td><a href="#l260os">260 Os</a></td><td>Česká Třebová – Svitavy – Letovice</td><td class="n">120</td><td class="n">2 h</td><td class="n">1</td></tr>
+<tr><td><a href="#l260sp">260 Sp</a></td><td>Česká Třebová – Svitavy – Letovice (Sp)</td><td class="n">120</td><td class="n">4 h</td><td class="n">2</td></tr>
+<tr class="total"><td colspan="4">Česká Třebová area</td><td class="n">10</td></tr>
+<tr class="total"><td colspan="4">All lines</td><td class="n">15</td></tr>
+</tbody></table></div>
+<p class="small muted">"Leave up to" is 30 min on every entry, because all lines run every 120 min. A round trip that isn't a whole multiple of 2 h is rounded up by waiting at a terminus, and the extra wait is shown in each line's round trip.</p>
+
+<h2>Mladá Boleslav area</h2>
+<p>How the three lines share track:</p>
+<ul>
+  <li><b>Nymburk → Mladá Boleslav:</b> 062 at L:04 and 064N at L:32. Both run in odd hours, so the gaps alternate between 28 min and 1 h 32 min. That's deliberate: the real timetable is uneven too.</li>
+  <li><b>Mladá Boleslav → Nymburk:</b> from MB hl. n., 062 leaves at S:14 and 064N at S:41.</li>
+  <li><b>MB město → Mladějov:</b> hourly at :31, 064 in odd hours and 064N in even hours.</li>
+  <li><b>Mladějov → Mladá Boleslav:</b> hourly at :34, 064 in even hours and 064N in odd hours.</li>
+</ul>
+
+<h3 id="l062">062 · Nymburk hl. n. – Mladá Boleslav město · 1 vehicle</h3>
+<p class="stations"><b>Stations:</b> Nymburk hl. n. – Veleliby – Všejany (x) – Čachovice – Luštěnice (x) – Voděrady (x) – Dobrovice – Nepřevázka (x) – Mladá Boleslav hl. n. – Mladá Boleslav město, then the same back. Straky and Luštěnice-Újezd are not stops.</p>
+<h4>Timetable entries</h4>
+<div class="scroll"><table>
+<thead><tr><th>Stop</th><th>Direction</th><th class="n">Departure every</th><th class="n">Offset</th><th>Real time</th><th>Stay</th></tr></thead>
+<tbody>
+<tr><td>Nymburk hl. n.</td><td>towards Mladá Boleslav</td><td class="n">120</td><td class="n">4</td><td class="t">L:04</td><td>terminus, 13 min</td></tr>
+<tr><td>Mladá Boleslav město</td><td>towards Nymburk</td><td class="n">120</td><td class="n">66</td><td class="t">S:06</td><td>terminus, 18 min</td></tr>
+<tr><td>Mladá Boleslav hl. n.</td><td>towards Nymburk</td><td class="n">120</td><td class="n">74</td><td class="t">S:14</td><td>arrives :12, 2 min</td></tr>
+</tbody></table></div>
+<h4>Round trip (2 h)</h4>
+<div class="scroll"><table>
+<thead><tr><th>Station</th><th class="n">Arrives</th><th class="n">Departs</th></tr></thead>
+<tbody>
+<tr><td>Nymburk hl. n.</td><td class="n"></td><td class="n">15:04</td></tr>
+<tr><td>Mladá Boleslav hl. n.</td><td class="n">15:41</td><td class="n">15:42</td></tr>
+<tr class="wait"><td>Mladá Boleslav město</td><td class="n">15:48</td><td class="n">16:06</td></tr>
+<tr><td>Mladá Boleslav hl. n.</td><td class="n">16:12</td><td class="n">16:14</td></tr>
+<tr class="wait"><td>Nymburk hl. n.</td><td class="n">16:51</td><td class="n">17:04</td></tr>
+</tbody></table></div>
+<p class="small muted">Real trains: Nymburk 7:04, 9:04, 11:04, 13:04, 15:04, 17:04 and 19:04 (Os 6032–6054). MB město 10:06, 12:06, 16:07, 18:06 and 20:06.</p>
+
+<h3 id="l064">064 · Mladá Boleslav hl. n. – Mladějov v Čechách · 2 vehicles</h3>
+<p class="stations"><b>Stations:</b> Mladá Boleslav hl. n. – Mladá Boleslav město – Řepov (x) – Kolomuty (x) – Březno u Mladé Boleslavi (x) – Dlouhá Lhota (x) – Bechov (x) – Rohatsko (x) – Dolní Bousov – Sobotka – Libošovice (x) – Malechovice (x) – Mladějov v Čechách, then the same back.</p>
+<h4>Timetable entries</h4>
+<div class="scroll"><table>
+<thead><tr><th>Stop</th><th>Direction</th><th class="n">Departure every</th><th class="n">Offset</th><th>Real time</th><th>Stay</th></tr></thead>
+<tbody>
+<tr><td>Mladá Boleslav hl. n.</td><td>towards Mladějov</td><td class="n">120</td><td class="n">24</td><td class="t">L:24</td><td>terminus</td></tr>
+<tr><td>Mladějov v Čechách</td><td>towards Mladá Boleslav</td><td class="n">120</td><td class="n">94</td><td class="t">S:34</td><td>terminus, 14 min</td></tr>
+<tr class="wait"><td>Dolní Bousov</td><td>towards Mladá Boleslav</td><td class="n">120</td><td class="n">2</td><td class="t">L:02</td><td>7 min (crossing)</td></tr>
+</tbody></table></div>
+<h4>Round trip (4 h, each vehicle covers every other departure)</h4>
+<div class="scroll"><table>
+<thead><tr><th>Station</th><th class="n">Arrives</th><th class="n">Departs</th></tr></thead>
+<tbody>
+<tr><td>Mladá Boleslav hl. n.</td><td class="n"></td><td class="n">15:24</td></tr>
+<tr><td>Mladá Boleslav město</td><td class="n">15:30</td><td class="n">15:31</td></tr>
+<tr><td>Dolní Bousov</td><td class="n">15:57</td><td class="n">15:59</td></tr>
+<tr><td>Sobotka</td><td class="n">16:05</td><td class="n">16:07</td></tr>
+<tr class="wait"><td>Mladějov v Čechách</td><td class="n">16:20</td><td class="n">16:34</td></tr>
+<tr><td>Sobotka</td><td class="n">16:47</td><td class="n">16:49</td></tr>
+<tr class="wait"><td>Dolní Bousov</td><td class="n">16:55</td><td class="n">17:02</td></tr>
+<tr><td>Mladá Boleslav město</td><td class="n">17:28</td><td class="n">17:32</td></tr>
+<tr class="wait"><td>Mladá Boleslav hl. n.</td><td class="n">17:38</td><td class="n">19:24</td></tr>
+</tbody></table></div>
+<p class="small muted">Real trains: MB hl. n. 15:24 (Os 8534) and 19:24 (Os 8548). Mladějov 14:34 (Os 8527), 16:34 (Os 8533) and 20:34 (Os 8545).</p>
+
+<h3 id="l064n">064N · Nymburk hl. n. – Mladá Boleslav – Mladějov v Čechách · 2 vehicles</h3>
+<p class="stations"><b>Stations:</b> Nymburk hl. n. – Veleliby – Všejany (x) – Čachovice – Luštěnice (x) – Voděrady (x) – Dobrovice – Nepřevázka (x) – Mladá Boleslav hl. n. – Mladá Boleslav město – Řepov (x) – Kolomuty (x) – Březno u Mladé Boleslavi (x) – Dlouhá Lhota (x) – Bechov (x) – Rohatsko (x) – Dolní Bousov – Sobotka – Libošovice (x) – Malechovice (x) – Mladějov v Čechách, then the same back to Nymburk.</p>
+<h4>Timetable entries</h4>
+<div class="scroll"><table>
+<thead><tr><th>Stop</th><th>Direction</th><th class="n">Departure every</th><th class="n">Offset</th><th>Real time</th><th>Stay</th></tr></thead>
+<tbody>
+<tr><td>Nymburk hl. n.</td><td>towards Mladějov</td><td class="n">120</td><td class="n">32</td><td class="t">L:32</td><td>terminus, 9 min</td></tr>
+<tr class="wait"><td>Mladá Boleslav hl. n.</td><td>towards Mladějov</td><td class="n">120</td><td class="n">82</td><td class="t">S:22</td><td>arrives :12, 10 min</td></tr>
+<tr><td>Mladějov v Čechách</td><td>towards Nymburk</td><td class="n">120</td><td class="n">34</td><td class="t">L:34</td><td>terminus, 14 min</td></tr>
+<tr class="wait"><td>Dolní Bousov</td><td>towards Nymburk</td><td class="n">120</td><td class="n">62</td><td class="t">S:02</td><td>7 min (crossing)</td></tr>
+<tr><td>Mladá Boleslav hl. n.</td><td>towards Nymburk</td><td class="n">120</td><td class="n">101</td><td class="t">S:41</td><td>arrives :38, 3 min</td></tr>
+</tbody></table></div>
+<p class="fix small"><b>Changed since the chat:</b> MB hl. n. towards Nymburk is now offset <b>101</b> (S:41), not 98. Trains from Mladějov only arrive at hl. n. at :38, so :38 left no time to stop. The real Os 6045 leaves at 14:38 because it starts there.</p>
+<h4>Round trip (4 h)</h4>
+<div class="scroll"><table>
+<thead><tr><th>Station</th><th class="n">Arrives</th><th class="n">Departs</th></tr></thead>
+<tbody>
+<tr><td>Nymburk hl. n.</td><td class="n"></td><td class="n">15:32</td></tr>
+<tr class="wait"><td>Mladá Boleslav hl. n.</td><td class="n">16:12</td><td class="n">16:22</td></tr>
+<tr><td>Mladá Boleslav město</td><td class="n">16:28</td><td class="n">16:31</td></tr>
+<tr><td>Dolní Bousov</td><td class="n">16:57</td><td class="n">16:59</td></tr>
+<tr><td>Sobotka</td><td class="n">17:05</td><td class="n">17:07</td></tr>
+<tr class="wait"><td>Mladějov v Čechách</td><td class="n">17:20</td><td class="n">17:34</td></tr>
+<tr><td>Sobotka</td><td class="n">17:47</td><td class="n">17:49</td></tr>
+<tr class="wait"><td>Dolní Bousov</td><td class="n">17:55</td><td class="n">18:02</td></tr>
+<tr><td>Mladá Boleslav město</td><td class="n">18:28</td><td class="n">18:32</td></tr>
+<tr><td>Mladá Boleslav hl. n.</td><td class="n">18:38</td><td class="n">18:41</td></tr>
+<tr class="wait"><td>Nymburk hl. n.</td><td class="n">19:23</td><td class="n">19:32</td></tr>
+</tbody></table></div>
+<p class="small muted">Real trains:</p>
+<ul class="small muted">
+  <li>Nymburk 15:32 (Os 8538). The real 16:32 (Os 8544) is modelled at 17:32.</li>
+  <li>The 10 min wait at MB hl. n. copies Os 8544 (17:12–17:22).</li>
+  <li>Mladějov 15:34 (Os 8529) and 17:35 (Os 8537).</li>
+  <li>MB hl. n. towards Nymburk 14:38 (Os 6045).</li>
+</ul>
+
+<h2>Česká Třebová area</h2>
+<p>How the four lines share track:</p>
+<ul>
+  <li><b>Kolín → Česká Třebová:</b> hourly at :44, 010S in odd hours and 010 in even hours.</li>
+  <li><b>Česká Třebová → Kolín:</b> hourly at :59, 010S in odd hours and 010 in even hours.</li>
+  <li><b>Česká Třebová → Svitavy:</b> an Os every hour at :07 (010S in even hours, 260 Os in odd hours), plus the Sp at S:48.</li>
+  <li><b>Svitavy → Česká Třebová:</b> an Os every hour at :38 (010S in odd hours, 260 Os in even hours), plus the Sp at S:59.</li>
+  <li><b>Svitavy – Letovice:</b> only the 260 Os and the Sp, as in reality.</li>
+</ul>
+<p class="small muted">In reality the two Kolín – Svitavy pairs fill 260 Os slots in the early afternoon. Here they are their own line in the hours the 260 Os doesn't use, so both run all day without colliding.</p>
+
+<h3 id="l010s">010S · Kolín – Česká Třebová – Svitavy · 4 vehicles</h3>
+<p class="stations"><b>Stations:</b> Kolín – Kolín dílny (x) – Starý Kolín (x) – Záboří nad Labem – Týnec nad Labem (x) – Kojice (x) – Chvaletice (x) – Řečany nad Labem – Lhota pod Přeloučí (x) – Přelouč – Valy u Přelouče (x) – Pardubice-Opočínek (x) – Pardubice-Svítkov (x) – Pardubice hl. n. – Pardubice-Pardubičky – Pardubice-Černá za Bory (x) – Kostěnice – Moravany – Uhersko – Sedlíšťka (x) – Zámrsk – Dobříkov u Chocně (x) – Sruby (x) – Choceň – Brandýs nad Orlicí – Ústí nad Orlicí – Ústí nad Orlicí město – Dlouhá Třebová – Česká Třebová – Semanín (x) – Opatov – Opatovec (x) – Svitavy, then the same back.</p>
+<h4>Timetable entries</h4>
+<div class="scroll"><table>
+<thead><tr><th>Stop</th><th>Direction</th><th class="n">Departure every</th><th class="n">Offset</th><th>Real time</th><th>Stay</th></tr></thead>
+<tbody>
+<tr><td>Kolín</td><td>towards Svitavy</td><td class="n">120</td><td class="n">44</td><td class="t">L:44</td><td>terminus, 1 h 28 min</td></tr>
+<tr class="wait"><td>Přelouč</td><td>towards Svitavy</td><td class="n">120</td><td class="n">92</td><td class="t">S:32</td><td>13 min</td></tr>
+<tr class="wait"><td>Zámrsk</td><td>towards Svitavy</td><td class="n">120</td><td class="n">20</td><td class="t">L:20</td><td>6 min</td></tr>
+<tr class="wait"><td>Česká Třebová</td><td>towards Svitavy</td><td class="n">120</td><td class="n">67</td><td class="t">S:07</td><td>arrives :58, 9 min</td></tr>
+<tr><td>Svitavy</td><td>towards Kolín</td><td class="n">120</td><td class="n">38</td><td class="t">L:38</td><td>terminus, 1 h 17 min</td></tr>
+<tr class="wait"><td>Česká Třebová</td><td>towards Kolín</td><td class="n">120</td><td class="n">59</td><td class="t">L:59</td><td>arrives :54, 5 min</td></tr>
+<tr class="wait"><td>Choceň</td><td>towards Kolín</td><td class="n">120</td><td class="n">90</td><td class="t">S:30</td><td>6 min</td></tr>
+<tr class="wait"><td>Zámrsk</td><td>towards Kolín</td><td class="n">120</td><td class="n">104</td><td class="t">S:44</td><td>5 min</td></tr>
+<tr class="wait"><td>Přelouč</td><td>towards Kolín</td><td class="n">120</td><td class="n">37</td><td class="t">L:37</td><td>11 min</td></tr>
+<tr class="wait"><td>Záboří nad Labem</td><td>towards Kolín</td><td class="n">120</td><td class="n">64</td><td class="t">S:04</td><td>8 min</td></tr>
+</tbody></table></div>
+<h4>Round trip (8 h)</h4>
+<div class="scroll"><table>
+<thead><tr><th>Station</th><th class="n">Arrives</th><th class="n">Departs</th></tr></thead>
+<tbody>
+<tr><td>Kolín</td><td class="n"></td><td class="n">11:44</td></tr>
+<tr class="wait"><td>Přelouč</td><td class="n">12:19</td><td class="n">12:32</td></tr>
+<tr><td>Pardubice hl. n.</td><td class="n">12:46</td><td class="n">12:48</td></tr>
+<tr class="wait"><td>Zámrsk</td><td class="n">13:14</td><td class="n">13:20</td></tr>
+<tr class="wait"><td>Česká Třebová</td><td class="n">13:58</td><td class="n">14:07</td></tr>
+<tr class="wait"><td>Svitavy</td><td class="n">14:21</td><td class="n">15:38</td></tr>
+<tr class="wait"><td>Česká Třebová</td><td class="n">15:54</td><td class="n">15:59</td></tr>
+<tr class="wait"><td>Choceň</td><td class="n">16:24</td><td class="n">16:30</td></tr>
+<tr class="wait"><td>Zámrsk</td><td class="n">16:39</td><td class="n">16:44</td></tr>
+<tr><td>Pardubice hl. n.</td><td class="n">17:11</td><td class="n">17:13</td></tr>
+<tr class="wait"><td>Přelouč</td><td class="n">17:26</td><td class="n">17:37</td></tr>
+<tr class="wait"><td>Záboří nad Labem</td><td class="n">17:56</td><td class="n">18:04</td></tr>
+<tr class="wait"><td>Kolín</td><td class="n">18:16</td><td class="n">19:44</td></tr>
+</tbody></table></div>
+<p class="small muted">Real trains:</p>
+<ul class="small muted">
+  <li>Out: Os 5015, Kolín 11:44 → Svitavy 14:21.</li>
+  <li>Back: Os 5020, Svitavy 15:38 → Kolín 18:16.</li>
+  <li>The other two real through trains, Os 5017 (Česká Třebová 15:07) and Os 5018 (Svitavy 14:38), fall in 260 Os slots, so the 260 Os covers them here.</li>
+  <li>The 1 h 17 min wait at Svitavy is what lets 010S leave in the hour the 260 Os doesn't use.</li>
+</ul>
+
+<h3 id="l010">010 · Kolín – Česká Třebová · 3 vehicles</h3>
+<p class="stations"><b>Stations:</b> the 010S stations from Kolín to Česká Třebová, then the same back.</p>
+<h4>Timetable entries</h4>
+<div class="scroll"><table>
+<thead><tr><th>Stop</th><th>Direction</th><th class="n">Departure every</th><th class="n">Offset</th><th>Real time</th><th>Stay</th></tr></thead>
+<tbody>
+<tr><td>Kolín</td><td>towards Česká Třebová</td><td class="n">120</td><td class="n">104</td><td class="t">S:44</td><td>terminus, 1 h 28 min</td></tr>
+<tr class="wait"><td>Přelouč</td><td>towards Česká Třebová</td><td class="n">120</td><td class="n">32</td><td class="t">L:32</td><td>13 min</td></tr>
+<tr class="wait"><td>Zámrsk</td><td>towards Česká Třebová</td><td class="n">120</td><td class="n">80</td><td class="t">S:20</td><td>6 min</td></tr>
+<tr><td>Česká Třebová</td><td>towards Kolín</td><td class="n">120</td><td class="n">119</td><td class="t">S:59</td><td>terminus, 1 min</td></tr>
+<tr class="wait"><td>Choceň</td><td>towards Kolín</td><td class="n">120</td><td class="n">30</td><td class="t">L:30</td><td>6 min</td></tr>
+<tr class="wait"><td>Zámrsk</td><td>towards Kolín</td><td class="n">120</td><td class="n">44</td><td class="t">L:44</td><td>5 min</td></tr>
+<tr class="wait"><td>Přelouč</td><td>towards Kolín</td><td class="n">120</td><td class="n">97</td><td class="t">S:37</td><td>11 min</td></tr>
+<tr class="wait"><td>Záboří nad Labem</td><td>towards Kolín</td><td class="n">120</td><td class="n">4</td><td class="t">L:04</td><td>8 min</td></tr>
+</tbody></table></div>
+<h4>Round trip (6 h)</h4>
+<div class="scroll"><table>
+<thead><tr><th>Station</th><th class="n">Arrives</th><th class="n">Departs</th></tr></thead>
+<tbody>
+<tr><td>Kolín</td><td class="n"></td><td class="n">12:44</td></tr>
+<tr class="wait"><td>Přelouč</td><td class="n">13:19</td><td class="n">13:32</td></tr>
+<tr><td>Pardubice hl. n.</td><td class="n">13:46</td><td class="n">13:48</td></tr>
+<tr class="wait"><td>Zámrsk</td><td class="n">14:14</td><td class="n">14:20</td></tr>
+<tr><td>Choceň</td><td class="n">14:29</td><td class="n">14:33</td></tr>
+<tr><td>Česká Třebová</td><td class="n">14:58</td><td class="n">14:59</td></tr>
+<tr class="wait"><td>Choceň</td><td class="n">15:24</td><td class="n">15:30</td></tr>
+<tr class="wait"><td>Zámrsk</td><td class="n">15:39</td><td class="n">15:44</td></tr>
+<tr><td>Pardubice hl. n.</td><td class="n">16:11</td><td class="n">16:13</td></tr>
+<tr class="wait"><td>Přelouč</td><td class="n">16:26</td><td class="n">16:37</td></tr>
+<tr class="wait"><td>Záboří nad Labem</td><td class="n">16:56</td><td class="n">17:04</td></tr>
+<tr class="wait"><td>Kolín</td><td class="n">17:16</td><td class="n">18:44</td></tr>
+</tbody></table></div>
+<p class="small muted">The 1-minute turn at Česká Třebová is real: the Os arrives at :58 and leaves at :59. If the train leaves a few minutes late, the long stops at Choceň, Zámrsk, Přelouč and Záboří win the time back. Real trains: Kolín 14:44 and 16:44 (Os 5021, 5025). Česká Třebová 16:59 and 18:59 (Os 5022, 5026).</p>
+
+<h3 id="l260os">260 Os · Česká Třebová – Svitavy – Letovice · 1 vehicle</h3>
+<p class="stations"><b>Stations:</b> Česká Třebová – Semanín (x) – Opatov – Opatovec (x) – Svitavy – Svitavy-Lány (x) – Hradec nad Svitavou (x) – Březová nad Svitavou-Dlouhá (x) – Březová nad Svitavou – Moravská Chrastová (x) – Rozhraní (x) – Letovice, then the same back.</p>
+<h4>Timetable entries</h4>
+<div class="scroll"><table>
+<thead><tr><th>Stop</th><th>Direction</th><th class="n">Departure every</th><th class="n">Offset</th><th>Real time</th><th>Stay</th></tr></thead>
+<tbody>
+<tr><td>Česká Třebová</td><td>towards Letovice</td><td class="n">120</td><td class="n">7</td><td class="t">L:07</td><td>terminus, 13 min</td></tr>
+<tr><td>Letovice</td><td>towards Česká Třebová</td><td class="n">120</td><td class="n">69</td><td class="t">S:09</td><td>terminus, 19 min</td></tr>
+</tbody></table></div>
+<h4>Round trip (2 h)</h4>
+<div class="scroll"><table>
+<thead><tr><th>Station</th><th class="n">Arrives</th><th class="n">Departs</th></tr></thead>
+<tbody>
+<tr><td>Česká Třebová</td><td class="n"></td><td class="n">13:07</td></tr>
+<tr><td>Svitavy</td><td class="n">13:21</td><td class="n">13:24</td></tr>
+<tr class="wait"><td>Letovice</td><td class="n">13:50</td><td class="n">14:09</td></tr>
+<tr><td>Svitavy</td><td class="n">14:34</td><td class="n">14:38</td></tr>
+<tr class="wait"><td>Česká Třebová</td><td class="n">14:54</td><td class="n">15:07</td></tr>
+</tbody></table></div>
+<p class="small muted">Real trains:</p>
+<ul class="small muted">
+  <li>Česká Třebová 9:07, 11:07, 13:07 and 19:07 (Os 4767–4777).</li>
+  <li>Letovice 8:09, 10:09, 12:09 and 16:09.</li>
+  <li>Svitavy towards Česká Třebová 12:38, 16:38 and 20:38.</li>
+  <li>Česká Třebová 15:07 and Svitavy 14:38 are run by the 010 through trains in reality.</li>
+</ul>
+
+<h3 id="l260sp">260 Sp · Česká Třebová – Letovice · 2 vehicles</h3>
+<p class="stations"><b>Stations:</b> Česká Třebová – Opatov – Svitavy – Svitavy-Lány – Hradec nad Svitavou – Březová nad Svitavou-Dlouhá – Březová nad Svitavou – Moravská Chrastová – Rozhraní – Letovice, then the same back. All are normal stops: south of Svitavy the Sp stops everywhere.</p>
+<h4>Timetable entries</h4>
+<div class="scroll"><table>
+<thead><tr><th>Stop</th><th>Direction</th><th class="n">Departure every</th><th class="n">Offset</th><th>Real time</th><th>Stay</th></tr></thead>
+<tbody>
+<tr><td>Česká Třebová</td><td>towards Letovice</td><td class="n">120</td><td class="n">108</td><td class="t">S:48</td><td>terminus</td></tr>
+<tr><td>Letovice</td><td>towards Česká Třebová</td><td class="n">120</td><td class="n">93</td><td class="t">S:33</td><td>terminus, 1 h 04 min</td></tr>
+</tbody></table></div>
+<h4>Round trip (4 h)</h4>
+<div class="scroll"><table>
+<thead><tr><th>Station</th><th class="n">Arrives</th><th class="n">Departs</th></tr></thead>
+<tbody>
+<tr><td>Česká Třebová</td><td class="n"></td><td class="n">14:48</td></tr>
+<tr><td>Svitavy</td><td class="n">15:00</td><td class="n">15:03</td></tr>
+<tr class="wait"><td>Letovice</td><td class="n">15:29</td><td class="n">16:33</td></tr>
+<tr><td>Svitavy</td><td class="n">16:58</td><td class="n">16:59</td></tr>
+<tr class="wait"><td>Česká Třebová</td><td class="n">17:11</td><td class="n">18:48</td></tr>
+</tbody></table></div>
+<p class="small muted">The real Sp runs only in the peaks: Česká Třebová 4:48, 6:48, 14:48 and 16:48, and Letovice 6:31, 14:33, 16:33 and 18:33. In Simutrans it runs all day.</p>
+
+<h2 id="notmodelled">Not modelled</h2>
+<ul>
+  <li><b>062 / 064:</b>
+    <ul>
+      <li>Sobotka short workings: MB 12:14 and 18:14, back from Sobotka 13:52 and 19:03.</li>
+      <li>Trains running through to or from Všetaty on 070: Os 8520, 8521, 8523, 8530 and 8537.</li>
+      <li>Nymburk 12:34 (Os 6040) and MB město 13:36 (Os 6041).</li>
+      <li>Sp 1558/1559, which are S35 trains to Turnov.</li>
+      <li>The summer-only extension Mladějov – Lomnice nad Popelkou (5 June – 31 August).</li>
+    </ul>
+  </li>
+  <li><b>010 / 260:</b>
+    <ul>
+      <li>Early-morning short workings Česká Třebová – Svitavy (Os 4763, 4789, 4764 and 4766).</li>
+      <li>Os 15306 Česká Třebová – Svitavy – Skuteč.</li>
+      <li>Os 5057 Pardubice – Česká Třebová.</li>
+      <li>The Sp runs only in the peaks in reality. In the game it runs all day.</li>
+    </ul>
+  </li>
+  <li><b>Line 076 (Mladá Boleslav – Mšeno – Mělník):</b> no Monday–Thursday trains, only Friday trains in the season.</li>
+</ul>
+</main>

@@ -1,0 +1,10 @@
+{
+ "_source": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128 build/VZ-DPBrno-trolleybus and build/VZ-DPBrno-bus, main b84c15c (28 Sep 2026), read-only. Every trolleybus object is waytype=road, engine_type=electric: the game needs no wire, so battery sections are information only.",
+ "Škoda 26 Tr": {"objs": ["VZ-DPBrno-26Tr-dpmbbilocervena-26Tr"], "len": 8, "note": ""},
+ "Škoda 27 Tr": {"objs": ["VZ-DPBrno-27Tr-dpmbbilocervena-27Tr", "VZ-DPBrno-27Tr-dpmbbilocervena-27Tr-B"], "len": 16, "note": "Articulated: front section + rear section (-B), chained by Constraint[Next]."},
+ "Škoda 31 Tr": {"objs": ["VZ-DPBrno-31Tr-dpmbbilocervena-31Tr", "VZ-DPBrno-31Tr-dpmbbilocervena-31Tr-B"], "len": 16, "note": "Articulated: front section + rear section (-B), chained by Constraint[Next]."},
+ "Škoda 32 Tr": {"objs": ["VZ-DPBrno-32Tr-dpmbbilocervena-32Tr"], "len": 8, "note": ""},
+ "SOR TNS 12": {"objs": ["VZ-DPBrno-TNS_12-dpmbbilocervena-TNS_12"], "len": 8, "note": ""},
+ "Iveco Urbanway 12M CNG": {"objs": ["VZ-DPBrno-Urbanway_12M_CNG-dpmbbilocervena-Urbanway_12M_CNG"], "len": 8, "note": "Bus (VZ-DPBrno-bus)."},
+ "Irisbus Citelis 12M CNG": {"objs": ["VZ-DPBrno-Citelis_12M_CNG-dpmbbilocervena-Citelis_12M_CNG"], "len": 8, "note": "Bus (VZ-DPBrno-bus)."}
+}

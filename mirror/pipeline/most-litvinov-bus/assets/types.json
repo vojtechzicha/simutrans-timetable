@@ -1,0 +1,57 @@
+{
+ "_doc": "Register type (seznam-autobusu 'manufacturer-type' cell) -> full type name shown in the vehicle cell, length class and drive. Lengths: SOR catalogue (NB 12 / NS 12 about 12 m, NB 18 / NS 18 about 18 m), Iveco (Citelis 18M, Urbanway 18M 18 m), MAN Lion's City DD 13.7 m.",
+ "types": {
+  "SOR NB 12": {
+   "full": "SOR NB 12",
+   "length": "12 m",
+   "cls": "12 m",
+   "drive": "diesel, low-entry"
+  },
+  "SOR NS 12": {
+   "full": "SOR NS 12",
+   "length": "12 m",
+   "cls": "12 m",
+   "drive": "diesel, low-floor"
+  },
+  "SOR NB 18": {
+   "full": "SOR NB 18",
+   "length": "18 m",
+   "cls": "18 m",
+   "drive": "diesel, low-entry, articulated"
+  },
+  "SOR NS 18": {
+   "full": "SOR NS 18",
+   "length": "18 m",
+   "cls": "18 m",
+   "drive": "diesel, low-floor, articulated"
+  },
+  "Irisbus Citelis 18M": {
+   "full": "Irisbus Citelis 18M",
+   "length": "18 m",
+   "cls": "18 m",
+   "drive": "diesel, low-floor, articulated"
+  },
+  "Iveco Urbanway 18M": {
+   "full": "Iveco Urbanway 18M",
+   "length": "18 m",
+   "cls": "18 m",
+   "drive": "diesel, low-floor, articulated"
+  },
+  "MAN ND 313 Lion’s City DD": {
+   "full": "MAN ND 313 Lion’s City DD",
+   "length": "13.7 m",
+   "cls": "double-deck",
+   "drive": "diesel, low-floor, double-deck"
+  }
+ },
+ "not_city": {
+  "153": "weekend double-decker: since 1 May 2026 it runs only on Saturdays, Sundays and holidays, on the summer line 16 to Jezero Most (dpmost.cz/zvd2026006), so it is not used on a weekday",
+  "154": "weekend double-decker: since 1 May 2026 it runs only on Saturdays, Sundays and holidays, on the summer line 16 to Jezero Most (dpmost.cz/zvd2026006), so it is not used on a weekday"
+ },
+ "_doc_not_city": "Buses of the Most or Litvínov garage that do not run weekday city service, by fleet number, with the reason.",
+ "weekend_only": [
+  "153",
+  "154"
+ ],
+ "_doc_weekend_only": "Weekend-only buses: not city buses for the roster, but eligible for the fleet-coverage step of 04_roster.py (user, 29 Sep 2026: every type and livery on a line at 16:00)."
+}

@@ -1,0 +1,39 @@
+{
+ "_doc": "Real DPMP vehicle (register type + paint) -> custom Czech pak128 object. Object name = VZ-DPPardubice-<token>-<livery>-<core> (the pak's own scheme, see assets/pak_installed.json, read from the pak checkout by 00_pak_objects.py). 'types' gives the token, the core, the real length in metres and the car units of the object (16 = one tile). The livery comes from the first matching paint rule; a full advert wrap (CVR) or a side sticker (bokolep) keeps the type's normal livery (user rule, 29 Sep: an advert maps to the type's normal livery unless the pak gives it its own object). An object missing from pak_installed.json is shown as 'requested' (never a stand-in from another city). All objects are waytype=road; the trolleybus objects are engine_type=electric and need no wire in the game, so battery sections are information only.",
+ "package": {"trolleybus": "VZ-DPPardubice-trolleybus", "bus": "VZ-DPPardubice-bus"},
+ "types": {
+  "Škoda 26 Tr": {"full": "Škoda 26 Tr", "mode": "trolleybus", "token": "26Tr", "core": "26Tr", "m": 12, "len": 8, "default": "dpmpbilocervena"},
+  "Škoda 28 Tr": {"full": "Škoda 28 Tr", "mode": "trolleybus", "token": "28Tr", "core": "28Tr", "m": 14.6, "len": 10, "default": "dpmpbilocervena", "note": "Three axles, Solaris Urbino 15 body; the only trolleybuses longer than 12 m (406 and 409)."},
+  "Škoda 30 Tr": {"full": "Škoda 30 Tr", "mode": "trolleybus", "token": "30Tr", "core": "30Tr", "m": 12, "len": 8, "default": "dpmpbilocervena"},
+  "Škoda 32 Tr": {"full": "Škoda 32 Tr", "mode": "trolleybus", "token": "32Tr", "core": "32Tr", "m": 12, "len": 8, "default": "dpmpbilocervena", "note": "The object is the 32 Tr in DPMP's black-front white-black-red scheme, which every 32 Tr from 2023 on wears; the 2019 cars (425–429) are advert wraps."},
+  "Iveco Urbanway 12M": {"full": "Iveco Urbanway 12M", "mode": "bus", "token": "Urbanway_12M", "core": "Urbanway_12M", "m": 12, "len": 8, "default": "dpmpbilocervena"},
+  "Iveco Urbanway 12M CNG": {"full": "Iveco Urbanway 12M CNG", "mode": "bus", "token": "Urbanway_12M", "core": "Urbanway_12M_CNG", "m": 12, "len": 8, "default": "dpmpbilocervena"},
+  "Irisbus Citelis 12M": {"full": "Irisbus Citelis 12M", "mode": "bus", "token": "Citelis_12M", "core": "Citelis_12M", "m": 12, "len": 8, "default": "dpmpbilocervena"},
+  "Irisbus Citelis 12M CNG": {"full": "Irisbus Citelis 12M CNG", "mode": "bus", "token": "Citelis_12M", "core": "Citelis_12M_CNG", "m": 12, "len": 8, "default": "dpmpbilocervena"},
+  "Iveco Crossway LE CITY 12M": {"full": "Iveco Crossway LE City 12M", "mode": "bus", "token": "Crossway_LE_City_12M", "core": "Crossway_LE_City_12M", "m": 12, "len": 8, "default": "dpmpbilocervena"},
+  "Iveco Crossway LE CITY 12M Hybrid": {"full": "Iveco Crossway LE City 12M Hybrid", "mode": "bus", "token": "Crossway_LE_City_12M", "core": "Crossway_LE_City_12M_Hybrid", "m": 12, "len": 8, "default": "dpmpbilocervena"},
+  "Irisbus Citybus 12M 2071": {"full": "Irisbus Citybus 12M", "mode": "bus", "token": "Citybus_12M", "core": "Citybus_12M", "m": 12, "len": 8, "default": "dpmpbilocervena"},
+  "Iveco Streetway 12M": {"full": "Iveco Streetway 12M", "mode": "bus", "token": "Streetway_12M", "core": "Streetway_12M", "m": 12, "len": 8, "default": "ivecopredvadeci"},
+  "SOR BN 9,5": {"full": "SOR BN 9.5", "mode": "bus", "token": "BN_9_5", "core": "BN_9_5", "m": 9.5, "len": 7, "default": "bila"},
+  "Isuzu NOVO Citi Life Class I.": {"full": "Isuzu Novociti Life", "mode": "bus", "token": "NovoCiti_Life", "core": "NovoCiti_Life", "m": 7.6, "len": 6, "default": "bilocerna"},
+  "Isuzu NOVO Citi Life Class II.": {"full": "Isuzu Novociti Life", "mode": "bus", "token": "NovoCiti_Life", "core": "NovoCiti_Life", "m": 7.6, "len": 6, "default": "bilocerna"}
+ },
+ "liveries": {
+  "dpmpbilocervena": "DPMP white-red",
+  "bila": "plain white",
+  "ivecopredvadeci": "Iveco demonstrator white-black-red",
+  "bilocerna": "white-black"
+ },
+ "paint_rules": [
+  ["^CVR", null, "full advert wrap: the type's normal livery"],
+  ["^bílá( \\*)?$", "bila", "plain white, a real livery of its own (no DPMP stripes)"],
+  ["^bílá & bokolep", "bila", "plain white with a side sticker: the white base"],
+  ["^bílo-černá s červenou grafikou", "ivecopredvadeci", "the Iveco demonstrator paint (Streetway 199)"],
+  ["^bílá s červenými pruhy", null, "white with red stripes: the DPMP scheme"],
+  ["^DPMP", null, "the DPMP scheme (red stripes on white; red-and-silver stripe on the newest buses; black front on the 32 Tr)"]
+ ],
+ "battery_cars": {
+  "numbers": [[460, 469], [476, 497]],
+  "source": "Old Pardubice sheet (26 Sep 2026, from trolejbus.cz 18 Mar 2026 and seznam-autobusu.cz): traction-battery ('AKU') trolleybuses are the 30 Tr 480–483 (2018) and the 32 Tr 460–469 and 476–497 (2023–2025). 425–429 (32 Tr, 2019) and the other 26 Tr / 28 Tr / 30 Tr have no traction battery."
+ }
+}

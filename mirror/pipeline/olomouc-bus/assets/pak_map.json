@@ -1,0 +1,26 @@
+{
+ "_doc": "Real bus -> VZ-DPOlomouc-bus object. Object names follow VZ-DPOlomouc-<family>-<livery>-<core> (the pak's DPMO bus families, pak128 commit 0c2cc6a, on main b84c15c). The livery comes from the register paint: DPMO white-blue-red, or plain lime green (616-618), or plain white (615); an advert wrap (CVR ...) maps to the type's normal DPMO livery (the pak session's rule). Articulated buses are two objects (-A front, -B rear), shown by the first core. Installed objects are read from the pak checkout (assets/pak_objects.json is the snapshot); any other object named here is 'requested'.",
+ "pak_dir": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128/build/VZ-DPOlomouc-bus",
+ "pak_file": "VZ-DPOlomouc-bus.pak",
+ "operator": "DPMO",
+ "types": {
+  "Solaris Urbino 12 II":  {"family": "Urbino_12",    "cores": ["Urbino_12"], "m": 12, "len": 8, "note": "Urbino 12 II and III share one body at this scale (the pak's Urbino_12 family)."},
+  "Solaris Urbino 12 III": {"family": "Urbino_12",    "cores": ["Urbino_12"], "m": 12, "len": 8, "note": "Urbino 12 II and III share one body at this scale (the pak's Urbino_12 family)."},
+  "Solaris Urbino 12 IV":  {"family": "Urbino_12_IV", "cores": ["Urbino_12_IV"], "m": 12, "len": 8, "note": ""},
+  "Solaris Urbino 18 III": {"family": "Urbino_18",    "cores": ["Urbino_18-A", "Urbino_18-B"], "m": 18, "len": 16, "note": "Articulated: front section (-A) + rear section (-B)."},
+  "Solaris Urbino 18 IV":  {"family": "Urbino_18_IV", "cores": ["Urbino_18_IV-A", "Urbino_18_IV-B"], "m": 18, "len": 16, "note": "Articulated: front section (-A) + rear section (-B)."},
+  "Solaris Alpino 8.6":    {"family": "Alpino_8_6",   "cores": ["Alpino_8_6"], "m": 8.6, "len": 6, "note": "Midibus."},
+  "SOR NS 12 electric":    {"family": "SOR_NS_12_electric", "cores": ["SOR_NS_12_electric"], "m": 12, "len": 8, "note": "Battery bus (engine_type battery)."}
+ },
+ "paint_livery": {
+  "DPMO, bílo-modro-červená": "dpmobilomodrocervena",
+  "zelená": "zelena",
+  "bílá": "bila"
+ },
+ "normal_livery": "dpmobilomodrocervena",
+ "livery_words": {
+  "dpmobilomodrocervena": "DPMO white-blue-red",
+  "zelena": "lime green",
+  "bila": "white"
+ }
+}

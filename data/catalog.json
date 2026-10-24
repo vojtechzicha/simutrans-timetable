@@ -1,0 +1,2667 @@
+{
+ "_doc": "Hand-maintained metadata per sheet (keyed by file name in the working folder). tools/sync.mjs merges it into data/sheets.json.",
+ "sheets": [
+  {
+   "file": "Prague Tram Peak Fleet.html",
+   "name": "Prague trams",
+   "status": "active",
+   "modes": [
+    "tram",
+    "metro",
+    "ferry"
+   ],
+   "region": "Praha",
+   "kind": "fleet",
+   "summary": "Change sheet for the Nákladové nádraží Žižkov – Ohrada closure (11 Oct – 18 Dec 2026): which trams move, new lines 30/37 in full; metro summary and ferries at the bottom.",
+   "pipeline": "pipeline/praha",
+   "build": "python scripts/run.py --state 2026-10-12 (current published closure-change sheet; run.py uses 04b_rebase.py); python scripts/run.py --state 2026-09-27 rebuilds the old sheet to the same file name",
+   "fetch": "python scripts/run.py --state <new> --fetch (01_fetch.py downloads missing files only)",
+   "sources": [
+    {
+     "name": "seznam-autobusu.cz PID vypravenost",
+     "url": "https://seznam-autobusu.cz/vypravenost/pid/vypis?datum=YYYY-MM-DD&linka=N",
+     "role": "vehicles",
+     "note": "Deployment records per line and day; no special headers, ~1 s between requests"
+    },
+    {
+     "name": "seznam-autobusu.cz day overview",
+     "url": "https://seznam-autobusu.cz/vypravenost/pid?datum=YYYY-MM-DD",
+     "role": "vehicles",
+     "note": "All lines of a day; ~500 tram courses on a complete weekday"
+    },
+    {
+     "name": "seznam-autobusu.cz line history",
+     "url": "https://…/vypis?linka=N&since=YYYY-MM-DD",
+     "role": "vehicles",
+     "note": "Coverage history, source of designed trams"
+    },
+    {
+     "name": "seznam-autobusu.cz fleet register",
+     "url": "https://seznam-autobusu.cz/seznam?page=N&iddopravce=106&trakce=tramvaj&depotId=<id>&prov=1&vcetneSluzebnich=1&onlyCurrentDepot=1",
+     "role": "fleet register",
+     "note": "Per depot, 100 per page; use page= not strana="
+    },
+    {
+     "name": "PID GTFS (ROPID)",
+     "url": "https://data.pid.cz/PID_GTFS.zip",
+     "role": "timetable",
+     "note": "Covers ~two weeks from export, keep each export; no block_id/courses. Also metro and ferries"
+    },
+    {
+     "name": "Prague Tram Termini sheet + pak128 session simutrans-custom-czech-pak128-77",
+     "role": "other",
+     "note": "assets/termini.json loop kinds; assets/pak_map.json (pak128 main 340c936)"
+    }
+   ],
+   "vehicleDay": "Fri 25 Sep 2026 (2026-10-12 state rebases on these; moves matched to Mon 12 Oct records; NAD X9/X25 from Mon 12 Oct)",
+   "networkDate": "12 Oct 2026 state: closure Nákladové nádraží Žižkov – Ohrada (11 Oct – 18 Dec 2026), GTFS export 13 Oct, service date 20 Oct 2026; old state: 27 Sep 2026 (service date 29 Sep)",
+   "updateRecipe": [
+    "Download new GTFS into data/raw/gtfs/<export date>/gtfs.zip (or set gtfs.raw and run 01_fetch.py).",
+    "Copy states/2026-09-27.json to states/<new date>.json; set network_date, gtfs.raw, gtfs.service_date (a normal weekday).",
+    "If vehicles follow, set vehicle_date (check overview: ~500 tram courses) and register.raw to today, run with --fetch.",
+    "Review pools, transfers, added_courses, fill_to_cycle, flags, course_notes, stop_aliases, assets/termini.json.",
+    "python scripts/run.py --state <new date>; check printed counts and schedule.",
+    "Republish to https://claude.ai/artifact/5Dt65EJ7F8YJnMbJugLGTi."
+   ],
+   "notes": "Current file is the 2026-10-12 change state: no re-roster, 04b_rebase.py applies minimal moves to 27 Sep courses; template page_changes.html (keep in step with page.html). 5+6 pooled; 17/22 split; designed 13/2–4, 31/4–5; metro and ferry summaries; NAD cards via praha-bus (03c_nad.py).",
+   "dependsOn": [
+    "pipeline/praha-bus"
+   ],
+   "rawSnapshots": [
+    "gtfs/2026-09-28",
+    "gtfs/2026-10-13",
+    "register/2026-09-28",
+    "vypravenost/2026-09-09",
+    "vypravenost/2026-09-10",
+    "vypravenost/2026-09-11",
+    "vypravenost/2026-09-25",
+    "vypravenost/2026-10-12",
+    "vypravenost/2026-10-13",
+    "vypravenost/history"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/praha in the working folder (shares code with pipeline/praha-bus); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "prague-tram-peak-fleet",
+    "evening-courses-and-pairs"
+   ],
+   "refreshTriggers": [
+    "Closure ends 18 Dec 2026: build the reverse change sheet against state 2026-10-12",
+    "JR2027 national timetable change, 13 Dec 2026"
+   ]
+  },
+  {
+   "file": "Prague Trolleybus Peak Fleet.html",
+   "name": "Prague trolleybuses",
+   "status": "active",
+   "modes": [
+    "trolleybus"
+   ],
+   "region": "Praha",
+   "kind": "fleet",
+   "summary": "PID trolleybus lines 51–59 with battery sections from OSM wire vs GTFS shapes; 52 and 58 split into branch lines.",
+   "pipeline": "pipeline/praha-trolleybus",
+   "build": "python scripts/run.py --state 2026-09-27",
+   "fetch": "python scripts/run.py --state <new> --fetch (not the OSM wire: fetch the Overpass query in states/*.json osm.query by hand into data/raw/osm/<date>/)",
+   "sources": [
+    {
+     "name": "seznam-autobusu.cz PID vypravenost",
+     "url": "https://seznam-autobusu.cz/vypravenost/pid/vypis?datum=YYYY-MM-DD&linka=N",
+     "role": "vehicles",
+     "note": "403 to plain curl, use common.fetch; history via vypis?linka=N&since="
+    },
+    {
+     "name": "seznam-autobusu.cz fleet register",
+     "url": "https://seznam-autobusu.cz/seznam?page=1&iddopravce=106&trakce=trolejbus&prov=1&vcetneSluzebnich=1",
+     "role": "fleet register",
+     "note": "All garages in one list; depot cell parsed"
+    },
+    {
+     "name": "PID GTFS",
+     "url": "https://data.pid.cz/PID_GTFS.zip",
+     "role": "timetable",
+     "note": "route_type 11; same export as the tram sheet"
+    },
+    {
+     "name": "OSM Overpass trolley_wire",
+     "url": "https://way[\"trolley_wire\"=\"yes\"](49.94,14.22,50.18,14.71); out geom tags;",
+     "role": "shapes/wire",
+     "note": "overpass-api.de needs Accept: application/json (else 406); vs GTFS shapes for battery sections"
+    },
+    {
+     "name": "pak checkout VZ-DPPraha-trolleybus",
+     "role": "other",
+     "note": "pak128 main b84c15c; all peak types exact"
+    }
+   ],
+   "vehicleDay": "Fri 25 Sep 2026",
+   "networkDate": "27 Sep 2026 network (PID timetable for Tue 29 Sep, service date 20260929)",
+   "updateRecipe": [
+    "Save new PID GTFS in data/raw/gtfs/<export date>/gtfs.zip (or copy from ../praha/data/raw/gtfs).",
+    "Copy states/2026-09-27.json to states/<new>.json; set network_date, gtfs.raw, gtfs.service_date.",
+    "For new vehicles set vehicle_date (~55 trolleybus courses in overview) and register.raw, run 01_fetch.py; if wire changed fetch the Overpass query into data/raw/osm/<today>/ and set osm.raw.",
+    "Review splits, schedule_override, turnaround_min, flags, not_modelled_lines, assets/termini.json.",
+    "python scripts/run.py --state <new>; compare counts and schedule.",
+    "Republish to https://claude.ai/artifact/7P7BZSczRixGop15Fd6zmX."
+   ],
+   "notes": "Scripts are copies of ../praha/scripts (not imported). Lines 51, 52, 53, 58, 59. 52 and 58 split into branches in course order (a choice). All termini loops −1. Fit core 16:00–17:00. 38 counted, 2 not needed.",
+   "rawSnapshots": [
+    "gtfs/2026-09-28",
+    "osm/2026-09-29",
+    "register/2026-09-29",
+    "vypravenost/2026-09-25",
+    "vypravenost/history"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/praha-trolleybus in the working folder; republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "prague-trolleybus-peak-fleet"
+   ]
+  },
+  {
+   "file": "Prague Bus Lines Check.html",
+   "name": "Prague bus lines check",
+   "status": "active",
+   "modes": [
+    "bus"
+   ],
+   "region": "Praha",
+   "kind": "lines-check",
+   "summary": "All 163 PID city bus lines 100–299 against the save game (filter \"to fix\"), with full line cards and designed vehicles with real numbers.",
+   "pipeline": "pipeline/praha-bus",
+   "build": "python scripts/run.py --state 2026-09-29",
+   "fetch": "python scripts/run.py --state <new> --fetch (01_fetch_sources.py [--cars], 01_fetch_records.py); game export requested from save-game session simutrans-122-0-58",
+   "sources": [
+    {
+     "name": "Save-game line export",
+     "role": "other",
+     "note": "From session simutrans-122-0-58: lines 100100–100299 with buses, halts; autosave04 29 Sep"
+    },
+    {
+     "name": "PID GTFS",
+     "url": "https://data.pid.cz/PID_GTFS.zip",
+     "role": "timetable",
+     "note": "Lines via route_sub_agencies route_licence_number 100100–100299, route_type 3"
+    },
+    {
+     "name": "seznam-autobusu.cz PID vypravenost",
+     "url": "https://seznam-autobusu.cz/vypravenost/pid/vypis?datum=YYYY-MM-DD&linka=N",
+     "role": "vehicles",
+     "note": "403 to plain curl: full browser headers, 2 s; date-range POST unusable, per day"
+    },
+    {
+     "name": "seznam-autobusu.cz fleet registers",
+     "url": "https://seznam-autobusu.cz/seznam?iddopravce=<id>&trakce=autobus&prov=1&vcetneSluzebnich=1&page=N",
+     "role": "fleet register",
+     "note": "DPP 106 plus 10 other operators; single cars via https://seznam-autobusu.cz/vuz/<id>"
+    },
+    {
+     "name": "pak checkout VZ-DPPraha-bus, VZ-Praha-bus, VZ-Praha-water",
+     "role": "other",
+     "note": "00_pak_objects.py lists names into assets/pak_objects.json"
+    }
+   ],
+   "vehicleDay": "Fri 25 Sep 2026 (fill-ins from 21–24 and 29 Sep)",
+   "networkDate": "PID export of 29 Sep 2026, service date Wed 30 Sep 2026",
+   "updateRecipe": [
+    "Ask the save-game session for a new export → data/raw/game/<date>/lines.json, set game_raw.",
+    "New timetable: set gtfs.raw and gtfs.service_date (a normal weekday).",
+    "New vehicles: set vehicle_date, extra_days_non_dpp and register_raw.",
+    "Run python scripts/run.py --state <new> --fetch.",
+    "Check printed counts (courses by source, designed lines, requested objects) and republish to https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF."
+   ],
+   "notes": "Checks game lines vs PID stops. Need = max(cycle_need, buses on road). Designed buses from line history (roster coverage), then operator fleet; 213 logged surplus not needed, 797 counted. Pak hand-off via 06_pak_request.py; missing objects shown 'requested', no stand-ins.",
+   "rawSnapshots": [
+    "game/2026-09-29",
+    "gtfs/2026-09-29",
+    "register/2026-09-29",
+    "vypravenost/2026-09-21",
+    "vypravenost/2026-09-22",
+    "vypravenost/2026-09-23",
+    "vypravenost/2026-09-24",
+    "vypravenost/2026-09-25",
+    "vypravenost/2026-09-29",
+    "vypravenost/history"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/praha-bus in the working folder; republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "prague-bus-lines-check",
+    "designed-vehicles-roster-rule"
+   ]
+  },
+  {
+   "file": "Prague Tram Termini.html",
+   "name": "Prague tram termini",
+   "status": "reference",
+   "modes": [
+    "tram"
+   ],
+   "region": "Praha",
+   "kind": "termini",
+   "summary": "Loop track counts, lines, headways and departure phase at every tram terminus — the layout reference the tram pipeline reads (praha/assets/termini.json).",
+   "sources": [
+    {
+     "name": "PID GTFS (12 Sep 2026, day 15 Sep)",
+     "role": "timetable"
+    },
+    {
+     "name": "prazsketramvaje.cz",
+     "url": "https://www.prazsketramvaje.cz",
+     "role": "track layout",
+     "note": "loop track counts"
+    },
+    {
+     "name": "Wikipedia (cs)",
+     "role": "track layout"
+    }
+   ],
+   "created": "2026-09-12",
+   "createdNote": "Made in an engine session (simutrans-122-0) on 12 Sep 2026; local copy downloaded 26 Sep.",
+   "artifactUrl": "https://claude.ai/artifact/G2XEHPwaYoZhQSExHN6DP9",
+   "lastUpdated": "2026-09-12",
+   "sync": "Static. No pipeline can rebuild it (the generator scripts lived in a deleted scratchpad). The tram pipelines use it as an input (assets/termini*.json); refresh only by rewriting it.",
+   "notes": "A one-off reference from before the per-vehicle sheets: for laying out the terminus loops in the game.",
+   "pipeline": null
+  },
+  {
+   "file": "Brno Tram Peak Fleet.html",
+   "name": "Brno trams — closure state",
+   "status": "superseded",
+   "modes": [
+    "tram"
+   ],
+   "region": "Brno",
+   "kind": "fleet",
+   "summary": "Fri 25 Sep vehicles on the 27 Sep closure network. Replaced by the \"from 29 Sep\" sheet once the closure ended.",
+   "pipeline": "pipeline/brno",
+   "build": "cd pipeline/brno/scripts && python run.py --state closure-2026-09-27",
+   "fetch": "python 01_fetch.py --vehicles <date> --register --gtfs (in pipeline/brno/scripts)",
+   "sources": [
+    {
+     "name": "bmhd.cz vypravenost",
+     "url": "https://www.bmhd.cz/vypravenost/vypravenost.php?datum=YYYY-MM-DD&linka=N",
+     "role": "vehicles",
+     "note": "Vehicle per kurz, one page per line; 403 without Chrome UA headers, 2 s delay"
+    },
+    {
+     "name": "bmhd.cz depot register",
+     "url": "https://www.bmhd.cz/evidence-dpmb/vozovna/{M,P,K}",
+     "role": "fleet register",
+     "note": "Depot lists plus vozp.php?trakce=tramvaj listings for exact subtype and livery"
+    },
+    {
+     "name": "IDS JMK GTFS",
+     "url": "https://kordis-jmk.cz/gtfs/gtfs.zip",
+     "role": "timetable",
+     "note": "Exported 25 Sep, stored 28 Sep; covers 25 Sep to December incl. 29 Sep change"
+    },
+    {
+     "name": "Brno Tram Termini.html (older sheet)",
+     "role": "other",
+     "note": "Terminus layouts (track counts, loop/stub) in assets/termini_meta.json"
+    },
+    {
+     "name": "pak128 session simutrans-custom-czech-pak128-77",
+     "role": "other",
+     "note": "Pak object names in assets/pak.json"
+    }
+   ],
+   "vehicleDay": "Fri 25 Sep 2026",
+   "networkDate": "27 Sep 2026 (Kníničská closure, line 10 at Sochorova; GTFS service_date 25 Sep 2026)",
+   "updateRecipe": [
+    "Download new GTFS: python 01_fetch.py --gtfs (lands in data/raw/gtfs/<today>/).",
+    "Copy latest state to states/<new-name>.json; set gtfs_date, service_date (a Friday of the new timetable), compare_with, output, title, texts.",
+    "Run python 03_timetable.py --state <new>; read the printed schedule and cycle_need vs the previous state; check simutrans_lines, nonloop, stop_alias.",
+    "Run python run.py --state <new>, open the HTML, check the 'What changes' table.",
+    "If the fleet should follow: python 01_fetch.py --vehicles <new Friday> --register; set vehicles_date, register_date; re-check resolved_swaps, note_overrides, 8S kurzy; update assets/pak.json if the pak changed.",
+    "Re-publish to https://claude.ai/artifact/5ntT3kwFmuEU3Bo3RbvvZD."
+   ],
+   "notes": "Kurz parity sets depot (odd = Pisárky); 20 cars disagree with the register. 5S = kurzy 21–27; 8S = 7 chosen kurzy. Line 12 approximate ±3 min. Surplus marked not needed; 5S designed car 1088.",
+   "dependsOn": [
+    "pipeline/brno-trolleybus"
+   ],
+   "rawSnapshots": [
+    "gtfs/2026-09-28",
+    "register/2026-09-28",
+    "vypravenost/2026-09-16",
+    "vypravenost/2026-09-17",
+    "vypravenost/2026-09-18",
+    "vypravenost/2026-09-21",
+    "vypravenost/2026-09-22",
+    "vypravenost/2026-09-23",
+    "vypravenost/2026-09-24",
+    "vypravenost/2026-09-25",
+    "vypravenost/2026-09-27"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/brno in the working folder (shares code with pipeline/brno-trolleybus); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "brno-tram-peak-fleet",
+    "spares-not-needed-rule"
+   ],
+   "supersededBy": "brno-tram-fleet-from-29-sep"
+  },
+  {
+   "file": "Brno Tram Fleet from 29 Sep.html",
+   "name": "Brno trams — from 29 Sep",
+   "status": "active",
+   "modes": [
+    "tram"
+   ],
+   "region": "Brno",
+   "kind": "fleet",
+   "summary": "Post-closure network (line 10 back to Komín, 3 and 12 retimed) with the Fri 25 Sep vehicles; 5S and 8S as their own lines. The method reference for every city.",
+   "pipeline": "pipeline/brno",
+   "build": "cd pipeline/brno/scripts && python run.py --state from-2026-09-29",
+   "fetch": "python 01_fetch.py --vehicles <date> --register --gtfs (in pipeline/brno/scripts)",
+   "sources": [
+    {
+     "name": "bmhd.cz vypravenost",
+     "url": "https://www.bmhd.cz/vypravenost/vypravenost.php?datum=YYYY-MM-DD&linka=N",
+     "role": "vehicles",
+     "note": "Vehicle per kurz, one page per line; 403 without Chrome UA headers, 2 s delay"
+    },
+    {
+     "name": "bmhd.cz depot register",
+     "url": "https://www.bmhd.cz/evidence-dpmb/vozovna/{M,P,K}",
+     "role": "fleet register",
+     "note": "Depot lists plus vozp.php?trakce=tramvaj listings for exact subtype and livery"
+    },
+    {
+     "name": "IDS JMK GTFS",
+     "url": "https://kordis-jmk.cz/gtfs/gtfs.zip",
+     "role": "timetable",
+     "note": "Exported 25 Sep, stored 28 Sep; state service_date 2 Oct 2026"
+    },
+    {
+     "name": "Brno Tram Termini.html (older sheet)",
+     "role": "other",
+     "note": "Terminus layouts in assets/termini_meta.json"
+    },
+    {
+     "name": "pak128 session simutrans-custom-czech-pak128-77",
+     "role": "other",
+     "note": "Pak object names in assets/pak.json"
+    }
+   ],
+   "vehicleDay": "Fri 25 Sep 2026",
+   "networkDate": "from Tue 29 Sep 2026 (line 10 back to Komín; GTFS service_date 2 Oct 2026)",
+   "updateRecipe": [
+    "Download new GTFS: python 01_fetch.py --gtfs (lands in data/raw/gtfs/<today>/).",
+    "Copy latest state to states/<new-name>.json; set gtfs_date, service_date (a Friday of the new timetable), compare_with, output, title, texts.",
+    "Run python 03_timetable.py --state <new>; read the printed schedule and cycle_need vs the previous state; check simutrans_lines, nonloop, stop_alias.",
+    "Run python run.py --state <new>, open the HTML, check the 'What changes' table.",
+    "If the fleet should follow: python 01_fetch.py --vehicles <new Friday> --register; set vehicles_date, register_date; re-check resolved_swaps, note_overrides, 8S kurzy; update assets/pak.json if the pak changed.",
+    "Re-publish to https://claude.ai/artifact/3ps2U3Ac81p5h3ABRwgQVg."
+   ],
+   "notes": "compare_with the closure state. Line 12 exact at every 14; line 10 Komín via stop_alias. Earlier 3→12 tram moves dropped: surplus over need marked not needed (150 counted + 24). Uses brno-trolleybus circuit_need.",
+   "dependsOn": [
+    "pipeline/brno-trolleybus"
+   ],
+   "rawSnapshots": [
+    "gtfs/2026-09-28",
+    "register/2026-09-28",
+    "vypravenost/2026-09-16",
+    "vypravenost/2026-09-17",
+    "vypravenost/2026-09-18",
+    "vypravenost/2026-09-21",
+    "vypravenost/2026-09-22",
+    "vypravenost/2026-09-23",
+    "vypravenost/2026-09-24",
+    "vypravenost/2026-09-25",
+    "vypravenost/2026-09-27"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/brno in the working folder (shares code with pipeline/brno-trolleybus); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "brno-tram-peak-fleet",
+    "city-pipelines"
+   ]
+  },
+  {
+   "file": "Brno Trolleybus Peak Fleet.html",
+   "name": "Brno trolleybuses",
+   "status": "active",
+   "modes": [
+    "trolleybus"
+   ],
+   "region": "Brno",
+   "kind": "fleet",
+   "summary": "DPMB trolleybuses, with the 25 + 26 and 35 + 38 + 39 pools as single circuit lines; battery only on 21 and 30.",
+   "pipeline": "pipeline/brno-trolleybus",
+   "build": "cd pipeline/brno-trolleybus/scripts && python run.py --state 2026-09-29",
+   "fetch": "01_fetch.py --vehicles <Friday> --register [--bus-types <cars>] [--gtfs]",
+   "sources": [
+    {
+     "name": "bmhd.cz vypravenost",
+     "url": "https://www.bmhd.cz/vypravenost/vypravenost.php?datum=YYYY-MM-DD&linka=N",
+     "role": "vehicles",
+     "note": "Lines 21, 25–27, 30–39; row class gives traction; browser headers needed"
+    },
+    {
+     "name": "bmhd.cz depot register",
+     "url": "https://www.bmhd.cz/evidence-dpmb/vozovna/{k,h,s}",
+     "role": "fleet register",
+     "note": "Komín, Husovice, Slatina plus vozp.php trolejbus/autobus type listings"
+    },
+    {
+     "name": "IDS JMK GTFS",
+     "url": "https://kordis-jmk.cz/gtfs/gtfs.zip",
+     "role": "timetable",
+     "note": "route_type 800; reads ../brno/data/raw/gtfs/2026-09-28/gtfs.zip"
+    },
+    {
+     "name": "dpmb.cz, cs.wikipedia, BMHD wire map 6/2015, bmhd.cz articles, jrbrno.cz",
+     "role": "shapes/wire",
+     "note": "Battery sections, terminus layouts, line pools, kept in the state file"
+    },
+    {
+     "name": "local pak128 checkout build/VZ-DPBrno-trolleybus and -bus",
+     "role": "other",
+     "note": "Pak objects (main b84c15c), assets/pak.json"
+    }
+   ],
+   "vehicleDay": "Fri 25 Sep 2026",
+   "networkDate": "from Tue 29 Sep 2026 (GTFS service_date 2 Oct 2026)",
+   "updateRecipe": [
+    "New timetable: refresh GTFS (../brno/scripts/01_fetch.py --gtfs, or here 01_fetch.py --gtfs); copy the state, set gtfs_date and a Friday service_date; run 03_timetable.py; check rates, spans, the 25+26 and 35+38+39 legs, the 33 designed_slots.",
+    "New vehicles: 01_fetch.py --vehicles <Friday> --register (add --bus-types <cars> if 02_parse.py reports non-trolley rows); set vehicles_date, register_date; re-check the 30 and 37 kurz splits.",
+    "python run.py --state <new>, re-publish to https://claude.ai/artifact/NdYdvPQK1v2sVZ8cGmoW81.",
+    "Shortfalls: design vehicles by the roster rule."
+   ],
+   "notes": "25+26 and 35+38+39 pooled circuit lines; 30 and 37 split by kurz (a choice); 33 designed return slot. All termini loop −1. Buses on trolleybus kurzy not counted. Battery only on 21, 30. Defines mark_spares.",
+   "dependsOn": [
+    "pipeline/brno"
+   ],
+   "rawSnapshots": [
+    "register/2026-09-29",
+    "vypravenost/2026-09-24",
+    "vypravenost/2026-09-25",
+    "vypravenost/2026-09-29",
+    "GTFS read from ../brno/data/raw/gtfs/2026-09-28"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/brno-trolleybus in the working folder (shares code with pipeline/brno); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "brno-trolleybus-peak-fleet"
+   ]
+  },
+  {
+   "file": "Brno Bus Peak Fleet.html",
+   "name": "Brno buses",
+   "status": "active",
+   "modes": [
+    "bus"
+   ],
+   "region": "Brno",
+   "kind": "fleet",
+   "summary": "Lines 40–84, E50/E56/E75 and x75; leg order from FIFO chaining (propose.py); BDS-BUS on 48/74.",
+   "pipeline": "pipeline/brno-bus",
+   "build": "cd pipeline/brno-bus/scripts && python run.py --state 2026-09-29",
+   "fetch": "01_fetch.py --vehicles <Friday> --register --external <Friday>; GTFS is refreshed in ../brno (01_fetch.py --gtfs)",
+   "sources": [
+    {
+     "name": "bmhd.cz vypravenost",
+     "url": "https://www.bmhd.cz/vypravenost/vypravenost.php?datum=YYYY-MM-DD&linka=N",
+     "role": "vehicles",
+     "note": "Vehicle per kurz per line; several lines filed under other line numbers"
+    },
+    {
+     "name": "bmhd.cz DPMB bus register",
+     "url": "https://www.bmhd.cz/evidence-dpmb/vozovna/{m,s}",
+     "role": "fleet register",
+     "note": "Medlánky and Slatina, plus vozp.php?trakce=autobus listings"
+    },
+    {
+     "name": "seznam-autobusu.cz",
+     "url": "https://seznam-autobusu.cz/vuz/<id>",
+     "role": "fleet register",
+     "note": "BDS-BUS buses on 48 and 74, linked from vypravenost rows"
+    },
+    {
+     "name": "IDS JMK GTFS",
+     "url": "https://kordis-jmk.cz/gtfs/gtfs.zip",
+     "role": "timetable",
+     "note": "route_type 3; shared file ../brno/data/raw/gtfs/2026-09-28/gtfs.zip"
+    },
+    {
+     "name": "IDS JMK timetable PDFs, jrbrno.cz",
+     "role": "other",
+     "note": "'jede jako linka' evidence for which kurzy run unrecorded lines"
+    },
+    {
+     "name": "local pak128 checkout build/VZ-DPBrno-bus",
+     "role": "other",
+     "note": "Pak objects (main b84c15c), assets/pak.json"
+    }
+   ],
+   "vehicleDay": "Fri 25 Sep 2026",
+   "networkDate": "Tue 29 Sep 2026 (service_date 20260929)",
+   "updateRecipe": [
+    "New timetable: refresh the GTFS in ../brno, copy the state, set gtfs_date and service_date; run propose.py on changed lines and update simutrans_lines; run 03_timetable.py and check rates, spans, not-modelled list.",
+    "New vehicles: 01_fetch.py --vehicles <Friday> --register --external <Friday>; set the dates; re-check keep_before and shortfalls.",
+    "python run.py --state <new>, then re-publish (https://claude.ai/artifact/Q1cS9fRTKPNHJYbmsNPv3T).",
+    "If 04_fleet.py reports a shortfall, design vehicles by the roster rule (history roster, one free car per missing type, then recency; leftovers 'not needed')."
+   ],
+   "notes": "Lines 40–84, E50/E56/E75, x75. Leg order from propose.py (feed splits workings). Many lines split into branch lines; kurz allocation by need is a choice. Unrecorded lines on other kurzy (54→52, 55→58, 66→57, 70→42). Line 63 starts 1 Oct, excluded.",
+   "dependsOn": [
+    "pipeline/brno-trolleybus",
+    "pipeline/brno"
+   ],
+   "rawSnapshots": [
+    "register/2026-09-29",
+    "vypravenost/2026-09-25",
+    "external/ (seznam-autobusu pages, undated)",
+    "GTFS read from ../brno/data/raw/gtfs/2026-09-28"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/brno-bus in the working folder (shares code with pipeline/brno-trolleybus, pipeline/brno); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "brno-bus-peak-fleet"
+   ]
+  },
+  {
+   "file": "Brno Tram Termini.html",
+   "name": "Brno tram termini",
+   "status": "reference",
+   "modes": [
+    "tram"
+   ],
+   "region": "Brno",
+   "kind": "termini",
+   "summary": "Loop track counts, lines and departure phase at every Brno tram terminus (input to pipeline/brno assets).",
+   "sources": [
+    {
+     "name": "IDS JMK GTFS (11 Sep 2026, day 16 Sep)",
+     "url": "https://kordis-jmk.cz/gtfs/gtfs.zip",
+     "role": "timetable"
+    },
+    {
+     "name": "bmhd.cz track plan (2015)",
+     "url": "https://www.bmhd.cz",
+     "role": "track layout"
+    },
+    {
+     "name": "OpenStreetMap",
+     "role": "track layout",
+     "note": "check of the track plan"
+    }
+   ],
+   "created": "2026-09-12",
+   "createdNote": "Made in an engine session (simutrans-122-0) on 12 Sep 2026; local copy downloaded 26 Sep.",
+   "artifactUrl": "https://claude.ai/artifact/GoRk7rfPC4jorjrQRN1cGB",
+   "lastUpdated": "2026-09-12",
+   "sync": "Static. No pipeline can rebuild it (the generator scripts lived in a deleted scratchpad). The tram pipelines use it as an input (assets/termini*.json); refresh only by rewriting it.",
+   "notes": "A one-off reference from before the per-vehicle sheets: for laying out the terminus loops in the game.",
+   "pipeline": null
+  },
+  {
+   "file": "Plzeň Tram Peak Fleet.html",
+   "name": "Plzeň trams",
+   "status": "active",
+   "modes": [
+    "tram"
+   ],
+   "region": "Plzeň",
+   "kind": "fleet",
+   "summary": "PMDP trams, Fri 18 Sep vehicles; line 4 as one line with Košutka twice (trams alternate Bory / Univerzita).",
+   "pipeline": "pipeline/plzen",
+   "build": "cd pipeline/plzen/scripts && python run.py --state 2026-09-27",
+   "fetch": "python run.py --state 2026-09-27 --fetch (day overviews of last 10 days, register, GTFS); python 01_fetch.py --vehicles <date>",
+   "sources": [
+    {
+     "name": "seznam-autobusu.cz mhd-plzen day overview",
+     "url": "https://seznam-autobusu.cz/vypravenost/mhd-plzen?datum=YYYY-MM-DD",
+     "role": "vehicles",
+     "note": "Which days have tram records (crowd-sourced; none 23–25 Sep)"
+    },
+    {
+     "name": "seznam-autobusu.cz mhd-plzen vypravenost",
+     "url": "https://seznam-autobusu.cz/vypravenost/mhd-plzen/vypis?datum=YYYY-MM-DD&linka=N",
+     "role": "vehicles",
+     "note": "Vehicle per kurz with notes, lines 1, 2, 4; browser headers, 2 s"
+    },
+    {
+     "name": "seznam-autobusu.cz PMDP tram register",
+     "url": "https://seznam-autobusu.cz/seznam?iddopravce=71&trakce=tramvaj&page=N",
+     "role": "fleet register",
+     "note": "Type, livery, state; 5 pages incl. historic cars"
+    },
+    {
+     "name": "PMDP GTFS",
+     "url": "https://jizdnirady.pmdp.cz/jr/gtfs",
+     "role": "timetable",
+     "note": "Returns zip directly; valid from 22 Sep 2026 (not 18 Sep)"
+    },
+    {
+     "name": "pak128 session VZ-PMDP-tram.pak",
+     "role": "other",
+     "note": "pak128 main 6547eb6; kept in the state file"
+    }
+   ],
+   "vehicleDay": "Fri 18 Sep 2026 (no records 23–25 Sep)",
+   "networkDate": "27 Sep 2026 (GTFS service day Fri 25 Sep 2026)",
+   "updateRecipe": [
+    "Fetch: python run.py --state 2026-09-27 --fetch (day overviews, register, GTFS; prints days with tram records).",
+    "Copy the state to states/<new>.json; set gtfs_date, service_date (a Friday), register_date, vehicles_date (latest complete Friday in data/derived/day_counts.json); fetch lists with python 01_fetch.py --vehicles <date>.",
+    "python 03_timetable.py --state <new>; check schedule, adjust fit.core, check line 4 branches.",
+    "python run.py --state <new>; update texts and fleet.note_extra.",
+    "Update pak from the pak128 session if changed.",
+    "Re-publish to https://claude.ai/artifact/J5W3n79YLXAjgruuhtSjam."
+   ],
+   "notes": "All termini loops (−1). Line 4 one Simutrans line with Košutka twice (branches alternate). Per-line fit.core windows. Bolevec depot runs 15:46/15:56 counted. Need = max(circuit_need, on road); 41 counted + 10 not needed.",
+   "dependsOn": [
+    "pipeline/brno-trolleybus"
+   ],
+   "rawSnapshots": [
+    "gtfs/2026-09-28",
+    "register/2026-09-28",
+    "vypravenost/2026-09-18",
+    "vypravenost-days/2026-09-18 … 2026-09-25 (6 day pages)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/plzen in the working folder (shares code with pipeline/brno-trolleybus); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "plzen-tram-peak-fleet"
+   ]
+  },
+  {
+   "file": "Plzeň Trolleybus Peak Fleet.html",
+   "name": "Plzeň trolleybuses",
+   "status": "active",
+   "modes": [
+    "trolleybus"
+   ],
+   "region": "Plzeň",
+   "kind": "fleet",
+   "summary": "PMDP trolleybuses; battery sections from OSM wire per stop; only battery cars on 11, 13, 22 and 49.",
+   "pipeline": "pipeline/plzen-trolleybus",
+   "build": "cd pipeline/plzen-trolleybus/scripts && python run.py --state 2026-09-29",
+   "fetch": "python run.py --state 2026-09-29 --fetch; python 01_fetch.py --vehicles <date> --lines 10 11 12 13 14 15 16 18 22 49",
+   "sources": [
+    {
+     "name": "seznam-autobusu.cz mhd-plzen day overview",
+     "url": "https://seznam-autobusu.cz/vypravenost/mhd-plzen?datum=YYYY-MM-DD",
+     "role": "vehicles",
+     "note": "Which lines have records per day; every car out that day"
+    },
+    {
+     "name": "seznam-autobusu.cz mhd-plzen vypravenost",
+     "url": "https://seznam-autobusu.cz/vypravenost/mhd-plzen/vypis?datum=YYYY-MM-DD&linka=N",
+     "role": "vehicles",
+     "note": "Per-line lists for trolleybus and bus lines; browser headers, 2 s"
+    },
+    {
+     "name": "seznam-autobusu.cz line history",
+     "url": "https://…/mhd-plzen/vypis?linka=N&since=YYYY-MM-DD&strana=N",
+     "role": "vehicles",
+     "note": "For designed vehicles; 50 records a page"
+    },
+    {
+     "name": "seznam-autobusu.cz PMDP register",
+     "url": "https://seznam-autobusu.cz/seznam?iddopravce=71&trakce={trolejbus,autobus,elektrobus}&prov=1&vcetneSluzebnich=1&page=N",
+     "role": "fleet register",
+     "note": "Car ids are the key; trolleybus and bus numbers overlap"
+    },
+    {
+     "name": "PMDP GTFS",
+     "url": "https://jizdnirady.pmdp.cz/jr/gtfs",
+     "role": "timetable",
+     "note": "route_type 11; no shapes.txt, no blocks"
+    },
+    {
+     "name": "OSM Overpass trolley wire",
+     "url": "https://way[\"trolley_wire\"=\"yes\"] and way[\"railway\"=\"trolleybus_wire\"] in (49.68, 13.25, 49.80, 13.50)",
+     "role": "shapes/wire",
+     "note": "406 to browser UA: send simutrans-timetable-pipeline/1.0 + Accept: application/json"
+    },
+    {
+     "name": "cs.wikipedia (Škoda 26Tr, 27Tr, Trolejbusová doprava v Plzni)",
+     "role": "other",
+     "note": "Battery-capable cars and battery stretches cross-check"
+    },
+    {
+     "name": "local pak128 checkouts",
+     "role": "other",
+     "note": "No VZ-PMDP-trolleybus package; all types requested in pak_request.md"
+    }
+   ],
+   "vehicleDay": "Fri 18 Sep 2026 (23–25 and 29 Sep have ≤ 1 record)",
+   "networkDate": "Tue 29 Sep 2026 (GTFS service day 29 Sep)",
+   "updateRecipe": [
+    "python run.py --state 2026-09-29 --fetch (overviews of last two weeks, lists of vehicle day, registers, GTFS, OSM wire; prints day_counts.json).",
+    "Copy the state to states/<new>.json; set vehicles_date, register_date, gtfs_date, service_date, osm_date; python 01_fetch.py --vehicles <date> --lines 10 11 12 13 14 15 16 18 22",
+    "3. python 03_timetable.py --state <new>; check rates, approximations, not modelled; if branches changed run propose.py --route-type 11 --groups … and update simutrans_lines.",
+    "python run.py --state <new>; if a line is short fetch history (01_fetch.py --history <line> --since <date>).",
+    "Update texts and battery_text; then do the bus sheet.",
+    "Republish to https://claude.ai/artifact/B9vVcHutYdXdg4sscpA1gR."
+   ],
+   "notes": "10 and 11 one line each, shared terminus twice; 15N branch on highest kurzy; 22 one-way, empty return. All loops −1. Battery: stop >60 m from OSM wire; only battery cars on 11, 13, 22, 49. Raw data shared.",
+   "dependsOn": [
+    "pipeline/plzen",
+    "pipeline/brno-trolleybus",
+    "pipeline/brno"
+   ],
+   "rawSnapshots": [
+    "gtfs/2026-09-29",
+    "history/2026-09-29",
+    "osm/2026-09-29",
+    "register/2026-09-29",
+    "vypravenost/2026-09-18",
+    "vypravenost-days/2026-09-10 … 2026-09-29 (13 day pages)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/plzen-trolleybus in the working folder (shares code with pipeline/plzen, pipeline/brno-trolleybus, pipeline/brno); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "plzen-trolleybus-bus-peak-fleet"
+   ]
+  },
+  {
+   "file": "Plzeň Bus Peak Fleet.html",
+   "name": "Plzeň buses",
+   "status": "active",
+   "modes": [
+    "bus"
+   ],
+   "region": "Plzeň",
+   "kind": "fleet",
+   "summary": "20 PMDP bus lines; 33 + 40 loop as two lines, 42 on 26 kurzy (inferred).",
+   "pipeline": "pipeline/plzen-bus",
+   "build": "cd pipeline/plzen-bus/scripts && python run.py --state 2026-09-29",
+   "fetch": "../plzen-trolleybus/scripts/run.py --state … --fetch, then python run.py --state 2026-09-29 --fetch here (lists/registers into ../plzen-trolleybus/data/raw)",
+   "sources": [
+    {
+     "name": "seznam-autobusu.cz mhd-plzen vypravenost",
+     "url": "https://seznam-autobusu.cz/vypravenost/mhd-plzen/vypis?datum=YYYY-MM-DD&linka=N",
+     "role": "vehicles",
+     "note": "Stored in ../plzen-trolleybus/data/raw; day overviews and line histories too"
+    },
+    {
+     "name": "seznam-autobusu.cz PMDP register",
+     "url": "https://seznam-autobusu.cz/seznam?iddopravce=71&trakce={trolejbus,autobus,elektrobus}&prov=1&vcetneSluzebnich=1&page=N",
+     "role": "fleet register",
+     "note": "All 18 Sep buses resolved to PMDP; --operator <id> for subcontractors"
+    },
+    {
+     "name": "PMDP GTFS",
+     "url": "https://jizdnirady.pmdp.cz/jr/gtfs",
+     "role": "timetable",
+     "note": "route_type 3; one agency"
+    },
+    {
+     "name": "local pak128 checkouts",
+     "role": "other",
+     "note": "No PMDP bus objects; seven types requested in VZ-PMDP-bus, two liveries"
+    }
+   ],
+   "vehicleDay": "Fri 18 Sep 2026 (23–25 and 29 Sep have 0–4 bus records)",
+   "networkDate": "Tue 29 Sep 2026 (GTFS service day 29 Sep)",
+   "updateRecipe": [
+    "Fetch with the trolleybus pipeline (../plzen-trolleybus/scripts/run.py --state … --fetch), then python run.py --state 2026-09-29 --fetch here.",
+    "Copy the state, set the dates (same vehicle day as the trolleybus sheet), run python ../../plzen-trolleybus/scripts/03_timetable.py --state <new> --base .. and check rates, approximations, not modelled.",
+    "Re-check the 40 and 42 pools (give them own records if logged again).",
+    "python run.py --state <new>; for a short line fetch its history first (01_fetch.py --history <line> --since <date> in the trolleybus scripts).",
+    "Republish to https://claude.ai/artifact/LE4trKFDZjkAjpX2EhvJCa."
+   ],
+   "notes": "No own scripts: runs plzen-trolleybus scripts with --base. 33+40 loop as two lines on 33 kurzy; 42 inferred on 26 kurzy (not confirmed); 28 with CAN Husova twice; branches 26N, 30P, 41K. 69 counted, 14 not needed.",
+   "dependsOn": [
+    "pipeline/plzen-trolleybus",
+    "pipeline/plzen",
+    "pipeline/brno-trolleybus"
+   ],
+   "rawSnapshots": [
+    "none of its own (data/raw empty); reads ../plzen-trolleybus/data/raw (gtfs/2026-09-29, register/2026-09-29, vypravenost/2026-09-18, history/2026-09-29)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/plzen-bus in the working folder (shares code with pipeline/plzen-trolleybus, pipeline/plzen, pipeline/brno-trolleybus); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "plzen-trolleybus-bus-peak-fleet"
+   ]
+  },
+  {
+   "file": "Olomouc Tram Peak Fleet.html",
+   "name": "Olomouc trams",
+   "status": "active",
+   "modes": [
+    "tram"
+   ],
+   "region": "Olomouc",
+   "kind": "fleet",
+   "summary": "DPMO trams from the Fri 18 Sep records (25 Sep was too sparse); 3 + 5 as two lines from one pool.",
+   "pipeline": "pipeline/olomouc",
+   "build": "python scripts/run.py --state 2026-09-27",
+   "fetch": "python scripts/run.py --state <new> --fetch",
+   "sources": [
+    {
+     "name": "seznam-autobusu.cz mhd-ol vypravenost",
+     "url": "https://seznam-autobusu.cz/vypravenost/mhd-ol/vypis?datum=YYYY-MM-DD&linka=N",
+     "role": "vehicles",
+     "note": "Deployment records per line and day; coverage uneven (1–7 to ~26 sets)"
+    },
+    {
+     "name": "seznam-autobusu.cz mhd-ol day overview",
+     "url": "https://seznam-autobusu.cz/vypravenost/mhd-ol?datum=YYYY-MM-DD",
+     "role": "vehicles",
+     "note": "Coverage check before choosing vehicle day"
+    },
+    {
+     "name": "seznam-autobusu.cz DPMO tram register",
+     "url": "https://seznam-autobusu.cz/seznam?page=N&iddopravce=134&trakce=tramvaj&prov=1&vcetneSluzebnich=1",
+     "role": "fleet register",
+     "note": "One depot Koželužská; withdrawn car 156 via /vuz/28793"
+    },
+    {
+     "name": "DPMO GTFS",
+     "url": "https://www.dpmo.cz/doc/dpmo-olomouc-cz.zip",
+     "role": "timetable",
+     "note": "Version 17 Sep 2026, valid to 12 Dec 2026"
+    },
+    {
+     "name": "pak128 session VZ-DPOlomouc-tram.pak",
+     "role": "other",
+     "note": "pak128 main 7be7413"
+    }
+   ],
+   "vehicleDay": "Fri 18 Sep 2026 (25 Sep has only 7 sets; shown as cross-check)",
+   "networkDate": "27 Sep 2026 (GTFS service date 18 Sep, identical trip by trip to 29 Sep)",
+   "updateRecipe": [
+    "Save new DPMO GTFS in data/raw/gtfs/<version date>/gtfs.zip (or set gtfs.raw and run 01_fetch.py).",
+    "Copy states/2026-09-27.json to states/<new date>.json; set network_date, gtfs.raw, gtfs.service_date; for new vehicles check day overviews for a complete weekday and set vehicle_date.",
+    "Review pools/splits (3 and 5 course choice), course_notes, flags, cross_check, vehicle_overrides, assets/termini.json.",
+    "python scripts/run.py --state <new date>; check counts.",
+    "Republish to https://claude.ai/artifact/EQDL7ZoM9ENcFuj6LHHn7F."
+   ],
+   "notes": "Scripts are copies of ../praha/scripts (keep in sync). 3 + 5 two lines from one pool (3/1–4 → 3, 3/5–6 → 5, a choice). U Kapličky a stub (real minute, bidirectional sets). No designed trams, no spares on 18 Sep.",
+   "rawSnapshots": [
+    "gtfs/2026-09-17",
+    "register/2026-09-28",
+    "vypravenost/2026-09-18",
+    "vypravenost/overview"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/olomouc in the working folder; republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "olomouc-tram-peak-fleet"
+   ]
+  },
+  {
+   "file": "Olomouc Bus Peak Fleet.html",
+   "name": "Olomouc buses",
+   "status": "active",
+   "modes": [
+    "bus"
+   ],
+   "region": "Olomouc",
+   "kind": "fleet",
+   "summary": "DPMO buses; vehicle day Tue 29 Sep because no bus records exist for 18/25 Sep.",
+   "pipeline": "pipeline/olomouc-bus",
+   "build": "cd pipeline/olomouc-bus/scripts && python run.py --state 2026-09-29",
+   "fetch": "python run.py --state 2026-09-29 --fetch; python 01_fetch.py --state <s> --overviews 2026-09-01 2026-09-30 (01_fetch.py --day --refresh to re-fetch)",
+   "sources": [
+    {
+     "name": "DPMO GTFS",
+     "url": "https://www.dpmo.cz/doc/dpmo-olomouc-cz.zip",
+     "role": "timetable",
+     "note": "Version 17 Sep 2026; read from ../olomouc/data/raw/gtfs/2026-09-17"
+    },
+    {
+     "name": "seznam-autobusu.cz mhd-ol day overview",
+     "url": "https://seznam-autobusu.cz/vypravenost/mhd-ol?datum=D",
+     "role": "vehicles",
+     "note": "Coverage, weekdays 1–29 Sep; also free-car check"
+    },
+    {
+     "name": "seznam-autobusu.cz mhd-ol vypravenost",
+     "url": "https://.../vypravenost/mhd-ol/vypis?datum=D&linka=L",
+     "role": "vehicles",
+     "note": "Bus records carry no kurz, time or note"
+    },
+    {
+     "name": "seznam-autobusu.cz line histories",
+     "url": "https://.../vypis?strana=N&linka=L&since=2025-01-01",
+     "role": "vehicles",
+     "note": "All pages; source for designed buses"
+    },
+    {
+     "name": "seznam-autobusu.cz DPMO bus register",
+     "url": "https://seznam-autobusu.cz/seznam?page=N&iddopravce=134&trakce=autobus&prov=1&vcetneSluzebnich=1",
+     "role": "fleet register",
+     "note": "Plus trakce=elektrobus (empty); missing cars via /vuz/<id> (501, 625)"
+    },
+    {
+     "name": "local pak128 checkout build/VZ-DPOlomouc-bus",
+     "role": "other",
+     "note": "main b84c15c; assets/pak_objects.json snapshot"
+    }
+   ],
+   "vehicleDay": "Tue 29 Sep 2026 (the network day; records may still grow)",
+   "networkDate": "Tue 29 Sep 2026",
+   "updateRecipe": [
+    "New GTFS: download into data/raw/gtfs/<version date>/gtfs.zip (or rely on ../olomouc); set gtfs.raw / service_date in a copied state; run propose.py on changed lines; review simutrans_lines, alias, fit.overrides, not_peak.",
+    "New vehicles: 01_fetch.py --overviews <from> <to>, pick the weekday with most bus records, set vehicle_date, then run.py --fetch (add --refresh to 01_fetch for stored pages).",
+    "python run.py --state <new>; check shortfalls, designed picks and pak_request.md; send new requests to the pak session via the user.",
+    "Republish to https://claude.ai/artifact/MJz5Q7xYehTCPKhpBDfLHG."
+   ],
+   "notes": "17 lines, 18 Simutrans lines (11 split 11R/11L). Every logged bus counts (no kurzy). 21 designed buses from line histories (roster types first); 26 free history cars not needed. Need total 47. Self-contained common.py copies of shared helpers.",
+   "dependsOn": [
+    "pipeline/olomouc"
+   ],
+   "rawSnapshots": [
+    "register/2026-09-29",
+    "vypravenost/2026-09-29",
+    "vypravenost/history (2025-01-01)",
+    "vypravenost/overview",
+    "car/ (501, 625 pages)",
+    "GTFS read from ../olomouc/data/raw/gtfs/2026-09-17"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/olomouc-bus in the working folder (shares code with pipeline/olomouc); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "smaller-cities-scope"
+   ]
+  },
+  {
+   "file": "Olomouc Tram Termini.html",
+   "name": "Olomouc tram termini",
+   "status": "reference",
+   "modes": [
+    "tram"
+   ],
+   "region": "Olomouc",
+   "kind": "termini",
+   "summary": "Loop track counts, lines and departure phase at every Olomouc tram terminus.",
+   "sources": [
+    {
+     "name": "DPMO GTFS (20 Aug 2026, day 15 Sep)",
+     "url": "https://www.dpmo.cz/doc/dpmo-olomouc-cz.zip",
+     "role": "timetable"
+    },
+    {
+     "name": "spvd.cz, Wikipedia, OpenStreetMap",
+     "role": "track layout"
+    }
+   ],
+   "created": "2026-09-12",
+   "createdNote": "Made in an engine session (simutrans-122-0) on 12 Sep 2026; local copy downloaded 26 Sep.",
+   "artifactUrl": "https://claude.ai/artifact/FvzcmyX3LJnu3MFr8FPbcV",
+   "lastUpdated": "2026-09-12",
+   "sync": "Static. No pipeline can rebuild it (the generator scripts lived in a deleted scratchpad). The tram pipelines use it as an input (assets/termini*.json); refresh only by rewriting it.",
+   "notes": "A one-off reference from before the per-vehicle sheets: for laying out the terminus loops in the game.",
+   "pipeline": null
+  },
+  {
+   "file": "Ostrava Tram Vypravenost.html",
+   "name": "Ostrava trams",
+   "status": "active",
+   "modes": [
+    "tram"
+   ],
+   "region": "Ostrava",
+   "kind": "fleet",
+   "summary": "DPO trams, roster designed from history + JDF turns + live feed; real-minute subtitles, both ends at the same rate, no single cars on 4/7/8.",
+   "pipeline": "pipeline/ostrava",
+   "build": "python scripts/run.py (steps 3–7 from the raw snapshot, no network)",
+   "fetch": "python scripts/01_fetch.py --jdf --fleet [--history]; python scripts/01b_live_poll.py <date>T19:30 (background, on a weekday afternoon); run.py --fetch also refreshes JDF and fleet",
+   "sources": [
+    {
+     "name": "CIS JŘ city JDF export",
+     "url": "https://portal.cisjr.cz/pub/draha/mestske/JDF.zip",
+     "role": "timetable",
+     "note": "Trams 915001–915017 (JDF 1.8), ~30 MB, no login; night 915018/019 excluded"
+    },
+    {
+     "name": "seznam-autobusu.cz DPO tram register",
+     "url": "https://seznam-autobusu.cz/seznam?onlyCurrentDepot=1&depotId={534 Poruba, 616 Moravská Ostrava}&prov=1&trakce=tramvaj&iddopravce=133&vcetneSluzebnich=1",
+     "role": "fleet register",
+     "note": "WAF: full Chrome UA + Accept/Accept-Language, 2 s; row class = state"
+    },
+    {
+     "name": "seznam-autobusu.cz ODIS allocation history",
+     "url": "https://seznam-autobusu.cz/vypravenost/odis/vypis?linka={line}&strana=N",
+     "role": "vehicles",
+     "note": "Same WAF; no DPO tram records since 26 Jun 2026; school-year prior"
+    },
+    {
+     "name": "DPO live feed",
+     "url": "https://dashboard.dpo.cz/api/server",
+     "role": "live positions",
+     "note": "POST, no headers; vehicleNumber/routeID/serviceID; no history, must be polled"
+    },
+    {
+     "name": "DPO disruptions",
+     "url": "https://www.dpo.cz/aktualne/vyluky.html",
+     "role": "other",
+     "note": "Read by hand into config.network_state"
+    },
+    {
+     "name": "mhd-ostrava.cz",
+     "url": "https://mhd-ostrava.cz/",
+     "role": "other",
+     "note": "Fleet changes, read by hand"
+    },
+    {
+     "name": "pak128 session simutrans-custom-czech-pak128-77",
+     "role": "other",
+     "note": "Object chains, liveries, lengths in config.pak"
+    }
+   ],
+   "vehicleDay": "Fri 25 Sep 2026 (designed roster; no public record exists; live data only from holiday 28 Sep)",
+   "networkDate": "20 Oct 2026 network state; JDF snapshot 2026-10-20, versions for Wed 21 Oct 2026 (originally 27 Sep 2026)",
+   "updateRecipe": [
+    "In config.json set snapshot to today, vehicle_day (+ both labels), network_state_day/network_state_label.",
+    "python scripts/01_fetch.py --jdf --fleet (add --history only if seznam-autobusu receives DPO tram records again).",
+    "Optional: python scripts/01b_live_poll.py <date>T19:30 over a weekday afternoon; copy/point snapshot at that live/ folder.",
+    "Re-read dpo.cz výluky; update network_state, pullin_branches, line_notes, JDF line list; ask pak session about VZ-DPOstrava-tram.pak, update config.pak.",
+    "python scripts/run.py; check version choice, demand per line, any CLOSEST fit.",
+    "Republish to https://claude.ai/artifact/4JYPMdmaxEzKhkxg37fd8e."
+   ],
+   "notes": "keep_roster + 04b_rebase.py keep the published roster (data/published/roster_2026-09-28.json) with fewest swaps; live_until cut-off 20260928-1912. Branches 4, 7, 8, 17 split A/B. All termini loops −1. Needs from pattern_need (93). 1+2 circuit off pending weekday poll.",
+   "dependsOn": [
+    "pipeline/brno-trolleybus"
+   ],
+   "rawSnapshots": [
+    "2026-09-28",
+    "2026-10-20"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/ostrava in the working folder (shares code with pipeline/brno-trolleybus); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "ostrava-tram-vypravenost",
+    "evening-courses-and-pairs",
+    "shortest-terminal-wait-rule",
+    "schedule-both-ends-same-rate"
+   ]
+  },
+  {
+   "file": "Ostrava Trolleybus Vypravenost.html",
+   "name": "Ostrava trolleybuses",
+   "status": "active",
+   "modes": [
+    "trolleybus"
+   ],
+   "region": "Ostrava",
+   "kind": "fleet",
+   "summary": "Observed in the DPO live feed on Tue 29 Sep; 101/107 battery branches split by position; battery-only check on the page.",
+   "pipeline": "pipeline/ostrava-trolleybus",
+   "build": "python scripts/run.py (steps 3–7 from the stored snapshot, no network)",
+   "fetch": "python scripts/01b_live_poll.py <date>T19:30 (start before 15:00, background); after 19:00 python scripts/01_fetch.py [--jdf] [--fleet] [--records]",
+   "sources": [
+    {
+     "name": "CIS JŘ city JDF export",
+     "url": "https://portal.cisjr.cz/pub/draha/mestske/JDF.zip",
+     "role": "timetable",
+     "note": "Trolleybus lines 915101–915109 (JDF 1.8); night 915111–113 excluded"
+    },
+    {
+     "name": "seznam-autobusu.cz DPO trolleybus register",
+     "url": "https://seznam-autobusu.cz/seznam?prov=1&trakce=trolejbus&iddopravce=133&vcetneSluzebnich=1",
+     "role": "fleet register",
+     "note": "Same WAF as trams; one page; depot TR"
+    },
+    {
+     "name": "seznam-autobusu.cz ODIS day records",
+     "url": "https://seznam-autobusu.cz/vypravenost/odis/vypis?datum=YYYY-MM-DD",
+     "role": "vehicles",
+     "note": "tram-bus.cz still feeds trolleybuses; no times, cross-check only"
+    },
+    {
+     "name": "DPO live feed",
+     "url": "https://dashboard.dpo.cz/api/server",
+     "role": "live positions",
+     "note": "POST, vehicleType troll; branch decided by position; no history"
+    },
+    {
+     "name": "mhd-ostrava.cz battery pages, cs.wikipedia",
+     "url": "https://mhd-ostrava.cz/?s=nasazeni_parcialnich_trolejbusu",
+     "role": "shapes/wire",
+     "note": "Battery sections and battery cars, hand-written in config"
+    },
+    {
+     "name": "DPO disruptions",
+     "url": "https://www.dpo.cz/aktualne/vyluky.html",
+     "role": "other",
+     "note": "Read by hand into config.network_state"
+    },
+    {
+     "name": "local pak128 repo build/VZ-DPOstrava-trolleybus",
+     "role": "other",
+     "note": "main b84c15c (27Tr update at 2cdf3f3); config.pak"
+    }
+   ],
+   "vehicleDay": "Tue 29 Sep 2026 (observed live, first sighting 16:29–16:50)",
+   "networkDate": "29 Sep 2026 (JDF versions valid 1 Sep – 12 Dec 2026)",
+   "updateRecipe": [
+    "On a normal weekday start the poller before 15:00: python scripts/01b_live_poll.py <date>T19:30.",
+    "In config.json set snapshot, vehicle_day (+ labels), network_state_day/label, live.label; records.days = the day and previous Friday.",
+    "After 19:00 run python scripts/01_fetch.py (JDF, register, day records).",
+    "Re-read DPO výluky and battery news; update network_state, battery_sections, battery_cars, line_notes, battery_branches, branch_by_position; check pak build and update config.pak, type_rules.",
+    "python scripts/run.py; check version choice, need vs observed, battery issues (must be empty), designed buses.",
+    "Republish to https://claude.ai/artifact/HFHXt2UZ1NE1SE6KYQAMXp."
+   ],
+   "notes": "Roster = buses seen live. 101 and 107 split A (Hranečník) / B (battery branch, east of lon 18.322). cycle_need_peak skips waits >30 min. 103, 109 one designed bus each. All loops −1; battery branches battery buses only.",
+   "dependsOn": [
+    "pipeline/ostrava"
+   ],
+   "rawSnapshots": [
+    "2026-09-29"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/ostrava-trolleybus in the working folder (shares code with pipeline/ostrava); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "ostrava-trolleybus-vypravenost"
+   ],
+   "refreshTriggers": [
+    "Vehicles come from a live feed with no history: a refresh needs a new poll on a weekday peak"
+   ]
+  },
+  {
+   "file": "Ostrava Bus Vypravenost.html",
+   "name": "Ostrava buses",
+   "status": "active",
+   "modes": [
+    "bus"
+   ],
+   "region": "Ostrava",
+   "kind": "fleet",
+   "summary": "56 Simutrans lines on 47 DPO lines observed at the Wed 30 Sep peak (167 buses), plus every line at Hranečník including the ODIS ones; many hand-set lines and bunching fixes.",
+   "pipeline": "pipeline/ostrava-bus",
+   "build": "python scripts/run.py",
+   "fetch": "python scripts/01b_live_poll.py <date>T19:45 (before 15:00); python scripts/01_fetch.py [--jdf] [--fleet] [--records] (JDF ~107 MB); ODIS lines: 01c_fetch_odis.py, 01e_odis_live.py (by hand)",
+   "sources": [
+    {
+     "name": "CIS JŘ bus JDF export",
+     "url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
+     "role": "timetable",
+     "note": "Bus export ~107 MB, ~13,000 inner zips; DPO 915021–915099 + 915201"
+    },
+    {
+     "name": "seznam-autobusu.cz DPO bus register",
+     "url": "https://seznam-autobusu.cz/seznam?prov=1&trakce=autobus&iddopravce=133&vcetneSluzebnich=1",
+     "role": "fleet register",
+     "note": "3 pages + trakce=elektrobus; depot AH/AP; WAF headers"
+    },
+    {
+     "name": "DPO live feed",
+     "url": "https://dashboard.dpo.cz/api/server",
+     "role": "live positions",
+     "note": "POST, vehicleType bus; line, course, trip ends; no history"
+    },
+    {
+     "name": "seznam-autobusu ODIS vypravenost",
+     "role": "vehicles",
+     "note": "Almost no DPO bus rows; cross-check; ODIS line records for Hranečník cards"
+    },
+    {
+     "name": "ODIS live map (mpvnet.cz) via havirov-karvina-orlova poll",
+     "role": "live positions",
+     "note": "20 Oct 2026 log compacted to data/raw/2026-10-20/odis_live.json"
+    },
+    {
+     "name": "DPO disruptions",
+     "url": "https://www.dpo.cz/aktualne/vyluky.html",
+     "role": "other",
+     "note": "config.network_state"
+    },
+    {
+     "name": "local pak128 repo build/VZ-DPOstrava-bus",
+     "role": "other",
+     "note": "main b84c15c; ODIS cards use VZ-ODIS-bus (main 6f7b639)"
+    }
+   ],
+   "vehicleDay": "Wed 30 Sep 2026 (DPO live feed 15:50–16:15, 167 buses); ODIS Hranečník cards Tue 20 Oct 2026",
+   "networkDate": "30 Sep 2026 (network checked 20 Oct 2026)",
+   "updateRecipe": [
+    "Start python scripts/01b_live_poll.py <date>T19:45 before 15:00 on a normal weekday.",
+    "Set snapshot, vehicle_day, both labels, network_state_* and live.label in config.json.",
+    "python scripts/01_fetch.py (JDF ~107 MB, registers, records).",
+    "Re-read výluky, update network_state; check depot_stops and terminus_alias.",
+    "After the peak python scripts/run.py; check no branch has many designed buses.",
+    "Republish to https://claude.ai/artifact/6rNwavbbnG4H2aJVZPNx8R."
+   ],
+   "notes": "Branches by rule; each line at its own afternoon anchor; interleave/circuitize/path_variants; owner line_overrides (41) and schedule_overrides. keep_roster (roster_2026-10-20_v7.json). Needs from pattern_need (DPO 182). Hranečník ODIS cards (8 lines) hand-set per bus-schedule method.",
+   "dependsOn": [
+    "pipeline/ostrava",
+    "pipeline/ostrava-trolleybus",
+    "pipeline/brno-trolleybus",
+    "pipeline/havirov-karvina-orlova"
+   ],
+   "rawSnapshots": [
+    "2026-09-29",
+    "2026-09-30",
+    "2026-10-20"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/ostrava-bus in the working folder (shares code with pipeline/ostrava, pipeline/ostrava-trolleybus, pipeline/brno-trolleybus, pipeline/havirov-karvina-orlova); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "ostrava-bus-vypravenost",
+    "model-line-at-its-peak",
+    "size-from-suggested-pattern",
+    "list-in-game-changes"
+   ],
+   "refreshTriggers": [
+    "Vehicles come from a live feed with no history: a refresh needs a new poll on a weekday peak",
+    "Open owner choices: Hlučínská 56/67/68 bunching (68 every 80)"
+   ]
+  },
+  {
+   "file": "Ostrava Tram Termini.html",
+   "name": "Ostrava tram termini",
+   "status": "reference",
+   "modes": [
+    "tram"
+   ],
+   "region": "Ostrava",
+   "kind": "termini",
+   "summary": "Loop track counts, lines and departure phase at every Ostrava tram terminus.",
+   "sources": [
+    {
+     "name": "CIS JŘ JDF export (11 Sep 2026, day 3 Nov)",
+     "url": "ftp://ftp.cisjr.cz",
+     "role": "timetable"
+    }
+   ],
+   "created": "2026-09-12",
+   "createdNote": "Made in an engine session (simutrans-122-0) on 12 Sep 2026; local copy downloaded 26 Sep.",
+   "artifactUrl": "https://claude.ai/artifact/Hsn82ZzsTJynN5dvpBbmxk",
+   "lastUpdated": "2026-09-12",
+   "sync": "Static. No pipeline can rebuild it (the generator scripts lived in a deleted scratchpad). The tram pipelines use it as an input (assets/termini*.json); refresh only by rewriting it.",
+   "notes": "A one-off reference from before the per-vehicle sheets: for laying out the terminus loops in the game.",
+   "pipeline": null
+  },
+  {
+   "file": "Havirov-Karvina-Orlova Bus Vypravenost.html",
+   "name": "Havířov, Karviná, Orlová buses",
+   "status": "active",
+   "modes": [
+    "bus"
+   ],
+   "region": "Havířov · Karviná · Orlová",
+   "kind": "fleet",
+   "summary": "Transdev Slezsko town lines 401–421, 434, 501–505, 511–520, from the ODIS live map on Tue 20 Oct; the first sheet on the core-point / repeating-interval method.",
+   "pipeline": "pipeline/havirov-karvina-orlova",
+   "build": "python scripts/run.py (runs steps 2–8; run with -X utf8)",
+   "fetch": "Detached poller on the vehicle day: Start-Process python -ArgumentList '-I','01b_live_poll.py','2026-10-20T20:00' -WorkingDirectory <scripts> -WindowStyle Hidden -RedirectStandardOutput ..\\data\\raw\\poll_<date>.log; then python scripts/run.py --fetch (01_fetch.py [--jdf] [--fleet] [--records], 01d_plates.py)",
+   "sources": [
+    {
+     "name": "CIS JŘ bus JDF export",
+     "url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
+     "role": "timetable",
+     "note": "Export of 20 Oct 2026; licences 876401–876421, 876434, 877511–877520, 878501–878505"
+    },
+    {
+     "name": "ODIS live map (mpvnet.cz)",
+     "url": "https://mpvnet.cz/Odis/map/mapData",
+     "role": "live positions",
+     "note": "POST; needs JSON Content-Type, Origin and Referer headers else 400; utf-8-sig; no history"
+    },
+    {
+     "name": "seznam-autobusu.cz Transdev Slezsko register",
+     "url": "https://seznam-autobusu.cz seznam?prov=1&trakce=autobus&iddopravce=28",
+     "role": "fleet register",
+     "note": "5 pages + elektrobus; plates are the live-feed join key; 01d_plates.py lookups"
+    },
+    {
+     "name": "seznam-autobusu ODIS line records",
+     "url": "https://seznam-autobusu ODIS vypravenost ?linka=NNN",
+     "role": "vehicles",
+     "note": "Weekday records since 2025-01-01 pick designed buses; not in date order"
+    },
+    {
+     "name": "local pak128 repo VZ-MHDHavirov/-Karvina/-Orlova-bus",
+     "role": "other",
+     "note": "main 966cb16; regional buses use VZ-ODIS-bus (main 6f7b639)"
+    }
+   ],
+   "vehicleDay": "Tue 20 Oct 2026 (observed live, each line ±20 min around its anchor)",
+   "networkDate": "20 Oct 2026",
+   "updateRecipe": [
+    "On a normal weekday start the detached poller before 13:00 (01b_live_poll.py via Start-Process).",
+    "Set snapshot, vehicle_day, both labels and network_state_* in config.json; re-read diversion versions and výluky, update network_state.",
+    "python scripts/run.py --fetch after the peak (~17:45).",
+    "Check the To check list and any line with many designed buses.",
+    "Republish to artifact_url (https://claude.ai/artifact/UmPg6guEAbmSune5YnFTVb); send pak_request.md to the pak session if new."
+   ],
+   "notes": "Reference implementation of the bus schedule method: hand-set line_overrides (401/406 ring, 501/501B/504 trunk by core points, 514+520), coverage rule, no interval over 480. Need 68. Its poll and fleet feed the ODIS sheets.",
+   "dependsOn": [
+    "pipeline/ostrava",
+    "pipeline/ostrava-bus",
+    "pipeline/brno-trolleybus"
+   ],
+   "rawSnapshots": [
+    "2026-10-20"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/havirov-karvina-orlova in the working folder (shares code with pipeline/ostrava, pipeline/ostrava-bus, pipeline/brno-trolleybus); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "havirov-karvina-orlova-bus",
+    "core-points-repeating-interval-rule",
+    "every-stop-covered-rule",
+    "hand-review-schedules-rule"
+   ],
+   "refreshTriggers": [
+    "Vehicles come from a live feed with no history: a refresh needs a new poll on a weekday peak"
+   ]
+  },
+  {
+   "file": "ODIS Regional Havirovsko Karvinsko Orlovsko.html",
+   "name": "ODIS Havířovsko · Karvinsko · Orlovsko",
+   "status": "active",
+   "modes": [
+    "bus"
+   ],
+   "region": "ODIS regional",
+   "kind": "fleet",
+   "summary": "Regional licences 912/873/874, every line hand-set by the regional method; 67 buses. Build first: the other ODIS sheets exclude its buses.",
+   "pipeline": "pipeline/odis-regional-hko",
+   "build": "python scripts/run.py (run with -X utf8)",
+   "fetch": "No own download: needs the havirov-karvina-orlova poller (13:00–19:30, whole region) and its JDF; 01_live.py compacts the poll into data/raw/<date>/live_compact.json",
+   "sources": [
+    {
+     "name": "CIS JŘ bus JDF export of 20 Oct 2026",
+     "url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
+     "role": "timetable",
+     "note": "Stored by havirov-karvina-orlova (config.jdf.zip); licences 912xxx, 873xxx, 874xxx"
+    },
+    {
+     "name": "ODIS live map (mpvnet.cz) poll",
+     "url": "https://mpvnet.cz/Odis/map/mapData",
+     "role": "live positions",
+     "note": "Polled by havirov-karvina-orlova; trip number = JDF spoj; compacted locally"
+    },
+    {
+     "name": "Transdev Slezsko fleet.json",
+     "role": "fleet register",
+     "note": "From havirov-karvina-orlova (seznam-autobusu carrier 28, with plates)"
+    },
+    {
+     "name": "local pak128 build/VZ-ODIS-bus",
+     "role": "other",
+     "note": "Every bus has its exact object; pak_request.md empty"
+    }
+   ],
+   "vehicleDay": "Tue 20 Oct 2026 (ODIS live map)",
+   "networkDate": "20 Oct 2026",
+   "updateRecipe": [
+    "On a normal weekday the havirov-karvina-orlova detached poller must run 13:00–19:30 (whole region).",
+    "Point config.snapshot, vehicle_day, labels, jdf.zip and live.dir at the new day.",
+    "Re-check diversions (versions.json) and update network_state, regular_not_diversion.",
+    "python scripts/run.py.",
+    "Read derived/reading/<L>.txt for changed lines and adjust config.lines; check To check list and coverage (no uncovered stop).",
+    "Republish to artifact_url (https://claude.ai/artifact/SFgd2KE6xRv9PLKtS5qMnw)."
+   ],
+   "notes": "Every line hand-set in config.lines (bus-schedule-method v3: core points, Ex4 variants every 480, knots). 440–442, 531, 534, 535 stay on the Ostrava sheet; their buses excluded. 37 Simutrans lines, 67 buses. Scripts also build the other ODIS sheets.",
+   "dependsOn": [
+    "pipeline/havirov-karvina-orlova",
+    "pipeline/ostrava",
+    "pipeline/ostrava-bus",
+    "pipeline/brno-trolleybus"
+   ],
+   "rawSnapshots": [
+    "2026-10-20"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/odis-regional-hko in the working folder (shares code with pipeline/havirov-karvina-orlova, pipeline/ostrava, pipeline/ostrava-bus, pipeline/brno-trolleybus); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "odis-regional-hko",
+    "regional-vs-local-rules"
+   ],
+   "refreshTriggers": [
+    "Vehicles come from a live feed with no history: a refresh needs a new poll on a weekday peak",
+    "582 diversion ends 30 Nov 2026"
+   ]
+  },
+  {
+   "file": "ODIS Tesinsko Trinecko Frydecko.html",
+   "name": "ODIS Těšínsko · Třinecko · Frýdecko",
+   "status": "active",
+   "modes": [
+    "bus"
+   ],
+   "region": "ODIS regional",
+   "kind": "fleet",
+   "summary": "Českotěšínsko, Frýdecko-Místecko, Frýdlantsko, Jablunkovsko–Třinecko + MHD Český Těšín, Frýdek-Místek, Třinec; 142 buses.",
+   "pipeline": "pipeline/odis-regional-tfj",
+   "build": "From ../odis-regional-hko/scripts: python -X utf8 run.py --base odis-regional-tfj",
+   "fetch": "No own download of JDF/live (havirov-karvina-orlova poller and JDF); 01b_plates.py looks up ARRIVA plates into data/raw/2026-10-20/plates.json (--refresh)",
+   "sources": [
+    {
+     "name": "CIS JŘ bus JDF export of 20 Oct 2026",
+     "url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
+     "role": "timetable",
+     "note": "Stored by havirov-karvina-orlova; jdf.extra_lics adds 883980, 883985"
+    },
+    {
+     "name": "ODIS live map (mpvnet.cz) poll",
+     "url": "https://mpvnet.cz/Odis/map/mapData",
+     "role": "live positions",
+     "note": "Tue 20 Oct 2026 poll by havirov-karvina-orlova; live.carriers includes Z-Group"
+    },
+    {
+     "name": "Transdev Slezsko fleet.json",
+     "role": "fleet register",
+     "note": "From havirov-karvina-orlova register"
+    },
+    {
+     "name": "seznam-autobusu.cz plate lookup",
+     "role": "fleet register",
+     "note": "ARRIVA buses not in register; vanity plates tried as '001 TESIN'"
+    },
+    {
+     "name": "local pak128 packages",
+     "role": "other",
+     "note": "VZ-ODIS-bus plus MHD Český Těšín, Frýdek-Místek, Třinec packages; config.pak.rules"
+    }
+   ],
+   "vehicleDay": "Tue 20 Oct 2026 (ODIS live map)",
+   "networkDate": "20 Oct 2026",
+   "updateRecipe": [
+    "New poll day: the havirov-karvina-orlova poller must run 13:00–19:30; point snapshot, vehicle_day, labels, jdf.zip, live.dir at it (in authoring/tfj_config.py if rebuilding config, else config.json).",
+    "Re-check diversions (data/derived/versions.json) and network state.",
+    "From ../odis-regional-hko/scripts: python -X utf8 run.py --base odis-regional-tfj.",
+    "Review To check list and changed lines with authoring/dump.py; adjust authoring/tfj_spec.py, rerun it and the pipeline.",
+    "Run the HKO sheet first when both change.",
+    "Republish to artifact_url (https://claude.ai/artifact/2LecoKwCYb2Lmk1sRDTjrx)."
+   ],
+   "notes": "Config + data only. 80 lines as 98 Simutrans lines (+ Frýdlantsko 12), 142 buses. Hand-sets in authoring/tfj_spec.py (301, 302 Tesco shuttle, 316 round, 985 burst). 383/387 on Ostrava sheet, 365 on HKO, 655 on Novojičínsko. Precedence: after HKO.",
+   "dependsOn": [
+    "pipeline/odis-regional-hko",
+    "pipeline/havirov-karvina-orlova",
+    "pipeline/ostrava",
+    "pipeline/ostrava-bus",
+    "pipeline/odis-regional-novojicinsko"
+   ],
+   "rawSnapshots": [
+    "2026-10-20",
+    "2026-10-22"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/odis-regional-tfj in the working folder (shares code with pipeline/odis-regional-hko, pipeline/havirov-karvina-orlova, pipeline/ostrava, pipeline/ostrava-bus, pipeline/odis-regional-novojicinsko); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "odis-regional-tfj"
+   ],
+   "refreshTriggers": [
+    "Vehicles come from a live feed with no history: a refresh needs a new poll on a weekday peak",
+    "731 Stonava diversion ends 30 Nov 2026"
+   ]
+  },
+  {
+   "file": "ODIS Opavsko Vitkovsko Hlucinsko.html",
+   "name": "ODIS Opavsko · Vítkovsko · Hlučínsko",
+   "status": "active",
+   "modes": [
+    "bus",
+    "trolleybus"
+   ],
+   "region": "ODIS regional",
+   "kind": "fleet",
+   "summary": "Regional 902/903/904 + MHD Opava buses and trolleybuses (201–204, 204 off-wire with battery/diesel cars only).",
+   "pipeline": "pipeline/odis-regional-opavsko",
+   "build": "From ../odis-regional-hko/scripts: python -X utf8 run.py --base odis-regional-opavsko (then python -X utf8 06_render.py --base odis-regional-opavsko)",
+   "fetch": "01c_fleet.py (registers, carriers 240, 28, 338, 7546); 01b_plates.py then authoring/fix_plates.py; Overpass files fetched by hand into data/raw/osm/<date>/ (--osm <date>); JDF/live from havirov-karvina-orlova",
+   "sources": [
+    {
+     "name": "CIS JŘ bus JDF export of 20 Oct 2026",
+     "url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
+     "role": "timetable",
+     "note": "Stored by havirov-karvina-orlova; licences 902–905"
+    },
+    {
+     "name": "CIS JŘ city JDF export",
+     "url": "https://portal.cisjr.cz/pub/draha/mestske/JDF.zip",
+     "role": "timetable",
+     "note": "jdf.extra_zips: Opava trolleybuses 905201–905204; data/raw/2026-10-20/JDF_mestske.zip"
+    },
+    {
+     "name": "ODIS live map (mpvnet.cz) poll",
+     "url": "https://mpvnet.cz/Odis/map/mapData",
+     "role": "live positions",
+     "note": "Tue 20 Oct poll; MDPO sends MDPO<number> instead of plate (live_plate)"
+    },
+    {
+     "name": "seznam-autobusu.cz registers",
+     "role": "fleet register",
+     "note": "Z-Group 240, Transdev Slezsko 28, MDPO 338, Transdev Morava 7546 via 01c_fleet.py"
+    },
+    {
+     "name": "seznam-autobusu.cz vehicle pages",
+     "url": "https://seznam-autobusu.cz/vuz/<id>",
+     "role": "fleet register",
+     "note": "'alternativní pohon' battery/diesel for trolleybuses (data/raw/2026-10-22/vuz)"
+    },
+    {
+     "name": "OSM Overpass trolley_wire + trolleybus relations",
+     "url": "https://way[\"trolley_wire\"=\"yes\"](49.88,17.78,50.00,18.02); out geom tags;",
+     "role": "shapes/wire",
+     "note": "overpass-api.de often 502; maps.mail.ru mirror worked; Accept: application/json"
+    },
+    {
+     "name": "MDPO notice on Vrchní street",
+     "url": "https://www.mdpo.cz/pro-cestujici/aktuality-doprava/omezeni-provozu-mhd-na-ul-vrchni-v-opave",
+     "role": "other",
+     "note": "204 replacement buses on 20 Oct; modelled as regular trolleybus"
+    },
+    {
+     "name": "local pak128 VZ-ODIS-bus, VZ-DPOpava-bus/-trolleybus",
+     "role": "other",
+     "note": "Fleet desk answers 21–22 Oct; pak main 684fc09 for off-wire objects"
+    }
+   ],
+   "vehicleDay": "Tue 20 Oct 2026 (ODIS live map)",
+   "networkDate": "20 Oct 2026",
+   "updateRecipe": [
+    "From ../odis-regional-hko/scripts: python -X utf8 run.py --base odis-regional-opavsko.",
+    "run.py runs config.post_roster after 04_roster automatically: authoring/offwire.py, authoring/alt_drive.py, authoring/fill_designed.py; for a new wire state fetch the three Overpass files into data/raw/osm/<date>/ and pass --osm <date>.",
+    "python -X utf8 06_render.py --base odis-regional-opavsko.",
+    "Republish to artifact_url (https://claude.ai/artifact/K5ZeDCY2YYqV1Sz3tQwj3j). After a new 01b plate lookup run authoring/fix_plates.py once first."
+   ],
+   "notes": "README has 'How to rebuild', not a new-day recipe. Includes Opava trolleybuses; 204 modelled as regular trolleybus, designed battery/diesel cars via fill_designed. 59 lines, 73 Simutrans lines, 125 vehicles. Config written by authoring/opa_spec.py and opa_config.py.",
+   "dependsOn": [
+    "pipeline/odis-regional-hko",
+    "pipeline/havirov-karvina-orlova",
+    "pipeline/ostrava",
+    "pipeline/ostrava-bus",
+    "pipeline/odis-regional-tfj"
+   ],
+   "rawSnapshots": [
+    "2026-10-20",
+    "2026-10-22",
+    "osm/2026-10-22"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/odis-regional-opavsko in the working folder (shares code with pipeline/odis-regional-hko, pipeline/havirov-karvina-orlova, pipeline/ostrava, pipeline/ostrava-bus, pipeline/odis-regional-tfj); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "odis-regional-opavsko"
+   ],
+   "refreshTriggers": [
+    "Vehicles come from a live feed with no history: a refresh needs a new poll on a weekday peak"
+   ]
+  },
+  {
+   "file": "ODIS Novojicinsko Bilovecko.html",
+   "name": "ODIS Novojičínsko · Bílovecko",
+   "status": "active",
+   "modes": [
+    "bus"
+   ],
+   "region": "ODIS regional",
+   "kind": "fleet",
+   "summary": "Novojičínsko Východ/Západ, Bílovecko + MHD Nový Jičín, Studénka; 108 buses, 0 stand-ins.",
+   "pipeline": "pipeline/odis-regional-novojicinsko",
+   "build": "From ../odis-regional-hko/scripts: python -X utf8 run.py --base odis-regional-novojicinsko",
+   "fetch": "01c_fleet.py --refresh (Z-Group 240, Transdev Morava 7546) into data/raw/2026-10-20/fleet/; 01b_plates.py; JDF/live from havirov-karvina-orlova",
+   "sources": [
+    {
+     "name": "CIS JŘ bus JDF export of 20 Oct 2026",
+     "url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
+     "role": "timetable",
+     "note": "Stored by havirov-karvina-orlova; licences 882, 883, 884, 886, 887"
+    },
+    {
+     "name": "ODIS live map (mpvnet.cz) poll",
+     "url": "https://mpvnet.cz/Odis/map/mapData",
+     "role": "live positions",
+     "note": "Tue 20 Oct 2026 poll by havirov-karvina-orlova"
+    },
+    {
+     "name": "seznam-autobusu.cz registers",
+     "role": "fleet register",
+     "note": "Z-Group bus 240, Transdev Morava 7546; ARRIVA via plate lookups"
+    },
+    {
+     "name": "local pak128 VZ-ODIS-bus, VZ-MHDNovyJicin-bus, VZ-MHDStudenka-bus",
+     "role": "other",
+     "note": "Confirmed by fleet desk 21 Oct; no stand-ins"
+    }
+   ],
+   "vehicleDay": "Tue 20 Oct 2026 (ODIS live map)",
+   "networkDate": "20 Oct 2026",
+   "updateRecipe": [
+    "New poll day / JDF: point snapshot, vehicle_day, labels, jdf.zip, live.dir at it; 01c_fleet.py --refresh if registers changed.",
+    "Re-check diversions (authoring/divcmp.py) and nj_config.py.",
+    "From ../odis-regional-hko/scripts: python -X utf8 run.py --base odis-regional-novojicinsko (01c_fleet.py first when fleet changed).",
+    "Review changed lines with authoring/dump.py; adjust nj_spec.py, rerun it and the pipeline; build Ostrava, HKO and Těšínsko sheets first.",
+    "Republish to artifact_url (https://claude.ai/artifact/YFgUu62jD8YqfpuoL8FZpp)."
+   ],
+   "notes": "63 lines as 70 Simutrans lines, 108 buses (1 designed). 601–604 Nový Jičín town circuit as one line with 3 buses. 655 modelled here; 351/355/980/985 on TFJ, 261/263/270/285/678 on Opavsko. Config by authoring/nj_spec.py, nj_config.py.",
+   "dependsOn": [
+    "pipeline/odis-regional-hko",
+    "pipeline/havirov-karvina-orlova",
+    "pipeline/ostrava",
+    "pipeline/ostrava-bus",
+    "pipeline/odis-regional-tfj",
+    "pipeline/odis-regional-opavsko"
+   ],
+   "rawSnapshots": [
+    "2026-10-20"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/odis-regional-novojicinsko in the working folder (shares code with pipeline/odis-regional-hko, pipeline/havirov-karvina-orlova, pipeline/ostrava, pipeline/ostrava-bus, pipeline/odis-regional-tfj, pipeline/odis-regional-opavsko); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "odis-regional-novojicinsko"
+   ],
+   "refreshTriggers": [
+    "Vehicles come from a live feed with no history: a refresh needs a new poll on a weekday peak",
+    "Diversions to 12 Dec 2026 are modelled as run"
+   ]
+  },
+  {
+   "file": "ODIS Bruntalsko Krnovsko Rymarovsko.html",
+   "name": "ODIS Bruntálsko · Krnovsko · Rýmařovsko",
+   "status": "active",
+   "modes": [
+    "bus"
+   ],
+   "region": "ODIS regional",
+   "kind": "fleet",
+   "summary": "Krnovsko, Bruntálsko, Rýmařovsko + MHD Krnov, Bruntál (Transdev Morava); 63 buses.",
+   "pipeline": "pipeline/odis-regional-bruntalsko",
+   "build": "From ../odis-regional-hko/scripts: python -X utf8 run.py --base odis-regional-bruntalsko",
+   "fetch": "python -X utf8 01c_fleet.py --base odis-regional-bruntalsko (Transdev Morava register 7546), then python -X utf8 ../../odis-regional-bruntalsko/authoring/brn_config.py; JDF/live from havirov-karvina-orlova",
+   "sources": [
+    {
+     "name": "CIS JŘ bus JDF export of 20 Oct 2026",
+     "url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
+     "role": "timetable",
+     "note": "Stored by havirov-karvina-orlova; licences 852–856"
+    },
+    {
+     "name": "ODIS live map (mpvnet.cz) poll",
+     "url": "https://mpvnet.cz/Odis/map/mapData",
+     "role": "live positions",
+     "note": "Tue 20 Oct 2026; fleet-number prefixes identify contract areas"
+    },
+    {
+     "name": "seznam-autobusu.cz Transdev Morava register",
+     "role": "fleet register",
+     "note": "Carrier 7546; brn_config.py corrects SOR 'CN 10,5' lengths"
+    },
+    {
+     "name": "local pak128 VZ-ODIS-bus, VZ-MHDKrnov-bus",
+     "role": "other",
+     "note": "Fleet desk confirmed all objects 21 Oct; pak_request.md empty"
+    }
+   ],
+   "vehicleDay": "Tue 20 Oct 2026 (ODIS live map)",
+   "networkDate": "20 Oct 2026",
+   "updateRecipe": [
+    "New poll day: the havirov-karvina-orlova poller must run 13:00–19:30; point snapshot, vehicle_day, labels, jdf.zip, live.dir at it.",
+    "From ../odis-regional-hko/scripts: python -X utf8 01c_fleet.py --base odis-regional-bruntalsko, then python -X utf8 ../../odis-regional-bruntalsko/authoring/brn_config.py, then python -X utf8 run.py --base odis-regional-bruntalsko.",
+    "Re-check diversions (data/derived/versions.json), network state; review To check list and changed lines with authoring/dump.py; adjust brn_spec.py, rerun; coverage must stay 0 uncovered.",
+    "Build in order Ostrava → HKO town → HKO regional → Těšínsko → Opavsko → Novojičínsko → this one.",
+    "Republish to artifact_url (https://claude.ai/artifact/ApSB65b8skppcUGCfFHtnZ)."
+   ],
+   "notes": "40 lines as 51 Simutrans lines, 63 buses (5 designed). 260 and 920 modelled on the Opavsko sheet. Many hand-set lines (brn_spec.py), shift/school variants every 480. Lines into Olomouc region run to their ends. Last in the bus precedence order.",
+   "dependsOn": [
+    "pipeline/odis-regional-hko",
+    "pipeline/havirov-karvina-orlova",
+    "pipeline/ostrava",
+    "pipeline/ostrava-bus",
+    "pipeline/odis-regional-tfj",
+    "pipeline/odis-regional-novojicinsko",
+    "pipeline/odis-regional-opavsko"
+   ],
+   "rawSnapshots": [
+    "2026-10-20"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/odis-regional-bruntalsko in the working folder (shares code with pipeline/odis-regional-hko, pipeline/havirov-karvina-orlova, pipeline/ostrava, pipeline/ostrava-bus, pipeline/odis-regional-tfj, pipeline/odis-regional-novojicinsko, pipeline/odis-regional-opavsko); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "odis-regional-bruntalsko"
+   ],
+   "refreshTriggers": [
+    "Vehicles come from a live feed with no history: a refresh needs a new poll on a weekday peak"
+   ]
+  },
+  {
+   "file": "Most-Litvinov Tram Vypravenost.html",
+   "name": "Most–Litvínov trams",
+   "status": "active",
+   "modes": [
+    "tram"
+   ],
+   "region": "Most · Litvínov",
+   "kind": "fleet",
+   "summary": "No allocation data exists for DPmML: roster designed by operator rules; Chempark – Citadela cut (tram replacement).",
+   "pipeline": "pipeline/most-litvinov",
+   "build": "python scripts/run.py (steps 2–6 offline)",
+   "fetch": "python scripts/01_fetch.py [--jdf] [--fleet] [--live] (or run.py --fetch)",
+   "sources": [
+    {
+     "name": "CIS JŘ city JDF export",
+     "url": "https://portal.cisjr.cz/pub/draha/mestske/JDF.zip",
+     "role": "timetable",
+     "note": "Lines 575001–575004, JDF 1.11 (different stop-time index); 14 Jun diversion versions"
+    },
+    {
+     "name": "seznam-autobusu.cz DPmML tram register",
+     "url": "https://seznam-autobusu.cz/seznam?trakce=tramvaj&iddopravce=399&prov=1",
+     "role": "fleet register",
+     "note": "Same WAF headers as Ostrava; one depot"
+    },
+    {
+     "name": "City of Most live layer 'Poloha vozidel MHD'",
+     "url": "https://mapy.mesto-most.cz/koop/rest/services/mhd/FeatureServer/0/query?where=1%3D1&outFields=*&f=json",
+     "role": "live positions",
+     "note": "Returned 0 features on 16 and 28 Sep 2026"
+    },
+    {
+     "name": "dpmost.cz closures",
+     "url": "https://www.dpmost.cz/doprava-zmeny",
+     "role": "other",
+     "note": "Chempark – Citadela by replacement buses since 1 Mar 2026 (also /zvd2026001)"
+    },
+    {
+     "name": "pak128 session simutrans-custom-czech-pak128-77",
+     "role": "other",
+     "note": "VZ-DPMostLitvinov-tram.pak: one livery, 5 exact types"
+    }
+   ],
+   "vehicleDay": "Fri 25 Sep 2026 (no allocation records exist; roster designed by hand)",
+   "networkDate": "27 Sep 2026",
+   "updateRecipe": [
+    "In config.json set snapshot, vehicle_day (+ labels), network_state_label.",
+    "python scripts/01_fetch.py.",
+    "Check https://www.dpmost.cz/doprava-zmeny: if trams run to Citadela again, remove cut_trips and update network_state, line_titles, line_notes.",
+    "python scripts/run.py; on a 04_roster.py count mismatch edit config.roster from the spare list (swap workshop cars for same-type spares).",
+    "If the live layer ever returns vehicles, poll a weekday peak and replace the designed roster.",
+    "Republish to https://claude.ai/artifact/FxHCAC84oCJA7qkbCKiQZi."
+   ],
+   "notes": "Lines 1, 2, 4 shown at 15:00 (Chempark shift change), line 3 at 06:00. Line 1 a designed every-60 one-tram shuttle (user). Trips cut at Záluží, Chempark. All loops −1. Hand-designed roster; 06_render refuses while roster problems remain.",
+   "rawSnapshots": [
+    "2026-09-28"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/most-litvinov in the working folder; republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "most-tram-vypravenost"
+   ]
+  },
+  {
+   "file": "Most-Litvinov Bus Vypravenost.html",
+   "name": "Most–Litvínov buses",
+   "status": "active",
+   "modes": [
+    "bus"
+   ],
+   "region": "Most · Litvínov",
+   "kind": "fleet",
+   "summary": "All 49 buses designed with real numbers from old records and destination displays on 114 photos; every fleet type and livery on some line.",
+   "pipeline": "pipeline/most-litvinov-bus",
+   "build": "python scripts/run.py",
+   "fetch": "python scripts/run.py --fetch; 01_fetch.py [--jdf] [--fleet] [--records] [--cars] [--photos] [--operator] (--photos needs 03_fleet.py first)",
+   "sources": [
+    {
+     "name": "CIS JŘ bus JDF export",
+     "url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
+     "role": "timetable",
+     "note": "Export 28 Sep; read from ../ostrava-bus/data/raw/2026-09-29/JDF.zip; lines 5750xx/5760xx"
+    },
+    {
+     "name": "CIS JŘ city JDF export",
+     "url": "https://portal.cisjr.cz/pub/draha/mestske/JDF.zip",
+     "role": "timetable",
+     "note": "Tram lines 575001/3/4 for replacement buses; read from ../most-litvinov/data/raw/2026-09-28/JDF.zip"
+    },
+    {
+     "name": "seznam-autobusu.cz DPmML bus register",
+     "url": "https://seznam-autobusu.cz/seznam?prov=1&trakce=autobus&iddopravce=399&vcetneSluzebnich=1",
+     "role": "fleet register",
+     "note": "1 page, 96 vehicles; depot Mos/Lit/ZD-M/ZD-L"
+    },
+    {
+     "name": "seznam-autobusu.cz cr vypravenost",
+     "url": "https://seznam-autobusu.cz/vypravenost/cr?datum=2026-09-25",
+     "role": "vehicles",
+     "note": "Plus /vypravenost/cr/vypis?linka=<JDF number>; only 29 records ever"
+    },
+    {
+     "name": "seznam-autobusu.cz car pages",
+     "url": "https://seznam-autobusu.cz/vuz/<id>",
+     "role": "fleet register",
+     "note": "Every active register car: records and photo lists"
+    },
+    {
+     "name": "foto-busy photos",
+     "url": "https://foto-busy.eu-central-1.linodeobjects.com/<id>.jpg",
+     "role": "photos",
+     "note": "107 images; destination-display line read by eye into assets/photo_lines.json"
+    },
+    {
+     "name": "dpmost.cz operator pages",
+     "url": "https://dpmost.cz/zvd2026001",
+     "role": "other",
+     "note": "Closures, summer service, line 27, forecourt, /doprava-zmeny, /vozovy-park"
+    },
+    {
+     "name": "local pak128 build/VZ-DPMostLitvinov-bus",
+     "role": "other",
+     "note": "main b84c15c; one livery mostzlutocervena"
+    }
+   ],
+   "vehicleDay": "nominal Fri 25 Sep 2026 (no DPmML record exists; all buses designed)",
+   "networkDate": "Tue 29 Sep 2026 (JDF service day)",
+   "updateRecipe": [
+    "New timetable: store a fresh bus JDF (01_fetch.py --jdf → data/raw/jdf/<snapshot>/), point config.jdf.bus_zip / tram_zip at it; set service_day, network_state_label, snapshot.",
+    "python scripts/run.py --fetch (register, records, car pages, operator pages, new photos).",
+    "Read the line off every new photo and add to assets/photo_lines.json.",
+    "Check dpmost.cz/doprava-zmeny (drop config.nad if trams reach Citadela); update network_state, line_notes.",
+    "If seznam-autobusu logs DPmML weekday lines, switch to observed roster with mark_spares.",
+    "python scripts/run.py, compare, send the user the changes; republish to https://claude.ai/artifact/TUU9pmZU3fcjJK95Fe4ZPN."
+   ],
+   "notes": "All 49 buses designed with real numbers from records + photo evidence; fleet coverage rule puts every type × livery on a line (189 on tram replacement, 153 on 16). Tram replacement one line at tram minutes. 5, 30 split.",
+   "dependsOn": [
+    "pipeline/most-litvinov",
+    "pipeline/ostrava-trolleybus",
+    "pipeline/brno-trolleybus",
+    "pipeline/ostrava-bus"
+   ],
+   "rawSnapshots": [
+    "2026-09-29 (empty)",
+    "cars/2026-09-29",
+    "fleet/2026-09-29",
+    "operator/2026-09-29",
+    "photos/2026-09-29",
+    "records/2026-09-29"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/most-litvinov-bus in the working folder (shares code with pipeline/most-litvinov, pipeline/ostrava-trolleybus, pipeline/brno-trolleybus, pipeline/ostrava-bus); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "smaller-cities-scope",
+    "designed-vehicles-roster-rule"
+   ]
+  },
+  {
+   "file": "Most-Litvinov Tram Termini.html",
+   "name": "Most–Litvínov tram termini",
+   "status": "reference",
+   "modes": [
+    "tram"
+   ],
+   "region": "Most · Litvínov",
+   "kind": "termini",
+   "summary": "Loop track counts, lines and departure phase at the Most–Litvínov tram termini (tracks from OSM).",
+   "sources": [
+    {
+     "name": "CIS JŘ NeTEx export (11 Sep 2026, day 16 Sep)",
+     "url": "ftp://ftp.cisjr.cz/netex/",
+     "role": "timetable"
+    },
+    {
+     "name": "OpenStreetMap",
+     "role": "track layout",
+     "note": "nothing else is published"
+    }
+   ],
+   "created": "2026-09-12",
+   "createdNote": "Made in an engine session (simutrans-122-0) on 12 Sep 2026; local copy downloaded 26 Sep.",
+   "artifactUrl": "https://claude.ai/artifact/1PW9XJNBTkvwAAR6nYWS4e",
+   "lastUpdated": "2026-09-12",
+   "sync": "Static. No pipeline can rebuild it (the generator scripts lived in a deleted scratchpad). The tram pipelines use it as an input (assets/termini*.json); refresh only by rewriting it.",
+   "notes": "A one-off reference from before the per-vehicle sheets: for laying out the terminus loops in the game.",
+   "pipeline": null
+  },
+  {
+   "file": "Pardubice MHD Peak Sheet.html",
+   "name": "Pardubice trolleybuses + buses",
+   "status": "active",
+   "modes": [
+    "trolleybus",
+    "bus"
+   ],
+   "region": "Pardubice",
+   "kind": "fleet",
+   "summary": "37 Simutrans lines on 30 DPMP lines with Fri 25 Sep vehicles; battery sections; same artifact as the original per-line sheet.",
+   "pipeline": "pipeline/pardubice",
+   "build": "cd pipeline/pardubice/scripts && python run.py --state 2026-09-29 (add --pak to re-read the pak checkout)",
+   "fetch": "python run.py --state 2026-09-29 --fetch; 01_fetch.py --state <new> --jdf [--jdf-download] --records --register --history",
+   "sources": [
+    {
+     "name": "CIS JŘ city JDF export",
+     "url": "https://portal.cisjr.cz/pub/draha/mestske/JDF.zip",
+     "role": "timetable",
+     "note": "Trolleybus lines; DPMP inner zips copied from ../ostrava-trolleybus/data/raw/2026-09-29/JDF.zip"
+    },
+    {
+     "name": "CIS JŘ bus JDF export",
+     "url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
+     "role": "timetable",
+     "note": "Bus lines; copied from ../ostrava-bus/data/raw/2026-09-29/JDF.zip; JDF 1.10, Caskody type 1"
+    },
+    {
+     "name": "seznam-autobusu.cz mhd-pardubice vypravenost",
+     "url": "https://vypravenost/mhd-pardubice/vypis?datum=D",
+     "role": "vehicles",
+     "note": "Data from tram-bus.cz; day overview + line histories since 1 Sep"
+    },
+    {
+     "name": "seznam-autobusu.cz DPMP register",
+     "url": "https://seznam-autobusu.cz/seznam?prov=1&trakce={trolejbus,autobus}&iddopravce=47&vcetneSluzebnich=1",
+     "role": "fleet register",
+     "note": "Browser UA + Accept headers, 2 s; one depot Dukla"
+    },
+    {
+     "name": "Old Pardubice sheet (legacy/)",
+     "role": "shapes/wire",
+     "note": "Battery sections, battery cars, specials, closures in assets/reference.json"
+    },
+    {
+     "name": "local pak128 build/VZ-DPPardubice-trolleybus and -bus",
+     "role": "other",
+     "note": "main b84c15c; dpmp.cz not used (rate-limits, 429)"
+    }
+   ],
+   "vehicleDay": "Fri 25 Sep 2026",
+   "networkDate": "Tue 29 Sep 2026 (CIS JŘ JDF export of 28 Sep)",
+   "updateRecipe": [
+    "New timetable: 01_fetch.py --state <new> --jdf-download (or point jdf.sources at other pipelines' exports, use --jdf); set jdf.export_date, network_date; run 02_timetable.py (check versions/classes) and 03_network.py (compare lines and needs).",
+    "New vehicles: set vehicles_date, records.days, register_date, history.since; 01_fetch.py --state <new> --records --register --history; check Not counted list, pool_text, short_text.",
+    "Pak: run.py --pak when new objects exist; send new pak_request.md.",
+    "python run.py --state <new>; check page with Playwright at 1400 and 390 px.",
+    "Republish to https://claude.ai/artifact/KrzshkuVv9T5GqpiUKLJ7y."
+   ],
+   "notes": "One sheet, trolleybuses + buses; 37 Simutrans lines on 30 DPMP lines (Ostrava bus rule). 33 pooled on 3's kurzy, 88 on 8's. 9 designed, 32 not needed; need 87. Battery lines checked. Own jdf_trips for JDF 1.10.",
+   "dependsOn": [
+    "pipeline/ostrava",
+    "pipeline/ostrava-trolleybus",
+    "pipeline/ostrava-bus",
+    "pipeline/brno-trolleybus",
+    "pipeline/brno"
+   ],
+   "rawSnapshots": [
+    "jdf/2026-09-28",
+    "register/2026-09-29",
+    "vypravenost/2026-09-25",
+    "vypravenost/history"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/pardubice in the working folder (shares code with pipeline/ostrava, pipeline/ostrava-trolleybus, pipeline/ostrava-bus, pipeline/brno-trolleybus, pipeline/brno); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "smaller-cities-scope",
+    "simutrans-city-sheet-rules"
+   ]
+  },
+  {
+   "file": "pardubice-mhd.html",
+   "name": "Pardubice MHD — first per-line sheet",
+   "status": "superseded",
+   "modes": [
+    "trolleybus",
+    "bus"
+   ],
+   "region": "Pardubice",
+   "kind": "lines",
+   "summary": "The very first sheet (25 Sep): line list, stops → lines, terminals, headways and offsets, battery sections. Replaced at the same artifact URL by the per-vehicle sheet on 29 Sep.",
+   "sync": "Hand-written in a chat session; no pipeline. Archived — refresh means redesigning it.",
+   "kbNotes": [
+    "simutrans-city-sheet-rules"
+   ],
+   "supersededBy": "pardubice-mhd-peak-sheet",
+   "pipeline": null
+  },
+  {
+   "file": "S9 S2 R17 R49 Ex7.html",
+   "name": "S9 · S2 · R17 · R49 · Ex7",
+   "status": "active",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — Prague region",
+   "kind": "rail-design",
+   "summary": "Praha – Benešov – Tábor – Veselí and Praha – Lysá – Nymburk / Milovice: S9 and S2 with timing points at passing loops, R17, R49, Ex7, plus the Uhříněves – Říčany works as temporary lines.",
+   "pipeline": "pipeline/local-rail",
+   "build": "python pipeline/local-rail/build_s9_s2.py",
+   "fetch": "python pipeline/md-cr/scripts/run.py --fetch (downloads JR<year>.zip; local-rail has no own fetch); vagonweb.py for compositions",
+   "sources": [
+    {
+     "name": "CIS JŘ national rail timetable JR2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "Read via ../md-cr/data/derived/trains.json; trains running all of Mon–Fri 5–9 Oct 2026"
+    },
+    {
+     "name": "vagonweb.cz compositions",
+     "url": "https://www.vagonweb.cz/razeni/",
+     "role": "compositions",
+     "note": "vagonweb.py: planned types and sightings; needs PHPSESSID session + referer, zeme ČD"
+    },
+    {
+     "name": "ČD/PID engineering-works timetables",
+     "role": "timetable",
+     "note": "Works PDFs (e.g. cz-k120-2026vyluka03) checked by hand, encoded in load()"
+    },
+    {
+     "name": "PID GTFS / PID XS9 timetable PDF",
+     "url": "https://data.pid.cz/PID_GTFS.zip",
+     "role": "timetable",
+     "note": "XS9 replacement-bus minutes (GTFS L2209 of 16 Oct); no blocks"
+    },
+    {
+     "name": "seznam-autobusu.cz",
+     "role": "vehicles",
+     "note": "0 XS9 records, so the bus type is the pakset session's pick"
+    },
+    {
+     "name": "Save-game export (FORK-CZR-VZ.sve)",
+     "role": "other",
+     "note": "Exported by pak128 / simutrans-122-0 session to see lines already built"
+    }
+   ],
+   "networkDate": "Workdays Mon–Fri 5–9 Oct 2026 (JR2026) plus Uhříněves – Říčany works variant (workdays 12 Oct – 3 Nov 2026)",
+   "updateRecipe": [
+    "README has no per-sheet update recipe.",
+    "Refresh the shared data: python pipeline/md-cr/scripts/run.py --fetch (JR<year>.zip → md-cr/data/derived/trains.json).",
+    "The workday week is fixed in build_012_014_235.py (WEEK = Mon–Fri 5–9 Oct 2026); the design (LINES, rep_out/rep_in real trains) is per script.",
+    "Rebuild: python pipeline/local-rail/build_s9_s2.py.",
+    "The build stops on any inventory stretch neither modelled nor LISTED; fix LINES/LISTED.",
+    "Republish to https://claude.ai/artifact/KRDg2WHmtB5D5SV88D8Ptp."
+   ],
+   "notes": "Imports R17/Ex7 (build_ex7_r17) and R49 (build_benesov). New S9 Benešov/Milovice and S2 Kolín/Nymburk with TP timing points at passing loops. Uhříněves – Říčany works (12 Oct – 3 Nov) as temporary lines; XS9 bus every 15, 6 buses. 31 vehicles.",
+   "dependsOn": [
+    "pipeline/md-cr"
+   ],
+   "rawSnapshots": [
+    "none of its own; ../md-cr/data/raw/jr2026/JR2026.zip (folder not dated)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/local-rail in the working folder (shares code with pipeline/md-cr); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "ex7-r17-veseli",
+    "r49-benesov-local"
+   ],
+   "refreshTriggers": [
+    "Praha-Uhříněves – Říčany works end 3 Nov 2026: drop the temporary lines",
+    "JR2027 national timetable change, 13 Dec 2026"
+   ],
+   "created": "2026-10-16",
+   "createdNote": "Built 16 Oct 2026; the building session’s transcript is not on this machine (date from the script docstring).",
+   "artifactUrl": "https://claude.ai/artifact/KRDg2WHmtB5D5SV88D8Ptp"
+  },
+  {
+   "file": "S75 Beroun Rakovník.html",
+   "name": "S75 Beroun – Rakovník",
+   "status": "active",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — Prague region",
+   "kind": "rail-design",
+   "summary": "Hourly :59 / :56 with the crossing at Zbečno, 3 × 847 RegioFox.",
+   "pipeline": "pipeline/local-rail",
+   "build": "python pipeline/local-rail/build_s75.py",
+   "fetch": "python pipeline/md-cr/scripts/run.py --fetch (downloads JR<year>.zip; local-rail has no own fetch); vagonweb.py for compositions",
+   "sources": [
+    {
+     "name": "CIS JŘ national rail timetable JR2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "Read via ../md-cr/data/derived/trains.json; trains running all of Mon–Fri 5–9 Oct 2026"
+    },
+    {
+     "name": "vagonweb.cz compositions",
+     "url": "https://www.vagonweb.cz/razeni/",
+     "role": "compositions",
+     "note": "vagonweb.py: planned types and sightings; needs PHPSESSID session + referer, zeme ČD"
+    }
+   ],
+   "networkDate": "Workdays Mon–Fri 5–9 Oct 2026 (JR2026)",
+   "updateRecipe": [
+    "README has no per-sheet update recipe.",
+    "Refresh the shared data: python pipeline/md-cr/scripts/run.py --fetch (JR<year>.zip → md-cr/data/derived/trains.json).",
+    "The workday week is fixed in build_012_014_235.py (WEEK = Mon–Fri 5–9 Oct 2026); the design (LINES, rep_out/rep_in real trains) is per script.",
+    "Rebuild: python pipeline/local-rail/build_s75.py.",
+    "The build stops on any inventory stretch neither modelled nor LISTED; fix LINES/LISTED.",
+    "Republish to https://claude.ai/artifact/8Ci1ZEfk4aNP89HntfvTbH."
+   ],
+   "notes": "Only S75 (CIS 1075, 847 RegioFox) every 60, Beroun :59 / Rakovník :56, crossing at Zbečno timed; 3 vehicles. Irregular off-peak trains listed as not modelled.",
+   "dependsOn": [
+    "pipeline/md-cr"
+   ],
+   "rawSnapshots": [
+    "none of its own; ../md-cr/data/raw/jr2026/JR2026.zip (folder not dated)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/local-rail in the working folder (shares code with pipeline/md-cr); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "s75-beroun-rakovnik"
+   ],
+   "refreshTriggers": [
+    "JR2027 national timetable change, 13 Dec 2026"
+   ]
+  },
+  {
+   "file": "Trains S5 to S4.html",
+   "name": "Trains S5 → S4",
+   "status": "active",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — Prague region",
+   "kind": "rail-design",
+   "summary": "S5/S45/R45/S50/R24/S54/S40/S44 + S57/U12/U13 and branches; Praha-Bubny for the Masarykovo closure; game track ends at Blatno u Jesenice and Most.",
+   "pipeline": "pipeline/local-rail",
+   "build": "python pipeline/local-rail/build_s5.py",
+   "fetch": "python pipeline/md-cr/scripts/run.py --fetch (downloads JR<year>.zip; local-rail has no own fetch); vagonweb.py for compositions",
+   "sources": [
+    {
+     "name": "CIS JŘ national rail timetable JR2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "Read via ../md-cr/data/derived/trains.json; trains running all of Mon–Fri 5–9 Oct 2026"
+    },
+    {
+     "name": "vagonweb.cz compositions",
+     "url": "https://www.vagonweb.cz/razeni/",
+     "role": "compositions",
+     "note": "vagonweb.py: planned types and sightings; needs PHPSESSID session + referer, zeme ČD"
+    },
+    {
+     "name": "ČD/PID engineering-works timetables",
+     "role": "timetable",
+     "note": "Works PDFs (e.g. cz-k120-2026vyluka03) checked by hand, encoded in load()"
+    },
+    {
+     "name": "Arriva works timetable (linked from PID)",
+     "role": "timetable",
+     "note": "Confirmed R24 Bubny/Výstaviště minutes on 14 Oct"
+    }
+   ],
+   "networkDate": "Workdays Mon–Fri 5–9 Oct 2026 (JR2026)",
+   "updateRecipe": [
+    "README has no per-sheet update recipe.",
+    "Refresh the shared data: python pipeline/md-cr/scripts/run.py --fetch (JR<year>.zip → md-cr/data/derived/trains.json).",
+    "The workday week is fixed in build_012_014_235.py (WEEK = Mon–Fri 5–9 Oct 2026); the design (LINES, rep_out/rep_in real trains) is per script.",
+    "Rebuild: python pipeline/local-rail/build_s5.py.",
+    "The build stops on any inventory stretch neither modelled nor LISTED; fix LINES/LISTED.",
+    "Republish to https://claude.ai/artifact/9V24sqWFpnjztqobgL1CLP."
+   ],
+   "notes": "S5 family from Praha-Bubny (Masarykovo works), Rakovník lines (S57 cut at Blatno, U12 cut at Most, simplified hourly via check_meetings.py), U13 in full, Kralupy and Straškov lines; 4021 every 72. base.FULL extended locally. 29 vehicles.",
+   "dependsOn": [
+    "pipeline/md-cr"
+   ],
+   "rawSnapshots": [
+    "none of its own; ../md-cr/data/raw/jr2026/JR2026.zip (folder not dated)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/local-rail in the working folder (shares code with pipeline/md-cr); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "s5-to-s4-corridor",
+    "rail-engineering-works-check"
+   ],
+   "refreshTriggers": [
+    "Masarykovo nádraží works end 12 Dec 2026 (lines back from Praha-Bubny)",
+    "JR2027 national timetable change, 13 Dec 2026"
+   ]
+  },
+  {
+   "file": "Trains S4 to S3.html",
+   "name": "Trains S4 → S3",
+   "status": "active",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — Prague region",
+   "kind": "rail-design",
+   "summary": "Only the lines missing from the save: S4 + coupled 2nd unit to Kralupy, R20/Ex5/R15 via Praha Jih, R23 stabled at Ústí západ, S32, U32, S43, S23.",
+   "pipeline": "pipeline/local-rail",
+   "build": "python pipeline/local-rail/build_s4.py",
+   "fetch": "python pipeline/md-cr/scripts/run.py --fetch (downloads JR<year>.zip; local-rail has no own fetch); vagonweb.py for compositions",
+   "sources": [
+    {
+     "name": "CIS JŘ national rail timetable JR2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "Read via ../md-cr/data/derived/trains.json; trains running all of Mon–Fri 5–9 Oct 2026"
+    },
+    {
+     "name": "vagonweb.cz compositions",
+     "url": "https://www.vagonweb.cz/razeni/",
+     "role": "compositions",
+     "note": "vagonweb.py: planned types and sightings; needs PHPSESSID session + referer, zeme ČD"
+    },
+    {
+     "name": "ČD/PID engineering-works timetables",
+     "role": "timetable",
+     "note": "Works PDFs (e.g. cz-k120-2026vyluka03) checked by hand, encoded in load()"
+    },
+    {
+     "name": "Save-game export (FORK-CZR-VZ.sve)",
+     "role": "other",
+     "note": "Exported by pak128 / simutrans-122-0 session to see lines already built"
+    }
+   ],
+   "networkDate": "Workdays Mon–Fri 5–9 Oct 2026 (JR2026)",
+   "updateRecipe": [
+    "README has no per-sheet update recipe.",
+    "Refresh the shared data: python pipeline/md-cr/scripts/run.py --fetch (JR<year>.zip → md-cr/data/derived/trains.json).",
+    "The workday week is fixed in build_012_014_235.py (WEEK = Mon–Fri 5–9 Oct 2026); the design (LINES, rep_out/rep_in real trains) is per script.",
+    "Rebuild: python pipeline/local-rail/build_s4.py.",
+    "The build stops on any inventory stretch neither modelled nor LISTED; fix LINES/LISTED.",
+    "Republish (no artifact URL in README)."
+   ],
+   "notes": "Only lines the save lacks: S4 from Praha-Bubny (Masarykovo closed to 12 Dec), S4 Ústí coupled pair, R20/Ex5/R15 cut at Ústí with Praha Jih depot runs, R23, S32, U32, S43, S23. TP wait points on S4 Ústí. 27 vehicles.",
+   "dependsOn": [
+    "pipeline/md-cr"
+   ],
+   "rawSnapshots": [
+    "none of its own; ../md-cr/data/raw/jr2026/JR2026.zip (folder not dated)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/local-rail in the working folder (shares code with pipeline/md-cr); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "s4-s3-corridor"
+   ],
+   "refreshTriggers": [
+    "JR2027 national timetable change, 13 Dec 2026"
+   ]
+  },
+  {
+   "file": "Ex7 R17 Praha Veselí.html",
+   "name": "Ex7 + R17 to Veselí",
+   "status": "active",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — Prague region",
+   "kind": "rail-design",
+   "summary": "Praha – Tábor – (České Budějovice) cut at Veselí nad Lužnicí, the game track end; 4 + 4 vehicles, no depot runs.",
+   "pipeline": "pipeline/local-rail",
+   "build": "python pipeline/local-rail/build_ex7_r17.py",
+   "fetch": "python pipeline/md-cr/scripts/run.py --fetch (downloads JR<year>.zip; local-rail has no own fetch); vagonweb.py for compositions",
+   "sources": [
+    {
+     "name": "CIS JŘ national rail timetable JR2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "Read via ../md-cr/data/derived/trains.json; trains running all of Mon–Fri 5–9 Oct 2026"
+    },
+    {
+     "name": "vagonweb.cz compositions",
+     "url": "https://www.vagonweb.cz/razeni/",
+     "role": "compositions",
+     "note": "vagonweb.py: planned types and sightings; needs PHPSESSID session + referer, zeme ČD"
+    }
+   ],
+   "networkDate": "Workdays Mon–Fri 5–9 Oct 2026 (JR2026)",
+   "updateRecipe": [
+    "README has no per-sheet update recipe.",
+    "Refresh the shared data: python pipeline/md-cr/scripts/run.py --fetch (JR<year>.zip → md-cr/data/derived/trains.json).",
+    "The workday week is fixed in build_012_014_235.py (WEEK = Mon–Fri 5–9 Oct 2026); the design (LINES, rep_out/rep_in real trains) is per script.",
+    "Rebuild: python pipeline/local-rail/build_ex7_r17.py.",
+    "The build stops on any inventory stretch neither modelled nor LISTED; fix LINES/LISTED.",
+    "Republish to https://claude.ai/artifact/Efb4CMZVvtNDZj7rsB5Wr5."
+   ],
+   "notes": "Superseded by S9 S2 R17 R49 Ex7.html. R17 and Ex7 hourly, cut at Veselí nad Lužnicí (game track end); no depot runs in CIS JŘ. load() adds Veselí as an Ex7 stop. Lines imported by build_s9_s2.py.",
+   "dependsOn": [
+    "pipeline/md-cr"
+   ],
+   "rawSnapshots": [
+    "none of its own; ../md-cr/data/raw/jr2026/JR2026.zip (folder not dated)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/local-rail in the working folder (shares code with pipeline/md-cr); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "ex7-r17-veseli"
+   ],
+   "refreshTriggers": [
+    "JR2027 national timetable change, 13 Dec 2026"
+   ]
+  },
+  {
+   "file": "Trains Beroun Plzeň Příbram.html",
+   "name": "Trains west of Praha",
+   "status": "archived",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — Prague region",
+   "kind": "rail-design",
+   "summary": "S7, Liteňka, S6/S65, R16, S70, Příbram line, R26, S20, Ex6; cut at Rokycany / Blatná / Čimelice; 35 vehicles.",
+   "pipeline": "pipeline/local-rail",
+   "build": "python pipeline/local-rail/build_beroun.py",
+   "fetch": "python pipeline/md-cr/scripts/run.py --fetch (downloads JR<year>.zip; local-rail has no own fetch); vagonweb.py for compositions",
+   "sources": [
+    {
+     "name": "CIS JŘ national rail timetable JR2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "Read via ../md-cr/data/derived/trains.json; trains running all of Mon–Fri 5–9 Oct 2026"
+    },
+    {
+     "name": "vagonweb.cz compositions",
+     "url": "https://www.vagonweb.cz/razeni/",
+     "role": "compositions",
+     "note": "vagonweb.py: planned types and sightings; needs PHPSESSID session + referer, zeme ČD"
+    },
+    {
+     "name": "ČD/PID engineering-works timetables",
+     "role": "timetable",
+     "note": "Works PDFs (e.g. cz-k120-2026vyluka03) checked by hand, encoded in load()"
+    },
+    {
+     "name": "PID GTFS",
+     "url": "https://data.pid.cz/PID_GTFS.zip",
+     "role": "timetable",
+     "note": "S6/S65 workday trains checked against the 29 Sep GTFS (Wed 7 Oct)"
+    }
+   ],
+   "networkDate": "Workdays Mon–Fri 5–9 Oct 2026 (JR2026)",
+   "updateRecipe": [
+    "README has no per-sheet update recipe.",
+    "Refresh the shared data: python pipeline/md-cr/scripts/run.py --fetch (JR<year>.zip → md-cr/data/derived/trains.json).",
+    "The workday week is fixed in build_012_014_235.py (WEEK = Mon–Fri 5–9 Oct 2026); the design (LINES, rep_out/rep_in real trains) is per script.",
+    "Rebuild: python pipeline/local-rail/build_beroun.py.",
+    "The build stops on any inventory stretch neither modelled nor LISTED; fix LINES/LISTED.",
+    "Republish to https://claude.ai/artifact/HopRNc92gS41cs9kQ6jroj."
+   ],
+   "notes": "ARCHIVED but updated 15 Oct. Lines cut at game track ends Rokycany, Blatná, Čimelice. S6_WORKS flag: combined S6 from Smíchov plus temporary Zlíchov copy; S65 cut at Zličín until 30 Nov; one_at_a_time() track checks; Ex6 to Rokycany. 35 vehicles.",
+   "dependsOn": [
+    "pipeline/md-cr"
+   ],
+   "rawSnapshots": [
+    "none of its own; ../md-cr/data/raw/jr2026/JR2026.zip (folder not dated)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/local-rail in the working folder (shares code with pipeline/md-cr); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "beroun-plzen-pribram-trains"
+   ]
+  },
+  {
+   "file": "Local Trains 012 014 210 212 235.html",
+   "name": "Local trains 012 · 014 · 210 · 212 · 235",
+   "status": "archived",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — Prague region",
+   "kind": "rail-design",
+   "summary": "Pečky – Kouřim, Kolín – Ledečko, Posázavský pacifik and Kutná Hora – Zruč; 23 vehicles.",
+   "pipeline": "pipeline/local-rail",
+   "build": "python pipeline/local-rail/build_012_014_235.py",
+   "fetch": "python pipeline/md-cr/scripts/run.py --fetch (downloads JR<year>.zip; local-rail has no own fetch); vagonweb.py for compositions",
+   "sources": [
+    {
+     "name": "CIS JŘ national rail timetable JR2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "Read via ../md-cr/data/derived/trains.json; trains running all of Mon–Fri 5–9 Oct 2026"
+    },
+    {
+     "name": "vagonweb.cz compositions",
+     "url": "https://www.vagonweb.cz/razeni/",
+     "role": "compositions",
+     "note": "vagonweb.py: planned types and sightings; needs PHPSESSID session + referer, zeme ČD"
+    }
+   ],
+   "networkDate": "Workdays Mon–Fri 5–9 Oct 2026 (JR2026)",
+   "updateRecipe": [
+    "README has no per-sheet update recipe.",
+    "Refresh the shared data: python pipeline/md-cr/scripts/run.py --fetch (JR<year>.zip → md-cr/data/derived/trains.json).",
+    "The workday week is fixed in build_012_014_235.py (WEEK = Mon–Fri 5–9 Oct 2026); the design (LINES, rep_out/rep_in real trains) is per script.",
+    "Rebuild: python pipeline/local-rail/build_012_014_235.py.",
+    "The build stops on any inventory stretch neither modelled nor LISTED; fix LINES/LISTED.",
+    "Republish to https://claude.ai/artifact/KXnUf8bh9Ck1W2xBiJuSQR."
+   ],
+   "notes": "ARCHIVED. Shared builder (run(), load(), inventory()) imported by every other local-rail script. 012, 014 circuit, 235 + shorts; Posázavský pacifik 210 as two circuits via Praha hl. n., 212. Reads CSS from archive/Local Trains 010 062 064 260.html.",
+   "dependsOn": [
+    "pipeline/md-cr"
+   ],
+   "rawSnapshots": [
+    "none of its own; ../md-cr/data/raw/jr2026/JR2026.zip (folder not dated)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/local-rail in the working folder (shares code with pipeline/md-cr); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "local-rail-012-014-235",
+    "posazavsky-pacifik-210-212",
+    "shared-circuit-vagonweb-rule",
+    "find-every-train-feedback"
+   ],
+   "previousFiles": [
+    "Local Trains 012 014 235.html"
+   ]
+  },
+  {
+   "file": "Local Trains R49 Benešov.html",
+   "name": "R49 + Benešov local trains",
+   "status": "archived",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — Prague region",
+   "kind": "rail-design",
+   "summary": "R49 hourly Praha – Olbramovice, every 2 h to Tábor; Sedlčany, Vlašim and the 220 Os circuit; 11 vehicles.",
+   "pipeline": "pipeline/local-rail",
+   "build": "python pipeline/local-rail/build_benesov.py",
+   "fetch": "python pipeline/md-cr/scripts/run.py --fetch (downloads JR<year>.zip; local-rail has no own fetch); vagonweb.py for compositions",
+   "sources": [
+    {
+     "name": "CIS JŘ national rail timetable JR2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "Read via ../md-cr/data/derived/trains.json; trains running all of Mon–Fri 5–9 Oct 2026"
+    },
+    {
+     "name": "vagonweb.cz compositions",
+     "url": "https://www.vagonweb.cz/razeni/",
+     "role": "compositions",
+     "note": "vagonweb.py: planned types and sightings; needs PHPSESSID session + referer, zeme ČD"
+    }
+   ],
+   "networkDate": "Workdays Mon–Fri 5–9 Oct 2026 (JR2026)",
+   "updateRecipe": [
+    "README has no per-sheet update recipe.",
+    "Refresh the shared data: python pipeline/md-cr/scripts/run.py --fetch (JR<year>.zip → md-cr/data/derived/trains.json).",
+    "The workday week is fixed in build_012_014_235.py (WEEK = Mon–Fri 5–9 Oct 2026); the design (LINES, rep_out/rep_in real trains) is per script.",
+    "Rebuild: python pipeline/local-rail/build_benesov.py.",
+    "The build stops on any inventory stretch neither modelled nor LISTED; fix LINES/LISTED.",
+    "Republish to https://claude.ai/artifact/C1sFtgu1AKdCo28ce8FNeb."
+   ],
+   "notes": "ARCHIVED. R49 Tábor (every 120, even hours) + R49 Olbramovice, back via the Malešice bypass; 223, 222, 220 Os locals. Its R49 lines are reused by build_s9_s2.py.",
+   "dependsOn": [
+    "pipeline/md-cr"
+   ],
+   "rawSnapshots": [
+    "none of its own; ../md-cr/data/raw/jr2026/JR2026.zip (folder not dated)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/local-rail in the working folder (shares code with pipeline/md-cr); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "r49-benesov-local"
+   ]
+  },
+  {
+   "file": "S49 Hostivař Roztoky.html",
+   "name": "S49 Hostivař – Roztoky",
+   "status": "archived",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — Prague region",
+   "kind": "rail-design",
+   "summary": "One line every 30, 3 vehicles.",
+   "pipeline": "pipeline/local-rail",
+   "build": "python pipeline/local-rail/build_s49.py",
+   "fetch": "python pipeline/md-cr/scripts/run.py --fetch (downloads JR<year>.zip; local-rail has no own fetch); vagonweb.py for compositions",
+   "sources": [
+    {
+     "name": "CIS JŘ national rail timetable JR2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "Read via ../md-cr/data/derived/trains.json; trains running all of Mon–Fri 5–9 Oct 2026"
+    },
+    {
+     "name": "vagonweb.cz compositions",
+     "url": "https://www.vagonweb.cz/razeni/",
+     "role": "compositions",
+     "note": "vagonweb.py: planned types and sightings; needs PHPSESSID session + referer, zeme ČD"
+    }
+   ],
+   "networkDate": "Workdays Mon–Fri 5–9 Oct 2026 (JR2026)",
+   "updateRecipe": [
+    "README has no per-sheet update recipe.",
+    "Refresh the shared data: python pipeline/md-cr/scripts/run.py --fetch (JR<year>.zip → md-cr/data/derived/trains.json).",
+    "The workday week is fixed in build_012_014_235.py (WEEK = Mon–Fri 5–9 Oct 2026); the design (LINES, rep_out/rep_in real trains) is per script.",
+    "Rebuild: python pipeline/local-rail/build_s49.py.",
+    "The build stops on any inventory stretch neither modelled nor LISTED; fix LINES/LISTED.",
+    "Republish to https://claude.ai/artifact/EVZrB7zSxCzxEU2rGfsaLk."
+   ],
+   "notes": "ARCHIVED. PID S49 (CIS 1049) every 30, 3 vehicles, via Malešice – Libeň; only termini timed. vagonweb has no S49 composition, so the unit type is open.",
+   "dependsOn": [
+    "pipeline/md-cr"
+   ],
+   "rawSnapshots": [
+    "none of its own; ../md-cr/data/raw/jr2026/JR2026.zip (folder not dated)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/local-rail in the working folder (shares code with pipeline/md-cr); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "s49-hostivar-roztoky"
+   ]
+  },
+  {
+   "file": "Local Trains 010 062 064 260.html",
+   "name": "Local trains 010 · 062 · 064 · 260",
+   "status": "archived",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — long distance",
+   "kind": "rail-design",
+   "summary": "The sheet the rail rules came from (\"lovingly gotten correct\"): Mladá Boleslav lines and Kolín – Svitavy; hand-written, no pipeline.",
+   "sources": [
+    {
+     "name": "CIS JŘ national rail timetable JR2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "Page says times come from JR2026, workday 6 October 2026"
+    }
+   ],
+   "networkDate": "workday 6 Oct 2026 (JR2026)",
+   "notes": "ARCHIVED 9 Oct 2026; no script (local-rail README). Lines 010, 010S, 062, 064, 260 Os/Sp around Mladá Boleslav and Česká Třebová. Artifact CCNUijhQeBxE244KKbKyF3. Its CSS is reused by build_012_014_235.py.",
+   "sync": "Hand-written in a chat session; no pipeline. Archived — refresh means redesigning it.",
+   "kbNotes": [
+    "local-rail-062-064",
+    "rail-design-rules"
+   ],
+   "pipeline": null
+  },
+  {
+   "file": "R18 Slovácký expres.html",
+   "name": "R18 Slovácký expres",
+   "status": "archived",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — long distance",
+   "kind": "rail-design",
+   "summary": "Praha – Staré Město with the Luhačovice part as a fork coupled line; 11 vehicles.",
+   "pipeline": "pipeline/local-rail",
+   "build": "python pipeline/local-rail/build_r18.py",
+   "fetch": "python pipeline/md-cr/scripts/run.py --fetch (downloads JR<year>.zip; local-rail has no own fetch); vagonweb.py for compositions",
+   "sources": [
+    {
+     "name": "CIS JŘ national rail timetable JR2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "Read via ../md-cr/data/derived/trains.json; trains running all of Mon–Fri 5–9 Oct 2026"
+    },
+    {
+     "name": "vagonweb.cz compositions",
+     "url": "https://www.vagonweb.cz/razeni/",
+     "role": "compositions",
+     "note": "vagonweb.py: planned types and sightings; needs PHPSESSID session + referer, zeme ČD"
+    }
+   ],
+   "networkDate": "Workdays Mon–Fri 5–9 Oct 2026 (JR2026)",
+   "updateRecipe": [
+    "README has no per-sheet update recipe.",
+    "Refresh the shared data: python pipeline/md-cr/scripts/run.py --fetch (JR<year>.zip → md-cr/data/derived/trains.json).",
+    "The workday week is fixed in build_012_014_235.py (WEEK = Mon–Fri 5–9 Oct 2026); the design (LINES, rep_out/rep_in real trains) is per script.",
+    "Rebuild: python pipeline/local-rail/build_r18.py.",
+    "The build stops on any inventory stretch neither modelled nor LISTED; fix LINES/LISTED.",
+    "Republish to https://claude.ai/artifact/V8hoXRQ3jnL3DbpR941PQ3."
+   ],
+   "notes": "ARCHIVED. Fork coupling: R18 primary (193 + Bmz) and R18 Luhačovice (750.7 + through coaches) coupled Praha – Staré Město. Real parity kept; depot legs to Praha Jih from raw CIS locations. 11 vehicles.",
+   "dependsOn": [
+    "pipeline/md-cr"
+   ],
+   "rawSnapshots": [
+    "none of its own; ../md-cr/data/raw/jr2026/JR2026.zip (folder not dated)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/local-rail in the working folder (shares code with pipeline/md-cr); republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "r18-luhacovice-coupled"
+   ]
+  },
+  {
+   "file": "MD-CR.html",
+   "name": "MD-CR long-distance rail",
+   "status": "archived",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — long distance",
+   "kind": "rail-timetable",
+   "summary": "All Czech long-distance trains grouped by peak line (v4 game design: clock-face lines, R9/R19, Leo Express); timetable only.",
+   "pipeline": "pipeline/md-cr",
+   "build": "python scripts/run.py (runs 01–05, 10, 11, 13, then python scripts/12_render.py v4)",
+   "fetch": "python scripts/run.py --fetch (downloads ftp://ftp.cisjr.cz/draha/celostatni/szdc/<year>/JR<year>.zip into data/raw/jr<year>/)",
+   "sources": [
+    {
+     "name": "CIS JŘ national rail timetable JR2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "One CZPTT XML per train; monthly works folders ignored"
+    },
+    {
+     "name": "vagonweb.cz 2026 routes",
+     "role": "other",
+     "note": "Foreign legs of v3 lines (assets/v3_lines.json)"
+    },
+    {
+     "name": "Leo Express timetable (valid 30 Aug – 24 Oct 2026)",
+     "role": "timetable",
+     "note": "Foreign legs of v3 lines; estimates marked in notes"
+    }
+   ],
+   "networkDate": "v3/v4: workdays 5–9 Oct 2026 (config v3_week); v2: service_day Tue 29 Sep 2026",
+   "updateRecipe": [
+    "README recipe is for v2:",
+    "For a new timetable year (JR2027 from 13 Dec 2026) set service_day in config.json to a Tue–Thu in the new year, run python scripts/run.py --fetch.",
+    "Add unknown CommercialTrafficType/RU codes (shown by 02_trips.py) to config.json.",
+    "Compare data/derived/_schedule_summary.txt with the previous run.",
+    "Add new abbreviated station names to assets/names.json.",
+    "Re-publish MD-CR.html to the same artifact URL (https://claude.ai/artifact/DH4KCxqbx1KLvVvnxUNAQL). v3 note: re-check train numbers in assets/v3_lines.json against _corridor.txt and refresh foreign times."
+   ],
+   "notes": "ARCHIVED; don't continue unless the user asks. Current design v4 (assets/v4_lines.json, 13_simple.py): clock-face lines, Ex/SC/RegioJet frozen (hidden), R9/R19 with depot ends, offsets (real − 60) mod interval (fork may count from midnight, unresolved). Its trains.json feeds local-rail.",
+   "rawSnapshots": [
+    "jr2026 (JR2026.zip; folder named by timetable year, not a date)"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/md-cr in the working folder; republished to the same artifact URL; copied here by pnpm sync.",
+   "kbNotes": [
+    "md-cr-rail-sheet"
+   ]
+  },
+  {
+   "file": "regiojet-lines.html",
+   "name": "RegioJet lines",
+   "status": "archived",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — long distance",
+   "kind": "rail-timetable",
+   "summary": "RegioJet trains grouped by shared path with depots and waiting spots in \"every 2 h at L:07\" notation; superseded by MD-CR v4.",
+   "sources": [
+    {
+     "name": "CIS JŘ railway timetable 2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "One XML per train, valid 14 Dec 2025 – 12 Dec 2026; no foreign sections"
+    }
+   ],
+   "networkDate": "typical Tue–Thu weekday regular state, autumn 2026 (JR2026; trips regular if on ≥ half of Tue–Thu 1 Sep – 9 Dec 2026)",
+   "notes": "No pipeline; moved to archive/ on 10 Oct 2026 (local-rail README, R18 note). RegioJet lines found in CIS JŘ, ending at the last Czech/border station; vehicle notes are general. File dated 26 Sep 2026; superseded by MD-CR.",
+   "sync": "Hand-written in a chat session; no pipeline. Archived — refresh means redesigning it.",
+   "kbNotes": [
+    "regiojet-rail-sheet"
+   ],
+   "pipeline": null
+  },
+  {
+   "file": "leoexpress-lines.html",
+   "name": "Leo Express lines",
+   "status": "archived",
+   "modes": [
+    "rail"
+   ],
+   "region": "Rail — long distance",
+   "kind": "rail-timetable",
+   "summary": "Leo Express (carrier 3616): Praha – Ostrava and Praha – Přerov – Břeclav – Bratislava; superseded by MD-CR v4.",
+   "sources": [
+    {
+     "name": "CIS JŘ railway timetable 2026",
+     "url": "ftp://ftp.cisjr.cz/draha/celostatni/szdc/2026/JR2026.zip",
+     "role": "timetable",
+     "note": "One XML per train, valid 14 Dec 2025 – 12 Dec 2026; no foreign sections"
+    }
+   ],
+   "networkDate": "weekday regular state (JR2026, valid 14 Dec 2025 – 12 Dec 2026)",
+   "notes": "No pipeline; moved to archive/ on 10 Oct 2026 (local-rail README, R18 note). Leo Express lines found in CIS JŘ, ending at the last Czech/border station; vehicle notes are general. File dated 26 Sep 2026; superseded by MD-CR.",
+   "sync": "Hand-written in a chat session; no pipeline. Archived — refresh means redesigning it.",
+   "kbNotes": [
+    "leoexpress-rail-sheet"
+   ],
+   "pipeline": null
+  }
+ ]
+}

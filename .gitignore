@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# never commit downloads or transcripts (public repo)
+**/data/raw/
+**/data/derived/
+*.jsonl
+__pycache__/

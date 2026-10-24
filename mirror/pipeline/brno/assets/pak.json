@@ -1,0 +1,254 @@
+{
+ "Škoda 13T0": {
+  "objs": [
+   "VZ-DPBrno-13T-dpmbbilocervena-13T",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_2",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_3",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_4",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_5"
+  ],
+  "len": 21,
+  "note": "",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "Škoda 13T1": {
+  "objs": [
+   "VZ-DPBrno-13T-dpmbbilocervena-13T",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_2",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_3",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_4",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_5"
+  ],
+  "len": 21,
+  "note": "",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "Škoda 13T2": {
+  "objs": [
+   "VZ-DPBrno-13T-dpmbbilocervena-13T",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_2",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_3",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_4",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_5"
+  ],
+  "len": 21,
+  "note": "",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "Škoda 13T3": {
+  "objs": [
+   "VZ-DPBrno-13T-dpmbbilocervena-13T",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_2",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_3",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_4",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_5"
+  ],
+  "len": 21,
+  "note": "",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "Škoda 13T4": {
+  "objs": [
+   "VZ-DPBrno-13T-dpmbbilocervena-13T",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_2",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_3",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_4",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_5"
+  ],
+  "len": 21,
+  "note": "",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "Škoda 13T5": {
+  "objs": [
+   "VZ-DPBrno-13T-dpmbbilocervena-13T",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_2",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_3",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_4",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_5"
+  ],
+  "len": 21,
+  "note": "",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "Škoda 13T6": {
+  "objs": [
+   "VZ-DPBrno-13T-dpmbbilocervena-13T",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_2",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_3",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_4",
+   "VZ-DPBrno-13T-dpmbbilocervena-13T_5"
+  ],
+  "len": 21,
+  "note": "",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "Škoda 45T": {
+  "objs": [
+   "VZ-DPBrno-45T-dpmbbilocervena-45T",
+   "VZ-DPBrno-45T-dpmbbilocervena-45T_2",
+   "VZ-DPBrno-45T-dpmbbilocervena-45T_3"
+  ],
+  "len": 23,
+  "note": "Not bidirectional in the pak; the engine has no bidirectional trams.",
+  "pair": false,
+  "warn": true,
+  "missing": false
+ },
+ "ČKD Tatra KT8D5R.N2": {
+  "objs": [
+   "VZ-DPBrno-KT8D5R_N2-dpmbsedobilocervena-KT8D5R_N2",
+   "VZ-DPBrno-KT8D5R_N2-dpmbsedobilocervena-KT8D5R_N2_2",
+   "VZ-DPBrno-KT8D5R_N2-dpmbsedobilocervena-KT8D5R_N2_3"
+  ],
+  "len": 21,
+  "note": "",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "ČKD Tatra KT8D5N": {
+  "objs": [
+   "VZ-DPBrno-KT8D5N-dpmbsedobilocervena-KT8D5N",
+   "VZ-DPBrno-KT8D5N-dpmbsedobilocervena-KT8D5N_2",
+   "VZ-DPBrno-KT8D5N-dpmbsedobilocervena-KT8D5N_3"
+  ],
+  "len": 21,
+  "note": "",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "Pars Nova K3R-N": {
+  "objs": [
+   "VZ-DPBrno-K3R-N-dpmbsedobilocervena-K3R-N",
+   "VZ-DPBrno-K3R-N-dpmbsedobilocervena-K3R-N_2",
+   "VZ-DPBrno-K3R-N-dpmbsedobilocervena-K3R-N_3"
+  ],
+  "len": 21,
+  "note": "",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "Pragoimex EVO 2": {
+  "objs": [
+   "VZ-DPBrno-EVO2-dpmbbilocervena-EVO2",
+   "VZ-DPBrno-EVO2-dpmbbilocervena-EVO2b"
+  ],
+  "len": 16,
+  "note": "Two sets couple into a pair (EVO2 + EVO2b + EVO2 + EVO2b), as on line 1; enabled in pak128 main 40ce8ad.",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "Pragoimex VarioLF2R.E": {
+  "objs": [
+   "VZ-DPBrno-VarioLF2R_E-dpmbsedobilocervena-VarioLF2R_E",
+   "VZ-DPBrno-VarioLF2R_E-dpmbsedobilocervena-VarioLF2R_E_2"
+  ],
+  "len": 16,
+  "note": "Runs solo or followed by a Pragoimex VarioLFR.E.",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "Pragoimex VarioLFR.E": {
+  "objs": [
+   "VZ-DPBrno-VarioLFR_E-dpmbsedobilocervena-VarioLFR_E"
+  ],
+  "len": 12,
+  "note": "",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "ČKD Tatra T3G": {
+  "objs": [
+   "VZ-DPBrno-T3G-dpmbsedobilocervena-T3G"
+  ],
+  "len": 11,
+  "note": "Any two cars of the T3 family couple into a pair.",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "Pragoimex T3R.PV": {
+  "objs": [
+   "VZ-DPBrno-T3R_PV-dpmbsedobilocervena-T3R_PV"
+  ],
+  "len": 11,
+  "note": "Any two cars of the T3 family couple into a pair.",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "Pragoimex T3R.EV": {
+  "objs": [
+   "VZ-DPBrno-T3R_EV-dpmbsedobilocervena-T3R_EV"
+  ],
+  "len": 11,
+  "note": "Any two cars of the T3 family couple into a pair.",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "ČKD Tatra T3P": {
+  "objs": [
+   "VZ-DPBrno-T3P-dpmbsedobilocervena-T3P"
+  ],
+  "len": 11,
+  "note": "Added in pak128 main 40ce8ad (it uses the T3G art). Any two cars of the T3 family couple into a pair.",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ },
+ "ČKD Tatra T6A5": {
+  "objs": [
+   "VZ-DPBrno-T6A5-dpmbsedobilocervena-T6A5",
+   "VZ-DPBrno-T6A5-dpmbsedobilocervena-T6A5b"
+  ],
+  "len": 12,
+  "note": "One object per car: the first car is …-T6A5 (it can also run solo), the second …-T6A5b (pantograph down). Covers both ČKD Tatra and ČKD DS cars.",
+  "pair": true,
+  "warn": false,
+  "missing": false
+ },
+ "ČKD DS T6A5": {
+  "objs": [
+   "VZ-DPBrno-T6A5-dpmbsedobilocervena-T6A5",
+   "VZ-DPBrno-T6A5-dpmbsedobilocervena-T6A5b"
+  ],
+  "len": 12,
+  "note": "One object per car: the first car is …-T6A5 (it can also run solo), the second …-T6A5b (pantograph down). Covers both ČKD Tatra and ČKD DS cars.",
+  "pair": true,
+  "warn": false,
+  "missing": false
+ },
+ "Škoda 03T6": {
+  "objs": [
+   "VZ-DPBrno-03T-dpmbbilocervena-03T",
+   "VZ-DPBrno-03T-dpmbbilocervena-03T_2",
+   "VZ-DPBrno-03T-dpmbbilocervena-03T_3"
+  ],
+  "len": 13,
+  "note": "",
+  "pair": false,
+  "warn": false,
+  "missing": false
+ }
+}

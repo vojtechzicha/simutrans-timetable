@@ -1,0 +1,29 @@
+{
+ "_doc": "Terminus kind for the loop -1 min rule (from the Olomouc Tram Termini sheet).",
+ "termini": {
+  "Fibichova": {
+   "kind": "loop",
+   "description": "two-track loop by the main station (alighting at Hlavní nádraží)"
+  },
+  "Nová Ulice": {
+   "kind": "loop",
+   "description": "two-track loop"
+  },
+  "Neředín, krematorium": {
+   "kind": "loop",
+   "description": "two-track loop"
+  },
+  "Pavlovičky": {
+   "kind": "loop",
+   "description": "block loop with a passing track"
+  },
+  "U Kapličky": {
+   "kind": "stub",
+   "description": "temporary stub with crossover; bidirectional trams only"
+  },
+  "Náměstí Hrdinů": {
+   "kind": "other",
+   "description": "junction next to the depot, no turning facility"
+  }
+ }
+}

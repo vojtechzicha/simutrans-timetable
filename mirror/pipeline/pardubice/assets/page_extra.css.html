@@ -1,0 +1,22 @@
+<style>
+/* Pardubice additions to the Brno bus / trolleybus page: line badges coloured by mode (trolleybus blue, bus red),
+   one depot (Dukla), group headings. */
+:root{ --tb:#1f4fa3; --tb-ink:#ffffff; --busc:#c4161c; --dk:#1f4fa3; }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --tb:#4a7fd6; --busc:#e4383e; --dk:#7fa6ee; } }
+:root[data-theme="dark"]{ --tb:#4a7fd6; --busc:#e4383e; --dk:#7fa6ee; }
+.badge.tb{background:var(--tb);color:var(--tb-ink)}
+.badge.bus{background:var(--busc);color:#fff}
+.badge.off{background:var(--surface2);color:var(--ink2);min-width:30px}
+.controls .nav a.badge.tb{background:var(--tb)}
+.dot.dk{background:var(--dk)}
+h3.grouphead{font-size:24px;margin-block:26px 12px;color:var(--ink2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sched small.real{white-space:nowrap}
+.batcard .chips{margin-block:2px}
+.sched td.big.wrapv{white-space:normal;max-width:300px}
+.sched .dv{display:inline-block;margin:0 10px 4px 0}
+.sched td.note{min-width:30ch}
+.sched td:nth-child(2){min-width:17ch}
+.nums{display:block;font:12px var(--font-mono);color:var(--muted);max-width:36ch;white-space:normal;word-spacing:2px}
+td.ty{min-width:22ch}
+</style>

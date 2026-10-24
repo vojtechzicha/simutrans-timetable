@@ -1,0 +1,38 @@
+{
+ "_doc": "Real trolleybus types as named in the seznam-autobusu.cz register (bold part) -> full name (with the maker from the register), nominal length, and the class used for colours and the summary table. Lengths are the nominal 12 m / 18 m / 24 m categories.",
+ "full_names": {
+  "TNS 18": "SOR TNS 18",
+  "TNS 12": "SOR TNS 12",
+  "Škoda-Solaris 24m": "Škoda-Solaris 24m bi-articulated",
+  "SNG 12T": "Bozankaya SNG 12T",
+  "36 Tr T'CITY": "Škoda 36Tr T'CITY",
+  "24 Tr Citybus": "Škoda 24Tr Citybus",
+  "8 Tr9": "Škoda 8Tr9",
+  "400/III.B": "Tatra T400/III.B",
+  "TOT": "Praga TOT"
+ },
+ "car_length_m": {
+  "TNS 18": 18,
+  "TNS 12": 12,
+  "Škoda-Solaris 24m": 24,
+  "SNG 12T": 12,
+  "36 Tr T'CITY": 12,
+  "24 Tr Citybus": 12
+ },
+ "class_by_type": {
+  "Škoda-Solaris 24m": "24M",
+  "TNS 18": "18M",
+  "TNS 12": "12M",
+  "SNG 12T": "12M",
+  "36 Tr T'CITY": "12M",
+  "24 Tr Citybus": "12M"
+ },
+ "class_default": "BUS",
+ "classes": {
+  "24M": ["24 m bi-articulated", "Škoda-Solaris 24m", "24 m", "low-floor, in-motion charging"],
+  "18M": ["18 m articulated", "SOR TNS 18", "18 m", "low-floor, in-motion charging"],
+  "12M": ["12 m", "SOR TNS 12, Bozankaya SNG 12T, Škoda 36Tr", "12 m", "low-floor, in-motion charging"],
+  "BUS": ["Bus (not a trolleybus)", "a diesel or battery bus on a trolleybus line; counted separately", "", ""]
+ },
+ "class_order": ["24M", "18M", "12M", "BUS"]
+}

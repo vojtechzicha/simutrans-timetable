@@ -1,0 +1,236 @@
+<title>{{TITLE}}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f5f2f1; --surface:#ffffff; --surface2:#efe9e8; --ink:#201b1c; --ink2:#4d4446; --muted:#786e70; --rule:#e2d9da; --rule2:#cfc4c5;
+  --accent:#c4161c; --accent-ink:#ffffff; --accent-soft:#f8e3e4;
+  --vp:#2b5f9e; --vp-soft:#dfe9f5; --vmo:#8a5a12; --vmo-soft:#f7ebd5; --bat:#1f7a6d; --bat-soft:#dcf1ec; --hl:#ffe27a; --ok:#2f7d4f; --warn:#b7791f; --warn-soft:#fbefd9;
+  --font-display:"Barlow Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --font-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#151213; --surface:#1f1b1c; --surface2:#2a2425; --ink:#f1ebeb; --ink2:#cbc1c2; --muted:#9d9193; --rule:#372f30; --rule2:#4a4041;
+    --accent:#e4383e; --accent-ink:#ffffff; --accent-soft:#3d1c1e;
+    --vp:#7fb0ea; --vp-soft:#1d2e42; --vmo:#e0a94a; --vmo-soft:#3b2d14; --bat:#5fd0bd; --bat-soft:#16322d; --hl:#6b5a12; --ok:#6fc48f; --warn:#e0a94a; --warn-soft:#3b2d14;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#151213; --surface:#1f1b1c; --surface2:#2a2425; --ink:#f1ebeb; --ink2:#cbc1c2; --muted:#9d9193; --rule:#372f30; --rule2:#4a4041;
+  --accent:#e4383e; --accent-ink:#ffffff; --accent-soft:#3d1c1e;
+  --vp:#7fb0ea; --vp-soft:#1d2e42; --vmo:#e0a94a; --vmo-soft:#3b2d14; --bat:#5fd0bd; --bat-soft:#16322d; --hl:#6b5a12; --ok:#6fc48f; --warn:#e0a94a; --warn-soft:#3b2d14;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.45;padding-inline:clamp(16px,3vw,40px);padding-block:0 64px}
+h1,h2,h3,h4{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:1.05}
+h1{font-size:clamp(34px,5vw,54px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:28px;font-weight:600;margin-block:44px 6px}
+h2+.sub{color:var(--muted);max-width:70ch;margin-bottom:16px}
+p{margin:0}
+a{color:var(--vp)}
+.mono{font-family:var(--font-mono);font-size:.92em}
+header.top{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-end;padding-block:36px 20px;border-bottom:3px solid var(--accent)}
+header.top .lede{max-width:66ch;color:var(--ink2);font-size:16px;margin-top:10px}
+.eyebrow{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:13px;color:var(--accent)}
+.stats{display:flex;gap:28px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat b{font-family:var(--font-display);font-size:34px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.nav{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.nav .lab{font:600 12px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-right:4px}
+.nav .sep{flex:1}
+.nav a.txt{font:600 14px var(--font-display);letter-spacing:.02em;color:var(--ink2);text-decoration:none;padding:4px 8px;border-radius:4px;background:var(--surface2)}
+.badge{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 6px;border-radius:6px;background:var(--accent);color:var(--accent-ink);font:700 24px var(--font-display);font-variant-numeric:tabular-nums;text-decoration:none;flex-shrink:0}
+.badge.sm{min-width:32px;height:28px;font-size:17px;border-radius:4px}
+.state{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;margin-top:20px}
+.st{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px 14px}
+.st h4{font-size:17px;font-weight:600;margin-bottom:4px}
+.st .tag{font:600 11px var(--font-display);text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;border-radius:999px;margin-right:6px;vertical-align:1px}
+.tag.in{background:var(--accent-soft);color:var(--accent)}
+.tag.out{background:var(--surface2);color:var(--muted)}
+.st p{font-size:14px;color:var(--ink2)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;font-size:13px;color:var(--ink2);align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:18px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;overflow:hidden;scroll-margin-top:60px}
+.card>header{display:flex;align-items:flex-start;gap:12px;padding:14px 16px 10px}
+.hd{flex:1;min-width:0}
+.hd h3{font-size:23px;font-weight:700}
+.hd p{font-size:13px;color:var(--muted);margin-top:3px}
+.cnt{display:flex;flex-direction:column;align-items:flex-end;text-align:right;flex-shrink:0}
+.cnt b{font-family:var(--font-display);font-size:32px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.cnt span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);max-width:14em}
+.tw{overflow-x:auto;padding-inline:16px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font:600 11px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left;padding:4px 6px;border-bottom:1px solid var(--rule)}
+td{padding:4px 6px;border-bottom:1px solid var(--rule);vertical-align:top}
+td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.arr{color:var(--muted);padding-inline:0}
+.sched{margin:10px 16px 0;padding:8px 10px;background:var(--surface2);border-radius:6px}
+.sched h4{font:600 12px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:2px}
+.tw0{overflow-x:auto}
+.st2 td,.st2 th{border-bottom-color:var(--rule2);font-size:13px}
+.st2 td.sv{font-weight:600;white-space:nowrap}
+.st2 tr.all td{color:var(--ink2);font-style:italic}
+.st2 tr:last-child td{border-bottom:0}
+.st2 .win{font-size:11.5px;color:var(--muted)}
+.st2 small.real{display:block;font:400 11px var(--font-body);color:var(--muted)}
+.st2 td.sv small.real{font-weight:400}
+.st2 td.fit{font-size:12px;color:var(--ink2);min-width:140px}
+.st2 td.fit small{display:block;color:var(--warn);margin-top:2px}
+.lp{display:block;font:600 10.5px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.st2 .warn{color:var(--warn)}
+.lnote{padding:8px 16px 0;font-size:13px;color:var(--ink2)}
+ul.vs{list-style:none;margin:0;padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px}
+li.v{display:flex;flex-direction:column;gap:1px;max-width:100%;border:1px solid var(--rule2);border-radius:5px;padding:3px 7px;background:var(--surface);font-size:13px}
+li.v.seen{border-color:var(--ok)}
+li.v .num{font-family:var(--font-mono);font-size:14px;font-variant-numeric:tabular-nums}
+li.v .num b{font-weight:500}
+li.v .vt{color:var(--ink2)}
+.dp{font:600 10px var(--font-display);letter-spacing:.08em;padding:1px 5px;border-radius:3px}
+.d-VP{background:var(--vp-soft);color:var(--vp)}
+.d-VMO{background:var(--vmo-soft);color:var(--vmo)}
+.dt td.vc .num{font-family:var(--font-mono);font-size:14px}
+.dt td{font-size:13px}
+.dt td.stc{color:var(--muted)}
+.core{font-family:var(--font-mono);font-weight:500}
+.pak{font-size:11.5px;color:var(--muted);font-family:var(--font-mono)}
+.pak.miss,.pak.subst em{color:var(--warn)}
+.pak em{font-style:normal;font-family:var(--font-body)}
+.brsub{margin:10px 16px 0;font:600 13px var(--font-display);letter-spacing:.02em;color:var(--ink2)}
+.brsub+ul.vs{padding-top:6px}
+tr.brh td{font:600 12px var(--font-display);letter-spacing:.04em;color:var(--accent);background:var(--surface);padding-top:8px}
+.addn{font-size:11.5px;color:var(--warn)}
+li.v.added{border-style:dashed;border-color:var(--warn)}
+i.m{font-style:normal;font-size:11px;line-height:1}
+i.m.on{color:var(--ok)}
+i.m.any{color:var(--ok)}
+details{border-top:1px solid var(--rule);padding:8px 16px 12px}
+summary{cursor:pointer;font:600 13px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+summary:focus-visible,a:focus-visible{outline:2px solid var(--vp);outline-offset:2px}
+details p{font-size:13px;color:var(--ink2);margin-top:6px}
+.depots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:18px;align-items:start}
+.depot{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:14px 16px}
+.depot>header{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;margin-bottom:6px}
+.depot h3{font-size:26px;font-weight:700}
+.depot h3 small{font:600 13px var(--font-display);letter-spacing:.08em;color:var(--muted);margin-left:6px}
+.mixline{font-size:13px;color:var(--muted);margin-bottom:6px}
+.dl{display:grid;grid-template-columns:34px 28px 1fr;gap:4px 8px;align-items:start;padding-block:8px;border-top:1px solid var(--rule)}
+.dl .dc{font:700 20px var(--font-display);color:var(--muted);text-align:right;font-variant-numeric:tabular-nums;padding-top:2px}
+.dl ul.vs{padding:0}
+.spares{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px}
+.sp h4{font-size:19px;font-weight:600;margin-bottom:6px}
+.sp p{font-size:13px;color:var(--ink2);margin-bottom:6px}
+.types{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:8px 12px;overflow-x:auto}
+.notes{max-width:78ch;display:flex;flex-direction:column;gap:10px;color:var(--ink2);font-size:14.5px}
+.notes b{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+html{scroll-behavior:smooth}
+.d-TR{background:var(--vp-soft);color:var(--vp)}
+.bat{font:600 10px var(--font-display);letter-spacing:.08em;text-transform:uppercase;padding:1px 5px;border-radius:3px;background:var(--bat-soft);color:var(--bat);white-space:nowrap}
+.battbox{margin:10px 16px 0;padding:8px 10px;border-left:3px solid var(--bat);background:var(--bat-soft);border-radius:0 6px 6px 0;font-size:13px;color:var(--ink2)}
+.battbox b{color:var(--bat)}
+.bt td{font-size:13.5px}
+.bt td:first-child{white-space:nowrap}
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center}
+.dnav a{font:600 14px var(--font-display);text-decoration:none;color:var(--ink2);background:var(--surface2);padding:3px 8px;border-radius:4px}
+.dnav a b{color:var(--accent)}
+input[type=search]{font:14px var(--font-body);padding:6px 10px;border:1px solid var(--rule2);border-radius:6px;background:var(--surface);color:var(--ink);width:min(100%,230px)}
+input[type=search]:focus-visible{outline:2px solid var(--vp);outline-offset:2px}
+#hits{font-size:13px;color:var(--muted)}
+.veh{border-radius:3px;padding-inline:2px}
+.veh.hit{background:var(--hl);outline:2px solid var(--accent)}
+.card,.depot,h2[id],[id]{scroll-margin-top:var(--stick,120px)}
+li.v.spare{opacity:.55;border-style:dotted}
+</style>
+
+<header class="top">
+  <div style="flex:1;min-width:min(100%,420px)">
+    <p class="eyebrow">Ostrava · trolejbusy · vypravenost · {{VEHICLE_DAY_LABEL}} · {{PEAK}}</p>
+    <h1>{{TITLE}}</h1>
+    <p class="lede">Every DPO trolleybus line in the weekday afternoon peak: route, headway, departure minutes and battery sections, then the specific trolleybuses that ran on each line, seen in DPO's live feed on {{VEHICLE_DAY_EN}}. The network is shown as it stood on {{STATE_LABEL}}.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>{{TOT}}</b><span>trolleybuses at {{PEAK}}</span></div>
+    <div class="stat"><b>{{NOBS}}</b><span>observed live</span></div>
+    <div class="stat"><b>{{NLINES}}</b><span>lines in service</span></div>
+    <div class="stat"><b>{{NBAT}}</b><span>with traction battery</span></div>
+  </div>
+</header>
+
+<div class="controls">
+  <nav class="nav" aria-label="Lines"><span class="lab">Lines</span>{{NAV}}</nav>
+  <nav class="nav dnav" aria-label="Depots"><span class="lab">Depots</span>{{DEPNAV}}<a href="#battery">Battery sections</a><a href="#pak">Pak128 objects</a><a href="#fleet">Vehicle types</a><a href="#method">How this was built</a></nav>
+  <input type="search" id="q" placeholder="Find vehicle, e.g. 3741" aria-label="Find vehicle number" inputmode="numeric"><span id="hits" aria-live="polite"></span>
+</div>
+
+<h2>Network state, {{STATE_LABEL}}</h2>
+<p class="sub">Long-term changes are part of the model. Short works, and works that start after the vehicle day, are left out, so the lines keep their regular routes.</p>
+<div class="state">
+{{STATE}}
+</div>
+
+<h2 id="battery">Battery sections</h2>
+<p class="sub">Stretches that DPO runs off the wire on traction batteries, with the lines and trips that use them. Only battery trolleybuses can work these trips: Škoda 26Tr 3731–3740 and every Škoda 36Tr. The pak128 trolleybuses are road vehicles and need no wire in the game, so this table is for information and for placing wire; it does not change the schedule. Sources: <a href="https://mhd-ostrava.cz/?s=nasazeni_parcialnich_trolejbusu">mhd-ostrava.cz, partial trolleybuses</a>, <a href="https://mhd-ostrava.cz/?s=tt_dedicna_michalkovicka">mhd-ostrava.cz, Dědičná – Michálkovická</a>, <a href="https://cs.wikipedia.org/wiki/Trolejbusov%C3%A1_doprava_v_Ostrav%C4%9B">cs.wikipedia</a>.</p>
+<div class="types"><table class="bt"><thead><tr><th>Line</th><th>Branch</th><th>Off-wire stretch</th><th>Which trips</th><th>Since</th><th class="n">Buses at {{PEAK}}</th></tr></thead><tbody>{{BATTROWS}}</tbody></table></div>
+<div class="legend"><span>Each vehicle shows its number and depot, full type and length, and pak128 core name. <span class="bat">battery</span> marks a traction-battery trolleybus. <b style="color:var(--ok)">Green border</b>: seen on this line in the live feed at the peak. <b style="color:var(--warn)">Dashed border</b>: designed, not recorded, with the reason. <b>Dimmed, dotted</b>: not needed, shown but not counted (more seen than the line needs, or a free trolleybus from the line's history).</span></div>
+
+<h2>Lines</h2>
+<p class="sub"><b>Who is on which line.</b> {{WHO}}</p>
+<p class="sub"><b>Branches and counts.</b> {{BRANCHES_WHY}} Every Simutrans line shows how many trolleybuses were seen and how many it needs. “Needed” follows one bus round the branch at 16:00, with 3 min layovers or the terminus's own shorter timetabled turnaround. A round trip that would wait over 30 min for a return trip is skipped, because by then the buses leave as another line. “Minimum by runtime” is the two running times divided by the headway. <b>Interlining:</b> {{POOLS}}</p>
+<p class="sub">Headway and runtime come from the timetable for 15:00–17:00. “Leaves 16:xx” lists that terminus's departure minutes in the 16 o'clock hour.</p>
+<p class="sub">The Simutrans schedule holds the values to type into the Scheduling tab of each terminus entry, with the calendar switched on. “Departure every 20, Offset 3, Also at 13” gives :03 :13 :23 :33 :43 :53. Each row is the longest stretch of the afternoon around the peak that one pattern reproduces exactly (shown under the entry as “exact from–to”). Among stretches of similar length, the simplest pattern wins, and intervals that divide 60 come first. “Leave up to” stays on automatic, which is half the gap.</p>
+<p class="sub"><b>Loop departures one minute early.</b> Every DPO trolleybus terminus is a turning loop (smyčka), so each Offset and “Also at” value is set 1 min before the timetable departure, so the bus clears the loop on time. That includes the two battery termini, Radvanice, Ludvíkova and Bartovice, Ještěrka. The timetable minutes are listed under each entry for reference, and the “Leaves 16:xx” column shows the real timetable. Where a loop has a separate all-off arrival stop and a boarding stop, put the timetable on the boarding (departure) entry. Other timing points keep their real minutes.</p>
+<div class="grid">
+{{CARDS}}
+</div>
+
+<h2 id="depots">Depot</h2>
+<p class="sub">DPO keeps every trolleybus at one depot, the Vozovna trolejbusů on Sokolská třída in Moravská Ostrava (register code TR). The lines are listed with the vehicles each one takes. The last column gives what the live feed showed for the bus that afternoon, and the seznam-autobusu.cz record for Friday 25 Sep.</p>
+<div class="depots" style="grid-template-columns:1fr">
+{{DEPOTS}}
+</div>
+
+<h2>Not in service at {{PEAK}}</h2>
+<p class="sub">The rest of the registered fleet: active reserves (with any line they worked earlier that day in the live feed), the driving-school vehicle and museum cars.</p>
+<div class="spares">{{SPARE}}</div>
+
+<h2 id="pak">Pak128 objects</h2>
+<p class="sub">Every real type at the {{PEAK}} peak, with the matching object in VZ-DPOstrava-trolleybus ({{PAK_FILE_NOTE}}). The vehicle cells elsewhere show only the core name, the object's last segment. “≈” marks a nearest substitute. Length is in car units (16 = one tile). Objects not used at the peak: {{UNUSED}}.</p>
+<div class="types"><table><thead><tr><th>Real type</th><th>Pak128 object</th><th>Object livery</th><th class="n">Length</th><th class="n">Buses at {{PEAK}}</th></tr></thead><tbody>{{PAKS}}</tbody></table></div>
+
+<h2 id="fleet">Vehicle types</h2>
+<p class="sub">Seats and standing places are as DPO's live feed reports them. Every line runs 12 m trolleybuses except 104, which is the articulated 18 m line, with 27Tr also on the 801/802 courses of 101. Line 106 and the battery branches of 101 and 107 need a battery trolleybus.</p>
+<div class="types"><table><thead><tr><th>Vehicle type</th><th class="n">Length</th><th>Build</th><th class="n">Seats + standing</th><th class="n">Active</th><th class="n">At {{PEAK}}</th></tr></thead><tbody>{{TYPES}}</tbody></table></div>
+
+<h2 id="method">How this was built</h2>
+<div class="notes">
+<p><b>The roster is observed.</b> DPO's live feed (dashboard.dpo.cz, vehicleType “troll”) was polled every minute from 16:29 on {{VEHICLE_DAY_EN}}, a normal school weekday. Each trolleybus's line and course come from its first sighting between {{WIN}}. That is {{NOBS}} trolleybuses, against a timetable need of {{NEED}}. The feed has no history, which is why the vehicle day is today rather than Friday 25 Sep, the tram sheet's day. The timetable versions are the same on both days (valid 1 Sep – 12 Dec 2026), and its demand is flat from 15:00 to 17:00, so the count at 16:30 matches the need at 16:00. The sheet therefore labels the peak 16:30, the moment actually observed.</p>
+<p><b>Why not the Friday records.</b> seznam-autobusu.cz (fed by tram-bus.cz) holds {{NREC25}} DPO trolleybus records for Fri 25 Sep and {{NREC29}} for today. The records list each bus with its first line and the lines it moves to during the day (“přejezd na linky 101 a 107”), but not the time. That is not enough to say where a bus was at 16:00. They are shown in the depot table as a cross-check.</p>
+<p><b>How many per line.</b> CIS JŘ timetable ({{JDF_LABEL}}, DPO lines 915101–915109; the night lines 111, 112 and 113 are left out), evaluated for {{VEHICLE_DAY_EN}}. Each Simutrans line is sized by its own round trip at 16:00 (cycle_need, shared with the tram sheets). {{ADDTXT}}</p>
+<p><b>pak128 objects.</b> Each trolleybus is matched to its object in VZ-DPOstrava-trolleybus. The battery 26Tr (3731–3740) use the 26TrSolaris_partial object, and the others use 26TrSolaris. The 36Tr object is a battery object. The pak has the 26Tr, 27Tr and 36Tr only in the turquoise livery (dpotyrkysova) and the Trollino 12 only in blue-yellow (dpomodrozluta). So the older blue-white-yellow 26Tr and 27Tr, and the advertising wraps, show in turquoise; the Pak128 objects table lists each case.</p>
+<p><b>Simutrans schedule.</b> The departure times entered at loop termini (smyčky) are 1 min earlier than the timetable, as the model requires. The real times are listed under each entry.</p>
+<p>Sources: <a href="https://portal.cisjr.cz/pub/draha/mestske/JDF.zip">CIS JŘ JDF</a>, <a href="https://dashboard.dpo.cz/">DPO live dashboard</a>, <a href="https://seznam-autobusu.cz/vypravenost/odis">seznam-autobusu.cz vypravenost ODIS</a>, <a href="https://seznam-autobusu.cz/seznam?prov=1&amp;trakce=trolejbus&amp;iddopravce=133&amp;vcetneSluzebnich=1">DPO trolleybus register</a>, <a href="https://www.dpo.cz/aktualne/vyluky.html">DPO výluky</a>, <a href="https://mhd-ostrava.cz/">mhd-ostrava.cz</a>.</p>
+</div>
+
+<script>
+(function(){
+  var c=document.querySelector('.controls'); function h(){document.documentElement.style.setProperty('--stick',(c.offsetHeight+8)+'px')} h(); addEventListener('resize',h);
+  const q=document.getElementById('q'), hits=document.getElementById('hits');
+  const all=[...document.querySelectorAll('.veh[data-v]')];
+  q.addEventListener('input',()=>{
+    const s=q.value.trim();
+    let first=null, n=0;
+    for(const el of all){
+      const on = s.length>=3 && el.dataset.v.split('+').some(c=>c.startsWith(s));
+      el.classList.toggle('hit',on);
+      if(on){ n++; if(!first) first=el; }
+    }
+    hits.textContent = s.length>=3 ? (n? n+' found':'not found') : '';
+    if(first) first.scrollIntoView({block:'center'});
+  });
+})();
+</script>

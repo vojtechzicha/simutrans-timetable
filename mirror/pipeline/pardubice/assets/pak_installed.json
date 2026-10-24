@@ -1,0 +1,118 @@
+{
+ "pak": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
+ "commit": "b84c15c 2026-09-28",
+ "objects": {
+  "VZ-DPPardubice-BN_9_5-bila-BN_9_5": {
+   "package": "VZ-DPPardubice-bus",
+   "dat": "VZ-DPPardubice-BN_9_5-bila.dat",
+   "payload": "71",
+   "intro_year": "2005",
+   "length": "7",
+   "engine_type": "diesel"
+  },
+  "VZ-DPPardubice-Citelis_12M-dpmpbilocervena-Citelis_12M": {
+   "package": "VZ-DPPardubice-bus",
+   "dat": "VZ-DPPardubice-Citelis_12M-dpmpbilocervena.dat",
+   "payload": "97",
+   "intro_year": "2005",
+   "length": "8",
+   "engine_type": "diesel"
+  },
+  "VZ-DPPardubice-Citelis_12M-dpmpbilocervena-Citelis_12M_CNG": {
+   "package": "VZ-DPPardubice-bus",
+   "dat": "VZ-DPPardubice-Citelis_12M-dpmpbilocervena.dat",
+   "payload": "95",
+   "intro_year": "2007",
+   "length": "8",
+   "engine_type": "diesel"
+  },
+  "VZ-DPPardubice-Citybus_12M-dpmpbilocervena-Citybus_12M": {
+   "package": "VZ-DPPardubice-bus",
+   "dat": "VZ-DPPardubice-Citybus_12M-dpmpbilocervena.dat",
+   "payload": "100",
+   "intro_year": "2001",
+   "length": "8",
+   "engine_type": "diesel"
+  },
+  "VZ-DPPardubice-Crossway_LE_City_12M-dpmpbilocervena-Crossway_LE_City_12M": {
+   "package": "VZ-DPPardubice-bus",
+   "dat": "VZ-DPPardubice-Crossway_LE_City_12M-dpmpbilocervena.dat",
+   "payload": "96",
+   "intro_year": "2013",
+   "length": "8",
+   "engine_type": "diesel"
+  },
+  "VZ-DPPardubice-Crossway_LE_City_12M-dpmpbilocervena-Crossway_LE_City_12M_Hybrid": {
+   "package": "VZ-DPPardubice-bus",
+   "dat": "VZ-DPPardubice-Crossway_LE_City_12M-dpmpbilocervena.dat",
+   "payload": "90",
+   "intro_year": "2024",
+   "length": "8",
+   "engine_type": "diesel"
+  },
+  "VZ-DPPardubice-NovoCiti_Life-bilocerna-NovoCiti_Life": {
+   "package": "VZ-DPPardubice-bus",
+   "dat": "VZ-DPPardubice-NovoCiti_Life-bilocerna.dat",
+   "payload": "57",
+   "intro_year": "2018",
+   "length": "6",
+   "engine_type": "diesel"
+  },
+  "VZ-DPPardubice-Streetway_12M-ivecopredvadeci-Streetway_12M": {
+   "package": "VZ-DPPardubice-bus",
+   "dat": "VZ-DPPardubice-Streetway_12M-ivecopredvadeci.dat",
+   "payload": "90",
+   "intro_year": "2021",
+   "length": "8",
+   "engine_type": "diesel"
+  },
+  "VZ-DPPardubice-Urbanway_12M-dpmpbilocervena-Urbanway_12M": {
+   "package": "VZ-DPPardubice-bus",
+   "dat": "VZ-DPPardubice-Urbanway_12M-dpmpbilocervena.dat",
+   "payload": "100",
+   "intro_year": "2014",
+   "length": "8",
+   "engine_type": "diesel"
+  },
+  "VZ-DPPardubice-Urbanway_12M-dpmpbilocervena-Urbanway_12M_CNG": {
+   "package": "VZ-DPPardubice-bus",
+   "dat": "VZ-DPPardubice-Urbanway_12M-dpmpbilocervena.dat",
+   "payload": "95",
+   "intro_year": "2014",
+   "length": "8",
+   "engine_type": "diesel"
+  },
+  "VZ-DPPardubice-26Tr-dpmpbilocervena-26Tr": {
+   "package": "VZ-DPPardubice-trolleybus",
+   "dat": "VZ-DPPardubice-26Tr-dpmpbilocervena.dat",
+   "payload": "102",
+   "intro_year": "2010",
+   "length": "8",
+   "engine_type": "electric"
+  },
+  "VZ-DPPardubice-28Tr-dpmpbilocervena-28Tr": {
+   "package": "VZ-DPPardubice-trolleybus",
+   "dat": "VZ-DPPardubice-28Tr-dpmpbilocervena.dat",
+   "payload": "135",
+   "intro_year": "2008",
+   "length": "10",
+   "engine_type": "electric"
+  },
+  "VZ-DPPardubice-30Tr-dpmpbilocervena-30Tr": {
+   "package": "VZ-DPPardubice-trolleybus",
+   "dat": "VZ-DPPardubice-30Tr-dpmpbilocervena.dat",
+   "payload": "104",
+   "intro_year": "2013",
+   "length": "8",
+   "engine_type": "electric"
+  },
+  "VZ-DPPardubice-32Tr-dpmpbilocervena-32Tr": {
+   "package": "VZ-DPPardubice-trolleybus",
+   "dat": "VZ-DPPardubice-32Tr-dpmpbilocervena.dat",
+   "payload": "95",
+   "intro_year": "2014",
+   "length": "8",
+   "engine_type": "electric"
+  }
+ }
+}

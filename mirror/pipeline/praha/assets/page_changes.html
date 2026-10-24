@@ -1,0 +1,396 @@
+<title>Prague Tram Peak Fleet</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f5f2f1; --surface:#ffffff; --surface2:#efe9e8; --ink:#201b1c; --ink2:#4d4446; --muted:#786e70; --rule:#e2d9da; --rule2:#cfc4c5;
+  --accent:#c4161c; --accent-ink:#ffffff; --accent-soft:#f8e3e4;
+  --warn:#9a6212; --warn-soft:#fbefd9; --bad:#b3261e; --bad-soft:#f9dedc; --info:#2b5f9e; --info-soft:#dfe9f5;
+  --u15:#2b5f9e; --u15s:#dfe9f5; --u14:#6b4aa3; --u14s:#ebe4f6; --u52:#0f7a6c; --u52s:#dcf1ed; --ukt:#a2531b; --ukts:#f7e6d8;
+  --ut3lf:#7a6a1c; --ut3lfs:#f2edcf; --ut3:#5b5153; --ut3s:#e7e1e2; --ut3o:#8a4a63; --ut3os:#f3e1e8; --uh:#6d5a3a; --uhs:#efe6d6;
+  --hl:#ffe27a; --ok:#1f7a3d; --ok-soft:#dcf0e2; --nad:#007da8;
+  --font-display:"Barlow Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --font-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#151213; --surface:#1f1b1c; --surface2:#2a2425; --ink:#f1ebeb; --ink2:#cbc1c2; --muted:#9d9193; --rule:#372f30; --rule2:#4a4041;
+    --accent:#e4383e; --accent-ink:#ffffff; --accent-soft:#3d1c1e;
+    --warn:#e0a94a; --warn-soft:#3b2d14; --bad:#f28b82; --bad-soft:#4a1f1c; --info:#7fb0ea; --info-soft:#1d2e42;
+    --u15:#8fbaf0; --u15s:#1d2e42; --u14:#bba2ea; --u14s:#2c2340; --u52:#6fd3c3; --u52s:#15332e; --ukt:#eea46b; --ukts:#3a2616;
+    --ut3lf:#d9c56a; --ut3lfs:#332d12; --ut3:#c9bfc1; --ut3s:#332c2d; --ut3o:#e39bb8; --ut3os:#3a1f2a; --uh:#d8c29a; --uhs:#332a1b;
+    --hl:#6b5a12; --ok:#7fd49a; --ok-soft:#163323; --nad:#2b8fbd;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#151213; --surface:#1f1b1c; --surface2:#2a2425; --ink:#f1ebeb; --ink2:#cbc1c2; --muted:#9d9193; --rule:#372f30; --rule2:#4a4041;
+  --accent:#e4383e; --accent-ink:#ffffff; --accent-soft:#3d1c1e;
+  --warn:#e0a94a; --warn-soft:#3b2d14; --bad:#f28b82; --bad-soft:#4a1f1c; --info:#7fb0ea; --info-soft:#1d2e42;
+  --u15:#8fbaf0; --u15s:#1d2e42; --u14:#bba2ea; --u14s:#2c2340; --u52:#6fd3c3; --u52s:#15332e; --ukt:#eea46b; --ukts:#3a2616;
+  --ut3lf:#d9c56a; --ut3lfs:#332d12; --ut3:#c9bfc1; --ut3s:#332c2d; --ut3o:#e39bb8; --ut3os:#3a1f2a; --uh:#d8c29a; --uhs:#332a1b;
+  --hl:#6b5a12; --ok:#7fd49a; --ok-soft:#163323; --nad:#2b8fbd;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.45;padding-inline:clamp(16px,3vw,40px);padding-block:0 64px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:1.05}
+h1{font-size:clamp(34px,5vw,54px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:28px;font-weight:600;margin-block:44px 12px}
+h3{font-size:22px;font-weight:700}
+p{margin:0}
+a{color:var(--info)}
+.lede{max-width:70ch;color:var(--ink2);font-size:16px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+header.top{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-end;padding-block:36px 20px;border-bottom:3px solid var(--accent)}
+header.top>div:first-child{flex:1 1 480px;display:flex;flex-direction:column;gap:10px}
+.eyebrow{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:13px;color:var(--accent)}
+.stats{display:flex;gap:28px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat b{font-family:var(--font-display);font-size:34px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center}
+.nav{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.nav .lab{font:600 12px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding-inline:2px 6px}
+.dnav a{font:600 14px var(--font-display);text-decoration:none;color:var(--ink2);background:var(--surface2);padding:3px 8px;border-radius:4px}
+.dnav a b{color:var(--accent)}
+input[type=search]{font:14px var(--font-body);padding:6px 10px;border:1px solid var(--rule2);border-radius:6px;background:var(--surface);color:var(--ink);width:min(100%,230px)}
+input[type=search]:focus-visible,a:focus-visible{outline:2px solid var(--info);outline-offset:2px}
+#hits{font-size:13px;color:var(--muted)}
+@media (max-width:700px){  /* phones: keep the bar short, the badge and depot rows scroll sideways */
+  .controls{gap:6px 12px;padding-block:8px}
+  .controls>.nav{flex:1 1 100%}
+  .nav.lines,.nav.dnav{flex-wrap:nowrap;overflow-x:auto;min-width:0;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .nav.lines::-webkit-scrollbar,.nav.dnav::-webkit-scrollbar{display:none}
+  .nav.lines>*,.nav.dnav>*{flex-shrink:0;white-space:nowrap}
+  .nav.lines .lb.sm{min-width:30px;height:24px;font-size:16px}
+  input[type=search]{flex:1 1 150px;padding:4px 8px}
+}
+
+.lb{display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:40px;padding-inline:6px;border-radius:5px;background:var(--accent);color:var(--accent-ink);font:700 24px var(--font-display);font-variant-numeric:tabular-nums;flex-shrink:0;text-decoration:none}
+.lb.sm{min-width:34px;height:26px;font-size:17px;border-radius:4px}
+
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font:600 12px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left;padding:6px 8px;border-bottom:1px solid var(--rule2);white-space:nowrap}
+td{padding:6px 8px;border-bottom:1px solid var(--rule);vertical-align:top}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.sumt td.num{font-family:var(--font-mono);font-size:13px}
+.sumt tr.tot td{font-weight:600;border-top:2px solid var(--rule2)}
+.sumt{background:var(--surface);border:1px solid var(--rule);border-radius:8px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px;align-items:start}
+
+.cls{display:inline-block;font:600 12px var(--font-display);letter-spacing:.04em;padding:2px 7px;border-radius:999px;white-space:nowrap}
+.u-15T{--c:var(--u15);--s:var(--u15s)} .u-14T{--c:var(--u14);--s:var(--u14s)} .u-52T{--c:var(--u52);--s:var(--u52s)} .u-KT8{--c:var(--ukt);--s:var(--ukts)}
+.u-T3LF{--c:var(--ut3lf);--s:var(--ut3lfs)} .u-T3{--c:var(--ut3);--s:var(--ut3s)} .u-T3S{--c:var(--ut3o);--s:var(--ut3os)} .u-HIST{--c:var(--uh);--s:var(--uhs)}
+.cls{background:var(--s);color:var(--c)}
+.veh{font-family:var(--font-mono);font-size:13px;font-weight:500;white-space:nowrap;padding:1px 5px;border-radius:3px;background:var(--s);color:var(--ink);box-shadow:inset 3px 0 var(--c)}
+.veh.hit{background:var(--hl);outline:2px solid var(--accent)}
+.mix{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px 0}
+.mx{font-size:13px;padding:2px 8px;border-radius:999px;background:var(--s);color:var(--c)}
+.mx b{font-variant-numeric:tabular-nums}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,640px),1fr));gap:18px;align-items:start}
+.lc,.dc{background:var(--surface);border:1px solid var(--rule);border-radius:8px;overflow:hidden;scroll-margin-top:var(--stick,110px)}
+h2[id]{scroll-margin-top:var(--stick,110px)}
+.lc>header,.dc>header{display:flex;gap:12px;align-items:flex-start;padding:14px 16px 10px;border-bottom:1px solid var(--rule)}
+.lh{flex:1;min-width:0}
+.routes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;font-size:15px}
+.routes li.minor{font-size:13px;color:var(--ink2)}
+.rl{display:inline-block;min-width:18px;font:700 13px var(--font-display);color:var(--accent);margin-right:4px}
+.cnt{display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0}
+.cnt b{font:700 30px var(--font-display);line-height:1;font-variant-numeric:tabular-nums}
+.cnt span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.callout{margin:10px 16px 0;padding:8px 10px;border-radius:6px;font-size:13.5px;max-width:none}
+.callout.warn{background:var(--warn-soft);color:var(--warn)}
+.callout.bad{background:var(--bad-soft);color:var(--bad)}
+.callout.info{background:var(--info-soft);color:var(--info)}
+.ct{margin-top:8px}
+.ct td.k{font-family:var(--font-mono);font-size:13px;white-space:nowrap;color:var(--ink2)}
+.ct td.v{white-space:normal;line-height:1.9}
+.ct td.t{white-space:nowrap}
+.ct td.t small{display:block;font-size:11.5px;color:var(--muted);margin-top:2px}
+.ct td.d{white-space:nowrap;font-size:13.5px}
+.ct td.n{font-size:12.5px;color:var(--ink2);width:34%;min-width:150px}
+.ct tr.unc td{background:color-mix(in srgb,var(--warn-soft) 55%,transparent)}
+.ct tr.spare td{opacity:.55}
+.ct tr.spare td.n{opacity:1;color:var(--muted)}
+.arr{color:var(--muted);font-size:12px}
+.tag{font:600 11px var(--font-display);color:var(--info);margin-left:4px}
+.flag{display:inline-block;font:600 10.5px var(--font-display);text-transform:uppercase;letter-spacing:.08em;padding:1px 6px;border-radius:3px;margin-right:6px}
+.flag.pm{background:var(--surface2);color:var(--ink2)}
+.flag.swap,.flag.am,.flag.mv{background:var(--warn-soft);color:var(--warn)}
+.nt{display:inline}
+
+.dc .dlines{padding:8px 16px 0;font-size:13.5px;color:var(--ink2)}
+.dc .small{padding:6px 16px 0}
+.dl{display:grid;grid-template-columns:40px 1fr;gap:8px;padding:10px 16px;border-top:1px solid var(--rule)}
+.dl:first-of-type{margin-top:10px}
+.tgs{display:flex;flex-direction:column;gap:6px}
+.tg{display:grid;grid-template-columns:74px 1fr;gap:8px;align-items:start}
+.tg>.cls{justify-self:start;margin-top:2px}
+.dvs{display:flex;flex-wrap:wrap;gap:4px 10px}
+.dv{display:inline-flex;align-items:baseline;gap:4px}
+.dv i{font-style:normal;font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+.dv em{font-style:normal;font-size:11px;color:var(--muted)}
+.dv.rep .veh{text-decoration:line-through;opacity:.75}
+.dv.amq .veh{opacity:.6}
+.dv.sw .veh,.dv.rep .veh{box-shadow:inset 3px 0 var(--c),0 0 0 1px var(--warn)}
+
+.sch{margin:10px 16px 0;padding:10px 12px;border:1px solid var(--rule2);border-radius:6px;background:var(--surface2)}
+.sch h4{font:600 13px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin:0 0 4px}
+.st{font-size:13.5px}
+.st td{border-bottom:1px solid var(--rule2)}
+.st td.sv{font-family:var(--font-mono);font-weight:600;font-size:14px}
+.st td.k{font-family:var(--font-mono);font-size:13px;color:var(--accent)}
+.st td.fit{font-size:12px;color:var(--ink2);min-width:150px}
+.st td.fit small{display:block;color:var(--warn);margin-top:2px}
+.lp{display:block;font:600 10.5px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--info)}
+.lp.st{color:var(--muted)}
+.st small.real{display:block;font:400 11px var(--font-body);color:var(--muted)}
+.lpn{font-size:12px;color:var(--ink2);margin:0 0 4px}
+.nm{font-size:12.5px;color:var(--ink2);margin-top:6px}
+.nm summary{cursor:pointer;color:var(--muted)}
+.nm ul{margin:4px 0 0;padding-left:18px}
+.nm .k{font-family:var(--font-mono);color:var(--accent);margin-right:4px}
+.unit{display:flex;flex-direction:column;gap:1px;padding:3px 0 3px 8px;border-left:4px solid var(--c)}
+.unit .veh{box-shadow:none;background:none;padding:0;font-size:15px;font-weight:600}
+.unit .dp{font-family:var(--font-body);font-weight:400;font-size:13px;color:var(--muted)}
+.unit .pk{font-family:var(--font-mono);font-size:13px;color:var(--ink2)}
+.pt td.core{font-family:var(--font-mono);font-weight:600;white-space:nowrap}
+.pt td.chain code{font-size:11.5px;overflow-wrap:anywhere}
+.pt td.chain{max-width:420px}
+.unit .vt{font-size:14px;color:var(--ink)}
+.unit .pk{font-size:12.5px;color:var(--ink2)}
+.unit .pk code{font-size:12px}
+.unit .lv{font-size:12.5px;color:var(--muted)}
+.unit .pk code{background:var(--surface2);overflow-wrap:anywhere}
+.unit .pk code.near{box-shadow:inset 0 -2px var(--warn)}
+.unit .pk .sec{font-size:11.5px;color:var(--muted)}
+.unit .pk .plus{color:var(--accent)}
+.unit .pk b{color:var(--bad)}
+.unit .pkn{font-size:12px;color:var(--warn)}
+.unit .pk.miss b{color:var(--bad)}
+.ct td.v .arr,.dt td.v .arr{font:600 11px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--warn);padding:2px 0 2px 12px}
+.dt{margin-top:10px}
+.dt td.lcell{vertical-align:top;border-right:1px solid var(--rule);width:52px}
+.dt tr.first td{border-top:2px solid var(--rule2)}
+.dt tr.dim .unit{opacity:.6}
+.dt td.k{font-family:var(--font-mono);font-size:13px;color:var(--ink2);white-space:nowrap}
+.dt td.n{font-size:12px}
+.flag.pool{background:var(--info-soft);color:var(--info)}
+.flag.pool.big{font-size:12px;margin-bottom:4px}
+.lsub{display:block;font-size:11px;color:var(--muted);margin-top:3px;max-width:120px}
+.ct tr.brh td{background:var(--surface2);font-size:13px;border-top:2px solid var(--rule2)}
+.ml{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font:700 18px var(--font-display);color:#fff}
+.ml.mA{background:#1a9e3f}.ml.mB{background:#f2c200;color:#201b1c}.ml.mC{background:#d6232f}
+.mt td{vertical-align:top}
+.msim{font-size:13px;white-space:nowrap;margin-bottom:3px}
+.msim b{font-family:var(--font-mono)}
+.need{display:block;font-size:12.5px;color:var(--muted);margin-top:4px}
+.flag.ds{background:var(--info-soft);color:var(--info)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--ink2);margin-block:10px 0}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.notes{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:6px 20px}
+.notes ul{margin:0;padding-left:18px}
+.notes li{margin-block:10px;max-width:92ch}
+code.near{box-shadow:inset 0 -2px var(--warn)}
+.bad{color:var(--bad)}
+code{font-family:var(--font-mono);font-size:12.5px;background:var(--surface2);padding:0 4px;border-radius:3px}
+@media (max-width:520px){ .tg{grid-template-columns:1fr} .dl{grid-template-columns:1fr} h2{font-size:24px} }
+@media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
+
+/* change sheet */
+.chg{margin:10px 16px 0;padding:10px 12px;border-radius:6px;border-left:4px solid var(--c);background:var(--s);font-size:14px;display:flex;flex-direction:column;gap:6px}
+.k-route{--c:var(--warn);--s:var(--warn-soft)} .k-new{--c:var(--ok);--s:var(--ok-soft)} .k-cancelled{--c:var(--bad);--s:var(--bad-soft)} .k-minor{--c:var(--info);--s:var(--info-soft)}
+.ck{align-self:flex-start;font:700 12px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--c)}
+.ck.sm{display:inline-block;font-size:11.5px;letter-spacing:.06em;padding:1px 7px;border-radius:3px;background:var(--s);text-transform:none;font-weight:600;font-family:var(--font-body)}
+.chg .rr{font-size:15px}
+.chg .rr .arr{margin-inline:6px;font-size:14px}
+.was{text-decoration:line-through;text-decoration-color:var(--bad);color:var(--muted)}
+.chg .tt{font-size:13.5px}
+.lc.changed{border-color:var(--rule2);box-shadow:0 1px 0 var(--rule2)}
+.lc.gone>header .lb,.lb.gone{background:var(--muted);text-decoration:line-through}
+h4.todo{font:600 13px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin:14px 16px 0}
+.ct tr.in td{background:color-mix(in srgb,var(--ok-soft) 60%,transparent)}
+.ct tr.out td{background:color-mix(in srgb,var(--bad-soft) 45%,transparent)}
+.ct tr.out .unit{opacity:.8}
+.flag.in{background:var(--ok-soft);color:var(--ok)}
+.flag.wd{background:var(--bad-soft);color:var(--bad)}
+.flag.wd.big{font-size:12px;margin-bottom:4px}
+details.stay{margin:10px 16px 14px;border:1px solid var(--rule);border-radius:6px}
+details.stay>summary,details.same>summary{cursor:pointer;padding:8px 12px;font-size:14px;color:var(--ink2)}
+details.stay>summary:hover,details.same>summary:hover{color:var(--ink)}
+details.stay[open]>summary{border-bottom:1px solid var(--rule)}
+details.stay .ct{margin-top:0}
+.lc>.tw:last-child{margin-bottom:6px}
+.samelist{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,640px),1fr));gap:8px;align-items:start}
+details.same{background:var(--surface);border:1px solid var(--rule);border-radius:8px;scroll-margin-top:var(--stick,110px)}
+details.same>summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;list-style:none}
+details.same>summary::-webkit-details-marker{display:none}
+details.same>summary::after{content:"show";margin-left:auto;font:600 11px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+details.same[open]>summary::after{content:"hide"}
+details.same .sr{font-weight:500;color:var(--ink)}
+details.same .sn{font-size:13px;color:var(--muted)}
+details.same[open]>.lc{border:0;border-top:1px solid var(--rule);border-radius:0}
+.nav.lines .lb.sm.redo{box-shadow:inset 0 -5px 0 var(--warn)}
+.chgt td.num{white-space:nowrap}
+.chgt td{vertical-align:top}
+.chgt .lb,.mvt .lb{white-space:nowrap}
+.chgt tr.k-cancelled td:first-child .lb{background:var(--muted)}
+.mvt td.lcell{vertical-align:top;border-right:1px solid var(--rule);width:210px;min-width:150px}
+.mvt td.lcell p{margin-top:6px}
+.mvt tr.first td{border-top:2px solid var(--rule2)}
+.mvt td.k{font-family:var(--font-mono);font-size:13px;white-space:nowrap;color:var(--ink2)}
+.mvt td.v{line-height:1.9}
+.steps{max-width:80ch;margin:0;padding-left:20px;color:var(--ink2)}
+.steps li{margin-block:4px}
+.pending{margin-top:10px}
+.lb.nad{background:var(--nad);color:#fff}
+.u-ART{--c:var(--u52);--s:var(--u52s)} .u-LONG{--c:var(--u14);--s:var(--u14s)} .u-STD{--c:var(--u15);--s:var(--u15s)} .u-MIDI{--c:var(--ukt);--s:var(--ukts)} .u-MINI{--c:var(--ut3lf);--s:var(--ut3lfs)} .u-UNK{--c:var(--uh);--s:var(--uhs)}
+.lc.bus .opn{display:block;font-size:13px;color:var(--ink2);margin-top:2px}
+.lc.bus .lh .ck{margin-bottom:4px}
+.unit .rq{font:600 10px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--warn);background:var(--warn-soft);padding:0 5px;border-radius:3px;margin-left:4px}
+.unit .mp{font-size:11.5px;color:var(--muted)}
+.src{font-size:11.5px;color:var(--muted);margin-right:4px}
+.stops{margin:10px 16px 0;font-size:13px}
+.stops summary{cursor:pointer;color:var(--muted)}
+.stops ol{margin:4px 0 0;padding-left:26px}
+.stops .pc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px}
+.stops .pc h5{font:600 13px var(--font-body);margin:6px 0 0}
+@media (max-width:520px){ .mvt td.lcell{width:110px;min-width:96px} }
+</style>
+
+<header class="top">
+  <div>
+    <div class="eyebrow">Praha · tramvaje · odpolední špička · změny od 11. 10. 2026</div>
+    <h1>Prague Tram Peak Fleet</h1>
+    <p class="lede">What to redo in the game for the long-term closure <b>Nákladové nádraží Žižkov – Ohrada</b> (11 October – 18 December 2026). The trams are the ones already in your game from the 27 September sheet. They move between lines as little as possible: lines that only changed list just the trams that must change, and everything that stays is folded away under its line.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>%%N_LINES%%</b><span>Simutrans lines</span></div>
+    <div class="stat"><b>%%N_MOVES%%</b><span>trams to move</span></div>
+    <div class="stat"><b>%%N_UNITS%%</b><span>trams at peak</span></div>
+    <div class="stat"><b>%%N_DEPOTS%%</b><span>depots</span></div>
+  </div>
+</header>
+
+<div class="controls">
+  <nav class="nav lines" aria-label="Lines"><span class="lab">Lines</span>%%LINENAV%%</nav>
+  <nav class="nav dnav" aria-label="Depots"><span class="lab">Depots</span>%%DEPNAV%%<a href="#changes">Changes</a><a href="#moves">Tram moves</a><a href="#pak">Pak128 objects</a><a href="#nad">NAD buses</a><a href="#metro">Metro</a><a href="#ferry">Ferries</a></nav>
+  <input type="search" id="q" placeholder="Find vehicle, e.g. 9429" aria-label="Find vehicle number" inputmode="numeric"><span id="hits" aria-live="polite"></span>
+</div>
+
+<h2 id="changes">What changed</h2>
+<p class="lede" style="margin-bottom:10px">%%CLOSURE%% Line badges with an amber bar in the sticky header are the lines to redo.</p>
+<div class="tw sumt"><table class="chgt"><thead><tr><th>Line</th><th>Change</th><th>Route before → now</th><th class="num">Trams</th><th>In the game</th></tr></thead><tbody>%%CHANGES%%</tbody></table></div>
+<p class="muted small" style="margin-top:8px;max-width:90ch">%%SHORTCLOSURE%%</p>
+<p class="callout warn pending" style="margin-inline:0;max-width:90ch">%%VERIFY%%</p>
+
+<h2 id="moves">Tram moves</h2>
+<p class="lede" style="margin-bottom:10px">Every tram that changes Simutrans line, grouped by where it goes. Course numbers on the new lines are labels for this sheet only. All other trams stay on their line.</p>
+<div class="tw sumt"><table class="mvt"><thead><tr><th>To line</th><th>Vehicle · depot / type · length / pak128 core</th><th>From</th><th>New course</th><th></th></tr></thead><tbody>%%MOVES%%</tbody></table></div>
+
+<h2 id="lines">Changed lines</h2>
+<p class="lede" style="margin-bottom:10px">Each card starts with what changed, then the full new Simutrans schedule and the trams to change: green rows come in, red rows leave. The trams that stay are folded under the line.</p>
+<div class="grid">%%LINES%%%%CANCELLED%%</div>
+
+<h2 id="newlines">New lines</h2>
+<p class="lede" style="margin-bottom:10px">Set these up in full. All their trams come from other lines (see Tram moves).</p>
+<div class="grid">%%LINES_NEW%%</div>
+
+<h2 id="minor">Small edits, same trams</h2>
+<p class="lede" style="margin-bottom:10px">A stop or a minute changed; the trams stay. Open a line for its full card.</p>
+<div class="samelist">%%LINES_MINOR%%</div>
+
+<h2 id="same">Unchanged lines (%%N_SAME%%)</h2>
+<p class="lede" style="margin-bottom:10px">Nothing to do. Open a line for its full card as on the 27 September sheet.</p>
+<div class="samelist">%%LINES_SAME%%</div>
+
+<h2>Fleet by line</h2>
+<div class="two">
+  <div class="tw sumt"><table><thead><tr><th>Line</th><th class="num">Trams</th>%%CLSHEAD%%</tr></thead><tbody>%%SUMROWS%%</tbody></table></div>
+  <div>
+    <div class="tw sumt"><table><thead><tr><th>Class</th><th>Vehicle</th><th>Length</th><th>Floor</th></tr></thead><tbody>%%CLSLEGEND%%</tbody></table></div>
+    <p class="muted small" style="margin-top:10px;max-width:60ch">One tram means one unit on one course: a coupled T3 pair counts once. The counts leave out logged units beyond each Simutrans line's need at 16:00, marked “not needed”, and cars that were replaced during the day and the two courses that most likely end before the peak (marked AM?). The “Trams” box on each line card uses the same rule.</p>
+  </div>
+</div>
+
+<h2 id="pak">Pak128 objects</h2>
+<p class="lede" style="margin-bottom:10px">The one place with full object names from the custom Czech pak128 set (VZ-DPPraha-tram.pak). Elsewhere each vehicle shows only the core of the name, the last part after the livery, with the livery added where the pak has more than one for that type. “≈” marks a substitute; the reason is in this table. Articulated trams are several objects that the depot builds as one vehicle, in the order shown. Length is in carunits (16 = one tile).</p>
+<div class="tw sumt"><table class="pt"><thead><tr><th>Real type</th><th>Livery</th><th>Core</th><th>Objects, in order</th><th class="num">Length</th><th>Match</th><th class="num">Cars at peak</th></tr></thead><tbody>%%PAKROWS%%</tbody></table></div>
+
+<h3 style="margin-top:36px">Legend</h3>
+<div class="legend"><span><span class="flag pm">PM part</span> split course, afternoon vehicle</span><span><span class="flag swap">swap</span> vehicle exchanged, time not recorded; all vehicles shown in order</span><span><span class="flag am">not needed</span> logged, but more than the line needs at 16:00: kept one of every type, the rest dimmed and not counted</span><span><span class="flag am">not counted</span> course probably ends before the peak</span><span><span class="flag mv">added</span> added for the 27 Sep network</span><span><span class="flag ds">designed</span> designed where records are missing</span><span><span class="flag pool">pool</span> shared pool 5 + 6: one Simutrans line through Nádraží Holešovice</span><span><span class="tag">→6</span> continues as line 6</span><span>“then”: the next vehicle on the same course after a swap</span><span><span class="flag in">moved here from …</span> tram that joins this line (green row)</span><span><span class="flag mv">moves to line …</span> tram that leaves for another line</span><span><span class="flag wd">back to the depot</span> tram taken out of service (red row)</span></div>
+
+<h2 id="depots">Depots</h2>
+<p class="lede">Each depot and every tram it ran at the peak, line by line, in the same three-line cell. Depot is the home depot in the seznam-autobusu.cz fleet register.</p>
+<div class="grid">%%DEPOTS%%</div>
+
+<h2>Nostalgic line 42</h2>
+<p class="lede" style="margin-bottom:10px">Tourist line with museum cars from Střešovice, outside the PID tariff. Listed for completeness and not counted above.</p>
+<div class="tw sumt" style="max-width:640px"><table class="ct"><thead><tr><th>Course</th><th>Vehicle / type / pak128 core</th><th>Depot</th></tr></thead><tbody>%%ROWS42%%</tbody></table></div>
+
+<h2 id="metro">Metro</h2>
+<p class="lede" style="margin-bottom:10px">Summary of the three metro lines at the afternoon peak (PID timetable, same service date as the trams). Trains needed: one round trip at 16:00 at the line's interval, counted per branch (line A's two branches separately). The Simutrans values follow the same fit rule as the trams, for each direction; metro termini reverse on stub tracks, so there is no loop shift. All metro termini reverse behind the station, and the timetable does not show how long that takes, so the figure is given for 3 to 5 minutes' reversing (lower–upper). Recorded: the metro trains (courses) entered on seznam-autobusu.cz for Fri 25 Sep. Metro records are incomplete, so this is a lower bound.</p>
+<div class="tw sumt"><table class="mt"><thead><tr><th>Line</th><th>Route (branch)</th><th>Interval at 16:00</th><th>Simutrans schedule (Departure every / Offset / Also at)</th><th>Runtime</th><th class="num">Trains needed</th><th class="num">Recorded 25 Sep</th><th>Trains</th><th></th></tr></thead><tbody>%%METRO%%</tbody></table></div>
+
+<h2 id="ferry">Ferries</h2>
+<p class="lede" style="margin-bottom:10px">The PID river ferries (lines P1–P6 in the same PID timetable, route type 4) on the tram service date, summarised like the metro. Each ferry crosses between two piers and the boat reverses, so there is no loop shift: the Simutrans values are the timetable minutes. The timetable turns the boat round in the minute it lands, so a line needs one boat when the crossing fits between the two directions' departures. Boats and pak128 objects (VZ-Praha-water) come from the pak session. They were built and installed on 29 Sep (fb42eb7).</p>
+<div class="tw sumt"><table class="mt"><thead><tr><th>Line</th><th>Crossing</th><th>Interval at 16:00</th><th>Simutrans schedule (Departure every / Offset / Also at)</th><th>Crossing time</th><th>Service</th><th class="num">Boats needed</th><th>Operator</th><th>Boat</th></tr></thead><tbody>%%FERRY%%</tbody></table></div>
+
+<h2 id="nad">Replacement buses (NAD)</h2>
+<p class="lede" style="margin-bottom:10px">The daytime replacement bus lines for tram closures on the modelled day, as cards in the style of the Prague bus sheet. Buses needed follow the bus sheet's rule; buses are the ones logged on Monday 12 October (seznam-autobusu.cz), with the surplus beyond the 16:00 need dimmed as “not needed”.</p>
+<div class="grid">%%NAD%%</div>
+<h3 style="margin-top:22px">Pak128 objects for the NAD buses</h3>
+<div class="tw sumt" style="margin-top:8px"><table class="pt"><thead><tr><th>Type</th><th>Livery</th><th>Core</th><th>Objects, in order</th><th>Status</th><th class="num">Buses at peak</th></tr></thead><tbody>%%NADPAK%%</tbody></table></div>
+<div class="notes" style="margin-top:12px"><p class="muted small" style="margin:8px 0 0">Not modelled:</p><ul>%%NADNOT%%</ul></div>
+
+<h2 id="notcounted">Not counted</h2>
+<p class="lede" style="margin-bottom:10px">Courses shown on the line cards but left out of the counts, because their set turned up later that day as a replacement on another course, so they most likely end before the peak.</p>
+<div class="notes"><ul>%%NOTCOUNTED%%</ul></div>
+
+<h2>How this was built</h2>
+<div class="notes"><ul>
+  <li><b>Changes (13 Oct 2026).</b> The closure comes from the PID notice (<a href="%%NOTICE%%">pid.cz</a>). Routes and minutes come from PID GTFS export %%GTFS_RAW%%, service date %%SERVICE_DATE%% (Tuesday 20 October: inside the long-term closure, after the short Na Knížecí – Smíchovské nádraží closure ends on 18 October). Each line's routes, schedule and trams needed at 16:00 are compared with the 27 September sheet; lines where only the order of the routes differs count as unchanged.</li>
+  <li><b>Fewest moves in the game.</b> Nothing is re-rostered from new records: the trams are the 27 September set. A line that needs fewer trams gives up the surplus; a line that needs more takes freed trams, matched by type and depot to what ran on Monday 12 October (seznam-autobusu.cz). Trams left over go back to the depot. Lines 9 and 10 keep their own trams as the two circles, so only 7 trams join line 10 and 8 leave line 9.</li>
+  <li><b>Lines 9 and 10.</b> In the GTFS every 9 arriving at Nákladové nádraží Žižkov leaves as 10 in the same minute and the other way round (block pairs, 0 min). Each direction of travel is a circle Sídliště Řepy → Nákladové nádraží Žižkov → Sídliště Řepy of 97–98 min, at a 4-minute interval: 25 trams each, 50 in all (the old 9 and 10 had 33 + 18 = 51). Departures from Hotel Golf are pull-outs from Vozovna Motol filling a Řepy slot, so they are not modelled.</li>
+  <li><b>Network and day.</b> The network is the one in force on Sunday 27 September 2026. Vehicles come from the last weekday before it, Friday 25 September; Sunday has no weekday peak and only half the courses are recorded. Between the two days line 2 returned from the short Albertov diversion to its long route (26 Sep); line 23 had already switched to Královka – Bílá labuť on 19 Sep.</li>
+  <li><b>Resizing for the long line 2.</b> On 25 Sep line 2 ran courses 1–10 to Albertov. On the long route (9–11 Sep) it ran courses 1–12: 2/11 is a Strašnice Tatra T3 pair and 2/12 a Pankrác Škoda 15T course. 2/11 uses 8779 + 8442, the set that ran it on 11 Sep and was free on 25 Sep. 2/12 uses the stand-in 9229, a Pankrác 15T3 free on 25 Sep, because its usual cars were busy elsewhere that day. Line 23 kept its 4 courses on the new route, so it is unchanged.</li>
+  <li><b>Designed trams.</b> Where the records never show enough trams, the missing ones are designed (user instruction, 28 Sep): lines 13 (only course 1 ever recorded) and 31 (only courses 1–3). The number needed is the round trip at 16:00 (runtime both ways plus the scheduled turnaround at each end) divided by the headway. The added cars are single Tatra T3R.PLF cars that ran the line on other days of the last two weeks and were free on 25 Sep. They are marked “designed”.</li>
+  <li><b>Vehicles.</b> seznam-autobusu.cz, <code>vypravenost/pid/vypis?datum=2026-09-25&amp;linka=N</code> for each tram line: 506 records by tram-bus.cz, each with course, vehicle and a note. “ranní část / odpolední část” splits a course into its morning and afternoon vehicle; “náhrada za / nahrazen vlakem” records a swap (no time given; all vehicles are shown in order and the last one is counted); “přejezd na linku 6/7” records a move to another line. Lines 5 and 6 are one pool of line-5 courses that run through each other at Nádraží Holešovice. Course 22/42 moves to line 7.</li>
+  <li><b>Depots and types.</b> Every car is matched to its home depot, type and paint in the seznam-autobusu.cz fleet register for DPP (823 trams in Hloubětín, Kobylisy, Motol, Pankrác, Strašnice, Vokovice, Žižkov and the Střešovice museum).</li>
+  <li><b>Simutrans schedule.</b> Values for the Scheduling tab of your fork (calendar on). The fit follows the shared rule in <code>pipeline/README.md</code>: the longest exact run of one Departure every / Offset / Also at pattern (at most 8 slots, whole minutes, interval dividing 1440) around the 15:30–16:30 core, clipped to the pattern's first and last departure; among fits covering at least 80 % of the best, the simplest wins. The Fit column gives the run and lists where the 15:00–17:59 timetable differs. <b>Loop termini are set 1 minute early:</b> Offset and Also at are the timetable minute minus 1 (modulo the interval), with the real minute printed under each; stubs (Libuš, Pankrác), the Zvonařka triangle, the Nádraží Holešovice through stop and the Bílá labuť street stop keep the timetable minute. Depot runs are not modelled. A short working gets its own Simutrans line only if it runs in the 16:00 hour; the ones that end before the peak (3 from Nádraží Braník, 9 from Hotel Golf, 22 from Nad Džbánem) are listed as not modelled.</li>
+  <li><b>Pak128 objects.</b> VZ-DPPraha-tram.pak, pak128 main %%PAK_COMMIT%%, confirmed with the pak128 session. The object is chosen from each car's type and paint. Advert wraps get the nearest standard livery (marked ≈). All Tatra T3 variants couple with each other in any livery. Museum cars are the historic VZ-DPPraha objects; the two pre-war sets on line 42 use the historic Ringhoffer (Trabuko) motor car and trailer as the nearest match.</li>
+  <li><b>Routes.</b> PID GTFS (<code>data.pid.cz/PID_GTFS.zip</code>, export %%GTFS_RAW%%), service date %%SERVICE_DATE%% (for the 27 September sheet: export 2026-09-28, service date 20260929). Alighting and boarding stops of a loop are merged (Kobylisy → Březiněveská, Sídliště Modřany → Levského).</li>
+  <li><b>Not needed (user, 29 Sep 2026).</b> Where more units are logged on a Simutrans line (a line, a branch, or the 5 + 6 pool) than it needs at 16:00, exactly the need is counted. One unit of every type on the line is kept first (most frequent type first), then recorded before added or designed, then the lowest course numbers. The rest are marked “not needed”, dimmed, and left out of the counts, depots and pak totals. This replaces the earlier practice of counting every logged unit as the operator's slack.</li>
+  <li><b>Ferries.</b> PID lines of route type 4 in the same GTFS and service date. One row per direction: the interval in 16:00–16:59, the crossing time (median), the first and last departure of the day, and the Simutrans fit by the shared rule (piers are stub termini, so no loop shift). Boats needed = <code>cycle_need</code> with 0 minutes at the pier, because the timetable itself turns the boat round in the minute it lands. Operators from <code>route_sub_agencies.txt</code>.</li>
+  <li><b>Metro.</b> Lines A, B and C from the same PID GTFS (route type 1). Interval = the gaps between departures in 16:00–16:59; line A alternates between Depo Hostivař and Skalka, so every other train turns at Skalka. Trips from or to the Kačerov depot on C are depot runs and are not counted. Train types: 81-71M on A and B, M1 on C, all five-car sets.</li>
+  <li><b>Rebuilding.</b> This page is generated by <code>pipeline/praha</code> (<code>python scripts/run.py --state 2026-10-12</code>) from the raw data stored there; see <code>pipeline/praha/README.md</code> for how to update it when the timetable changes.</li>
+</ul></div>
+
+<script>
+(function(){
+  const bar=document.querySelector('.controls'), setStick=()=>document.documentElement.style.setProperty('--stick',(bar.offsetHeight+8)+'px');
+  setStick(); addEventListener('resize',setStick);
+  const openHash=()=>{ const el=location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1))); if(!el) return;
+    for(let d=el.closest('details'); d; d=d.parentElement.closest('details')) d.open=true; el.scrollIntoView(); };
+  addEventListener('hashchange',openHash); openHash();   // anchors land below the sticky bar at any width
+  const q=document.getElementById('q'), hits=document.getElementById('hits');
+  const all=[...document.querySelectorAll('.veh[data-v]')];
+  q.addEventListener('input',()=>{
+    const s=q.value.trim();
+    let first=null, n=0;
+    for(const el of all){
+      const on = s.length>=3 && el.dataset.v.split('+').some(c=>c.startsWith(s));
+      el.classList.toggle('hit',on);
+      if(on){ n++; if(!first) first=el; }
+    }
+    hits.textContent = s.length>=3 ? (n? n+' found':'not found') : '';
+    if(first){ for(let d=first.closest('details'); d; d=d.parentElement.closest('details')) d.open=true; first.scrollIntoView({block:'center'}); }
+  });
+})();
+</script>

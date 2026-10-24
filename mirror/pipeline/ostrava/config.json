@@ -1,0 +1,755 @@
+{
+  "city": "Ostrava",
+  "operator": "Dopravní podnik Ostrava a.s. (DPO), IČO 61974757",
+  "title": "Ostrava Tram Vypravenost",
+  "output_html": "Ostrava Tram Vypravenost.html",
+  "artifact_url": "https://claude.ai/artifact/4JYPMdmaxEzKhkxg37fd8e",
+  "snapshot": "2026-09-28",
+  "vehicle_day": "2026-09-25",
+  "vehicle_day_label": "pátek 25. 9. 2026",
+  "vehicle_day_label_en": "Friday 25 Sep 2026",
+  "network_state_day": "2026-10-20",
+  "network_state_label": "20 Oct 2026",
+  "peak_minute": 960,
+  "peak_label": "16:00",
+  "jdf": {
+    "url": "https://portal.cisjr.cz/pub/draha/mestske/JDF.zip",
+    "export_label": "JDF export of 20 Oct 2026 (timetable versions valid on Wed 21 Oct 2026)",
+    "lines": {
+      "915001": "1",
+      "915002": "2",
+      "915003": "3",
+      "915004": "4",
+      "915005": "5",
+      "915007": "7",
+      "915008": "8",
+      "915010": "10",
+      "915011": "11",
+      "915012": "12",
+      "915013": "13",
+      "915014": "14",
+      "915015": "15",
+      "915017": "17"
+    },
+    "excluded_lines": {
+      "915018": "night line 18",
+      "915019": "night line 19"
+    }
+  },
+  "fit": {
+    "window": [
+      900,
+      1080
+    ],
+    "core": [
+      930,
+      990
+    ],
+    "lo": 780,
+    "hi": 1200
+  },
+  "cycle_t0": 960,
+  "cycle_lay": 3,
+  "branches": {
+    "1": [
+      [
+        "Dubina",
+        "Hlavní nádraží"
+      ]
+    ],
+    "2": [
+      [
+        "Výškovice",
+        "Hlavní nádraží"
+      ]
+    ],
+    "3": [
+      [
+        "Poruba, vozovna",
+        "Dubina"
+      ]
+    ],
+    "4": [
+      [
+        "Martinov",
+        "Hranečník"
+      ],
+      [
+        "Martinov",
+        "Kunčice, Nová huť jižní brána"
+      ]
+    ],
+    "5": [
+      [
+        "Poruba, Vřesinská",
+        "Budišovice, Zátiší"
+      ]
+    ],
+    "7": [
+      [
+        "Výškovice",
+        "Poruba, Vřesinská"
+      ],
+      [
+        "Výškovice",
+        "Poruba, vozovna"
+      ]
+    ],
+    "8": [
+      [
+        "Poruba, Vřesinská",
+        "Hlavní nádraží"
+      ],
+      [
+        "Poruba, Vřesinská",
+        "Moravská Ostrava, Plynárny"
+      ]
+    ],
+    "10": [
+      [
+        "Hranečník",
+        "Dubina"
+      ]
+    ],
+    "11": [
+      [
+        "Poruba, vozovna",
+        "Zábřeh"
+      ]
+    ],
+    "12": [
+      [
+        "Dubina",
+        "Hranečník"
+      ]
+    ],
+    "13": [
+      [
+        "Hranečník",
+        "Zábřeh"
+      ]
+    ],
+    "15": [
+      [
+        "Výškovice",
+        "Dubina"
+      ]
+    ],
+    "17": [
+      [
+        "Dubina",
+        "Poruba, Vřesinská"
+      ],
+      [
+        "Dubina",
+        "Poruba, vozovna"
+      ]
+    ]
+  },
+  "branches_why": "The timetable does not say which end a tram serves next, so the trips were chained in arrival order at each terminus, in-service trips only (depot runs to Plynárny and Poruba, vozovna removed). On lines 8 and 17 every tram keeps to one end all afternoon. On 4 and 7 the ends mix irregularly (e.g. vozovna, vozovna, Vřesinská, Vřesinská), and line 4 sends 4 trams an hour to Hranečník against 2 to Nová huť jižní brána. None of them alternates strictly A–B–A–B, which is the only pattern one Simutrans line can model. So each branch is its own Simutrans line, sized by its own round trip. The real minutes are kept, so the branches interleave on the shared section as in the timetable.",
+  "shared_pools": "None at the afternoon peak. Lines 1 and 2 share course numbers and swap trams at Hlavní nádraží at some time of day (weekday records say “přejezd na linku 1/2”; on the holiday of 28 Sep every tram alternated). But the weekday peak timetable lets each line turn there in 3 min, against 8 min for a swap. The rule is the shortest wait at the terminus, so at 16:00 every tram stays on its line and 1 and 2 are separate Simutrans lines (15 trams, not 16).",
+  "table_window": [
+    900,
+    1020
+  ],
+  "pullin_branches": {
+    "10": [
+      "Moravská Ostrava, Plynárny"
+    ],
+    "13": [
+      "Moravská Ostrava, Plynárny"
+    ],
+    "5": [
+      "Poruba, vozovna"
+    ]
+  },
+  "all_termini_are_loops": true,
+  "stop_name_strip_prefix": "Ostrava,",
+  "stop_name_fixed": {
+    "hlavní nádraží": "Hlavní nádraží",
+    "Poruba,vozovna": "Poruba, vozovna",
+    "Poruba,Vřesinská": "Poruba, Vřesinská",
+    "Budišovice,Zátiší": "Budišovice, Zátiší"
+  },
+  "stop_name_expansions": [
+    [
+      "Mor.Ostrava, ",
+      "Moravská Ostrava, "
+    ],
+    [
+      "Sl.Ostrava, ",
+      "Slezská Ostrava, "
+    ],
+    [
+      "Mor. Ostrava,",
+      "Moravská Ostrava,"
+    ],
+    [
+      "Mor.Plynárny",
+      "Moravská Ostrava, Plynárny"
+    ],
+    [
+      "Mor.",
+      "Moravská Ostrava, "
+    ],
+    [
+      "Sl.",
+      "Slezská Ostrava, "
+    ],
+    [
+      "Mar.Hory,",
+      "Mariánské Hory,"
+    ],
+    [
+      "NH hl.brána",
+      "Nová huť hlavní brána"
+    ],
+    [
+      "NH ",
+      "Nová huť "
+    ],
+    [
+      "nám.Ostrava-Jih",
+      "náměstí Ostrava-Jih"
+    ],
+    [
+      "Telekom.škola",
+      "Telekomunikační škola"
+    ],
+    [
+      "nám.S.Čecha",
+      "náměstí Svatopluka Čecha"
+    ],
+    [
+      "Mírové nám.",
+      "Mírové náměstí"
+    ],
+    [
+      "most Čs. armády",
+      "most Československé armády"
+    ],
+    [
+      "Ředitel.Vítkovic",
+      "Ředitelství Vítkovic"
+    ],
+    [
+      "29.dubna",
+      "29. dubna"
+    ],
+    [
+      "Kpt.Vajdy",
+      "Kapitána Vajdy"
+    ],
+    [
+      "Třebovice, OC",
+      "Třebovice, obchodní centrum"
+    ]
+  ],
+  "fleet": {
+    "carrier_id": 133,
+    "depots": {
+      "Poruba": 534,
+      "Moravská Ostrava": 616
+    },
+    "list_url": "https://seznam-autobusu.cz/seznam?onlyCurrentDepot=1&depotId={depot}&prov=1&trakce=tramvaj&iddopravce=133&vcetneSluzebnich=1"
+  },
+  "history": {
+    "url": "https://seznam-autobusu.cz/vypravenost/odis/vypis?linka={line}",
+    "since": "2025-09-01",
+    "weight_from": "2026-01-01",
+    "lines": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "7",
+      "8",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "17"
+    ],
+    "note": "tram-bus.cz stopped feeding DPO tram records on 26 Jun 2026, so this is the Sep 2025 – Jun 2026 school year",
+    "exclude_course_prefixes": [
+      "9"
+    ],
+    "exclude_course_why": "9xx courses are late-evening runs (e.g. line 7 courses 9xx 'přejezd na linku 19/11/8'; seen live after 23:00). Line 7's own 7xx courses ran a single Vario LF once in ~1,000 records, so the evening runs must not shape the 16:00 type mix (user, 18 Oct 2026: no solo trams on 7)."
+  },
+  "live": {
+    "url": "https://dashboard.dpo.cz/api/server",
+    "body": {
+      "endpoint": "transport/vehicle/list?page=dashboard&withTripId=1&vehicleStates=ride",
+      "apiMethod": "GET",
+      "data": {},
+      "host": null
+    },
+    "label": "Mon 28 Sep",
+    "note": "DPO live feed: vehicleNumber, routeID (line), serviceID (course). No history, so it is polled into data/raw/<date>/live/."
+  },
+  "type_ranges": [
+    [
+      "KT8D5R.N1",
+      1500,
+      1515
+    ],
+    [
+      "Vario LF3",
+      1601,
+      1653
+    ],
+    [
+      "39T",
+      1751,
+      1799
+    ],
+    [
+      "Tango NF2",
+      1701,
+      1740
+    ],
+    [
+      "Astra",
+      1201,
+      1214
+    ],
+    [
+      "Trio",
+      1251,
+      1259
+    ],
+    [
+      "Vario LF2",
+      1401,
+      1411
+    ],
+    [
+      "Vario LF",
+      1311,
+      1373
+    ],
+    [
+      "T3R.P",
+      900,
+      1100
+    ]
+  ],
+  "types_not_planned": [
+    "T3R.P"
+  ],
+  "two_t_lines": [
+    "1",
+    "2"
+  ],
+  "line_order_for_picking": [
+    "8",
+    "2",
+    "1",
+    "17",
+    "4",
+    "7",
+    "12",
+    "10",
+    "15",
+    "13",
+    "5",
+    "3",
+    "11"
+  ],
+  "reserve_rule": "per type: none below 4 cars, otherwise max(1, round(8 %))",
+  "types": {
+    "KT8D5R.N1": [
+      "Tatra KT8D5R.N1",
+      "30.3 m",
+      "3 sections, high floor with low-floor middle",
+      "2×T",
+      220
+    ],
+    "Vario LF3": [
+      "Pragoimex Vario LF3 / LF3/2",
+      "30.1 m",
+      "3 sections, partly low-floor",
+      "2×T",
+      229
+    ],
+    "2×Vario LF": [
+      "Coupled pair of Vario LF",
+      "2 × 15.1 m",
+      "two single cars coupled",
+      "2×T",
+      220
+    ],
+    "39T": [
+      "Škoda 39T ForCity Smart",
+      "26.5 m",
+      "2 sections, fully low-floor",
+      "1.5×T",
+      200
+    ],
+    "Tango NF2": [
+      "Stadler Tango NF2 nOVA",
+      "24.9 m",
+      "2 sections, fully low-floor",
+      "1.5×T",
+      188
+    ],
+    "Astra": [
+      "Škoda 03T Astra (LTM 10.08)",
+      "20.1 m",
+      "3 sections, low-floor middle",
+      "1.5×T",
+      155
+    ],
+    "Trio": [
+      "Inekon 01 Trio",
+      "20.1 m",
+      "3 sections, low-floor middle",
+      "1.5×T",
+      140
+    ],
+    "Vario LF2": [
+      "Pragoimex Vario LF2 / LF2R.S / LF2+",
+      "22.0 m",
+      "2 sections, partly low-floor",
+      "1.5×T",
+      170
+    ],
+    "Vario LF": [
+      "Pragoimex VarioLFR.E / LFR.S / T3R.EVN",
+      "15.1 m",
+      "single car, partly low-floor",
+      "1×T",
+      110
+    ]
+  },
+  "type_full_names": {
+    "KT8D5R.N1": "Tatra KT8D5R.N1",
+    "Vario LF3": "Pragoimex VarioLF3",
+    "2×Vario LF": "coupled pair of Pragoimex VarioLFR",
+    "39T": "Škoda 39T ForCity Smart",
+    "Tango NF2": "Stadler Tango NF2",
+    "Astra": "Škoda Astra 03T",
+    "Trio": "Inekon Trio 2001",
+    "Vario LF2": "Pragoimex VarioLF2",
+    "Vario LF": "Pragoimex VarioLFR single car"
+  },
+  "pak": {
+    "file": "VZ-DPOstrava-tram.pak (custom Czech pak128, main 4fbb7b8)",
+    "prefix": "VZ-DPOstrava-",
+    "objects": {
+      "Tatra KT8D5R.N1": [
+        "KT8D5R_N1",
+        [
+          "dpomodrozluta",
+          "dpotyrkysova"
+        ],
+        [
+          "KT8D5R_N1",
+          "KT8D5R_N1_2",
+          "KT8D5R_N1_3"
+        ],
+        true
+      ],
+      "Pragoimex VarioLF3": [
+        "VarioLF3",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "VarioLF3",
+          "VarioLF3_2",
+          "VarioLF3_3"
+        ],
+        true
+      ],
+      "Pragoimex VarioLF3/2": [
+        "VarioLF3_s2",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "VarioLF3_s2",
+          "VarioLF3_s2_2",
+          "VarioLF3_s2_3"
+        ],
+        true
+      ],
+      "Pragoimex VarioLFR.E": [
+        "VarioLF",
+        [
+          "dpotyrkysova",
+          "dpomodrozluta"
+        ],
+        [
+          "VarioLF"
+        ],
+        true
+      ],
+      "Pragoimex VarioLFR.S": [
+        "VarioLF",
+        [
+          "dpotyrkysova",
+          "dpomodrozluta"
+        ],
+        [
+          "VarioLF"
+        ],
+        true
+      ],
+      "Pragoimex T3R.EVN": [
+        "VarioLF",
+        [
+          "dpotyrkysova",
+          "dpomodrozluta"
+        ],
+        [
+          "VarioLF"
+        ],
+        true
+      ],
+      "Pragoimex VarioLF2": [
+        "VarioLF2",
+        [
+          "dpotyrkysova",
+          "dpomodrozluta"
+        ],
+        [
+          "A",
+          "A_2"
+        ],
+        true
+      ],
+      "Pragoimex VarioLF2R.S": [
+        "VarioLF2",
+        [
+          "dpotyrkysova",
+          "dpomodrozluta"
+        ],
+        [
+          "A",
+          "A_2"
+        ],
+        true
+      ],
+      "Pragoimex VarioLF2+": [
+        "VarioLF2_Plus",
+        [
+          "stribrna"
+        ],
+        [
+          "VarioLF2_Plus",
+          "VarioLF2_Plus_2"
+        ],
+        true
+      ],
+      "Škoda 39T ForCity Smart": [
+        "39T",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "39T",
+          "39T_2"
+        ],
+        true
+      ],
+      "Stadler Tango NF2": [
+        "TangoNF2",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "TangoNF2",
+          "TangoNF2_2"
+        ],
+        true
+      ],
+      "Inekon Trio 2001": [
+        "T2001_Trio",
+        [
+          "dpomodrozluta"
+        ],
+        [
+          "T2001_Trio",
+          "T2001_Trio_2",
+          "T2001_Trio_3"
+        ],
+        true
+      ],
+      "Škoda Astra 03T1": [
+        "LTM1008_Astra",
+        [
+          "dpomodrozluta"
+        ],
+        [
+          "LTM1008_Astra",
+          "LTM1008_Astra_2",
+          "LTM1008_Astra_3"
+        ],
+        true
+      ],
+      "Škoda Astra 03T2": [
+        "LTM1008_Astra",
+        [
+          "dpomodrozluta"
+        ],
+        [
+          "LTM1008_Astra",
+          "LTM1008_Astra_2",
+          "LTM1008_Astra_3"
+        ],
+        true
+      ],
+      "Škoda Astra 03T4": [
+        "LTM1008_Astra",
+        [
+          "dpomodrozluta"
+        ],
+        [
+          "LTM1008_Astra",
+          "LTM1008_Astra_2",
+          "LTM1008_Astra_3"
+        ],
+        true
+      ],
+      "Škoda Astra 03T5": [
+        "LTM1008_Astra",
+        [
+          "dpomodrozluta"
+        ],
+        [
+          "LTM1008_Astra",
+          "LTM1008_Astra_2",
+          "LTM1008_Astra_3"
+        ],
+        true
+      ]
+    },
+    "lengths": {
+      "KT8D5R_N1": "21",
+      "VarioLF3": "21",
+      "VarioLF3_s2": "21",
+      "VarioLF": "12",
+      "VarioLF2": "16",
+      "VarioLF2_Plus": "16",
+      "39T": "12 + 6",
+      "TangoNF2": "8 + 6",
+      "LTM1008_Astra": "13",
+      "T2001_Trio": "13"
+    },
+    "livery_names": {
+      "dpotyrkysova": "turquoise (dpotyrkysova)",
+      "dpomodrozluta": "blue-yellow (dpomodrozluta)",
+      "stribrna": "silver-gold (stribrna)"
+    },
+    "paint_rules": [
+      [
+        "modrá s bílým proužkem",
+        "DPO blue with white stripe",
+        "dpotyrkysova"
+      ],
+      [
+        "modro-bílo-žlutá",
+        "DPO blue-white-yellow",
+        "dpomodrozluta"
+      ],
+      [
+        "žlutými dveřmi",
+        "DPO blue-white with yellow doors",
+        "dpomodrozluta"
+      ],
+      [
+        "stříbrno-zlatá",
+        "silver-gold",
+        "stribrna"
+      ]
+    ]
+  },
+  "line_notes": {
+    "1": "2×T line. Shares its courses with line 2 and swaps trams with it at Hlavní nádraží at some time of day. At the peak it turns on its own in 3 min (arrives :08, leaves :11), which is shorter than the 8 min a swap would take, so it is modelled on its own.",
+    "3": "Peak-only line, about 04:30–18:00.",
+    "4": "Two Simutrans lines: 4A Martinov – Hranečník (4 departures an hour from Martinov, :01 :11 :31 :41) and 4B Martinov – Kunčice, Nová huť jižní brána (2 an hour, :21 :51). The minutes are the real ones, so the two branches interleave on the shared section exactly as in the timetable.",
+    "5": "Single-track suburban line with passing loops. One afternoon trip returns to Poruba, vozovna.",
+    "7": "Two Simutrans lines, 7A to Poruba, Vřesinská and 7B to Poruba, vozovna, each every 20 min. Their minutes interleave to 10 min at Výškovice as in the timetable.",
+    "8": "The 5-minute Poruba trunk. While the Hlučínská underpass is closed, it runs as two Simutrans lines, 8A to Hlavní nádraží and 8B to Moravská Ostrava, Plynárny, each every 10 min and interleaved to 5 min from Poruba, Vřesinská. Each tram keeps to one end.",
+    "10": "Peak-only express Hranečník – Dubina, runs until about 18:00.",
+    "11": "Peak-only line, runs until about 17:30.",
+    "13": "Late in the afternoon the trips from Zábřeh run to Moravská Ostrava, Plynárny.",
+    "17": "Two Simutrans lines, 17A to Poruba, Vřesinská and 17B to Poruba, vozovna, each every 20 min and interleaved to 10 min at Dubina. Each tram keeps to one end.",
+    "2": "2×T line. Coupled Vario LF pairs fill in where KT8D5R.N1 and Vario LF3 run out. Swaps trams with line 1 at some time of day. At the peak it turns on its own at Hlavní nádraží in 3 min (arrives :03, leaves :06) rather than 8 min as a swap."
+  },
+  "network_state": [
+    [
+      "in",
+      "Hlučínská underpass closed",
+      "15 Apr 2026 – 31 Oct 2027 (still listed by DPO on 20 Oct 2026). Přívoz, Hlučínská is cut off: line 8 ends alternately at Hlavní nádraží and Moravská Ostrava, Plynárny; line 14 is down to a few shift trips with no tram at 16:00."
+    ],
+    [
+      "in",
+      "Don Bosco served again",
+      "The stop was closed 17 Sep – 19 Oct 2026. Since 20 Oct, lines 1, 2, 10 and 13 serve Don Bosco again, and Dolní Vítkovice Hlubina is served by 1 and 2 only (10 and 13 pass it). The regular timetable versions (17 Sep – 12 Dec) are used. Departure minutes and running times match the closure versions, so the schedules and trams are unchanged; only the stop lists differ."
+    ],
+    [
+      "in",
+      "Náměstí Republiky stops moved",
+      "From 17 Sep 2026 until further notice, the tram stops are temporarily relocated during the rebuild of the interchange. Routes and running times are unchanged."
+    ],
+    [
+      "out",
+      "Past short works",
+      "Weekend track repair on 15 and 17 (19–20 and 26–27 Sep) and day works on line 5 to Zátiší (19 and 26–28 Sep). Both have ended; they were never modelled."
+    ]
+  ],
+  "coverage_min_share": 0.02,
+  "coverage_why": "A tram type counts in a line's roster for the coverage rule when it has at least 2 % of the line's weighted weekday records (Sep 2025 – Jun 2026). Below that are one-off stand-ins: 39T, Tango NF2 and Vario LF2 each had under 1 % on the 2×T line 2.",
+  "circuits_off": {
+    "1": {
+      "title": "1 + 2",
+      "lines": [
+        "1",
+        "2"
+      ],
+      "hub": "Hlavní nádraží",
+      "legs": [
+        [
+          "1",
+          "Dubina",
+          "Hlavní nádraží"
+        ],
+        [
+          "2",
+          "Hlavní nádraží",
+          "Výškovice"
+        ],
+        [
+          "2",
+          "Výškovice",
+          "Hlavní nádraží"
+        ],
+        [
+          "1",
+          "Hlavní nádraží",
+          "Dubina"
+        ]
+      ],
+      "leg_notes": [
+        "",
+        "arrives as 1, leaves as 2",
+        "",
+        "arrives as 2, leaves as 1"
+      ]
+    }
+  },
+  "circuits_why": "Lines 1 and 2 share course numbers, and their weekday records say 'přejezd na linku 1/2'. On the holiday of 28 Sep the live feed showed every tram alternating 1 → 2 → 1. But at the weekday 16:00 peak the timetable lets each line turn at Hlavní nádraží in 3 min (1: arr :08, dep :11; 2: arr :03, dep :06), against 8 min for a swap (16 trams instead of 15). By the shortest-terminal-wait rule (user, 18 Oct 2026), 1 and 2 are separate Simutrans lines. To switch the circuit on, rename circuits_off back to circuits, but only if a weekday-peak poll shows the swap.",
+  "live_until": "20260928-1912",
+  "keep_roster": "data/published/roster_2026-09-28.json",
+  "timetable": {
+    "snapshot": "2026-10-20",
+    "day": "2026-10-21",
+    "label": "Wed 21 Oct 2026",
+    "why": "From 20 Oct 2026 Don Bosco is served again (lines 1, 2, 10, 13) and 10 and 13 no longer serve Dolní Vítkovice Hlubina; the 17 Sep - 19 Oct versions have ended. The roster stays that of Fri 25 Sep."
+  }
+}

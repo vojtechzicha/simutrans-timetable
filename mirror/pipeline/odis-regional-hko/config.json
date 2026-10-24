@@ -1,0 +1,1438 @@
+{
+ "title": "ODIS Regional Havířovsko Karvinsko Orlovsko",
+ "output_html": "ODIS Regional Havirovsko Karvinsko Orlovsko.html",
+ "artifact_url": "https://claude.ai/artifact/SFgd2KE6xRv9PLKtS5qMnw",
+ "snapshot": "2026-10-20",
+ "vehicle_day": "2026-10-20",
+ "vehicle_day_label_en": "Tuesday 20 Oct 2026",
+ "network_state_label": "20 Oct 2026",
+ "jdf": {
+  "zip": "../havirov-karvina-orlova/data/raw/2026-10-20/JDF.zip",
+  "export_label": "CIS JŘ bus JDF export of 20 Oct 2026 (stored by the Havířov/Karviná/Orlová pipeline)",
+  "operator_ic": "45192081",
+  "why": "The kraj numbers each contract area's licences with its own prefix: 912 Havířovsko (I and II), 873 Karvinsko, 874 Orlovsko (871 Českotěšínsko, 863 Frýdecko-Místecko, 904 Hlučínsko). Checked against the live map: the 912 lines run from provozovna Havířov with 42-/43- buses, 873 from Karviná with 52-, 874 from Orlová with 51-; the register notes name the same areas ('provozní oblast Karvinsko' …). The ODIS line number is the last three digits; one ODIS line can hold licences of two areas (553: 873553 + 874553), so trips are merged by ODIS number."
+ },
+ "areas": [
+  {
+   "id": "havirovsko",
+   "name": "Havířovsko",
+   "prefix": "912",
+   "branch": "Transdev Slezsko pr. Havířov",
+   "depot": "provozovna Havířov",
+   "fleet": [
+    "42",
+    "43"
+   ]
+  },
+  {
+   "id": "karvinsko",
+   "name": "Karvinsko",
+   "prefix": "873",
+   "branch": "Transdev Slezsko pr. Karviná",
+   "depot": "provozovna Karviná",
+   "fleet": [
+    "52"
+   ]
+  },
+  {
+   "id": "orlovsko",
+   "name": "Orlovsko",
+   "prefix": "874",
+   "branch": "Transdev Slezsko pr. Orlová",
+   "depot": "provozovna Orlová",
+   "fleet": [
+    "51"
+   ]
+  }
+ ],
+ "other_sheets": {
+  "ostrava": {
+   "lines": [
+    "440",
+    "441",
+    "442",
+    "531",
+    "534",
+    "535"
+   ],
+   "label": "Ostrava Bus Vypravenost, section All lines at Hranečník",
+   "derived": "../ostrava-bus/data/derived/odis.json",
+   "url": "https://claude.ai/artifact/6rNwavbbnG4H2aJVZPNx8R"
+  },
+  "hko": {
+   "label": "Havířov Karviná Orlová Bus Vypravenost (town lines)",
+   "derived": "../havirov-karvina-orlova/data/derived/roster.json",
+   "url": "https://claude.ai/artifact/UmPg6guEAbmSune5YnFTVb"
+  }
+ },
+ "live": {
+  "dir": "../havirov-karvina-orlova/data/raw/2026-10-20/live",
+  "fleet": "../havirov-karvina-orlova/data/derived/fleet.json",
+  "label": "Tue 20 Oct 2026",
+  "note": "ODIS live map (mpvnet.cz): every bus with licence, line, trip number (= JDF spoj) and number plate; polled every minute 13:05–19:30 on Tue 20 Oct 2026, whole region, by the Havířov/Karviná/Orlová pipeline."
+ },
+ "fitwin": [
+  300,
+  1380
+ ],
+ "cycle_lay": 3,
+ "all_termini_are_loops": true,
+ "stop_name_expansions": [
+  [
+   "EDĚ aut.st.",
+   "Elektrárna Dětmarovice, autobusová stanice"
+  ],
+  [
+   "aut.nádr.",
+   "autobusové nádraží"
+  ],
+  [
+   "aut.st.",
+   "autobusová stanice"
+  ],
+  [
+   "rozc.k žel.st.",
+   "rozcestí k železniční stanici"
+  ],
+  [
+   "žel.st.",
+   "železniční stanice"
+  ],
+  [
+   "žel.zast.",
+   "železniční zastávka"
+  ],
+  [
+   "rozc.",
+   "rozcestí "
+  ],
+  [
+   "pož.zbroj.",
+   "požární zbrojnice"
+  ],
+  [
+   "rest.",
+   "restaurace "
+  ],
+  [
+   "zast.",
+   "zastávka "
+  ],
+  [
+   "J.Kotase",
+   "Josefa Kotase"
+  ],
+  [
+   "H.Malířové",
+   "Heleny Malířové"
+  ],
+  [
+   "M.Pujmanové",
+   "Marie Pujmanové"
+  ],
+  [
+   "Kpt.Jasioka",
+   "Kapitána Jasioka"
+  ],
+  [
+   "Nám.Republiky",
+   "Náměstí Republiky"
+  ],
+  [
+   "Národní tř.",
+   "Národní třída"
+  ],
+  [
+   "Děl.dům",
+   "Dělnický dům"
+  ],
+  [
+   "nákup.stř.",
+   "nákupní středisko"
+  ],
+  [
+   "čerp.st.",
+   "čerpací stanice"
+  ],
+  [
+   "čist.st.",
+   "čisticí stanice"
+  ],
+  [
+   "kult.dům",
+   "kulturní dům"
+  ],
+  [
+   "obch.dům",
+   "obchodní dům"
+  ],
+  [
+   "rehab.sanatorium",
+   "rehabilitační sanatorium"
+  ],
+  [
+   "sídl.",
+   "sídliště "
+  ],
+  [
+   "křiž.",
+   "křižovatka "
+  ],
+  [
+   "Pr.Suchá",
+   "Prostřední Suchá"
+  ],
+  [
+   "nám.",
+   "náměstí"
+  ],
+  [
+   "2.etapa",
+   "2. etapa"
+  ]
+ ],
+ "stop_name_fixed": {},
+ "terminus_alias": {
+  "Havířov, Podlesí, Těšínská": "Havířov, Podlesí, autobusové nádraží"
+ },
+ "terminus_alias_why": "Buses arrive at Havířov, Podlesí, autobusové nádraží and leave from Podlesí, Těšínská, 2 min away (the Havířov/Karviná/Orlová sheet's alias): one terminus.",
+ "regular_not_diversion": {
+  "873582": "The diversion of 582 (28 Aug – 30 Nov 2026: Stonava, Důl ČSM-Jih, Důl ČSM-Sever, Hořany and Mexico not served) ends in six weeks, so the regular route is modelled (shared rule: short-term closures as the regular state)."
+ },
+ "lines": {
+  "365": {
+   "core": [
+    "Frýdek-Místek, Místek, Anenská",
+    "Dobrá, střed",
+    "Soběšovice, Na husarůvce",
+    "Žermanice, rozcestí",
+    "Havířov, Podlesí, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "365",
+     "every": 90,
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, Anenská",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "at": [
+        "15:00"
+       ]
+      },
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Frýdek-Místek, Místek, Anenská",
+       "at": [
+        "15:00"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Frýdek-Místek – Havířov via Dobrá, Horní and Dolní Domaslavice, Soběšovice and Žermanice: 9 stops no other line serves. It runs only about every 80–90 min, at no fixed minute: from Frýdek-Místek 13:40 (to Žermanice), 15:00, 16:30, 17:50; back 14:05, 15:00, 16:45, 17:24. Every 90 hits 15:00 and 16:30 exactly both ways. The rest are 10–35 min off and listed. The buses rotate between 365–369 at both ends."
+  },
+  "366": {
+   "core": [
+    "Frýdek-Místek, Místek, Anenská",
+    "Dobrá, střed",
+    "Lučina, střed",
+    "Žermanice, rozcestí",
+    "Havířov, Podlesí, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "366",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, Anenská",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "core_to": "Žermanice, rozcestí",
+       "at": [
+        10
+       ]
+      },
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Frýdek-Místek, Místek, Anenská",
+       "knot": "Žermanice, rozcestí",
+       "knot_at": [
+        36
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Frýdek-Místek – Havířov via Dobrá, Lučina and Žermanice. About hourly, but at no fixed minute (out 13:20, 14:30, 15:10, 16:10, 16:58). The line is read at Žermanice, rozcestí, so the short trips that turn there count. Towards Frýdek-Místek the buses pass Žermanice at :36 (12:36, 16:36), so Podlesí departs :25. Approximate."
+  },
+  "367": {
+   "core": [
+    "Frýdek-Místek, Místek, Anenská",
+    "Sedliště, pošta",
+    "Žermanice, rozcestí",
+    "Havířov, Podlesí, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "367",
+     "every": 180,
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, Anenská",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "at": [
+        "16:35"
+       ]
+      },
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Frýdek-Místek, Místek, Anenská",
+       "at": [
+        "15:40"
+       ],
+       "stops_via": [
+        "Bruzovice, Zámostí"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Frýdek-Místek – Havířov via Sedliště, Bruzovice and Žermanice: 3 trips each way in the afternoon. Every 180 with one bus: Frýdek-Místek 16:35 exact (the 13:35 slot stands for 13:25), Podlesí 15:40 exact. The way back runs on the Lučina path (Bruzovice, Zámostí – Pazderna – Lučina), as the evening trips do, so Zámostí, which only those serve, is on a line."
+  },
+  "368": {
+   "core": [
+    "Frýdek-Místek, Místek, Anenská",
+    "Sedliště, pošta",
+    "Havířov, Podlesí, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "368",
+     "every": 180,
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, Anenská",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "at": [
+        "12:40"
+       ]
+      },
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Frýdek-Místek, Místek, Anenská",
+       "at": [
+        "13:35"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Frýdek-Místek – Havířov via Sedliště, direct: 3 trips a day each way, 170–180 min apart in the afternoon. Every 180 with one bus: Frýdek-Místek :40 (12:40 exact; 15:30 is 10 min early), Podlesí 13:35 and 16:35 exact (16:35 is the 16:22 trip from Havířov, Město passing Podlesí, Těšínská). It is the only line at Bruzovice, Kunčický and Bruzovice, kříž."
+  },
+  "369": {
+   "core": [
+    "Frýdek-Místek, Místek, Anenská",
+    "Sedliště, pošta",
+    "Šenov, náměstí",
+    "Havířov, Město, železniční stanice",
+    "Havířov, Podlesí, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "369",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, Anenská",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "core_to": "Havířov, Město, železniční stanice",
+       "at": [
+        30
+       ]
+      },
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Frýdek-Místek, Místek, Anenská",
+       "knot": "Havířov, Město, železniční stanice",
+       "knot_at": [
+        57
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Frýdek-Místek – Havířov via Sedliště, Kaňovice and Šenov. Hourly all day at its core points: Frýdek-Místek :30, and towards Frýdek-Místek Havířov, Město, železniční stanice :57 (8:57–18:57). Half the trips end at Město, the rest go on to Podlesí, so the Simutrans line runs to Podlesí. It leaves Podlesí at :45, to pass Město at :57. In the afternoon 14:45 and 15:40 (back 14:22, 14:52, 15:52) are shifted, and listed."
+  },
+  "443": {
+   "core": [
+    "Havířov, Podlesí, autobusové nádraží",
+    "Havířov, Město, železniční stanice",
+    "Ostrava, Mor.Ostrava, Náměstí Republiky"
+   ],
+   "sim": [
+    {
+     "name": "443",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "at": [
+        1
+       ]
+      },
+      {
+       "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "at": [
+        40
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Havířov – Ostrava, Náměstí Republiky (express). Exactly hourly 13:01–18:01: Podlesí :01, Náměstí Republiky :40. The morning every-30 service and the evening trips from Těšínská are listed."
+  },
+  "445": {
+   "core": [
+    "Havířov, Podlesí, autobusové nádraží",
+    "Havířov, Město, železniční stanice",
+    "Ostrava, Zábřeh, AVION",
+    "Ostrava, Poruba, Opavská"
+   ],
+   "sim": [
+    {
+     "name": "445",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Ostrava, Poruba, Opavská",
+       "at": [
+        12
+       ]
+      },
+      {
+       "fr": "Ostrava, Poruba, Opavská",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "at": [
+        32
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Havířov – Ostrava, Poruba via Zábřeh, AVION: about hourly 14:00–17:00 (Podlesí 14:12, 15:12, 16:47; Poruba 14:14, 15:32, 16:32). Every 60 at :12 / :32, approximate. All its Ostrava stops are DPO stops as well."
+  },
+  "448": {
+   "core": [
+    "Havířov, Podlesí, autobusové nádraží",
+    "Havířov, Město, železniční stanice",
+    "Vratimov, náměstí",
+    "Ostrava, Hrabůvka, Poliklinika"
+   ],
+   "sim": [
+    {
+     "name": "448",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Ostrava, Hrabůvka, Poliklinika",
+       "at": [
+        5
+       ]
+      },
+      {
+       "fr": "Ostrava, Hrabůvka, Poliklinika",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "at": [
+        50
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Havířov – Ostrava, Hrabůvka via Vratimov. Hourly: Podlesí :05 (12:05–17:03), Poliklinika :50. The 13:03 and 17:03 trips and their returns 14:00 and 18:05 run via Kartonážka and Hrabová, průmyslová zóna (DPO lines serve those stops). The line runs the direct path."
+  },
+  "451": {
+   "core": [
+    "Havířov, Podlesí, autobusové nádraží",
+    "Havířov, Město, železniční stanice",
+    "Orlová, Lutyně, autobusové nádraží",
+    "Dětmarovice, Elektrárna Dětmarovice, autobusová stanice"
+   ],
+   "anchor": "16:00",
+   "sim": [
+    {
+     "name": "451",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Orlová, Lutyně, autobusové nádraží",
+       "at": [
+        0
+       ],
+       "notvia": [
+        "Dětmarovice, Elektrárna Dětmarovice, autobusová stanice"
+       ]
+      },
+      {
+       "fr": "Orlová, Lutyně, autobusové nádraží",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "at": [
+        16
+       ],
+       "notvia": [
+        "Dětmarovice, Elektrárna Dětmarovice, autobusová stanice"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "451 Elektrárna",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Dětmarovice, Elektrárna Dětmarovice, autobusová stanice",
+       "at": [
+        "12:45"
+       ]
+      },
+      {
+       "fr": "Dětmarovice, Elektrárna Dětmarovice, autobusová stanice",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "at": [
+        "14:10"
+       ]
+      }
+     ],
+     "why": "Podlesí 12:45 (real 13:00): 13:00 is a departure of the every-30 trunk, so the shift bus leaves between two trunk departures instead of with one."
+    }
+   ],
+   "note": "Havířov – Orlová, Lutyně, every 30 all day: Podlesí :00 / :30, Lutyně :16 / :46 (:18 / :48 after 17:00). It is modelled at 16:00. 13:00–15:00 has extra shift trips (13:08, 13:20, 13:45, 14:15, 14:35); they are listed. Trips via Orlová, Město, náměstí run in the same slots, and that stop is on the town lines. The Elektrárna Dětmarovice trips are the power plant's shifts, so they become 451 Elektrárna, every 480: Elektrárna 14:10 (22:10, 6:10), Podlesí 12:45 (20:45, 4:45): the real 13:00 is a slot of the every-30 trunk, so the shift bus leaves 15 min earlier rather than together with a trunk bus. It is the only service of Dětmarovice, V polích."
+  },
+  "453": {
+   "core": [
+    "Havířov, Podlesí, autobusové nádraží",
+    "Havířov, Město, železniční stanice",
+    "Rychvald, rozcestí",
+    "Bohumín, Nový Bohumín, autobusová stanice",
+    "Bohumín, Pudlov, ŽD točna"
+   ],
+   "sim": [
+    {
+     "name": "453",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Bohumín, Pudlov, ŽD točna",
+       "at": [
+        "12:45"
+       ]
+      },
+      {
+       "fr": "Bohumín, Pudlov, ŽD točna",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "at": [
+        "14:18"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Havířov – Bohumín, Pudlov (the ŽDB works). A shift line, exactly every 480: Podlesí 4:45, 12:45, 20:45; Pudlov 6:18, 14:18, 22:16. In the afternoon it is the only line at Pudlov, drátovny and ŽD točna. The 16:10 and 18:05 trips via Nový Bohumín are listed."
+  },
+  "452": {
+   "core": [
+    "Havířov, Podlesí, autobusové nádraží",
+    "Orlová, Lutyně, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "452",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Orlová, Lutyně, autobusové nádraží",
+       "at": [
+        45
+       ]
+      },
+      {
+       "fr": "Orlová, Lutyně, autobusové nádraží",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "at": [
+        48
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Havířov – Orlová via Prostřední Suchá and Dolní Suchá: 4 trips each way in the afternoon at irregular times (Podlesí 12:45, 14:35, 17:00, 18:20; Lutyně 13:50, 14:40, 15:35, 16:48). Every 60 at :45 / :48, approximate."
+  },
+  "460": {
+   "core": [
+    "Orlová, Lutyně, autobusové nádraží",
+    "Nošovice, PZ Hyundai - hlavní brána"
+   ],
+   "sim": [
+    {
+     "name": "460",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Orlová, Lutyně, autobusové nádraží",
+       "to": "Nošovice, PZ Hyundai - hlavní brána",
+       "at": [
+        "12:30"
+       ]
+      },
+      {
+       "fr": "Nošovice, PZ Hyundai - hlavní brána",
+       "to": "Orlová, Lutyně, autobusové nádraží",
+       "at": [
+        "14:25"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Orlová – Nošovice, Hyundai. A shift line, exactly every 480: Lutyně 4:30, 12:30, 20:30; Hyundai 6:25, 14:25, 22:25. It is the only line at Frýdek, Povodí Odry and Nošovice, PZ – sever."
+  },
+  "465": {
+   "core": [
+    "Havířov, Podlesí, autobusové nádraží",
+    "Žermanice, rozcestí",
+    "Třanovice, křižovatka"
+   ],
+   "sim": [
+    {
+     "name": "465",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Třanovice, křižovatka",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "at": [
+        16
+       ]
+      },
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Třanovice, křižovatka",
+       "at": [
+        40
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Havířov – Třanovice via Žermanice, Soběšovice and Dolní Domaslavice: 8 stops no other line serves. Hourly 13:00–16:00 (Třanovice :16, Podlesí :40), then only in the evening. Every 60, approximate on the Havířov side."
+  },
+  "533": {
+   "core": [
+    "Karviná, Fryštát, autobusové nádraží",
+    "Horní Suchá, dvůr",
+    "Havířov, Město, nemocnice",
+    "Havířov, Podlesí, autobusové nádraží"
+   ],
+   "anchor": "16:00",
+   "sim": [
+    {
+     "name": "533",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Karviná, Fryštát, autobusové nádraží",
+       "to": "Havířov, Podlesí, autobusové nádraží",
+       "at": [
+        8,
+        38
+       ]
+      },
+      {
+       "fr": "Havířov, Podlesí, autobusové nádraží",
+       "to": "Karviná, Fryštát, autobusové nádraží",
+       "at": [
+        5,
+        40
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Karviná – Havířov via Doly and Horní Suchá. Karviná :08 all day, every 30 (:08 / :38) from 13:38 to 16:38. Podlesí :45 in the morning, then :05 / :40 from 14:40 to 17:05; the :40 trips take the shorter path without Doly, Barbora. Modelled at 16:00 as one line with two slots each way, on the full path."
+  },
+  "583": {
+   "core": [
+    "Karviná, Fryštát, autobusové nádraží",
+    "Horní Suchá, dvůr",
+    "Havířov, Město, nemocnice"
+   ],
+   "sim": [
+    {
+     "name": "583",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Karviná, Fryštát, autobusové nádraží",
+       "to": "Havířov, Město, nemocnice",
+       "at": [
+        21
+       ]
+      },
+      {
+       "fr": "Havířov, Město, nemocnice",
+       "to": "Karviná, Fryštát, autobusové nádraží",
+       "at": [
+        31
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Karviná – Havířov via Stonava, Holkovice. Hourly: Karviná :21 to Havířov, Město, nemocnice; back from Havířov, Město, železniční stanice :22, which passes nemocnice at :31. So nemocnice is the terminal. The morning and evening trips to and from Podlesí (Karviná :38, Podlesí :15 / :20) are listed; Podlesí is on 533."
+  },
+  "532": {
+   "core": [
+    "Karviná, Fryštát, autobusové nádraží",
+    "Ostrava, Mor.Ostrava, Náměstí Republiky"
+   ],
+   "sim": [
+    {
+     "name": "532",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Karviná, Fryštát, autobusové nádraží",
+       "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "at": [
+        20
+       ]
+      },
+      {
+       "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "to": "Karviná, Fryštát, autobusové nádraží",
+       "at": [
+        39
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Karviná – Ostrava, Náměstí Republiky (express). Náměstí Republiky :39, hourly 13:39–18:39 (exact). Karviná is irregular (12:23, 12:53, 13:28, 14:28, 15:20, 16:20, 16:51): every 60 at :20. The timetable valid on the day is a diversion version (1 Aug – 12 Dec), with the same stops."
+  },
+  "537": {
+   "core": [
+    "Karviná, Fryštát, autobusové nádraží",
+    "Petrovice u Karv., Závada, konečná"
+   ],
+   "sim": [
+    {
+     "name": "537",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Karviná, Fryštát, autobusové nádraží",
+       "to": "Petrovice u Karv., Závada, konečná",
+       "at": [
+        37
+       ]
+      },
+      {
+       "fr": "Petrovice u Karv., Závada, konečná",
+       "to": "Karviná, Fryštát, autobusové nádraží",
+       "at": [
+        5
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Karviná – Petrovice, Závada. One bus, hourly: Karviná :37, Závada :05. From 14:37 the buses go on to Dětmarovice, železniční stanice (and come in from Orlová, Lutyně, věžáky), passing Závada at :21 on the way back. Those extensions serve stops of other lines and are listed."
+  },
+  "538": {
+   "core": [
+    "Karviná, Fryštát, autobusové nádraží",
+    "Petrovice u Karv., Prstná, konečná"
+   ],
+   "sim": [
+    {
+     "name": "538",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Karviná, Fryštát, autobusové nádraží",
+       "to": "Petrovice u Karv., Prstná, konečná",
+       "at": [
+        29
+       ]
+      },
+      {
+       "fr": "Petrovice u Karv., Prstná, konečná",
+       "to": "Karviná, Fryštát, autobusové nádraží",
+       "at": [
+        8
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Karviná – Petrovice, Prstná. Prstná :08 hourly all day (exact). Karviná :29 on the :29 trips' longer path, or :35 / :40. Every 60 at :29 / :08."
+  },
+  "553": {
+   "core": [
+    "Karviná, Fryštát, autobusové nádraží",
+    "Orlová, Lutyně, autobusové nádraží",
+    "Orlová, Lutyně, věžáky",
+    "Ostrava, hlavní nádraží"
+   ],
+   "sim": [
+    {
+     "name": "553",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Ostrava, hlavní nádraží",
+       "to": "Karviná, Fryštát, autobusové nádraží",
+       "core_to": "Orlová, Lutyně, autobusové nádraží",
+       "at": [
+        32
+       ],
+       "notvia": [
+        "Rychvald, Autopal"
+       ]
+      },
+      {
+       "fr": "Karviná, Fryštát, autobusové nádraží",
+       "to": "Ostrava, hlavní nádraží",
+       "knot": "Orlová, Lutyně, autobusové nádraží",
+       "knot_at": [
+        21
+       ],
+       "notvia": [
+        "Rychvald, Autopal"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "553 Orlová",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Ostrava, hlavní nádraží",
+       "to": "Orlová, Lutyně, autobusové nádraží",
+       "at": [
+        52
+       ],
+       "notvia": [
+        "Rychvald, Autopal"
+       ]
+      },
+      {
+       "fr": "Orlová, Lutyně, autobusové nádraží",
+       "to": "Ostrava, hlavní nádraží",
+       "untimed": true,
+       "notvia": [
+        "Rychvald, Autopal"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "553 Autopal",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Orlová, Lutyně, autobusové nádraží",
+       "to": "Ostrava, hlavní nádraží",
+       "at": [
+        "13:17"
+       ],
+       "via": [
+        "Rychvald, Autopal"
+       ]
+      },
+      {
+       "fr": "Ostrava, hlavní nádraží",
+       "to": "Orlová, Lutyně, autobusové nádraží",
+       "at": [
+        "13:59"
+       ],
+       "via": [
+        "Rychvald, Autopal"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Ostrava, hlavní nádraží – Orlová – Karviná: two licences of one line (873553 Karvinsko, 874553 Orlovsko), merged. Read at Lutyně (core point): Ostrava :32 to Karviná (8:32–16:32), and Lutyně :21 towards Ostrava (Karviná :53), hourly and exact. The extra Ostrava – Orlová trips (14:52, 15:52, then :02) are 553 Orlová, with an empty return, because their real buses go on as other lines. The Rychvald, Autopal shift trips (Lutyně 5:17, 13:17, 21:17, exactly every 480) are 553 Autopal. It is the only service of Autopal."
+  },
+  "581": {
+   "core": [
+    "Karviná, Fryštát, autobusové nádraží",
+    "Albrechtice, sídliště"
+   ],
+   "sim": [
+    {
+     "name": "581",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Karviná, Fryštát, autobusové nádraží",
+       "to": "Albrechtice, sídliště",
+       "at": [
+        10
+       ]
+      },
+      {
+       "fr": "Albrechtice, sídliště",
+       "to": "Karviná, Fryštát, autobusové nádraží",
+       "at": [
+        0
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Karviná – Albrechtice. Exactly hourly: Karviná :10, Albrechtice :00. 2 buses, as in reality."
+  },
+  "582": {
+   "core": [
+    "Karviná, Fryštát, autobusové nádraží",
+    "Albrechtice, železniční stanice",
+    "Horní Suchá, dvůr",
+    "Horní Suchá, škola"
+   ],
+   "sim": [
+    {
+     "name": "582",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Karviná, Fryštát, autobusové nádraží",
+       "to": "Horní Suchá, dvůr",
+       "core_to": "Albrechtice, železniční stanice",
+       "at": [
+        "13:40",
+        "14:40",
+        "15:40",
+        "16:40",
+        "17:40",
+        "18:40",
+        "19:40"
+       ],
+       "notvia": [
+        "Stonava, Mexico"
+       ]
+      },
+      {
+       "fr": "Horní Suchá, dvůr",
+       "to": "Karviná, Fryštát, autobusové nádraží",
+       "knot": "Albrechtice, železniční stanice",
+       "notvia": [
+        "Stonava, Mexico"
+       ],
+       "knot_at": [
+        "14:39",
+        "15:39",
+        "16:39",
+        "17:39",
+        "18:39",
+        "19:39",
+        "20:39"
+       ]
+      }
+     ],
+     "why": "Every 480 with seven hourly slots: the eighth hour (12:40 from Karviná) is 582 ČSM's, so the two never leave together (Ex4)."
+    },
+    {
+     "name": "582 ČSM",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Karviná, Fryštát, autobusové nádraží",
+       "to": "Horní Suchá, škola",
+       "at": [
+        "12:40"
+       ],
+       "via": [
+        "Stonava, Mexico"
+       ]
+      },
+      {
+       "fr": "Horní Suchá, škola",
+       "to": "Karviná, Fryštát, autobusové nádraží",
+       "at": [
+        "14:00"
+       ],
+       "via": [
+        "Stonava, Mexico"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Karviná – Horní Suchá via Stonava and Albrechtice: Karviná :40 hourly (exact 12:40–16:40), written as every 480 with seven slots, because 12:40 (20:40, 4:40) is 582 ČSM's (Ex4). The 28 Aug – 30 Nov diversion, which skips the Stonava mines, is left out: the regular route is modelled. Its shift trips via the Stonava mines and Mexico (Karviná 12:40 and 20:40, Horní Suchá 14:00) are 582 ČSM, every 480. It is the only service of Stonava, Mexico. Back from Horní Suchá is irregular (14:00, 15:30, 16:28)."
+  },
+  "543": {
+   "core": [
+    "Ostrava, hlavní nádraží",
+    "Rychvald, rozcestí",
+    "Dolní Lutyně, obecní úřad",
+    "Dětmarovice, železniční stanice"
+   ],
+   "sim": [
+    {
+     "name": "543",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Ostrava, hlavní nádraží",
+       "to": "Dětmarovice, železniční stanice",
+       "at": [
+        "14:12"
+       ]
+      },
+      {
+       "fr": "Dětmarovice, železniční stanice",
+       "to": "Ostrava, hlavní nádraží",
+       "at": [
+        "15:04"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "543B",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Ostrava, hlavní nádraží",
+       "to": "Dětmarovice, železniční stanice",
+       "at": [
+        "13:12"
+       ]
+      },
+      {
+       "fr": "Dětmarovice, železniční stanice",
+       "to": "Ostrava, hlavní nádraží",
+       "untimed": true
+      }
+     ]
+    }
+   ],
+   "note": "Ostrava, hlavní nádraží – Dětmarovice via Rychvald and Dolní Lutyně. Ostrava :12 hourly 13:12–16:12, but back from Dětmarovice only every 2 h (13:04, 15:04; morning 5:04, 7:04). The plates show how: the 14:12 bus comes back as the 15:04, while the 13:12 and 15:12 buses go on from Dětmarovice as 546 short trips to Bohumín (51-1107 at 13:57, 51-1105 at 15:57). So 543 runs every 120 both ways (Ostrava 14:12, 16:12; Dětmarovice 13:04, 15:04), one bus, and 543B runs Ostrava 13:12, 15:12 out with an empty return."
+  },
+  "546": {
+   "core": [
+    "Karviná, Fryštát, autobusové nádraží",
+    "Dětmarovice, obecní úřad",
+    "Dolní Lutyně, obecní úřad",
+    "Bohumín, Nový Bohumín, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "546",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Karviná, Fryštát, autobusové nádraží",
+       "to": "Bohumín, Nový Bohumín, autobusová stanice",
+       "at": [
+        "14:15"
+       ]
+      },
+      {
+       "fr": "Bohumín, Nový Bohumín, autobusová stanice",
+       "to": "Karviná, Fryštát, autobusové nádraží",
+       "core_to": "Dětmarovice, obecní úřad",
+       "at": [
+        "16:52"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Karviná – Bohumín via Dětmarovice and Dolní Lutyně. Every 2 h: Karviná 14:25, 16:15, 18:15; Nový Bohumín 16:52 (to Dětmarovice), 18:52. Every 120, to Nový Bohumín, autobusová stanice, which all trips pass. The Pudlov trips (12:30, 14:30) are covered by 453. The Dětmarovice – Bohumín short trips are listed."
+  },
+  "552": {
+   "core": [
+    "Orlová, Lutyně, autobusové nádraží",
+    "Ostrava, Mor.Ostrava, Náměstí Republiky"
+   ],
+   "sim": [
+    {
+     "name": "552",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Orlová, Lutyně, autobusové nádraží",
+       "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "at": [
+        30
+       ]
+      },
+      {
+       "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "to": "Orlová, Lutyně, autobusové nádraží",
+       "at": [
+        35
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Orlová – Ostrava, Náměstí Republiky (express). A midday line that ends at 15:35: Lutyně :30 (5:30–13:30 exact), Ostrava :35. The diversion timetable is valid all autumn and keeps the same stops."
+  },
+  "558": {
+   "core": [
+    "Orlová, Lutyně, autobusové nádraží",
+    "Rychvald, rozcestí",
+    "Bohumín, Nový Bohumín, železniční stanice"
+   ],
+   "sim": [
+    {
+     "name": "558",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Orlová, Lutyně, autobusové nádraží",
+       "to": "Bohumín, Nový Bohumín, železniční stanice",
+       "at": [
+        2
+       ],
+       "notvia": [
+        "Bohumín, Pudlov, střed"
+       ]
+      },
+      {
+       "fr": "Bohumín, Nový Bohumín, železniční stanice",
+       "to": "Orlová, Lutyně, autobusové nádraží",
+       "at": [
+        16
+       ],
+       "notvia": [
+        "Bohumín, Pudlov, střed"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "558 Pudlov",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Bohumín, Pudlov, střed",
+       "to": "Orlová, Lutyně, autobusové nádraží",
+       "at": [
+        "14:40"
+       ]
+      },
+      {
+       "fr": "Orlová, Lutyně, autobusové nádraží",
+       "to": "Bohumín, Pudlov, střed",
+       "untimed": true
+      }
+     ]
+    }
+   ],
+   "note": "Orlová – Bohumín via Petřvald and Rychvald: Lutyně :02 hourly (9 of 11 exact). Back from Nový Bohumín, železniční stanice: :04 in the morning, :16 late in the afternoon (15:16, 17:16, 18:16). The Pudlov trip at 14:40 (6:54 in the morning) is 558 Pudlov, every 480 with an empty return. It is the only line at Pudlov, střed."
+  },
+  "559": {
+   "core": [
+    "Orlová, Lutyně, autobusové nádraží",
+    "Bohumín, Nový Bohumín, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "559",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Orlová, Lutyně, autobusové nádraží",
+       "to": "Bohumín, Nový Bohumín, autobusová stanice",
+       "at": [
+        "14:00",
+        "15:00",
+        "16:00",
+        "17:00",
+        "18:00",
+        "19:00",
+        "20:00"
+       ],
+       "notvia": [
+        "Bohumín, Nový Bohumín, Kovošrot"
+       ]
+      },
+      {
+       "fr": "Bohumín, Nový Bohumín, autobusová stanice",
+       "to": "Orlová, Lutyně, autobusové nádraží",
+       "at": [
+        "14:50",
+        "15:50",
+        "16:50",
+        "17:50",
+        "18:50",
+        "19:50",
+        "20:50"
+       ],
+       "notvia": [
+        "Bohumín, Nový Bohumín, Kovošrot"
+       ]
+      }
+     ],
+     "why": "Every 480 with seven hourly slots: the eighth hour (13:00 from Lutyně) is 559 Kovošrot's, so the two never leave together (Ex4)."
+    },
+    {
+     "name": "559 Kovošrot",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Orlová, Lutyně, autobusové nádraží",
+       "to": "Bohumín, Nový Bohumín, autobusová stanice",
+       "at": [
+        "13:00"
+       ],
+       "via": [
+        "Bohumín, Nový Bohumín, Kovošrot"
+       ]
+      },
+      {
+       "fr": "Bohumín, Nový Bohumín, autobusová stanice",
+       "to": "Orlová, Lutyně, autobusové nádraží",
+       "at": [
+        "14:30"
+       ],
+       "via": [
+        "Bohumín, Nový Bohumín, Kovošrot"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Orlová – Bohumín via Dolní Lutyně, at irregular times (Lutyně 13:00, 14:00, 15:15, 16:55, 19:00; Bohumín 14:05, 14:30, 15:40, 16:50, 17:20, 18:50). Hourly at :00 / :50, approximate, written as every 480 with seven slots, because the eighth hour is 559 Kovošrot's (Ex4). The Kovošrot shift trips (Lutyně 13:00, 21:05; Bohumín 6:30, 14:30, 22:36) are 559 Kovošrot, every 480. It is the only service of Kovošrot."
+  },
+  "560": {
+   "core": [
+    "Orlová, Lutyně, autobusové nádraží",
+    "Bohumín, Nový Bohumín, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "560",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Orlová, Lutyně, autobusové nádraží",
+       "to": "Bohumín, Nový Bohumín, autobusová stanice",
+       "at": [
+        40
+       ]
+      },
+      {
+       "fr": "Bohumín, Nový Bohumín, autobusová stanice",
+       "to": "Orlová, Lutyně, autobusové nádraží",
+       "at": [
+        0
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Orlová – Bohumín via Dolní Lutyně, on 559's other path. Irregular; every 60 at :40 / :00, approximate."
+  },
+  "563": {
+   "core": [
+    "Orlová, Lutyně, autobusové nádraží",
+    "Stonava, Důl ČSM-Jih"
+   ],
+   "sim": [
+    {
+     "name": "563",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Orlová, Lutyně, autobusové nádraží",
+       "to": "Stonava, Důl ČSM-Jih",
+       "at": [
+        "12:45"
+       ]
+      },
+      {
+       "fr": "Stonava, Důl ČSM-Jih",
+       "to": "Orlová, Lutyně, autobusové nádraží",
+       "at": [
+        "14:07"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Orlová – the Stonava mines via Karviná, Doly. A shift line every 480: Lutyně 4:45, 12:45, 20:45; Důl ČSM-Jih 6:15, 14:07, 22:10. It is the only line at Karviná, Doly, Důl ČSA."
+  },
+  "565": {
+   "core": [
+    "Dolní Lutyně, Věřňovice, restaurace",
+    "Bohumín, Kopytov, točna",
+    "Bohumín, Nový Bohumín, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "565",
+     "every": 90,
+     "legs": [
+      {
+       "fr": "Dolní Lutyně, Věřňovice, restaurace",
+       "to": "Bohumín, Nový Bohumín, autobusová stanice",
+       "at": [
+        "15:15"
+       ]
+      },
+      {
+       "fr": "Bohumín, Nový Bohumín, autobusová stanice",
+       "to": "Dolní Lutyně, Věřňovice, restaurace",
+       "at": [
+        "14:35"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "565 Kopytov",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Bohumín, Nový Bohumín, autobusová stanice",
+       "to": "Bohumín, Kopytov, točna",
+       "at": [
+        "13:10"
+       ],
+       "via": [
+        "Bohumín, Nový Bohumín, Vrchlického"
+       ]
+      },
+      {
+       "fr": "Bohumín, Kopytov, točna",
+       "to": "Bohumín, Nový Bohumín, autobusová stanice",
+       "at": [
+        "13:25"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Dolní Lutyně, Věřňovice – Bohumín via Kopytov and Šunychl. One bus runs it about every 90 min (Bohumín 14:35, 16:10; Věřňovice 15:15, 16:45), so the line is every 90. The Nový Bohumín – Kopytov short trips through Vrchlického (13:10, 14:05) are 565 Kopytov, every 480. It is the only service of Vrchlického."
+  }
+ },
+ "unmodelled": {
+  "444": "Shift line Havířov – Ostrava, Kunčice, NH jižní brána / Hrabová, PZ jih, every 8 h in reality (Podlesí 4:33–4:58, 12:43, 12:47, 20:45, 20:53; back 6:10, 6:20, 14:15, 14:17, 14:40, 22:15, 22:19). Its stops are all on other lines.",
+  "446": "Two trips a day (Šenov, bytovky 7:10 → Havířov; Havířov 13:40 → Šenov) over stops of other lines.",
+  "455": "Two trips a day (Havířov 5:20 → Karviná, Důl Darkov; 14:05 back) over stops of other lines.",
+  "457": "Shift line Havířov – Stonava, Důl ČSM (Podlesí 4:42, 12:38, 20:43; back 6:15, 14:10, 22:10). Its stops are all on other lines.",
+  "461": "Shift line Havířov, Šumbark / Magistrát – Nošovice, Hyundai (every 8 h). Hyundai is on 460, the other stops on other lines.",
+  "463": "Shift line Horní Suchá – Havířov – Nošovice, Hyundai (every 8 h). Its stops are all on other lines.",
+  "540": "Shift line Karviná – Stonava, Důl ČSM-Jih (Karviná 4:25, 4:40, 12:35, 20:35; back 6:10, 14:00, 22:05). Its afternoon stops are on other lines; Karviná, Hranice, restaurace Permon has no afternoon service at all.",
+  "541": "Two trips a day (Karviná 5:05 → Stonava, Důl ČSM-Jih; 14:15 back) over stops of other lines.",
+  "550": "Shift line Orlová – Šenov – Vratimov – Ostrava, Hrabůvka (Lutyně 4:42, 12:42, 20:47; back 6:01, 14:01, 22:01). Its stops are all on other lines.",
+  "554": "Shift line Orlová – Ostrava, Kunčice, NH jižní brána (every 8 h). Its stops are all on other lines.",
+  "557": "Orlová – Rychvald – Bohumín: 2 trips out and 3 back in 13:00–19:00 (Lutyně 14:40, 15:42; Bohumín 13:14, 14:18, 14:58), at irregular times. Every stop is on 558 or 553.",
+  "564": "Orlová – Dolní Lutyně, Věřňovice: 2 trips out and 3 back in 13:00–19:00. Its stops are on 565 and on the Orlová town line 505.",
+  "555": "One morning trip (7:31) in Bohumín on the day. The line itself is Hlučínsko's (904555).",
+  "566": "One morning trip (7:00) on the day.",
+  "391": "No trips on Tuesdays.",
+  "392": "No trips on Tuesdays.",
+  "990": "No trips on Tuesdays.",
+  "562": "No trips on Tuesdays."
+ },
+ "network_state": [
+  [
+   "in",
+   "Lines 532 and 552: diversion timetables",
+   "The CIS JŘ export has diversion versions of 532 and 552 valid 1 Aug – 12 Dec 2026, with the same stops as the regular ones. They run on the vehicle day until the end of the timetable year, so they are modelled as they run."
+  ],
+  [
+   "out",
+   "Line 582: Stonava mines diversion (28 Aug – 30 Nov)",
+   "The diversion skips Stonava, Důl ČSM-Jih, Důl ČSM-Sever, Hořany and Mexico. It ends in six weeks, so the regular route is modelled (shared rule: short works as the regular state)."
+  ],
+  [
+   "in",
+   "Three contract areas",
+   "Havířovsko (licences 912xxx: Havířovsko I and II), Karvinsko (873xxx) and Orlovsko (874xxx), Transdev Slezsko. The kraj gives each area its own licence prefix. 553 holds a licence in both Karvinsko and Orlovsko and is one line here."
+  ],
+  [
+   "out",
+   "440, 441, 442, 531, 534, 535",
+   "These lines of the same areas stop at Ostrava, Hranečník and are on the Ostrava sheet (section All lines at Hranečník), with their buses. They are not repeated here."
+  ]
+ ],
+ "pak": {
+  "repo": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
+  "package": "VZ-ODIS-bus",
+  "why": "Pak session f3, 20 Oct 2026: VZ-ODIS-bus holds the ODIS regional fleet; every regional line uses it. Transdev Slezsko's 3ČSAD white-green is 3csadbilozelena, white with the kraj logo is bilazelenykruh (the green ring of Havířovsko), and 43-1101 and 43-1112 have a bright green CNG pod (3csadbilozelenazelenybox).",
+  "types": {
+   "Crossway LE LINE 12M": "Crossway_LE_Line_12M_NP",
+   "Crossway LE CITY 12M": "Crossway_LE_City_12M",
+   "SOR CNG 12": "SOR_CNG_12",
+   "Citywide LE 12M CNG": "Citywide_LE_12M_CNG",
+   "Citywide LE 15M CNG": "Citywide_LE_15M_CNG",
+   "Citywide Suburban LE 15M CNG": "Citywide_Suburban_LE_15M_CNG",
+   "Dekstra LE 37 L CNG": "Dekstra_LE_37_CNG",
+   "SOR CNG 10,5": "SOR_CNG_10_5",
+   "Urbanway 10,5M CNG": "Urbanway_10_5M_CNG",
+   "SOR ICNG 12,3": "SOR_ICNG_12_3"
+  },
+  "paints": [
+   [
+    "schéma ODIS",
+    "odiscervenocerna"
+   ],
+   [
+    "3ČSAD, bílo-zelená",
+    "3csadbilozelena"
+   ],
+   [
+    "bílá & logo dopravy Moravskoslezského kraje",
+    "bilazelenykruh"
+   ],
+   [
+    "bílá",
+    "bila"
+   ]
+  ],
+  "special": {
+   "43-1101": "3csadbilozelenazelenybox",
+   "43-1112": "3csadbilozelenazelenybox"
+  }
+ },
+ "owner_checks": [
+  [
+   "451",
+   "modelled at 16:00 (every 30, Podlesí :00 / :30), not at its busiest 13:00–15:00, where shift extras (13:08, 13:20, 13:45, 14:15, 14:35) sit on top of the every-30.",
+   "model 13:00–15:00 as it runs (about every 15–20, irregular), as the owner chose the busiest stretch for Ostrava 23."
+  ],
+  [
+   "533",
+   "modelled at 16:00 (Karviná :08 / :38, Podlesí :05 / :40, regular 14:40–17:08), not at its busiest 13:00–15:00, which is irregular (Podlesí 13:00, 13:15, 13:45, 14:00, 14:25).",
+   "model 13:00–15:00 as it runs."
+  ],
+  [
+   "451",
+   "451 Elektrárna leaves Podlesí 12:45, not its real 13:00, because 13:00 is a departure of the every-30 trunk.",
+   "keep 13:00 and accept two buses leaving Podlesí together once every 8 hours."
+  ],
+  [
+   "582",
+   "the regular route is modelled; on the vehicle day 582 ran a diversion (28 Aug – 30 Nov) that skips the Stonava mines and Mexico.",
+   "model the diversion as it ran; then 582 ČSM and Stonava, Mexico would drop out until 30 Nov."
+  ]
+ ]
+}

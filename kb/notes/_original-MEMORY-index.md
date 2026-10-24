@@ -1,0 +1,62 @@
+- [Simutrans city sheet rules](simutrans-city-sheet-rules.md) — PM-peak modelling rules, output format, data sources (CIS JŘ NeTEx) for city MHD sheets
+- [RegioJet rail sheet](regiojet-rail-sheet.md) — ARCHIVED 10 Oct; RJ lines sheet; CIS JŘ rail data, RU codes, L/S notation, needs JR2027 refresh
+- [Leo Express rail sheet](leoexpress-rail-sheet.md) — ARCHIVED 10 Oct; LE sheet; carrier 3616, 2 lines, same pipeline as RJ
+- [Brno tram peak fleet](brno-tram-peak-fleet.md) — Brno per-vehicle PM peak sheet done; bmhd.cz WAF headers, odd kurz = Pisárky
+- [Vehicle type always visible](vehicle-type-always-visible.md) — every vehicle in line/depot lists shows its type on-page, not via hover/summary
+- [Prague tram peak fleet](prague-tram-peak-fleet.md) — pipeline/praha; user rules; change sheets keep in-game trams, fewest moves (2026-10-12 closure state)
+- [Ostrava tram vypravenost](ostrava-tram-vypravenost.md) — Ostrava per-vehicle sheet; pipeline/ostrava holds scripts+data; roster designed, DPO live API
+- [Simutrans fork schedule spec](simutrans-fork-schedule-spec.md) — fork timetable fields/units/Also-at limit, variants rule, how sheets fit peak departures
+- [Olomouc tram peak fleet](olomouc-tram-peak-fleet.md) — Olomouc sheet (a2 since 29 Sep; spares+phone bar); mhd-ol sparse → Fri 18 Sep, 3/5 pool, VZ-DPOlomouc pak
+- [Most tram vypravenost](most-tram-vypravenost.md) — Most–Litvínov sheet; pipeline/most-litvinov; no data exists, designed; Chempark cut
+- [Plzeň tram peak fleet](plzen-tram-peak-fleet.md) — Plzeň sheet done 2026-09-28; Fri 18 Sep vehicles, line 4 one-line circuit, all VZ-PMDP objects installed
+- [City pipelines](city-pipelines.md) — all city sheets rebuild from pipeline/<city>/ in the project folder; READMEs hold the update recipes
+- [Prague trolleybus peak fleet](prague-trolleybus-peak-fleet.md) — pipeline/praha-trolleybus; OSM wire → battery sections; pak has VZ-<City>-trolleybus; Brno verification pending
+- [Ostrava trolleybus vypravenost](ostrava-trolleybus-vypravenost.md) — pipeline/ostrava-trolleybus; roster observed via DPO live feed 29 Sep; battery sections; imports tram lib
+- [Brno trolleybus peak fleet](brno-trolleybus-peak-fleet.md) — pipeline/brno-trolleybus; 25+26 and 35+38+39 pools as circuits; GTFS route_type 800; battery only 21/30
+- [Sticky header on all sheets](sticky-header-all-sheets.md) — every fleet sheet needs the Prague-style sticky bar + search; dynamic scroll-margin; verify with Playwright
+- [Ostrava bus vypravenost](ostrava-bus-vypravenost.md) — pipeline/ostrava-bus; observed at the Wed 30 Sep peak (167 seen, 16 designed); poller machine sleeps
+- [Save-game rename service](savegame-rename-service.md) — renames in the owner's .sve go via engine session simutrans-122-0-58 as a TSV list; never run it yourself
+- [Brno bus peak fleet](brno-bus-peak-fleet.md) — pipeline/brno-bus; propose.py circuits; lines filed under other numbers (54→52, E56→56); BDS-BUS on 48/74
+- [Prague bus lines check](prague-bus-lines-check.md) — all PID 100–299 vs save game; non-DPP → VZ-Praha objects; ferries on tram sheet
+- [Never ship without vehicles](never-ship-without-vehicles.md) — fleet sheets always show vehicles on lines: provisional sightings, other days, history-designed real cars; never 'pending'
+- [Designed vehicles roster rule](designed-vehicles-roster-rule.md) — designed vehicles = real car numbers from line history, free that day; sheet ownership 29 Sep
+- [Spares "not needed" rule](spares-not-needed-rule.md) — surplus beyond need (logged or history) marked not needed; keep every roster type; drop afternoon-only first
+- [Smaller cities scope](smaller-cities-scope.md) — a2 owns Olomouc tram, Pardubice rebuild, Plzeň trolleybus+bus, Olomouc bus, Most bus (29 Sep)
+- [MD-CR rail sheet](md-cr-rail-sheet.md) — ARCHIVED 5 Oct (archive/MD-CR.html); R lines + LE were last; open points in README banner
+- [Plzeň trolleybus + bus sheets](plzen-trolleybus-bus-peak-fleet.md) — pipeline/plzen-trolleybus (scripts+raw) + plzen-bus (--base); no GTFS shapes; 40/42 pools; pak all requested
+- [Local rail 062/064](local-rail-062-064.md) — Os lines around MB designed in chat; 062/064/064N offsets; user keeps uneven Nymburk running
+- [Simple sheet style](simple-sheet-style.md) — user dislikes MD-CR look; new design pages = plain chat-like tables
+- [Rail design rules](rail-design-rules.md) — approved careful method for all rail sheets; full text pipeline/rail-design-rules.md
+- [Local rail 012/014/235](local-rail-012-014-235.md) — 012+short, 014 circuit (Ledečko/U. Janovice), 235+short+město; 9 vehicles; pipeline/local-rail script
+- [Find every train](find-every-train-feedback.md) — inventory trains at every station of a line (short workings, shuttles) + junction branches on any day (Rožmitál) before presenting; whole minutes only
+- [Shared circuits need vagonweb](shared-circuit-vagonweb-rule.md) — cut main-station stays via circuit + terminal stop, only if vagonweb shows same vehicles; zeme=ČD + session
+- [Posázavský pacifik 210/212](posazavsky-pacifik-210-212.md) — added 8 Oct to the 012/014/235 sheet (same artifact); 210 = 2 circuits via Praha hl. n. (240 + Also at, user-chosen over sidings variant); 23 total; decide one-offs yourself
+- [R49 + Benešov local](r49-benesov-local.md) — ARCHIVED 9 Oct; sheet: R49 hourly Praha–Olbramovice, every 2 h to Tábor (even hours, away from Os); Sedlčany, Vlašim, 220 Os; 11 vehicles; local sheets archived
+- [R18 Luhačovice coupled](r18-luhacovice-coupled.md) — ARCHIVED 10 Oct; R18 + R18 Luhačovice coupled (fork coupling), 11 vehicles; build_r18.py
+- [S49 Hostivař – Roztoky](s49-hostivar-roztoky.md) — ARCHIVED 10 Oct; every 30, 3 vehicles; PID line labels = CIS svc (S = 10xx, R = 11xx)
+- [Trains west of Praha](beroun-plzen-pribram-trains.md) — ARCHIVED 13 Oct; S7, S6/S65, R16, S70, Příbram line, R26, S20; game track ends Rokycany/Blatná/Čimelice; 33 vehicles; no weekday service → not in
+- [S75 Beroun – Rakovník](s75-beroun-rakovnik.md) — 13 Oct; only S75 (Kladno – Rakovník = S5 family per user); :59/:56 hourly, Zbečno crossing, 3 × 847; build_s75.py
+- [S5 → S4 corridor](s5-to-s4-corridor.md) — 14–15 Oct; build_s5.py, 29 vehicles; track ends Blatno u Jesenice, U12 at Most; S57/U12/U13 hourly (uniform, user); 4021 every 72
+- [Ex7 + R17 to Veselí](ex7-r17-veseli.md) — 14 Oct; track ends Veselí nad Lužnicí; no Praha depot without concrete evidence; 8 vehicles; build_ex7_r17.py
+- [Check engineering works](rail-engineering-works-check.md) — CIS annual data lacks výluky; check pid.cz/zmeny + ČD vyluka PDFs; model long-term, skip ones ending soon
+- [S4 → S3 corridor](s4-s3-corridor.md) — 14 Oct; build_s4.py, 25 vehicles; only lines missing from the game (pak128 save export); R20/Ex5 via Praha Jih; R23 full
+- [Shortest terminal wait](shortest-terminal-wait-rule.md) — default to the shortest turnaround; no line-swap circuits at the peak unless observed (Ostrava 1+2 stays separate)
+- [Schedule ends same rate](schedule-both-ends-same-rate.md) — both ends same trams/hour; runs must cover 15:30–17:30; approximate rows flagged with slower option for owner to check
+- [Evening courses & pairs](evening-courses-and-pairs.md) — leave evening/night courses out of type history, keep coupled pairs; fix published sheets by rebase with fewest swaps
+- [Size from suggested pattern](size-from-suggested-pattern.md) — vehicle need = round on the sheet's own schedule slots, every line; extras parked, fewest moves
+- [Model line at its peak](model-line-at-its-peak.md) — per-line busiest afternoon anchor (not fixed 16:00); interleave branches at shared termini as the real timetable does
+- [HKO bus sheet coordination](havirov-karvina-orlova-coordination.md) — session a4 builds Havířov/Karviná/Orlová on the Ostrava bus lib; message it on API/rule changes
+- [ODIS live map source](odis-live-map-source.md) — mpvnet.cz mapData gives plate per ODIS bus; a4 poll 20 Oct in pipeline/havirov-karvina-orlova
+- [Havířov/Karviná/Orlová buses](havirov-karvina-orlova-bus.md) — pipeline/havirov-karvina-orlova; ODIS live map (mpvnet.cz) gives plates; imports Ostrava bus rules; VZ-MHD<Town> pak only
+- [Every stop covered](every-stop-covered-rule.md) — bus sheets: every afternoon stop on a Simutrans line or listed; hand-set rotating/ring lines; check before publishing
+- [Hand-review schedules](hand-review-schedules-rule.md) — scripted fits are a draft; check every line vs real departures + bus chains, hand-set artefacts before publishing
+- [Core points + repeating interval](core-points-repeating-interval-rule.md) — owner's Ex4 method: core-point times over the whole day, repeating interval, destination variants on 240/480 offset lines
+- [Regional vs local rules](regional-vs-local-rules.md) — method/no-1440 rules are regional only; local = afternoon peak + unique stops; depot runs never; exceptions asked with info
+- [ODIS regional Havířovsko/Karvinsko/Orlovsko](odis-regional-hko.md) — pipeline/odis-regional-hko; scope by licence prefix 912/873/874; hand-set regional method; 67 buses; Hranečník lines stay on Ostrava sheet
+- [ODIS Těšínsko/Třinecko/Frýdecko](odis-regional-tfj.md) — pipeline/odis-regional-tfj via HKO scripts --base; 871/863/861 + MHD 875/865/866 (ARRIVA); 127 buses; town paks by rules
+- [Pak fleet desk](pak-fleet-desk.md) — ask simutrans-custom-czech-pak128-35 which VZ objects exist / request missing ones; never ask drawing sessions directly
+- [ODIS Bruntálsko/Krnovsko/Rýmařovsko](odis-regional-bruntalsko.md) — pipeline/odis-regional-bruntalsko via HKO scripts --base; 852/853/854 + MHD 856/855 Transdev Morava; 63 buses
+- [ODIS Novojičínsko/Bílovecko](odis-regional-novojicinsko.md) — pipeline/odis-regional-novojicinsko via HKO scripts --base; 883/882/884 + MHD 886/887; 108 buses, 0 stand-ins; 601–604 circuit; 655 here
+- [ODIS Opavsko/Vítkovsko/Hlučínsko + MHD Opava](odis-regional-opavsko.md) — pipeline/odis-regional-opavsko via HKO scripts --base; 902/903/904 + MDPO buses & trolleybuses (city JDF); 204 off-wire → battery/diesel trolleybuses only
+- [List in-game changes](list-in-game-changes.md) — after changing a published sheet, list every row/bus the owner must re-enter in the game (old → new values)
+- [Old ODIS lines in the save](odis-save-old-lines.md) — save's 800xxx ODIS lines predate the fork and are wrong; owner is rebuilding; sheets are the target, don't fit to old convoys

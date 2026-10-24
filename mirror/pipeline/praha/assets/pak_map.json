@@ -1,0 +1,189 @@
+{
+ "_doc": "Real car (type, paint from the register) -> custom Czech pak128 object. First matching rule wins. 'exact': false marks a stand-in; 'note' is its reason, shown once in the pak table. Confirmed with the pak128 session (simutrans-custom-czech-pak128-77), pak128 main 340c936.",
+ "pak_commit": "340c936",
+ "pak_file": "VZ-DPPraha-tram.pak",
+ "livery_words": {
+  "pidsedocervena": "PID grey-red",
+  "dppstribrnocervenocerna": "silver-red-black",
+  "dppcervenobiloseda": "red-white-grey",
+  "dppcervenokremova": "red-cream",
+  "dppvinovostribrna": "wine-silver",
+  "historicka": "historic",
+  "dppstribrnocervena": "silver-red",
+  "dppbilocervena": "white-red"
+ },
+ "multi_livery_types": [
+  "14T",
+  "KT8D5.RN2P",
+  "T3R.P",
+  "T3R.PLF",
+  "T3R.PV"
+ ],
+ "carunits": {
+  "15T": 23,
+  "15T4": 23,
+  "14T": 21,
+  "52T": 23,
+  "KT8D5_RN2P": 21,
+  "T3R_P": 11,
+  "T3R_PLF": 12,
+  "T3R_PV": 11,
+  "T3M_2-DVC": 11,
+  "T2R": 11,
+  "T1": 11,
+  "Trabuko": 11,
+  "Trabuko_vlek": 11
+ },
+ "paint_names": {
+  "červeno-krémová": "red-cream",
+  "vínovo-stříbrná": "wine-silver",
+  "stříbrno-červená": "silver-red",
+  "bílo-červená se žlutým čelem": "white-red, yellow front",
+  "stříbrno-červeno-černá": "silver-red-black",
+  "schéma PID, šedá s červenými svislými pruhy": "PID grey-red",
+  "schéma KT8D5, červeno-bílo-šedá": "red-white-grey",
+  "červeno-bílá s krémovým pruhem": "red-white, cream stripe"
+ },
+ "rules": [
+  {
+   "type_prefix": "15T",
+   "paint_contains": "stříbrno-červená",
+   "object": "VZ-DPPraha-15T-dppstribrnocervena-15T",
+   "sections": 3
+  },
+  {
+   "type_prefix": "15T",
+   "paint_contains": "bílo-červená",
+   "object": "VZ-DPPraha-15T4-dppbilocervena-15T4",
+   "sections": 3
+  },
+  {
+   "type": "15T4",
+   "object": "VZ-DPPraha-15T4-dppbilocervena-15T4",
+   "sections": 3,
+   "exact": false,
+   "note": "advert wrap; no livery object, the white-red 15T4 is the nearest"
+  },
+  {
+   "type_prefix": "15T",
+   "object": "VZ-DPPraha-15T-dppstribrnocervena-15T",
+   "sections": 3,
+   "exact": false,
+   "note": "advert wrap; no livery object, the silver-red 15T is the nearest"
+  },
+  {
+   "type": "14T",
+   "paint_contains": "schéma PID",
+   "object": "VZ-DPPraha-14T-pidsedocervena-14T",
+   "sections": 5
+  },
+  {
+   "type": "14T",
+   "object": "VZ-DPPraha-14T-dppstribrnocervenocerna-14T",
+   "sections": 5,
+   "_why": "the as-delivered silver-red paint (register 'stříbrno-červená') is the pak's silver-red-black scheme (pak128 session, 28 Sep)"
+  },
+  {
+   "type": "52T",
+   "object": "VZ-DPPraha-52T-pidsedocervena-52T",
+   "sections": 5
+  },
+  {
+   "type": "KT8D5.RN2P",
+   "paint_contains": "schéma PID",
+   "object": "VZ-DPPraha-KT8D5_RN2P-pidsedocervena-KT8D5_RN2P",
+   "sections": 3
+  },
+  {
+   "type": "KT8D5.RN2P",
+   "object": "VZ-DPPraha-KT8D5_RN2P-dppcervenobiloseda-KT8D5_RN2P",
+   "sections": 3
+  },
+  {
+   "type": "T3R.P",
+   "paint_contains": "vínovo-stříbrná",
+   "object": "VZ-DPPraha-T3R_P-dppvinovostribrna-T3R_P"
+  },
+  {
+   "type": "T3R.P",
+   "paint_contains": "červeno-krémová",
+   "object": "VZ-DPPraha-T3R_P-dppcervenokremova-T3R_P"
+  },
+  {
+   "type": "T3R.P",
+   "object": "VZ-DPPraha-T3R_P-dppcervenokremova-T3R_P",
+   "exact": false,
+   "note": "advert wrap; red-cream is the nearest"
+  },
+  {
+   "type": "T3R.PLF",
+   "paint_contains": "vínovo-stříbrná",
+   "object": "VZ-DPPraha-T3R_PLF-dppvinovostribrna-T3R_PLF"
+  },
+  {
+   "type": "T3R.PLF",
+   "paint_contains": "červeno-krémová",
+   "object": "VZ-DPPraha-T3R_PLF-dppcervenokremova-T3R_PLF"
+  },
+  {
+   "type": "T3R.PLF",
+   "object": "VZ-DPPraha-T3R_PLF-dppcervenokremova-T3R_PLF",
+   "exact": false,
+   "note": "advert wrap; red-cream is the nearest"
+  },
+  {
+   "type": "T3R.PV",
+   "paint_contains": "vínovo-stříbrná",
+   "object": "VZ-DPPraha-T3R_PV-dppvinovostribrna-T3R_PV"
+  },
+  {
+   "type": "T3R.PV",
+   "paint_contains": "červeno-krémová",
+   "object": "VZ-DPPraha-T3R_PV-dppcervenokremova-T3R_PV"
+  },
+  {
+   "type": "T3R.PV",
+   "object": "VZ-DPPraha-T3R_PV-dppcervenokremova-T3R_PV",
+   "exact": false,
+   "note": "advert wrap; red-cream is the nearest"
+  },
+  {
+   "type": "T3M.2",
+   "object": "VZ-DPPraha-T3M_2-DVC-dppcervenokremova-T3M_2-DVC"
+  },
+  {
+   "type": "T2R",
+   "object": "VZ-DPPraha-T2R-historicka-T2R"
+  },
+  {
+   "type": "T1",
+   "object": "VZ-DPPraha-T1-historicka-T1"
+  }
+ ],
+ "sets": {
+  "2210+1202": [
+   {
+    "object": "VZ-DPPraha-Trabuko-historicka-Trabuko",
+    "exact": false,
+    "note": "motor car series 2001–2317: the historic Ringhoffer motor car is the nearest"
+   },
+   {
+    "object": "VZ-DPPraha-Trabuko-historicka-Trabuko_vlek",
+    "exact": false,
+    "note": "trailer: the historic Ringhoffer trailer is the nearest"
+   }
+  ],
+  "412+723": [
+   {
+    "object": "VZ-DPPraha-Trabuko-historicka-Trabuko",
+    "exact": false,
+    "note": "motor car series 359–498: the historic Ringhoffer motor car is the nearest"
+   },
+   {
+    "object": "VZ-DPPraha-Trabuko-historicka-Trabuko_vlek",
+    "exact": false,
+    "note": "trailer: the historic Ringhoffer trailer is the nearest"
+   }
+  ]
+ }
+}

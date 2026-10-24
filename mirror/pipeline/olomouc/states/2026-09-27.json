@@ -1,0 +1,167 @@
+{
+ "name": "2026-09-27",
+ "title": "Olomouc Tram Peak Fleet",
+ "network_date": "2026-09-27",
+ "vehicle_date": "2026-09-18",
+ "gtfs": {
+  "raw": "2026-09-17",
+  "url": "https://www.dpmo.cz/doc/dpmo-olomouc-cz.zip",
+  "service_date": "20260918",
+  "_why": "DPMO feed version 17 Sep 2026, valid to 12 Dec 2026; the 18 Sep timetable is identical to 29 Sep (checked trip by trip)."
+ },
+ "register": {
+  "raw": "2026-09-28",
+  "operator_id": 134,
+  "depots": {
+   "Koželužská": null
+  }
+ },
+ "vypravenost": {
+  "slug": "mhd-ol",
+  "lines": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "extra_days": {},
+  "history_lines": []
+ },
+ "stop_aliases": {
+  "Hlavní nádraží": "Fibichova",
+  "Neředín,kremat.": "Neředín, krematorium"
+ },
+ "depot_stops": {
+  "prefix": [],
+  "names": [
+   "Náměstí Hrdinů",
+   "Palackého",
+   "U Sv. Mořice",
+   "Hlavní nádraží"
+  ]
+ },
+ "night_from": 90,
+ "line_order": [
+  "1",
+  "2",
+  "3/5",
+  "4",
+  "6",
+  "7"
+ ],
+ "pools": {
+  "3/5": {
+   "lines": [
+    "3",
+    "5"
+   ],
+   "recorded_as": "3",
+   "note": "Shared pool: lines 3 and 5 share one pool of courses numbered as line 3, and line 5 is never recorded on its own. Both run Fibichova – U Kapličky (3 every 15 min, 25 min each way; 5 every 30 min on a shorter route, 15 min each way). They run at different intervals, so one alternating circulation cannot work, and in Simutrans they are two lines that draw on the same bidirectional sets. U Kapličky is a stub, so only EVO1/o and VarioLF plus/o sets can run here."
+  }
+ },
+ "splits": {
+  "3/5": [
+   {
+    "label": "3 Fibichova – U Kapličky",
+    "line": "3",
+    "course_line": "3",
+    "route": [
+     "Fibichova",
+     "U Kapličky"
+    ],
+    "courses": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "why": "Line 3 needs 4 sets by round trip. Not recorded: courses 3/1–4 are a choice."
+   },
+   {
+    "label": "5 Fibichova – U Kapličky",
+    "line": "5",
+    "course_line": "3",
+    "route": [
+     "Fibichova",
+     "U Kapličky"
+    ],
+    "courses": [
+     5,
+     6
+    ],
+    "why": "Line 5 needs 2 sets by round trip. Not recorded: courses 3/5–6 are a choice."
+   }
+  ]
+ },
+ "transfers": [],
+ "added_courses": [],
+ "museum_lines": [],
+ "museum_depots": [],
+ "vehicle_overrides": {
+  "156": {
+   "type": "T3R.P",
+   "types": [
+    "T3SUCS",
+    "T3R.P"
+   ],
+   "paint": "DPMO, bílo-modro-červená",
+   "depot": "Koželužská",
+   "year": "1985",
+   "state": "odst",
+   "_source": "register page car_156.html: withdrawn 18.9.2026, so it is not in the in-service list"
+  }
+ },
+ "course_notes": {
+  "7/1": "Car 156 was withdrawn on 18 Sep 2026 (register: odstaven 18.9.2026), so this was its last day in service. The course normally runs another T3R.P pair."
+ },
+ "flags": {
+  "7": [
+   "info",
+   "Lines 2 and 7 both run Neředín, krematorium – Fibichova and together give a 7–8 minute interval."
+  ]
+ },
+ "cross_check": {
+  "date": "2026-09-25",
+  "sets": [
+   [
+    "1/1",
+    "124+130"
+   ],
+   [
+    "1/2",
+    "147+148"
+   ],
+   [
+    "4, course not given",
+    "121+122"
+   ],
+   [
+    "4, course not given",
+    "247+248"
+   ],
+   [
+    "6/12",
+    "162+163"
+   ],
+   [
+    "6/14",
+    "159+153"
+   ],
+   [
+    "7, course not given",
+    "165+183"
+   ]
+  ]
+ },
+ "depot_order": [
+  "Koželužská"
+ ],
+ "depot_notes": {
+  "Koželužská": "The only tram depot in Olomouc; the Jeremenkova hall by Fibichova is used for layovers."
+ },
+ "output_html": "Olomouc Tram Peak Fleet.html",
+ "artifact_url": "https://claude.ai/artifact/EQDL7ZoM9ENcFuj6LHHn7F"
+}

@@ -1,0 +1,289 @@
+{
+ "title": "Pardubice MHD Peak Sheet",
+ "output": "Pardubice MHD Peak Sheet.html",
+ "vehicles_date": "2026-09-25",
+ "network_date": "2026-09-29",
+ "register_date": "2026-09-29",
+ "jdf": {
+  "export_date": "2026-09-28",
+  "operator_ic": "63217066",
+  "line_prefix": "655",
+  "sources": {
+   "city": "../ostrava-trolleybus/data/raw/2026-09-29/JDF.zip",
+   "bus": "../ostrava-bus/data/raw/2026-09-29/JDF.zip"
+  },
+  "urls": {
+   "city": "https://portal.cisjr.cz/pub/draha/mestske/JDF.zip",
+   "bus": "https://portal.cisjr.cz/pub/jdf/JDF.zip"
+  }
+ },
+ "records": {
+  "slug": "mhd-pardubice",
+  "days": [
+   "2026-09-25"
+  ]
+ },
+ "register": {
+  "iddopravce": 47,
+  "tractions": [
+   "trolejbus",
+   "autobus"
+  ]
+ },
+ "history": {
+  "since": "2026-09-01",
+  "lines": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11",
+   "12",
+   "13",
+   "14",
+   "15",
+   "16",
+   "17",
+   "18",
+   "20",
+   "21",
+   "22",
+   "23",
+   "24",
+   "25",
+   "27",
+   "28",
+   "30",
+   "33",
+   "88",
+   "90"
+  ],
+  "ids": {},
+  "fallback_lines": [
+   "18",
+   "22",
+   "33",
+   "88"
+  ],
+  "fallback_pages": 2
+ },
+ "groups": {
+  "trolleybus": [
+   "1",
+   "2",
+   "3",
+   "33",
+   "4",
+   "5",
+   "7",
+   "11",
+   "13",
+   "17",
+   "18",
+   "21",
+   "27",
+   "30"
+  ],
+  "bus": [
+   "6",
+   "8",
+   "88",
+   "9",
+   "10",
+   "12",
+   "14",
+   "15",
+   "16",
+   "20",
+   "22",
+   "23",
+   "24",
+   "25",
+   "28",
+   "90"
+  ]
+ },
+ "service_date_overrides": {
+  "90": "2026-10-05"
+ },
+ "t0": 960,
+ "line_t0": {
+  "20": 450,
+  "90": 540
+ },
+ "branch_rule": {
+  "window": [
+   -60,
+   120
+  ],
+  "min_trips": 6
+ },
+ "fit": {
+  "core": [
+   930,
+   990
+  ],
+  "lo": 780,
+  "hi": 1200
+ },
+ "fit_windows": {
+  "20": {
+   "core": [
+    420,
+    480
+   ],
+   "lo": 330,
+   "hi": 600
+  },
+  "90": {
+   "core": [
+    480,
+    600
+   ],
+   "lo": 300,
+   "hi": 1440
+  }
+ },
+ "layover": 3,
+ "all_termini_are_loops": true,
+ "depot_stops": [
+  "Dukla, vozovna"
+ ],
+ "stop_names": {
+  "17.listopadu": "17. listopadu",
+  "Albert HM": "Albert hypermarket",
+  "Polabiny,Albert HM": "Polabiny, Albert hypermarket",
+  "Dukla,KD": "Dukla, kulturní dům",
+  "S.K.Neumanna": "S. K. Neumanna",
+  "Nemošice,5.května": "Nemošice, 5. května",
+  "Staré Hradiště,ObÚ": "Staré Hradiště, obecní úřad",
+  "Rosice,Gen.Svobody": "Rosice, Generála Svobody",
+  "Kpt.Nálepky": "Kapitána Nálepky",
+  "Polabiny,Kpt.Bartoše": "Polabiny, Kapitána Bartoše",
+  "Lázně Bohdaneč,aut.nádr.": "Lázně Bohdaneč, autobusové nádraží",
+  "Černá za Bory,odb.žel.zast.": "Černá za Bory, odbočka k železniční zastávce",
+  "Dašice,Zminný,odb.Veská": "Dašice, Zminný, odbočka Veská",
+  "Živanice,odb.Nerad": "Živanice, odbočka Nerad",
+  "Rybitví,UMA točna": "Rybitví, UMA točna"
+ },
+ "stop_name_expansions": [
+  [
+   "Masarykovo nám.",
+   "Masarykovo náměstí"
+  ],
+  [
+   "nám.",
+   "náměstí"
+  ]
+ ],
+ "branch_ids": {
+  "8|Dubina, Dubinská": "8S"
+ },
+ "records_of": {
+  "33": "3",
+  "88": "8"
+ },
+ "battery_required": {
+  "1D": "Jesničánky – Dražkovice is off the wire",
+  "17": "beyond Semtín / Ohrazenice to Doubravice and Srch is off the wire",
+  "18": "Rybitví – Černá u Bohdanče is off the wire (inferred)",
+  "27": "Pardubičky – Zámeček – ERA – Zdravotnická škola is off the wire (inferred)",
+  "30C": "beyond U Josefa to Cihelna is off the wire"
+ },
+ "fleet": {
+  "morning_notes": [
+   "ráno",
+   "ranní"
+  ],
+  "afternoon_notes": [
+   "odpoledne",
+   "odpolední"
+  ]
+ },
+ "usual_types": {
+  "trolleybus": {
+   "Škoda 32 Tr": 3,
+   "Škoda 30 Tr": 2
+  },
+  "bus": {
+   "Iveco Urbanway 12M": 3,
+   "Irisbus Citelis 12M CNG": 2
+  }
+ },
+ "depot_names": {
+  "Duk": "Vozovna Dukla"
+ },
+ "pool_text": {
+  "33": "No weekday record of line 33 exists since 2020: tram-bus.cz files its cars under line 3, and the old sheet (DPMP) has 33 sharing line 3’s vehicles. So 33 takes its need from line 3’s kurzy left over once line 3 has its own (here 3/8); which kurz runs 33 is a choice.",
+  "88": "Lines 8 and 88 run as a pair (DPMP publishes them together as 8 + 88, with the Svítkov loop in opposite directions), and no record of 88 exists since March 2024: tram-bus.cz files its cars under line 8. 88 takes line 8’s kurzy left over once 8 and 8S have theirs; on 25 Sep none were left (5 afternoon kurzy of 8 against a need of 5 for 8 and 8S), so both 88 cars are designed from line 8’s history."
+ },
+ "battery_sections": {
+  "1": {
+   "section": "Jesničánky – Dražkovice (– Mikulovice)",
+   "detail": "The trunk Slovany – Jesničánky is wired. Every Dražkovice trip (and the few Mikulovice trips) runs beyond Jesničánky on batteries, so the Simutrans line 1D takes battery cars. Source: old sheet (DPMP; Deník, 24 Aug 2022: the Dražkovice and Mikulovice extensions)."
+  },
+  "17": {
+   "section": "Semtín / Ohrazenice – Doubravice – Srch",
+   "detail": "Hlavní nádraží – Globus – Semtín (or via Ohrazenice, škola) is wired; Doubravice and Srch are served on batteries. Only battery 32 Tr work 17."
+  },
+  "18": {
+   "section": "Rybitví – Černá u Bohdanče (inferred)",
+   "detail": "Since 1 Sep 2026 line 18 is a trolleybus line over the provisional Kapitána Bartoše bridge; the trips to Rybitví and Černá u Bohdanče run beyond the wire on batteries (inferred on the old sheet). The Živanice trips were run by bus (old sheet); they are merged into 18 here and are not a line of their own."
+  },
+  "27": {
+   "section": "Pardubičky – Zámeček – ERA – Zdravotnická škola (inferred)",
+   "detail": "The half-loop Zdravotnická škola – Nemocnice – centre – Dukla – centre runs under the wire in town; the Zdravotnická škola end is served on batteries (inferred on the old sheet). Only battery 32 Tr work 27."
+  },
+  "30": {
+   "section": "U Josefa – Cihelna – Fáblovka – Staré Hradiště – Ohrazenice",
+   "detail": "Wired only as far as Studentská / U Josefa (the Univerzita short trips stay under the wire); Cihelna and the Ohrazenice trips via Staré Hradiště run on batteries. The Simutrans line 30C (Cihelna) takes battery cars; the Ohrazenice trips are merged into 30."
+  }
+ },
+ "left_out": {
+  "29": "School line: one morning trip Staré Čívice → Popkovice, školka → Gorkého (7:04 from 1 Oct) and one afternoon trip back, school days only.",
+  "98": "Night line (about 0:00–4:30) from the Dukla depot: one vehicle on big loops through Polabiny and Svítkov. Its car is under “Not counted”.",
+  "99": "Night line (about 0:00–4:30): one vehicle on loops through Dubina, Slovany and Černá za Bory.",
+  "910": "Non-public service for Škola Svítání, school days only (not in CIS JŘ).",
+  "902": "Kapitána Bartoše bridge replacement line, cancelled on 1 Sep 2026 (still in the CIS JŘ data).",
+  "906": "Kapitána Bartoše bridge replacement line, cancelled on 1 Sep 2026 (still in the CIS JŘ data)."
+ },
+ "short_text": {
+  "18": "Line 18 has run trolleybuses only since 1 Sep 2026 and no weekday record of it exists since then (its older history is buses), so the designed cars are free battery 32 Tr, newest first.",
+  "16": "Line 16 is logged only at weekends; the designed bus is from those records.",
+  "22": "Line 22 runs in the school year only and has no record since June 2026; the designed bus is from its June records.",
+  "90": "The airport line runs only to the flight schedule (no service on Tuesdays and Thursdays); the designed bus is from its September records.",
+  "2": "The cycle of the Pardubičky branch (2P, a school-day reinforcement ending at 16:13 from Polabiny) and of the main line together need more than the 7 kurzy logged; the two designed cars are from line 2’s September history."
+ },
+ "texts": {
+  "eyebrow": "Pardubice city transport (DPMP) · afternoon peak · Simutrans reference",
+  "lede": "Every trolleybus and bus the DPMP afternoon peak needs at 16:00, line by line, on the network running on Tue 29 Sep 2026, with the vehicles logged on Fri 25 Sep 2026 (one real day). Each vehicle shows its number, depot, full type, length and custom pak128 object; each line has the values for the Simutrans fork’s schedule. The old sheet’s reference (battery sections, stops and their lines, termini, specials and closures) follows below the vehicles.",
+  "network": "All DPMP day lines with afternoon service in the timetable in force on Tue 29 Sep 2026 (CIS JŘ JDF, export of 28 Sep 2026: trolleybus lines from the city export, bus lines from the bus export). The table lists the trip patterns starting 15:00–17:59; for line 20, which ends at 14:43, 6:30–9:29, and for airport line 90, which runs only to the flight schedule and not on Tuesdays, the Monday 5 Oct trips 8:00–10:59 (as on the old sheet). “Leaves at” gives the minutes in the reference hour, 16:00–16:59. 29 Sep is a school day, so the school-day trips run. Depot runs are left out.",
+  "network_after": "Simutrans lines follow a rule (as on the Ostrava bus sheet): the terminus pair with the most trips is the line; another pair is a Simutrans line of its own when it has at least 6 trips in 15:00–17:59 (3 for a loop), a departure between 16:00 and 16:59 and no depot end. Everything else (the extensions of 3 to Lázně Bohdaneč, U Mlýnů, of 18 to Živanice and of 7 and 11 to Rybitví, the Mikulovice trip of 1, 4 to Globus before 15:30, the short workings) is merged into the line leaving the same terminus.",
+  "schedule": "Values to type into the fork’s Scheduling tab, on the stop entry each vehicle leaves from. Units are calendar minutes, Offset counts from midnight modulo the interval, and Leave up to stays automatic. <b>Every DPMP terminus is a turning loop or turning point (točna), so every departure is set 1 min before the timetable</b>: Offset and Also at are the real minute − 1, with the real minutes underneath. Branches are separate lines. Every entry reproduces the whole 16:00–16:59 hour: an exact repeating pattern where one exists, otherwise the hour’s own minutes repeated hourly (many DPMP afternoon timetables are irregular). An entry with at most 8 departures a day gets Departure every 1440 with all of them (exact all day).",
+  "schedule_after": "Vehicles needed at 16:00 = the timetable cycle (cycle_need): follow a vehicle leaving around 16:00 through its round trip, taking at each end the first departure at least 3 min after arriving, or sooner where the timetable itself turns faster; a round trip that would wait longer than 1.5 × the headway (at least 30 min) for its next trip is skipped. A DPMP line never gets fewer vehicles than the most of its trips on the road at once between 16:00 and 16:59 (each trip holding its vehicle until arrival plus the turnaround); the extra goes to its main line. Every Simutrans line gets at least 1 vehicle. Lines 20 and 90 are sized at their own reference time.",
+  "lines": "One row per vehicle, grouped by Simutrans line, trolleybus lines first. Kurz numbers are DPMP’s, written line/kurz. Each vehicle shows its number and depot, its full type, length and traction battery, and the pak128 core. The vehicles are the afternoon cars logged on Fri 25 Sep 2026 (tram-bus.cz via seznam-autobusu.cz): one real day, not a mix. Where a line was logged short, the missing vehicles are <b>designed, not recorded</b>: real cars from the line’s own history, active in the register and not out anywhere that day, covering every type of the line’s roster first. Where more were logged than needed, the surplus is <b>not needed</b>: dimmed at the bottom of the card and left out of every count, the depot and the pak totals.",
+  "pak": "Each type and livery at 16:00, mapped to the custom Czech pak128 packages VZ-DPPardubice-trolleybus and VZ-DPPardubice-bus. Object names are VZ-DPPardubice-&lt;type&gt;-&lt;livery&gt;-&lt;core&gt;; the vehicle lists show the core. A full advert wrap (CVR) keeps the type’s normal DPMP livery; plain white is a livery of its own. A requested object does not exist yet: it is listed in pipeline/pardubice/pak_request.md for the pak session, and no stand-in from another city is used.",
+  "pak_after": "Car units per object (16 = one tile). Every object is waytype road; the trolleybus objects are engine_type electric and need no wire in the game, so the battery sections are information only.",
+  "depot": "DPMP has one depot, Vozovna Dukla, for every trolleybus and bus (the register’s depot code Duk). Vehicles counted at 16:00, by Simutrans line.",
+  "battery": "Where DPMP trolleybuses leave the wire and run on traction batteries (kept from the old sheet; 18 and 27 inferred there). Battery cars are the 30 Tr 480–483 and the 32 Tr 460–469 and 476–497. Every Simutrans line that leaves the wire has only battery cars counted (checked by the pipeline).",
+  "battery_after": "Line 12 is licensed as a trolleybus line, and battery trolleybuses ran some of its Černá za Bory and Mnětice trips from 2018. Every weekday sampled in 2026 had buses only, apart from the evening line 2 trolleybuses that continue as 12 from Zámeček, so 12 is a bus line here. The rest of the network (2, 3, 4, 5, 7, 11, 13, 21, 33) runs under the wire, including the new wire to Lázně Bohdaneč, U Mlýnů and over the provisional Kapitána Bartoše bridge.",
+  "stops": "Every stop served by a modelled trip between 15:00 and 17:59 (line 20: 6:30–9:29; line 90: Monday 8:00–10:59), with the trips towards each destination in those three hours (divide by 3 for trips an hour). Depot runs are left out.",
+  "termini": "Stops where trips start between 15:00 and 17:59 (line 20: 6:30–9:29; line 90: Monday 8:00–10:59), busiest first, with every departure by line and the number of trips that end there.",
+  "specials": "Through-running, guaranteed connections, express trips, long-term closures (modelled as they run) and short-term closures (ignored: the regular state is modelled). Kept from the old sheet of 26 Sep 2026.",
+  "method": [
+   "<b>Which day.</b> Network: the timetable in force on Tue 29 Sep 2026. Vehicles: Fri 25 Sep 2026, the last weekday before it with records (28 Sep was a holiday); one real day. The old sheet used Tue 6 Oct for the network because line 29 changes on 1 Oct; 29 is a school line and left out, so the modelled lines are the same.",
+   "<b>Vehicles.</b> seznam-autobusu.cz vypravenost “MHD Pardubice” (data from tram-bus.cz) for Fri 25 Sep 2026: 104 records, 96 kurzy. <i>ráno</i> marks a morning duty, <i>odpoledne</i> the afternoon car of a split duty, <i>nahrazen</i> / <i>náhrada za</i> a car replaced during the day. Lines 16, 18, 22, 33, 88 and 90 have no weekday record on the day. Line histories since 1 Sep 2026 (and the latest records for lines with none) give the designed cars; the day overview checks that a designed car was not out that day.",
+   "<b>Types, paint and depot.</b> The DPMP register on seznam-autobusu.cz (DP města Pardubic, iddopravce 47, read 29 Sep 2026), matched by the site’s car id. Traction batteries from the old sheet (trolejbus.cz fleet list of 18 Mar 2026).",
+   "<b>Timetable.</b> CIS JŘ JDF 1.10, export of 28 Sep 2026 (the copies downloaded by the Ostrava pipelines; DPMP’s inner files are kept in pipeline/pardubice/data/raw/jdf). Version rule: among a line’s versions valid on the day, the latest “valid from” wins. DPMP marks its school-holiday trips with “runs in” date ranges; they do not run on 29 Sep.",
+   "<b>Simutrans schedule.</b> The shared rule (pipeline/README.md) with the Brno bus sheet’s requirement that every entry reproduces the 16:00 hour; all termini −1 min.",
+   "<b>Earlier user decisions kept.</b> Airport line 90 included; night lines 98 and 99, school line 29, the Škola Svítání service 910 and the cancelled bridge lines 902 and 906 left out; line 20 (ends 14:43) and line 90 modelled on their own times; long-term closures modelled as they run (the provisional Kapitána Bartoše bridge, line 13’s detour, the Tuněchody works), short-term ones ignored; no accessibility data.",
+   "<b>Rebuild.</b> Generated by pipeline/pardubice (state “2026-09-29”); the README there lists every decision and how to update the sheet."
+  ]
+ }
+}

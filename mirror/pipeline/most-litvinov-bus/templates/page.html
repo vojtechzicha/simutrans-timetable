@@ -1,0 +1,272 @@
+<title>{{TITLE}}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f5f2f1; --surface:#ffffff; --surface2:#efe9e8; --ink:#201b1c; --ink2:#4d4446; --muted:#786e70; --rule:#e2d9da; --rule2:#cfc4c5;
+  --accent:#d0021b; --accent-ink:#ffffff; --accent-soft:#f8e3e4;
+  --vp:#2b5f9e; --vp-soft:#dfe9f5; --vmo:#8a5a12; --vmo-soft:#f7ebd5; --bat:#1f7a6d; --bat-soft:#dcf1ec; --hl:#ffe27a; --ok:#2f7d4f; --warn:#b7791f; --warn-soft:#fbefd9;
+  --font-display:"Barlow Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --font-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#151213; --surface:#1f1b1c; --surface2:#2a2425; --ink:#f1ebeb; --ink2:#cbc1c2; --muted:#9d9193; --rule:#372f30; --rule2:#4a4041;
+    --accent:#e4383e; --accent-ink:#ffffff; --accent-soft:#3d1c1e;
+    --vp:#7fb0ea; --vp-soft:#1d2e42; --vmo:#e0a94a; --vmo-soft:#3b2d14; --bat:#5fd0bd; --bat-soft:#16322d; --hl:#6b5a12; --ok:#6fc48f; --warn:#e0a94a; --warn-soft:#3b2d14;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#151213; --surface:#1f1b1c; --surface2:#2a2425; --ink:#f1ebeb; --ink2:#cbc1c2; --muted:#9d9193; --rule:#372f30; --rule2:#4a4041;
+  --accent:#e4383e; --accent-ink:#ffffff; --accent-soft:#3d1c1e;
+  --vp:#7fb0ea; --vp-soft:#1d2e42; --vmo:#e0a94a; --vmo-soft:#3b2d14; --bat:#5fd0bd; --bat-soft:#16322d; --hl:#6b5a12; --ok:#6fc48f; --warn:#e0a94a; --warn-soft:#3b2d14;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.45;padding-inline:clamp(16px,3vw,40px);padding-block:0 64px}
+h1,h2,h3,h4{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:1.05}
+h1{font-size:clamp(34px,5vw,54px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:28px;font-weight:600;margin-block:44px 6px}
+h2+.sub{color:var(--muted);max-width:70ch;margin-bottom:16px}
+p{margin:0}
+a{color:var(--vp)}
+.mono{font-family:var(--font-mono);font-size:.92em}
+header.top{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-end;padding-block:36px 20px;border-bottom:3px solid var(--accent)}
+header.top .lede{max-width:66ch;color:var(--ink2);font-size:16px;margin-top:10px}
+.eyebrow{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:13px;color:var(--accent)}
+.stats{display:flex;gap:28px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat b{font-family:var(--font-display);font-size:34px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.nav{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.nav .lab{font:600 12px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-right:4px}
+.nav .sep{flex:1}
+.nav a.txt{font:600 14px var(--font-display);letter-spacing:.02em;color:var(--ink2);text-decoration:none;padding:4px 8px;border-radius:4px;background:var(--surface2)}
+.badge{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 6px;border-radius:6px;background:var(--accent);color:var(--accent-ink);font:700 24px var(--font-display);font-variant-numeric:tabular-nums;text-decoration:none;flex-shrink:0}
+.badge.sm{min-width:32px;height:28px;font-size:17px;border-radius:4px}
+.state{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;margin-top:20px}
+.st{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px 14px}
+.st h4{font-size:17px;font-weight:600;margin-bottom:4px}
+.st .tag{font:600 11px var(--font-display);text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;border-radius:999px;margin-right:6px;vertical-align:1px}
+.tag.in{background:var(--accent-soft);color:var(--accent)}
+.tag.out{background:var(--surface2);color:var(--muted)}
+.st p{font-size:14px;color:var(--ink2)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;font-size:13px;color:var(--ink2);align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:18px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;overflow:hidden;scroll-margin-top:60px}
+.card>header{display:flex;align-items:flex-start;gap:12px;padding:14px 16px 10px}
+.hd{flex:1;min-width:0}
+.hd h3{font-size:23px;font-weight:700}
+.hd p{font-size:13px;color:var(--muted);margin-top:3px}
+.cnt{display:flex;flex-direction:column;align-items:flex-end;text-align:right;flex-shrink:0}
+.cnt b{font-family:var(--font-display);font-size:32px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.cnt span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);max-width:14em}
+.tw{overflow-x:auto;padding-inline:16px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font:600 11px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left;padding:4px 6px;border-bottom:1px solid var(--rule)}
+td{padding:4px 6px;border-bottom:1px solid var(--rule);vertical-align:top}
+td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.arr{color:var(--muted);padding-inline:0}
+.sched{margin:10px 16px 0;padding:8px 10px;background:var(--surface2);border-radius:6px}
+.sched h4{font:600 12px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:2px}
+.tw0{overflow-x:auto}
+.st2 td,.st2 th{border-bottom-color:var(--rule2);font-size:13px}
+.st2 td.sv{font-weight:600;white-space:nowrap}
+.st2 tr.all td{color:var(--ink2);font-style:italic}
+.st2 tr:last-child td{border-bottom:0}
+.st2 .win{font-size:11.5px;color:var(--muted)}
+.st2 .warn{color:var(--warn)}
+.lnote{padding:8px 16px 0;font-size:13px;color:var(--ink2)}
+ul.vs{list-style:none;margin:0;padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px}
+li.v{display:flex;flex-direction:column;gap:1px;max-width:100%;border:1px solid var(--rule2);border-radius:5px;padding:3px 7px;background:var(--surface);font-size:13px}
+li.v.seen{border-color:var(--ok)}
+li.v .num{font-family:var(--font-mono);font-size:14px;font-variant-numeric:tabular-nums}
+li.v .num b{font-weight:500}
+li.v .vt{color:var(--ink2)}
+.dp{font:600 10px var(--font-display);letter-spacing:.08em;padding:1px 5px;border-radius:3px}
+.d-VP{background:var(--vp-soft);color:var(--vp)}
+.d-VMO{background:var(--vmo-soft);color:var(--vmo)}
+.dt td.vc .num{font-family:var(--font-mono);font-size:14px}
+.dt td{font-size:13px}
+.dt td.stc{color:var(--muted)}
+.core{font-family:var(--font-mono);font-weight:500}
+.pak{font-size:11.5px;color:var(--muted);font-family:var(--font-mono)}
+.pak.miss,.pak.subst em{color:var(--warn)}
+.pak em{font-style:normal;font-family:var(--font-body)}
+.brsub{margin:10px 16px 0;font:600 13px var(--font-display);letter-spacing:.02em;color:var(--ink2)}
+.brsub+ul.vs{padding-top:6px}
+tr.brh td{font:600 12px var(--font-display);letter-spacing:.04em;color:var(--accent);background:var(--surface);padding-top:8px}
+.addn{font-size:11.5px;color:var(--warn)}
+li.v.added{border-style:dashed;border-color:var(--warn)}
+i.m{font-style:normal;font-size:11px;line-height:1}
+i.m.on{color:var(--ok)}
+i.m.any{color:var(--ok)}
+details{border-top:1px solid var(--rule);padding:8px 16px 12px}
+summary{cursor:pointer;font:600 13px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+summary:focus-visible,a:focus-visible{outline:2px solid var(--vp);outline-offset:2px}
+details p{font-size:13px;color:var(--ink2);margin-top:6px}
+.depots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:18px;align-items:start}
+.depot{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:14px 16px}
+.depot>header{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;margin-bottom:6px}
+.depot h3{font-size:26px;font-weight:700}
+.depot h3 small{font:600 13px var(--font-display);letter-spacing:.08em;color:var(--muted);margin-left:6px}
+.mixline{font-size:13px;color:var(--muted);margin-bottom:6px}
+.dl{display:grid;grid-template-columns:34px 28px 1fr;gap:4px 8px;align-items:start;padding-block:8px;border-top:1px solid var(--rule)}
+.dl .dc{font:700 20px var(--font-display);color:var(--muted);text-align:right;font-variant-numeric:tabular-nums;padding-top:2px}
+.dl ul.vs{padding:0}
+.spares{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px}
+.sp h4{font-size:19px;font-weight:600;margin-bottom:6px}
+.sp p{font-size:13px;color:var(--ink2);margin-bottom:6px}
+.types{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:8px 12px;overflow-x:auto}
+.notes{max-width:78ch;display:flex;flex-direction:column;gap:10px;color:var(--ink2);font-size:14.5px}
+.notes b{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+html{scroll-behavior:smooth}
+.d-Mos{background:var(--vp-soft);color:var(--vp)}
+.d-Lit{background:var(--vmo-soft);color:var(--vmo)}
+.pending{margin-top:18px;padding:12px 14px;border:1px dashed var(--warn);background:var(--warn-soft);border-radius:8px;max-width:78ch;font-size:14.5px;color:var(--ink2)}
+.pending b{color:var(--ink)}
+.need{margin:10px 16px 12px;font-size:13px;color:var(--ink2)}
+.tlist td{font-size:13.5px}
+.fl{display:flex;flex-wrap:wrap;gap:4px 10px;font-family:var(--font-mono);font-size:13px}
+.bat{font:600 10px var(--font-display);letter-spacing:.08em;text-transform:uppercase;padding:1px 5px;border-radius:3px;background:var(--bat-soft);color:var(--bat);white-space:nowrap}
+.battbox{margin:10px 16px 0;padding:8px 10px;border-left:3px solid var(--bat);background:var(--bat-soft);border-radius:0 6px 6px 0;font-size:13px;color:var(--ink2)}
+.battbox b{color:var(--bat)}
+.bt td{font-size:13.5px}
+.bt td:first-child{white-space:nowrap}
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center}
+.dnav a{font:600 14px var(--font-display);text-decoration:none;color:var(--ink2);background:var(--surface2);padding:3px 8px;border-radius:4px}
+.dnav a b{color:var(--accent)}
+input[type=search]{font:14px var(--font-body);padding:6px 10px;border:1px solid var(--rule2);border-radius:6px;background:var(--surface);color:var(--ink);width:min(100%,230px)}
+input[type=search]:focus-visible{outline:2px solid var(--vp);outline-offset:2px}
+#hits{font-size:13px;color:var(--muted)}
+.veh{border-radius:3px;padding-inline:2px}
+.veh.hit{background:var(--hl);outline:2px solid var(--accent)}
+.card,.depot,h2[id],[id]{scroll-margin-top:var(--stick,120px)}
+.controls .nav.lines{flex-wrap:nowrap;overflow-x:auto;max-width:100%;min-width:0}
+.controls .nav.lines a{flex-shrink:0}
+@media (max-width:700px){.controls .nav.dnav{flex-wrap:nowrap;overflow-x:auto;max-width:100%;min-width:0}.controls .nav.dnav a{flex-shrink:0;white-space:nowrap}}
+li.v.eve{border-color:var(--vp)}
+li.v.spare{opacity:.55;border-style:dotted}
+li.v.added.garage{border-color:var(--rule2);border-style:dashed}
+li.v.added.cover{border-color:var(--vp);border-style:dashed;border-width:2px}
+.addn.cov{color:var(--vp)}
+.lt td{font-size:13.5px;vertical-align:middle}
+.lt tr.tot td{border-top:2px solid var(--rule2)}
+@media (max-width:700px){.lt td:nth-child(2),.lt th:nth-child(2){display:none}.lt td.n,.lt th.n{white-space:normal}}
+.pak.req em,.req{font-style:normal;font:600 10px var(--font-display);letter-spacing:.08em;text-transform:uppercase;padding:1px 5px;border-radius:3px;background:var(--warn-soft);color:var(--warn)}
+.badge.nad{font-size:18px;min-width:52px}
+.badge.sm.nad{font-size:14px;min-width:40px}
+.muted{color:var(--muted)}
+.sp p .fl{display:inline;font-family:var(--font-body);font-size:13.5px}
+.dt td.vc{min-width:150px}
+.dt td.vc .vt{white-space:nowrap}
+.ev td{font-size:13px}
+.ev td:first-child{white-space:nowrap}
+ul.plain{margin:6px 0 0;padding-left:20px;font-size:13.5px;color:var(--ink2)}
+.lv{font-size:11.5px;color:var(--muted)}
+</style>
+
+<header class="top">
+  <div style="flex:1;min-width:min(100%,420px)">
+    <p class="eyebrow">Most–Litvínov · autobusy · vypravenost · {{VEHICLE_DAY_LABEL}} · {{PEAK}}</p>
+    <h1>{{TITLE}}</h1>
+    <p class="lede">Every DPmML city bus line in the weekday afternoon peak, and the replacement buses that run the closed Litvínov tram section: route, headway, departure minutes, how many buses each Simutrans line needs, and a bus with a real fleet number for every place. The network is the timetable in force on {{STATE_LABEL}}.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>{{NEED}}</b><span>buses needed at 16:00</span></div>
+    <div class="stat"><b>0</b><span>logged that day</span></div>
+    <div class="stat"><b>{{NDES}}</b><span>designed, real numbers</span></div>
+    <div class="stat"><b>{{NLINES}}</b><span>lines in the peak</span></div>
+    <div class="stat"><b>{{NSIM}}</b><span>Simutrans lines</span></div>
+  </div>
+</header>
+
+<div class="controls">
+  <nav class="nav lines" aria-label="Lines"><span class="lab">Lines</span>{{NAV}}</nav>
+  <nav class="nav dnav" aria-label="Garages and sections"><span class="lab">Garages</span>{{DEPNAV}}<a href="#summary">Lines at a glance</a><a href="#reserve">Reserve</a><a href="#offpeak">Not in the peak</a><a href="#evidence">Evidence</a><a href="#pak">Pak128 objects</a><a href="#fleet">Vehicle types</a><a href="#method">How this was built</a></nav>
+  <input type="search" id="q" placeholder="Find bus, e.g. 196" aria-label="Find vehicle number" inputmode="numeric"><span id="hits" aria-live="polite"></span>
+</div>
+
+<div class="pending"><b>What is observed and what is designed.</b> Nothing is logged for the vehicle day. seznam-autobusu.cz has no record of any DPmML bus line on {{VEHICLE_DAY_EN}} or on any weekday of 2026 (only {{NREC}} records exist for these lines, {{NREC23}} of them from 2023), and DPmML publishes no vehicle positions. So <b>all {{NDES}} buses on this sheet are designed</b>, each with a real fleet number, and each says why. {{NHIST}} come from the line's own history: a record, or a photo whose destination display shows the line ({{NPHL}} photos read). {{NGAR}} come from the line's home garage where the history ran short. {{NCOV}} are placed so that every type and livery of the fleet is on a line (user rule, 29 Sep): {{COVTXT}}. {{NSP}} more history buses are shown as “not needed”. The timetables, needs and Simutrans schedules are the real ones.</div>
+
+<h2 id="summary">Lines at a glance</h2>
+<p class="sub">Every line gets exactly the buses it needs. Nothing is logged, so every assigned bus is designed; “not needed” buses are shown on the line card but not counted.</p>
+<div class="types"><table class="lt"><thead><tr><th>Line</th><th>Route</th><th>Simutrans lines</th><th class="n">Buses needed</th><th class="n">Assigned (logged / designed)</th><th class="n">Not needed</th></tr></thead><tbody>{{LINETABLE}}</tbody></table></div>
+
+<h2>Network state, {{STATE_LABEL}}</h2>
+<p class="sub">Long-term changes are part of the model. Short works, and changes that start after the modelled day, are left out.</p>
+<div class="state">
+{{STATE}}
+</div>
+<div class="legend"><span>Each bus shows its number and garage, full type and length, and pak128 core name. <b style="color:var(--warn)">Dashed amber border</b>: designed from the line's history, with the evidence and its date. <b>Dashed grey border</b>: designed from the line's home garage, with the reason. <b style="color:var(--vp)">Dashed blue border</b>: placed so that every fleet type and livery is on a line (user rule, 29 Sep). <b>Dimmed, dotted</b>: not needed, a bus from the line's history that was free that day, shown but not counted. <span class="req">requested</span>: the pak object is being made.</span></div>
+
+<h2>Lines</h2>
+<p class="sub"><b>Branches.</b> {{BRANCHES_WHY}}</p>
+<p class="sub"><b>Buses needed.</b> “Needed” follows one bus round the branch from a departure around 16:00, with 3 min layovers or the terminus's own shorter timetabled turnaround, and counts the departures until it is back. A loop line counts the same way at its one terminus. A round trip that would wait more than 30 min (or 1.5 headways) for its next trip is skipped. The line is then topped up to the most buses on the road at once in 16:00–16:59 (each trip holds its bus until arrival plus that layover), so extensions and short workings keep their buses. Lines with no complete round trip around 16:00 use the chained count, at least one bus.</p>
+<p class="sub">Headway and runtime come from the timetable for 15:00–17:00. “Leaves 16:xx” lists that terminus's real departure minutes in the 16 o'clock hour.</p>
+<p class="sub">The Simutrans schedule holds the values to type into the Scheduling tab of each terminus entry, with the calendar switched on. “Departure every 30, Offset 6” gives :06 :36. Each row is the longest stretch around the peak that one pattern reproduces exactly (“exact from–to”). Rows marked “not scheduled” are variants with too few trips; their minutes are folded into the main row from the same terminus. On sparse lines a terminus with no pattern keeps “Departure every 0” (no timetable) and lists its real departures.</p>
+<p class="sub"><b>Departures one minute early.</b> Every terminus is set as a loop, including turning points, as agreed for the tram, trolleybus and bus sheets. Each Offset and “Also at” value is 1 min before the timetable departure, so the bus clears the terminus on time. The real minutes are listed under each entry.</p>
+<div class="grid">
+{{CARDS}}
+</div>
+
+<h2 id="offpeak">Not in the afternoon peak</h2>
+<p class="sub">DPmML bus lines in the timetable with nothing on the road between 16:00 and 16:59 on the modelled day. They are left out of the model, following the rule for morning-only, school and shift lines. Night line 40 is on the tram sheet's list (at night it is all replacement buses).</p>
+<div class="types"><table class="tlist"><thead><tr><th>Line</th><th>Route</th><th>Service on the day</th></tr></thead><tbody>{{OFFPEAK}}</tbody></table></div>
+
+<h2 id="depots">Garages</h2>
+<p class="sub">DPmML keeps its city buses at two garages: Most (register code Mos) and Litvínov (Lit). Each garage lists the buses it sends to each line, with why each bus was chosen.</p>
+<div class="depots">
+{{DEPOTS}}
+</div>
+
+<h2 id="reserve">Not in service at {{PEAK}}</h2>
+<p class="sub">The rest of the city fleet of each garage, by type. “Not needed on line …” marks a bus with history on that line that the line did not need.</p>
+<div class="spares">{{SPARE}}</div>
+<p class="sub" style="margin-top:14px">Not city buses (left out of everything above):</p>
+<ul class="plain">{{NOTCITY}}</ul>
+
+<h2 id="evidence">Evidence: what is observed</h2>
+<p class="sub">Every bus with evidence on a line, newest first, with the dates. The evidence is the seznam-autobusu.cz records ({{NREC}} for these lines, found by plate or car page) and the destination displays in the newest photos of every city bus ({{NPH}} photos looked at, {{NPHL}} with a line). “Tram replacement” is the replacement bus service for the closed tram section (náhradní autobusová doprava); its buses show the tram line number.</p>
+<div class="types"><table class="ev"><thead><tr><th>Line</th><th>Buses seen on it (dates)</th></tr></thead><tbody>{{EVROWS}}</tbody></table></div>
+
+<h2 id="pak">Pak128 objects</h2>
+<p class="sub">Every real type on the sheet at {{PEAK}}, with its object in VZ-DPMostLitvinov-bus (custom Czech pak128, main {{PAK_COMMIT}}). The vehicle cells show only the core name. <span class="req">requested</span> marks an object that does not exist yet and has been asked for; no stand-in from another city is used. Length is in car units (16 = one tile).</p>
+<div class="types"><table><thead><tr><th>Real type</th><th>Pak128 object</th><th>Object livery</th><th class="n">Length</th><th class="n">Buses at {{PEAK}}</th></tr></thead><tbody>{{PAKS}}</tbody></table></div>
+
+<h2 id="fleet">Vehicle types</h2>
+<p class="sub">The city fleet in the seznam-autobusu.cz register ({{NCITY}} of the {{NREG}} numbered DPmML buses; coaches, contract, driving-school, service, museum and weekend-only buses are left out). Length classes follow the city sheet rule: 12 m and 18 m (articulated).</p>
+<div class="types"><table><thead><tr><th>Vehicle type</th><th class="n">Length</th><th>Drive</th><th class="n">Most</th><th class="n">Litvínov</th><th class="n">At {{PEAK}}</th></tr></thead><tbody>{{TYPES}}</tbody></table></div>
+
+<h2 id="method">How this was built</h2>
+<div class="notes">
+<p><b>No logged vehicles.</b> The vehicle day is {{VEHICLE_DAY_EN}}, the day of the tram sheet. seznam-autobusu.cz logs JDF-numbered lines under its nationwide section (/vypravenost/cr), and its day overview for that Friday lists no 575xxx or 576xxx line. The per-line lists hold {{NREC}} records in all, nearly all by registration plate in September 2023; the plates are matched to fleet numbers through the register. The city's live map layer is empty (see the tram sheet), and there is no other source. The sheet is therefore designed, and says so on every bus.</p>
+<p><b>Designed roster (shared rule, user 29 Sep 2026).</b> A line's history is every bus with a record on it or a photo showing its number. Each bus belongs first to the line of its newest evidence. Lines are filled from the largest need down. Picks first cover every type in the line's history that the picked buses lack, then go by recency: first buses whose newest evidence is this line, then other free buses with history on it. Where the history runs out, the line takes free buses of its home garage and main type, those with no evidence anywhere first. No bus is used twice, and no bus was logged anywhere that day. History buses left over are shown as “not needed”, dimmed and not counted. Then every type and livery of the active fleet must be on a line at 16:00 (user rule, 29 Sep): a missing one takes the place of a designed bus of a fitting line (its own evidence line, else a line of its garage; articulated buses only where articulated buses run), preferring a bus of the same type, then a garage pick, then the oldest evidence; the displaced bus becomes “not needed”. This puts one weekend-only double-decker on its own line 16, marked “normally weekends only”.</p>
+<p><b>Tram replacement buses.</b> {{NAD_WHY}} The trips are the Chempark – Citadela part of the tram trips of lines 1, 3 and 4 in the city export ({{TRAM_LABEL}}), at the tram's minutes. The photos of 2026 show SOR NB 18 articulated buses (191, 193, 194, 196, 199), the Urbanway 99 and the NB 12 38 on it.</p>
+<p><b>Timetable.</b> CIS JŘ bus export ({{BUS_LABEL}}): every line numbered 575xxx or 576xxx whose operator is DPmML (IČO 62242504), found by scanning the export, {{NALL}} lines in all with the replacement service. No other operator runs a city line under these numbers. Evaluated for {{SERVICE_DAY}} with the shared version rule. {{NLINES}} have buses on the road at 16:00 and are on the sheet.</p>
+<p><b>Machinery.</b> The Most–Litvínov tram pipeline's JDF reader (JDF 1.11), round-trip sizing (cycle_need with the Ostrava trolleybus sheet's 30-minute guard) and the schedule fit (runfit), imported read-only.</p>
+<p>Sources: <a href="https://portal.cisjr.cz/pub/jdf/JDF.zip">CIS JŘ bus JDF</a>, <a href="https://portal.cisjr.cz/pub/draha/mestske/JDF.zip">CIS JŘ city JDF</a>, <a href="https://seznam-autobusu.cz/seznam?prov=1&amp;trakce=autobus&amp;iddopravce=399&amp;vcetneSluzebnich=1">DPmML bus register</a>, <a href="https://seznam-autobusu.cz/vypravenost/cr">seznam-autobusu.cz records</a>, <a href="https://www.dpmost.cz/doprava-zmeny">DPmML changes</a>, <a href="https://www.dpmost.cz/zvd2026001">tram closure notice</a>.</p>
+</div>
+
+<script>
+(function(){
+  var c=document.querySelector('.controls'); function h(){document.documentElement.style.setProperty('--stick',(c.offsetHeight+8)+'px')} h(); addEventListener('resize',h);
+  const q=document.getElementById('q'), hits=document.getElementById('hits');
+  const all=[...document.querySelectorAll('.veh[data-v]')];
+  q.addEventListener('input',()=>{
+    const s=q.value.trim();
+    let first=null, n=0;
+    for(const el of all){
+      // fleet numbers have 1 to 3 digits: a short input matches the whole number, 3 digits match a prefix
+      const on = s.length>=1 && el.dataset.v.split('+').some(c=> s.length<3 ? c===s : c.startsWith(s));
+      el.classList.toggle('hit',on);
+      if(on){ n++; if(!first) first=el; }
+    }
+    hits.textContent = s.length>=1 ? (n? n+' found':'not found') : '';
+    if(first) first.scrollIntoView({block:'center'});
+  });
+})();
+</script>

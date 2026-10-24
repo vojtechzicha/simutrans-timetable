@@ -1,0 +1,678 @@
+{
+ "name": "2026-10-12",
+ "title": "Prague Tram Peak Fleet",
+ "description": "Network from Sunday 11 Oct 2026 with the long-term closure Nákladové nádraží Žižkov – Ohrada (until 18 Dec): a change sheet against the 27 Sep sheet. Trams are the 27 Sep in-game set, moved as little as possible.",
+ "network_date": "2026-10-12",
+ "vehicle_date": "2026-09-25",
+ "gtfs": {
+  "raw": "2026-10-13",
+  "url": "https://data.pid.cz/PID_GTFS.zip",
+  "service_date": "20261020",
+  "_why": "Tue 20 Oct: inside the long-term closure Nákladové nádraží Žižkov – Ohrada (11 Oct – 18 Dec), after the short Na Knížecí – Smíchovské nádraží closure (3–18 Oct), which is short-term and so modelled as regular."
+ },
+ "register": {
+  "raw": "2026-09-28",
+  "operator_id": 106,
+  "depots": {
+   "Hloubětín": 904,
+   "Kobylisy": 1227,
+   "Motol": 905,
+   "Pankrác": 1314,
+   "Strašnice": 1360,
+   "Střešovice": 1867,
+   "Vokovice": 907,
+   "Žižkov": 1342
+  }
+ },
+ "vypravenost": {
+  "slug": "pid",
+  "lines": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11",
+   "12",
+   "13",
+   "15",
+   "16",
+   "17",
+   "18",
+   "19",
+   "20",
+   "21",
+   "22",
+   "23",
+   "24",
+   "25",
+   "26",
+   "31",
+   "42"
+  ],
+  "extra_days": {
+   "2026-09-09": [
+    "2",
+    "23"
+   ],
+   "2026-09-10": [
+    "2",
+    "23"
+   ],
+   "2026-09-11": [
+    "2",
+    "23"
+   ]
+  },
+  "history_since": "2026-09-14",
+  "history_lines": [
+   "5",
+   "6",
+   "13",
+   "31"
+  ]
+ },
+ "stop_aliases": {
+  "Kobylisy": "Březiněveská",
+  "Sídliště Modřany": "Levského"
+ },
+ "line_order": [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5/6",
+  "7",
+  "8",
+  "9/10",
+  "10/9",
+  "11",
+  "12",
+  "13",
+  "15",
+  "17",
+  "18",
+  "19",
+  "20",
+  "21",
+  "22",
+  "23",
+  "24",
+  "25",
+  "26",
+  "30",
+  "31",
+  "37"
+ ],
+ "pools": {
+  "5/6": {
+   "lines": [
+    "5",
+    "6"
+   ],
+   "recorded_as": "5",
+   "simutrans": {
+    "label": "5 + 6 shared pool",
+    "legs": [
+     [
+      "5",
+      "Slivenec",
+      "Nádraží Holešovice"
+     ],
+     [
+      "6",
+      "Nádraží Holešovice",
+      "Kubánské náměstí"
+     ],
+     [
+      "6",
+      "Kubánské náměstí",
+      "Nádraží Holešovice"
+     ],
+     [
+      "5",
+      "Nádraží Holešovice",
+      "Slivenec"
+     ]
+    ]
+   },
+   "note": "Shared pool, modelled as one Simutrans line. This is the user's modelling choice (pools are preferred for 5/6), not what the records show: in reality 19 of the 25 courses run through. Lines 5 and 6 share one pool of courses numbered as line 5 and both end at Nádraží Holešovice (courses that switch are marked →6). The Simutrans line runs Slivenec → Nádraží Holešovice → Kubánské náměstí → Nádraží Holešovice → Slivenec. The tram changes its number at Nádraží Holešovice, a through stop with no loop, so the real minute is kept. The real timetable pairs arrivals and departures there in the same minute, so each tram waits about 8 minutes for its next slot; with Leave up to on auto, nothing queues."
+  },
+  "10/9": {
+   "lines": [
+    "10",
+    "9"
+   ],
+   "title": "10 → 9",
+   "recorded_as": "10",
+   "simutrans": {
+    "label": "Simutrans line 10: circle 10 out, 9 back",
+    "legs": [
+     [
+      "10",
+      "Sídliště Řepy",
+      "Nákladové nádraží Žižkov"
+     ],
+     [
+      "9",
+      "Nákladové nádraží Žižkov",
+      "Sídliště Řepy"
+     ]
+    ]
+   },
+   "head": "Your Simutrans line 10 becomes the opposite circle: Sídliště Řepy → (as 10, via Anděl, Karlovo náměstí, I. P. Pavlova, Náměstí Míru, Flora, Želivského) → Nákladové nádraží Žižkov → (as 9, via Olšanská, Hlavní nádraží, Václavské náměstí, Národní třída, Anděl) → Sídliště Řepy. Nákladové nádraží Žižkov keeps the timetable minute (through stop); Sídliště Řepy is a loop (1 min early).",
+   "note": "The opposite circle to 9 → 10. It needs 25 trams; the old line 10 had 18, so 7 Škoda 15T from Motol come over from the cancelled line 16."
+  },
+  "9/10": {
+   "lines": [
+    "9",
+    "10"
+   ],
+   "title": "9 → 10",
+   "recorded_as": "9",
+   "simutrans": {
+    "label": "Simutrans line 9: circle 9 out, 10 back",
+    "legs": [
+     [
+      "9",
+      "Sídliště Řepy",
+      "Nákladové nádraží Žižkov"
+     ],
+     [
+      "10",
+      "Nákladové nádraží Žižkov",
+      "Sídliště Řepy"
+     ]
+    ]
+   },
+   "head": "Your Simutrans line 9 becomes a circle: Sídliště Řepy → (as 9, via Anděl, Národní třída, Václavské náměstí, Hlavní nádraží, Olšanská) → Nákladové nádraží Žižkov → (as 10, via Želivského, Flora, Náměstí Míru, I. P. Pavlova, Karlovo náměstí, Anděl) → Sídliště Řepy. Nákladové nádraží Žižkov is a through stop: the timetable runs the tram on in the same minute, so it keeps the timetable minute. Sídliště Řepy is a loop (1 min early).",
+   "note": "Lines 9 and 10 run through each other at Nákladové nádraží Žižkov during the closure: every 9 that arrives there leaves as 10 and every 10 leaves as 9 (PID GTFS block pairs, 0 min stand). That makes two circles in opposite directions, 25 trams each. Each circle is one Simutrans line, so your existing lines 9 and 10 keep their trams and only their schedules change."
+  }
+ },
+ "transfers": [
+  {
+   "course": "22/42",
+   "to_line": "7",
+   "note": "Course 22/42. The record says it moves to line 7 (přejezd na linku 7). Line 7 has afternoon trips starting at Hotel Golf and an evening run to Strašnice depot, which fits a 22 morning / 7 afternoon course."
+  }
+ ],
+ "museum_lines": [
+  "42"
+ ],
+ "added_courses": [
+  {
+   "line": "2",
+   "course": 11,
+   "set": "8779+8442",
+   "source": "2026-09-11",
+   "note": "Added for the long route. Line 2 ran courses 1–12 on the long route (9–11 Sep) but only 1–10 on the short Albertov route on 25 Sep. This set ran 2/11 on Fri 11 Sep and was not in service on 25 Sep. 2/11 is a Strašnice course with a Tatra T3 pair every day."
+  },
+  {
+   "line": "2",
+   "course": 12,
+   "set": "9229",
+   "source": "stand-in",
+   "note": "Added for the long route. 2/12 is a Pankrác Škoda 15T course (afternoon part: 9234 on 11 Sep, 9349 on 10 Sep, 9211 on 9 Sep). All three were busy on other lines on 25 Sep, so this is a designed stand-in, not recorded: 9229, a Pankrác 15T3 in service and unused that day."
+  }
+ ],
+ "course_notes": {
+  "1/8": "9328 had first run 20/17 until it was replaced there by 9228.",
+  "20/17": "9328 then moved to 1/8."
+ },
+ "flags": {
+  "2": [
+   "info",
+   "Resized for the long route Sídliště Petřiny – Náměstí Bratří Synků. On Fri 25 Sep line 2 still ran short to Albertov with courses 1–10 (shown as recorded). Courses 11 and 12 are added from the long-route days 9–11 Sep, as their notes say."
+  ],
+  "13": [
+   "warn",
+   "Only course 13/1 is recorded, on every day of the last two weeks. The timetable needs 4 sets at 16:00 (every 8 min, 12–13 min each way, at least 3 min turnaround at each end), so courses 13/2–13/4 are designed, not recorded: single Tatra T3R.PLF cars from Strašnice that ran line 13 on other days and were not used anywhere on 25 Sep."
+  ],
+  "31": [
+   "warn",
+   "Only courses 31/1–3 are recorded, on every day of the last two weeks. The timetable needs 5 sets at 16:00 (every 8 min, 18–20 min each way, with the timetable's own 1-minute turnaround at Vysočanská), so courses 31/4–31/5 are designed, not recorded: single Tatra T3R.PLF cars from Hloubětín that ran line 31 on the dates given and were not used anywhere on 25 Sep."
+  ],
+  "23": [
+   "info",
+   "Nostalgic PID line with museum cars. It already ran the switched route Královka – Bílá labuť on 25 Sep (since 19 Sep) with its usual 4 courses, the same number as on the old Zvonařka route (9–11 Sep), so no resizing is needed."
+  ],
+  "22": [
+   "info",
+   "Line 22 runs as two separate branches, and each is its own Simutrans line. The records do not say which course runs which branch, so the split below is a choice: both branches need 17 sets by round trip, and the 40 courses are shared out evenly."
+  ],
+  "17": [
+   "info",
+   "Line 17 runs as two branches, each its own Simutrans line. Here the course numbers mark the branch: 17/1–17 (all bidirectional Tatra KT8D5.RN2P) run Březiněveská – Libuš, where the temporary stub needs bidirectional trams, and 17/21–37 run Vozovna Kobylisy – Levského. Each branch needs 15 sets by round trip; 17 are recorded on each."
+  ]
+ },
+ "depot_order": [
+  "Hloubětín",
+  "Kobylisy",
+  "Motol",
+  "Pankrác",
+  "Strašnice",
+  "Vokovice",
+  "Žižkov",
+  "Střešovice"
+ ],
+ "depot_notes": {
+  "Střešovice": "Museum depot. Historic cars for lines 23 and 42."
+ },
+ "output_html": "Prague Tram Peak Fleet.html",
+ "artifact_url": "https://claude.ai/artifact/5Dt65EJ7F8YJnMbJugLGTi",
+ "fill_to_cycle": {
+  "13": {
+   "_why": "only course 13/1 is ever recorded"
+  },
+  "31": {
+   "_why": "only courses 31/1-3 are ever recorded"
+  }
+ },
+ "splits": {
+  "17": [
+   {
+    "label": "17 Březiněveská – Libuš",
+    "route": [
+     "Březiněveská",
+     "Libuš"
+    ],
+    "courses": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17
+    ],
+    "why": "Courses 17/1–17 are all bidirectional Tatra KT8D5.RN2P, which the temporary stub at Libuš needs.",
+    "line": "17"
+   },
+   {
+    "label": "17 Vozovna Kobylisy – Levského",
+    "route": [
+     "Vozovna Kobylisy",
+     "Levského"
+    ],
+    "courses": [
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37
+    ],
+    "why": "Courses 17/21–37 are single-direction sets (Tatra T3 pairs, Škoda 14T and 15T), which need the loops at Vozovna Kobylisy and Levského.",
+    "line": "17"
+   }
+  ],
+  "22": [
+   {
+    "label": "22 Bílá Hora – Zahradní Město",
+    "route": [
+     "Bílá Hora",
+     "Zahradní Město"
+    ],
+    "courses": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     35,
+     36,
+     37
+    ],
+    "why": "Not recorded: the records give no branch. Both branches need 17 sets by round trip; the 40 courses are split evenly in course order, with the 6 spares shared (35–37 here).",
+    "line": "22"
+   },
+   {
+    "label": "22 Nádraží Hostivař – Vypich",
+    "route": [
+     "Nádraží Hostivař",
+     "Vypich"
+    ],
+    "courses": [
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     41,
+     43,
+     44
+    ],
+    "why": "Not recorded: a choice, as for the other branch; the peak extras 41, 43 and 44 are placed here (42 moves to line 7).",
+    "line": "22"
+   }
+  ]
+ },
+ "turnaround_min": {
+  "31": 1,
+  "_why": "Brno review: at Vysočanská the timetable itself turns trams in 1 min; the default 3-min minimum inflated the need (7 instead of 5)."
+ },
+ "metro": {
+  "route_type": "1",
+  "overview_class": "vlakden",
+  "stock": {
+   "A": "81-71M, 5 cars",
+   "B": "81-71M, 5 cars",
+   "C": "M1, 5 cars"
+  },
+  "_why": "user, 28 Sep: 'Prague needs also a metro mention. I need intervals, lines and number of trains. One summary table at the bottom is enough.'",
+  "_stock_source": "dpp.cz/vozovy-park/metro/81-71m; cs.wikipedia 'Metro v Praze' (Brno session review, 28 Sep: A runs 81-71M, not M1)",
+  "reverse_min": [
+   3,
+   5
+  ],
+  "_reverse_why": "All metro termini reverse behind the station; the timetable does not show the reversing time, so the need is given for 3–5 min (Brno review asked for per-terminus turnarounds; the timetable's arrival→next departure there is a different train, 0–1 min)."
+ },
+ "ferry": {
+  "route_type": "4",
+  "turn_min": 0,
+  "_why": "user, 29 Sep: 'Keep the separate files bus only, add ferries to the tram/metro one'. PID ferries (route type 4) summarised like the metro.",
+  "_turn_why": "The timetable turns the boat round at the pier in the minute it lands (P4: Dostihová 16:00 → Belárie 16:02, back 16:02), so boats are sized with 0 min at the pier.",
+  "boats": {
+   "P1": "Břehule · pak object VZ-Praha-Naomi-pbcernocervena-Naomi (in the pak, fb42eb7)",
+   "P2": "Baba · pak object VZ-Praha-Kazi-pbcernocervena-Kazi (in the pak, fb42eb7)",
+   "P4": "pak object VZ-Praha-Holka_2-ppsmodrobila-Holka_2 (in the pak, fb42eb7)",
+   "P5": "Břehouš · pak object VZ-Praha-Naomi-pbcernocervena-Naomi (in the pak, fb42eb7)",
+   "P6": "Ledňáček · pak object VZ-Praha-Naomi-pbcernocervena-Naomi (in the pak, fb42eb7)"
+  },
+  "_boats": "From the VZ pak session (29 Sep): Naomi class Břehule / Břehouš / Ledňáček on P1 / P5 / P6, Kazi class Baba on P2, Holka 2 on P4 (VZ-Praha-water). Drop \"(requested)\" when the objects are in the pak build."
+ },
+ "template": "page_changes.html",
+ "schedule_overrides": {
+  "9": {
+   "Sídliště Řepy": {
+    "every": 4,
+    "real": [
+     1
+    ],
+    "why": "Every 4 min. In reality, from 15:09 to 16:09 the :09, :29 and :49 slots start at Hotel Golf instead, 8 min later (pull-outs from Vozovna Motol); from 16:13 Sídliště Řepy has every slot. In Simutrans the tram simply leaves Sídliště Řepy in every slot."
+   },
+   "drop_short": {
+    "Hotel Golf": "pull-out from Vozovna Motol that fills a 4-minute slot from Sídliště Řepy; covered by the Řepy departure, so not modelled."
+   }
+  },
+  "10": {
+   "drop_short": {
+    "Hotel Golf": "pull-out from Vozovna Motol that fills a 4-minute slot from Sídliště Řepy (15:55); covered by the Řepy departure, so not modelled."
+   }
+  }
+ },
+ "changes": {
+  "base": "2026-09-27",
+  "since": "2026-10-11",
+  "closure": "Nákladové nádraží Žižkov – Ohrada: no trams from 11 Oct to 18 Dec 2026. Lines 9 and 10 run through each other at Nákladové nádraží Žižkov, 7 ends at Bílá labuť, 11 at Ústřední dílny DP, 16 is cancelled, and two new lines serve the cut-off north-east: 30 Sídliště Ďáblice – Spojovací and 37 Lehovec – Spojovací.",
+  "notice": "https://pid.cz/zmena/nakladove-nadrazi-zizkov-ohrada-docasne-preruseni-provozu-tramvaji-232333-9/",
+  "short_closure": "Na Knížecí – Smíchovské nádraží (3–18 Oct) is short-term, so lines 5, 12, 15, 20 and 21 stay on their normal routes here (timetable of Tue 20 Oct, after it ends).",
+  "group_map": {
+   "9": "9/10",
+   "10": "10/9"
+  },
+  "lines": {
+   "7": {
+    "kind": "route",
+    "old_route": "Kotlářka – Lehovec",
+    "new_route": "Kotlářka – Bílá labuť",
+    "what": "Shortened: the Lehovec end is cut off (line 37 takes it). From Želivského the line now runs via Olšanské hřbitovy, Flora, Olšanské náměstí, Hlavní nádraží and Masarykovo nádraží to Bílá labuť."
+   },
+   "9/10": {
+    "kind": "route",
+    "was": "9",
+    "old_route": "Sídliště Řepy – Spojovací",
+    "new_route": "circle Sídliště Řepy → Nákladové nádraží Žižkov → Sídliště Řepy",
+    "what": "Line 9 no longer reaches Spojovací (line 30 takes that end). It ends at Nákladové nádraží Žižkov and continues there as line 10. Your Simutrans line 9 becomes the circle 9 out, 10 back."
+   },
+   "10/9": {
+    "kind": "route",
+    "was": "10",
+    "old_route": "Sídliště Řepy – Sídliště Ďáblice",
+    "new_route": "circle Sídliště Řepy → Nákladové nádraží Žižkov → Sídliště Řepy",
+    "what": "Line 10 no longer reaches Sídliště Ďáblice (line 30 takes that end). It ends at Nákladové nádraží Žižkov and continues there as line 9, every 4 min instead of 8. Your Simutrans line 10 becomes the opposite circle."
+   },
+   "11": {
+    "kind": "route",
+    "old_route": "Spořilov – Spojovací",
+    "new_route": "Spořilov – Ústřední dílny DP",
+    "what": "The Spojovací end is cut off. From Želivského the line now runs via Vinice, Nové Strašnice and Depo Hostivař to Ústřední dílny DP (the old line 16 end)."
+   },
+   "26": {
+    "kind": "route",
+    "old_route": "via Flora and Olšanské hřbitovy",
+    "new_route": "via Olšanská, Nákladové nádraží Žižkov and Mezi Hřbitovy",
+    "what": "Back on its normal route between Olšanské náměstí and Želivského. Not part of the new closure: the 27 Sep sheet had 26 on the diversion for the Olšanské náměstí – Nákladové nádraží Žižkov closure, which ended on 10 Oct. Skip the route edit if your game already runs 26 the normal way."
+   },
+   "30": {
+    "kind": "new",
+    "new_route": "Sídliště Ďáblice – Spojovací",
+    "what": "New line for the closure: Sídliště Ďáblice – Kobylisy – Bulovka – Palmovka – Ohrada – Vozovna Žižkov – Spojovací."
+   },
+   "37": {
+    "kind": "new",
+    "new_route": "Lehovec – Spojovací",
+    "what": "New line for the closure: Lehovec – Hloubětín – Nádraží Libeň – Balabenka – Palmovka – Ohrada – Vozovna Žižkov – Spojovací."
+   },
+   "3": {
+    "kind": "minor",
+    "what": "New stop Hodkovičky between Černý kůň and Belárie, both directions. Same minutes, same trams."
+   },
+   "17": {
+    "kind": "minor",
+    "what": "New stop Hodkovičky between Černý kůň and Belárie, both branches. Same minutes, same trams."
+   },
+   "20": {
+    "kind": "minor",
+    "what": "New stop Hodkovičky between Černý kůň and Belárie, both directions. Same minutes, same trams."
+   },
+   "23": {
+    "kind": "minor",
+    "what": "Departures from Královka are 1 minute earlier (Offset and Also at). Same route, same trams."
+   }
+  },
+  "cancelled": {
+   "16": {
+    "old_route": "Sídliště Řepy – Ústřední dílny DP",
+    "what": "Cancelled for the whole closure. Delete Simutrans line 16; its 16 trams go to lines 10, 11 and 37, or back to the depot."
+   }
+  },
+  "moves": [
+   {
+    "from": "9/8",
+    "to": "30/1"
+   },
+   {
+    "from": "9/10",
+    "to": "30/2"
+   },
+   {
+    "from": "9/12",
+    "to": "30/3"
+   },
+   {
+    "from": "9/14",
+    "to": "30/4"
+   },
+   {
+    "from": "9/17",
+    "to": "30/5"
+   },
+   {
+    "from": "9/19",
+    "to": "30/6"
+   },
+   {
+    "from": "9/24",
+    "to": "30/7"
+   },
+   {
+    "from": "9/29",
+    "to": "30/8"
+   },
+   {
+    "from": "7/13",
+    "to": "37/1"
+   },
+   {
+    "from": "7/16",
+    "to": "37/2"
+   },
+   {
+    "from": "16/2",
+    "to": "37/3"
+   },
+   {
+    "from": "16/4",
+    "to": "37/4"
+   },
+   {
+    "from": "16/6",
+    "to": "37/5"
+   },
+   {
+    "from": "16/7",
+    "to": "37/6"
+   },
+   {
+    "from": "16/15",
+    "to": "37/7"
+   },
+   {
+    "from": "16/9",
+    "to": "37/8"
+   },
+   {
+    "from": "16/1",
+    "to": "10/21"
+   },
+   {
+    "from": "16/3",
+    "to": "10/22"
+   },
+   {
+    "from": "16/5",
+    "to": "10/23"
+   },
+   {
+    "from": "16/10",
+    "to": "10/24"
+   },
+   {
+    "from": "16/11",
+    "to": "10/25"
+   },
+   {
+    "from": "16/13",
+    "to": "10/26"
+   },
+   {
+    "from": "16/14",
+    "to": "10/27"
+   },
+   {
+    "from": "16/12",
+    "to": "11/14"
+   }
+  ],
+  "move_why": {
+   "30": "Line 9 needs 25 trams instead of 33. The 8 that leave are its Tatra T3 pairs from Žižkov: on 12 Oct the 9/10 pool ran only Škoda 15T, while line 30 ran T3 pairs.",
+   "37": "Line 7 needs 15 instead of 17; its two Škoda 52T from Hloubětín go to 37, which ran 52T from Hloubětín on 12 Oct. The other 6 come from line 16: Žižkov T3 pairs and a Žižkov 15T (37 also ran Žižkov 15T on 12 Oct).",
+   "10": "From line 16: Škoda 15T from Motol, the type and depot that ran the 9/10 pool on 12 Oct.",
+   "11": "Line 11 needs one more tram on the longer route: a line 16 Škoda 15T7 from Žižkov (11 already has one)."
+  },
+  "withdraw": [
+   {
+    "from": "16/8",
+    "why": "Left over after the moves. Back to the depot."
+   },
+   {
+    "from": "16/16",
+    "why": "Left over after the moves. Back to the depot."
+   },
+   {
+    "from": "26/18",
+    "why": "Line 26 needs 19 instead of 20 on its normal route. The 12 Oct records show no Žižkov T3 pairs on 26, so this pair goes. Back to the depot."
+   }
+  ],
+  "verification": "Not yet checked by the Brno session (simutrans-timetable-c6): the 9/10 circles, the new lines 30 and 37, and the moves."
+ },
+ "nad": {
+  "_why": "user, 13 Oct: 'Can you add the NAD? If any? At the bottom? with similar style to buses?'",
+  "vehicle_date": "2026-10-12",
+  "extra_days": [
+   "2026-10-13"
+  ],
+  "register_raw": "2026-09-29",
+  "lines": [
+   {
+    "line": "X9",
+    "for": "Nákladové nádraží Žižkov – Ohrada closure (11 Oct – 18 Dec)",
+    "status": "new",
+    "what": "New for this closure: it replaces trams 9, 10, 11 and 16 on the cut section Nákladové nádraží Žižkov – Biskupcova – Ohrada – Vozovna Žižkov, linking the 9/10 terminus to lines 30 and 37 at Vozovna Žižkov."
+   },
+   {
+    "line": "X25",
+    "for": "Palmovka – Libeňský most – Maniny (long-term, already running before 27 Sep)",
+    "status": "existing",
+    "what": "Not part of this closure: a long-term replacement for trams over Libeňský most that already ran on 29 Sep, but the 27 Sep sheet had no NAD. Build it only if your game does not have it yet."
+   }
+  ],
+  "not_modelled": [
+   "X95 and X98: night replacements for night trams 95 and 98 on the same closure (night lines are not modelled).",
+   "X90, X91, X93, X94, X99: night lines.",
+   "X12 (and night X90, X99): Na Knížecí – Smíchovské nádraží closure, 3–18 Oct; short-term, so it is not modelled.",
+   "X130, X104 and the X3xx / XS lines: replacements for bus lines and trains, not for trams."
+  ]
+ }
+}

@@ -1,0 +1,470 @@
+{
+ "_doc": "Reference content carried over from the old per-line sheet (legacy/Pardubice MHD Peak Sheet.html, 26 Sep 2026: the user's earlier decisions and the research behind them). Edited by hand: vehicle counts ('seen') are dropped because the sheet now lists the vehicles themselves.",
+ "lines": {
+  "1": {
+   "mode": "tb",
+   "title": "Slovany – centre – Jesničánky (– Dražkovice – Mikulovice)",
+   "firstDir": "in",
+   "vehicle": "Battery trolleybus 12 m",
+   "battery": "Jesničánky – Dražkovice – Mikulovice",
+   "models": "battery 32 Tr/30 Tr on Dražkovice & Mikulovice trips; others any 12 m",
+   "note": "Trunk every 12 min in the peak. From Slovany, one departure in three runs through to Dražkovice. Mikulovice gets 5 trips a day (14:06 in the peak). Heading into town, the Dražkovice trips join the Jesničánky departures to give the same 12-min trunk."
+  },
+  "2": {
+   "mode": "tb",
+   "title": "Polabiny – Hlavní nádraží – centre – Pardubičky (– Zámeček)",
+   "firstDir": "out",
+   "vehicle": "Trolleybus 12 m",
+   "models": "30 Tr, 32 Tr, 26 Tr; a battery 32 Tr for the evening 2→12 runs",
+   "note": "Every 10 min from Polabiny in the peak, alternating between Zámeček and short trips to Pardubičky, točna. Back on the Kapitána Bartoše route over the provisional bridge since 1. 9. 2026 (the wire was moved onto the bridge). Some evening trips continue from Zámeček as line 12 (see Specials)."
+  },
+  "3": {
+   "mode": "tb",
+   "title": "Hlavní nádraží – Semtín – Rybitví – Lázně Bohdaneč (– U Mlýnů)",
+   "firstDir": "out",
+   "vehicle": "Trolleybus 12 m + 15 m",
+   "models": "30 Tr, 26 Tr, 32 Tr; 28 Tr 406/409 (14.6 m, 3 axles)",
+   "note": "Every 15 min from Hlavní nádraží. Since 1. 9. 2026 one trip an hour (:57) is extended to Lázně Bohdaneč, U Mlýnů via Na Pískách, <b>under new wire</b>. The whole route is wired. Line 3 is where the last two <b>15 m three-axle Škoda 28 Tr</b> (406, 409) normally run. They are the only non-12 m vehicles in regular service."
+  },
+  "4": {
+   "mode": "tb",
+   "title": "Dukla – Hlavní nádraží – centre – Polabiny (– Globus)",
+   "firstDir": "in",
+   "vehicle": "Trolleybus 12 m",
+   "models": "30 Tr / 32 Tr",
+   "note": "Every 30 min. Fully wired, including Globus. Around midday and the early afternoon (12:52–15:22 from Dukla) trips run on from Polabiny, točna to Globus. From 15:52 they end at Polabiny again."
+  },
+  "5": {
+   "mode": "tb",
+   "title": "Dukla – centre – Dubina, sever",
+   "firstDir": "out",
+   "vehicle": "Trolleybus 12 m",
+   "models": "30 Tr, 32 Tr, 26 Tr",
+   "note": "Every 10 min in the peak on both ends. Fully wired. One of the two trunk lines with a clean 10-min clock pattern."
+  },
+  "6": {
+   "mode": "bus",
+   "title": "Vápenka – Dukla – centre – Hlavní nádraží – Kréta – Rosice",
+   "firstDir": "in",
+   "vehicle": "Bus 12 m",
+   "models": "Iveco Urbanway 12M, Irisbus Citelis 12M CNG, Iveco Urbanway 12M CNG",
+   "note": "Every 10 min from Vápenka in the peak. Departures alternate between the full route to Rosice, točna and short trips ending at Hlavní nádraží, so the Rosice branch gets a bus every 20 min. Daytime trips run via Krematorium – Zborovské náměstí; early-morning and evening trips run via U kapitána – Ulice Svobody. Back over the provisional Kapitána Bartoše bridge since 1. 9. 2026."
+  },
+  "7": {
+   "mode": "tb",
+   "title": "Hlavní nádraží – Dukla – centre – Globus (– Rybitví)",
+   "firstDir": "out",
+   "vehicle": "Trolleybus 12 m",
+   "note": "Every 30 min. Early-afternoon trips (11:51–14:21 from Hlavní nádraží) run on from Globus to Rybitví, UMA točna. Still ends at Hlavní nádraží. Before 2/2023 it continued from Hlavní nádraží over the Kapitána Bartoše bridge to Polabiny, Sluneční (see Specials). Fully wired."
+  },
+  "8": {
+   "mode": "bus",
+   "title": "Dubina – centre – Hlavní nádraží (– Svítkov loop)",
+   "firstDir": "out",
+   "vehicle": "Bus 12 m",
+   "note": "Runs as a pair with line 88. Line 8 does the Svítkov loop clockwise (Závodiště – Svítkov – Popkovice – K Letišti – Závodiště) and 88 runs it the other way. Many trips are short Dubina ↔ Hlavní nádraží shuttles. In the peak, Dubina gets a departure every 10–20 min from 8 and 88 combined."
+  },
+  "9": {
+   "mode": "bus",
+   "title": "Hlavní nádraží – centre – Dubina – Hůrka / Spojil (– Sezemice)",
+   "firstDir": "out",
+   "vehicle": "Bus 12 m",
+   "note": "Roughly every 25 min, not on a clock pattern. Trips alternate between Hůrka and Spojil, točna. A few trips a day (none in the peak) run on to Sezemice over the new bypass (zámostí, Havlíčkova), in use since 1. 9. 2026."
+  },
+  "10": {
+   "mode": "bus",
+   "title": "Hlavní nádraží – Gorkého – Nemošice / Ostřešany",
+   "firstDir": "out",
+   "vehicle": "Bus 12 m",
+   "note": "Every 30 min from Hlavní nádraží: :22 to Ostřešany and :52 to Nemošice. Some trips detour via Dukla, u náměstí and Dukla, kulturní dům (marked S in the official timetable)."
+  },
+  "11": {
+   "mode": "tb",
+   "title": "Dubina, sever – centre – Polabiny – Globus (– Rybitví)",
+   "firstDir": "in",
+   "vehicle": "Trolleybus 12 m",
+   "models": "26 Tr, 30 Tr, 32 Tr (mixed)",
+   "note": "A tangential line: Dubina – Krajský úřad – Polabiny – Globus, bypassing Hlavní nádraží. About every 20–30 min in the peak. Some trips are extended to Rybitví, UMA točna for factory shifts."
+  },
+  "12": {
+   "mode": "mix",
+   "modeText": "bus in practice; evening trolleybuses from line 2",
+   "title": "Hlavní nádraží – centre – Zámeček – Černá za Bory / Mnětice / Tuněchody",
+   "firstDir": "out",
+   "vehicle": "Bus 12 m",
+   "models": "Iveco Urbanway 12M, Irisbus Citelis 12M CNG",
+   "note": "A branching suburban line with the most variants in the network. About every 20 min from Hlavní nádraží, spread over Černá za Bory, Mnětice and Tuněchody. Some trips also serve Drozdice, Zdravotnická škola or the Lipiny / Dělnická / Řempo loop. Licensed as a trolleybus line, and battery trolleybuses ran some Černá za Bory / Mnětice trips from 2018. Every weekday sampled in 2026 had buses only, apart from the evening line 2 trolleybuses that continue here from Zámeček."
+  },
+  "13": {
+   "mode": "tb",
+   "title": "Ohrazenice – Polabiny – centre – Dubina, sever",
+   "firstDir": "out",
+   "vehicle": "Trolleybus 12 m",
+   "models": "mostly 32 Tr (battery-capable), also 30 Tr/26 Tr",
+   "note": "Every 10 min, the second 10-min trunk line. Long-term detour via Bělehradská and Hradecká streets. It will not return to the Kapitána Bartoše route until the new bridge opens (planned spring 2028), so the detour is what you model. The detour is wired: ordinary trolleybuses without batteries work it too. Before 2/2023 line 13 ran Dubina – Hlavní nádraží – Kapitána Bartoše – Polabiny, Sluneční – Ohrazenice."
+  },
+  "14": {
+   "thin": true,
+   "mode": "bus",
+   "title": "Polabiny – centre – Dukla – Popkovice – Staré Čívice, Průmyslová zóna",
+   "firstDir": "in",
+   "vehicle": "Bus 12 m",
+   "note": "Serves the Staré Čívice industrial zone (Panasonic, JTEKT, KYB). About every 30 min, not on a clock pattern, and timed to shift changes. Some trips run via Svítkov (mark S) or end at K Polabinám (mark T)."
+  },
+  "15": {
+   "mode": "bus",
+   "title": "Hlavní nádraží – Dukla – Svítkov – Srnojedy – Lány na Důlku – Opočínek",
+   "firstDir": "out",
+   "vehicle": "Bus 12 m",
+   "note": "About every 35–40 min. A few trips start or end at Závodu míru instead of Hlavní nádraží (mark Z)."
+  },
+  "16": {
+   "thin": true,
+   "mode": "bus",
+   "title": "Hlavní nádraží – Univerzita – Staré Hradiště – Ráby – Dříteč",
+   "firstDir": "out",
+   "vehicle": "Bus 12 m",
+   "note": "A thin suburban line with 6 round trips a day. In the peak window: 14:04 out and 14:37 back."
+  },
+  "17": {
+   "mode": "tb",
+   "title": "Hlavní nádraží – Globus – Semtín – Doubravice – Srch",
+   "firstDir": "out",
+   "vehicle": "Battery trolleybus 12 m",
+   "battery": "Semtín/Ohrazenice – Doubravice – Srch",
+   "models": "32 Tr with batteries only",
+   "note": "About every 30 min in the peak (hourly outside it). Daytime trips alternate between the Globus route and the Ohrazenice, škola route. Some inbound trips call at Globus, parkoviště."
+  },
+  "18": {
+   "mode": "mix",
+   "modeText": "trolleybus; Živanice trips by bus",
+   "title": "Hlavní nádraží – Polabiny – Trnová – Globus – Rybitví – Černá u Bohdanče (– Živanice)",
+   "firstDir": "out",
+   "vehicle": "Battery trolleybus / bus (Živanice)",
+   "battery": "Rybitví – Černá u Bohdanče (inferred)",
+   "models": "32 Tr with batteries; Živanice: 12 m bus",
+   "note": "Hourly to Černá u Bohdanče, with Živanice trips in between. Since 1. 9. 2026 it runs over the provisional Kapitána Bartoše bridge, and trips to Rybitví and Černá u Bohdanče use trolleybuses. School-day trips serve Rybitví, Stavební škola."
+  },
+  "20": {
+   "mode": "bus",
+   "title": "Závodu míru – centre – Rokycanova – Závodu míru (loop)",
+   "firstDir": "out",
+   "vehicle": "Midibus",
+   "models": "SOR BN 9.5 (21, 22), Isuzu Novociti Life (15–17)",
+   "note": "A daytime city-centre loop every 30 min from 6:43 to 14:43. It does not run in the afternoon peak, so the sheet uses the morning peak."
+  },
+  "21": {
+   "mode": "tb",
+   "title": "Polabiny, Sluneční – Hlavní nádraží – Masarykovo náměstí – Třída Míru – back (loop)",
+   "firstDir": "out",
+   "vehicle": "Trolleybus 12 m",
+   "note": "New trolleybus line from 1. 9. 2026, every 20 min. It covers the Polabiny – Hlavní nádraží link over the Kapitána Bartoše provisional bridge that line 13 lost. It is a replacement line and will probably be dropped once line 13 returns (new bridge, about 2028).",
+   "tags": [
+    [
+     "warn",
+     "long-term replacement line"
+    ]
+   ]
+  },
+  "22": {
+   "thin": true,
+   "mode": "bus",
+   "title": "Závodu míru – centre – Nemocnice – Nemošice",
+   "firstDir": "out",
+   "vehicle": "Bus 12 m",
+   "note": "Runs hourly in the afternoon, plus 2 morning trips into town. It only runs in the school year (1. 9. – 30. 6.) but not only on school days.",
+   "tags": [
+    [
+     "sch",
+     "school year only"
+    ]
+   ]
+  },
+  "23": {
+   "thin": true,
+   "mode": "bus",
+   "title": "Staré Čívice, Průmyslová zóna – Hlavní nádraží (– Polabiny)",
+   "firstDir": "out",
+   "vehicle": "Bus 12 m",
+   "note": "A shift-change line for the industrial zone: in the afternoon, trips leave the zone at 14:12/14:14 and 17:20, and head out towards it around 13:16–13:40, 15:00 and 17:55. Express trips (R, RYCHLÍK) stop only at Popkovice, hostinec, Závodiště and Hlavní nádraží.",
+   "tags": [
+    [
+     "warn",
+     "shift line"
+    ]
+   ]
+  },
+  "24": {
+   "thin": true,
+   "mode": "bus",
+   "title": "Hlavní nádraží – Dukla – Popkovice – Starý Mateřov (– Čepí)",
+   "firstDir": "out",
+   "vehicle": "Bus 12 m",
+   "note": "Roughly hourly. Trips alternate between Čepí, prodejna and Starý Mateřov, točna."
+  },
+  "25": {
+   "thin": true,
+   "mode": "bus",
+   "title": "Dubina, sever – Krajský úřad – Dukla – Staré Čívice, Průmyslová zóna",
+   "firstDir": "out",
+   "vehicle": "Bus 12 m",
+   "note": "A direct shift line from Dubina to the industrial zone that avoids the centre, with 11 trips a day. In the afternoon: from the zone at 14:15 and 15:38; to the zone at 13:00 and 13:35.",
+   "tags": [
+    [
+     "warn",
+     "shift line"
+    ]
+   ]
+  },
+  "27": {
+   "mode": "tb",
+   "title": "Zdravotnická škola – Nemocnice – centre – Dukla – centre – Zdravotnická škola (half-loop)",
+   "firstDir": "out",
+   "vehicle": "Battery trolleybus 12 m",
+   "battery": "Pardubičky – Zámeček – ERA – Zdravotnická škola (inferred)",
+   "models": "32 Tr with batteries only",
+   "note": "Every 30 min (:15, :45) until 17:45. Runs as a half-loop: out via Jana Palacha – Teplého – Dukla, náměstí and back via Kapitána Nálepky – Zborovské náměstí – Gorkého. Four trips a day end at Dukla, točna."
+  },
+  "28": {
+   "mode": "bus",
+   "title": "Závodu míru – centre – Nemocnice – Černá za Bory – Hostovice / Sezemice, Veská",
+   "firstDir": "out",
+   "vehicle": "Bus 12 m",
+   "note": "About every 30–45 min, spread over Hostovice (via Žižín, some via Staročernsko or Zdravotnická škola), Černá za Bory and Sezemice, Veská, most (via Dašice, Pod Dubem). On school days it also covers Úhřetice in the morning, standing in for line 12."
+  },
+  "30": {
+   "mode": "tb",
+   "title": "Hlavní nádraží – Univerzita / Cihelna (– Fáblovka – Staré Hradiště – Ohrazenice)",
+   "firstDir": "out",
+   "vehicle": "Battery trolleybus 12 m",
+   "battery": "U Josefa – Cihelna – Fáblovka – Staré Hradiště – Ohrazenice",
+   "models": "32 Tr / 30 Tr with batteries only",
+   "note": "Every 15 min from Hlavní nádraží in the peak, as a repeating sequence: every 30 min a short trip to Univerzita (:25/:55), plus Cihelna, točna and Ohrazenice via Staré Hradiště trips filling the other slots. Wired only as far as Studentská / U Josefa; everything beyond runs on batteries."
+  },
+  "33": {
+   "mode": "tb",
+   "title": "Hlavní nádraží – centre – Univerzita – Globus (– Rybitví)",
+   "firstDir": "out",
+   "vehicle": "Trolleybus 12 m",
+   "models": "shares vehicles with line 3",
+   "note": "Every 30 min to Globus (:18/:48). Fully wired. A few trips run on to Rybitví, UMA točna, and on school days to Rybitví, Stavební škola (mark R)."
+  },
+  "90": {
+   "mode": "bus",
+   "title": "Hlavní nádraží – Letiště terminál (airport)",
+   "firstDir": "in",
+   "thin": true,
+   "vehicle": "Bus 12 m",
+   "models": "12 m bus (for example Urbanway 189)",
+   "tags": [
+    [
+     "warn",
+     "runs to the flight schedule"
+    ]
+   ],
+   "note": "Non-stop airport shuttle, 8 min each way. It runs only around flights: 2 departures 30 min apart before each departure flight (about 120 and 150 min before take-off), and 2 back after each arrival (about 30 and 60 min after landing). It waits for delayed flights. Timetable valid 1. 9. – 24. 10. 2026. Weekly pattern: Mon 2 flight pairs (8:50/9:20 → airport, 10:45/11:15 back; 19:20/19:50, 21:25/21:55), Wed 1, Fri 1–2 (morning), Sat 1, Sun 1 (evening), <b>no service Tue and Thu</b>. It never runs in the afternoon peak. The Monday trips are shown."
+  },
+  "88": {
+   "mode": "bus",
+   "title": "Dubina – centre – Hlavní nádraží – Svítkov loop (anticlockwise) – Dubina",
+   "firstDir": "out",
+   "vehicle": "Bus 12 m",
+   "note": "The partner of line 8: the same Dubina – centre – Hlavní nádraží trunk, but the Svítkov loop runs the other way (Závodiště – K Letišti – Popkovice – Svítkov – Závodiště). Together with 8 it gives the Svítkov loop service in both directions."
+  }
+ },
+ "specials": [
+  {
+   "title": "Most Kapitána Bartoše: provisional bridge, long-term state",
+   "lines": [
+    "2",
+    "6",
+    "13",
+    "18",
+    "21",
+    "7"
+   ],
+   "tag": [
+    "warn",
+    "long-term, until about 2028"
+   ],
+   "body": [
+    "The old Labe bridge in Kapitána Bartoše street was closed to buses and trolleybuses from 6. 2. 2023. A provisional bridge (Mabey Compact 200, about 93 m) opened on <b>1. 9. 2026</b>. The old bridge is being demolished, and the new one should open in <b>spring 2028</b>.",
+    "Back on the bridge: lines <b>2, 6, 18</b> and night line 98. <b>Line 13 stays on its detour</b> via Bělehradská and Hradecká until the new bridge opens, to keep it out of queues at the traffic lights on the one-lane provisional bridge. The new trolleybus <b>line 21</b> partly replaces it. <b>Line 7</b> still ends at Hlavní nádraží.",
+    "Before the closure (from 9/2022): line 7 ran Globus – Masarykovo náměstí – Zborovské náměstí – Dukla – Hlavní nádraží – Kapitána Bartoše – Polabiny, Sluneční, and line 13 ran Dubina – centre – Hlavní nádraží – Kapitána Bartoše – Polabiny, Sluneční – Ohrazenice. The provisional bridge carries trolley wire. This is a long-term state, so the sheet models it as it is. Replacement minibus lines 902 and 906 ended on 31. 8. 2026."
+   ]
+  },
+  {
+   "title": "Line 2 continues as line 12 in the evening (through-running)",
+   "lines": [
+    "2",
+    "12"
+   ],
+   "tag": [
+    "tb",
+    "přímý spoj"
+   ],
+   "body": [
+    "Some late-evening line 2 trips from Polabiny do not end at Zámeček: marked A they continue as <b>line 12 towards Mnětice</b>, marked B <b>towards Černá za Bory</b>. A battery trolleybus runs the off-wire section of line 12. This is why line 12 is licensed as a trolleybus line, even though buses do all of its daytime work.",
+    "Not in the modelled peak. In Simutrans you can ignore it, or run one battery trolleybus on a 2+12 evening schedule."
+   ]
+  },
+  {
+   "title": "Line 22 waits for lines 12 and 28 at Pardubičky",
+   "lines": [
+    "22",
+    "12",
+    "28"
+   ],
+   "tag": [
+    "ok",
+    "přípoj"
+   ],
+   "body": [
+    "The morning line 22 trip waits at Pardubičky, točna until <b>7:23</b> for connecting line 12 and 28 buses from Černá za Bory, Hostovice and Úhřetice, then carries passengers on to Nemošice (school). This is the only guaranteed connection printed in the current line timetables. There are no printed train connections.",
+    "Line <b>90</b> is the other timed service: it is tied to flights at Pardubice airport and waits for delayed arrivals."
+   ]
+  },
+  {
+   "title": "Line 23 express trips",
+   "lines": [
+    "23"
+   ],
+   "tag": [
+    "warn",
+    "rychlík"
+   ],
+   "body": [
+    "Shift trips marked <b>R – RYCHLÍK</b> stop only at Popkovice, hostinec, Závodiště and Hlavní nádraží between the industrial zone and the centre. Afternoon trips leave the zone at 14:12/14:14 and 17:20, timed to shift ends at Panasonic, JTEKT and KYB."
+   ]
+  },
+  {
+   "title": "8 + 88: one Svítkov loop run in both directions",
+   "lines": [
+    "8",
+    "88"
+   ],
+   "body": [
+    "Lines 8 and 88 share the Dubina – centre – Hlavní nádraží trunk and serve the Svítkov – Popkovice loop in opposite directions. Model them as two lines with a common trunk. DPMP publishes them together (8+88)."
+   ]
+  },
+  {
+   "title": "Line 12: Tuněchody construction and Úhřetice",
+   "lines": [
+    "12",
+    "28"
+   ],
+   "tag": [
+    "sch",
+    "medium-term"
+   ],
+   "body": [
+    "Because of ongoing road works, Tuněchody trips serve only Tuněchody, kovárna (original position) and Tuněchody, kostel. Line 12 is officially “Hlavní nádraží – Úhřetice”, but <b>Úhřetice is not served by 12 at all</b> for now. On school days, a morning line 28 trip is extended there instead.",
+    "Road III/34039 Tuněchody – Nemošice was closed 7. 4. – 31. 8. 2026, and another closure in Tuněchody is announced for 19.–31. 10. 2026. The regular state would send some 12 trips on from Tuněchody to Úhřetice. No end date for the Úhřetice gap has been published."
+   ]
+  },
+  {
+   "title": "Short-term closures (ignored)",
+   "lines": [
+    "9",
+    "6",
+    "8",
+    "10",
+    "12",
+    "15"
+   ],
+   "tag": [
+    "ok",
+    "short-term"
+   ],
+   "body": [
+    "<b>Line 9</b>: Sezemice, Počaply, chalupy closed until 30. 9. 2026. The regular route (Spojil – Sezemice over the new bypass) is modelled.",
+    "<b>2.–4. 10. 2026</b>: speedway world championship (shuttles, line 15 limited) and the L'Etape cycling race (lines 6, 8, 10, 12 limited). These are weekend events outside the model date.",
+    "<b>Ulice Svobody</b> stop (lines 6, 10, 25, 98) moved about 110 m in one direction from 28. 8. 2026. No effect on routing."
+   ]
+  },
+  {
+   "title": "Lines left out of the model",
+   "lines": [
+    "29",
+    "98",
+    "99",
+    "910"
+   ],
+   "body": [
+    "<b>29</b>: school line with one morning trip Staré Čívice → Popkovice, školka → Gorkého (7:04 from 1. 10.) and one afternoon trip back, school days only.",
+    "<b>98, 99</b>: night lines (about 0:00–4:30) from Dukla depot, one vehicle doing big loops through Polabiny/Svítkov (98) and Dubina/Slovany/Černá za Bory (99).",
+    "<b>910</b>: non-public service for Škola Svítání, school days only.",
+    "<b>902, 906</b>: bridge replacement lines, cancelled 1. 9. 2026 (still present in the CIS data)."
+   ]
+  }
+ ],
+ "fleet": [
+  {
+   "title": "Trolleybuses",
+   "body": [
+    "Almost all Pardubice trolleybuses are <b>12 m two-axle Škoda</b> vehicles: 26 Tr (323–332, Solaris body), 30 Tr (333–335, 410–424, SOR body), 32 Tr (425–429). <b>Battery (“AKU”) trolleybuses</b>: 30 Tr 480–483 (2018) and 32 Tr 460–469 + 476–497 (2023–25), about 32 in total. Only these can work lines 17, 27, 30, the Dražkovice/Mikulovice trips of line 1 and the trolleybus trips of line 18.",
+    "The one exception: the last two <b>Škoda 28 Tr</b> (406, 409) are <b>14.6 m, three-axle</b> (Solaris Urbino 15 body) and normally run on line 3. 404, 407 and 408 were withdrawn on 26. 5. 2026. Pardubice has <b>no articulated trolleybuses</b>."
+   ]
+  },
+  {
+   "title": "Buses",
+   "body": [
+    "<b>No articulated (18 m) buses at all.</b> Every service bus is 12 m: Iveco Urbanway 12M (100–122, 187–193; 121 and 122 new in 2026), Iveco Citelis 12M CNG (207–221, 226–229), Urbanway 12M CNG (222–225), Iveco Crossway LE (63–70; 69 is a hybrid; 69 and 70 also run the night lines), Citelis 12M (183, 186, 194), Irisbus Citybus 12M (180, 181) and Streetway 12M (199).",
+    "<b>Midibuses</b>: SOR BN 9.5 (21, 22) and Isuzu Novociti Life (15–17, about 7.5 m). They work line 20 and previously ran the bridge replacement lines 902/906.",
+    "For Simutrans you need four vehicle classes: a 12 m trolleybus (plus a battery-capable subtype), a 12 m bus, a 15 m trolleybus for line 3, and a midibus for line 20. Vehicles swap lines during the day (for example bus 103 did line 8 in the morning and line 12 in the afternoon). Read the counts as per-line peak needs, not fixed allocations."
+   ]
+  }
+ ],
+ "sources": [
+  [
+   "Timetables: CIS JŘ NeTEx export 23. 9. 2026 (licences 655001–655099)",
+   "ftp://ftp.cisjr.cz/netex/"
+  ],
+  [
+   "DPMP line timetables and notices",
+   "https://www.dpmp.cz/cestovani-mhd/jizdni-rady.html"
+  ],
+  [
+   "DPMP: Změny jízdních řádů od 1. 9. 2026",
+   "https://www.dpmp.cz/cestovani-mhd/aktualne-z-dopravy/zmeny-jizdnich-radu-od-192026-518.html"
+  ],
+  [
+   "Pardubice.eu: provisional bridge and MHD",
+   "https://pardubice.eu/od-zari-se-na-provizorni-most-vrati-auta-i-trolejbusy"
+  ],
+  [
+   "Pardubice ŽIVĚ: load test, line 13 and 21",
+   "https://www.pardubicezive.eu/provizorni-most-u-kapitana-bartose-prosel-zatezovaci-zkouskou-v-zari-se-na-nej-vrati-auta-autobusy-i-trolejbusy/"
+  ],
+  [
+   "Fleet list (trolejbus.cz, 18. 3. 2026)",
+   "http://www.trolejbus.cz/aktual.htm"
+  ],
+  [
+   "Vehicle allocation (seznam-autobusu.cz), sampled 10. 3., 16. 6., 1.–25. 9. 2026",
+   "https://seznam-autobusu.cz/vypravenost/mhd-pardubice"
+  ],
+  [
+   "Škoda 28 Tr (Czech Wikipedia)",
+   "https://cs.wikipedia.org/wiki/%C5%A0koda_28Tr"
+  ],
+  [
+   "Deník: line changes 1. 9. 2022 (Dražkovice, Mikulovice, line 7)",
+   "https://pardubicky.denik.cz/zpravy_region/konec-prazdnin-prinasi-zmeny-na-linkach-pardubicke-mhd-20220824.html"
+  ],
+  [
+   "Deník: Kapitána Bartoše closure 2023",
+   "https://pardubicky.denik.cz/zpravy-region/most-kpt-bartose-uzavirka-mhd-opatreni-rekonstrukce/"
+  ],
+  [
+   "Chrudim.eu: Tuněchody – Nemošice road closure",
+   "https://www.chrudim.eu/uzavirka-silnice-iii-34039-mezi-tunechody-a-nemosicemi/"
+  ]
+ ],
+ "excluded": {
+  "98": "Night line (Dukla – centre – Polabiny – Svítkov loops, about 0:00–4:30).",
+  "99": "Night line (Dukla – Dubina – Slovany – Černá za Bory loops, about 0:00–4:30).",
+  "29": "School line: 1 morning trip Staré Čívice → Gorkého (7:04 from 1.10.) and 1 afternoon trip back, school days only.",
+  "910": "Non-public school service for Škola Svítání, school days only (not in CIS JŘ)."
+ }
+}

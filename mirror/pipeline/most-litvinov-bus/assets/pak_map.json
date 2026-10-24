@@ -1,0 +1,32 @@
+{
+ "_doc": "Real bus (register type + register paint) -> custom Czech pak128 object in VZ-DPMostLitvinov-bus.pak. First matching rule wins; 'paint_contains' narrows a rule to one register paint. 'chain' = every object in order (articulated buses are two objects); 'core' = the name shown in the vehicle cell (the first object's last segment). status 'exists' = in the pak source tree (C:/Users/vojte/Developer/simutrans-custom-czech-pak128/build/VZ-DPMostLitvinov-bus/*.dat, main b84c15c, read 29 Sep 2026); status 'requested' = not in the pak yet, asked for in pak_request.md; the sheet shows the object being made, marked 'requested', never a stand-in from another city. Advertising wraps (register paint 'CVR ...') map to the type's normal livery (brief rule e).",
+ "pak_commit": "b84c15c",
+ "pak_file": "VZ-DPMostLitvinov-bus.pak",
+ "prefix": "VZ-DPMostLitvinov-",
+ "livery_names": {
+  "mostzlutocervena": "DPmML white-yellow-red",
+  "prahacervenobila": "Prague city scheme red-white (as delivered from DPP)",
+  "bvgzluta": "BVG yellow (as delivered from Berlin)"
+ },
+ "paint_names": {
+  "DP Mostu a Litvínova, bílo-žluto-červená": "DPmML white-yellow-red",
+  "městské schéma, červeno-bílá": "Prague city scheme red-white",
+  "BVG, žlutá": "BVG yellow",
+  "CVR": "advertising wrap"
+ },
+ "rules": [
+  {"type": "SOR NB 12", "paint_contains": "městské schéma", "family": "NB_12", "livery": "prahacervenobila", "chain": ["NB_12"], "units": "8", "status": "requested",
+   "note": "83 kept the Prague red-white scheme it came in from DPP (register: red-white again since 2026)"},
+  {"type": "SOR NB 12", "family": "NB_12", "livery": "mostzlutocervena", "chain": ["NB_12"], "units": "8", "status": "exists"},
+  {"type": "SOR NS 12", "family": "SOR_NS_12", "livery": "mostzlutocervena", "chain": ["SOR_NS_12"], "units": "8", "status": "exists"},
+  {"type": "SOR NB 18", "paint_contains": "městské schéma", "family": "SOR_NB_18", "livery": "prahacervenobila", "chain": ["SOR_NB_18-A", "SOR_NB_18-B"], "units": "8 + 8", "status": "requested",
+   "note": "189 entered service on 12 Sep 2026 still in the Prague red-white scheme"},
+  {"type": "SOR NB 18", "family": "SOR_NB_18", "livery": "mostzlutocervena", "chain": ["SOR_NB_18-A", "SOR_NB_18-B"], "units": "8 + 8", "status": "exists"},
+  {"type": "SOR NS 18", "family": "SOR_NS_18", "livery": "mostzlutocervena", "chain": ["SOR_NS_18-A", "SOR_NS_18-B"], "units": "8 + 8", "status": "exists"},
+  {"type": "Irisbus Citelis 18M", "family": "Citelis_18M", "livery": "mostzlutocervena", "chain": ["Citelis_18M-A", "Citelis_18M-B"], "units": "7 + 5", "status": "exists"},
+  {"type": "Iveco Urbanway 18M", "family": "Urbanway_18M", "livery": "mostzlutocervena", "chain": ["Urbanway_18M-A", "Urbanway_18M-B"], "units": "7 + 5", "status": "exists"},
+  {"type": "MAN ND 313 Lion’s City DD", "family": "Lions_City_DD", "livery": "bvgzluta", "chain": ["Lions_City_DD"], "units": "9 (proposed: 13.7 m, three axles)", "status": "requested",
+   "note": "ex-BVG Berlin double-deckers 153 and 154, in DPmML service since August 2023, BVG yellow (154 wore an Olympic festival wrap 11/2023–8/2024)"}
+ ],
+ "unused_objects": ["Citelis_12M (the only Citelis 12M, 120, is a driving-school bus)", "E_Way_12M-ivecopredvadeci (a demonstrator)"]
+}

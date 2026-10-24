@@ -1,0 +1,137 @@
+{
+  "_comment": "MD-CR v3 (3 Oct 2026). Only trains via Ostrava, plus Ex2. Foreign ends: Warszawa, Kraków, Žilina, Košice only (user). Czech times come from corridor.json; foreign times from vagonweb.cz (2026 routes) and the Leo Express timetable valid 30 Aug - 24 Oct 2026. 'est' marks an estimated time. Each line lists its real trains by number: out = from the Czech A end, in = towards it.",
+  "lines": [
+    {
+      "id": "ex1-zilina", "group": "ČD", "badge": "Ex1", "name": "Praha hl. n. – Ostrava – Český Těšín – Žilina", "trainname": "EC Ostravan",
+      "interval": 1440, "out": ["141", "143", "145"], "in": ["144", "142", "140"],
+      "foreign": {
+        "141": [["Čadca", "12:58", "13:00"], ["Žilina", "13:24", null]],
+        "143": [["Čadca", "16:58", "17:00"], ["Žilina", "17:24", null]],
+        "145": [["Čadca", "20:58", "21:00"], ["Žilina", "21:24", null]],
+        "144": [["Žilina", null, "6:35"], ["Čadca", "6:59", "7:01"]],
+        "142": [["Žilina", null, "10:35"], ["Čadca", "10:59", "11:01"]],
+        "140": [["Žilina", null, "14:35"], ["Čadca", "14:59", "15:01"]]
+      },
+      "border": "Čadca"
+    },
+    {
+      "id": "ex1-warszawa", "group": "ČD", "badge": "Ex1", "name": "Praha hl. n. – Ostrava – Bohumín – Warszawa", "trainname": "EC Silesia (PKP Intercity / ČD)",
+      "interval": 1440, "out": ["113", "117"], "in": ["116", "112"],
+      "foreign": {
+        "113": [["Chałupki", "10:28", "10:30"], ["Katowice", "11:54", "11:59"], ["Warszawa Centralna", "14:36", "14:41"], ["Warszawa Wschodnia", "14:47", null]],
+        "117": [["Chałupki", "18:29", "18:32"], ["Katowice", "19:58", "20:01"], ["Warszawa Centralna", "22:48", "22:53"], ["Warszawa Wschodnia", "22:59", null]],
+        "116": [["Warszawa Wschodnia", null, "5:05"], ["Warszawa Centralna", "5:11", "5:16"], ["Katowice", "8:07", "8:10"], ["Chałupki", "9:31", "9:33"]],
+        "112": [["Warszawa Wschodnia", null, "13:05"], ["Warszawa Centralna", "13:11", "13:16"], ["Katowice", "15:56", "15:59"], ["Chałupki", "17:23", "17:27"]]
+      },
+      "border": "Chałupki"
+    },
+    {
+      "id": "ex1-krakow", "group": "ČD", "badge": "Ex1", "name": "Praha hl. n. – Ostrava – Bohumín – Kraków", "trainname": "EC Cracovia (runs on to Przemyśl in reality)",
+      "interval": 1440, "out": ["115"], "in": ["114"],
+      "foreign": {
+        "115": [["Zebrzydowice", "14:52", "14:55"], ["Oświęcim", "15:45", "15:46"], ["Kraków Główny", "16:41", null]],
+        "114": [["Kraków Główny", null, "11:04"], ["Oświęcim", "11:47", "11:49"], ["Zebrzydowice", "13:04", "13:05"]]
+      },
+      "border": "Zebrzydowice"
+    },
+    {
+      "id": "ex1-navsi", "group": "ČD", "badge": "Ex1", "name": "Praha hl. n. – Ostrava – Český Těšín – Návsí", "trainname": "IC 546/547",
+      "interval": 1440, "out": ["547"], "in": ["546"], "foreign": {}
+    },
+    {
+      "id": "ex2", "group": "ČD", "badge": "Ex2", "name": "Praha hl. n. – Olomouc – Vsetín – Púchov – Žilina", "trainname": "EC Valašský expres",
+      "interval": 120, "out": ["121", "123", "125", "127", "129", "221", "223"], "in": ["222", "220", "128", "126", "124", "122", "120"],
+      "rep_out": "221", "rep_in": "222",
+      "foreign": {
+        "221": [["Púchov", "19:52", "20:04"], ["Žilina", "20:32", null]],
+        "222": [["Žilina", null, "5:21"], ["Púchov", "5:51", "6:08"]]
+      },
+      "border": "Púchov",
+      "note": "In reality five of the seven pairs end at Púchov and two run to Žilina. The game has Žilina only, so every train runs to Žilina at the times of EC 221 and EC 222."
+    },
+    {
+      "id": "sc", "group": "ČD", "badge": "SC", "name": "Praha hl. n. – Olomouc – Ostrava hl. n.", "trainname": "SC Pendolino",
+      "interval": 120, "out": ["505", "507"], "in": ["506"], "rep_out": "507", "rep_in": "506", "foreign": {},
+      "note": "The 2-hourly Pendolino slot: Praha at L:31, Ostrava hl. n. at L:07. In reality some slots run on to Bohumín (SC 510, 511, 516, 517) or through Praha to Cheb, Karlovy Vary or České Budějovice (IC 503/504, rj 512/515, SC 500). Those belong to Ex6/Ex7, which are not in this pass."
+    },
+    {
+      "id": "sc-kosice", "group": "ČD", "badge": "SC", "name": "Praha hl. n. – Ostrava – Žilina – Košice", "trainname": "SC Pendolino Košičan (ČD / ZSSK)",
+      "interval": 1440, "out": ["241"], "in": ["240"],
+      "foreign": {
+        "241": [["Čadca", "10:05", "10:06"], ["Žilina", "10:33", "10:40"], ["Poprad-Tatry", "12:40", "12:46"], ["Košice", "14:12", null]],
+        "240": [["Košice", null, "14:48"], ["Poprad-Tatry", "16:08", "16:10"], ["Žilina", "17:54", "17:57"], ["Čadca", "18:28", "18:31"]]
+      },
+      "border": "Čadca"
+    },
+    {
+      "id": "rj-havirov", "group": "RegioJet", "badge": "RJ", "name": "Praha-Zahradní Město – Ostrava – Havířov", "trainname": "RegioJet",
+      "interval": 1440, "out": ["1001", "1007", "1009"], "in": ["1010", "1016", "1018"], "foreign": {}
+    },
+    {
+      "id": "rj-kosice", "group": "RegioJet", "badge": "RJ", "name": "Praha-Zahradní Město – Ostrava – Žilina – Košice", "trainname": "RegioJet",
+      "interval": 1440, "out": ["1003", "1011"], "in": ["1008", "1012"],
+      "foreign": {
+        "1003": [["Čadca", "12:25", "12:29"], ["Žilina", "12:52", "12:57"], ["Poprad-Tatry", "14:51", "14:52"], ["Košice", "16:12", null]],
+        "1011": [["Čadca", "19:25", "19:29"], ["Žilina", "19:52", "19:57"], ["Poprad-Tatry", "21:51", "21:52"], ["Košice", "23:12", null]],
+        "1008": [["Košice", null, "3:50"], ["Poprad-Tatry", "5:08", "5:10"], ["Žilina", "6:51", "6:54"], ["Čadca", "7:17", "7:19"]],
+        "1012": [["Košice", null, "7:48"], ["Poprad-Tatry", "9:10", "9:12"], ["Žilina", "11:00", "11:03"], ["Čadca", "11:27", "11:30"]]
+      },
+      "border": "Čadca"
+    },
+    {
+      "id": "rj-bohumin", "group": "RegioJet", "badge": "RJ", "name": "Praha-Zahradní Město – Ostrava – Bohumín", "trainname": "RegioJet",
+      "interval": 1440, "out": ["1005", "1019"], "in": ["1000", "1014"], "foreign": {}
+    },
+    {
+      "id": "rj-navsi", "group": "RegioJet", "badge": "RJ", "name": "Praha-Zahradní Město – Ostrava – Havířov – Návsí", "trainname": "RegioJet",
+      "interval": 1440, "out": ["1015", "1017"], "in": ["1002", "1006"], "foreign": {}
+    },
+    {
+      "id": "rj-opava", "group": "RegioJet", "badge": "RJ", "name": "Praha-Zahradní Město – Ostrava-Svinov – Opava východ", "trainname": "RegioJet",
+      "interval": 1440, "out": ["1013"], "in": ["1004"], "foreign": {}
+    },
+    {
+      "id": "le-krakow", "group": "Leo Express", "badge": "LE", "name": "Praha hl. n. – Ostrava – Bohumín – Kraków", "trainname": "Leo Express",
+      "interval": 1440, "out": ["411"], "in": ["418"],
+      "foreign": {
+        "411": [["Bohumín", "12:05", "12:17"], ["Kraków Główny", "14:32", null]],
+        "418": [["Kraków Główny", null, "14:29"], ["Bohumín", "16:59", "17:04"]]
+      },
+      "border": "Kraków Główny",
+      "note": "Leo Express doesn't stop between the border and Kraków. The Bohumín arrival of LE 418 (16:59) is estimated."
+    },
+    {
+      "id": "le-warszawa", "group": "Leo Express", "badge": "LE", "name": "Praha hl. n. – Ostrava – Bohumín – Kraków – Warszawa", "trainname": "Leo Express",
+      "interval": 1440, "out": ["413"], "in": ["414"],
+      "foreign": {
+        "413": [["Bohumín", "16:05", "16:23"], ["Kraków Główny", "18:53", "18:58"], ["Warszawa Centralna", "21:21", "21:23"], ["Warszawa Wschodnia", "21:29", null]],
+        "414": [["Warszawa Wschodnia", null, "7:37"], ["Kraków Główny", "10:18", "10:23"], ["Bohumín", "12:59", "13:04"]]
+      },
+      "border": "Kraków Główny",
+      "note": "Times at Kraków (departure 18:58, arrival 10:18), Warszawa Wschodnia (21:29) and Bohumín (12:59) are estimated from the Leo Express table, which gives only one time per station."
+    },
+    {
+      "id": "le-kosice", "group": "Leo Express", "badge": "LE", "name": "Praha hl. n. – Ostrava – Český Těšín – Žilina – Košice", "trainname": "Leo Express (runs to Prešov in reality)",
+      "interval": 1440, "out": ["1253"], "in": ["1258"],
+      "foreign": {
+        "1253": [["Čadca", "15:14", "15:29"], ["Žilina", "15:53", "15:56"], ["Poprad-Tatry", "17:52", "17:53"], ["Košice", "19:13", null]],
+        "1258": [["Košice", null, "5:01"], ["Poprad-Tatry", "6:23", "6:26"], ["Žilina", "8:20", "8:21"], ["Čadca", "8:44", "8:47"]]
+      },
+      "border": "Čadca",
+      "note": "The real train runs Poprad – Kysak – Prešov and doesn't call at Košice. The Košice times (arrival 19:13, departure 5:01) are estimated from the RegioJet running time Poprad – Kysak – Košice."
+    },
+    {
+      "id": "le-bohumin", "group": "Leo Express", "badge": "LE", "name": "Praha hl. n. – Ostrava – Bohumín", "trainname": "Leo Express",
+      "interval": 1440, "out": ["415", "1265"], "in": ["1254", "1266"], "foreign": {}
+    }
+  ],
+  "not_modelled": [
+    "Night and overnight trains: RegioJet 1020/1021 Košice and 1022/1023 Przemyśl, Leo Express 1250/1263 Prešov and 410/419 Warszawa.",
+    "SC Pendolino slots that run on to Bohumín (SC 510, 511, 516, 517) or through Praha to the west: IC 503/504 Karlovy Vary, rj 512/515 Františkovy Lázně (Ex6) and SC 500 České Budějovice (Ex7).",
+    "ČD IC trains that start at Bohumín for Poland: IC 213/216/217/212 Kraków, IC 306/307 Wrocław and IC 302/303 Poznań. They don't run via Ostrava, and Wrocław and Poznań aren't in the game.",
+    "Ex2 IC 520/521 Praha – Vsetín (first and last train of the day).",
+    "RegioJet shuttles Ostrava-Svinov – Havířov (RJ 1052, 1053).",
+    "Leo Express 1255 Praha – Ostrava hl. n. (one way only).",
+    "All trains via Brno (Ex3, Ex4, RegioJet and Leo Express to Břeclav, RegioJet R8), and every other state line from the earlier MD-CR."
+  ]
+}

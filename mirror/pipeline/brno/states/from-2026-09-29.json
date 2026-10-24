@@ -1,0 +1,482 @@
+{
+ "register_date": "2026-09-28",
+ "gtfs_date": "2026-09-28",
+ "vehicles_date": "2026-09-25",
+ "line_order": [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "12"
+ ],
+ "sline_order": [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "5S",
+  "6",
+  "7",
+  "8",
+  "8S",
+  "9",
+  "10",
+  "12"
+ ],
+ "depots": [
+  "Pisárky",
+  "Medlánky"
+ ],
+ "fleet": {
+  "morning_notes": [
+   "ráno",
+   "ranní kurz",
+   "ráno, před výměnou",
+   "ráno, po výměně"
+  ],
+  "length_m": {
+   "Škoda 13T": 31,
+   "Škoda 45T": 32,
+   "ČKD Tatra KT8D5R.N2": 30,
+   "ČKD Tatra KT8D5N": 30,
+   "Pars Nova K3R-N": 30,
+   "Pragoimex EVO 2": 21,
+   "Pragoimex VarioLF2R.E": 22,
+   "Pragoimex VarioLFR.E": 15,
+   "Pragoimex T3R.PV": 15,
+   "Pragoimex T3R.EV": 15,
+   "ČKD Tatra T3G": 15,
+   "ČKD Tatra T3P": 15,
+   "ČKD Tatra T6A5": 15,
+   "ČKD DS T6A5": 15,
+   "Škoda 03T6": 20
+  },
+  "kurz_depot": {
+   "odd": "Pisárky",
+   "even": "Medlánky"
+  },
+  "resolved_swaps": {
+   "1/11": "1827 (with 1848) left kurz 11 before the afternoon: 1827 ran kurz 23 in the afternoon, coupled with 1829.",
+   "9/6": "1765 and 1777 swapped between 8/48 and 9/6 in the morning (8/48 records both as “ráno”), so 1765 worked 9/6 in the afternoon."
+  },
+  "note_overrides": {
+   "9/22": "Swapped during the day: 1932 ran first, then replaced 1921 on 2/18. The swap time is not recorded, so the replacement is listed.",
+   "2/18": "Swapped during the day: 1921 ran first, 1932 came off 9/22. The swap time is not recorded, so the replacement is listed."
+  },
+  "splits": {
+   "5S": {
+    "line": "5",
+    "kurz_min": 21,
+    "label": "short working Štefánikova čtvrť – Mendlovo náměstí, kurzy 21–27",
+    "depot_label": "short working to Mendlovo náměstí, kurzy 21–27"
+   },
+   "8S": {
+    "line": "8",
+    "kurzy": [
+     20,
+     26,
+     32,
+     42,
+     44,
+     46,
+     48
+    ],
+    "label": "short working Nemocnice Bohunice – Novolíšeňská (kurzy 20, 26, 32, 42, 44, 46, 48)",
+    "depot_label": "short working to Novolíšeňská"
+   }
+  },
+  "main_labels": {
+   "5": [
+    "main line Štefánikova čtvrť – Ústřední hřbitov, kurzy 1–12",
+    "main line, kurzy 1–12"
+   ],
+   "8": [
+    "main line Mifkova – Nemocnice Bohunice",
+    "main line"
+   ]
+  },
+  "trams_text": {
+   "5": "{n} out (kurzy 1–12)",
+   "5S": "{n} (kurzy 21–27 + 1 designed)",
+   "8": "{n} counted (16 needed with layovers)",
+   "8S": "{n} assigned (kurzy 20, 26, 32, 42, 44, 46, 48)"
+  },
+  "line_card_notes": {
+   "8": "Split for Simutrans, where 8 and 8S are separate lines. 8S needs 7 trams: 28 min out, 4 min layover at Novolíšeňská, 29 min back and 2 min at Bohunice make a 63-min round trip, and at every 10 min that is 7 trams. 8 needs 16 (73-min round trip, two departures every 10 min), and the 24th tram is marked not needed. The records do not say which kurz ran the short trips, so 8S takes the five peak-only kurzy whose car changed between the morning and the afternoon (20, 26, 32, 42, 48) plus 44 and 46."
+  },
+  "moves": [],
+  "need_overrides": {
+   "8S": 7,
+   "7": 8
+  },
+  "designed": [
+   {
+    "line": "5",
+    "sline": "5S",
+    "cars": [
+     "1088"
+    ],
+    "why": "5S needs 5 trams (61-min round trip at every 10 min) and 4 were logged. 1088 (Pragoimex VarioLF2R.E) is the only car from the 5S history that was free on Fri 25 Sep: it ran 5S kurz 25 on Thu 24 Sep and kurz 27 on Thu 17 Sep, is active in the register, and appears on no line on 25 Sep. The four logged 5S trams already cover both 5S types (Škoda 03T6, VarioLF2R.E); no other free history car exists (line 5 records 16–24 Sep)."
+   }
+  ]
+ },
+ "title": "Brno Tram Fleet from 29 Sep",
+ "output": "Brno Tram Fleet from 29 Sep.html",
+ "artifact": "https://claude.ai/artifact/3ps2U3Ac81p5h3ABRwgQVg",
+ "service_date": "20261002",
+ "stop_alias": {
+  "10": {
+   "Vozovna Komín": "Komín, smyčka"
+  }
+ },
+ "nonloop": {
+  "Mifkova": "stub terminus",
+  "Nemocnice Bohunice": "stub terminus"
+ },
+ "fit": {
+  "core": [
+   930,
+   990
+  ],
+  "ignore_stops": [
+   "ARENA BRNO"
+  ],
+  "any_interval_lines": [
+   "12"
+  ],
+  "overrides": {
+   "8|Nemocnice Bohunice|Mifkova": {
+    "I": 10,
+    "R": [
+     3,
+     7
+    ],
+    "first": 893,
+    "last": 997,
+    "skip": "15:50"
+   },
+   "8|Nemocnice Bohunice|Novolíšeňská": {
+    "I": 10,
+    "R": [
+     0
+    ],
+    "first": 890,
+    "last": 990,
+    "skip": "15:50 runs to Mifkova"
+   }
+  }
+ },
+ "simutrans_lines": [
+  {
+   "id": "1",
+   "name": "1 Řečkovice – Ečerova",
+   "entries": [
+    [
+     "1",
+     "Řečkovice",
+     "Ečerova"
+    ],
+    [
+     "1",
+     "Ečerova",
+     "Řečkovice"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "2",
+   "name": "2 Stará osada – Modřice",
+   "entries": [
+    [
+     "2",
+     "Stará osada",
+     "Modřice, smyčka"
+    ],
+    [
+     "2",
+     "Modřice, smyčka",
+     "Stará osada"
+    ]
+   ],
+   "note": "The Ústřední hřbitov short workings start at 16:41, after the peak core (every 20 at offset 1 from Stará osada), so they are left out."
+  },
+  {
+   "id": "3",
+   "name": "3 Stará osada – Rakovecká",
+   "entries": [
+    [
+     "3",
+     "Stará osada",
+     "Rakovecká"
+    ],
+    [
+     "3",
+     "Rakovecká",
+     "Stará osada"
+    ]
+   ],
+   "note": "From 29 Sep every 6–7 min (a 7, 7, 6 cycle), exact as 3 departures every 20 min."
+  },
+  {
+   "id": "4",
+   "name": "4 Náměstí Míru – Babická",
+   "entries": [
+    [
+     "4",
+     "Náměstí Míru",
+     "Babická"
+    ],
+    [
+     "4",
+     "Babická",
+     "Náměstí Míru"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "5",
+   "name": "5 Štefánikova čtvrť – Ústřední hřbitov",
+   "entries": [
+    [
+     "5",
+     "Štefánikova čtvrť",
+     "Ústřední hřbitov - smyčka"
+    ],
+    [
+     "5",
+     "Ústřední hřbitov - smyčka",
+     "Štefánikova čtvrť"
+    ]
+   ],
+   "note": "Interleaves with 5S on Štefánikova čtvrť – Mendlovo náměstí: in the real timetable 5 leaves Štefánikova at :x6 and 5S at :x1, set as 5 and 0 at the loop."
+  },
+  {
+   "id": "5S",
+   "name": "5S Štefánikova čtvrť – Mendlovo náměstí (short working)",
+   "entries": [
+    [
+     "5",
+     "Štefánikova čtvrť",
+     "Mendlovo náměstí"
+    ],
+    [
+     "5",
+     "Mendlovo náměstí",
+     "Štefánikova čtvrť"
+    ]
+   ],
+   "note": "Kurzy 21–27, four single cars about 20 m long: 1813 and 1815 (Škoda 03T6), 1092 and 1101 (Pragoimex VarioLF2R.E)."
+  },
+  {
+   "id": "6",
+   "name": "6 Královo Pole, nádraží – Starý Lískovec",
+   "entries": [
+    [
+     "6",
+     "Královo Pole, nádraží",
+     "Starý Lískovec, smyčka"
+    ],
+    [
+     "6",
+     "Starý Lískovec, smyčka",
+     "Královo Pole, nádraží"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "7",
+   "name": "7 Čertova rokle – Starý Lískovec",
+   "entries": [
+    [
+     "7",
+     "Čertova rokle",
+     "Starý Lískovec, smyčka"
+    ],
+    [
+     "7",
+     "Starý Lískovec, smyčka",
+     "Čertova rokle"
+    ]
+   ],
+   "note": "The Zemědělská short line is the off-peak form (up to 14:58 and again after about 16:20), so it is left out."
+  },
+  {
+   "id": "8",
+   "name": "8 Mifkova – Nemocnice Bohunice",
+   "entries": [
+    [
+     "8",
+     "Mifkova",
+     "Nemocnice Bohunice"
+    ],
+    [
+     "8",
+     "Nemocnice Bohunice",
+     "Mifkova"
+    ]
+   ],
+   "note": "At 15:50 one Novolíšeňská short working runs through to Mifkova instead; that single departure is left out."
+  },
+  {
+   "id": "8S",
+   "name": "8S Nemocnice Bohunice – Novolíšeňská (short working)",
+   "entries": [
+    [
+     "8",
+     "Nemocnice Bohunice",
+     "Novolíšeňská"
+    ],
+    [
+     "8",
+     "Novolíšeňská",
+     "Nemocnice Bohunice"
+    ]
+   ],
+   "note": "Peak reinforcement, about 14:30–16:30. Give it its own 7 trams (63-min round trip at every 10 min). It shares the whole route except Novolíšeňská – Mifkova with 8; 8S leaves Bohunice at :x0 and 8 at :x3 and :x7; Bohunice is a stub, so these are set unchanged."
+  },
+  {
+   "id": "9",
+   "name": "9 Čertova rokle – Juliánov",
+   "entries": [
+    [
+     "9",
+     "Čertova rokle",
+     "Juliánov"
+    ],
+    [
+     "9",
+     "Juliánov",
+     "Čertova rokle"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "id": "10",
+   "name": "10 Komín – Stránská skála",
+   "entries": [
+    [
+     "10",
+     "Komín, smyčka",
+     "Stránská skála - smyčka"
+    ],
+    [
+     "10",
+     "Stránská skála - smyčka",
+     "Komín, smyčka"
+    ]
+   ],
+   "note": "From 29 Sep the western end is the Komín loop again (boarding stop Komín, smyčka; alighting stop Vozovna Komín)."
+  },
+  {
+   "id": "12",
+   "name": "12 Technologický park – Komárov",
+   "entries": [
+    [
+     "12",
+     "Technologický park",
+     "Komárov"
+    ],
+    [
+     "12",
+     "Komárov",
+     "Technologický park"
+    ]
+   ],
+   "note": "From 29 Sep the peak runs a repeating 5, 5, 4 min cycle: 3 departures every 14 min, reproduced exactly. 14 does not divide 1440, so the fork restarts the pattern at midnight; that does not affect the day."
+  }
+ ],
+ "status": {
+  "10": [
+   "back to Komín",
+   "warn"
+  ],
+  "1": [
+   "double track again",
+   "warn"
+  ],
+  "3": [
+   "new headway",
+   "warn"
+  ],
+  "12": [
+   "new headway",
+   "warn"
+  ]
+ },
+ "line_notes": {
+  "10": "Komín – Stránská skála every 20 min from 29 Sep, back on the Komín loop after the Kníničská closure.",
+  "1": "Řečkovice – Bystrc, Ečerova. From 29 Sep the Kníničská section is double track again; the timetable is shifted by 2–3 min.",
+  "3": "Stará osada – Bystrc, Rakovecká. From 29 Sep every 6–7 min in the peak instead of every 5.",
+  "12": "Technologický park – Komárov. From 29 Sep every 4–5 min in the peak (5, 5, 4 cycle)."
+ },
+ "texts": {
+  "eyebrow": "Brno · tramvaje · DPMB · od úterý 29. 9. 2026 · odpolední špička",
+  "lede": "The Brno tram network after the Kníničská closure: the weekday timetable in force from Tue 29 Sep 2026, with the fleet of the Friday 25 Sep afternoon peak adjusted to it. The first table lists exactly what to change in the Simutrans model built from the 27 Sep sheet; everything below is the complete new state.",
+  "nav_network": "Network from 29 Sep",
+  "network_heading": "Network from 29 Sep 2026",
+  "network_intro": "The weekday timetable in force from Tue 29 Sep (IDS JMK GTFS exported 25 Sep; every weekday from 29 Sep to at least 6 Oct is identical, service day used: Fri 2 Oct).",
+  "termini_intro": "The termini from the Brno Termini sheet in their state from 29 Sep: track count and layout, and the lines leaving each one between 16:00 and 16:59. From 29 Sep line 10 is back on the Komín loop (boarding stop Komín, smyčka); Sochorova is no longer a terminus.",
+  "schedule_extra": "Stub termini (Mifkova, Nemocnice Bohunice) keep the real minute.",
+  "schedule_exact": "Each pattern is fitted to the afternoon peak core and reproduces the real departures exactly over the span shown. Line 12 uses a 14-min interval; 14 does not divide 1440, so the fork restarts the pattern at midnight, which does not affect the day.",
+  "method_state": "<p><b>From 29 Sep.</b> The IDS JMK feed switches to a new tram timetable on Tue 29 Sep: line 10 back to Komín, lines 1, 3 and 12 retimed, 2, 7 and 9 shifted by a minute; lines 4, 5, 6 and 8 are unchanged. Trams per line come from the timetable cycle at 16:00 on Fri 2 Oct compared with Fri 25 Sep (a tram followed through its round trip with at least 3 min layover); the vehicles are still the ones recorded on Fri 25 Sep. Where a line logged more trams than its new need (line 3: 16 against 12), the surplus is marked not needed (user rule, 29 Sep); line 12 is covered by its own 14 logged trams, so the earlier suggestion to move three trams off line 3 is dropped.</p><p><b>Compared with the closure sheet.</b> This sheet is the state from 29 Sep; the Brno Tram Peak Fleet sheet keeps the closure state of 27 Sep.</p>",
+  "changes_why": {
+   "1": "Timetable shifted after the double track on Kníničská is back.",
+   "2": "1-min shift of the Stará osada departures.",
+   "3": "New headway: every 6–7 min instead of every 5.",
+   "10": "Western terminus moves from Sochorova back to the Komín loop.",
+   "12": "New headway: a 5, 5, 4 min cycle, now exact."
+  },
+  "changes_route": "<b>Route change.</b> Line 10: replace the Sochorova terminus with the Komín loop (boarding Komín, smyčka; alighting Vozovna Komín), one stop further west.",
+  "removed_intro": "Trams needed by the timetable cycle at 16:00 (a tram followed through its round trip, at least 3 min layover at each end): line 3 needs 12 instead of 15, line 12 needs 14 instead of 12, and every other line, line 10 included, needs the same as before. Keeping the slack DPMB ran on Fri 25 Sep, line 3 goes from 19 to 16 trams and line 12 from 14 to 16. So two of line 3’s trams move to line 12 (one Pisárky set for an odd kurz, one Medlánky car for an even kurz) and one goes to the depot reserve. DPMB’s real choice of kurzy is not known until the first vypravenost after 29 Sep; these are suggestions.",
+  "method_extra": "<p><b>Cross-check.</b> The kurz counts per line (24, 15, 19, 16, 13, 17, 9, 24, 17, 5, 14) on Fri 25 Sep equal the afternoon totals from the 8–10 Sep records in the Termini sheet. They also fit the GTFS, which has 22, 11, 14, 14, 8, 14, 6, 20, 13, 3 and 10 trips on the move at 16:00; the remaining trams are standing at termini.</p>"
+ },
+ "compare_with": "closure-2026-09-27",
+ "cycle_pairs": {
+  "1": [
+   "Řečkovice",
+   "Ečerova"
+  ],
+  "2": [
+   "Stará osada",
+   "Modřice, smyčka"
+  ],
+  "3": [
+   "Stará osada",
+   "Rakovecká"
+  ],
+  "4": [
+   "Náměstí Míru",
+   "Babická"
+  ],
+  "6": [
+   "Královo Pole, nádraží",
+   "Starý Lískovec, smyčka"
+  ],
+  "9": [
+   "Čertova rokle",
+   "Juliánov"
+  ],
+  "12": [
+   "Technologický park",
+   "Komárov"
+  ],
+  "10": [
+   "Komín, smyčka",
+   "Stránská skála - smyčka"
+  ]
+ },
+ "meta_alias": {
+  "Komín, smyčka": "Vozovna Komín"
+ }
+}

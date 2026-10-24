@@ -1,0 +1,455 @@
+{
+ "title": "Brno Trolleybus Peak Fleet",
+ "output": "Brno Trolleybus Peak Fleet.html",
+ "vehicles_date": "2026-09-25",
+ "register_date": "2026-09-29",
+ "gtfs_date": "2026-09-28",
+ "service_date": "20261002",
+ "line_order": [
+  "21",
+  "25",
+  "26",
+  "27",
+  "30",
+  "31",
+  "32",
+  "33",
+  "34",
+  "35",
+  "36",
+  "37",
+  "38",
+  "39"
+ ],
+ "depots": [
+  "Komín",
+  "Husovice",
+  "Slatina"
+ ],
+ "battery": {
+  "21": {
+   "section": "Řípská – Letiště Tuřany, terminál",
+   "detail": "Hlavní nádraží – Řípská runs under line 31's wire, and the rest to the airport terminal runs on battery. Partial trolleybus line since 18 May 2026, worked by battery Škoda 32 Tr.",
+   "source": "https://www.dpmb.cz/brno-pokracuje-v-rozvoji-ciste-mobility-parcialni-trolejbusy-nove-propoji-centrum-mesta-s-letistem"
+  },
+  "30": {
+   "section": "Královo Pole, nádraží – Klarisky and – Sadová",
+   "detail": "The poles come down at Semilasso going out. Both branches beyond Královo Pole, nádraží (5.8 km to Klarisky) run on battery. Partial trolleybus line since 27 Apr 2024, worked by battery Škoda 32 Tr and 26 Tr.",
+   "source": "https://cs.wikipedia.org/wiki/Seznam_trolejbusov%C3%BDch_linek_v_Brn%C4%9B"
+  }
+ },
+ "no_battery_note": "Every other line runs under the wire from end to end. Osová (reopened 27 Jun 2026), Kamenný vrch, Šlapanice, Slatina, sídliště, Jírovcova and Preslova are all wired (Wikipedia, BMHD wire map).",
+ "lengths": {
+  "Škoda 26 Tr": 12,
+  "Škoda 32 Tr": 12,
+  "SOR TNS 12": 12,
+  "Škoda 27 Tr": 18,
+  "Škoda 31 Tr": 18,
+  "Iveco Urbanway 12M CNG": 12,
+  "Irisbus Citelis 12M CNG": 12
+ },
+ "battery_types": [
+  "Škoda 26 Tr",
+  "Škoda 32 Tr"
+ ],
+ "fleet": {
+  "morning_notes": [
+   "ráno",
+   "ranní kurz",
+   "pouze ranní služba",
+   "ráno, před výměnou",
+   "ráno, po výměně"
+  ],
+  "afternoon_notes": [
+   "odpoledne",
+   "odpolední kurz"
+  ],
+  "both_notes": [
+   "ráno i odpoledne"
+  ],
+  "resolved_swaps": {},
+  "note_overrides": {}
+ },
+ "fit": {
+  "core": [
+   930,
+   990
+  ],
+  "overrides": {}
+ },
+ "turnaround_default": 3,
+ "links": {
+  "Kamenný vrch": [
+   "Nemocnice Bohunice",
+   5
+  ]
+ },
+ "nonloop": {},
+ "simutrans_lines": [
+  {
+   "id": "21",
+   "name": "21 Hlavní nádraží – Letiště Tuřany",
+   "records": "21",
+   "entries": [
+    [
+     "21",
+     "Hlavní nádraží",
+     "Letiště Tuřany - terminál"
+    ],
+    [
+     "21",
+     "Letiště Tuřany - terminál",
+     "Hlavní nádraží"
+    ]
+   ]
+  },
+  {
+   "id": "25+26",
+   "name": "25 + 26 Osová – Jírova, Štefánikova čtvrť – Kamenný vrch",
+   "records": "25",
+   "pool": true,
+   "period": 20,
+   "pool_text": "DPMB runs 25 and 26 as one circulation, and 25 kurzy work every 26 trip: jrbrno.cz publishes a combined 25 + 26 timetable, and bmhd.cz files weekday 26 cars under 25. All four 25 legs and the 26 shuttle run every 20 min, so one Simutrans line reproduces it exactly.",
+   "entries": [
+    [
+     "25",
+     "Osová",
+     "Jírova"
+    ],
+    [
+     "25",
+     "Jírova",
+     "Nemocnice Bohunice"
+    ],
+    [
+     "25",
+     "Nemocnice Bohunice",
+     "Štefánikova čtvrť"
+    ],
+    [
+     "26",
+     "Štefánikova čtvrť",
+     "Kamenný vrch",
+     {
+      "mod": 20,
+      "keep": [
+       4
+      ]
+     }
+    ],
+    [
+     "26",
+     "Kamenný vrch",
+     "Štefánikova čtvrť"
+    ],
+    [
+     "26",
+     "Štefánikova čtvrť",
+     "Kamenný vrch",
+     {
+      "mod": 20,
+      "keep": [
+       14
+      ]
+     }
+    ],
+    [
+     "25",
+     "Nemocnice Bohunice",
+     "Pálavské náměstí"
+    ],
+    [
+     "25",
+     "Pálavské náměstí",
+     "Osová"
+    ]
+   ],
+   "note": "One circuit: Osová → Jírova → Nemocnice Bohunice → Štefánikova čtvrť (as 25) → Kamenný vrch → Štefánikova čtvrť → Kamenný vrch (as 26) → about 5 min empty to Nemocnice Bohunice → Pálavské náměstí → Osová (as 25). Štefánikova čtvrť appears twice in the schedule, and so do Kamenný vrch and Nemocnice Bohunice. The empty run from Kamenný vrch to Nemocnice Bohunice is not a stop entry."
+  },
+  {
+   "id": "27",
+   "name": "27 Jírova – Stará osada",
+   "records": "27",
+   "entries": [
+    [
+     "27",
+     "Jírova",
+     "Stará osada"
+    ],
+    [
+     "27",
+     "Stará osada",
+     "Jírova"
+    ]
+   ]
+  },
+  {
+   "id": "30K",
+   "name": "30 Černého – Klarisky",
+   "records": "30",
+   "kurzy": [
+    1,
+    3,
+    5,
+    7,
+    9,
+    11,
+    13
+   ],
+   "entries": [
+    [
+     "30",
+     "Černého",
+     "Klarisky"
+    ],
+    [
+     "30",
+     "Klarisky",
+     "Černého"
+    ]
+   ]
+  },
+  {
+   "id": "30S",
+   "name": "30 Černého – Sadová",
+   "records": "30",
+   "kurzy": [
+    15,
+    17,
+    19,
+    21,
+    23,
+    25,
+    27,
+    29
+   ],
+   "entries": [
+    [
+     "30",
+     "Černého",
+     "Sadová"
+    ],
+    [
+     "30",
+     "Sadová",
+     "Černého"
+    ]
+   ]
+  },
+  {
+   "id": "31",
+   "name": "31 Hlavní nádraží – Šlapanice, Kalvodova",
+   "records": "31",
+   "entries": [
+    [
+     "31",
+     "Hlavní nádraží",
+     "Šlapanice, Kalvodova"
+    ],
+    [
+     "31",
+     "Šlapanice, Kalvodova",
+     "Hlavní nádraží"
+    ]
+   ]
+  },
+  {
+   "id": "32",
+   "name": "32 Česká – Srbská",
+   "records": "32",
+   "entries": [
+    [
+     "32",
+     "Česká",
+     "Srbská"
+    ],
+    [
+     "32",
+     "Srbská",
+     "Česká"
+    ]
+   ]
+  },
+  {
+   "id": "33",
+   "name": "33 Hlavní nádraží – Slatina, sídliště",
+   "records": "33",
+   "entries": [
+    [
+     "33",
+     "Hlavní nádraží",
+     "Slatina, sídliště"
+    ],
+    [
+     "33",
+     "Slatina, sídliště",
+     "Hlavní nádraží"
+    ]
+   ],
+   "designed_slots": {
+    "Slatina, sídliště": {
+     "every": 20,
+     "add": [
+      12
+     ],
+     "why": "Hlavní nádraží sends 9 trolleybuses an hour to Slatina, sídliště, but the timetable brings only 6 back. The other 3 (the :14, :34 and :54 departures) have no public return trip and go back out of service. A Simutrans line can't drop them, so there is a third return slot at :12 real (they arrive at :12, :32 and :52). It is designed, not in the timetable."
+    }
+   }
+  },
+  {
+   "id": "34",
+   "name": "34 Česká – Vychodilova",
+   "records": "34",
+   "entries": [
+    [
+     "34",
+     "Česká",
+     "Vychodilova"
+    ],
+    [
+     "34",
+     "Vychodilova",
+     "Česká"
+    ]
+   ]
+  },
+  {
+   "id": "36",
+   "name": "36 Česká – Komín, sídliště",
+   "records": "36",
+   "entries": [
+    [
+     "36",
+     "Česká",
+     "Komín, sídliště"
+    ],
+    [
+     "36",
+     "Komín, sídliště",
+     "Česká"
+    ]
+   ]
+  },
+  {
+   "id": "37N",
+   "name": "37 Mendlovo náměstí – Nemocnice Bohunice",
+   "records": "37",
+   "kurzy": [
+    1,
+    3,
+    4,
+    6,
+    8,
+    9
+   ],
+   "entries": [
+    [
+     "37",
+     "Mendlovo náměstí",
+     "Nemocnice Bohunice"
+    ],
+    [
+     "37",
+     "Nemocnice Bohunice",
+     "Mendlovo náměstí"
+    ]
+   ]
+  },
+  {
+   "id": "37J",
+   "name": "37 Mendlovo náměstí – Jírovcova",
+   "records": "37",
+   "kurzy": [
+    10,
+    11,
+    12,
+    13
+   ],
+   "entries": [
+    [
+     "37",
+     "Mendlovo náměstí",
+     "Jírovcova"
+    ],
+    [
+     "37",
+     "Jírovcova",
+     "Mendlovo náměstí"
+    ]
+   ]
+  },
+  {
+   "id": "35+38+39",
+   "name": "35 + 38 + 39 Preslova – Komenského náměstí – Barvičova – Mendlovo náměstí",
+   "records": "39",
+   "pool": true,
+   "pool_text": "DPMB has kurzy only for 39. The same cars and drivers work 35, 38 and 39 (bmhd.cz: “existují proto jen kurzy linky 39”), and 35 and 38 have no records of their own. All three run every 15 min, so they form one circuit.",
+   "entries": [
+    [
+     "38",
+     "Preslova",
+     "Komenského náměstí"
+    ],
+    [
+     "39",
+     "Komenského náměstí",
+     "Barvičova"
+    ],
+    [
+     "35",
+     "Barvičova",
+     "Mendlovo náměstí"
+    ],
+    [
+     "35",
+     "Mendlovo náměstí",
+     "Barvičova"
+    ],
+    [
+     "39",
+     "Barvičova",
+     "Komenského náměstí"
+    ],
+    [
+     "38",
+     "Komenského náměstí",
+     "Preslova"
+    ]
+   ],
+   "note": "One circuit: Preslova → Komenského náměstí (38) → Barvičova (39) → Mendlovo náměstí → Barvičova (35) → Komenského náměstí (39) → Preslova (38). Barvičova and Komenského náměstí each appear twice. The real cars may not follow this order, but the circuit has the same trips and needs the same number of cars."
+  }
+ ],
+ "splits_text": {
+  "30": "Line 30 has two branches from Černého, to Klarisky and to Sadová, each every 15 min. The timetable turns every car back onto its own branch at Černého. The records carry only odd kurzy (1–29) and don't say which branch each kurz ran. Kurzy 1–13 go to Klarisky and 15–27 to Sadová, 7 each. By the timetable cycle Klarisky needs 6 and Sadová 5, so each branch keeps some of the operator's slack. This split is a choice.",
+  "37": "Line 37 has two branches from Mendlovo náměstí: to Nemocnice Bohunice via Kamenný vrch, and to Jírovcova, each every 15 min. By the timetable cycle each needs 4 cars, and 10 were out. The records don't name the branch, so the four afternoon-only kurzy (10–13) go to Jírovcova and the other six to Nemocnice Bohunice, the longer branch, which keeps the 2 spare. This split is a choice."
+ },
+ "termini": {
+  "Hlavní nádraží": "Trolleybus loop at the railway station (platform 11)",
+  "Letiště Tuřany - terminál": "One-way road loop at the terminal (inferred: Letiště - služební vstup is served outbound only)",
+  "Osová": "Loop",
+  "Jírova": "Loop with three tracks plus a return track (2019)",
+  "Nemocnice Bohunice": "Loop (2007)",
+  "Štefánikova čtvrť": "Loop around the Kohoutova roundabout, with passing and layover tracks",
+  "Kamenný vrch": "Loop",
+  "Pálavské náměstí": "Turn around a block (2015 wire map)",
+  "Stará osada": "Loop (2015 wire map; stop rebuilt 2024–25)",
+  "Černého": "Loop",
+  "Klarisky": "Battery section; probably a one-way loop via Rozárka (inferred)",
+  "Sadová": "Battery section; layout not documented (jrbrno.cz ends these trips at Moskalykova, the next stop)",
+  "Šlapanice, Kalvodova": "Loop",
+  "Česká": "Around a block (the Masaryk University rectorate block via Brandlova)",
+  "Srbská": "Loop",
+  "Slatina, sídliště": "Loop",
+  "Vychodilova": "Loop",
+  "Komín, sídliště": "Loop",
+  "Mendlovo náměstí": "Long single-track circuit round the square and the Výstavní blocks; 35 lays over in Veletržní",
+  "Jírovcova": "Loop",
+  "Barvičova": "Loop",
+  "Komenského náměstí": "Around a block (1981)",
+  "Preslova": "Loop"
+ },
+ "texts": {
+  "eyebrow": "DPMB trolleybuses · afternoon peak · Simutrans reference",
+  "lede": "Every trolleybus DPMB had out in the Friday afternoon peak (25 Sep 2026), on the network running from 29 Sep. Each line lists its vehicles with type, length, depot and custom pak128 object, followed by the schedule values for the Simutrans fork."
+ }
+}

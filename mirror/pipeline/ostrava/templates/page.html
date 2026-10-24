@@ -1,0 +1,196 @@
+<title>{{TITLE}}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f5f2f1; --surface:#ffffff; --surface2:#efe9e8; --ink:#201b1c; --ink2:#4d4446; --muted:#786e70; --rule:#e2d9da; --rule2:#cfc4c5;
+  --accent:#c4161c; --accent-ink:#ffffff; --accent-soft:#f8e3e4;
+  --vp:#2b5f9e; --vp-soft:#dfe9f5; --vmo:#8a5a12; --vmo-soft:#f7ebd5; --ok:#2f7d4f; --warn:#b7791f; --warn-soft:#fbefd9;
+  --font-display:"Barlow Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --font-mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#151213; --surface:#1f1b1c; --surface2:#2a2425; --ink:#f1ebeb; --ink2:#cbc1c2; --muted:#9d9193; --rule:#372f30; --rule2:#4a4041;
+    --accent:#e4383e; --accent-ink:#ffffff; --accent-soft:#3d1c1e;
+    --vp:#7fb0ea; --vp-soft:#1d2e42; --vmo:#e0a94a; --vmo-soft:#3b2d14; --ok:#6fc48f; --warn:#e0a94a; --warn-soft:#3b2d14;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#151213; --surface:#1f1b1c; --surface2:#2a2425; --ink:#f1ebeb; --ink2:#cbc1c2; --muted:#9d9193; --rule:#372f30; --rule2:#4a4041;
+  --accent:#e4383e; --accent-ink:#ffffff; --accent-soft:#3d1c1e;
+  --vp:#7fb0ea; --vp-soft:#1d2e42; --vmo:#e0a94a; --vmo-soft:#3b2d14; --ok:#6fc48f; --warn:#e0a94a; --warn-soft:#3b2d14;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.45;padding-inline:clamp(16px,3vw,40px);padding-block:0 64px}
+h1,h2,h3,h4{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:1.05}
+h1{font-size:clamp(34px,5vw,54px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:28px;font-weight:600;margin-block:44px 6px}
+h2+.sub{color:var(--muted);max-width:70ch;margin-bottom:16px}
+p{margin:0}
+a{color:var(--vp)}
+.mono{font-family:var(--font-mono);font-size:.92em}
+header.top{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-end;padding-block:36px 20px;border-bottom:3px solid var(--accent)}
+header.top .lede{max-width:66ch;color:var(--ink2);font-size:16px;margin-top:10px}
+.eyebrow{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:13px;color:var(--accent)}
+.stats{display:flex;gap:28px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat b{font-family:var(--font-display);font-size:34px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.nav .lab{font:600 12px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-right:4px}
+.nav .sep{flex:1}
+.nav a.txt{font:600 14px var(--font-display);letter-spacing:.02em;color:var(--ink2);text-decoration:none;padding:4px 8px;border-radius:4px;background:var(--surface2)}
+.badge{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 6px;border-radius:6px;background:var(--accent);color:var(--accent-ink);font:700 24px var(--font-display);font-variant-numeric:tabular-nums;text-decoration:none;flex-shrink:0}
+.badge.sm{min-width:32px;height:28px;font-size:17px;border-radius:4px}
+.state{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;margin-top:20px}
+.st{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:12px 14px}
+.st h4{font-size:17px;font-weight:600;margin-bottom:4px}
+.st .tag{font:600 11px var(--font-display);text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;border-radius:999px;margin-right:6px;vertical-align:1px}
+.tag.in{background:var(--accent-soft);color:var(--accent)}
+.tag.out{background:var(--surface2);color:var(--muted)}
+.st p{font-size:14px;color:var(--ink2)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;font-size:13px;color:var(--ink2);align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:18px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:8px;overflow:hidden;scroll-margin-top:60px}
+.card>header{display:flex;align-items:flex-start;gap:12px;padding:14px 16px 10px}
+.hd{flex:1;min-width:0}
+.hd h3{font-size:23px;font-weight:700}
+.hd p{font-size:13px;color:var(--muted);margin-top:3px}
+.cnt{display:flex;flex-direction:column;align-items:flex-end;text-align:right;flex-shrink:0}
+.cnt b{font-family:var(--font-display);font-size:32px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.cnt span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);max-width:14em}
+.tw{overflow-x:auto;padding-inline:16px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font:600 11px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left;padding:4px 6px;border-bottom:1px solid var(--rule)}
+td{padding:4px 6px;border-bottom:1px solid var(--rule);vertical-align:top}
+td.n,th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.arr{color:var(--muted);padding-inline:0}
+.sched{margin:10px 16px 0;padding:8px 10px;background:var(--surface2);border-radius:6px}
+.sched h4{font:600 12px var(--font-display);text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:2px}
+.tw0{overflow-x:auto}
+.st2 td,.st2 th{border-bottom-color:var(--rule2);font-size:13px}
+.st2 td.sv{font-weight:600;white-space:nowrap}
+.st2 tr.all td{color:var(--ink2);font-style:italic}
+.st2 tr:last-child td{border-bottom:0}
+.st2 .win{font-size:11.5px;color:var(--muted)}
+.st2 .warn{color:var(--warn)}
+.st2 small.real{display:block;font:400 11px var(--font-body);color:var(--muted)}
+.st2 td.fit{font-size:12px;color:var(--ink2);min-width:140px}
+.st2 td.fit small{display:block;color:var(--warn);margin-top:2px}
+.lp{display:block;font:600 10.5px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.lp.st{color:var(--accent);text-transform:none;letter-spacing:.02em;font-size:11.5px}
+.badge.xs{min-width:22px;height:18px;font-size:12px;border-radius:3px;padding:0 4px;vertical-align:1px}
+.lnote{padding:8px 16px 0;font-size:13px;color:var(--ink2)}
+ul.vs{list-style:none;margin:0;padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px}
+li.v{display:flex;flex-direction:column;gap:1px;max-width:100%;border:1px solid var(--rule2);border-radius:5px;padding:3px 7px;background:var(--surface);font-size:13px}
+li.v.seen{border-color:var(--ok)}
+li.v .num{font-family:var(--font-mono);font-size:14px;font-variant-numeric:tabular-nums}
+li.v .num b{font-weight:500}
+li.v .vt{color:var(--ink2)}
+.dp{font:600 10px var(--font-display);letter-spacing:.08em;padding:1px 5px;border-radius:3px}
+.d-VP{background:var(--vp-soft);color:var(--vp)}
+.d-VMO{background:var(--vmo-soft);color:var(--vmo)}
+.dt td.vc .num{font-family:var(--font-mono);font-size:14px}
+.dt td{font-size:13px}
+.dt td.stc{color:var(--muted)}
+.core{font-family:var(--font-mono);font-weight:500}
+.pak{font-size:11.5px;color:var(--muted);font-family:var(--font-mono)}
+.pak.miss,.pak.subst em{color:var(--warn)}
+.pak em{font-style:normal;font-family:var(--font-body)}
+.brsub{margin:10px 16px 0;font:600 13px var(--font-display);letter-spacing:.02em;color:var(--ink2)}
+.brsub+ul.vs{padding-top:6px}
+tr.brh td{font:600 12px var(--font-display);letter-spacing:.04em;color:var(--accent);background:var(--surface);padding-top:8px}
+.addn{font-size:11.5px;color:var(--warn)}
+li.v.added{border-style:dashed;border-color:var(--warn)}
+li.v.spare{opacity:.55;border-style:dotted}
+i.m{font-style:normal;font-size:11px;line-height:1}
+i.m.on{color:var(--ok)}
+i.m.any{color:var(--ok)}
+details{border-top:1px solid var(--rule);padding:8px 16px 12px}
+summary{cursor:pointer;font:600 13px var(--font-display);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+summary:focus-visible,a:focus-visible{outline:2px solid var(--vp);outline-offset:2px}
+details p{font-size:13px;color:var(--ink2);margin-top:6px}
+.depots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:18px;align-items:start}
+.depot{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:14px 16px}
+.depot>header{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;margin-bottom:6px}
+.depot h3{font-size:26px;font-weight:700}
+.depot h3 small{font:600 13px var(--font-display);letter-spacing:.08em;color:var(--muted);margin-left:6px}
+.mixline{font-size:13px;color:var(--muted);margin-bottom:6px}
+.dl{display:grid;grid-template-columns:34px 28px 1fr;gap:4px 8px;align-items:start;padding-block:8px;border-top:1px solid var(--rule)}
+.dl .dc{font:700 20px var(--font-display);color:var(--muted);text-align:right;font-variant-numeric:tabular-nums;padding-top:2px}
+.dl ul.vs{padding:0}
+.spares{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px}
+.sp h4{font-size:19px;font-weight:600;margin-bottom:6px}
+.sp p{font-size:13px;color:var(--ink2);margin-bottom:6px}
+.types{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:8px 12px;overflow-x:auto}
+.notes{max-width:78ch;display:flex;flex-direction:column;gap:10px;color:var(--ink2);font-size:14.5px}
+.notes b{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+html{scroll-behavior:smooth}
+</style>
+
+<header class="top">
+  <div style="flex:1;min-width:min(100%,420px)">
+    <p class="eyebrow">Ostrava · tramvaje · vypravenost · {{VEHICLE_DAY_LABEL}} · {{PEAK}}</p>
+    <h1>{{TITLE}}</h1>
+    <p class="lede">Every DPO tram line as it ran on the Friday afternoon peak: route, headway and departure minutes, then the specific trams on each line and the depot each one comes from. The network is shown as it stood on {{STATE_LABEL}}.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>{{TOT}}</b><span>units at {{PEAK}}</span></div>
+    <div class="stat"><b>{{NLINES}}</b><span>lines in service</span></div>
+    <div class="stat"><b>{{VP}}</b><span>from Poruba</span></div>
+    <div class="stat"><b>{{VMO}}</b><span>from Moravská Ostrava</span></div>
+  </div>
+</header>
+
+{{CONTROLS}}
+
+<h2>Network state, {{STATE_LABEL}}</h2>
+<p class="sub">Long-term changes are part of the model. Weekend and single-day works are left out, following the rule for short closures, so the lines keep their regular routes.</p>
+<div class="state">
+{{STATE}}
+</div>
+<div class="legend"><span>Each vehicle shows its number, full type and pak128 core name. <b style="color:var(--ok)">Green border</b>: the tram also ran on this line on {{LIVE_LABEL}} (DPO live feed). The depot tables give the observed course. <b>Dimmed, dotted</b>: not needed, shown but not counted: units beyond a line's need, and free cars from the line's history. Where a line lacked a type of its regular roster (at least 2 % of its records), one unit was swapped for that type.</span></div>
+
+<h2>Lines</h2>
+<p class="sub"><b>Branches and tram counts.</b> {{BRANCHES_WHY}} Under each line card, every Simutrans line shows how many trams are assigned and how many it needs. “Needed” follows one tram round the branch at 16:00, with 3 min layovers or the terminus’s own shorter timetabled turnaround. “Minimum by runtime” is the two running times divided by the headway. The trams from the timetable chaining are shared out so that every branch gets at least its need. <b>Shared pools:</b> {{POOLS}}</p>
+<p class="sub">Headway and runtime come from the timetable for 15:00–17:00. “Leaves {{PEAK_HH}}:xx” lists that terminus's departure minutes in the {{PEAK_HH}} o’clock hour. The count is the number of vehicle units working the line at {{PEAK}}; a coupled Vario pair counts as one unit.</p>
+<p class="sub">The Simutrans schedule holds the values to type into the Scheduling tab of each terminus entry, with the calendar switched on. Each branch is its own Simutrans line. “Departure every 20, Offset 3, Also at 13” gives :03 :13 :23 :33 :43 :53. Each row is the longest stretch of the afternoon around the peak that one pattern reproduces exactly (shown under the entry as “exact from–to”). Among stretches of similar length, the simplest pattern wins, and intervals that divide 60 come first. “Leave up to” stays on automatic, which is half the gap.</p>
+<p class="sub"><b>Loop departures one minute early.</b> Every Ostrava terminus is a loop (smyčka), so each Offset and “Also at” value is set 1 min before the timetable departure. That way the tram clears the loop on time. The timetable minutes are listed under each entry for reference, and the “Leaves {{PEAK_HH}}:xx” column shows the real timetable. If a loop is built with a separate all-off arrival stop and a boarding stop, put the timetable on the boarding (departure) entry. Other timing points on the line keep their real minutes.</p>
+<div class="grid">
+{{CARDS}}
+</div>
+
+<h2 id="depots">Depots</h2>
+<p class="sub">Each tram comes from the depot that keeps it in the seznam-autobusu.cz fleet register. Lines are listed with the trams that depot sends out to them.</p>
+<div class="depots">
+{{DEPOTS}}
+</div>
+
+<h2>Not in service at {{PEAK}}</h2>
+<p class="sub">The rest of the registered fleet: reserves, trams in the workshops and out-of-service cars.</p>
+<div class="spares">{{SPARE}}</div>
+
+<h2 id="pak">Pak128 objects</h2>
+<p class="sub">Every real type at the {{PEAK}} peak, with the matching object chain in VZ-DPOstrava-tram.pak. The vehicle cells elsewhere show only the core name, the object's last segment. “≈” marks a nearest substitute. Length is in car units (16 = one tile).</p>
+<div class="types"><table><thead><tr><th>Real type</th><th>Pak128 object</th><th>Object livery</th><th class="n">Length</th><th class="n">Cars at {{PEAK}}</th></tr></thead><tbody>{{PAKS}}</tbody></table></div>
+
+<h2 id="fleet">Vehicle types</h2>
+<p class="sub">DPO plans each turn by length class: 1×T (15 m), 1.5×T (20–27 m) or 2×T (30 m). Lines 1 and 2 need 2×T.</p>
+<div class="types"><table><thead><tr><th>Vehicle type</th><th class="n">Length</th><th>Build</th><th class="n">Class</th><th class="n">Capacity</th><th class="n">Units at {{PEAK}}</th></tr></thead><tbody>{{TYPES}}</tbody></table></div>
+
+<h2 id="method">How this was built</h2>
+<div class="notes">
+<p><b>Friday's roster is designed, not observed.</b> No public record of which tram ran on which line on 25 Sep exists. The tram-bus.cz feed behind the seznam-autobusu.cz vypravenost for ODIS stopped recording DPO trams on 26 Jun 2026, and on 25 Sep it carries only trolleybuses. DPO's live map shows current positions only. The roster was therefore built from the evidence below, so each number is a tram that realistically worked that line, not a verified sighting.</p>
+<p><b>How many trams per line.</b> CIS JŘ timetable ({{JDF_LABEL}}, DPO lines 915001–915017) evaluated for {{VEHICLE_DAY_EN}}. Trips were chained into vehicle turns at their termini (layover up to 40 min), and the turns running at {{PEAK}} were counted. Since the user's rule of 29 Sep, only each Simutrans line's round-trip need is counted. The extra units from the chaining are shown as “not needed” (one of each type kept first), a line missing a regular type of its history roster (at least 2 % of its records) gets one unit swapped for that type, and the free cars from each line's history are listed as “not needed”.</p>
+<p><b>Which types.</b> About {{NREC}} weekday vehicle records from seznam-autobusu.cz (Sep 2025 – Jun 2026, 2026 weighted double, records marked as afternoon runs weighted up, morning-only runs left out) give each line's type mix. That mix is capped by how many cars of each type are active today, keeping a small reserve. The 8 surviving T3R.P are not planned (four more were retired in 2026 and offered for sale on 17 Sep). Single Vario LF cars on lines 1 and 2 become coupled pairs, which is how they run there. Courses numbered 9xx are late-evening runs (out to the night lines and to 8 and 11) and are left out: the single Vario LF cars seen on 4, 7 and 8 run only on those, so they are not planned at 16:00. A coupled pair stays a pair on every line. On 18 Oct 2026 five trams of the earlier sheet were replaced for this reason, each marked on its line; every other tram stays as published.</p>
+<p><b>Which trams.</b> Only cars the fleet register lists as active (not in the workshops or out of service) are used. The exception is a car that was seen running on {{LIVE_LABEL}}, which overrides a stale register entry. Cars are ranked per line by their records on that line, whether they ran on that line on {{LIVE_LABEL}} (DPO live feed, {{LIVE}} trams seen), and recent activity. Coupled pairs reuse pairs seen in the records.</p>
+<p><b>pak128 objects.</b> Each tram is matched to its object in VZ-DPOstrava-tram.pak ({{PAK_FILE_NOTE}}), the only tram pak installed. The livery follows the car's registered paint: blue with white stripe uses dpotyrkysova, blue-white-yellow uses dpomodrozluta, and silver-gold uses stribrna. Advertising wraps use the type's default livery and are listed as nearest in the Pak128 objects table. VarioLFR.E, VarioLFR.S and T3R.EVN look the same as the Vario LF, and VarioLF2R.S the same as the Vario LF2, so the pak names them as variants of those objects.</p>
+<p><b>Simutrans schedule.</b> The departure times entered at loop termini (smyčky) are 1 min earlier than the timetable, as the model requires. The real times are listed under each entry.</p>
+<p><b>Depots.</b> Taken from each car's current depot in the fleet register: Poruba and Moravská Ostrava (Křižíkova).</p>
+<p>Sources: <a href="https://portal.cisjr.cz/pub/draha/mestske/JDF.zip">CIS JŘ JDF</a>, <a href="https://seznam-autobusu.cz/vypravenost/odis">seznam-autobusu.cz vypravenost ODIS</a>, <a href="https://seznam-autobusu.cz/typy/dopravni-podnik-ostrava/tramvaje">DPO fleet register</a>, <a href="https://dashboard.dpo.cz/">DPO live dashboard</a>, <a href="https://www.dpo.cz/aktualne/vyluky.html">DPO výluky</a>, <a href="https://mhd-ostrava.cz/">mhd-ostrava.cz</a>.</p>
+</div>

@@ -1,0 +1,3068 @@
+{
+ "snapshot": "2026-10-20",
+ "vehicle_day": "2026-10-20",
+ "vehicle_day_label_en": "Tuesday 20 Oct 2026",
+ "network_state_label": "20 Oct 2026",
+ "fitwin": [
+  300,
+  1380
+ ],
+ "cycle_lay": 3,
+ "all_termini_are_loops": true,
+ "stop_name_expansions": [
+  [
+   "aut.st.pod",
+   "autobusová stanice pod"
+  ],
+  [
+   "EDĚ aut.st.",
+   "Elektrárna Dětmarovice, autobusová stanice"
+  ],
+  [
+   "aut.nádr.",
+   "autobusové nádraží"
+  ],
+  [
+   "aut.st.",
+   "autobusová stanice"
+  ],
+  [
+   "rozc.k žel.st.",
+   "rozcestí k železniční stanici"
+  ],
+  [
+   "žel.st.",
+   "železniční stanice"
+  ],
+  [
+   "žel.zast.",
+   "železniční zastávka"
+  ],
+  [
+   "rozc.",
+   "rozcestí "
+  ],
+  [
+   "pož.zbroj.",
+   "požární zbrojnice"
+  ],
+  [
+   "rest.",
+   "restaurace "
+  ],
+  [
+   "zast.",
+   "zastávka "
+  ],
+  [
+   "J.Kotase",
+   "Josefa Kotase"
+  ],
+  [
+   "H.Malířové",
+   "Heleny Malířové"
+  ],
+  [
+   "M.Pujmanové",
+   "Marie Pujmanové"
+  ],
+  [
+   "Kpt.Jasioka",
+   "Kapitána Jasioka"
+  ],
+  [
+   "Nám.Republiky",
+   "Náměstí Republiky"
+  ],
+  [
+   "Národní tř.",
+   "Národní třída"
+  ],
+  [
+   "Děl.dům",
+   "Dělnický dům"
+  ],
+  [
+   "nákup.stř.",
+   "nákupní středisko"
+  ],
+  [
+   "čerp.st.",
+   "čerpací stanice"
+  ],
+  [
+   "čist.st.",
+   "čisticí stanice"
+  ],
+  [
+   "kult.dům",
+   "kulturní dům"
+  ],
+  [
+   "obch.dům",
+   "obchodní dům"
+  ],
+  [
+   "rehab.sanatorium",
+   "rehabilitační sanatorium"
+  ],
+  [
+   "sídl.",
+   "sídliště "
+  ],
+  [
+   "křiž.",
+   "křižovatka "
+  ],
+  [
+   "Pr.Suchá",
+   "Prostřední Suchá"
+  ],
+  [
+   "nám.",
+   "náměstí"
+  ],
+  [
+   "2.etapa",
+   "2. etapa"
+  ]
+ ],
+ "stop_name_fixed": {},
+ "title": "ODIS Těšínsko Třinecko Frýdecko",
+ "output_html": "ODIS Tesinsko Trinecko Frydecko.html",
+ "artifact_url": "https://claude.ai/artifact/2LecoKwCYb2Lmk1sRDTjrx",
+ "jdf": {
+  "zip": "../havirov-karvina-orlova/data/raw/2026-10-20/JDF.zip",
+  "export_label": "CIS JŘ bus JDF export of 20 Oct 2026 (stored by the Havířov/Karviná/Orlová pipeline)",
+  "operator_ic": "45192081",
+  "why": "The kraj numbers each contract area's licences with its own prefix: 871 Českotěšínsko, 863 Frýdecko-Místecko, 861 Jablunkovsko–Třinecko (Transdev Slezsko); the towns' own licences are 865 (MHD Frýdek-Místek, Transdev Slezsko), 866 (MHD Třinec, ARRIVA autobusy) and 875 (MHD Český Těšín, ARRIVA autobusy).",
+  "extra_lics": {
+   "883980": "frydecko",
+   "883985": "frydecko"
+  }
+ },
+ "areas": [
+  {
+   "id": "tesinsko",
+   "name": "Českotěšínsko",
+   "prefix": "871",
+   "kind": "regional",
+   "branch": "Transdev Slezsko pr. Český Těšín",
+   "depot": "provozovna Český Těšín",
+   "fleet": [
+    "73"
+   ],
+   "near": [
+    "73",
+    "74",
+    "42",
+    "43",
+    "52",
+    "51"
+   ]
+  },
+  {
+   "id": "frydecko",
+   "name": "Frýdecko-Místecko",
+   "prefix": "863",
+   "kind": "regional",
+   "branch": "Transdev Slezsko pr. Frýdek-Místek",
+   "depot": "provozovna Frýdek-Místek",
+   "fleet": [
+    "33"
+   ],
+   "near": [
+    "33",
+    "32",
+    "42",
+    "43",
+    "73"
+   ]
+  },
+  {
+   "id": "frydlantsko",
+   "name": "Frýdlantsko",
+   "prefix": "864",
+   "kind": "regional",
+   "branch": "Transdev Slezsko pr. Frýdek-Místek",
+   "depot": "provozovna Frýdek-Místek",
+   "fleet": [
+    "32"
+   ],
+   "near": [
+    "32",
+    "33",
+    "42",
+    "43",
+    "73"
+   ],
+   "note": "Frýdlant nad Ostravicí, Ostravice and the Beskydy valleys, run from the Frýdek-Místek branch (32- buses)."
+  },
+  {
+   "id": "trinecko",
+   "name": "Jablunkovsko–Třinecko",
+   "prefix": "861",
+   "kind": "regional",
+   "branch": "Transdev Slezsko pr. Jablunkov",
+   "depot": "provozovna Jablunkov",
+   "fleet": [
+    "74"
+   ],
+   "near": [
+    "74",
+    "73",
+    "33"
+   ],
+   "note": "Jablunkovsko and Třinecko are one contract area (licences 861xxx), run from the Jablunkov branch (74-)."
+  },
+  {
+   "id": "mhd-tesin",
+   "name": "MHD Český Těšín",
+   "prefix": "875",
+   "kind": "mhd",
+   "ic": "25945408",
+   "branch": "ARRIVA busy Třinec",
+   "depot": "from the Třinec garage",
+   "fleet": [],
+   "town": "Český Těšín",
+   "operator": "ARRIVA autobusy",
+   "note": "Town buses take the town pak VZ-MHDCeskyTesin-bus; Třinec town buses lent here keep their VZ-MHDTrinec-bus object."
+  },
+  {
+   "id": "mhd-fm",
+   "name": "MHD Frýdek-Místek",
+   "prefix": "865",
+   "kind": "mhd",
+   "branch": "Transdev Slezsko pr. Frýdek-Místek",
+   "depot": "provozovna Frýdek-Místek",
+   "fleet": [],
+   "town": "Frýdek-Místek",
+   "note": "Town buses take the town pak VZ-MHDFrydekMistek-bus; regional buses with the kraj logo lent to town lines keep their VZ-ODIS-bus object."
+  },
+  {
+   "id": "mhd-trinec",
+   "name": "MHD Třinec",
+   "prefix": "866",
+   "kind": "mhd",
+   "ic": "25945408",
+   "branch": "ARRIVA busy Třinec",
+   "depot": "garage Třinec",
+   "fleet": [],
+   "town": "Třinec",
+   "operator": "ARRIVA autobusy",
+   "note": "Town buses take the town pak VZ-MHDTrinec-bus."
+  }
+ ],
+ "other_sheets": {
+  "ostrava": {
+   "lines": [
+    "383",
+    "387"
+   ],
+   "label": "Ostrava Bus Vypravenost, section All lines at Hranečník",
+   "derived": "../ostrava-bus/data/derived/odis.json",
+   "url": "https://claude.ai/artifact/6rNwavbbnG4H2aJVZPNx8R"
+  },
+  "hko": {
+   "label": "Havířov Karviná Orlová Bus Vypravenost (town lines)",
+   "derived": "../havirov-karvina-orlova/data/derived/roster.json",
+   "url": "https://claude.ai/artifact/UmPg6guEAbmSune5YnFTVb"
+  },
+  "hko_regional": {
+   "lines": [
+    "365"
+   ],
+   "label": "ODIS Regional Havířovsko Karvinsko Orlovsko",
+   "derived": "../odis-regional-hko/data/derived/roster.json",
+   "schedule": "../odis-regional-hko/data/derived/schedule.json",
+   "url": "https://claude.ai/artifact/SFgd2KE6xRv9PLKtS5qMnw",
+   "heading": "On the Havířovsko/Karvinsko/Orlovsko regional sheet",
+   "why": "365 Havířov – Frýdek-Místek holds a licence in Havířovsko (912365) and one here in Frýdecko-Místecko (863365). It is one line, modelled once with its buses on the"
+  },
+  "novojicinsko": {
+   "lines": [
+    "655"
+   ],
+   "label": "ODIS Novojičínsko Bílovecko",
+   "short": "Novojičínsko/Bílovecko sheet",
+   "heading": "On the Novojičínsko/Bílovecko sheet",
+   "why": "655 Frenštát – Trojanovice holds a licence here (863655, 4 trips) and one in Novojičínsko Východ (883655, 41 trips); it is modelled once, with its buses, on the",
+   "url": "https://claude.ai/artifact/YFgUu62jD8YqfpuoL8FZpp",
+   "schedule": "../odis-regional-novojicinsko/data/derived/schedule.json"
+  }
+ },
+ "live": {
+  "dir": "../havirov-karvina-orlova/data/raw/2026-10-20/live",
+  "fleet": "../havirov-karvina-orlova/data/derived/fleet.json",
+  "label": "Tue 20 Oct 2026",
+  "note": "ODIS live map (mpvnet.cz): every bus with licence, line, trip number (= JDF spoj) and number plate; polled every minute 13:05–19:30 on Tue 20 Oct 2026, whole region, by the Havířov/Karviná/Orlová pipeline.",
+  "carriers": [
+   "Transdev Slezsko",
+   "ARRIVA",
+   "Z-Group"
+  ]
+ },
+ "terminus_alias": {
+  "Třinec, autobusová stanice pod Kanadou": "Třinec, autobusová stanice"
+ },
+ "lines": {
+  "764": {
+   "core": [
+    "Třinec, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "764",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Loop Třinec – Vendryně – Karpentná – Třinec every 1½–3 h (Třinec 13:35 and 16:35 in the afternoon). One bus every 90 at :05 / :35; 12:35, 14:20 and 18:35 are off the pattern."
+  },
+  "766": {
+   "core": [
+    "Třinec, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "766",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "The same loop the other way round, three trips in the afternoon (13:24, 13:35, 15:40). One bus every 90, as 764."
+  },
+  "769": {
+   "core": [
+    "Třinec, autobusová stanice",
+    "Vendryně, konečná"
+   ],
+   "sim": [
+    {
+     "name": "769",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Vendryně, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Vendryně, konečná",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Třinec – Lyžbice – Vendryně hourly: Třinec :35, Vendryně :00 most of the day."
+  },
+  "770": {
+   "core": [
+    "Bystřice, železniční stanice",
+    "Bystřice, Paseky, konečná"
+   ],
+   "sim": [
+    {
+     "name": "770",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Bystřice, železniční stanice",
+       "to": "Bystřice, Paseky, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Bystřice, Paseky, konečná",
+       "to": "Bystřice, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bystřice, station – Paseky hourly at irregular minutes (13:10, 13:45, 14:51, 15:55 …). One bus every 60 (station :42, Paseky :00). The diversion timetable (to 12 Dec) is the one that runs."
+  },
+  "771": {
+   "core": [
+    "Bystřice, železniční stanice",
+    "Nýdek, náměstí",
+    "Nýdek, Hluchová, Setinka"
+   ],
+   "sim": [
+    {
+     "name": "771",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Bystřice, železniční stanice",
+       "to": "Nýdek, náměstí",
+       "at": "auto"
+      },
+      {
+       "fr": "Nýdek, náměstí",
+       "to": "Bystřice, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "771 Hluchová",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Bystřice, železniční stanice",
+       "to": "Nýdek, Hluchová, Setinka",
+       "at": [
+        "12:25"
+       ]
+      },
+      {
+       "fr": "Nýdek, Hluchová, Setinka",
+       "to": "Bystřice, železniční stanice",
+       "at": [
+        "12:47"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Bystřice – Nýdek, náměstí every 1–2 h at irregular minutes: one bus every 90. The few Hluchová trips are 771 Hluchová, every 480 on the afternoon pair (Bystřice 12:25, Setinka 12:47; 4:37 back in the morning); 14:50 from Třinec to Setinka is listed off the pattern. Hluchová has no other line."
+  },
+  "772": {
+   "core": [
+    "Třinec, autobusová stanice",
+    "Nýdek, Gora, konečná"
+   ],
+   "sim": [
+    {
+     "name": "772",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Nýdek, Gora, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Nýdek, Gora, konečná",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Třinec – Bystřice – Nýdek, Gora every 3 h (Třinec 15:40, Gora 16:45)."
+  },
+  "773": {
+   "core": [
+    "Bystřice, železniční stanice",
+    "Nýdek, náměstí",
+    "Nýdek, Střelmá"
+   ],
+   "sim": [
+    {
+     "name": "773",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Bystřice, železniční stanice",
+       "to": "Nýdek, Střelmá",
+       "knot": "Nýdek, náměstí",
+       "knot_at": [
+        "12:33"
+       ]
+      },
+      {
+       "fr": "Nýdek, Střelmá",
+       "to": "Bystřice, železniční stanice",
+       "at": [
+        "12:42"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Bystřice – Nýdek, Střelmá: a few short workings a day. Every 480 on the afternoon pair (Nýdek, náměstí 12:33 → Střelmá, 12:42 back to Bystřice), timed at Bystřice so the bus passes náměstí at 12:33; 4:20 from Bystřice fits too. Střelmá has no other line."
+  },
+  "781": {
+   "core": [
+    "Návsí, železniční stanice",
+    "Mosty u Jablunkova, Šance, opevnění",
+    "Jablunkov, autobusová stanice",
+    "Hrčava, konečná"
+   ],
+   "sim": [
+    {
+     "name": "781",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Návsí, železniční stanice",
+       "to": "Mosty u Jablunkova, Šance, opevnění",
+       "at": "auto"
+      },
+      {
+       "fr": "Mosty u Jablunkova, Šance, opevnění",
+       "to": "Návsí, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "781 Hrčava",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Jablunkov, autobusová stanice",
+       "to": "Hrčava, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Hrčava, konečná",
+       "to": "Jablunkov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Návsí – Jablunkov – Mosty, Šance hourly (Návsí :03, Šance :30). The Hrčava trips every 3 h are 781 Hrčava from Jablunkov (15:00 out, 14:06 back)."
+  },
+  "782": {
+   "core": [
+    "Návsí, železniční stanice",
+    "Jablunkov, Radvanov, konec",
+    "Jablunkov, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "782",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Návsí, železniční stanice",
+       "to": "Jablunkov, Radvanov, konec",
+       "at": [
+        "14:55"
+       ]
+      },
+      {
+       "fr": "Jablunkov, Radvanov, konec",
+       "to": "Jablunkov, autobusová stanice",
+       "at": [
+        "15:05"
+       ]
+      },
+      {
+       "fr": "Jablunkov, autobusová stanice",
+       "to": "Návsí, železniční stanice",
+       "untimed": true,
+       "rt": 5
+      }
+     ]
+    }
+   ],
+   "note": "Návsí – Radvanov – Jablunkov: one afternoon round (Návsí 14:55 → Radvanov, 15:05 → Jablunkov), every 480; the bus returns to Návsí empty (5 min). Radvanov has no other line."
+  },
+  "783": {
+   "core": [
+    "Třinec, autobusová stanice",
+    "Návsí, nadjezd",
+    "Jablunkov, autobusová stanice",
+    "Bukovec, škola",
+    "Jablunkov, točna Písečná"
+   ],
+   "sim": [
+    {
+     "name": "783",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Bukovec, škola",
+       "at": "auto",
+       "core_to": "Jablunkov, autobusová stanice"
+      },
+      {
+       "fr": "Bukovec, škola",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto",
+       "knot": "Jablunkov, autobusová stanice"
+      }
+     ]
+    },
+    {
+     "name": "783 Písečná",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Návsí, železniční stanice",
+       "to": "Jablunkov, točna Písečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Jablunkov, točna Písečná",
+       "to": "Návsí, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "783 Ski areál",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Bukovec, Ski areál - Kempaland",
+       "at": [
+        "14:00"
+       ]
+      },
+      {
+       "fr": "Bukovec, Ski areál - Kempaland",
+       "to": "Třinec, autobusová stanice",
+       "untimed": true
+      }
+     ]
+    }
+   ],
+   "note": "Třinec – Jablunkov – Písečná – Bukovec, the valley trunk, about every 30 in the early afternoon (Třinec :05 / :35, Bukovec :12 / :42), timed at the ends so the bus passes Jablunkov on the real times. Návsí – Písečná točna every 90 is 783 Písečná; the Ski areál trips (Třinec 14:00) every 480 are 783 Ski areál, which also serves Hraniční přechod and Písek, škola, so the few trips via the border crossing (Bukovec 13:00, Třinec 6:28) have no line of their own."
+  },
+  "784": {
+   "core": [
+    "Návsí, železniční stanice",
+    "Horní Lomná, střed",
+    "Horní Lomná, Horní Přelač"
+   ],
+   "sim": [
+    {
+     "name": "784",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Návsí, železniční stanice",
+       "to": "Horní Lomná, Horní Přelač",
+       "at": "auto",
+       "core_to": "Horní Lomná, střed"
+      },
+      {
+       "fr": "Horní Lomná, Horní Přelač",
+       "to": "Návsí, železniční stanice",
+       "at": "auto",
+       "knot": "Horní Lomná, střed"
+      }
+     ]
+    }
+   ],
+   "note": "Návsí – Dolní Lomná – Horní Lomná, Horní Přelač hourly from Návsí :55, timed so the bus passes Horní Lomná, střed on time. The real back trips leave Přelač at :25 (:30 at times); the slot is set 6 min earlier (:19) so two buses work the line, as two were seen; at :25 it would take three."
+  },
+  "786": {
+   "core": [
+    "Jablunkov, autobusová stanice",
+    "Bystřice, Na Paseky"
+   ],
+   "sim": [
+    {
+     "name": "786",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Jablunkov, autobusová stanice",
+       "to": "Bystřice, Na Paseky",
+       "at": "auto"
+      },
+      {
+       "fr": "Bystřice, Na Paseky",
+       "to": "Jablunkov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Jablunkov – Milíkov – Bystřice, Na Paseky: one round every 4 h (Jablunkov 13:33, Paseky 14:57). The diversion timetable (to 12 Dec) runs. Bocanovice has no other line."
+  },
+  "787": {
+   "core": [
+    "Bystřice, Na Paseky",
+    "Jablunkov, autobusová stanice",
+    "Třinec, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "787",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Bystřice, Na Paseky",
+       "to": "Jablunkov, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Jablunkov, autobusová stanice",
+       "to": "Bystřice, Na Paseky",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "787 Třinec",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Bystřice, Na Paseky",
+       "at": "auto"
+      },
+      {
+       "fr": "Bystřice, Na Paseky",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Jablunkov – Návsí – Milíkov – Bystřice, Na Paseky every 1–1½ h at irregular minutes, and Třinec – Bystřice trips (787 Třinec). Each is one bus every 90; the Paseky end is set 21 min off its best fit so one bus works both ends (shortest round), so most afternoon trips are off the pattern. The diversion timetable (to 12 Dec) runs."
+  },
+  "788": {
+   "core": [
+    "Jablunkov, autobusová stanice",
+    "Jablunkov, Lísky, konečná"
+   ],
+   "sim": [
+    {
+     "name": "788",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Jablunkov, autobusová stanice",
+       "to": "Jablunkov, Lísky, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Jablunkov, Lísky, konečná",
+       "to": "Jablunkov, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Jablunkov – Lísky: four rounds a day, every 240 (Jablunkov 15:10, Lísky 15:20)."
+  },
+  "731": {
+   "core": [
+    "Český Těšín, autobusová stanice",
+    "Albrechtice, střed"
+   ],
+   "sim": [
+    {
+     "name": "731",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Český Těšín, autobusová stanice",
+       "to": "Albrechtice, střed",
+       "at": "auto"
+      },
+      {
+       "fr": "Albrechtice, střed",
+       "to": "Český Těšín, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Český Těšín – Albrechtice every 3 h (15:38 / 16:05). The shift trips on to Stonava and Karviná, Důl Darkov (Svibice 12:35, Darkov 6:09 and 14:09) have no line of their own: their stops are on 731 and on the Havířovsko/Karvinsko/Orlovsko lines (563, 582 ČSM). Regular route, not the Stonava mines diversion (network state)."
+  },
+  "739": {
+   "core": [
+    "Český Těšín, autobusová stanice",
+    "Frýdek-Místek, Frýdek, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "739",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Český Těšín, autobusová stanice",
+       "to": "Frýdek-Místek, Frýdek, autobusové nádraží",
+       "at": "auto"
+      },
+      {
+       "fr": "Frýdek-Místek, Frýdek, autobusové nádraží",
+       "to": "Český Těšín, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Český Těšín – Třanovice – Dobrá – Frýdek every 4 h (14:15 / 15:00). Třanovice, Na Cymbálce has no other line."
+  },
+  "743": {
+   "core": [
+    "Hnojník, škola polská",
+    "Řeka, konečná"
+   ],
+   "sim": [
+    {
+     "name": "743",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Hnojník, škola polská",
+       "to": "Řeka, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Řeka, konečná",
+       "to": "Hnojník, škola polská",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Hnojník – Střítež – Řeka every 3 h (13:15 / 13:35)."
+  },
+  "732": {
+   "core": [
+    "Třinec, autobusová stanice",
+    "Český Těšín, autobusová stanice",
+    "Havířov, Město, železniční stanice"
+   ],
+   "sim": [
+    {
+     "name": "732",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Havířov, Město, železniční stanice",
+       "at": "auto",
+       "knot": "Český Těšín, autobusová stanice"
+      },
+      {
+       "fr": "Havířov, Město, železniční stanice",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto",
+       "core_to": "Český Těšín, autobusová stanice"
+      }
+     ]
+    }
+   ],
+   "note": "Třinec – Český Těšín – Těrlicko – Havířov about hourly at irregular minutes; one slot an hour each way (Třinec :55, Havířov :02), timed so the bus passes Český Těšín, autobusová stanice on time. Three buses, as seen."
+  },
+  "733": {
+   "core": [
+    "Český Těšín, autobusová stanice",
+    "Těrlicko, Hradiště, U Stonávky"
+   ],
+   "sim": [
+    {
+     "name": "733",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Český Těšín, autobusová stanice",
+       "to": "Těrlicko, Hradiště, U Stonávky",
+       "at": "auto"
+      },
+      {
+       "fr": "Těrlicko, Hradiště, U Stonávky",
+       "to": "Český Těšín, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Český Těšín – Těrlicko, Hradiště, U Stonávky every 1½ h; the Stonávka end is set 21 min off its best fit so one bus works both ends."
+  },
+  "734": {
+   "core": [
+    "Třinec, autobusová stanice",
+    "Český Těšín, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "734",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Český Těšín, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Český Těšín, autobusová stanice",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Short trips between the Třinec and Český Těšín bus stations about every 1½ h at irregular times; one bus every 90 (the Třinec end set 18 min off for the shortest round)."
+  },
+  "735": {
+   "core": [
+    "Český Těšín, autobusová stanice",
+    "Těrlicko, střed"
+   ],
+   "sim": [
+    {
+     "name": "735",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Český Těšín, autobusová stanice",
+       "to": "Těrlicko, střed",
+       "at": "auto"
+      },
+      {
+       "fr": "Těrlicko, střed",
+       "to": "Český Těšín, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Český Těšín – Těrlicko hourly (Těšín :50, Těrlicko :35)."
+  },
+  "736": {
+   "core": [
+    "Český Těšín, autobusová stanice",
+    "Chotěbuz, hájenka"
+   ],
+   "sim": [
+    {
+     "name": "736",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Český Těšín, autobusová stanice",
+       "to": "Chotěbuz, hájenka",
+       "at": "auto"
+      },
+      {
+       "fr": "Chotěbuz, hájenka",
+       "to": "Český Těšín, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Český Těšín – Chotěbuz hourly at irregular minutes; one bus."
+  },
+  "738": {
+   "core": [
+    "Český Těšín, Svibice, Slovenská",
+    "Karviná, Fryštát, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "738",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Český Těšín, Svibice, Slovenská",
+       "to": "Karviná, Fryštát, autobusové nádraží",
+       "at": "auto"
+      },
+      {
+       "fr": "Karviná, Fryštát, autobusové nádraží",
+       "to": "Český Těšín, Svibice, Slovenská",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Svibice – Karviná every 30 (Slovenská :17 / :47, Karviná :12 / :42); the real buses turn at Slovenská in 1 min."
+  },
+  "745": {
+   "core": [
+    "Komorní Lhotka, konečná",
+    "Hnojník, obch.stř.",
+    "Třanovice, křižovatka"
+   ],
+   "sim": [
+    {
+     "name": "745",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Komorní Lhotka, konečná",
+       "to": "Hnojník, obch.stř.",
+       "at": "auto"
+      },
+      {
+       "fr": "Hnojník, obch.stř.",
+       "to": "Komorní Lhotka, konečná",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "745 Třanovice",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Komorní Lhotka, konečná",
+       "to": "Třanovice, křižovatka",
+       "at": "auto"
+      },
+      {
+       "fr": "Třanovice, křižovatka",
+       "to": "Komorní Lhotka, konečná",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Komorní Lhotka – Hnojník hourly (Lhotka :31, Hnojník :12; regular from 15:31). The trips to Třanovice are 745 Třanovice every 90."
+  },
+  "747": {
+   "core": [
+    "Český Těšín, autobusová stanice",
+    "Střítež, Obecní úřad"
+   ],
+   "sim": [
+    {
+     "name": "747",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Český Těšín, autobusová stanice",
+       "to": "Střítež, Obecní úřad",
+       "at": "auto"
+      },
+      {
+       "fr": "Střítež, Obecní úřad",
+       "to": "Český Těšín, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Český Těšín – Vělopolí – Střítež every 1½ h (14:45 / 15:20)."
+  },
+  "748": {
+   "core": [
+    "Střítež, Obecní úřad",
+    "Řeka, konečná"
+   ],
+   "sim": [
+    {
+     "name": "748",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Střítež, Obecní úřad",
+       "to": "Řeka, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Řeka, konečná",
+       "to": "Střítež, Obecní úřad",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Střítež – Řeka every 1½ h (15:14 / 16:30)."
+  },
+  "750": {
+   "core": [
+    "Třinec, autobusová stanice",
+    "Frýdek-Místek, Frýdek, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "750",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Frýdek-Místek, Frýdek, autobusové nádraží",
+       "at": "auto"
+      },
+      {
+       "fr": "Frýdek-Místek, Frýdek, autobusové nádraží",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Třinec – Hnojník – Dobrá – Frýdek-Místek hourly (Třinec :30, Frýdek :40), with extra trips 12:50–14:20 off the pattern; two buses."
+  },
+  "754": {
+   "core": [
+    "Třinec, autobusová stanice",
+    "Český Těšín, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "754",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Český Těšín, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Český Těšín, autobusová stanice",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Třinec – Ropice – Český Těšín hourly at irregular minutes (Třinec :25, Těšín :20); two buses. Nine more buses ran it that afternoon."
+  },
+  "721": {
+   "core": [
+    "Český Těšín, železniční stanice"
+   ],
+   "sim": [
+    {
+     "name": "721",
+     "every": 40,
+     "legs": [
+      {
+       "fr": "Český Těšín, železniční stanice",
+       "to": "Český Těšín, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "721 Mosty",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Český Těšín, železniční stanice",
+       "to": "Český Těšín, Mosty, osada Antoníček",
+       "at": [
+        55
+       ]
+      },
+      {
+       "fr": "Český Těšín, Mosty, osada Antoníček",
+       "to": "Český Těšín, Nová Tovární točna",
+       "at": [
+        19
+       ]
+      },
+      {
+       "fr": "Český Těšín, Nová Tovární točna",
+       "to": "Český Těšín, železniční stanice",
+       "untimed": true,
+       "lines": [
+        "725",
+        "721"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Circle via Hrabinská, the central cemetery, Mosty and Svibice every 40 (diversion timetable via Nová Tovární to 12 Dec). The hourly trips to Mosty, osada Antoníček and on to Nová Tovární are 721 Mosty (station :55, Antoníček :19), back to the station empty."
+  },
+  "722": {
+   "core": [
+    "Český Těšín, železniční stanice"
+   ],
+   "sim": [
+    {
+     "name": "722",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Český Těšín, železniční stanice",
+       "to": "Český Těšín, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "The same circle the other way round, every 40."
+  },
+  "723": {
+   "core": [
+    "Český Těšín, železniční stanice",
+    "Český Těšín, autobusová stanice",
+    "Český Těšín, Horní Žukov, točna"
+   ],
+   "sim": [
+    {
+     "name": "723",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Český Těšín, železniční stanice",
+       "to": "Český Těšín, Horní Žukov, točna",
+       "at": "auto",
+       "knot": "Český Těšín, autobusová stanice"
+      },
+      {
+       "fr": "Český Těšín, Horní Žukov, točna",
+       "to": "Český Těšín, železniční stanice",
+       "at": "auto",
+       "core_to": "Český Těšín, autobusová stanice"
+      }
+     ]
+    }
+   ],
+   "note": "Station – bus station – Dolní and Horní Žukov hourly (station :35, Horní Žukov :00), timed so the bus passes the bus station on time."
+  },
+  "724": {
+   "core": [
+    "Český Těšín, železniční stanice",
+    "Český Těšín, centrální hřbitov"
+   ],
+   "sim": [
+    {
+     "name": "724",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Český Těšín, železniční stanice",
+       "to": "Český Těšín, centrální hřbitov",
+       "at": "auto"
+      },
+      {
+       "fr": "Český Těšín, centrální hřbitov",
+       "to": "Český Těšín, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Station – Na Mojském – central cemetery: two rounds a day (10:22, 18:25), every 480. The cemetery stops have no other line."
+  },
+  "701": {
+   "core": [
+    "Třinec, Dolní Líštná, Sosna nemocnice"
+   ],
+   "sim": [
+    {
+     "name": "701",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, Dolní Líštná, Sosna nemocnice",
+       "to": "Třinec, Dolní Líštná, Sosna nemocnice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Circle from Sosna hospital via the station and Lyžbice every 30 (:00 / :30), two buses."
+  },
+  "702": {
+   "core": [
+    "Třinec, Kanada, školy",
+    "Třinec, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "702",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, Kanada, školy",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, Kanada, školy",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Kanada, školy – bus station – station, frequent until 15:30 at irregular minutes; one bus every 40."
+  },
+  "703": {
+   "core": [
+    "Třinec, Konská, PZ konečná",
+    "Třinec, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "703",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, Konská, PZ konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Třinec, Konská, PZ konečná",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bus station – Konská, PZ every 1½ h at irregular minutes."
+  },
+  "704": {
+   "core": [
+    "Třinec, Konská, Podlesí konečná",
+    "Třinec, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "704",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, Konská, Podlesí konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Třinec, Konská, Podlesí konečná",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bus station – Konská, Podlesí hourly (:45 / :04). The diversion timetable (to 12 Dec) runs."
+  },
+  "706": {
+   "core": [
+    "Třinec, autobusová stanice",
+    "Třinec, Kojkovice, konečná",
+    "Třinec, Osůvky, konečná"
+   ],
+   "sim": [
+    {
+     "name": "706",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, Kojkovice, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Třinec, Kojkovice, konečná",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "706 Osůvky",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, Osůvky, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Třinec, Osůvky, konečná",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bus station – Kojkovice hourly (:35 / :00) and bus station – Osůvky – Borek hourly (706 Osůvky, :35 / :05) until 15:00; from 15:35 one trip an hour runs both (via Borek and Osůvky to Kojkovice), so the two Simutrans lines model the busier 13:00–15:00."
+  },
+  "707": {
+   "core": [
+    "Třinec, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "707",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto",
+       "stops_via": [
+        "Třinec, základní škola"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Circle via Horní and Dolní Líštná hourly (:35)."
+  },
+  "708": {
+   "core": [
+    "Třinec, Lyžbice, Kamionka",
+    "Třinec, autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "708",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, Lyžbice, Kamionka",
+       "at": "auto"
+      },
+      {
+       "fr": "Třinec, Lyžbice, Kamionka",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bus station – Lyžbice, Kamionka hourly (:45 / :09), with extra trips at :15 in the peak."
+  },
+  "709": {
+   "core": [
+    "Třinec, autobusová stanice",
+    "Třinec, Konská, válcovna C"
+   ],
+   "sim": [
+    {
+     "name": "709",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, Konská, válcovna C",
+       "at": "auto"
+      },
+      {
+       "fr": "Třinec, Konská, válcovna C",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Works trips to Konská, válcovna C at the shift change (13:30 / 14:09), every 480. Válcovna C has no other line."
+  },
+  "712": {
+   "core": [
+    "Třinec, železniční stanice",
+    "Třinec, Tyra, pila",
+    "Třinec, Tyra, hájenka"
+   ],
+   "sim": [
+    {
+     "name": "712",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, železniční stanice",
+       "to": "Třinec, Tyra, hájenka",
+       "at": "auto",
+       "core_to": "Třinec, Tyra, pila"
+      },
+      {
+       "fr": "Třinec, Tyra, hájenka",
+       "to": "Třinec, železniční stanice",
+       "at": "auto",
+       "knot": "Třinec, Tyra, pila"
+      }
+     ]
+    },
+    {
+     "name": "712 Kozinec",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, Oldřichovice, pod Kozincem",
+       "at": "auto"
+      },
+      {
+       "fr": "Třinec, Oldřichovice, pod Kozincem",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Station – Tyra hourly (station :40, Tyra :03), timed so the bus passes Tyra, pila on time; the Kozinec trips every 4 h (14:35 / 14:58) are 712 Kozinec."
+  },
+  "768": {
+   "core": [
+    "Třinec, autobusová stanice",
+    "Vendryně, vápenka"
+   ],
+   "sim": [
+    {
+     "name": "768",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Vendryně, vápenka",
+       "at": "auto"
+      },
+      {
+       "fr": "Vendryně, vápenka",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bus station – Vendryně, vápenka: shift trips (12:41 / 13:02), every 480. Vápenka and stadion have no other line."
+  },
+  "713": {
+   "core": [
+    "Třinec, autobusová stanice",
+    "Třinec, Guty, konečná"
+   ],
+   "sim": [
+    {
+     "name": "713",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, Guty, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Třinec, Guty, konečná",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bus station – Guty hourly (:45 / :05)."
+  },
+  "714": {
+   "core": [
+    "Třinec, autobusová stanice",
+    "Třinec, Oldřichovice, ves"
+   ],
+   "sim": [
+    {
+     "name": "714",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, Oldřichovice, ves",
+       "at": "auto"
+      },
+      {
+       "fr": "Třinec, Oldřichovice, ves",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bus station – Oldřichovice, ves every 1½ h."
+  },
+  "715": {
+   "core": [
+    "Třinec, Dolní Líštná, Sosna nemocnice"
+   ],
+   "sim": [
+    {
+     "name": "715",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, Dolní Líštná, Sosna nemocnice",
+       "to": "Třinec, Dolní Líštná, Sosna nemocnice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Circle from Sosna hospital every 30 (:20 / :50), two buses."
+  },
+  "716": {
+   "core": [
+    "Třinec, autobusová stanice",
+    "Třinec, Guty, konečná"
+   ],
+   "sim": [
+    {
+     "name": "716",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Třinec, autobusová stanice",
+       "to": "Třinec, Guty, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Třinec, Guty, konečná",
+       "to": "Třinec, autobusová stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bus station – Nebory – Guty every 1½ h. The diversion timetable (to 12 Dec, 21 trips instead of 7) runs."
+  },
+  "301": {
+   "core": [
+    "Frýdek-Místek, Místek, Riviéra",
+    "Frýdek-Místek, Lískovec, Marlenka"
+   ],
+   "sim": [
+    {
+     "name": "301",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, Riviéra",
+       "to": "Frýdek-Místek, Lískovec, Marlenka",
+       "at": [
+        3,
+        13
+       ]
+      },
+      {
+       "fr": "Frýdek-Místek, Lískovec, Marlenka",
+       "to": "Frýdek-Místek, Místek, Riviéra",
+       "at": [
+        3,
+        13
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Riviéra – Lískovec, Marlenka four times an hour at :03, :13, :33 and :43 from both ends (every 30 with two slots). After 16:00 it runs every 30 at :08 / :38; those trips are off the pattern."
+  },
+  "302": {
+   "core": [
+    "Frýdek-Místek, Nové Dvory, Frýdecká skládka",
+    "Frýdek-Místek, Místek, Riviéra",
+    "Frýdek-Místek, Místek, Tesco"
+   ],
+   "sim": [
+    {
+     "name": "302",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Nové Dvory, Frýdecká skládka",
+       "to": "Frýdek-Místek, Místek, Riviéra",
+       "at": "auto"
+      },
+      {
+       "fr": "Frýdek-Místek, Místek, Riviéra",
+       "to": "Frýdek-Místek, Nové Dvory, Frýdecká skládka",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "302 Tesco",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, Riviéra",
+       "to": "Frýdek-Místek, Místek, Tesco",
+       "at": [
+        "13:41",
+        "14:11",
+        "14:41"
+       ]
+      },
+      {
+       "fr": "Frýdek-Místek, Místek, Tesco",
+       "to": "Frýdek-Místek, Místek, Riviéra",
+       "at": [
+        "13:52",
+        "14:22",
+        "14:52"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Frýdecká skládka – Riviéra every 30 (:12 / :42 and :27 / :57). At the shift changes (5:12–6:58 and 13:12–14:52) these trips run on from Riviéra to Tesco: that is 302 Tesco, a Riviéra – Tesco shuttle every 480 at their times there (13:41, 14:11, 14:41; back 13:52, 14:22, 14:52), so no bus is counted twice."
+  },
+  "303": {
+   "core": [
+    "Dobrá, VÚHŽ parkoviště",
+    "Baška, Obecní úřad",
+    "Frýdek-Místek, Frýdek, Dobrovského",
+    "Baška, Hodoňovice, Kamenec"
+   ],
+   "sim": [
+    {
+     "name": "303",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Dobrá, VÚHŽ parkoviště",
+       "to": "Baška, Obecní úřad",
+       "at": "auto"
+      },
+      {
+       "fr": "Baška, Obecní úřad",
+       "to": "Dobrá, VÚHŽ parkoviště",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "303 Hodoňovice",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Frýdek, Dobrovského",
+       "to": "Baška, Hodoňovice, Kamenec",
+       "at": "auto"
+      },
+      {
+       "fr": "Baška, Hodoňovice, Kamenec",
+       "to": "Frýdek-Místek, Frýdek, Dobrovského",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Dobrá, VÚHŽ – Frýdek – Baška hourly (:35 / :27); the Hodoňovice branch hourly as 303 Hodoňovice (Frýdek, Dobrovského :59, Kamenec :52)."
+  },
+  "304": {
+   "core": [
+    "Frýdek-Místek, Frýdek, železniční stanice",
+    "Kozlovice, garáž ČSAD"
+   ],
+   "sim": [
+    {
+     "name": "304",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Frýdek, železniční stanice",
+       "to": "Kozlovice, garáž ČSAD",
+       "at": "auto"
+      },
+      {
+       "fr": "Kozlovice, garáž ČSAD",
+       "to": "Frýdek-Místek, Frýdek, železniční stanice",
+       "at": "auto",
+       "stops_via": [
+        "Kozlovice, Měrkovice, Jednota"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Frýdek, station – Palkovice – Kozlovice hourly (:32 / :37)."
+  },
+  "305": {
+   "core": [
+    "Frýdek-Místek, Frýdek, železniční stanice",
+    "Hukvaldy, Horní Sklenov, restaurace"
+   ],
+   "sim": [
+    {
+     "name": "305",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Frýdek, železniční stanice",
+       "to": "Hukvaldy, Horní Sklenov, restaurace",
+       "at": "auto"
+      },
+      {
+       "fr": "Hukvaldy, Horní Sklenov, restaurace",
+       "to": "Frýdek-Místek, Frýdek, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Frýdek, station – Fryčovice – Horní Sklenov hourly (:08 / :59)."
+  },
+  "306": {
+   "core": [
+    "Frýdek-Místek, Místek, Pavlíkova točna",
+    "Frýdek-Místek, Frýdek, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "306",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, Pavlíkova točna",
+       "to": "Frýdek-Místek, Frýdek, autobusové nádraží",
+       "at": "auto"
+      },
+      {
+       "fr": "Frýdek-Místek, Frýdek, autobusové nádraží",
+       "to": "Frýdek-Místek, Místek, Pavlíkova točna",
+       "at": "auto",
+       "stops_via": [
+        "Frýdek-Místek, Frýdek, myslivna"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Pavlíkova točna – Frýdek bus station hourly (:50 / :03), on the minute all afternoon."
+  },
+  "307": {
+   "core": [
+    "Frýdek-Místek, Místek, Letná, točna",
+    "Frýdek-Místek, Místek, poliklinika"
+   ],
+   "sim": [
+    {
+     "name": "307",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, Letná, točna",
+       "to": "Frýdek-Místek, Místek, poliklinika",
+       "at": "auto"
+      },
+      {
+       "fr": "Frýdek-Místek, Místek, poliklinika",
+       "to": "Frýdek-Místek, Místek, Letná, točna",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Letná – poliklinika hourly (:18 / :15)."
+  },
+  "308": {
+   "core": [
+    "Frýdek-Místek, Skalice, Záhoří",
+    "Frýdek-Místek, Místek, poliklinika",
+    "Ostrava, Nová Bělá, Mitrovice"
+   ],
+   "sim": [
+    {
+     "name": "308",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Skalice, Záhoří",
+       "to": "Frýdek-Místek, Místek, poliklinika",
+       "at": "auto"
+      },
+      {
+       "fr": "Frýdek-Místek, Místek, poliklinika",
+       "to": "Frýdek-Místek, Skalice, Záhoří",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "308 Mitrovice",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, poliklinika",
+       "to": "Ostrava, Nová Bělá, Mitrovice",
+       "at": "auto"
+      },
+      {
+       "fr": "Ostrava, Nová Bělá, Mitrovice",
+       "to": "Frýdek-Místek, Místek, poliklinika",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Skalice – poliklinika every 1½ h; the Mitrovice trips every 3 h are 308 Mitrovice."
+  },
+  "309": {
+   "core": [
+    "Frýdek-Místek, Místek, poliklinika"
+   ],
+   "sim": [
+    {
+     "name": "309",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, poliklinika",
+       "to": "Frýdek-Místek, Místek, poliklinika",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Circle from the poliklinika every 30 (:15 / :45), one bus."
+  },
+  "310": {
+   "core": [
+    "Frýdek-Místek, Místek, poliklinika"
+   ],
+   "sim": [
+    {
+     "name": "310",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, poliklinika",
+       "to": "Frýdek-Místek, Místek, poliklinika",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Circle from the poliklinika about hourly at irregular minutes; one bus every 40."
+  },
+  "311": {
+   "core": [
+    "Frýdek-Místek, Místek, Riviéra",
+    "Řepiště, U kříže"
+   ],
+   "sim": [
+    {
+     "name": "311",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, Riviéra",
+       "to": "Řepiště, U kříže",
+       "at": "auto"
+      },
+      {
+       "fr": "Řepiště, U kříže",
+       "to": "Frýdek-Místek, Místek, Riviéra",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Riviéra – Řepiště every 30 (:23 / :53 and :12 / :42)."
+  },
+  "312": {
+   "core": [
+    "Frýdek-Místek, Frýdek, železniční stanice",
+    "Brušperk, točna"
+   ],
+   "sim": [
+    {
+     "name": "312",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Frýdek, železniční stanice",
+       "to": "Brušperk, točna",
+       "at": "auto"
+      },
+      {
+       "fr": "Brušperk, točna",
+       "to": "Frýdek-Místek, Frýdek, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Frýdek, station – Brušperk hourly (:35 / :20), with extra trips at :05 in the peak."
+  },
+  "313": {
+   "core": [
+    "Nošovice, střed",
+    "Frýdek-Místek, Frýdek, železniční stanice"
+   ],
+   "sim": [
+    {
+     "name": "313",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Frýdek, železniční stanice",
+       "to": "Nošovice, střed",
+       "at": "auto"
+      },
+      {
+       "fr": "Nošovice, střed",
+       "to": "Frýdek-Místek, Frýdek, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Frýdek, station – Nošovice every 2 h."
+  },
+  "314": {
+   "core": [
+    "Frýdek-Místek, Frýdek, železniční stanice",
+    "Janovice, konečná"
+   ],
+   "sim": [
+    {
+     "name": "314",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Frýdek, železniční stanice",
+       "to": "Janovice, konečná",
+       "at": "auto"
+      },
+      {
+       "fr": "Janovice, konečná",
+       "to": "Frýdek-Místek, Frýdek, železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Frýdek, station – Janovice every 4 h."
+  },
+  "316": {
+   "core": [
+    "Palkovice, centrum",
+    "Frýdek-Místek, Místek, poliklinika",
+    "Frýdek-Místek, Místek, Pavlíkova točna",
+    "Frýdek-Místek, Místek, Riviéra"
+   ],
+   "sim": [
+    {
+     "name": "316",
+     "every": 90,
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, poliklinika",
+       "to": "Palkovice, centrum",
+       "at": [
+        "15:42"
+       ],
+       "lines": [
+        "316",
+        "315"
+       ]
+      },
+      {
+       "fr": "Palkovice, centrum",
+       "to": "Frýdek-Místek, Místek, poliklinika",
+       "at": [
+        "16:15"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "316 Riviéra",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, Pavlíkova točna",
+       "to": "Frýdek-Místek, Místek, Riviéra",
+       "at": [
+        21
+       ]
+      },
+      {
+       "fr": "Frýdek-Místek, Místek, Riviéra",
+       "to": "Frýdek-Místek, Místek, Pavlíkova točna",
+       "at": [
+        12
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "In the afternoon one bus goes out as 315 (poliklinika 13:12, 14:13, 15:42, via Chlebovice) and comes back as 316 (Palkovice, centrum 13:43, 14:45, 16:15, via Zelinkovice); the Simutrans line 316 is that round every 90. The short Pavlíkova – Riviéra trips (hourly 15:12–17:21) are 316 Riviéra. Both diversion timetables (to 12 Dec) run."
+  },
+  "318": {
+   "core": [
+    "Frýdek-Místek, Místek, poliklinika",
+    "Raškovice, hotel Ondráš",
+    "Krásná, Vyšní Mohelnice, hotel Visalaje"
+   ],
+   "sim": [
+    {
+     "name": "318",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, poliklinika",
+       "to": "Krásná, Vyšní Mohelnice, hotel Visalaje",
+       "at": "auto",
+       "core_to": "Raškovice, hotel Ondráš"
+      },
+      {
+       "fr": "Krásná, Vyšní Mohelnice, hotel Visalaje",
+       "to": "Frýdek-Místek, Místek, poliklinika",
+       "at": "auto",
+       "knot": "Raškovice, hotel Ondráš"
+      }
+     ]
+    }
+   ],
+   "note": "Poliklinika – Raškovice – Krásná, hotel Visalaje hourly at irregular minutes, timed so the bus passes Raškovice, hotel Ondráš on time; both ends set off their best fits (6 and 1 min) so two buses work it."
+  },
+  "351": {
+   "core": [
+    "Ostrava, Mor.Ostrava, Náměstí Republiky",
+    "Frýdek-Místek, Frýdek, autobusové nádraží",
+    "Morávka, Lipové"
+   ],
+   "sim": [
+    {
+     "name": "351",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "to": "Morávka, Lipové",
+       "at": "auto",
+       "knot": "Frýdek-Místek, Frýdek, autobusové nádraží"
+      },
+      {
+       "fr": "Morávka, Lipové",
+       "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "at": "auto",
+       "core_to": "Frýdek-Místek, Frýdek, autobusové nádraží"
+      }
+     ]
+    },
+    {
+     "name": "351 Bebek",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "to": "Morávka, Bebek",
+       "at": "auto",
+       "knot": "Frýdek-Místek, Frýdek, autobusové nádraží"
+      },
+      {
+       "fr": "Morávka, Bebek",
+       "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "at": "auto",
+       "core_to": "Frýdek-Místek, Frýdek, autobusové nádraží"
+      }
+     ]
+    }
+   ],
+   "note": "Ostrava – Frýdek – Dobrá – Raškovice – Morávka, Lipové hourly (Ostrava :43), timed so the bus passes Frýdek, autobusové nádraží on time; the Bebek trips every 3 h are 351 Bebek."
+  },
+  "354": {
+   "core": [
+    "Frýdek-Místek, Frýdek, autobusové nádraží",
+    "Ostrava, Mor.Ostrava, Náměstí Republiky"
+   ],
+   "sim": [
+    {
+     "name": "354",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Frýdek, autobusové nádraží",
+       "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "at": "auto"
+      },
+      {
+       "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "to": "Frýdek-Místek, Frýdek, autobusové nádraží",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Frýdek – Vratimov – Ostrava shift trips (Frýdek 14:05, Ostrava 5:00), every 480. Paskov, náměstí has no other line."
+  },
+  "355": {
+   "core": [
+    "Frýdek-Místek, Frýdek, autobusové nádraží",
+    "Mošnov, Airport nádraží"
+   ],
+   "sim": [
+    {
+     "name": "355",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Frýdek, autobusové nádraží",
+       "to": "Mošnov, Airport nádraží",
+       "at": "auto"
+      },
+      {
+       "fr": "Mošnov, Airport nádraží",
+       "to": "Frýdek-Místek, Frýdek, autobusové nádraží",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Frýdek – Příbor – Mošnov, Airport shift trips (12:51 / 14:17), every 480. The Příbor and Mošnov industrial zone stops have no other line."
+  },
+  "357": {
+   "core": [
+    "Frýdek-Místek, Frýdek, autobusové nádraží",
+    "Vojkovice, křižovatka k Dobraticím"
+   ],
+   "sim": [
+    {
+     "name": "357",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Frýdek, autobusové nádraží",
+       "to": "Vojkovice, křižovatka k Dobraticím",
+       "at": "auto"
+      },
+      {
+       "fr": "Vojkovice, křižovatka k Dobraticím",
+       "to": "Frýdek-Místek, Frýdek, autobusové nádraží",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Frýdek – Dobrá – Dobratice – Vojkovice every 4 h."
+  },
+  "358": {
+   "core": [
+    "Frýdek-Místek, Místek, Krytý bazén",
+    "Nošovice, PZ Hyundai - hlavní brána",
+    "Frýdek-Místek, Místek, Riviéra",
+    "Nošovice, PZ Hyundai Steel"
+   ],
+   "sim": [
+    {
+     "name": "358",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, Krytý bazén",
+       "to": "Nošovice, PZ Hyundai - hlavní brána",
+       "at": "auto"
+      },
+      {
+       "fr": "Nošovice, PZ Hyundai - hlavní brána",
+       "to": "Frýdek-Místek, Místek, Krytý bazén",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "358 Steel",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Frýdek-Místek, Místek, Riviéra",
+       "to": "Nošovice, PZ Hyundai Steel",
+       "at": [
+        "12:53"
+       ]
+      },
+      {
+       "fr": "Nošovice, PZ IZS",
+       "to": "Frýdek-Místek, Místek, Riviéra",
+       "at": [
+        "14:17"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Krytý bazén – Nošovice, Hyundai every 3 h (13:01 / 14:25); the Hyundai Steel trips (Riviéra 12:53, IZS 14:17) every 480 are 358 Steel."
+  },
+  "980": {
+   "core": [
+    "Ostrava, Mor.Ostrava, Náměstí Republiky",
+    "Frenštát p.Radh., u škol",
+    "Rožnov p.Radh., autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "980",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "to": "Rožnov p.Radh., autobusová stanice",
+       "at": "auto",
+       "core_to": "Frenštát p.Radh., u škol"
+      },
+      {
+       "fr": "Rožnov p.Radh., autobusová stanice",
+       "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "at": "auto",
+       "knot": "Frenštát p.Radh., u škol",
+       "stops_via": [
+        "Rožnov p.Radh., Na Kopově"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Ostrava – Frýdek – Frenštát – Rožnov every 30 in the afternoon (Ostrava :23 / :53, Rožnov :05 / :35), timed so the bus passes Frenštát, u škol on time; seven buses. Two short trips on Z-Group’s licence 883980 (Ostrava 14:05 → Frenštát, Frenštát 14:17 → Ostrava) are off the pattern."
+  },
+  "985": {
+   "core": [
+    "Ostrava, Mor.Ostrava, Náměstí Republiky",
+    "Frenštát p.Radh., u škol",
+    "Rožnov p.Radh., autobusová stanice"
+   ],
+   "sim": [
+    {
+     "name": "985",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Frenštát p.Radh., u škol",
+       "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "at": [
+        "12:47",
+        "14:42"
+       ],
+       "notvia": [
+        "Rožnov p.Radh., autobusová stanice"
+       ]
+      },
+      {
+       "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "to": "Frenštát p.Radh., u škol",
+       "at": [
+        "14:33",
+        "16:03"
+       ],
+       "notvia": [
+        "Rožnov p.Radh., autobusová stanice"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "985B",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "to": "Frenštát p.Radh., u škol",
+       "at": [
+        "15:03",
+        "15:33"
+       ],
+       "notvia": [
+        "Rožnov p.Radh., autobusová stanice"
+       ]
+      },
+      {
+       "fr": "Frenštát p.Radh., u škol",
+       "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "untimed": true
+      }
+     ]
+    },
+    {
+     "name": "985 Rožnov",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "to": "Rožnov p.Radh., autobusová stanice",
+       "at": "auto"
+      },
+      {
+       "fr": "Rožnov p.Radh., autobusová stanice",
+       "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Ostrava – Frýdek – Metylovice – Frenštát. In the afternoon the Frenštát short trips are a shift burst out of Ostrava every 30, 14:33 – 16:03, half of them on Z-Group’s licence 883985; few trips come back. The live map shows how the buses run: 32-1002 comes in from Frenštát at 12:47 and goes out at 14:33, and Z-Group 63-1011 comes in at 14:42 and goes out at 16:03. Those two rounds are 985, every 480 with two slots each way. The 15:03 (33-1015) and 15:33 (63-1005, which came in on 980 at 14:17) go out after other trips: 985B, out only with an empty return, as 543B on the Havířovsko/Karvinsko/Orlovsko sheet. The trips on to Rožnov every 2 h are 985 Rožnov (the Rožnov end set 20 min off for the shortest round)."
+  },
+  "340": {
+   "core": [
+    "Frýdlant n.Ost., železniční stanice",
+    "Frýdek-Místek, Frýdek, Revoluční",
+    "Ostrava, Mor.Ostrava, Náměstí Republiky"
+   ],
+   "sim": [
+    {
+     "name": "340",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Frýdlant n.Ost., železniční stanice",
+       "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "at": [
+        "12:06"
+       ]
+      },
+      {
+       "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
+       "to": "Frýdlant n.Ost., železniční stanice",
+       "at": [
+        "14:12"
+       ],
+       "core_to": "Frýdek-Místek, Frýdek, Revoluční"
+      }
+     ]
+    }
+   ],
+   "note": "Frýdlant – Pržno – Janovice – Frýdek-Místek – Vratimov – Ostrava: a few through trips a day (Frýdlant 12:06 and 20:08 to Ostrava; Ostrava 5:50, 14:12, 22:05 back), every 480 on the afternoon pair (Frýdlant 12:06, Ostrava 14:12, which ends at Frýdek, Revoluční). Modelled because Ostrava, Kunčice, nádraží Kunčice has no other afternoon line. The short Frýdlant – Místek, Anenská trips (14:20, 14:26, 15:06) are off the pattern."
+  },
+  "341": {
+   "core": [
+    "Frýdlant n.Ost., železniční stanice",
+    "Janovice, konečná"
+   ],
+   "sim": [
+    {
+     "name": "341",
+     "every": 90,
+     "legs": [
+      {
+       "fr": "Frýdlant n.Ost., železniční stanice",
+       "to": "Janovice, konečná",
+       "at": [
+        "16:34"
+       ]
+      },
+      {
+       "fr": "Janovice, konečná",
+       "to": "Frýdlant n.Ost., železniční stanice",
+       "at": [
+        "17:00"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Frýdlant – Pržno – Janovice every 1½ h with one bus: Frýdlant 16:34 (13:34, 15:04 …), Janovice 17:00 (12:30, 15:00 …); the bus turns at Janovice in 2 min, as it does in reality."
+  },
+  "342": {
+   "core": [
+    "Frýdlant n.Ost., železniční stanice",
+    "Kozlovice, střed"
+   ],
+   "sim": [
+    {
+     "name": "342",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdlant n.Ost., železniční stanice",
+       "to": "Kozlovice, střed",
+       "at": "auto"
+      },
+      {
+       "fr": "Kozlovice, střed",
+       "to": "Frýdlant n.Ost., železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Frýdlant – Metylovice – Lhotka – Kozlovice, about every 2 h at irregular minutes (Frýdlant 12:20, 14:45, 16:25; Kozlovice 13:44, 15:19, 16:49). One bus every 120 on the 16:25 / 16:49 pair."
+  },
+  "343": {
+   "core": [
+    "Frýdlant n.Ost., železniční stanice",
+    "Čeladná, restaurace Kněhyně",
+    "Čeladná, Podolánky, Plucnarka"
+   ],
+   "sim": [
+    {
+     "name": "343",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdlant n.Ost., železniční stanice",
+       "to": "Čeladná, restaurace Kněhyně",
+       "at": "auto"
+      },
+      {
+       "fr": "Čeladná, restaurace Kněhyně",
+       "to": "Frýdlant n.Ost., železniční stanice",
+       "at": "auto"
+      }
+     ]
+    },
+    {
+     "name": "343 Podolánky",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Frýdlant n.Ost., železniční stanice",
+       "to": "Čeladná, Podolánky, Plucnarka",
+       "at": [
+        "15:00"
+       ]
+      },
+      {
+       "fr": "Čeladná, Podolánky, Plucnarka",
+       "to": "Frýdlant n.Ost., železniční stanice",
+       "at": [
+        "15:35"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Frýdlant – Čeladná, restaurace Kněhyně every 1½ h (Frýdlant :20 / :50 pattern; 14:10 and 15:00 are off it). Half of the trips go on to Podolánky; Podolánky has no other line, so 343 Podolánky runs every 480 on the 15:00 / 15:35 trip (6:50 / 7:20 in the morning). The Čeladná station – Kněhyně short trips 17:20–19:40 are not a line of their own."
+  },
+  "344": {
+   "core": [
+    "Frýdlant n.Ost., železniční stanice",
+    "Raškovice, hotel Ondráš"
+   ],
+   "sim": [
+    {
+     "name": "344",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdlant n.Ost., železniční stanice",
+       "to": "Raškovice, hotel Ondráš",
+       "at": "auto"
+      },
+      {
+       "fr": "Raškovice, hotel Ondráš",
+       "to": "Frýdlant n.Ost., železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Frýdlant – Raškovice hourly (Frýdlant :05, Raškovice, hotel Ondráš :20); the trips beyond to Raškovice pošta and škola, the Hyundai shift trips (12:35 out, 14:25 back) and the Pržno trips use stops other lines serve, and are off the pattern."
+  },
+  "345": {
+   "core": [
+    "Frýdlant n.Ost., železniční stanice",
+    "Malenovice, parkoviště",
+    "Malenovice, Hutě"
+   ],
+   "sim": [
+    {
+     "name": "345",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Frýdlant n.Ost., železniční stanice",
+       "to": "Malenovice, parkoviště",
+       "at": [
+        55
+       ]
+      },
+      {
+       "fr": "Malenovice, parkoviště",
+       "to": "Frýdlant n.Ost., železniční stanice",
+       "at": [
+        25
+       ]
+      }
+     ]
+    },
+    {
+     "name": "345 Hutě",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Frýdlant n.Ost., železniční stanice",
+       "to": "Malenovice, Hutě",
+       "at": [
+        "15:00"
+       ]
+      },
+      {
+       "fr": "Malenovice, Hutě",
+       "to": "Frýdlant n.Ost., železniční stanice",
+       "at": [
+        "15:22"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Frýdlant – Malenovice, parkoviště hourly (:55 / :25), one bus. The trips on to Malenovice, Hutě are 345 Hutě every 480 (15:00 / 15:22; 6:55 / 7:12 in the morning): Hutě has no other line."
+  },
+  "346": {
+   "core": [
+    "Frýdlant n.Ost., železniční stanice"
+   ],
+   "sim": [
+    {
+     "name": "346",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Frýdlant n.Ost., železniční stanice",
+       "to": "Frýdlant n.Ost., železniční stanice",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Loop Frýdlant – Pstruží – Frýdlant about hourly (žst 13:54, 15:24, 17:20, 18:50 and from zahradnictví 12:47, 14:17, 15:47); one bus every 60 at :52."
+  },
+  "347": {
+   "core": [
+    "Frýdlant n.Ost., železniční stanice",
+    "Palkovice, transformátor",
+    "Palkovice, Tomis parkoviště"
+   ],
+   "sim": [
+    {
+     "name": "347",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Frýdlant n.Ost., železniční stanice",
+       "to": "Palkovice, transformátor",
+       "at": [
+        30
+       ]
+      },
+      {
+       "fr": "Palkovice, transformátor",
+       "to": "Frýdlant n.Ost., železniční stanice",
+       "knot": "Palkovice, Tomis parkoviště",
+       "at": [
+        57
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Frýdlant – Metylovice – Palkovice, transformátor about hourly at irregular minutes; one bus every 60, out :30, back :57 (the 14:25 → 14:57 and 15:30 → 15:57 rounds), timed at Palkovice, Tomis parkoviště on the way back. The evening trips end at Tomis parkoviště."
+  },
+  "348": {
+   "core": [
+    "Frýdlant n.Ost., železniční stanice",
+    "Ostravice, autobusová stanice",
+    "Bílá, zámeček"
+   ],
+   "sim": [
+    {
+     "name": "348",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Frýdlant n.Ost., železniční stanice",
+       "to": "Bílá, zámeček",
+       "at": [
+        53
+       ]
+      },
+      {
+       "fr": "Bílá, zámeček",
+       "to": "Frýdlant n.Ost., železniční stanice",
+       "at": [
+        16
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Frýdlant – Ostravice – Staré Hamry – Bílá, zámeček: hourly from Frýdlant at :53 in the afternoon (13:53, 14:53, 15:53), Bílá back :16 (15:16; 14:31 is off). Three buses, as the real ones (32-1105, 32-1104, 401) work it with 349. From 16:06 the line runs Bílá – Ostravice only (Bílá :06, Ostravice :34); those stops are all on the main line, so it has no line of its own."
+  },
+  "349": {
+   "core": [
+    "Bílá, zámeček",
+    "Bílá, Konečná, st.hr."
+   ],
+   "sim": [
+    {
+     "name": "349",
+     "every": "auto",
+     "legs": [
+      {
+       "fr": "Bílá, zámeček",
+       "to": "Bílá, Konečná, st.hr.",
+       "at": "auto"
+      },
+      {
+       "fr": "Bílá, Konečná, st.hr.",
+       "to": "Bílá, zámeček",
+       "at": "auto"
+      }
+     ]
+    }
+   ],
+   "note": "Bílá, zámeček – Bílá, Konečná (state border) every 1½ h (zámeček 16:36, Konečná 16:50; 13:08, 15:26, 19:06 are off the pattern). Konečná has no other line."
+  }
+ },
+ "towns": [
+  "Albrechtice",
+  "Baška",
+  "Bocanovice",
+  "Bruzovice",
+  "Brušperk",
+  "Bukovec",
+  "Bystřice",
+  "Bílá",
+  "Chotěbuz",
+  "Dobratice",
+  "Dobrá",
+  "Dolní Domaslavice",
+  "Dolní Lomná",
+  "Dolní Sklenov",
+  "Dolní Tošanovice",
+  "Frenštát p.Radh.",
+  "Fryčovice",
+  "Frýdek-Místek",
+  "Frýdlant n.O.",
+  "Frýdlant nad Ostravicí",
+  "Havířov",
+  "Hnojník",
+  "Horní Bludovice",
+  "Horní Domaslavice",
+  "Horní Lomná",
+  "Horní Sklenov",
+  "Horní Tošanovice",
+  "Hrádek",
+  "Hrčava",
+  "Hukvaldy",
+  "Jablunkov",
+  "Janovice",
+  "Karviná",
+  "Kaňovice",
+  "Komorní Lhotka",
+  "Kozlovice",
+  "Košařiska",
+  "Krásná",
+  "Kunčice p.O.",
+  "Lhotka",
+  "Lučina",
+  "Malenovice",
+  "Metylovice",
+  "Milíkov",
+  "Morávka",
+  "Mosty u Jablunkova",
+  "Mošnov",
+  "Myslík",
+  "Měrkovice",
+  "Nižní Lhoty",
+  "Nová Bělá",
+  "Nošovice",
+  "Návsí",
+  "Nýdek",
+  "Ostrava",
+  "Ostravice",
+  "Palkovice",
+  "Paskov",
+  "Pazderna",
+  "Pražmo",
+  "Pržno",
+  "Pstruží",
+  "Písek u Jablunkova",
+  "Písečná",
+  "Příbor",
+  "Raškovice",
+  "Ropice",
+  "Rožnov p.Radh.",
+  "Rychaltice",
+  "Sedliště",
+  "Sedlnice",
+  "Smilovice",
+  "Soběšovice",
+  "Staré Hamry",
+  "Staré Město",
+  "Staříč",
+  "Stonava",
+  "Střítež",
+  "Sviadnov",
+  "Tichá",
+  "Trojanovice",
+  "Těrlicko",
+  "Třanovice",
+  "Třinec",
+  "Vendryně",
+  "Vojkovice",
+  "Vratimov",
+  "Vyšní Lhoty",
+  "Václavovice",
+  "Vělopolí",
+  "Čeladná",
+  "Český Těšín",
+  "Řeka",
+  "Řepiště",
+  "Šenov",
+  "Žabeň",
+  "Žermanice"
+ ],
+ "towns_why": "Stop names in the town JDFs lack the town; these first parts are other municipalities (the regional JDFs, plus the villages the Frýdek-Místek town lines reach), so they keep their name, every other stop gets the town in front.",
+ "unmodelled": {
+  "763": "Třinec – Vendryně, Záolší: 5 trips a day (Třinec 12:37 and 13:37 out, school trips in the morning and at 15:06). Its stops are on 769 and the Třinec lines.",
+  "776": "Shift line Jablunkov – Třinec – Nošovice, Hyundai (Jablunkov 4:20, 12:20, 20:20; back 6:25, 14:25, 22:25). Its stops are all on other lines.",
+  "352": "Ostrava – Frýdek-Místek – Morávka: 8 trips a day at irregular times (13:28, 14:58, 17:22, 18:17 in the afternoon). Its stops are on 351, the Frýdek-Místek town lines and the Ostrava DPO lines (Řepiště, u školy on DPO 81).",
+  "385": "Shift line Ostrava, Náměstí Republiky – Nošovice, Hyundai (4:54, 12:54, 20:54; back 6:18, 14:15, 22:18, each in two buses). Its stops are all on other lines.",
+  "386": "Shift line Ostrava, Svinov – Nošovice, Hyundai (4:40, 12:40, 20:40; back 6:23, 14:19, 22:23). Its stops are on other lines; the Ostrava ones on DPO lines.",
+  "398": "No trips on Tuesday 20 Oct (Frýdlant – Ostravice – Staré Hamry, a licence with no weekday service).",
+  "315": "Its afternoon trips (poliklinika 13:12, 14:13, 15:42 → Palkovice, centrum, via Chlebovice) are the way out of the bus that comes back as 316 (centrum 13:43, 14:45, 16:15): they are the out leg of the 316 Simutrans line, with their stops. Nothing runs back on 315 after 11:17.",
+  "317": "Early-morning and late-evening trips (4:18–7:05, 20:35, 22:07) plus one at 14:05. Its stops are on other town lines.",
+  "319": "Three trips a day (7:00, 7:38, 23:01), none in the afternoon.",
+  "320": "No trips on Tuesdays.",
+  "705": "Třinec town loop every 15 min 8:00–12:30 (shopping hours), in the afternoon only 15:52, 17:28 and 19:45. Its stops are on other Třinec lines.",
+  "710": "Třinec works shift trips (4:58–7:05 and 14:08–14:13). Its stops are on other Třinec lines.",
+  "711": "Třinec, Sosna nemocnice shift trips (3:50–7:35 and 14:17). Its stops are on 701, 715 and other Třinec lines.",
+  "740": "Shift line Karviná – Český Těšín – Nošovice, Hyundai, every 8 h (Karviná 4:28, 12:28, 20:28; back 6:27, 14:27, 22:27), as 741 by another road. Its stops are all on other lines (738, 358 and the Karviná lines).",
+  "741": "Shift line Karviná – Český Těšín – Nošovice, Hyundai (Karviná 4:34, 12:34, 20:34; back 6:25, 14:25, 22:25). Its stops are all on other lines.",
+  "751": "Třinec – Hnojník – Třanovice – Dobrá – Frýdek-Místek: 2 trips each way in 13:00–19:00 (Třinec 14:27, 15:35; Frýdek 13:20, 14:30), at irregular times. Its stops are on 750, 745 and the Frýdek-Místek lines.",
+  "752": "Třinec – Frýdek-Místek express: 3 morning trips out, 12:20 and 14:15 back. Its stops are on 750 and the Frýdek-Místek lines.",
+  "725": "Český Těšín shift trips to Nová Tovární (5:41, 6:05, 13:52, 14:07). Nová Tovární is on 721 Mosty and 721/722 (diversion via Nová Tovární)."
+ },
+ "terminus_alias_why": "Třinec, autobusová stanice pod Kanadou is the bus station's other stand; trips start and end at either, so they are one terminal.",
+ "designed_same_area": true,
+ "plate_lookup": true,
+ "regular_not_diversion": {
+  "871731": "The diversion of 731 (28 Aug – 30 Nov 2026: Stonava, Důl ČSM-Jih, Důl ČSM-Sever and Bonkov rozcestí not served, Stonava, Bonkov instead) ends in six weeks, so the regular route is modelled (shared rule: short-term closures as the regular state; the same works as 582 on the Havířovsko/Karvinsko/Orlovsko sheet)."
+ },
+ "pak": {
+  "repo": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
+  "package": "VZ-ODIS-bus",
+  "packages": [
+   "VZ-ODIS-bus",
+   "VZ-MHDTrinec-bus",
+   "VZ-MHDCeskyTesin-bus",
+   "VZ-MHDFrydekMistek-bus"
+  ],
+  "why": "Pak session f3, 20 Oct 2026: regional buses take VZ-ODIS-bus; the town buses of Třinec, Český Těšín and Frýdek-Místek take their town packages. A regional bus (kraj logo) lent to a town line keeps its VZ-ODIS-bus object. Transdev Slezsko's 3ČSAD white-green (with or without the kraj logo) is 3csadbilozelena, the red-black ODIS scheme odiscervenocerna.",
+  "types": {},
+  "paints": [],
+  "special": {},
+  "rules": [
+   [
+    "*",
+    "SOR NS 12 electric",
+    "zelená metalíza",
+    "VZ-MHDFrydekMistek-SOR_NS_12_electric-zelenametaliza-SOR_NS_12_electric"
+   ],
+   [
+    "*",
+    "SOR NS 12 electric",
+    "polep",
+    "VZ-MHDFrydekMistek-SOR_NS_12_electric-frydekmistekpolep-SOR_NS_12_electric"
+   ],
+   [
+    "*",
+    "SOR NSG 12",
+    "polep",
+    "VZ-MHDFrydekMistek-SOR_NSG_12-frydekmistekpolep-SOR_NSG_12"
+   ],
+   [
+    "*",
+    "SOR BNG 12",
+    "",
+    "VZ-MHDFrydekMistek-SOR_BNG_12-3csadbilozelena-SOR_BNG_12"
+   ],
+   [
+    "*",
+    "Urbanway 12M CNG",
+    "",
+    "VZ-MHDFrydekMistek-Urbanway_12M_CNG-3csadbilozelena-Urbanway_12M_CNG"
+   ],
+   [
+    "*",
+    "Citywide LF 12M CNG",
+    "",
+    "VZ-MHDFrydekMistek-Citywide_LF_12M_CNG-3csadbilozelena-Citywide_LF_12M_CNG"
+   ],
+   [
+    "*",
+    "SOR NS 12",
+    "bílo-zelená",
+    "VZ-MHDTrinec-SOR_NS_12-trinecbilozelena-SOR_NS_12"
+   ],
+   [
+    "*",
+    "Perun 26 BB HE",
+    "",
+    "VZ-MHDTrinec-Perun_26BB_HE-trinecbilozelena-Perun_26BB_HE"
+   ],
+   [
+    "*",
+    "Iveco Urbanway 12M",
+    "bílo-zelená",
+    "VZ-MHDTrinec-Urbanway_12M-trinecbilozelena-Urbanway_12M"
+   ],
+   [
+    "*",
+    "Citywide LF 10,9M",
+    "",
+    "VZ-MHDCeskyTesin-Citywide_LF_10_9M-ceskytesinbilozluta-Citywide_LF_10_9M"
+   ],
+   [
+    "*",
+    "Crossway LE CITY 10,8M",
+    "",
+    "VZ-MHDCeskyTesin-Crossway_LE_City_10_8M-ceskytesinbilozluta-Crossway_LE_City_10_8M"
+   ],
+   [
+    "*",
+    "Dekstra LE 37",
+    "bílá",
+    "~VZ-ODIS-Dekstra_LE_37_CNG-3csadbilozelena-Dekstra_LE_37_CNG"
+   ],
+   [
+    "*",
+    "Crossway LE CITY 12M",
+    "světle modrá",
+    "~VZ-ODIS-Crossway_LE_City_12M-bila-Crossway_LE_City_12M"
+   ],
+   [
+    "*",
+    "Crossway LE CITY 12M",
+    "bílá",
+    "VZ-ODIS-Crossway_LE_City_12M-bila-Crossway_LE_City_12M"
+   ],
+   [
+    "mhd",
+    "Crossway LE CITY 12M",
+    "logo dopravy",
+    "VZ-ODIS-Crossway_LE_City_12M-3csadbilozelena-Crossway_LE_City_12M"
+   ],
+   [
+    "mhd",
+    "Crossway LE CITY 12M",
+    "3ČSAD",
+    "VZ-MHDFrydekMistek-Crossway_LE_City_12M-3csadbilozelena-Crossway_LE_City_12M"
+   ],
+   [
+    "*",
+    "Crossway LE LINE 12M NP",
+    "ODIS",
+    "VZ-ODIS-Crossway_LE_Line_12M_NP_2025-odiscervenocerna-Crossway_LE_Line_12M_NP_2025"
+   ],
+   [
+    "*",
+    "Crossway LE LINE 12M",
+    "3ČSAD",
+    "~VZ-ODIS-Crossway_LE_City_12M-3csadbilozelena-Crossway_LE_City_12M"
+   ],
+   [
+    "*",
+    "Crossway LE CITY 12M",
+    "3ČSAD",
+    "VZ-ODIS-Crossway_LE_City_12M-3csadbilozelena-Crossway_LE_City_12M"
+   ],
+   [
+    "*",
+    "Crossway LE 12M",
+    "3ČSAD",
+    "~VZ-ODIS-Crossway_LE_City_12M-3csadbilozelena-Crossway_LE_City_12M"
+   ],
+   [
+    "*",
+    "Citywide Suburban LE 15M CNG",
+    "3ČSAD",
+    "VZ-ODIS-Citywide_Suburban_LE_15M_CNG-3csadbilozelena-Citywide_Suburban_LE_15M_CNG"
+   ],
+   [
+    "*",
+    "Rošero",
+    "ODIS",
+    "VZ-ODIS-Rosero_First_CNG-odiscervenocerna-Rosero_First_CNG"
+   ],
+   [
+    "*",
+    "SOR CNG 10,5",
+    "3ČSAD",
+    "VZ-ODIS-SOR_CNG_10_5-3csadbilozelena-SOR_CNG_10_5"
+   ],
+   [
+    "*",
+    "SOR CNG 12",
+    "3ČSAD",
+    "VZ-ODIS-SOR_CNG_12-3csadbilozelena-SOR_CNG_12"
+   ],
+   [
+    "*",
+    "SOR ICNG 12,3",
+    "ODIS",
+    "VZ-ODIS-SOR_ICNG_12_3-odiscervenocerna-SOR_ICNG_12_3"
+   ],
+   [
+    "*",
+    "SOR ICNG 12",
+    "bílá",
+    "~VZ-ODIS-SOR_ICNG_12-transdev-SOR_ICNG_12"
+   ],
+   [
+    "*",
+    "Setra S 415 LE business",
+    "",
+    "VZ-ODIS-Setra_S_415_LE_business-bila-Setra_S_415_LE_business"
+   ]
+  ]
+ },
+ "texts": {
+  "eyebrow": "ODIS regional and town buses · Českotěšínsko · Frýdecko-Místecko · Frýdlantsko · Jablunkovsko–Třinecko · MHD Český Těšín · Frýdek-Místek · Třinec · vypravenost",
+  "lede_who": "The ODIS bus lines of four regional contract areas (Českotěšínsko, Frýdecko-Místecko, Frýdlantsko and Jablunkovsko–Třinecko, Transdev Slezsko) and of the town networks of Český Těšín and Třinec (ARRIVA autobusy) and Frýdek-Místek (Transdev Slezsko)",
+  "swap_places": "Třinec, Český Těšín, Jablunkov, Frýdek-Místek and Frýdlant",
+  "scope": "Licences with the area prefixes 871 (Českotěšínsko), 863 (Frýdecko-Místecko), 864 (Frýdlantsko), 861 (Jablunkovsko–Třinecko) of Transdev Slezsko, 865 (MHD Frýdek-Místek) of Transdev Slezsko and 875 (MHD Český Těšín) and 866 (MHD Třinec) of ARRIVA autobusy",
+  "scope_check": "The prefixes match the live map (provozovna Český Těšín, Frýdek-Místek (which runs Frýdecko-Místecko and Frýdlantsko), Jablunkov; ARRIVA Třinec) and the kraj’s list of contract areas.",
+  "buses_extra": " ARRIVA’s town buses and Z-Group’s buses on 980 and 985 are not in the Transdev register: their plates were looked up on seznam-autobusu.cz vehicle pages (01b_plates.py). The two Český Těšín buses with vanity plates, TESIN 001 and TESIN 004, are in the register as “001 TESIN” and “004 TESIN”: Scania Citywide LF 10,9M of 2018 in the town’s white-yellow livery.",
+  "search_example": "73-1104",
+  "unmodelled_intro": "Shift lines and sparse lines whose stops other lines already serve (method Step 8: a long-interval line only where it is a place’s only service), a line whose afternoon trips are part of another line’s round (315, in 316), and lines with no trips on the day.",
+  "depots": "Transdev Slezsko branches (provozovny) and ARRIVA’s Třinec garage, which runs both the Třinec and the Český Těšín town lines. A seen bus counts at the branch the live map reports for it; a designed bus at its home branch.",
+  "sources_extra": ", <a href=\"https://seznam-autobusu.cz/\">seznam-autobusu.cz vehicle pages</a> (ARRIVA)"
+ },
+ "network_state": [
+  [
+   "in",
+   "Four regional contract areas and three town networks",
+   "Českotěšínsko (licences 871xxx), Frýdecko-Místecko (863xxx), Frýdlantsko (864xxx, added 21 Oct) and Jablunkovsko–Třinecko (861xxx, one area) of Transdev Slezsko; the town lines of Frýdek-Místek (865xxx, Transdev Slezsko), Český Těšín (875xxx) and Třinec (866xxx), both ARRIVA autobusy. Each has its own section below."
+  ],
+  [
+   "in",
+   "Diversion timetables to the end of the timetable year",
+   "The CIS JŘ export has diversion versions valid on the vehicle day until 12 Dec 2026 for 770, 786, 787 (Třinec – Bystřice – Jablunkov), 315 and 316 (Palkovice: 315 skips Adámek, Podhůří and u Kožuchů), 704 and 716 (Třinec town lines; 716 runs 21 trips instead of 7, via Guty, škola and Kanada) and 721 and 722 (Český Těšín, via Nová Tovární, Walmark, točna and Tovární u trati). They run until the end of the timetable year, so they are modelled as they run."
+  ],
+  [
+   "out",
+   "Line 731: Stonava mines diversion (28 Aug – 30 Nov)",
+   "The diversion skips Stonava, Důl ČSM-Jih, Důl ČSM-Sever and Bonkov rozcestí. It ends in six weeks, so the regular route is modelled (shared rule: short works as the regular state), as for 582 on the Havířovsko/Karvinsko/Orlovsko sheet."
+  ],
+  [
+   "out",
+   "383, 387, 365 and 655",
+   "383 and 387 (Frýdecko-Místecko licences) stop at Ostrava, Hranečník and are on the Ostrava sheet (section All lines at Hranečník). 365 Havířov – Frýdek-Místek is on the Havířovsko/Karvinsko/Orlovsko regional sheet. 655 Frenštát – Trojanovice is on the Novojičínsko/Bílovecko sheet, where its main licence (883655, 41 of 45 trips) is. Their buses stay there."
+  ]
+ ],
+ "owner_checks": [
+  [
+   "731",
+   "the regular route is modelled; on the vehicle day 731 ran a diversion (28 Aug – 30 Nov) that skips the Stonava mines, as 582 on the Havířovsko/Karvinsko/Orlovsko sheet.",
+   "model the diversion as it ran (Stonava, Bonkov instead of Bonkov rozcestí and the two mines) until 30 Nov."
+  ],
+  [
+   "784",
+   "the back slot from Horní Přelač is :19, 6 min before the real :25, so the line needs two buses (two were seen).",
+   "keep the real :25 and give the line a third bus."
+  ],
+  [
+   "302 Tesco",
+   "the Tesco extension is a Riviéra – Tesco shuttle every 480 (one bus), so the every-30 trunk is not doubled at the shift changes.",
+   "run the Tesco trips from Frýdecká skládka as they do (every 480 at 13:12, 13:42, 14:12), two Simutrans buses leaving skládka together three times a shift."
+  ],
+  [
+   "706",
+   "Kojkovice and Osůvky are two hourly lines, as they run until 15:00; from 15:35 one trip an hour serves both.",
+   "model the later shape: one line every 60 via Borek and Osůvky to Kojkovice (one bus instead of two)."
+  ],
+  [
+   "985",
+   "the Frenštát short trips are the afternoon burst as the buses ran it: 985 every 480 (Frenštát 12:47, 14:42; Ostrava 14:33, 16:03; two buses) and 985B out only (Ostrava 15:03, 15:33; two buses, empty return), with Z-Group’s 883985 trips read in.",
+   "one two-way line every 90 as before (two buses), the burst trips off the pattern."
+  ]
+ ]
+}

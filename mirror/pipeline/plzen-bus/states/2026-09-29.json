@@ -1,0 +1,605 @@
+{
+ "title": "Plzeň Bus Peak Fleet",
+ "output": "Plzeň Bus Peak Fleet.html",
+ "vehicles_date": "2026-09-18",
+ "register_date": "2026-09-29",
+ "gtfs_date": "2026-09-29",
+ "service_date": "20260929",
+ "route_type": "3",
+ "traction": "bus",
+ "depot_stops": [
+  "Karlov"
+ ],
+ "holidays": [
+  "2026-09-28",
+  "2026-07-06",
+  "2026-07-05",
+  "2026-05-08",
+  "2026-05-01",
+  "2026-04-06",
+  "2026-04-03"
+ ],
+ "line_order": [
+  "20",
+  "21",
+  "24",
+  "25",
+  "26",
+  "27",
+  "28",
+  "29",
+  "30",
+  "31",
+  "32",
+  "33",
+  "34",
+  "35",
+  "38",
+  "39",
+  "40",
+  "41",
+  "42",
+  "51"
+ ],
+ "fit": {
+  "core": [
+   930,
+   990
+  ],
+  "overrides": {}
+ },
+ "turnaround_default": 3,
+ "links": {},
+ "simutrans_lines": [
+  {
+   "id": "20",
+   "name": "20 Mrakodrap – Bílá Hora",
+   "records": "20",
+   "entries": [
+    [
+     "20",
+     "Mrakodrap",
+     "Bílá Hora"
+    ],
+    [
+     "20",
+     "Bílá Hora",
+     "Mrakodrap"
+    ]
+   ]
+  },
+  {
+   "id": "21",
+   "name": "21 Bory – Litice",
+   "records": "21",
+   "entries": [
+    [
+     "21",
+     "Bory",
+     "Litice"
+    ],
+    [
+     "21",
+     "Litice",
+     "Bory"
+    ]
+   ]
+  },
+  {
+   "id": "24",
+   "name": "24 Bory – Zadní Skvrňany – Bolevec",
+   "records": "24",
+   "entries": [
+    [
+     "24",
+     "Bory",
+     "Bolevec"
+    ],
+    [
+     "24",
+     "Bolevec",
+     "Bory"
+    ]
+   ]
+  },
+  {
+   "id": "25",
+   "name": "25 Bory – Nemocnice Lochotín – Bolevec",
+   "records": "25",
+   "entries": [
+    [
+     "25",
+     "Bory",
+     "Bolevec"
+    ],
+    [
+     "25",
+     "Bolevec",
+     "Bory"
+    ]
+   ]
+  },
+  {
+   "id": "26",
+   "name": "26 Bory – Valcha – Lhota",
+   "records": "26",
+   "entries": [
+    [
+     "26",
+     "Bory",
+     "Lhota"
+    ],
+    [
+     "26",
+     "Lhota",
+     "Bory"
+    ]
+   ]
+  },
+  {
+   "id": "26N",
+   "name": "26 Bory – Nová Ves (branch)",
+   "records": "26",
+   "entries": [
+    [
+     "26",
+     "Bory",
+     "Nová Ves"
+    ],
+    [
+     "26",
+     "Nová Ves",
+     "Bory"
+    ]
+   ],
+   "kind": "branch",
+   "text": "The Nová Ves branch runs hourly (Bory :00, Nová Ves :23), alongside the Lhota trips of 26: 3 trips each way in 15:00–17:59, one in the 16:00 hour. Its own Simutrans line."
+  },
+  {
+   "id": "27",
+   "name": "27 Mrakodrap – Sídliště Košutka",
+   "records": "27",
+   "entries": [
+    [
+     "27",
+     "Mrakodrap",
+     "Sídliště Košutka"
+    ],
+    [
+     "27",
+     "Sídliště Košutka",
+     "Mrakodrap"
+    ]
+   ]
+  },
+  {
+   "id": "28",
+   "name": "28 CAN Husova – Bukovec / Papírna Bukovec (one line)",
+   "records": "28",
+   "kind": "circuit",
+   "entries": [
+    [
+     "28",
+     "CAN Husova",
+     "Papírna Bukovec"
+    ],
+    [
+     "28",
+     "Papírna Bukovec",
+     "CAN Husova"
+    ],
+    [
+     "28",
+     "CAN Husova",
+     "Bukovec"
+    ],
+    [
+     "28",
+     "Bukovec",
+     "CAN Husova"
+    ]
+   ],
+   "text": "Buses alternate between the two Bukovec termini: 5 of 6 Bukovec arrivals at CAN Husova go on to Papírna Bukovec, and 5 of 5 the other way. One Simutrans line with CAN Husova twice, every 30 each."
+  },
+  {
+   "id": "29",
+   "name": "29 Borská pole – Doubravka",
+   "records": "29",
+   "entries": [
+    [
+     "29",
+     "Borská pole",
+     "Doubravka"
+    ],
+    [
+     "29",
+     "Doubravka",
+     "Borská pole"
+    ]
+   ]
+  },
+  {
+   "id": "30",
+   "name": "30 Bory – Sídliště Košutka",
+   "records": "30",
+   "entries": [
+    [
+     "30",
+     "Bory",
+     "Sídliště Košutka"
+    ],
+    [
+     "30",
+     "Sídliště Košutka",
+     "Bory"
+    ]
+   ]
+  },
+  {
+   "id": "30P",
+   "name": "30 Borská pole – Sídliště Košutka (branch)",
+   "records": "30",
+   "entries": [
+    [
+     "30",
+     "Borská pole",
+     "Sídliště Košutka"
+    ],
+    [
+     "30",
+     "Sídliště Košutka",
+     "Borská pole"
+    ]
+   ],
+   "kind": "branch",
+   "text": "Every 30 min from Borská pole (:08, :38) and back from Sídliště Košutka (:25, :55), alongside the Bory pattern. Its own Simutrans line; in the 15:00–17:30 chaining its buses mix with the Bory trips at Sídliště Košutka, so the kurz split is a choice."
+  },
+  {
+   "id": "31",
+   "name": "31 Slovany – Hradiště",
+   "records": "31",
+   "entries": [
+    [
+     "31",
+     "Slovany",
+     "Hradiště"
+    ],
+    [
+     "31",
+     "Hradiště",
+     "Slovany"
+    ]
+   ]
+  },
+  {
+   "id": "32",
+   "name": "32 Bory – NC Černice",
+   "records": "32",
+   "entries": [
+    [
+     "32",
+     "Bory",
+     "NC Černice"
+    ],
+    [
+     "32",
+     "NC Černice",
+     "Bory"
+    ]
+   ]
+  },
+  {
+   "id": "33",
+   "name": "33 Hlavní nádraží → Nemocnice Lochotín → Sídliště Košutka, back as 40 by Lochotín",
+   "records": "33",
+   "kind": "pool",
+   "entries": [
+    [
+     "33",
+     "Hlavní nádraží",
+     "Sídliště Košutka"
+    ],
+    [
+     "40",
+     "Sídliště Košutka",
+     "Hlavní nádraží"
+    ]
+   ],
+   "text": "33 and 40 both run Hlavní nádraží – Sídliště Košutka, 33 by the Lochotín hospital and 40 by Lochotín. In the chaining 8 of 10 buses arriving at Sídliště Košutka as 33 leave as 40, and 8 of 11 arriving at Hlavní nádraží as 40 leave as 33 (and the other way round), so each bus runs a loop. Two Simutrans lines, one for each direction of the loop. Since 1 Sep all their buses are logged as 33 kurzy (40 has no record after 31 Aug), so the two lines share the 33 kurzy."
+  },
+  {
+   "id": "40",
+   "name": "40 Hlavní nádraží → Lochotín → Sídliště Košutka, back as 33 by Nemocnice Lochotín",
+   "records": "33",
+   "kind": "pool",
+   "entries": [
+    [
+     "40",
+     "Hlavní nádraží",
+     "Sídliště Košutka"
+    ],
+    [
+     "33",
+     "Sídliště Košutka",
+     "Hlavní nádraží"
+    ]
+   ],
+   "text": "The other direction of the 33 + 40 loop: out as 40 by Lochotín, back as 33 by the Lochotín hospital. It shares the 33 kurzy (see line 33)."
+  },
+  {
+   "id": "34",
+   "name": "34 Okounová – Orlík",
+   "records": "34",
+   "entries": [
+    [
+     "34",
+     "Okounová",
+     "Orlík"
+    ],
+    [
+     "34",
+     "Orlík",
+     "Okounová"
+    ]
+   ]
+  },
+  {
+   "id": "35",
+   "name": "35 Dolní Vlkýš – Malesice",
+   "records": "35",
+   "entries": [
+    [
+     "35",
+     "Dolní Vlkýš",
+     "Malesice"
+    ],
+    [
+     "35",
+     "Malesice",
+     "Dolní Vlkýš"
+    ]
+   ]
+  },
+  {
+   "id": "38",
+   "name": "38 Doubravka – Červený Hrádek",
+   "records": "38",
+   "entries": [
+    [
+     "38",
+     "Doubravka",
+     "Červený Hrádek"
+    ],
+    [
+     "38",
+     "Červený Hrádek",
+     "Doubravka"
+    ]
+   ]
+  },
+  {
+   "id": "39",
+   "name": "39 Bory – Výsluní – Bory (circular)",
+   "records": "39",
+   "entries": [
+    [
+     "39",
+     "Bory",
+     "Bory"
+    ]
+   ]
+  },
+  {
+   "id": "41",
+   "name": "41 CAN Husova – Vinice",
+   "records": "41",
+   "entries": [
+    [
+     "41",
+     "CAN Husova",
+     "Vinice"
+    ],
+    [
+     "41",
+     "Vinice",
+     "CAN Husova"
+    ]
+   ]
+  },
+  {
+   "id": "41K",
+   "name": "41 Vinice – Křimice (branch)",
+   "records": "41",
+   "entries": [
+    [
+     "41",
+     "Vinice",
+     "Křimice"
+    ],
+    [
+     "41",
+     "Křimice",
+     "Vinice"
+    ]
+   ],
+   "kind": "branch",
+   "text": "Every 30 min between Vinice and Křimice (via CAN Husova), alongside the Vinice – CAN Husova pattern. Its own Simutrans line; the kurz split is a choice."
+  },
+  {
+   "id": "42",
+   "name": "42 Bory – Špačková – Lhota",
+   "records": "26",
+   "entries": [
+    [
+     "42",
+     "Bory",
+     "Lhota"
+    ],
+    [
+     "42",
+     "Lhota",
+     "Bory"
+    ]
+   ],
+   "kind": "pool",
+   "text": "Inferred, not confirmed: seznam-autobusu.cz has no 42 record since December 2024 (one in all), while 26 is logged with 5 weekday kurzy although 26 itself needs only 2 buses in the peak. Both lines run Bory – Lhota (26 by Valcha, 42 by Špačková), so 42 is taken to run on 26 kurzy, the way DPMB files several Brno lines under another number. The 26 kurzy are shared out by need: 42 takes the highest numbers."
+  },
+  {
+   "id": "51",
+   "name": "51 Slovany – Starý Plzenec, Vilová čtvrť",
+   "records": "51",
+   "entries": [
+    [
+     "51",
+     "Slovany",
+     "Starý Plzenec, Vilová čtvrť"
+    ],
+    [
+     "51",
+     "Starý Plzenec, Vilová čtvrť",
+     "Slovany"
+    ]
+   ]
+  }
+ ],
+ "fleet": {
+  "secondary": [],
+  "secondary_why": "",
+  "note_overrides": {}
+ },
+ "depots": [
+  "Karlov"
+ ],
+ "garages": {
+  "Kar": "Karlov"
+ },
+ "accent": {
+  "light": [
+   "#c4161c",
+   "#f8e3e4"
+  ],
+  "dark": [
+   "#e4383e",
+   "#3d1c1e"
+  ]
+ },
+ "words": {
+  "vehicle": "bus",
+  "vehicles": "buses",
+  "Vehicle": "Bus",
+  "Vehicles": "Buses",
+  "example": "625",
+  "depot_prefix": "Garage "
+ },
+ "pak": {
+  "package": "VZ-PMDP-bus",
+  "other_package": "VZ-Plzen-bus",
+  "articulated_style": "AB",
+  "checkouts": [
+   "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
+   "C:/Users/vojte/Developer/simutrans-custom-czech-pak128-mhd",
+   "C:/Users/vojte/Developer/simutrans-custom-czech-pak128-pidops"
+  ],
+  "liveries": {
+   "PMDP, červeno-černo-bílá": "pmdpcervenocernobila",
+   "PMDP, červeno-bílá": "pmdpcervenobila"
+  },
+  "default_livery": "pmdpcervenobila",
+  "livery_names": {
+   "pmdpcervenobila": "PMDP red-white",
+   "pmdpcervenocernobila": "PMDP red-black-white"
+  },
+  "types": {
+   "SOR NB 12": {
+    "token": "SOR_NB_12",
+    "core": "SOR_NB_12",
+    "m": 12,
+    "len": 8
+   },
+   "SOR NS 12": {
+    "token": "SOR_NS_12",
+    "core": "SOR_NS_12",
+    "m": 12,
+    "len": 8
+   },
+   "SOR NS 18": {
+    "token": "SOR_NS_18",
+    "core": "SOR_NS_18",
+    "m": 18,
+    "len": 16,
+    "articulated": true
+   },
+   "Solaris Urbino 18 III": {
+    "token": "Urbino_18_III",
+    "core": "Urbino_18_III",
+    "m": 18,
+    "len": 16,
+    "articulated": true
+   },
+   "Solaris Urbino 18 IV": {
+    "token": "Urbino_18_IV",
+    "core": "Urbino_18_IV",
+    "m": 18,
+    "len": 16,
+    "articulated": true
+   },
+   "Isuzu NOVO Citi Life Class I.": {
+    "token": "NovoCiti_Life",
+    "core": "NovoCiti_Life",
+    "m": 8,
+    "len": 5
+   },
+   "ROŠERO - P First FCLLI": {
+    "token": "RoseroFirst",
+    "core": "RoseroFirst",
+    "m": 8,
+    "len": 5
+   },
+   "Renault Master": {
+    "token": "Renault_Master",
+    "core": "Renault_Master",
+    "m": 7,
+    "len": 5
+   }
+  },
+  "request_intro": "PMDP (Plzeňské městské dopravní podniky) buses. There is no VZ-PMDP-bus package yet: every object below is new. Two PMDP liveries: the older red-white (červeno-bílá: SOR NB 12, Solaris Urbino 18 III and IV, the Isuzu and Rošero midibuses) and the newer red-black-white (červeno-černo-bílá: SOR NS 12 and NS 18). Advert wraps (CVR ...) map to the type's normal livery. Articulated buses are two objects, front -A and rear -B, as VZ-DPBrno-bus Urbino_18. No subcontractor ran a PMDP line in the peak on the vehicle day, so there is no VZ-Plzen-bus request.",
+  "request_notes": "Lengths: SOR NB 12 and NS 12 about 12 m; SOR NS 18 and Solaris Urbino 18 about 18 m; Isuzu NOVO Citi Life and Rošero First FCLLI midibuses about 7.6–7.7 m."
+ },
+ "turn": [
+  "28|CAN Husova"
+ ],
+ "texts": {
+  "eyebrow": "Plzeň · PMDP buses · Simutrans reference",
+  "lede": "Every PMDP city bus line in the afternoon peak of the timetable in force on Tue 29 Sep 2026, with the buses logged on Fri 18 Sep 2026 (the latest complete Friday; 23–25 Sep have almost no records), the Simutrans schedule for each line, and the pak128 object for every bus.",
+  "network": "PMDP GTFS (jizdnirady.pmdp.cz/jr/gtfs, fetched 29 Sep 2026), bus routes (route_type 3), service day Tue 29 Sep 2026. Every PMDP bus line with afternoon-peak service is included. Departures are the trips starting from each terminus between 16:00 and 16:59. Headway is the median gap between 15:00 and 18:00, runtime the average scheduled time. Patterns with fewer than 3 trips in 15:00–18:00 are left out.",
+  "not_modelled": "Lines without afternoon-peak service: 23, 36, 37, 43, 50 and 58 have no trip in 15:00–18:00, 56 (Vinice – Město Touškov) has one each way, and the night lines N1–N6, N11 and N12 run at night only. No other operator runs a PMDP line in the afternoon peak: every bus logged on 18 Sep is a PMDP bus.",
+  "schedule": "Values to type into the fork’s Scheduling tab, on the stop entries listed for each Simutrans line. Units are calendar minutes; the offset is minutes after midnight, modulo the interval; Leave up to stays automatic. Every entry here is a terminus where the bus turns, so every departure is set 1 min before the timetable departure to leave the turning point on time: offset and each Also at value are the real minute − 1 (mod the interval), with the real minutes shown underneath. A timing point the bus passed without turning would keep the real minute; there is none on these lines. Put the timetable on the entry the bus leaves from. Branches are separate lines (26 Nová Ves, 30 Borská pole, 41 Křimice); 28 alternates between its two Bukovec termini and is one line with CAN Husova twice; 33 and 40 form a loop run in both directions, one Simutrans line per direction. Each line is fitted at one rate, the number of 16:00–16:59 departures most of its entries share. Where the afternoon timetable is irregular, the entry is marked approximate with its largest deviation and the real 16:xx minutes. Depot runs are not modelled.",
+  "need": "Buses needed at 16:00: follow a bus leaving the first entry around 16:00 through every leg of its line, taking at each terminus the first departure at least 3 min after arriving, or less where the timetable itself turns faster; a round trip waiting longer than the line’s interval (at least 30 min) is skipped. The need is never below the most buses on the road at once between 16:00 and 16:59 per PMDP record line (each trip holding its bus until arrival plus min(3 min, the terminus’s shortest timetabled turnaround)); the extra goes to the main line. Where more buses were logged than the need, exactly the need stays counted and the rest is marked not needed (dimmed, left out of every count, the garage and the pak totals): one of every type of the line first, then afternoon-only kurzy and the highest kurz numbers are dropped first (user rule, 29 Sep 2026; pipeline/brno-trolleybus common.mark_spares). Where fewer were logged, real cars from the line’s own history are designed in; on 18 Sep no bus line was short once 40 and 42 are taken with the kurzy they run on.",
+  "lines": "One row per kurz out in the afternoon peak on Fri 18 Sep 2026, grouped by Simutrans line. Each bus shows its number and garage, its full type and length, and the pak128 core (requested = the object is not in the pak yet). Kurz numbers are PMDP’s, written record line / kurz. No note on the record means the bus was out all day; ráno i odpoledne is a split duty out in both peaks; odpoledne is the afternoon bus of a kurz whose morning bus is listed under Not counted. Bus and trolleybus numbers overlap in Plzeň (559 is both a SOR NB 12 and a Škoda 26 Tr).",
+  "pak": "Each type counted in the peak, mapped to the object the VZ pak session is asked to make in VZ-PMDP-bus. There is no PMDP bus package yet, so every object is requested, never a stand-in from another city. Full names follow VZ-PMDP-<type>-<livery>-<core>; an articulated bus is two objects, front -A and rear -B, and the lists show the first core only. The core shows the livery where a type has objects in two liveries. Car units per vehicle (16 = one tile). Advert wraps map to the type’s normal livery. The request list is pipeline/plzen-bus/pak_request.md.",
+  "depots": "PMDP keeps all its buses at the Karlov garage (shared with the trolleybuses), by the seznam-autobusu.cz register read on 29 Sep 2026.",
+  "termini": "Every terminus buses leave from between 16:00 and 16:59, busiest first.",
+  "method": [
+   [
+    "Which day",
+    "The network is the timetable in force on Tue 29 Sep 2026 (PMDP GTFS, service day 29 Sep). The buses are from Fri 18 Sep 2026: seznam-autobusu.cz has 0–4 bus records on 23, 24, 25 and 29 Sep, and 28 Sep was a holiday, so 18 Sep is the latest complete Friday (Mon 21 and Tue 22 Sep are complete too). The Plzeň tram and trolleybus sheets use the same day."
+   ],
+   [
+    "Buses",
+    "seznam-autobusu.cz vypravenost (mhd-plzen), one list per line, e.g. <a href=\"https://seznam-autobusu.cz/vypravenost/mhd-plzen/vypis?datum=2026-09-18&amp;linka=30\">line 30 on 18 Sep</a>. 40 has no record since 31 Aug and 42 none since December 2024: their buses are taken from the 33 and 26 kurzy (see those cards). Line history for designed buses: vypis?linka=N&amp;since=…, stored in pipeline/plzen-trolleybus/data/raw/history."
+   ],
+   [
+    "Types, garage, liveries",
+    "seznam-autobusu.cz fleet register of PMDP (buses in service), read 29 Sep 2026, keyed by the site’s car id."
+   ],
+   [
+    "Simutrans schedule",
+    "Fitted in whole calendar minutes with the fork’s Departure every / Offset / Also at fields, using the shared rule in pipeline/README.md (core 15:30–16:30, longest exact run, simplest pattern, one rate per line)."
+   ],
+   [
+    "Rebuild",
+    "Generated by pipeline/plzen-bus (state “2026-09-29”), which runs the Plzeň trolleybus pipeline’s scripts (pipeline/plzen-trolleybus/scripts, with --base ../../plzen-bus) on the raw data stored there; see pipeline/plzen-bus/README.md."
+   ]
+  ]
+ }
+}

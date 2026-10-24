@@ -1,0 +1,59 @@
+<title>S49 Hostivař Roztoky</title>
+<style>
+/* Layout: one plain column, the same tables as in chat. */
+:root{
+  --bg:#f6f7f8; --fg:#1d2125; --muted:#66707a; --rule:#d8dde2; --head:#eceff2; --accent:#1f5f8b; --mark:#fff2cc; --mark-fg:#6b4d00;
+  --font:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --mono:Consolas,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16191c; --fg:#e4e8ec; --muted:#97a1ab; --rule:#30363c; --head:#22272c; --accent:#7ab8e6; --mark:#3a3015; --mark-fg:#f0d58a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16191c; --fg:#e4e8ec; --muted:#97a1ab; --rule:#30363c; --head:#22272c; --accent:#7ab8e6; --mark:#3a3015; --mark-fg:#f0d58a;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--font);padding-inline:16px;padding-block:24px 64px}
+main{max-width:920px;margin-inline:auto;display:flex;flex-direction:column;gap:14px}
+h1{font-size:28px;margin:0;text-wrap:balance}
+h2{font-size:22px;margin:30px 0 0;padding-top:14px;border-top:2px solid var(--accent);text-wrap:balance}
+h3{font-size:18px;margin:18px 0 0;text-wrap:balance}
+h4{font-size:15px;margin:6px 0 0}
+p,ul{margin:0}
+ul{padding-inline-start:20px;display:flex;flex-direction:column;gap:3px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+nav a{color:var(--accent)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 10px;border:1px solid var(--rule);vertical-align:top}
+thead th{background:var(--head);font-weight:600;white-space:nowrap}
+td.n,th.n{text-align:right;font-family:var(--mono);white-space:nowrap}
+.t{font-family:var(--mono);white-space:nowrap}
+tr.total td{font-weight:700}
+.stations{line-height:1.7}
+.wait{background:var(--mark);color:var(--mark-fg);padding:0 4px;border-radius:3px;font-weight:600}
+.fix{background:var(--mark);color:var(--mark-fg);padding:8px 12px;border-radius:6px}
+</style>
+<main>
+<h1>S49 · Praha-Hostivař – Praha-Libeň – Roztoky u Prahy</h1>
+<p class="muted">Simutrans design for the workday S49 (PID). Times are real JR2026 times from the national CIS JŘ timetable, for trains that run on all five days Mon–Fri 5–9 October 2026.</p>
+<p>Notation: every 30, the offset is the minute of the first departure in each half hour. (x) = request stop. "Leave up to" is automatic.</p>
+<nav><a href="#vehicles">Vehicles</a><a href="#s49">S49</a><a href="#coverage">Every train</a><a href="#notmodelled">Not modelled</a></nav>
+<h2 id="vehicles">Vehicles</h2><div class="scroll"><table><thead><tr><th>Line</th><th>Route</th><th class="n">Every</th><th class="n">Round trip</th><th class="n">Vehicles</th></tr></thead><tbody><tr><td><a href="#s49">S49</a></td><td>Praha-Hostivař – Roztoky u Prahy</td><td class="n">30</td><td class="n">1 h 30 min</td><td class="n">3</td></tr><tr class="total"><td colspan="4">S49 Praha-Hostivař – Roztoky u Prahy</td><td class="n">3</td></tr><tr class="total"><td colspan="4">All lines</td><td class="n">3</td></tr></tbody></table></div>
+<p class="small muted">Vehicles = round trip ÷ interval. A train waits at the terminus for its line's next slot, so the round trip is a whole number of intervals.</p>
+<h2>S49 Praha-Hostivař – Roztoky u Prahy</h2><ul><li>S49 crosses Praha without Praha hl. n.: Praha-Hostivař – Praha-Malešice – Praha-Libeň on the freight line, then the main line to Holešovice and up the Vltava to Roztoky u Prahy.</li><li>The real R49 afternoon trains to Praha-Holešovice (archived R49 sheet) use the same Hostivař – Malešice – Libeň link.</li></ul>
+<h3 id="s49">S49 · Praha-Hostivař – Roztoky u Prahy · 3 vehicles</h3>
+<p class="stations"><b>Stations:</b> Praha-Hostivař – Praha-Libeň – Praha-Holešovice – Praha-Podbaba – Praha-Sedlec – Roztoky u Prahy, then the same back.</p>
+<h4>Timetable entries</h4><div class="scroll"><table><thead><tr><th>Stop</th><th>Direction</th><th class="n">Departure every</th><th class="n">Offset</th><th>Real time</th><th>Stay</th></tr></thead><tbody><tr><td>Praha-Hostivař</td><td>towards Roztoky u Prahy</td><td class="n">30</td><td class="n">3</td><td class="t">:03 and :33 every hour</td><td>terminus, 20 min</td></tr><tr><td>Roztoky u Prahy</td><td>towards Praha-Hostivař</td><td class="n">30</td><td class="n">15</td><td class="t">:15 and :45 every hour</td><td>terminus, 12 min</td></tr></tbody></table></div>
+<h4>Round trip (1 h 30 min, so 3 vehicles at every 30)</h4><div class="scroll"><table><thead><tr><th>Station</th><th class="n">Arrives</th><th class="n">Departs</th></tr></thead><tbody><tr><td>Praha-Hostivař</td><td class="n"></td><td class="n">16:03</td></tr><tr class="wait"><td>Roztoky u Prahy</td><td class="n">16:33</td><td class="n">16:45</td></tr><tr class="wait"><td>Praha-Hostivař</td><td class="n">17:13</td><td class="n">17:33</td></tr></tbody></table></div>
+<ul class="small"><li>PID S49. In the afternoon (from Praha-Hostivař 13:33 to 18:33, from Roztoky 13:45 to 18:15) a train runs every 30 min the whole way: Praha-Hostivař :03 and :33, Roztoky u Prahy :15 and :45. The morning peak is the same (Praha-Hostivař 5:33 to 8:33). The game runs that pattern all day.</li><li>Three vehicles. It turns in 12 min at Roztoky u Prahy (in :33 / :00, out :45 / :15) and 20 min at Praha-Hostivař (in :13 / :43, out :33 / :03), the real minutes.</li><li>Route: from Praha-Hostivař via Praha-Malešice (no stop) to Praha-Libeň, then Praha-Holešovice, Praha-Podbaba, Praha-Sedlec and Roztoky u Prahy. 30 min end to end. It does not call at Praha hl. n.</li><li>Interval 30: the offset is the minute of the first departure in each half hour (3 means :03 and :33), and "Leave up to" stays automatic. Only the two termini are timed; no stop has a stay of 5 min or more.</li><li>Vehicles: vagonweb.cz has no composition for the S49 train numbers (it lists only named and long-distance trains on these lines), so the unit type is open.</li></ul>
+<p class="small muted">Real workday trains. From Praha-Hostivař to Roztoky u Prahy: 5:33 (Os 28102), 6:03 (Os 28104), 6:33 (Os 28106), 7:03 (Os 28108), 7:33 (Os 28110), 8:03 (Os 28112), 8:33 (Os 28114), 9:33 (Os 28118), 10:33 (Os 28122), 11:33 (Os 28126), 12:33 (Os 28130), 13:33 (Os 28134), 14:03 (Os 28136), 14:33 (Os 28138), 15:03 (Os 28140), 15:33 (Os 28142), 16:03 (Os 28144), 16:33 (Os 28146), 17:03 (Os 28148), 17:33 (Os 28150), 18:03 (Os 28152), 18:33 (Os 28154), 19:33 (Os 28158), 20:33 (Os 28162), 21:33 (Os 28166). From Roztoky u Prahy to Praha-Hostivař: 5:15 (Os 28101), 5:45 (Os 28103), 6:15 (Os 28105), 6:45 (Os 28107), 7:15 (Os 28109), 7:45 (Os 28111), 8:15 (Os 28113), 9:15 (Os 28117), 10:15 (Os 28121), 11:15 (Os 28125), 12:15 (Os 28129), 13:15 (Os 28133), 13:45 (Os 28135), 14:15 (Os 28137), 14:45 (Os 28139), 15:15 (Os 28141), 15:45 (Os 28143), 16:15 (Os 28145), 16:45 (Os 28147), 17:15 (Os 28149), 17:45 (Os 28151), 18:15 (Os 28153), 19:15 (Os 28157), 20:15 (Os 28161), 21:15 (Os 28165).</p>
+<h2 id="coverage">Every workday train on these lines</h2><p class="small muted">Each row is a stretch of these lines that real workday trains run, with how many trains a day and where they really start and end. Every stretch is either modelled or listed under Not modelled.</p><div class="scroll"><table><thead><tr><th>Stretch</th><th class="n">Trains</th><th>Real ends</th><th>In the game</th></tr></thead><tbody><tr><td>Roztoky u Prahy – Praha-Hostivař</td><td class="n">25</td><td>Roztoky u Prahy – Praha-Hostivař</td><td>modelled</td></tr><tr><td>Praha-Hostivař – Roztoky u Prahy</td><td class="n">25</td><td>Praha-Hostivař – Roztoky u Prahy</td><td>modelled</td></tr><tr><td>Praha-Libeň – Roztoky u Prahy</td><td class="n">9</td><td>Praha-Libeň – Roztoky u Prahy</td><td>not modelled (listed)</td></tr><tr><td>Roztoky u Prahy – Praha-Libeň</td><td class="n">9</td><td>Roztoky u Prahy – Praha-Libeň</td><td>not modelled (listed)</td></tr></tbody></table></div>
+<h2 id="notmodelled">Not modelled</h2><ul><li><b>Off-peak and evening:</b> outside the afternoon S49 runs every 30 min only between Praha-Libeň and Roztoky. Every other train turns at Libeň (Libeň :17 → Roztoky :33, Roztoky :45 → Libeň :01), and only the hourly :33 / :15 trains run to and from Praha-Hostivař. The game runs the afternoon pattern all day, so these short trains are not a line of their own. Also the first train, Praha-Libeň 5:17 – Roztoky.</li><li><b>Other trains</b> on Praha-Libeň – Praha-Holešovice – Roztoky u Prahy (S4, S41, R and Ex towards Kralupy and Děčín) and through Praha-Malešice (R49 afternoon trains to Holešovice): not part of this sheet.</li></ul>
+</main>

@@ -1,0 +1,1594 @@
+{
+  "city": "Ostrava",
+  "mode": "bus",
+  "operator": "Dopravní podnik Ostrava a.s. (DPO), IČO 61974757",
+  "title": "Ostrava Bus Vypravenost",
+  "output_html": "Ostrava Bus Vypravenost.html",
+  "artifact_url": "https://claude.ai/artifact/6rNwavbbnG4H2aJVZPNx8R",
+  "snapshot": "2026-09-29",
+  "vehicle_day": "2026-09-30",
+  "vehicle_day_label": "středa 30. 9. 2026",
+  "vehicle_day_label_en": "Wednesday 30 Sep 2026",
+  "network_state_day": "2026-09-30",
+  "network_state_label": "30 Sep 2026",
+  "peak_minute": 960,
+  "peak_label": "16:00",
+  "jdf": {
+    "url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
+    "export_label": "CIS JŘ bus JDF export of 28 Sep 2026",
+    "operator_ic": "61974757",
+    "line_prefix": "915",
+    "exclude": {}
+  },
+  "fleet": {
+    "carrier_id": 133,
+    "list_urls": {
+      "p": "https://seznam-autobusu.cz/seznam?prov=1&trakce=autobus&iddopravce=133&vcetneSluzebnich=1",
+      "e_p": "https://seznam-autobusu.cz/seznam?prov=1&trakce=elektrobus&iddopravce=133&vcetneSluzebnich=1"
+    },
+    "depots": {
+      "AH": "Garáže Hranečník",
+      "AP": "Garáže Poruba"
+    }
+  },
+  "records": {
+    "url": "https://seznam-autobusu.cz/vypravenost/odis/vypis?datum={date}",
+    "days": [
+      "2026-09-30"
+    ]
+  },
+  "fit": {
+    "window": [
+      900,
+      1080
+    ],
+    "core": [
+      930,
+      990
+    ],
+    "lo": 780,
+    "hi": 1200
+  },
+  "cycle_t0": 960,
+  "cycle_lay": 3,
+  "table_window": [
+    900,
+    1020
+  ],
+  "branch_rule": {
+    "window": [
+      900,
+      1080
+    ],
+    "min_trips": 3,
+    "hour": [
+      960,
+      1020
+    ],
+    "afternoon": [
+      780,
+      1140
+    ],
+    "afternoon_min": 3,
+    "afternoon_why": "Owner, 20 Oct 2026: also model regular afternoon branches that are not busy at 16:00 itself (23 to Bohumín, Záblatí, střed every 60-80 min 13:00-19:00): >= 3 trips each way in 13:00-19:00."
+  },
+  "depot_stop_words": [
+    "vozovna",
+    "garáže",
+    "dílny DP"
+  ],
+  "all_termini_are_loops": true,
+  "stop_name_strip_prefix": "Ostrava,",
+  "stop_name_fixed": {
+    "hlavní nádraží": "Hlavní nádraží",
+    "Poruba,vozovna": "Poruba, vozovna",
+    "Poruba,Vřesinská": "Poruba, Vřesinská",
+    "Budišovice,Zátiší": "Budišovice, Zátiší",
+    "Krásné Pole,": "Krásné Pole"
+  },
+  "stop_name_expansions": [
+    [
+      "rozc.Píšť",
+      "rozcestí Píšť"
+    ],
+    [
+      "rozc.Štípky",
+      "rozcestí Štípky"
+    ],
+    [
+      "rozc.k dolu",
+      "rozcestí k dolu"
+    ],
+    [
+      "rozc.",
+      "rozcestí"
+    ],
+    [
+      "aut.nádr.",
+      "autobusové nádraží"
+    ],
+    [
+      "sídl.OKD",
+      "sídliště OKD"
+    ],
+    [
+      "kult.dům",
+      "kulturní dům"
+    ],
+    [
+      "PZ jih",
+      "průmyslová zóna jih"
+    ],
+    [
+      "PZ sever",
+      "průmyslová zóna sever"
+    ],
+    [
+      "PZ střed",
+      "průmyslová zóna střed"
+    ],
+    [
+      "PZ Dubí",
+      "průmyslová zóna Dubí"
+    ],
+    [
+      "PZ Rudná",
+      "průmyslová zóna Rudná"
+    ],
+    [
+      "Poruba, PZ",
+      "Poruba, průmyslová zóna"
+    ],
+    [
+      "Mar.Hory,",
+      "Mariánské Hory,"
+    ],
+    [
+      "Mar.Hory",
+      "Mariánské Hory"
+    ],
+    [
+      "Chem.závody osada",
+      "Chemické závody osada"
+    ],
+    [
+      "Pomník RA",
+      "Pomník Rudé armády"
+    ],
+    [
+      "žel.zast.",
+      "železniční zastávka"
+    ],
+    [
+      "žel.st.střed",
+      "železniční stanice Ostrava-střed"
+    ],
+    [
+      "Alšovo nám.",
+      "Alšovo náměstí"
+    ],
+    [
+      "Nezvalovo nám.",
+      "Nezvalovo náměstí"
+    ],
+    [
+      "náměstí B.Němcové",
+      "náměstí Boženy Němcové"
+    ],
+    [
+      "nám.J.z Poděbrad",
+      "náměstí Jiřího z Poděbrad"
+    ],
+    [
+      "nám. Gen.Svobody",
+      "náměstí Generála Svobody"
+    ],
+    [
+      "Náměstí SNP",
+      "Náměstí Slovenského národního povstání"
+    ],
+    [
+      "Dílny DP Ostrava",
+      "Dílny Dopravního podniku Ostrava"
+    ],
+    [
+      "Nábřeží SPB",
+      "Nábřeží Svazu protifašistických bojovníků"
+    ],
+    [
+      "VŠB-TUO",
+      "Vysoká škola báňská – Technická univerzita Ostrava"
+    ],
+    [
+      "Čistička odp.vod",
+      "Čistička odpadních vod"
+    ],
+    [
+      "křiž.k Dolní Datyni",
+      "křižovatka k Dolní Datyni"
+    ],
+    [
+      "křiž.",
+      "křižovatka"
+    ],
+    [
+      "Zábřeh, OC",
+      "Zábřeh, obchodní centrum"
+    ],
+    [
+      "rest.U cesty",
+      "restaurace U cesty"
+    ],
+    [
+      "rest.Nimrod",
+      "restaurace Nimrod"
+    ],
+    [
+      "rest.u Čepaníků",
+      "restaurace u Čepaníků"
+    ],
+    [
+      "Vratimov, ZD",
+      "Vratimov, zemědělské družstvo"
+    ],
+    [
+      "Šilheřovice, SOU",
+      "Šilheřovice, střední odborné učiliště"
+    ],
+    [
+      "Horn.poliklinika",
+      "Hornická poliklinika"
+    ],
+    [
+      "Stan.záchr.služby",
+      "Stanice záchranné služby"
+    ],
+    [
+      "Stodolní žel.zast.",
+      "Stodolní železniční zastávka"
+    ],
+    [
+      "sad B.Němcové",
+      "sad Boženy Němcové"
+    ],
+    [
+      "Revírní br. pokladna",
+      "Revírní bratrská pokladna"
+    ],
+    [
+      "VŠ podnikání",
+      "Vysoká škola podnikání"
+    ],
+    [
+      "most M.Sýkory",
+      "most Miloše Sýkory"
+    ],
+    [
+      "nám.J.Gagarina",
+      "náměstí Jurije Gagarina"
+    ],
+    [
+      "Radvanice, LDN",
+      "Radvanice, Léčebna dlouhodobě nemocných"
+    ],
+    [
+      "Mor.Ostrava, ",
+      "Moravská Ostrava, "
+    ],
+    [
+      "Sl.Ostrava, ",
+      "Slezská Ostrava, "
+    ],
+    [
+      "Mor. Ostrava,",
+      "Moravská Ostrava,"
+    ],
+    [
+      "Mor.Plynárny",
+      "Moravská Ostrava, Plynárny"
+    ],
+    [
+      "Mor.",
+      "Moravská Ostrava, "
+    ],
+    [
+      "Sl.",
+      "Slezská Ostrava, "
+    ],
+    [
+      "NH hl.brána",
+      "Nová huť hlavní brána"
+    ],
+    [
+      "NH ",
+      "Nová huť "
+    ],
+    [
+      "nám.Ostrava-Jih",
+      "náměstí Ostrava-Jih"
+    ],
+    [
+      "Telekom.škola",
+      "Telekomunikační škola"
+    ],
+    [
+      "nám.S.Čecha",
+      "náměstí Svatopluka Čecha"
+    ],
+    [
+      "Mírové nám.",
+      "Mírové náměstí"
+    ],
+    [
+      "most Čs. armády",
+      "most Československé armády"
+    ],
+    [
+      "Ředitel.Vítkovic",
+      "Ředitelství Vítkovic"
+    ],
+    [
+      "29.dubna",
+      "29. dubna"
+    ],
+    [
+      "Kpt.Vajdy",
+      "Kapitána Vajdy"
+    ],
+    [
+      "Třebovice, OC",
+      "Třebovice, obchodní centrum"
+    ]
+  ],
+  "live": {
+    "url": "https://dashboard.dpo.cz/api/server",
+    "label": "Wed 30 Sep",
+    "window": [
+      "15:50",
+      "16:15"
+    ],
+    "note": "DPO live feed (vehicleType bus): vehicleNumber, routeID (line), serviceID (course), trip from/to.",
+    "provisional": {
+      "day": "2026-09-29",
+      "window": [
+        "17:40",
+        "17:50"
+      ],
+      "label": "Tue 29 Sep 17:40",
+      "why": "The bus poller started at 17:40 on Tue 29 Sep, after that day's peak. Buses on a line at 17:40 have mostly been on it since before 16:00, so they stand in until the Wed 30 Sep peak is observed."
+    },
+    "coverage_note": "The poller's machine slept for parts of 30 Sep; snapshots exist for 14:06–14:14, 16:01–16:15 and 18:xx. The peak window 16:01–16:15 has 15 snapshots of about 120 buses each."
+  },
+  "terminus_alias": {
+    "Přívoz, sad Boženy Němcové": "Moravská Ostrava, Vozovna trolejbusů",
+    "Kunčice, Nová huť garáže": "Kunčice, Nová huť jižní brána",
+    "Havířov, Město, nemocnice": "Havířov, Město, žel.st."
+  },
+  "depot_stops": [
+    "Poruba, garáže",
+    "Hranečník, garáže"
+  ],
+  "type_rules": [
+    [
+      "Solaris Urbino 12 III CNG",
+      "Urbino 12 CNG",
+      "Solaris Urbino 12 III CNG",
+      "12 m"
+    ],
+    [
+      "Solaris Urbino 12 IV CNG",
+      "Urbino 12 CNG",
+      "Solaris Urbino 12 IV CNG",
+      "12 m"
+    ],
+    [
+      "Solaris Urbino 12 III",
+      "Urbino 12 diesel",
+      "Solaris Urbino 12 III",
+      "12 m"
+    ],
+    [
+      "Solaris Urbino 12 IV electric",
+      "Urbino 12 electric",
+      "Solaris Urbino 12 IV electric",
+      "12 m"
+    ],
+    [
+      "Ekova Electron 12",
+      "Electron 12",
+      "Ekova Electron 12",
+      "12 m"
+    ],
+    [
+      "Solaris Urbino 18 III CNG",
+      "Urbino 18",
+      "Solaris Urbino 18 III CNG",
+      "18 m"
+    ],
+    [
+      "Solaris Urbino 18 IV CNG",
+      "Urbino 18",
+      "Solaris Urbino 18 IV CNG",
+      "18 m"
+    ],
+    [
+      "Solaris Urbino 18 III",
+      "Urbino 18",
+      "Solaris Urbino 18 III",
+      "18 m"
+    ],
+    [
+      "Solaris Urbino 10 III",
+      "Urbino 10",
+      "Solaris Urbino 10 III",
+      "10 m"
+    ],
+    [
+      "Dekstra LE 37 CNG",
+      "Dekstra LE 37",
+      "Dekstra LE 37 CNG",
+      "mini"
+    ],
+    [
+      "ROŠERO - P First FCLEI CNG",
+      "Rošero First",
+      "Rošero-P First FCLEI CNG",
+      "mini"
+    ],
+    [
+      "ROŠERO - P First FCLLI Electric",
+      "Rošero First",
+      "Rošero-P First FCLLI Electric",
+      "mini"
+    ],
+    [
+      "Scania UNVI Urbis 2.5 DD CNG",
+      "Urbis DD",
+      "Scania UNVI Urbis 2.5 DD CNG",
+      "double-deck"
+    ]
+  ],
+  "types": {
+    "Urbino 12 CNG": [
+      "Solaris Urbino 12 III / IV CNG",
+      "12 m",
+      "compressed natural gas"
+    ],
+    "Urbino 12 diesel": [
+      "Solaris Urbino 12 III",
+      "12 m",
+      "diesel"
+    ],
+    "Urbino 12 electric": [
+      "Solaris Urbino 12 IV electric",
+      "12 m",
+      "battery electric"
+    ],
+    "Electron 12": [
+      "Ekova Electron 12",
+      "12 m",
+      "battery electric"
+    ],
+    "Urbino 18": [
+      "Solaris Urbino 18 III / IV (CNG and diesel)",
+      "18 m",
+      "compressed natural gas; 7804–7806 diesel"
+    ],
+    "Urbino 10": [
+      "Solaris Urbino 10 III",
+      "10 m",
+      "diesel"
+    ],
+    "Dekstra LE 37": [
+      "Dekstra LE 37 CNG (Iveco 70C14G chassis)",
+      "mini",
+      "compressed natural gas"
+    ],
+    "Rošero First": [
+      "Rošero-P First FCLEI CNG / FCLLI Electric",
+      "mini",
+      "compressed natural gas or battery electric"
+    ],
+    "Urbis DD": [
+      "Scania UNVI Urbis 2.5 DD CNG",
+      "double-deck",
+      "compressed natural gas"
+    ]
+  },
+  "pak": {
+    "file": "VZ-DPOstrava-bus (custom Czech pak128, main b84c15c, 28 Sep 2026)",
+    "prefix": "VZ-DPOstrava-",
+    "objects": {
+      "Solaris Urbino 12 III CNG": [
+        "SolarisUrbino12_s3_CNG",
+        [
+          "dpomodrozluta",
+          "dpotyrkysova"
+        ],
+        [
+          "SolarisUrbino12_s3_CNG"
+        ],
+        true
+      ],
+      "Solaris Urbino 12 III": [
+        "SolarisUrbino12_s3",
+        [
+          "dpomodrozluta"
+        ],
+        [
+          "SolarisUrbino12_s3"
+        ],
+        true
+      ],
+      "Solaris Urbino 12 IV CNG": [
+        "SolarisUrbino12_s4",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "SolarisUrbino12_s4"
+        ],
+        true
+      ],
+      "Solaris Urbino 12 IV electric": [
+        "SolarisUrbino12_s4_electric",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "SolarisUrbino12_s4_electric"
+        ],
+        true
+      ],
+      "Ekova Electron 12": [
+        "EkovaElectron12",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "EkovaElectron12"
+        ],
+        true
+      ],
+      "Solaris Urbino 18 III CNG": [
+        "SolarisUrbino18_s3_CNG",
+        [
+          "dpomodrozluta"
+        ],
+        [
+          "SolarisUrbino18_s3_CNG",
+          "SolarisUrbino18_s3_CNG_2"
+        ],
+        true
+      ],
+      "Solaris Urbino 18 III": [
+        "SolarisUrbino18_s3",
+        [
+          "dpomodrozluta",
+          "dpotyrkysova"
+        ],
+        [
+          "SolarisUrbino18_s3",
+          "SolarisUrbino18_s3_2"
+        ],
+        true
+      ],
+      "Solaris Urbino 18 IV CNG": [
+        "SolarisUrbino18_s4",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "SolarisUrbino18_s4",
+          "SolarisUrbino18_s4_2"
+        ],
+        true
+      ],
+      "Solaris Urbino 10 III": [
+        "SolarisUrbino10_s3",
+        [
+          "dpomodrozluta"
+        ],
+        [
+          "SolarisUrbino10_s3"
+        ],
+        true
+      ],
+      "Dekstra LE 37 CNG": [
+        "DekstraLE37",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "DekstraLE37"
+        ],
+        true
+      ],
+      "Rošero-P First FCLEI CNG": [
+        "RoseroFirst",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "RoseroFirst"
+        ],
+        true
+      ],
+      "Rošero-P First FCLLI Electric": [
+        "RoseroFirst",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "RoseroFirst"
+        ],
+        true
+      ],
+      "Scania UNVI Urbis 2.5 DD CNG": [
+        "ScaniaUNVIUrbisDD",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "ScaniaUNVIUrbisDD"
+        ],
+        true
+      ],
+      "Iveco Crossway LE CITY 12M NP": [
+        "SolarisUrbino12_s4",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "SolarisUrbino12_s4"
+        ],
+        false
+      ],
+      "Iveco Crossway LE LINE 12M NP": [
+        "SolarisUrbino12_s4",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "SolarisUrbino12_s4"
+        ],
+        false
+      ],
+      "SOR CNG 12": [
+        "SolarisUrbino12_s4",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "SolarisUrbino12_s4"
+        ],
+        false
+      ],
+      "Scania Citywide LE 12M CNG": [
+        "SolarisUrbino12_s4",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "SolarisUrbino12_s4"
+        ],
+        false
+      ],
+      "Scania Citywide LE 15M CNG": [
+        "SolarisUrbino12_s4",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "SolarisUrbino12_s4"
+        ],
+        false
+      ],
+      "Dekstra LE 37 L CNG": [
+        "DekstraLE37",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "DekstraLE37"
+        ],
+        false
+      ],
+      "SOR EBN 10,5": [
+        "SOR_EBN105",
+        [
+          "dpomodrozluta"
+        ],
+        [
+          "SOR_EBN105"
+        ],
+        true
+      ],
+      "Scania Citywide Suburban LE 15M CNG": [
+        "SolarisUrbino12_s4",
+        [
+          "dpotyrkysova"
+        ],
+        [
+          "SolarisUrbino12_s4"
+        ],
+        false
+      ]
+    },
+    "subst_reason": {
+      "Scania Citywide LE 15M CNG": "no Citywide LE 15M in 3ČSAD white-green; the Citywide Suburban LE 15M in that livery"
+    },
+    "lengths": {
+      "SolarisUrbino12_s3": "8",
+      "SolarisUrbino12_s4": "8",
+      "EkovaElectron12": "8",
+      "SolarisUrbino18_s3": "8 + 6",
+      "SolarisUrbino18_s4": "8 + 6",
+      "SolarisUrbino10_s3": "7",
+      "DekstraLE37": "8",
+      "RoseroFirst": "6",
+      "ScaniaUNVIUrbisDD": "8",
+      "SolarisUrbino12_s4_electric": "8",
+      "SolarisUrbino12_s3_CNG": "8",
+      "SolarisUrbino18_s3_CNG": "8 + 6",
+      "SOR_EBN105": "8"
+    },
+    "unused_objects": [
+      "SolarisUrbino15_s3 (DPO no longer runs the Urbino 15)",
+      "SOR_EBN105 (museum bus 5001)"
+    ],
+    "livery_names": {
+      "dpotyrkysova": "turquoise (dpotyrkysova)",
+      "dpomodrozluta": "blue-yellow (dpomodrozluta)",
+      "3csadbilozelena": "3ČSAD white-green (Transdev Slezsko)",
+      "bilazelenykruh": "white with green circle (Transdev Slezsko, Havířovsko)",
+      "bila": "white (Z-Group)"
+    },
+    "paint_rules": [
+      [
+        "modrá s bílým proužkem",
+        "DPO blue with white stripe",
+        "dpotyrkysova"
+      ],
+      [
+        "modro-bílo-žlutá",
+        "DPO blue-white-yellow",
+        "dpomodrozluta"
+      ]
+    ],
+    "lengths_note": "Section lengths as installed on 20 Oct 2026 (pak main d28795c): Urbino 18 rear section 6 (was 8), Urbino 10 = 7.",
+    "dropped_objects": {
+      "VZ-DPOstrava-SolarisUrbino10_s3-dpotyrkysova-SolarisUrbino10_s3": "Dropped by the owner (pak session, 20 Oct 2026): no DPO Urbino 10 ever ran in turquoise. Use the blue-yellow (dpomodrozluta) object; the turquoise one stays installed only until the save is migrated."
+    },
+    "odis_file": "VZ-ODIS-bus (pak session main 6f7b639, installed 20 Oct 2026): ODIS regional buses of Moravskoslezský kraj; Transdev Slezsko in 3ČSAD white-green (3csadbilozelena) or Havířovsko white (bilazelenykruh)",
+    "odis_paint": [
+      [
+        "3ČSAD",
+        "3csadbilozelena"
+      ],
+      [
+        "bílá",
+        "bilazelenykruh"
+      ]
+    ],
+    "odis_objects": {
+      "Iveco Crossway LE CITY 12M NP": {
+        "3csadbilozelena": [
+          "Crossway_LE_City_12M",
+          "8",
+          true
+        ],
+        "bilazelenykruh": [
+          "Crossway_LE_City_12M",
+          "8",
+          true,
+          "bila"
+        ]
+      },
+      "Iveco Crossway LE LINE 12M NP": {
+        "bilazelenykruh": [
+          "Crossway_LE_Line_12M_NP",
+          "8",
+          true
+        ],
+        "3csadbilozelena": [
+          "Crossway_LE_Line_12M_NP",
+          "8",
+          true,
+          "bilazelenykruh"
+        ]
+      },
+      "SOR CNG 12": {
+        "3csadbilozelena": [
+          "SOR_CNG_12",
+          "8",
+          true
+        ],
+        "bilazelenykruh": [
+          "SOR_CNG_12",
+          "8",
+          true
+        ]
+      },
+      "Scania Citywide LE 12M CNG": {
+        "3csadbilozelena": [
+          "Citywide_LE_12M_CNG",
+          "8",
+          true
+        ],
+        "bilazelenykruh": [
+          "Citywide_LE_12M_CNG",
+          "8",
+          true,
+          "bila"
+        ]
+      },
+      "Scania Citywide LE 15M CNG": {
+        "bilazelenykruh": [
+          "Citywide_LE_15M_CNG",
+          "10",
+          true
+        ],
+        "3csadbilozelena": [
+          "Citywide_Suburban_LE_15M_CNG",
+          "10",
+          false
+        ]
+      },
+      "Dekstra LE 37 L CNG": {
+        "3csadbilozelena": [
+          "Dekstra_LE_37_CNG",
+          "5",
+          true
+        ],
+        "bilazelenykruh": [
+          "Dekstra_LE_37_CNG",
+          "5",
+          true,
+          "3csadbilozelena"
+        ]
+      },
+      "Scania Citywide Suburban LE 15M CNG": {
+        "3csadbilozelena": [
+          "Citywide_Suburban_LE_15M_CNG",
+          "10",
+          true
+        ],
+        "bilazelenykruh": [
+          "Citywide_Suburban_LE_15M_CNG",
+          "10",
+          false,
+          "3csadbilozelena"
+        ]
+      }
+    },
+    "changes_note": [
+      "20 Oct 2026 (pak main 2cdf3f3): Urbino 12 III CNG and Urbino 18 III CNG have their own CNG objects; Urbino 12 III CNG and Urbino 18 III also come in turquoise (real 'modrá s bílým proužkem': 7121, 7129, 7169, 7206-7208; 7804, 7806); SOR EBN 10,5 object added; turquoise Urbino 10 removed (never used here)"
+    ]
+  },
+  "network_state": [
+    [
+      "in",
+      "Na Karolině street roundabouts: lines 21, 25, 81, 92",
+      "From 25 May 2026 until further notice. Lines 21 and 81 are diverted via Škrobálkova, Vratimovská, Lihovarská and Šenovská streets, and lines 25 and 92 via Frýdecká street. Důl Alexander and Hradní náměstí are closed. At Hranečník, lines 21 and 81 leave from stand 6. The September timetables run the diversion. Since 2 Feb 2026 the Na Karolině bridge over the Ostravice is being demolished and rebuilt: lines 21 and 81 are diverted, and line 25 was added. Both are until further notice (checked 20 Oct 2026)."
+    ],
+    [
+      "in",
+      "Náměstí Republiky rebuild: lines 50, 73, 99 and the interchange",
+      "From 2 Feb 2026 until further notice, 28. října street is closed towards the centre. Line 50 runs via Nádraží střed towards Porážková, 73 via Náměstí Republiky stand C, and 99 via Českobratrská and Konzervatoř, skipping Náměstí Republiky, Karolina, Elektra and Stodolní towards Hladnov. From 17 Sep 2026, buses 25, 37, 71 and 73 board at the provisional stop Náměstí Republiky C on Českobratrská."
+    ],
+    [
+      "in",
+      "Line 67, Vrablovec bridge in Ludgeřovice",
+      "25 May – 20 Nov 2026: diverted both ways via Hlučínská, Lipová and Vrablovecká streets between Petřkovice, náměstí and Ludgeřovice, Vrablovec, střed. Longer than the modelled period, so it is modelled as it runs. Checked 20 Oct 2026: it still runs until 20 Nov. When it ends, line 67 goes back to its regular route."
+    ],
+    [
+      "in",
+      "Klimkovice, centrum stops moved: lines 59, 64, 76",
+      "20 Feb – 12 Dec 2026, during the closure of the southern part of Požárnická street. Klimkovice, centrum is served at Klimkovice, výkupní závod on Lidická street (before the roundabout towards Svinov and Vítkovice, past it towards Hýlov), and the routes change accordingly. The CIS JŘ timetable still lists the regular stops (centrum, Požárnická), so in the game route the three lines via Lidická street. Termini and minutes are unchanged, so the Simutrans schedules are as shown."
+    ],
+    [
+      "out",
+      "Line 22, Dědičná street repair",
+      "5–16 Oct 2026, with trolleybus 106 and night line 113: one direction was diverted. It was short-term and has ended (checked 20 Oct 2026), so line 22 keeps its regular route."
+    ],
+    [
+      "out",
+      "Line 45, Most Mládeže stop moved",
+      "From 1 Oct 2026 until further notice, during the Rudná × Plzeňská bridge works: the stop towards Městský stadion is 160 m further on, at a provisional stop on Rudná street. It is a stop move only, with no change of route or times, so it is not modelled."
+    ]
+  ],
+  "branches_why": "With 47 lines, branches are found by rule instead of by hand. Within 15:00–18:00, each pair of termini a line serves is its own Simutrans line when it has at least 6 trips (about 3 each way), a departure in the 16 o'clock hour, and no garage at either end. The busiest pair always counts. Smaller pairs (extensions, short workings, garage runs) are not separate lines, because “Also at” cannot change the route; their minutes are folded into the main row from the same terminus. Lines 49 and 54 end at Přívoz, sad Boženy Němcové and start back from Moravská Ostrava, Vozovna trolejbusů, the next stop, so those two count as one terminus. Where a line has two or more Simutrans lines, they are lettered A, B, C by trips.",
+  "history": {
+    "url": "https://seznam-autobusu.cz/vypravenost/odis/vypis?linka={line}",
+    "since": "2026-03-01",
+    "note": "tram-bus.cz stopped feeding DPO records on 28 Jun 2026, so this is Mar–Jun 2026 of the school year"
+  },
+  "line_overrides": {
+    "41": {
+      "why": "Owner's choice (20 Oct 2026): model line 41 as it runs at 14:00, half-hourly from Hrabůvka, Poliklinika, alternating to Vratimov, náměstí (:22) and Vratimov, Kartonážka (:52); back from Kartonážka at :15 and from náměstí at :48. At 16:00 the timetable is sparse and irregular. By the shortest-wait rule it is one circuit: each bus does a náměstí trip and then a Kartonážka trip, waiting 15 min at Poliklinika before each. That needs 3 buses (180 min round), against 4 for two separate hourly lines with 45-min waits. Kartonážka is the loop beyond náměstí via Nová osada and Popinec.",
+      "title": "Výškovice, Klášterského – Hrabůvka – Vratimov, náměstí / Kartonážka",
+      "branch": {
+        "a": "Výškovice, Klášterského",
+        "b": "Vratimov, náměstí / Kartonážka",
+        "need": 3,
+        "cycle": 180,
+        "headway": 30,
+        "how": "one circuit at 14:00: Poliklinika 13:22 → náměstí 13:40, 13:48 → Výškovice 14:22 → Poliklinika 14:37, 14:52 → Kartonážka 15:13, 15:15 → Výškovice 15:52 → Poliklinika 16:07, 16:22 again = 180 min"
+      },
+      "route": [
+        "Výškovice, Klášterského",
+        "Hrabůvka, Poliklinika",
+        "Vratimov, náměstí",
+        "Výškovice, Klášterského",
+        "Hrabůvka, Poliklinika",
+        "Vratimov, Kartonážka",
+        "Výškovice, Klášterského"
+      ],
+      "schedule": [
+        {
+          "fr": "Hrabůvka, Poliklinika",
+          "to": "Vratimov, náměstí",
+          "every": 60,
+          "real": [
+            22
+          ],
+          "loop": false,
+          "note": "stop 1 of the circuit (to náměstí)"
+        },
+        {
+          "fr": "Vratimov, náměstí",
+          "to": "Výškovice, Klášterského",
+          "every": 60,
+          "real": [
+            48
+          ],
+          "loop": true,
+          "note": "stop 2 of the circuit"
+        },
+        {
+          "fr": "Hrabůvka, Poliklinika",
+          "to": "Vratimov, Kartonážka",
+          "every": 60,
+          "real": [
+            52
+          ],
+          "loop": false,
+          "note": "stop 3 of the circuit (to Kartonážka)"
+        },
+        {
+          "fr": "Vratimov, Popinec",
+          "to": "Výškovice, Klášterského",
+          "every": 60,
+          "real": [
+            15
+          ],
+          "loop": true,
+          "note": "stop 4 of the circuit · the Kartonážka loop, boarding stop"
+        }
+      ],
+      "window": [
+        780,
+        935
+      ]
+    }
+  },
+  "schedule_overrides": {
+    "35": [
+      {
+        "fr": "Hrabová, průmyslová zóna jih",
+        "to": "Poruba, Otakara Jeremiáše",
+        "every": 20,
+        "real": [
+          13
+        ],
+        "window": [
+          900,
+          1080
+        ],
+        "why": "35 and 39 share Hrabůvka, Benzina – Vítkovice – Svinov – Otakara Jeremiáše (27 stops). With 39 at statek :21/:41 and Paskov :50, 35 from PZ jih at :10 passed Benzina 6 min after a 39; at :13 the six buses an hour are 9–11 min apart at every shared stop both ways (the real timetable keeps them about 10 apart). 35 stays 6 buses (round 120). Owner request, 22 Oct 2026 ('solve the problems that are only in the model, not in reality'); set with scripts/space_corridor.py, bus counts unchanged."
+      }
+    ],
+    "26": [
+      {
+        "fr": "Dubina",
+        "to": "Proskovice",
+        "every": 30,
+        "real": [
+          7
+        ],
+        "window": [
+          900,
+          1080
+        ],
+        "why": "26 leaves Dubina along the 59 route through Stará Bělá. At :19/:49 it left Dubina 1 min after the 59 bus to Svinov (Vítkovice :33, Dubina :50); in reality they are about 19 min apart. At :07/:37 the closest is 12 min (even 15). The real 26 departures are irregular (15:09, 15:39, 15:59, 16:19, 16:54), the row was already approximate. 26 stays 2 buses. Owner request, 22 Oct 2026 ('solve the problems that are only in the model, not in reality'); set with scripts/space_corridor.py, bus counts unchanged."
+      }
+    ],
+    "44": [
+      {
+        "fr": "Svinov, Dubí",
+        "to": "Poruba, Otakara Jeremiáše",
+        "every": 60,
+        "real": [
+          42
+        ],
+        "window": [
+          900,
+          1080
+        ],
+        "why": "44 and 46 share Svinov, mosty – Třebovice – Poruba, vozovna. The far-end fits had 44 Svinov, Dubí and 46 Polanka → Krásné Pole on the same minute at Svinov, mosty, and 44 and 46 Krásné Pole → Polanka 2 min apart at vozovna; in reality they are 4–7 min apart. 44 Svinov, Dubí moves :46 → :42, 46 Krásné Pole → Polanka :14 → :16 and 46 Polanka → Krásné Pole :14 → :12 (both every 30): the closest pair is then 4–5 min, as in reality, on a section with a bus every 7–9 min. Owner request, 22 Oct 2026 ('solve the problems that are only in the model, not in reality'); set with scripts/space_corridor.py, bus counts unchanged."
+      }
+    ],
+    "46": [
+      {
+        "fr": "Krásné Pole, ",
+        "to": "Polanka",
+        "every": 30,
+        "real": [
+          16
+        ],
+        "window": [
+          900,
+          1080
+        ],
+        "why": "44 and 46 share Svinov, mosty – Třebovice – Poruba, vozovna. The far-end fits had 44 Svinov, Dubí and 46 Polanka → Krásné Pole on the same minute at Svinov, mosty, and 44 and 46 Krásné Pole → Polanka 2 min apart at vozovna; in reality they are 4–7 min apart. 44 Svinov, Dubí moves :46 → :42, 46 Krásné Pole → Polanka :14 → :16 and 46 Polanka → Krásné Pole :14 → :12 (both every 30): the closest pair is then 4–5 min, as in reality, on a section with a bus every 7–9 min. Owner request, 22 Oct 2026 ('solve the problems that are only in the model, not in reality'); set with scripts/space_corridor.py, bus counts unchanged."
+      },
+      {
+        "fr": "Polanka",
+        "to": "Krásné Pole, ",
+        "every": 30,
+        "real": [
+          12
+        ],
+        "window": [
+          900,
+          1080
+        ],
+        "why": "44 and 46 share Svinov, mosty – Třebovice – Poruba, vozovna. The far-end fits had 44 Svinov, Dubí and 46 Polanka → Krásné Pole on the same minute at Svinov, mosty, and 44 and 46 Krásné Pole → Polanka 2 min apart at vozovna; in reality they are 4–7 min apart. 44 Svinov, Dubí moves :46 → :42, 46 Krásné Pole → Polanka :14 → :16 and 46 Polanka → Krásné Pole :14 → :12 (both every 30): the closest pair is then 4–5 min, as in reality, on a section with a bus every 7–9 min. Owner request, 22 Oct 2026 ('solve the problems that are only in the model, not in reality'); set with scripts/space_corridor.py, bus counts unchanged."
+      }
+    ],
+    "56": [
+      {
+        "fr": "Ludgeřovice, kostel",
+        "to": "Moravská Ostrava, Křižíkova",
+        "every": 60,
+        "real": [
+          11,
+          49
+        ],
+        "window": [
+          780,
+          960
+        ],
+        "why": "All four 56 branches pass Ludgeřovice, kostel towards Křižíkova (5 buses an hour). The far-end fits had them there at :03 Ludgeřovice, :08 Darkovičky, :24 sídliště OKD, :50 Ludgeřovice, :59 Hlučín AN: three within 9 min, then 26 min with none; the real timetable spreads them. Ludgeřovice now leaves at :11/:49 (real :07/:51 within 4 min) and Darkovičky at :18 (kostel :36); Hlučín AN (one bus, no slack) and sídliště OKD stay. Kostel: :49, :59, :11, :24, :36. 56 still meets 67/68 at times on Hlučínská: 68 runs every 80 in the model and 56/67 every 60, so over 4 hours some buses coincide whatever the offsets (the real timetable is coordinated trip by trip); that needs a change of model, left to the owner. Owner request, 22 Oct 2026 ('solve the problems that are only in the model, not in reality'); set with scripts/space_corridor.py, bus counts unchanged."
+      },
+      {
+        "fr": "Hlučín, Darkovičky",
+        "to": "Moravská Ostrava, Křižíkova",
+        "every": 60,
+        "real": [
+          18
+        ],
+        "window": [
+          780,
+          960
+        ],
+        "why": "All four 56 branches pass Ludgeřovice, kostel towards Křižíkova (5 buses an hour). The far-end fits had them there at :03 Ludgeřovice, :08 Darkovičky, :24 sídliště OKD, :50 Ludgeřovice, :59 Hlučín AN: three within 9 min, then 26 min with none; the real timetable spreads them. Ludgeřovice now leaves at :11/:49 (real :07/:51 within 4 min) and Darkovičky at :18 (kostel :36); Hlučín AN (one bus, no slack) and sídliště OKD stay. Kostel: :49, :59, :11, :24, :36. 56 still meets 67/68 at times on Hlučínská: 68 runs every 80 in the model and 56/67 every 60, so over 4 hours some buses coincide whatever the offsets (the real timetable is coordinated trip by trip); that needs a change of model, left to the owner. Owner request, 22 Oct 2026 ('solve the problems that are only in the model, not in reality'); set with scripts/space_corridor.py, bus counts unchanged."
+      }
+    ],
+    "34": [
+      {
+        "fr": "Hlučín, autobusové nádraží",
+        "to": "Moravská Ostrava, Křižíkova",
+        "every": 20,
+        "real": [
+          0
+        ],
+        "window": [
+          850,
+          1000
+        ],
+        "why": "34A Bobrovníky and 34B Hlučín AN share Bobrovníky – Hošťálkovice – Přívoz – Křižíkova (14 stops). The far-end fit had Hlučín AN at :05, passing Bobrovníky at :12/:13 just before the Bobrovníky buses at :17/:37/:57, 4–5 min apart all the way in. Hlučín AN now leaves at :00/:20/:40 (real 14:40, 15:40 and 16:00 exact) and passes Bobrovníky at :07/:27/:47: every 10 combined, as outbound (Křižíkova :01 Bobrovníky, :11 Hlučín AN). 34B stays 4 buses (round 80). Owner request, 21 Oct 2026 (shared-trunk check after 59; 35/39 from the owner's in-game screenshot at Dům energetiky)."
+      }
+    ],
+    "39": [
+      {
+        "fr": "Hrabová, statek",
+        "to": "Poruba, Otakara Jeremiáše",
+        "every": 60,
+        "real": [
+          21,
+          41
+        ],
+        "window": [
+          780,
+          1020
+        ],
+        "why": "39 and 35 share Hrabůvka, Benzina – Vítkovice – Mariánské Hory – Svinov – Otakara Jeremiáše (27 stops), and 39's own branches share it from Hrabová, statek. The far-end fits had 39 statek at :27/:47 and Paskov at :23, so towards Otakara Jeremiáše 39 statek, 35 and 39 Paskov left Dům energetiky within 5 min (:50, :51, :55) and nothing came for 15 min. 39 statek now leaves at :21/:41 and Paskov at :50; with 35 every 20 from PZ jih at :10 (unchanged, exact) Benzina has :07 Paskov, :16 35, :29 statek, :36 35, :49 statek, :56 35, 7–13 min apart (the real timetable keeps 35 and 39 about 10 apart). 39A stays 4 buses (52 min out, 4 min at statek, 49 back, 15 at Otakara Jeremiáše = 120), 39B 3 (61 min slack per round). Real statek departures are mostly :17/:37/:57 and Paskov :08/:28/:38, so some trips are 15–20 min off. Owner request, 21 Oct 2026 (shared-trunk check after 59; 35/39 from the owner's in-game screenshot at Dům energetiky)."
+      },
+      {
+        "fr": "Paskov, Folvark",
+        "to": "Poruba, Otakara Jeremiáše",
+        "every": 60,
+        "real": [
+          50
+        ],
+        "window": [
+          840,
+          1020
+        ],
+        "why": "39 and 35 share Hrabůvka, Benzina – Vítkovice – Mariánské Hory – Svinov – Otakara Jeremiáše (27 stops), and 39's own branches share it from Hrabová, statek. The far-end fits had 39 statek at :27/:47 and Paskov at :23, so towards Otakara Jeremiáše 39 statek, 35 and 39 Paskov left Dům energetiky within 5 min (:50, :51, :55) and nothing came for 15 min. 39 statek now leaves at :21/:41 and Paskov at :50; with 35 every 20 from PZ jih at :10 (unchanged, exact) Benzina has :07 Paskov, :16 35, :29 statek, :36 35, :49 statek, :56 35, 7–13 min apart (the real timetable keeps 35 and 39 about 10 apart). 39A stays 4 buses (52 min out, 4 min at statek, 49 back, 15 at Otakara Jeremiáše = 120), 39B 3 (61 min slack per round). Real statek departures are mostly :17/:37/:57 and Paskov :08/:28/:38, so some trips are 15–20 min off. Owner request, 21 Oct 2026 (shared-trunk check after 59; 35/39 from the owner's in-game screenshot at Dům energetiky)."
+      }
+    ],
+    "40": [
+      {
+        "fr": "Poruba, Opavská",
+        "to": "Poruba, Alšovo náměstí",
+        "every": 20,
+        "real": [
+          19
+        ],
+        "window": [
+          930,
+          1050
+        ],
+        "why": "40A runs every 20 in reality: Opavská :19/:39/:59 (exact 14:19–16:59), Alšovo náměstí :04/:24/:44 (exact 14:04–17:24). The radnice buses (40B/40C alternating, every 20 together) pass Opavská at :09/:29/:49 and Alšovo at :14/:34/:54, so the Opavská – Alšovo trunk runs every 10. The automatic fit had forced 40A onto every 40 with uneven slots (:19/:36 and :15/:38, up to 9 min off), with Alšovo 1 min from the Plesná bus. The real every 20 takes 3 buses (round 60: 16 + 18 min running, 9 and 17 min at the termini), as seen live at the peak, instead of 2. Owner request, 21 Oct 2026 (shared-trunk check after 59; 35/39 from the owner's in-game screenshot at Dům energetiky)."
+      },
+      {
+        "fr": "Poruba, Alšovo náměstí",
+        "to": "Poruba, Opavská",
+        "every": 20,
+        "real": [
+          4
+        ],
+        "window": [
+          930,
+          1080
+        ],
+        "why": "40A runs every 20 in reality: Opavská :19/:39/:59 (exact 14:19–16:59), Alšovo náměstí :04/:24/:44 (exact 14:04–17:24). The radnice buses (40B/40C alternating, every 20 together) pass Opavská at :09/:29/:49 and Alšovo at :14/:34/:54, so the Opavská – Alšovo trunk runs every 10. The automatic fit had forced 40A onto every 40 with uneven slots (:19/:36 and :15/:38, up to 9 min off), with Alšovo 1 min from the Plesná bus. The real every 20 takes 3 buses (round 60: 16 + 18 min running, 9 and 17 min at the termini), as seen live at the peak, instead of 2. Owner request, 21 Oct 2026 (shared-trunk check after 59; 35/39 from the owner's in-game screenshot at Dům energetiky)."
+      }
+    ],
+    "59": [
+      {
+        "fr": "Klimkovice, centrum",
+        "to": "Vítkovice, Mírové náměstí",
+        "every": 60,
+        "real": [0],
+        "window": [800, 950],
+        "why": "59A Klimkovice and 59B Svinov share the whole run Klimkovice, centrum – Polanka – Stará Bělá – Vítkovice (the Svinov bus goes through Klimkovice). The automatic far-end fit had Klimkovice at :15 while the Svinov bus passes Klimkovice at :11, so the two branches ran 4 min apart all through Polanka and reached Vítkovice 2 min apart. Klimkovice now leaves at :00 (real 15:00) and Svinov at :09 (real 14:05 +4): 25/35 apart on the shared section, the same split as towards Klimkovice/Svinov (Vítkovice :08/:33). Bus counts unchanged (59A 2, 59B 3). Owner request, 21 Oct 2026."
+      },
+      {
+        "fr": "Svinov, mosty",
+        "to": "Vítkovice, Mírové náměstí",
+        "every": 60,
+        "real": [9],
+        "window": [800, 950],
+        "why": "59A Klimkovice and 59B Svinov share the whole run Klimkovice, centrum – Polanka – Stará Bělá – Vítkovice (the Svinov bus goes through Klimkovice). The automatic far-end fit had Svinov at :55, passing Klimkovice at :11 just as the Klimkovice bus left at :15, so the two branches ran 4 min apart all through Polanka. Svinov now leaves at :09 (real 14:05 +4) and passes Klimkovice at :25, Polanka at :29; Klimkovice leaves at :00 (Polanka :04): 25/35 apart, the same split as towards Klimkovice/Svinov. The real inbound 59 is irregular (Svinov 13:45, 14:05, 15:45), so the :45 trips are 24 min off. Bus counts unchanged (59A 2, 59B 3). Owner request, 21 Oct 2026."
+      }
+    ]
+  },
+  "owner_types_rule": "Owner's choice of vehicle type (20 Oct 2026: 'Definitely 50, do not do 23 - do some from Poruba too'): DPO's five Solaris Urbino 10 III were not out at the 30 Sep peak, so the roster rule left them as 'not needed' everywhere. These named buses go on the line in place of buses seen there (the highest courses of another type on the given Simutrans line); the buses they replace are listed as not needed. The line's need is unchanged.",
+  "owner_types": {
+    "50": {
+      "cars": [
+        7521,
+        7523,
+        7524
+      ],
+      "branch": 0,
+      "why": "the three Hranečník Urbino 10s; 50 is their regular line (8–16 weekday records each, Mar–Jun 2026)"
+    },
+    "40": {
+      "cars": [
+        7518,
+        7519
+      ],
+      "branch": 2,
+      "why": "the two Poruba Urbino 10s; 7518 has 13 weekday records on 40 (7519 none since March); the Poruba, radnice – Plesná, Globus Simutrans line, whose two buses were both 12 m"
+    }
+  },
+  "keep_roster": "data/published/roster_2026-10-20_v7.json",
+  "odis": {
+    "why": "Owner, 20 Oct 2026: add every line serving Hranečník, including the ODIS regional lines of other operators, at the end of the bus sheet in the same style.",
+    "hub_stop_match": "Hraneč",
+    "hub_town": "Ostrava",
+    "dpo_ic": "61974757",
+    "snapshot": "2026-10-20",
+    "day_url": "https://seznam-autobusu.cz/vypravenost/odis/vypis?datum={date}",
+    "line_url": "https://seznam-autobusu.cz/vypravenost/odis/vypis?linka={line}",
+    "line_since": "2026-09-01",
+    "carriers": {
+      "45192081": {
+        "name": "Transdev Slezsko",
+        "seznam_id": 28,
+        "fleet_url": "https://seznam-autobusu.cz/seznam?prov=1&trakce=autobus&iddopravce=28&vcetneSluzebnich=1"
+      }
+    },
+    "types": {
+      "Iveco Crossway LE CITY 12M NP": [
+        "12 m",
+        "Solaris Urbino 12 IV CNG"
+      ],
+      "Iveco Crossway LE LINE 12M NP": [
+        "12 m",
+        "Solaris Urbino 12 IV CNG"
+      ],
+      "SOR CNG 12": [
+        "12 m",
+        "Solaris Urbino 12 IV CNG"
+      ],
+      "Scania Citywide LE 12M CNG": [
+        "12 m",
+        "Solaris Urbino 12 IV CNG"
+      ],
+      "Scania Citywide LE 15M CNG": [
+        "15 m",
+        "Solaris Urbino 12 IV CNG"
+      ],
+      "Dekstra LE 37 L CNG": [
+        "12 m",
+        "Dekstra LE 37 CNG"
+      ],
+      "Scania Citywide Suburban LE 15M CNG": [
+        "15 m",
+        "Solaris Urbino 12 IV CNG"
+      ]
+    },
+    "live": {
+      "raw": "../havirov-karvina-orlova/data/raw/2026-10-20/live",
+      "out": "data/raw/2026-10-20/odis_live.json",
+      "fleet": "../havirov-karvina-orlova/data/derived/fleet.json",
+      "day": "2026-10-20",
+      "label": "Tue 20 Oct 2026",
+      "source": "ODIS live map (mpvnet.cz), polled by the Havířov/Karviná/Orlová session, one snapshot a minute 13:05–19:30",
+      "window": [
+        -10,
+        15
+      ],
+      "anchor": {},
+      "rule": "A bus goes to the Simutrans line whose slot its trip at the line's peak anchor runs (the feed's trip number is the JDF trip number); buses on the line that match no slot fill the line's shortest branch; one bus on one card only, the 16:00 lines first. Agreed with session a4: a bus stays with the line it ran at that line's peak anchor."
+    }
+  },
+  "schedule_overrides_retired": {
+    "21": [
+      {
+        "fr": "Hranečník",
+        "to": "Vratimov, Horní Datyně",
+        "every": 40,
+        "real": [
+          5
+        ],
+        "why": "21 and 81 share Hranečník – Kunčice – Hrabová – Vratimov, náměstí. From 16:00 each runs every 40, interleaved: from Hranečník 21 at 16:05, 16:45, 17:25 and 81 at 16:23, 17:03, 17:43 (18/22 min apart), and at Vratimov, náměstí towards Hranečník every 20 combined. Set by hand (owner, 20 Oct 2026); separate fits had given 21 every 20 and 81 every 30, which neither matched nor interleaved."
+      },
+      {
+        "fr": "Vratimov, Horní Datyně",
+        "to": "Hranečník",
+        "every": 40,
+        "real": [
+          9
+        ],
+        "why": "21 and 81 share Hranečník – Kunčice – Hrabová – Vratimov, náměstí. From 16:00 each runs every 40, interleaved: from Hranečník 21 at 16:05, 16:45, 17:25 and 81 at 16:23, 17:03, 17:43 (18/22 min apart), and at Vratimov, náměstí towards Hranečník every 20 combined. Set by hand (owner, 20 Oct 2026); separate fits had given 21 every 20 and 81 every 30, which neither matched nor interleaved."
+      }
+    ],
+    "81": [
+      {
+        "fr": "Hranečník",
+        "to": "Řepiště, u kříže",
+        "every": 40,
+        "real": [
+          23
+        ],
+        "why": "21 and 81 share Hranečník – Kunčice – Hrabová – Vratimov, náměstí. From 16:00 each runs every 40, interleaved: from Hranečník 21 at 16:05, 16:45, 17:25 and 81 at 16:23, 17:03, 17:43 (18/22 min apart), and at Vratimov, náměstí towards Hranečník every 20 combined. Set by hand (owner, 20 Oct 2026); separate fits had given 21 every 20 and 81 every 30, which neither matched nor interleaved."
+      },
+      {
+        "fr": "Řepiště, u kříže",
+        "to": "Hranečník",
+        "every": 40,
+        "real": [
+          29
+        ],
+        "why": "21 and 81 share Hranečník – Kunčice – Hrabová – Vratimov, náměstí. From 16:00 each runs every 40, interleaved: from Hranečník 21 at 16:05, 16:45, 17:25 and 81 at 16:23, 17:03, 17:43 (18/22 min apart), and at Vratimov, náměstí towards Hranečník every 20 combined. Set by hand (owner, 20 Oct 2026); separate fits had given 21 every 20 and 81 every 30, which neither matched nor interleaved."
+      }
+    ],
+    "23": [
+      {
+        "fr": "Hranečník",
+        "to": "Rychvald, rozcestí",
+        "every": 80,
+        "real": [
+          50
+        ],
+        "why": "23A Rychvald and 23B Bohumín, Záblatí share Hranečník. From 16:10 the timetable alternates them every 40: Záblatí 16:10, Rychvald 16:50, Záblatí 17:30, Rychvald 18:10, so each branch runs every 80, 40 min apart. Back: Rychvald 16:10, 17:30, 18:50 (exact), Záblatí 16:57, 18:07 (every 80 within 10 min). Each branch is one bus on an 80-min round. Set by hand (owner, 20 Oct 2026): separate fits had given 23A every 30 and 23B every 80, bunching 7 min apart at Hranečník."
+      },
+      {
+        "fr": "Rychvald, rozcestí",
+        "to": "Hranečník",
+        "every": 80,
+        "real": [
+          10
+        ],
+        "why": "23A Rychvald and 23B Bohumín, Záblatí share Hranečník. From 16:10 the timetable alternates them every 40: Záblatí 16:10, Rychvald 16:50, Záblatí 17:30, Rychvald 18:10, so each branch runs every 80, 40 min apart. Back: Rychvald 16:10, 17:30, 18:50 (exact), Záblatí 16:57, 18:07 (every 80 within 10 min). Each branch is one bus on an 80-min round. Set by hand (owner, 20 Oct 2026): separate fits had given 23A every 30 and 23B every 80, bunching 7 min apart at Hranečník."
+      },
+      {
+        "fr": "Hranečník",
+        "to": "Bohumín, Záblatí, střed",
+        "every": 80,
+        "real": [
+          10
+        ],
+        "why": "23A Rychvald and 23B Bohumín, Záblatí share Hranečník. From 16:10 the timetable alternates them every 40: Záblatí 16:10, Rychvald 16:50, Záblatí 17:30, Rychvald 18:10, so each branch runs every 80, 40 min apart. Back: Rychvald 16:10, 17:30, 18:50 (exact), Záblatí 16:57, 18:07 (every 80 within 10 min). Each branch is one bus on an 80-min round. Set by hand (owner, 20 Oct 2026): separate fits had given 23A every 30 and 23B every 80, bunching 7 min apart at Hranečník."
+      },
+      {
+        "fr": "Bohumín, Záblatí, střed",
+        "to": "Hranečník",
+        "every": 80,
+        "real": [
+          57
+        ],
+        "why": "23A Rychvald and 23B Bohumín, Záblatí share Hranečník. From 16:10 the timetable alternates them every 40: Záblatí 16:10, Rychvald 16:50, Záblatí 17:30, Rychvald 18:10, so each branch runs every 80, 40 min apart. Back: Rychvald 16:10, 17:30, 18:50 (exact), Záblatí 16:57, 18:07 (every 80 within 10 min). Each branch is one bus on an 80-min round. Set by hand (owner, 20 Oct 2026): separate fits had given 23A every 30 and 23B every 80, bunching 7 min apart at Hranečník."
+      }
+    ]
+  },
+  "schedule_overrides_retired_why": "20 Oct 2026: these fitted the wind-down after 16:00 (21/81 and 23 every 40/80). The lines are now modelled at their own busiest afternoon stretch (line_anchor) and interleaved automatically at shared termini.",
+  "anchor_overrides": {
+    "23": {
+      "anchor": 890,
+      "why": "owner, 20 Oct 2026: 23's afternoon peak pattern is every 20 (until 16:10). The busiest stretch 14:20–16:20 beat 16:00 by only one departure, so the rule kept 16:00, where the line winds down to every 40 and the Záblatí bus is at :57 instead of :27."
+    }
+  },
+  "terminus_alias_notes": {
+    "Kunčice, Nová huť garáže": "owner, 20 Oct 2026 (31 'does have uneven departures'): one loop at the steelworks. Buses out run hlavní brána → garáže → jižní brána, and buses back start at garáže and pass jižní brána. As two termini they were two unmatched branches.",
+    "Havířov, Město, nemocnice": "ODIS 441 (20 Oct 2026, stop-coverage rule): the hourly loop through Havířov Město. Buses out end at žel. st., buses back start at nemocnice and run obchodní dům → Magistrát → žel. st. As two termini the branch was never modelled, so nemocnice and obchodní dům had no service."
+  },
+  "hand_lines_rule": "Hand-set ODIS lines (owner, 20 Oct 2026: 'You are good to go' on the bus schedule method check, pipeline/bus-schedule-method.md v2). Each line was read over the whole day at its core points; the afternoon anchor is the model hour. Slots: minutes for every 60, else 'H:MM' clock times (any one per slot). A leg's real departures come from the JDF trips of its 'lines'; a back leg of null is an empty, untimed return. These rules (whole-day core-point reading, no every 1440/720, at most 480) are for the regional (ODIS) lines only; local DPO lines are modelled at their afternoon peak, with their unique stops (owner, 20 Oct 2026). Depot runs are never modelled. mode 'add' keeps a line's automatic branches and adds these; 'window' is where the fit cell compares the slots with the real departures.",
+  "hand_lines": {
+    "442": {
+      "core": [
+        "Hranečník",
+        "Havířov, Podlesí, autobusové nádraží"
+      ],
+      "note": "Hranečník → Podlesí runs 5 an hour in 14:00–17:30 (:05 :10 :20 :40 :50) but only 3 come back as 442 (:21 :36 :51). 441 is the mirror image (1 out, 3 back), so two of the 442 buses come back as 441 (Step 5b). Which two comes from the plates on Tue 20 Oct 2026 (ODIS live map, session a4): the :05 buses went on as 441 at :31 (14:04, 16:04) or :46 (15:04), the :40 buses at :16 (14:39, 15:39), one :50 bus at :31; no :10 bus was seen going to 441 (14:09 went to 443). So :05 → :32 and :40 → :17 are one circuit, Simutrans line 442/441; the rest of 442 (:10 :20 :50 out) is an exact hourly line with three slots. 10 buses for 441 + 442 against 11 with :05/:10 → :32/:47.",
+      "lines": [
+        {
+          "name": "442",
+          "every": 60,
+          "X": "Hranečník",
+          "Y": "Havířov, Podlesí, autobusové nádraží",
+          "out": [
+            10,
+            20,
+            50
+          ],
+          "back": [
+            21,
+            36,
+            51
+          ],
+          "out_lines": [
+            "442"
+          ],
+          "back_lines": [
+            "442"
+          ]
+        },
+        {
+          "name": "442/441",
+          "every": 60,
+          "X": "Hranečník",
+          "Y": "Havířov, Podlesí, autobusové nádraží",
+          "out": [
+            5,
+            40
+          ],
+          "back": [
+            17,
+            32
+          ],
+          "out_lines": [
+            "442"
+          ],
+          "back_lines": [
+            "441"
+          ],
+          "out_via": "Havířov, Město, Magistrát",
+          "back_via": "Havířov, Šumbark, bazén",
+          "why": "out on 442's express path, back on 441's path through Šenov and Šumbark"
+        }
+      ]
+    },
+    "441": {
+      "core": [
+        "Moravská Ostrava, Náměstí Republiky",
+        "Hranečník",
+        "Havířov, Město, žel.st.",
+        "Havířov, Podlesí, autobusové nádraží"
+      ],
+      "note": "441's departures from Podlesí at :17 and :32 are the 442/441 circuit on the 442 card: those buses arrive on 442's :40 and :05 express trips (plates, Tue 20 Oct 2026). What is left of 441 is balanced: one bus an hour to Podlesí (:30, back :47) and the Havířov Město loop (:00, back from nemocnice :05). Buses arriving on 441 at Hranečník often go on as 440 (:12), as the plates show; 440 stays its own line. The night trips via Náměstí Republiky are outside the model hour.",
+      "lines": [
+        {
+          "name": "441",
+          "every": 60,
+          "X": "Hranečník",
+          "Y": "Havířov, Podlesí, autobusové nádraží",
+          "out": [
+            30
+          ],
+          "back": [
+            47
+          ],
+          "out_lines": [
+            "441"
+          ],
+          "back_lines": [
+            "441"
+          ]
+        },
+        {
+          "name": "441 Město",
+          "every": 60,
+          "X": "Hranečník",
+          "Y": "Havířov, Město, žel.st.",
+          "out": [
+            0
+          ],
+          "back": [
+            5
+          ],
+          "out_lines": [
+            "441"
+          ],
+          "back_lines": [
+            "441"
+          ]
+        }
+      ]
+    },
+    "534": {
+      "core": [
+        "Hranečník",
+        "Orlová, Poruba, rest.Horník",
+        "Karviná, Fryštát, autobusové nádraží"
+      ],
+      "note": "534 and 535 are one corridor (Step 5b): every 30 at Hranečník both ways, out :25 / :55 and in :03 / :33, all afternoon. Alone, 534 sends two an hour out and brings one back, and 535 the reverse. As two balanced hourly lines, 534 takes :55 (back from Karviná :20) and 535 :25 (back :01); they meet alternately at Orlová, Poruba, rest. Horník (:13 / :44 both ways). 534's own 13:25, 14:25 and 15:25 run in 535's :25 slot.",
+      "lines": [
+        {
+          "name": "534",
+          "every": 60,
+          "X": "Hranečník",
+          "Y": "Karviná, Fryštát, autobusové nádraží",
+          "out": [
+            55
+          ],
+          "back": [
+            20
+          ],
+          "out_lines": [
+            "534"
+          ],
+          "back_lines": [
+            "534"
+          ]
+        }
+      ]
+    },
+    "535": {
+      "core": [
+        "Hranečník",
+        "Orlová, Poruba, rest.Horník",
+        "Orlová, Lutyně, autobusové nádraží",
+        "Karviná, Fryštát, autobusové nádraží"
+      ],
+      "note": "One corridor with 534 (see 534): 535 takes the :25 slot out of Hranečník and :01 back from Karviná. Before 16:25 that slot runs as 534 (13:25, 14:25, 15:25), counted here. 17:25 and 18:55 turn at Lutyně, autobusové nádraží; the Orlová, Poruba – Karviná trips run in the morning only.",
+      "lines": [
+        {
+          "name": "535",
+          "every": 60,
+          "X": "Hranečník",
+          "Y": "Karviná, Fryštát, autobusové nádraží",
+          "out": [
+            25
+          ],
+          "back": [
+            1
+          ],
+          "out_lines": [
+            "535",
+            "534"
+          ],
+          "back_lines": [
+            "535"
+          ]
+        }
+      ]
+    },
+    "387": {
+      "core": [
+        "Hranečník",
+        "Kaňovice, rest.U Magerů",
+        "Lučina, přehrada",
+        "Soběšovice, Na husarůvce"
+      ],
+      "note": "In the afternoon 387 only runs out (14:45, 15:45); its trips back run in the morning. The return is an empty, untimed leg (Step 6), so the bus is back at Hranečník for the next :45.",
+      "lines": [
+        {
+          "name": "387",
+          "every": 60,
+          "X": "Hranečník",
+          "Y": "Soběšovice, Na husarůvce",
+          "out": [
+            45
+          ],
+          "back": null,
+          "out_lines": [
+            "387"
+          ],
+          "back_lines": [
+            "387"
+          ]
+        }
+      ]
+    },
+    "383": {
+      "core": [
+        "Hranečník",
+        "Šenov, Škrbeň",
+        "Havířov, Dolní Datyně, rozcestíBludovice",
+        "Kaňovice, rest.U Magerů",
+        "Řepiště, u kříže"
+      ],
+      "note": "No interval repeats over the whole day. In the afternoon the buses leave Hranečník 75 min apart (14:13, 15:28, 16:43); 75 does not divide 1440, so every 72 (method v2: any divisor of 1440) fits best: out within 3 min, back within 9 (16:47 against the 16:56 slot). On the To check list.",
+      "lines": [
+        {
+          "name": "383",
+          "every": 72,
+          "X": "Hranečník",
+          "Y": "Řepiště, u kříže",
+          "out": [
+            "15:28"
+          ],
+          "back": [
+            "14:32"
+          ],
+          "out_lines": [
+            "383"
+          ],
+          "back_lines": [
+            "383"
+          ]
+        }
+      ]
+    },
+    "57": {
+      "mode": "add",
+      "core": [
+        "Kunčice, Nová huť garáže",
+        "Vítkovice, U chladičů",
+        "Hulváky"
+      ],
+      "note": "An exception the owner approved for this case (20 Oct 2026): local lines are otherwise modelled only at their afternoon peak. Three runs a day go from Kunčice, Nová huť garáže (a public stop, not a DPO depot) to Hulváky via Vítkovice, U chladičů: 6:08, 14:08, 22:13. They are the stop's only service and repeat every 480, a shift pattern. So they are their own Simutrans line every 480 from Nová huť at 14:08 (22:13 is 5 min after its 22:08 slot), and the bus returns empty, untimed; no trip runs back that way.",
+      "lines": [
+        {
+          "name": "57 garáže",
+          "every": 480,
+          "X": "Kunčice, Nová huť jižní brána",
+          "Y": "Hulváky",
+          "out": [
+            "14:08"
+          ],
+          "back": null,
+          "out_lines": [
+            "57"
+          ],
+          "back_lines": [
+            "57"
+          ],
+          "window": [
+            "13:00",
+            "23:00"
+          ]
+        }
+      ],
+      "exception": "owner approved for 57 only, 20 Oct 2026; further cases are asked with supporting info"
+    }
+  }
+}

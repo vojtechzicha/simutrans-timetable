@@ -1,0 +1,80 @@
+{
+  "service_day": "2026-09-29",
+  "service_day_note": "Tuesday 29 September 2026, the day after the St Wenceslas holiday; weekday trains run as on any Tuesday.",
+  "categories": {
+    "50": "EC",
+    "63": "IC",
+    "69": "Ex",
+    "94": "SC",
+    "157": "R",
+    "209": "rj",
+    "9003": "LE",
+    "9004": "RJ",
+    "70": "EN",
+    "9006": "NJ",
+    "9010": "ES",
+    "9001": "TLX"
+  },
+  "included_categories": [
+    "50",
+    "63",
+    "69",
+    "94",
+    "157",
+    "209",
+    "9003",
+    "9004"
+  ],
+  "excluded_categories_note": {
+    "70": "EuroNight: night train",
+    "9006": "Nightjet: night train",
+    "9010": "European Sleeper: night train",
+    "9001": "Trilex-express Liberec – Zittau: a regional train ordered by Liberecký kraj, not one of the requested categories"
+  },
+  "carriers": {
+    "1154": "České dráhy",
+    "3246": "RegioJet",
+    "3752": "RegioJet ÚK",
+    "3949": "RegioJet",
+    "3990": "RegioJet",
+    "3616": "Leo Express",
+    "3189": "Arriva vlaky",
+    "3288": "GW Train Regio",
+    "3736": "Trilex (Die Länderbahn)",
+    "1156": "Železničná spoločnosť Slovensko",
+    "1181": "ÖBB",
+    "1251": "PKP Intercity",
+    "2480": "DB",
+    "3230": "Die Länderbahn",
+    "3407": "European Sleeper",
+    "3896": "European Sleeper",
+    "3332": "Arriva"
+  },
+  "commercial_carrier_groups": {
+    "3246": "RJ",
+    "3949": "RJ",
+    "3990": "RJ",
+    "3752": "RJ",
+    "3616": "LE",
+    "1154": "CD"
+  },
+  "passenger_activities": [
+    "0001",
+    "0028",
+    "0029",
+    "0030"
+  ],
+  "window": {
+    "search_from": 720,
+    "search_to": 1200,
+    "tolerance": 5
+  },
+  "v3_week": [
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-08",
+    "2026-10-09"
+  ],
+  "v3_week_note": "MD-CR v3 (3 Oct 2026): a train is modelled only if it runs on all five days of this ordinary Mon–Fri week."
+}

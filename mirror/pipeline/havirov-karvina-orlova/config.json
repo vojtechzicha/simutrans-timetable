@@ -1,0 +1,1530 @@
+{
+ "city": "Havířov, Karviná, Orlová",
+ "mode": "bus",
+ "operator": "Transdev Slezsko a.s., IČO 45192081 (branches Havířov, Karviná, Orlová)",
+ "title": "Havířov Karviná Orlová Bus Vypravenost",
+ "output_html": "Havirov-Karvina-Orlova Bus Vypravenost.html",
+ "artifact_url": "https://claude.ai/artifact/UmPg6guEAbmSune5YnFTVb",
+ "snapshot": "2026-10-20",
+ "vehicle_day": "2026-10-20",
+ "vehicle_day_label": "úterý 20. 10. 2026",
+ "vehicle_day_label_en": "Tuesday 20 Oct 2026",
+ "network_state_day": "2026-10-20",
+ "network_state_label": "20 Oct 2026",
+ "peak_minute": 960,
+ "peak_label": "16:00",
+ "jdf": {
+  "url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
+  "export_label": "CIS JŘ bus JDF export of 20 Oct 2026",
+  "operator_ic": "45192081",
+  "licences": [
+   "876401-876421",
+   "876434",
+   "877511-877520",
+   "878501-878505"
+  ]
+ },
+ "towns": [
+  {
+   "name": "Havířov",
+   "id": "havirov",
+   "lines": [
+    [
+     401,
+     421
+    ],
+    [
+     434,
+     434
+    ]
+   ],
+   "pak": "VZ-MHDHavirov-",
+   "branch": "Transdev Slezsko pr. Havířov"
+  },
+  {
+   "name": "Karviná",
+   "id": "karvina",
+   "lines": [
+    [
+     511,
+     520
+    ]
+   ],
+   "pak": "VZ-MHDKarvina-",
+   "branch": "Transdev Slezsko pr. Karviná"
+  },
+  {
+   "name": "Orlová",
+   "id": "orlova",
+   "lines": [
+    [
+     501,
+     505
+    ]
+   ],
+   "pak": "VZ-MHDOrlova-",
+   "branch": "Transdev Slezsko pr. Orlová"
+  }
+ ],
+ "fit": {
+  "window": [
+   900,
+   1080
+  ],
+  "core": [
+   930,
+   990
+  ],
+  "lo": 780,
+  "hi": 1200
+ },
+ "cycle_t0": 960,
+ "cycle_lay": 3,
+ "table_window": [
+  900,
+  1020
+ ],
+ "branch_rule": {
+  "window": [
+   900,
+   1080
+  ],
+  "min_trips": 3,
+  "hour": [
+   960,
+   1020
+  ],
+  "afternoon": [
+   780,
+   1140
+  ],
+  "afternoon_min": 3
+ },
+ "depot_stops": [],
+ "all_termini_are_loops": true,
+ "terminus_alias": {
+  "Podlesí, Těšínská": "Podlesí, autobusové nádraží"
+ },
+ "stop_name_fixed": {},
+ "stop_name_expansions": [
+  [
+   "EDĚ aut.st.",
+   "Elektrárna Dětmarovice, autobusová stanice"
+  ],
+  [
+   "aut.nádr.",
+   "autobusové nádraží"
+  ],
+  [
+   "aut.st.",
+   "autobusová stanice"
+  ],
+  [
+   "rozc.k žel.st.",
+   "rozcestí k železniční stanici"
+  ],
+  [
+   "žel.st.",
+   "železniční stanice"
+  ],
+  [
+   "žel.zast.",
+   "železniční zastávka"
+  ],
+  [
+   "rozc.",
+   "rozcestí "
+  ],
+  [
+   "pož.zbroj.",
+   "požární zbrojnice"
+  ],
+  [
+   "rest.",
+   "restaurace "
+  ],
+  [
+   "zast.",
+   "zastávka "
+  ],
+  [
+   "J.Kotase",
+   "Josefa Kotase"
+  ],
+  [
+   "H.Malířové",
+   "Heleny Malířové"
+  ],
+  [
+   "M.Pujmanové",
+   "Marie Pujmanové"
+  ],
+  [
+   "Kpt.Jasioka",
+   "Kapitána Jasioka"
+  ],
+  [
+   "Nám.Republiky",
+   "Náměstí Republiky"
+  ],
+  [
+   "Národní tř.",
+   "Národní třída"
+  ],
+  [
+   "Děl.dům",
+   "Dělnický dům"
+  ],
+  [
+   "nákup.stř.",
+   "nákupní středisko"
+  ],
+  [
+   "čerp.st.",
+   "čerpací stanice"
+  ],
+  [
+   "čist.st.",
+   "čisticí stanice"
+  ],
+  [
+   "kult.dům",
+   "kulturní dům"
+  ],
+  [
+   "obch.dům",
+   "obchodní dům"
+  ],
+  [
+   "rehab.sanatorium",
+   "rehabilitační sanatorium"
+  ],
+  [
+   "sídl.",
+   "sídliště "
+  ],
+  [
+   "křiž.",
+   "křižovatka "
+  ],
+  [
+   "Pr.Suchá",
+   "Prostřední Suchá"
+  ],
+  [
+   "nám.",
+   "náměstí"
+  ],
+  [
+   "2.etapa",
+   "2. etapa"
+  ]
+ ],
+ "fleet": {
+  "carrier_id": 28,
+  "list_urls": {
+   "p": "https://seznam-autobusu.cz/seznam?prov=1&trakce=autobus&iddopravce=28&vcetneSluzebnich=1",
+   "e_p": "https://seznam-autobusu.cz/seznam?prov=1&trakce=elektrobus&iddopravce=28&vcetneSluzebnich=1"
+  }
+ },
+ "records": {
+  "line_url": "https://seznam-autobusu.cz/vypravenost/odis/vypis?linka={line}",
+  "day_url": "https://seznam-autobusu.cz/vypravenost/odis/vypis?datum={date}",
+  "since": "2025-01-01",
+  "why": "Designed buses come from the line's own weekday records. Most lines have few records in 2026 (401: none since Dec 2025), so the window starts in January 2025; only buses still active in the register count."
+ },
+ "type_rules": [
+  [
+   "Iveco Streetway 12M CNG",
+   "Streetway 12M CNG",
+   "Iveco Streetway 12M CNG",
+   "12 m",
+   "Streetway_12M_CNG"
+  ],
+  [
+   "Iveco Streetway 18M CNG",
+   "Streetway 18M CNG",
+   "Iveco Streetway 18M CNG (articulated)",
+   "18 m",
+   "Streetway_18M_CNG"
+  ],
+  [
+   "Iveco Urbanway 12M CNG",
+   "Urbanway 12M CNG",
+   "Iveco Urbanway 12M CNG",
+   "12 m",
+   "Urbanway_12M_CNG"
+  ],
+  [
+   "Iveco Urbanway 10,5M CNG",
+   "Urbanway 10,5M CNG",
+   "Iveco Urbanway 10,5M CNG",
+   "10.5 m",
+   "Urbanway_12M_CNG"
+  ],
+  [
+   "SOR NBG 18",
+   "SOR NBG 18",
+   "SOR NBG 18 (articulated, CNG)",
+   "18 m",
+   "SOR_NBG_18"
+  ],
+  [
+   "SOR NSG 18",
+   "SOR NSG 18",
+   "SOR NSG 18 (articulated, CNG)",
+   "18 m",
+   "SOR_NSG_18"
+  ],
+  [
+   "SOR NSG 12",
+   "SOR NSG 12",
+   "SOR NSG 12 (CNG)",
+   "12 m",
+   "SOR_NSG_12"
+  ],
+  [
+   "SOR NS 12",
+   "SOR NS 12",
+   "SOR NS 12 (diesel)",
+   "12 m",
+   "SOR_NS_12"
+  ],
+  [
+   "SOR NS 12 electric",
+   "SOR NS 12 electric",
+   "SOR NS 12 electric (battery)",
+   "12 m",
+   "SOR_NS_12_electric"
+  ],
+  [
+   "Dekstra LF 38 CNG",
+   "Dekstra LF 38 CNG",
+   "Dekstra LF 38 CNG",
+   "midibus",
+   "Dekstra_LF_38_CNG"
+  ],
+  [
+   "ROŠERO - P First FCLLI CNG",
+   "Rošero First CNG",
+   "Rošero-P First FCLLI CNG",
+   "midibus",
+   "Rosero_First_CNG"
+  ],
+  [
+   "ROŠERO - P First FCLLI",
+   "Rošero First",
+   "Rošero-P First FCLLI (diesel)",
+   "midibus",
+   "Rosero_First_CNG"
+  ],
+  [
+   "Irisbus Citelis 12M CNG",
+   "Citelis 12M CNG",
+   "Irisbus Citelis 12M CNG",
+   "12 m",
+   "Citelis_12M_CNG"
+  ],
+  [
+   "Scania Citywide LF 12M CNG",
+   "Citywide LF 12M CNG",
+   "Scania Citywide LF 12M CNG",
+   "12 m",
+   "Citywide_LF_12M_CNG"
+  ],
+  [
+   "Scania Citywide LE 15M CNG",
+   "Citywide LE 15M CNG",
+   "Scania Citywide LE 15M CNG",
+   "15 m",
+   "Citywide_LE_15M_CNG"
+  ],
+  [
+   "SOR BNG 10,5",
+   "SOR BNG 10,5",
+   "SOR BNG 10,5 (CNG)",
+   "10.5 m",
+   "SOR_BNG_10_5"
+  ],
+  [
+   "SOR CNG 10,5",
+   "SOR CNG 10,5",
+   "SOR CNG 10,5",
+   "10.5 m",
+   "SOR_CNG_10_5"
+  ],
+  [
+   "SOR BN 9,5",
+   "SOR BN 9,5",
+   "SOR BN 9,5",
+   "9.5 m",
+   "SOR_BN_9_5"
+  ],
+  [
+   "SKD Iveco Stratos LF 38 CNG",
+   "Stratos LF 38 CNG",
+   "SKD Iveco Stratos LF 38 CNG",
+   "midibus",
+   "Stratos_LF_38_CNG"
+  ],
+  [
+   "SKD Iveco Stratos LF 38",
+   "Stratos LF 38",
+   "SKD Iveco Stratos LF 38 (diesel)",
+   "midibus",
+   "Stratos_LF_38_CNG"
+  ],
+  [
+   "Iveco Crossway LE LINE 10,8M",
+   "Crossway LE LINE 10,8M",
+   "Iveco Crossway LE LINE 10,8M",
+   "10.8 m",
+   "Crossway_LE_Line_10_8M"
+  ],
+  [
+   "Irisbus Crossway LE 10,8M",
+   "Crossway LE 10,8M",
+   "Irisbus Crossway LE 10,8M",
+   "10.8 m",
+   "Crossway_LE_Line_10_8M"
+  ],
+  [
+   "Isuzu NOVO Citi Life Class I.",
+   "Novociti Life",
+   "Isuzu Novociti Life",
+   "midibus",
+   "NovoCiti_Life"
+  ],
+  [
+   "SOR CNG 12",
+   "SOR CNG 12",
+   "SOR CNG 12",
+   "12 m",
+   "Urbanway_12M_CNG"
+  ],
+  [
+   "SOR BNG 12",
+   "SOR BNG 12",
+   "SOR BNG 12 (CNG)",
+   "12 m",
+   "Urbanway_12M_CNG"
+  ],
+  [
+   "Iveco Crossway LE CITY 12M NP",
+   "Crossway LE CITY 12M",
+   "Iveco Crossway LE CITY 12M NP",
+   "12 m",
+   "Urbanway_12M_CNG"
+  ],
+  [
+   "Iveco Crossway LE CITY 12M",
+   "Crossway LE CITY 12M",
+   "Iveco Crossway LE CITY 12M",
+   "12 m",
+   "Urbanway_12M_CNG"
+  ],
+  [
+   "Iveco Crossway LE LINE 12M NP",
+   "Crossway LE LINE 12M",
+   "Iveco Crossway LE LINE 12M NP",
+   "12 m",
+   "Urbanway_12M_CNG"
+  ],
+  [
+   "Irisbus Crossway LE 12M",
+   "Crossway LE 12M",
+   "Irisbus Crossway LE 12M",
+   "12 m",
+   "Irisbus_Crossway_LE_12M"
+  ],
+  [
+   "Scania Citywide LE 12M CNG",
+   "Citywide LE 12M CNG",
+   "Scania Citywide LE 12M CNG",
+   "12 m",
+   "Citywide_LF_12M_CNG"
+  ],
+  [
+   "Scania Citywide Suburban LE 15M CNG",
+   "Citywide Suburban LE 15M CNG",
+   "Scania Citywide Suburban LE 15M CNG",
+   "15 m",
+   "Citywide_LE_15M_CNG"
+  ],
+  [
+   "Dekstra LE 37 L CNG",
+   "Dekstra LE 37 L CNG",
+   "Dekstra LE 37 L CNG",
+   "12 m",
+   "Urbanway_12M_CNG"
+  ],
+  [
+   "SOR EBN 9,5",
+   "SOR EBN 9,5",
+   "SOR EBN 9,5 (battery)",
+   "9.5 m",
+   "SOR_NS_12_electric"
+  ],
+  [
+   "SOR ICNG 12,3",
+   "SOR ICNG 12,3",
+   "SOR ICNG 12,3",
+   "12 m",
+   "Urbanway_12M_CNG"
+  ]
+ ],
+ "paint_rules": [
+  [
+   "schéma města Havířov",
+   "havirovmodra"
+  ],
+  [
+   "bílo-černá",
+   "karvinabilocerna"
+  ],
+  [
+   "3ČSAD, bílo-zelená",
+   "3csadbilozelena"
+  ],
+  [
+   "zelená metalíza",
+   "zelenametaliza"
+  ],
+  [
+   "bílá",
+   "bila"
+  ]
+ ],
+ "pak": {
+  "repo": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
+  "commit": "e81ad0d (20 Oct 2026)",
+  "packages": [
+   "VZ-MHDHavirov-bus",
+   "VZ-MHDKarvina-bus",
+   "VZ-MHDOrlova-bus",
+   "VZ-ODIS-bus"
+  ],
+  "why": "Pak session simutrans-custom-czech-pak128-f3, 20 Oct 2026: town (MHD) lines use only the VZ-MHD<Town> objects, never CZ-ODIS / CZR-ODIS.",
+  "odis_why": "Pak session f3, 20 Oct 2026: VZ-ODIS-bus holds the ODIS regional (non-MHD) fleet. Town lines keep the MHD<Town> objects; a regional bus that works a town line (kraj or ODIS paint) takes its exact VZ-ODIS object instead of a town stand-in."
+ },
+ "live": {
+  "url": "https://mpvnet.cz/Odis/map/mapData",
+  "label": "Tue 20 Oct",
+  "half_window": 20,
+  "why_window": "Each line is observed in its own window: 20 min either side of its peak anchor (line_anchor), so a line peaking at 14:30 is counted at 14:30, not at 16:00.",
+  "busy_window": [
+   870,
+   1050
+  ],
+  "provisional": {
+   "window": [
+    390,
+    480
+   ],
+   "label": "Tue 20 Oct 6:30–8:00",
+   "why": "Published before the afternoon peak: buses seen on each line in the morning peak (6:30–8:00) stand in until the afternoon peak of the same day is observed."
+  },
+  "note": "ODIS live map (mpvnet.cz, behind mapa.kodis.cz): every bus with licence, line, course, trip start and final stop, and number plate; polled every minute 13:00–19:30 on Tue 20 Oct 2026."
+ },
+ "min_afternoon_trips": 3,
+ "depots": {
+  "Havířov": "provozovna Havířov",
+  "Karviná": "provozovna Karviná",
+  "Orlová": "provozovna Orlová"
+ },
+ "network_state": [
+  [
+   "in",
+   "Line 420 diverted in Horní Bludovice (from 14 Oct 2026)",
+   "The CIS JŘ export has a diversion timetable for 420 valid from 14 Oct to the end of the timetable year (12 Dec 2026): Horní Bludovice, Záguří and Bludovice, U Kasperčoka are not served. It runs on the vehicle day and has no announced end, so it is modelled."
+  ],
+  [
+   "out",
+   "Lines 407 and 408 (night)",
+   "Night lines only; not in the afternoon model."
+  ],
+  [
+   "out",
+   "Lines 414 and 503 (occasional trips)",
+   "One afternoon trip each on the vehicle day (414 Dolní Datyně – Podlesí, 503 Lazy – Lutyně); run by buses of other lines, not modelled."
+  ]
+ ],
+ "branches_why": "A line's terminus pairs are its Simutrans lines when they carry at least 3 trips each way in 15:00–18:00 with a departure in the peak hour, or at least 3 trips each way in 13:00–19:00 (regular afternoon branches); the pair with the most trips is always one. Short workings and depot runs are folded into the main row. Circular lines are one Simutrans line with one timed entry.",
+ "regional_paints": [
+  "logo dopravy Moravskoslezského kraje",
+  "schéma ODIS"
+ ],
+ "terminus_alias_why": "Buses for Bludovice, Těrlicko and Dolní Datyně leave from Podlesí, Těšínská, 2 min from the bus station where they arrive (as Ostrava's Vozovna trolejbusů / sad Boženy Němcové): one terminus.",
+ "coverage_rule": "Owner, 20 Oct 2026: \"501 is the only line running to Dětmarovice, how can we not model that?\" Every stop the sheet's lines serve in 13:00–19:00 must be on a modelled Simutrans line, or be listed with the reason. Where the branch rule misses a place, the line is set by hand (config.line_overrides, as Ostrava 41).",
+ "line_overrides": {
+  "501": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "501",
+     "every": 480,
+     "window": [
+      600,
+      1140
+     ],
+     "fitwin": [
+      300,
+      1380
+     ],
+     "why": "Read at its core points (Lazy, Lutyně, Dětmarovice, železniční stanice), the Orlová trunk is one hourly bus: Lazy :06, back from Lutyně :30–:35. In odd hours it goes on to Dětmarovice (Lazy :06, Dětmarovice :18 in even hours, also on the trips that start further out at Elektrárna or Koukolná). As in Ex4: 501 is that Dětmarovice service, every 2 hours, written as every 480 with three slots so that the fourth slot belongs to 501B (Koukolná). 501's own trips use the path via Poruba, kulturní dům and Lutyně, Zátiší.",
+     "legs": [
+      {
+       "fr": "Lazy, u Kornase",
+       "to": "Dětmarovice, železniční stanice",
+       "at": [
+        666,
+        786,
+        906
+       ],
+       "deps": [
+        "11:06",
+        "15:06"
+       ],
+       "rt": 37,
+       "stops_from": [
+        [
+         "501",
+         "11:06"
+        ]
+       ],
+       "stops_cut": [
+        "Lazy, u Kornase",
+        "Dětmarovice, železniční stanice"
+       ],
+       "src": "501 11:06 (passes Dětmarovice, železniční stanice 11:43); 504 15:06; 13:06 has no real trip (501's 12:58 turns at Lutyně)"
+      },
+      {
+       "fr": "Dětmarovice, železniční stanice",
+       "to": "Lazy, u Kornase",
+       "at": [
+        738,
+        858,
+        978
+       ],
+       "deps": [
+        "12:18",
+        "16:18"
+       ],
+       "rt": 37,
+       "stops_from": [
+        [
+         "501",
+         "12:15"
+        ]
+       ],
+       "stops_cut": [
+        "Dětmarovice, železniční stanice",
+        "Lazy, u Kornase"
+       ],
+       "src": "501 12:15 from Elektrárna (Dětmarovice, železniční stanice 12:18); 501 16:18 (on at 16:35 from Lutyně); 14:18 has no real trip"
+      }
+     ]
+    },
+    {
+     "name": "501B",
+     "every": 480,
+     "window": [
+      480,
+      1170
+     ],
+     "fitwin": [
+      300,
+      1380
+     ],
+     "why": "The Dětmarovice trips that go beyond the railway station to Elektrárna Dětmarovice and Koukolná (the only service to Elektrárna, mateřská škola and Koukolná): Lazy 9:06 and 17:06 (8 hours apart), back from Koukolná at :09 (10:09, 18:09) so that it passes the railway station at :18, the knot it shares with 501. The fourth slot of 501's 2-hour pattern, as Ex4/2 and Ex4/3 are every 480 beside Ex4/1.",
+     "legs": [
+      {
+       "fr": "Lazy, u Kornase",
+       "to": "Dětmarovice, Koukolná",
+       "at": [
+        546
+       ],
+       "deps": [
+        "09:06",
+        "17:06"
+       ],
+       "rt": 49,
+       "stops_from": [
+        [
+         "501",
+         "17:06"
+        ],
+        [
+         "501",
+         "17:35"
+        ]
+       ],
+       "src": "504 9:06 (to Elektrárna), 501 17:06 (to Lutyně, on at 17:35 to Koukolná)"
+      },
+      {
+       "fr": "Dětmarovice, Koukolná",
+       "to": "Lazy, u Kornase",
+       "at": [
+        618
+       ],
+       "deps": [
+        "10:18",
+        "18:18"
+       ],
+       "knot": "Dětmarovice, železniční stanice",
+       "knot_rt": 9,
+       "rt": 44,
+       "stops_from": [
+        [
+         "501",
+         "18:09"
+        ]
+       ],
+       "src": "501 10:15 from Elektrárna and 18:09 from Koukolná, both through Dětmarovice, železniční stanice at :18; timed at Koukolná (:09) so the bus passes the station at :18"
+      }
+     ]
+    }
+   ]
+  },
+  "504": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "504",
+     "every": 240,
+     "window": [
+      600,
+      1140
+     ],
+     "fitwin": [
+      300,
+      1380
+     ],
+     "why": "The other half of the hourly Orlová trunk (owner, 20 Oct 2026: \"Could we take 503 to be one of the legs of the 501/504?\"). In even hours the bus leaves Lazy at :06 and turns at Lutyně, back at :35 in odd hours. 503's 14:00 trip is that even-hour departure by the other path, via Lazy, Důl Lazy, Veverka, Poliklinika and škola, so 504 is one circuit every 240 that alternates the two paths: via Poruba, škola at 8:06, 12:06, 16:06, via Důl Lazy at 10:06, 14:06, 18:06 (503's real 14:00 is 6 min earlier). 504's own Dětmarovice trips (8:06 and 18:06 to the railway station, 9:06 to Elektrárna) are the odd ones out: Dětmarovice is 501's and 501B's.",
+     "legs": [
+      {
+       "fr": "Lazy, u Kornase",
+       "to": "Lutyně, autobusové nádraží",
+       "core": true,
+       "lines": [
+        "504"
+       ],
+       "at": [
+        6
+       ],
+       "stops_from": [
+        [
+         "504",
+         "16:06"
+        ]
+       ],
+       "note": "via Poruba, škola",
+       "src": "504 through Lutyně: 8:06, 12:00, 16:06 (8:06 goes on to Dětmarovice in reality)"
+      },
+      {
+       "fr": "Lutyně, autobusové nádraží",
+       "to": "Lazy, u Kornase",
+       "core": true,
+       "lines": [
+        "504"
+       ],
+       "at": [
+        95
+       ],
+       "stops_from": [
+        [
+         "504",
+         "15:35"
+        ]
+       ],
+       "src": "504 through Lutyně to Lazy at :35 in odd hours (9:30, 13:35, 17:35)"
+      },
+      {
+       "fr": "Lazy, u Kornase",
+       "to": "Lutyně, autobusové nádraží",
+       "deps": [
+        "14:00"
+       ],
+       "at": [
+        126
+       ],
+       "rt": 26,
+       "stops_from": [
+        [
+         "503",
+         "14:00"
+        ]
+       ],
+       "note": "via Důl Lazy (503)",
+       "src": "503 14:00 via Důl Lazy; 504 10:06 and 18:06 take this slot via Poruba, škola in reality"
+      },
+      {
+       "fr": "Lutyně, autobusové nádraží",
+       "to": "Lazy, u Kornase",
+       "core": true,
+       "lines": [
+        "504"
+       ],
+       "at": [
+        215
+       ],
+       "stops_from": [
+        [
+         "504",
+         "15:35"
+        ]
+       ],
+       "src": "504 through Lutyně to Lazy at :35 in odd hours (11:30, 15:35, 19:30)"
+      }
+     ]
+    }
+   ]
+  },
+  "502": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "502",
+     "every": 60,
+     "window": [
+      480,
+      900
+     ],
+     "why": "Lutyně ⇄ Město, náměstí, hourly 8:01–14:34; no trips after 14:34, so it is modelled at its daytime pattern (lines without afternoon peak service use their daytime times). Its Lazy trips at 13:00 and 13:32 are on the trunk (504).",
+     "legs": [
+      {
+       "fr": "Lutyně, autobusové nádraží",
+       "to": "Město, náměstí",
+       "lines": [
+        "502"
+       ],
+       "src": "502 Lutyně, autobusové nádraží → Město, náměstí"
+      },
+      {
+       "fr": "Město, náměstí",
+       "to": "Lutyně, autobusové nádraží",
+       "lines": [
+        "502"
+       ],
+       "src": "502 Město, náměstí → Lutyně, autobusové nádraží"
+      }
+     ]
+    }
+   ]
+  },
+  "503": {
+   "mode": "carried",
+   "by": "504",
+   "why": "503's afternoon trip (Lazy 14:00 via Důl Lazy to Lutyně) is the even-hour trunk departure by the other path: it is a leg of Simutrans line 504, which alternates the two paths every 2 hours. Its other trip (4:37 Město, Mezilesí → Lazy) is morning only."
+  },
+  "505": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "505",
+     "every": 120,
+     "window": [
+      900,
+      1170
+     ],
+     "why": "One bus all afternoon, alternating from Lutyně, pošta to Věřňovice and to Rychvald: one circuit every 2 hours.",
+     "legs": [
+      {
+       "fr": "Lutyně, pošta",
+       "to": "Dolní Lutyně, Věřňovice, restaurace",
+       "deps": [
+        "15:12",
+        "17:07"
+       ],
+       "stops_from": [
+        [
+         "505",
+         "17:07"
+        ]
+       ],
+       "src": "505 15:12 (from Lutyně, autobusové nádraží), 17:07"
+      },
+      {
+       "fr": "Dolní Lutyně, Věřňovice, restaurace",
+       "to": "Lutyně, pošta",
+       "lines": [
+        "505"
+       ],
+       "src": "505 15:50, 17:52"
+      },
+      {
+       "fr": "Lutyně, pošta",
+       "to": "Rychvald, rozcestí",
+       "lines": [
+        "505"
+       ],
+       "src": "505 16:21, 18:23"
+      },
+      {
+       "fr": "Rychvald, rozcestí",
+       "to": "Lutyně, pošta",
+       "lines": [
+        "505"
+       ],
+       "src": "505 16:38, 18:39"
+      }
+     ]
+    }
+   ]
+  },
+  "417": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "417",
+     "every": 60,
+     "window": [
+      900,
+      1020
+     ],
+     "why": "Šumbark ⇄ Těrlicko, exactly hourly (Šumbark :01, Těrlicko :37), two buses. The automatic fit had folded the Podlesí shuttle and the evening Hradiště trips into it.",
+     "legs": [
+      {
+       "fr": "Šumbark, točna Petřvaldská",
+       "to": "Těrlicko, obecní úřad",
+       "src": "417 14:01, 15:01, 16:01"
+      },
+      {
+       "fr": "Těrlicko, obecní úřad",
+       "to": "Šumbark, točna Petřvaldská",
+       "src": "417 13:37, 14:37, 15:37, 16:37"
+      }
+     ]
+    },
+    {
+     "name": "417B",
+     "every": 60,
+     "window": [
+      1020,
+      1140
+     ],
+     "why": "From 17:00 the 417 buses run Šumbark → Těrlicko, Hradiště → Podlesí, the only service to Hradiště (U Stonávky, u Káňů, Zelmer).",
+     "legs": [
+      {
+       "fr": "Šumbark, točna Petřvaldská",
+       "to": "Těrlicko, Hradiště, U Stonávky",
+       "src": "417 17:03, 18:03"
+      },
+      {
+       "fr": "Těrlicko, Hradiště, U Stonávky",
+       "to": "Podlesí, autobusové nádraží",
+       "src": "417 17:43, 18:43"
+      },
+      {
+       "fr": "Podlesí, autobusové nádraží",
+       "to": "Šumbark, točna Petřvaldská",
+       "untimed": true,
+       "rt_from": [
+        "415",
+        "Podlesí, autobusové nádraží",
+        "Šumbark, točna Petřvaldská"
+       ],
+       "note": "no 417 trip back: the real bus goes on as another line; running time of 415"
+      }
+     ]
+    },
+    {
+     "name": "417C",
+     "every": 60,
+     "window": [
+      870,
+      975
+     ],
+     "why": "A third 417 bus shuttles Podlesí (Těšínská) :50 → Těrlicko, obecní úřad, back :00, at 14:50 and 15:50 (about nine trips a day in all).",
+     "legs": [
+      {
+       "fr": "Podlesí, autobusové nádraží",
+       "to": "Těrlicko, obecní úřad",
+       "src": "417 14:50, 15:50 (from Podlesí, Těšínská)"
+      },
+      {
+       "fr": "Těrlicko, obecní úřad",
+       "to": "Podlesí, autobusové nádraží",
+       "src": "417 15:00, 16:00"
+      }
+     ]
+    }
+   ]
+  },
+  "418": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "418",
+     "every": 240,
+     "window": [
+      780,
+      1020
+     ],
+     "fitwin": [
+      300,
+      1380
+     ],
+     "why": "One bus from Město, železniční stanice: to Podlesí 13:30 and back 14:18, to Šenov 15:15 and back 15:45. Bent onto a circuit every 240 (no daily lines, owner): Podlesí at 9:30, 13:30, 17:30 …, Šenov at 11:15, 15:15, 19:15 …, 1 bus. It is the only service to Město, Na Prostředňáku, Formanská and Na Fojtství and to the Šenov stops. Off the pattern: the 12:45 and 18:10 Šenov trips and the 16:50 trip to Bludovice (other lines serve Bludovice).",
+     "legs": [
+      {
+       "fr": "Město, železniční stanice",
+       "to": "Podlesí, autobusové nádraží",
+       "at": [
+        90
+       ],
+       "src": "418 7:15, 10:15, 13:30"
+      },
+      {
+       "fr": "Podlesí, autobusové nádraží",
+       "to": "Město, železniční stanice",
+       "at": [
+        138
+       ],
+       "src": "418 5:23, 11:38, 14:18"
+      },
+      {
+       "fr": "Město, železniční stanice",
+       "to": "Šenov, bytovky",
+       "at": [
+        195
+       ],
+       "src": "418 12:45, 15:15, 18:10"
+      },
+      {
+       "fr": "Šenov, bytovky",
+       "to": "Město, železniční stanice",
+       "at": [
+        225
+       ],
+       "src": "418 6:47, 8:10, 13:12, 15:45"
+      }
+     ]
+    }
+   ]
+  },
+  "402": {
+   "mode": "add",
+   "lines": [
+    {
+     "name": "402B",
+     "every": 480,
+     "window": [
+      600,
+      900
+     ],
+     "why": "Stonava, sídliště Nový svět is served only by 402. At midday the Šumbark :23 departure goes to Stonava instead of Albrechtice. Bent onto every 480 (no daily lines, owner): Šumbark 12:23 (also 4:23, 20:23, clear of the afternoon peak), back from Stonava 13:05 (5:05, 21:05). Real Stonava trips also run at 5:25–8:20, 11:23 and 12:53 (off the pattern).",
+     "legs": [
+      {
+       "fr": "Šumbark, točna Lidická",
+       "to": "Stonava, sídliště Nový svět",
+       "at": [
+        263
+       ],
+       "src": "402 to Stonava 5:25, 6:25, 6:50, 8:20, 11:23, 12:23, 12:53"
+      },
+      {
+       "fr": "Stonava, sídliště Nový svět",
+       "to": "Šumbark, točna Lidická",
+       "at": [
+        305
+       ],
+       "src": "402 from Stonava 6:05, 9:05, 12:05, 13:05, 13:35"
+      }
+     ],
+     "fitwin": [
+      300,
+      1380
+     ]
+    }
+   ]
+  },
+  "411": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "411",
+     "every": 60,
+     "window": [
+      840,
+      1080
+     ],
+     "why": "One bus, about hourly: Podlesí (Těšínská) :05 → Horní Bludovice, Adámek, back :33 (14:09/14:38 and 15:05/15:33; then a gap to 16:50/17:21). The automatic fit had every 120, up to 28 min off.",
+     "legs": [
+      {
+       "fr": "Podlesí, autobusové nádraží",
+       "to": "Horní Bludovice, Adámek",
+       "at": [
+        5
+       ],
+       "src": "411 14:09, 15:05, 16:50 (from Podlesí, Těšínská)"
+      },
+      {
+       "fr": "Horní Bludovice, Adámek",
+       "to": "Podlesí, autobusové nádraží",
+       "at": [
+        33
+       ],
+       "src": "411 14:38, 15:33, 17:21"
+      }
+     ]
+    },
+    {
+     "name": "411B",
+     "every": 480,
+     "why": "The evening trip to Šenov, Lapačka is the only service to Šenov, křižovatka k Dolní Datyni. Bent onto every 480 (no daily lines, owner): Podlesí 18:25 (also 2:25, 10:25), back 19:05.",
+     "legs": [
+      {
+       "fr": "Podlesí, autobusové nádraží",
+       "to": "Šenov, Lapačka",
+       "at": [
+        145
+       ],
+       "src": "411 18:25 (from Podlesí, Těšínská)"
+      },
+      {
+       "fr": "Šenov, Lapačka",
+       "to": "Podlesí, autobusové nádraží",
+       "at": [
+        185
+       ],
+       "src": "411 19:05"
+      }
+     ],
+     "window": [
+      1080,
+      1200
+     ],
+     "fitwin": [
+      300,
+      1380
+     ]
+    }
+   ]
+  },
+  "515": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "515",
+     "every": 480,
+     "window": [
+      700,
+      900
+     ],
+     "fitwin": [
+      300,
+      1380
+     ],
+     "why": "A mine shift line, the only service to Důl Darkov and Doly, zastávka ČSA. Shifts change every 8 hours, so every 480: Fryštát :54 (4:54, 12:54, 20:54; the real afternoon one is 12:22), back from Důl Darkov :10 (6:10, 14:10, 22:10).",
+     "legs": [
+      {
+       "fr": "Fryštát, autobusové nádraží",
+       "to": "Důl Darkov",
+       "at": [
+        294
+       ],
+       "src": "515 4:54, 5:14, 12:22, 20:56"
+      },
+      {
+       "fr": "Důl Darkov",
+       "to": "Fryštát, autobusové nádraží",
+       "at": [
+        370
+       ],
+       "src": "515 14:10, 22:10 (6:05 goes to Staré Město, Nové pole)"
+      }
+     ]
+    },
+    {
+     "name": "515B",
+     "every": 480,
+     "window": [
+      780,
+      960
+     ],
+     "fitwin": [
+      300,
+      1380
+     ],
+     "why": "515's shift trips from Staré Město, Nové pole to Ráj, nemocnice, the only service to Staré Město, u mostu and Hranice, Jäkl: exactly every 480 at :15 (6:15, 14:15, 22:15); the 14:45 extra is off the pattern. The buses return empty.",
+     "legs": [
+      {
+       "fr": "Staré Město, Nové pole",
+       "to": "Ráj, nemocnice",
+       "at": [
+        375
+       ],
+       "src": "515 6:15, 14:15, 14:45, 22:15"
+      },
+      {
+       "fr": "Ráj, nemocnice",
+       "to": "Staré Město, Nové pole",
+       "untimed": true,
+       "rt_from": [
+        "515",
+        "Ráj, nemocnice",
+        "Staré Město, Nové pole"
+       ],
+       "note": "no 515 trip back in the afternoon: the real buses go on as other lines"
+      }
+     ]
+    }
+   ]
+  },
+  "514": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "514",
+     "every": 60,
+     "window": [
+      900,
+      1140
+     ],
+     "why": "514 runs hourly Fryštát :27 → Ráj, státní hranice → back through Fryštát to Staré Město (:48 from Ráj), and the bus returns from Staré Město as 520 at :25, round Ráj, Mizerov and Hranice to Fryštát (9:25, 10:25, 11:25, 19:25 all day). Read over the whole day, that is one circuit every 60 with 2 buses; it also carries 520.",
+     "legs": [
+      {
+       "fr": "Fryštát, autobusové nádraží",
+       "to": "Ráj, státní hranice",
+       "src": "514 15:15, 16:27, 17:27, 18:27"
+      },
+      {
+       "fr": "Ráj, státní hranice",
+       "to": "Staré Město, konečná",
+       "src": "514 15:35, 16:48, 17:48, 18:48"
+      },
+      {
+       "fr": "Staré Město, konečná",
+       "to": "Fryštát, autobusové nádraží",
+       "lines": [
+        "520"
+       ],
+       "src": "as 520 in reality: 9:25, 10:25, 11:25, 19:25 (and 14:45, 15:30, 17:30, 18:12 in the afternoon)"
+      }
+     ],
+     "fitwin": [
+      480,
+      1200
+     ]
+    }
+   ]
+  },
+  "520": {
+   "mode": "carried",
+   "by": "514",
+   "why": "520's afternoon trips (Staré Město → Fryštát) are the return leg of the 514 buses; they are the last leg of Simutrans line 514. Its single trips 14:15 (Staré Město, Nové pole → Fryštát) and 16:42 (Fryštát → Staré Město) run over the same stops."
+  },
+  "401": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "401",
+     "every": 60,
+     "window": [
+      900,
+      1080
+     ],
+     "why": "401 and 406 run as one ring in the timetable: 406 Podlesí → Pašůvka goes on as 401 Pašůvka → Šumbark, and 401 Šumbark → Prostřední Suchá at :14 and :59 goes on as 406 back to Podlesí. Each line has only half of the ring, so each is one circuit here, joined by the one-stop hop between Prostřední Suchá, železniční stanice and Horní Suchá, Pašůvka. Pooling 401 + 406 as one ring line would be the owner's choice.",
+     "legs": [
+      {
+       "fr": "Šumbark, točna 2. etapa",
+       "to": "Prostřední Suchá, železniční stanice",
+       "deps": [
+        "15:14",
+        "15:59",
+        "16:14",
+        "16:59",
+        "17:14",
+        "17:59"
+       ],
+       "at": [
+        14,
+        59
+       ],
+       "src": "401 15:14, 15:59, 16:14, 16:59, 17:14, 17:59 (the departures that go on as 406)"
+      },
+      {
+       "fr": "Prostřední Suchá, železniční stanice",
+       "to": "Horní Suchá, Pašůvka",
+       "untimed": true,
+       "rt": 2,
+       "note": "one stop; no 401 trip: in reality the bus goes on as 406, and the next 401 comes from Pašůvka"
+      },
+      {
+       "fr": "Horní Suchá, Pašůvka",
+       "to": "Šumbark, točna 2. etapa",
+       "src": "401 15:11, 15:41, 16:11, 16:41, 17:11, 17:40",
+       "at": [
+        11,
+        41
+       ]
+      }
+     ]
+    },
+    {
+     "name": "401B",
+     "every": 60,
+     "window": [
+      900,
+      1080
+     ],
+     "why": "An hourly 401 shuttle: Šumbark → Prostřední Suchá, železniční stanice at :29 and straight back at :58.",
+     "legs": [
+      {
+       "fr": "Šumbark, točna 2. etapa",
+       "to": "Prostřední Suchá, železniční stanice",
+       "deps": [
+        "15:29",
+        "16:29",
+        "17:29"
+       ],
+       "src": "401 15:29, 16:29, 17:29 (turning at Prostřední Suchá)"
+      },
+      {
+       "fr": "Prostřední Suchá, železniční stanice",
+       "to": "Šumbark, točna 2. etapa",
+       "src": "401 Prostřední Suchá, železniční stanice → Šumbark (15:58, 16:58)"
+      }
+     ]
+    }
+   ]
+  },
+  "406": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "406",
+     "every": 30,
+     "window": [
+      900,
+      1080
+     ],
+     "why": "The other half of the 401/406 ring (see 401): Podlesí → Pašůvka, and back from Pašůvka (one stop past Prostřední Suchá, železniční stanice) at :26 / :56, timed at the terminal so that it passes the station at :28 / :58 as the real 406 leaves it.",
+     "legs": [
+      {
+       "fr": "Podlesí, autobusové nádraží",
+       "to": "Horní Suchá, Pašůvka",
+       "src": "406 Podlesí → Horní Suchá, Pašůvka"
+      },
+      {
+       "fr": "Horní Suchá, Pašůvka",
+       "to": "Podlesí, autobusové nádraží",
+       "at": [
+        28
+       ],
+       "deps": [
+        "14:28",
+        "14:58",
+        "15:28",
+        "15:58",
+        "16:28",
+        "16:58",
+        "17:28",
+        "17:58"
+       ],
+       "knot": "Prostřední Suchá, železniční stanice",
+       "knot_rt": 2,
+       "rt": 27,
+       "stops_from": [
+        [
+         "406",
+         "15:28"
+        ]
+       ],
+       "src": "406 Prostřední Suchá, železniční stanice → Podlesí at :28 / :58; timed at Pašůvka (:26 / :56) so the bus passes the station on time"
+      }
+     ]
+    }
+   ]
+  },
+  "409": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "409",
+     "every": 60,
+     "window": [
+      960,
+      1170
+     ],
+     "why": "An evening line: exactly hourly from 16:46 (Podlesí :46, Šumbark :52), two buses alternating. The automatic fit had every 120, up to 30 min off.",
+     "legs": [
+      {
+       "fr": "Podlesí, autobusové nádraží",
+       "to": "Šumbark, točna Petřvaldská",
+       "src": "409 16:46, 17:46, 18:46"
+      },
+      {
+       "fr": "Šumbark, točna Petřvaldská",
+       "to": "Podlesí, autobusové nádraží",
+       "src": "409 17:52, 18:52"
+      }
+     ]
+    }
+   ]
+  },
+  "420": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "420",
+     "every": 160,
+     "window": [
+      720,
+      1020
+     ],
+     "fitwin": [
+      300,
+      1380
+     ],
+     "why": "Separate trips a few times a day to Těrlicko, Zelené Město U Goduly (its only service): 12:30 and 15:10, exactly 160 min apart, back 13:03 and 15:38. Bent onto every 160 (no daily lines, owner; 160 divides 1440): also 7:10, 9:50, 17:50, 20:30. The 17:30 / 18:00 trips to Těrlicko, obecní úřad run over 417's stops.",
+     "legs": [
+      {
+       "fr": "Podlesí, autobusové nádraží",
+       "to": "Těrlicko, Zelené Město U Goduly",
+       "at": [
+        110
+       ],
+       "src": "420 6:35, 12:30, 15:10 (from Podlesí, Těšínská)"
+      },
+      {
+       "fr": "Těrlicko, Zelené Město U Goduly",
+       "to": "Podlesí, autobusové nádraží",
+       "at": [
+        143
+       ],
+       "src": "420 13:03, 15:38"
+      }
+     ]
+    }
+   ]
+  },
+  "513": {
+   "mode": "carried",
+   "by": "514",
+   "why": "513 has a few trips between other duties, and every stop it serves is on another Simutrans line (method Step 8): its Staré Město → Fryštát trips (16:20, 18:28) are 514 buses going back, and its Fryštát ⇄ Ráj, Na kopci trips (13:48, 14:58, 14:10, 15:32) run over 514's and the Karviná circulars' stops. Listed here, no own line (owner: no daily lines)."
+  },
+  "405": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "405",
+     "every": 60,
+     "window": [
+      900,
+      1080
+     ],
+     "fitwin": [
+      300,
+      1380
+     ],
+     "why": "Exactly hourly all day: Podlesí, lesopark :22, Šumbark, točna 2. etapa :44. The evening runs to Podlesí, autobusové nádraží after 18:36 are the line's evening form.",
+     "legs": [
+      {
+       "fr": "Podlesí, lesopark",
+       "to": "Šumbark, točna 2. etapa",
+       "src": "405 6:23 … 18:24, mostly :22"
+      },
+      {
+       "fr": "Šumbark, točna 2. etapa",
+       "to": "Podlesí, lesopark",
+       "src": "405 5:44 … 17:44, every hour at :44"
+      }
+     ]
+    }
+   ]
+  },
+  "516": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "516",
+     "every": 60,
+     "window": [
+      900,
+      1080
+     ],
+     "fitwin": [
+      300,
+      1380
+     ],
+     "why": "Circular from Fryštát, hourly at :50 from 8:50 to 15:50; after that 17:05 and 18:10.",
+     "legs": [
+      {
+       "fr": "Fryštát, autobusové nádraží",
+       "to": "Fryštát, autobusové nádraží",
+       "src": "516 8:50 … 15:50 every hour, then 17:05, 18:10"
+      }
+     ]
+    }
+   ]
+  },
+  "517": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "517",
+     "every": 60,
+     "window": [
+      900,
+      1080
+     ],
+     "fitwin": [
+      300,
+      1380
+     ],
+     "why": "One bus to Darkov, lázně and back, drifting through the day; over the whole day the commonest minutes are Fryštát :15 (10:15, 11:15, 12:15, 16:15) and Darkov :36 (10:36, 11:36, 12:36, 16:36).",
+     "legs": [
+      {
+       "fr": "Fryštát, autobusové nádraží",
+       "to": "Darkov, lázně",
+       "src": "517 7:30 … 19:46"
+      },
+      {
+       "fr": "Darkov, lázně",
+       "to": "Fryštát, autobusové nádraží",
+       "src": "517 6:05 … 20:11"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "odis_types": {
+  "SOR CNG 12": "SOR_CNG_12",
+  "SOR CNG 10,5": "SOR_CNG_10_5",
+  "Iveco Crossway LE CITY 12M NP": "Crossway_LE_City_12M",
+  "Iveco Crossway LE CITY 12M": "Crossway_LE_City_12M",
+  "Iveco Crossway LE LINE 12M NP": "Crossway_LE_Line_12M_NP",
+  "Scania Citywide LE 12M CNG": "Citywide_LE_12M_CNG",
+  "Scania Citywide Suburban LE 15M CNG": "Citywide_Suburban_LE_15M_CNG",
+  "Scania Citywide LE 15M CNG": "Citywide_LE_15M_CNG",
+  "Scania Citywide LE 13,7M CNG": "Citywide_LE_13_7M_CNG",
+  "Dekstra LE 37 L CNG": "Dekstra_LE_37_CNG",
+  "Iveco Urbanway 10,5M CNG": "Urbanway_10_5M_CNG",
+  "SOR ICNG 12,3": "SOR_ICNG_12_3",
+  "ROŠERO - P First FCLLI CNG": "Rosero_First_CNG"
+ },
+ "odis_paint_rules": [
+  [
+   "schéma ODIS",
+   "odiscervenocerna"
+  ],
+  [
+   "3ČSAD, bílo-zelená",
+   "3csadbilozelena"
+  ],
+  [
+   "bílá & logo dopravy Moravskoslezského kraje",
+   "bilazelenykruh|Hlučínsko:bilacervenykruh"
+  ],
+  [
+   "bílá",
+   "bila"
+  ]
+ ],
+ "review": "Owner, 20 Oct 2026: \"Is the lines the best schedule that fits my intent (not necessarily the scripts)? Or can you do a version that fits better\". Each line was checked by hand against its real afternoon timetable; where the automatic fit was approximate for an artefact (merged variant minutes, a sparse-window rule) the line is hand-set in line_overrides.",
+ "core_points_rule": "Owner, 20 Oct 2026: \"Look at how I did in the save game Ex4 - there is also a very irregular service, but I defined it in core points, created a repeating interval and it suddenly made sense. 501 mostly goes to Dětmarovice, žel.st. some elsewhere.\" Ex4 in the save: one line per destination (Ex4/1 every 240, Ex4/2 and Ex4/3 every 480), timetabled only at core points (termini, Bohumín, Břeclav). Here: a line's trips are read at its core points over the whole day, the repeating interval is found there, and destination variants get their own Simutrans line on a longer interval, offset so they don't run together.",
+ "max_interval_rule": "Owner, 20 Oct 2026: \"Now I don't like 1440 lines - in game that is not found. 8 hrs should be the very maximal interval (still not preferred). If the only way to model 1440 is 1440 reconsider - we can bend the reality a bit.\" No daily timetables; the longest interval is 480, shorter where the real trips repeat; sparse trips are bent onto a repeating slot or folded into a line they belong to."
+}

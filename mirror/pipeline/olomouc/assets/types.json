@@ -1,0 +1,79 @@
+{
+ "_doc": "Register types -> full name, car length, class. Class ids reuse the page's colour classes (15T = blue, 52T = teal, 14T = purple, KT8 = orange, T3 = grey, T3LF = olive); the label shown is the one given here.",
+ "full_names": {
+  "EVO 1/o": "Pragoimex EVO1/o",
+  "EVO 1": "Pragoimex EVO1",
+  "T3R.P": "Tatra T3R.P",
+  "VarioLF+/o": "Pragoimex VarioLF plus/o",
+  "VarioLFR.S": "Pragoimex VarioLFR.S",
+  "VarioLFR.E": "Pragoimex VarioLFR.E",
+  "VarioLF.E": "Pragoimex VarioLF.E",
+  "Trio 2001": "Inekon 01 Trio"
+ },
+ "car_length_m": {
+  "EVO 1/o": 15.1,
+  "EVO 1": 15.1,
+  "T3R.P": 15.1,
+  "VarioLF+/o": 15.1,
+  "VarioLFR.S": 15.1,
+  "VarioLFR.E": 15.1,
+  "VarioLF.E": 15.1,
+  "Trio 2001": 20.1
+ },
+ "class_by_type": {
+  "EVO 1/o": "15T",
+  "EVO 1": "52T",
+  "VarioLF+/o": "14T",
+  "VarioLFR.S": "KT8",
+  "VarioLFR.E": "KT8",
+  "VarioLF.E": "KT8",
+  "T3R.P": "T3",
+  "Trio 2001": "T3LF"
+ },
+ "classes": {
+  "15T": [
+   "Pragoimex EVO1/o pair",
+   "two bidirectional EVO1/o cars coupled back to back",
+   "2 × 15.1 m",
+   "low-floor"
+  ],
+  "52T": [
+   "Pragoimex EVO1 pair",
+   "two single-direction EVO1 cars",
+   "2 × 15.1 m",
+   "low-floor"
+  ],
+  "14T": [
+   "Pragoimex VarioLF plus/o pair",
+   "two bidirectional VarioLF plus/o cars coupled back to back",
+   "2 × 15.1 m",
+   "low-floor"
+  ],
+  "KT8": [
+   "Pragoimex Vario pair",
+   "two single-direction VarioLFR.S, VarioLFR.E or VarioLF.E cars",
+   "2 × 15.1 m",
+   "low-floor"
+  ],
+  "T3": [
+   "Tatra T3R.P pair",
+   "two Tatra T3R.P cars (rebuilt T3SUCS)",
+   "2 × 15.1 m",
+   "high-floor"
+  ],
+  "T3LF": [
+   "Inekon 01 Trio",
+   "single articulated car, run solo",
+   "20.1 m",
+   "part low-floor"
+  ]
+ },
+ "class_order": [
+  "15T",
+  "52T",
+  "14T",
+  "KT8",
+  "T3",
+  "T3LF"
+ ]
+}

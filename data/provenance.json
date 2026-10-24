@@ -1,0 +1,652 @@
+{
+ "_doc": "Rebuild data/provenance.json from the local Claude Code transcripts.",
+ "sheets": {
+  "Brno Bus Peak Fleet.html": {
+   "firstSeen": "2026-09-29T15:54:42.182Z",
+   "firstPublished": "2026-09-29T15:54:42.182Z",
+   "lastPublished": "2026-09-29T17:34:33.387Z",
+   "publishCount": 7,
+   "latestVersion": 7,
+   "artifactUrls": [
+    "https://claude.ai/artifact/Q1cS9fRTKPNHJYbmsNPv3T"
+   ],
+   "sessions": [
+    "a53fa21d-8dbc-4fdc-bf31-4d8362899694"
+   ],
+   "paths": [
+    "Brno Bus Peak Fleet.html"
+   ]
+  },
+  "Brno Tram Fleet from 29 Sep.html": {
+   "firstSeen": "2026-09-28T16:58:14.041Z",
+   "firstPublished": "2026-09-28T16:58:14.041Z",
+   "lastPublished": "2026-09-29T17:51:01.266Z",
+   "publishCount": 6,
+   "latestVersion": 6,
+   "artifactUrls": [
+    "https://claude.ai/artifact/3ps2U3Ac81p5h3ABRwgQVg"
+   ],
+   "sessions": [
+    "4aeb8def-dec3-4568-afbf-a2ae309db52e",
+    "a53fa21d-8dbc-4fdc-bf31-4d8362899694",
+    "e03a85dc-f430-434a-99fb-e6daceff5db2"
+   ],
+   "paths": [
+    "Brno Tram Fleet from 29 Sep.html"
+   ]
+  },
+  "Brno Tram Peak Fleet.html": {
+   "firstSeen": "2026-09-28T14:50:55.116Z",
+   "firstPublished": "2026-09-28T14:50:55.116Z",
+   "lastPublished": "2026-09-29T17:50:59.783Z",
+   "publishCount": 13,
+   "latestVersion": 13,
+   "artifactUrls": [
+    "https://claude.ai/artifact/5ntT3kwFmuEU3Bo3RbvvZD"
+   ],
+   "sessions": [
+    "4aeb8def-dec3-4568-afbf-a2ae309db52e",
+    "a53fa21d-8dbc-4fdc-bf31-4d8362899694",
+    "e03a85dc-f430-434a-99fb-e6daceff5db2"
+   ],
+   "paths": [
+    "Brno Tram Peak Fleet.html"
+   ]
+  },
+  "Brno Trolleybus Peak Fleet.html": {
+   "firstSeen": "2026-09-29T14:48:48.364Z",
+   "firstPublished": "2026-09-29T14:48:48.364Z",
+   "lastPublished": "2026-09-29T17:30:46.097Z",
+   "publishCount": 5,
+   "latestVersion": 5,
+   "artifactUrls": [
+    "https://claude.ai/artifact/NdYdvPQK1v2sVZ8cGmoW81"
+   ],
+   "sessions": [
+    "a53fa21d-8dbc-4fdc-bf31-4d8362899694"
+   ],
+   "paths": [
+    "Brno Trolleybus Peak Fleet.html"
+   ]
+  },
+  "Ex7 R17 Praha Veselí.html": {
+   "firstSeen": "2026-10-14T14:47:43.901Z",
+   "firstPublished": "2026-10-14T14:47:43.901Z",
+   "lastPublished": "2026-10-14T15:08:45.847Z",
+   "publishCount": 3,
+   "latestVersion": 3,
+   "artifactUrls": [
+    "https://claude.ai/artifact/Efb4CMZVvtNDZj7rsB5Wr5"
+   ],
+   "sessions": [
+    "e9b5fede-a5b9-4e20-aab2-33579bfb8991"
+   ],
+   "paths": [
+    "Ex7 R17 Praha Veselí.html"
+   ]
+  },
+  "Havirov-Karvina-Orlova Bus Vypravenost.html": {
+   "firstSeen": "2026-10-20T03:21:32.959Z",
+   "firstPublished": "2026-10-20T03:21:32.959Z",
+   "lastPublished": "2026-10-20T18:04:55.490Z",
+   "publishCount": 11,
+   "latestVersion": 11,
+   "artifactUrls": [
+    "https://claude.ai/artifact/UmPg6guEAbmSune5YnFTVb"
+   ],
+   "sessions": [
+    "4860251d-9567-4507-9501-0ec6574bc42e"
+   ],
+   "paths": [
+    "Havirov-Karvina-Orlova Bus Vypravenost.html"
+   ]
+  },
+  "Local Trains 010 062 064 260.html": {
+   "firstSeen": "2026-10-03T15:33:11.607Z",
+   "firstPublished": "2026-10-03T15:33:13.944Z",
+   "lastPublished": "2026-10-03T19:43:34.245Z",
+   "publishCount": 3,
+   "latestVersion": 3,
+   "artifactUrls": [
+    "https://claude.ai/artifact/CCNUijhQeBxE244KKbKyF3"
+   ],
+   "sessions": [
+    "d8b73c98-95bf-4e88-8c04-c228f701b2a3"
+   ],
+   "paths": [
+    "Local Trains 010 062 064 260.html"
+   ]
+  },
+  "Local Trains 012 014 210 212 235.html": {
+   "firstSeen": "2026-10-08T21:23:08.512Z",
+   "firstPublished": "2026-10-08T21:23:08.512Z",
+   "lastPublished": "2026-10-08T22:04:07.896Z",
+   "publishCount": 5,
+   "latestVersion": 9,
+   "artifactUrls": [
+    "https://claude.ai/artifact/KXnUf8bh9Ck1W2xBiJuSQR"
+   ],
+   "sessions": [
+    "294c6d25-bab6-48aa-ad87-d14e632837cf"
+   ],
+   "paths": [
+    "Local Trains 012 014 210 212 235.html"
+   ]
+  },
+  "Local Trains 012 014 235.html": {
+   "firstSeen": "2026-10-05T16:44:06.780Z",
+   "firstPublished": "2026-10-05T16:44:06.780Z",
+   "lastPublished": "2026-10-05T16:59:15.199Z",
+   "publishCount": 4,
+   "latestVersion": 4,
+   "artifactUrls": [
+    "https://claude.ai/artifact/KXnUf8bh9Ck1W2xBiJuSQR"
+   ],
+   "sessions": [
+    "8624bf27-a2d3-432a-b526-43fb918b2efe"
+   ],
+   "paths": [
+    "Local Trains 012 014 235.html"
+   ]
+  },
+  "Local Trains R49 Benešov.html": {
+   "firstSeen": "2026-10-08T22:59:53.834Z",
+   "firstPublished": "2026-10-08T22:59:53.834Z",
+   "lastPublished": "2026-10-08T23:24:47.324Z",
+   "publishCount": 6,
+   "latestVersion": 6,
+   "artifactUrls": [
+    "https://claude.ai/artifact/C1sFtgu1AKdCo28ce8FNeb"
+   ],
+   "sessions": [
+    "294c6d25-bab6-48aa-ad87-d14e632837cf"
+   ],
+   "paths": [
+    "Local Trains R49 Benešov.html"
+   ]
+  },
+  "MD-CR.html": {
+   "firstSeen": "2026-09-29T17:55:49.014Z",
+   "firstPublished": "2026-09-29T17:55:49.014Z",
+   "lastPublished": "2026-10-04T14:40:12.596Z",
+   "publishCount": 16,
+   "latestVersion": 16,
+   "artifactUrls": [
+    "https://claude.ai/artifact/DH4KCxqbx1KLvVvnxUNAQL"
+   ],
+   "sessions": [
+    "6267b721-9c15-412a-9404-df5b62b00871",
+    "8624bf27-a2d3-432a-b526-43fb918b2efe",
+    "d8b73c98-95bf-4e88-8c04-c228f701b2a3"
+   ],
+   "paths": [
+    "MD-CR.html"
+   ]
+  },
+  "Most-Litvinov Bus Vypravenost.html": {
+   "firstSeen": "2026-09-29T18:02:49.875Z",
+   "firstPublished": "2026-09-29T18:02:49.875Z",
+   "lastPublished": "2026-09-29T18:09:34.417Z",
+   "publishCount": 2,
+   "latestVersion": 2,
+   "artifactUrls": [
+    "https://claude.ai/artifact/TUU9pmZU3fcjJK95Fe4ZPN"
+   ],
+   "sessions": [
+    "b043ac4c-1647-425c-9154-303ee80b8dbc"
+   ],
+   "paths": [
+    "Most-Litvinov Bus Vypravenost.html"
+   ]
+  },
+  "Most-Litvinov Tram Vypravenost.html": {
+   "firstSeen": "2026-09-28T16:00:56.898Z",
+   "firstPublished": "2026-09-28T16:00:56.898Z",
+   "lastPublished": "2026-09-29T17:37:54.935Z",
+   "publishCount": 6,
+   "latestVersion": 6,
+   "artifactUrls": [
+    "https://claude.ai/artifact/FxHCAC84oCJA7qkbCKiQZi"
+   ],
+   "sessions": [
+    "b0e0d2a3-0b49-4682-957a-d187cf469167",
+    "bc38834b-4e71-40d9-9f27-368436ac6fb5",
+    "e03a85dc-f430-434a-99fb-e6daceff5db2"
+   ],
+   "paths": [
+    "Most-Litvinov Tram Vypravenost.html"
+   ]
+  },
+  "ODIS Bruntalsko Krnovsko Rymarovsko.html": {
+   "firstSeen": "2026-10-21T18:55:41.125Z",
+   "firstPublished": "2026-10-21T18:55:41.125Z",
+   "lastPublished": "2026-10-21T19:07:12.303Z",
+   "publishCount": 2,
+   "latestVersion": 2,
+   "artifactUrls": [
+    "https://claude.ai/artifact/ApSB65b8skppcUGCfFHtnZ"
+   ],
+   "sessions": [
+    "1098259d-3349-4d59-bd20-53ed11629b4d"
+   ],
+   "paths": [
+    "ODIS Bruntalsko Krnovsko Rymarovsko.html"
+   ]
+  },
+  "ODIS Novojicinsko Bilovecko.html": {
+   "firstSeen": "2026-10-21T18:58:03.046Z",
+   "firstPublished": "2026-10-21T18:58:03.046Z",
+   "lastPublished": "2026-10-22T17:07:38.819Z",
+   "publishCount": 5,
+   "latestVersion": 5,
+   "artifactUrls": [
+    "https://claude.ai/artifact/YFgUu62jD8YqfpuoL8FZpp"
+   ],
+   "sessions": [
+    "1098259d-3349-4d59-bd20-53ed11629b4d"
+   ],
+   "paths": [
+    "ODIS Novojicinsko Bilovecko.html"
+   ]
+  },
+  "ODIS Opavsko Vitkovsko Hlucinsko.html": {
+   "firstSeen": "2026-10-21T19:02:58.136Z",
+   "firstPublished": "2026-10-21T19:02:58.136Z",
+   "lastPublished": "2026-10-22T16:57:06.001Z",
+   "publishCount": 6,
+   "latestVersion": 6,
+   "artifactUrls": [
+    "https://claude.ai/artifact/K5ZeDCY2YYqV1Sz3tQwj3j"
+   ],
+   "sessions": [
+    "1098259d-3349-4d59-bd20-53ed11629b4d"
+   ],
+   "paths": [
+    "ODIS Opavsko Vitkovsko Hlucinsko.html"
+   ]
+  },
+  "ODIS Regional Havirovsko Karvinsko Orlovsko.html": {
+   "firstSeen": "2026-10-21T16:58:54.173Z",
+   "firstPublished": "2026-10-21T16:58:54.173Z",
+   "lastPublished": "2026-10-21T19:07:14.501Z",
+   "publishCount": 3,
+   "latestVersion": 3,
+   "artifactUrls": [
+    "https://claude.ai/artifact/SFgd2KE6xRv9PLKtS5qMnw"
+   ],
+   "sessions": [
+    "1098259d-3349-4d59-bd20-53ed11629b4d"
+   ],
+   "paths": [
+    "ODIS Regional Havirovsko Karvinsko Orlovsko.html"
+   ]
+  },
+  "ODIS Tesinsko Trinecko Frydecko.html": {
+   "firstSeen": "2026-10-21T18:14:30.665Z",
+   "firstPublished": "2026-10-21T18:14:30.665Z",
+   "lastPublished": "2026-10-22T16:54:13.580Z",
+   "publishCount": 5,
+   "latestVersion": 5,
+   "artifactUrls": [
+    "https://claude.ai/artifact/2LecoKwCYb2Lmk1sRDTjrx"
+   ],
+   "sessions": [
+    "1098259d-3349-4d59-bd20-53ed11629b4d"
+   ],
+   "paths": [
+    "ODIS Tesinsko Trinecko Frydecko.html"
+   ]
+  },
+  "Olomouc Bus Peak Fleet.html": {
+   "firstSeen": "2026-09-29T17:58:56.229Z",
+   "firstPublished": "2026-09-29T17:58:56.229Z",
+   "lastPublished": "2026-09-29T17:58:56.229Z",
+   "publishCount": 1,
+   "latestVersion": 1,
+   "artifactUrls": [
+    "https://claude.ai/artifact/MJz5Q7xYehTCPKhpBDfLHG"
+   ],
+   "sessions": [
+    "b043ac4c-1647-425c-9154-303ee80b8dbc"
+   ],
+   "paths": [
+    "Olomouc Bus Peak Fleet.html"
+   ]
+  },
+  "Olomouc Tram Peak Fleet.html": {
+   "firstSeen": "2026-09-28T16:00:38.287Z",
+   "firstPublished": "2026-09-28T16:00:38.287Z",
+   "lastPublished": "2026-09-29T17:40:04.888Z",
+   "publishCount": 5,
+   "latestVersion": 5,
+   "artifactUrls": [
+    "https://claude.ai/artifact/EQDL7ZoM9ENcFuj6LHHn7F"
+   ],
+   "sessions": [
+    "8a44f3bb-6add-4675-9520-28a3e1b24585",
+    "b043ac4c-1647-425c-9154-303ee80b8dbc",
+    "e03a85dc-f430-434a-99fb-e6daceff5db2"
+   ],
+   "paths": [
+    "Olomouc Tram Peak Fleet.html"
+   ]
+  },
+  "Ostrava Bus Vypravenost.html": {
+   "firstSeen": "2026-09-29T15:50:49.373Z",
+   "firstPublished": "2026-09-29T15:50:49.373Z",
+   "lastPublished": "2026-10-22T16:28:08.687Z",
+   "publishCount": 34,
+   "latestVersion": 34,
+   "artifactUrls": [
+    "https://claude.ai/artifact/6rNwavbbnG4H2aJVZPNx8R"
+   ],
+   "sessions": [
+    "5d304c5e-1e80-40b2-9839-f53d6456b698",
+    "5fc4f1eb-5ab6-4d45-b8f2-cd49a4f98331",
+    "b0e0d2a3-0b49-4682-957a-d187cf469167"
+   ],
+   "paths": [
+    "Ostrava Bus Vypravenost.html"
+   ]
+  },
+  "Ostrava Tram Vypravenost.html": {
+   "firstSeen": "2026-09-28T14:59:44.925Z",
+   "firstPublished": "2026-09-28T14:59:44.925Z",
+   "lastPublished": "2026-10-20T01:08:41.262Z",
+   "publishCount": 16,
+   "latestVersion": 16,
+   "artifactUrls": [
+    "https://claude.ai/artifact/4JYPMdmaxEzKhkxg37fd8e"
+   ],
+   "sessions": [
+    "5fc4f1eb-5ab6-4d45-b8f2-cd49a4f98331",
+    "b0e0d2a3-0b49-4682-957a-d187cf469167",
+    "bc38834b-4e71-40d9-9f27-368436ac6fb5",
+    "e03a85dc-f430-434a-99fb-e6daceff5db2"
+   ],
+   "paths": [
+    "Ostrava Tram Vypravenost.html"
+   ]
+  },
+  "Ostrava Trolleybus Vypravenost.html": {
+   "firstSeen": "2026-09-29T15:17:02.712Z",
+   "firstPublished": "2026-09-29T15:17:02.712Z",
+   "lastPublished": "2026-10-20T05:37:12.990Z",
+   "publishCount": 4,
+   "latestVersion": 4,
+   "artifactUrls": [
+    "https://claude.ai/artifact/HFHXt2UZ1NE1SE6KYQAMXp"
+   ],
+   "sessions": [
+    "5fc4f1eb-5ab6-4d45-b8f2-cd49a4f98331",
+    "b0e0d2a3-0b49-4682-957a-d187cf469167"
+   ],
+   "paths": [
+    "Ostrava Trolleybus Vypravenost.html"
+   ]
+  },
+  "Pardubice MHD Peak Sheet.html": {
+   "firstSeen": "2026-09-29T18:07:51.021Z",
+   "firstPublished": "2026-09-29T18:07:51.021Z",
+   "lastPublished": "2026-09-29T18:08:50.296Z",
+   "publishCount": 2,
+   "latestVersion": 3,
+   "artifactUrls": [
+    "https://claude.ai/artifact/KrzshkuVv9T5GqpiUKLJ7y"
+   ],
+   "sessions": [
+    "b043ac4c-1647-425c-9154-303ee80b8dbc"
+   ],
+   "paths": [
+    "Pardubice MHD Peak Sheet.html"
+   ]
+  },
+  "Plzeň Bus Peak Fleet.html": {
+   "firstSeen": "2026-09-29T18:06:30.541Z",
+   "firstPublished": "2026-09-29T18:06:30.541Z",
+   "lastPublished": "2026-09-29T18:06:30.541Z",
+   "publishCount": 1,
+   "latestVersion": 1,
+   "artifactUrls": [
+    "https://claude.ai/artifact/LE4trKFDZjkAjpX2EhvJCa"
+   ],
+   "sessions": [
+    "b043ac4c-1647-425c-9154-303ee80b8dbc"
+   ],
+   "paths": [
+    "Plzeň Bus Peak Fleet.html"
+   ]
+  },
+  "Plzeň Tram Peak Fleet.html": {
+   "firstSeen": "2026-09-28T16:07:54.214Z",
+   "firstPublished": "2026-09-28T16:07:54.214Z",
+   "lastPublished": "2026-09-29T17:51:02.567Z",
+   "publishCount": 9,
+   "latestVersion": 9,
+   "artifactUrls": [
+    "https://claude.ai/artifact/J5W3n79YLXAjgruuhtSjam"
+   ],
+   "sessions": [
+    "4aeb8def-dec3-4568-afbf-a2ae309db52e",
+    "a53fa21d-8dbc-4fdc-bf31-4d8362899694",
+    "e03a85dc-f430-434a-99fb-e6daceff5db2"
+   ],
+   "paths": [
+    "Plzeň Tram Peak Fleet.html"
+   ]
+  },
+  "Plzeň Trolleybus Peak Fleet.html": {
+   "firstSeen": "2026-09-29T18:06:29.326Z",
+   "firstPublished": "2026-09-29T18:06:29.326Z",
+   "lastPublished": "2026-09-29T18:06:29.326Z",
+   "publishCount": 1,
+   "latestVersion": 1,
+   "artifactUrls": [
+    "https://claude.ai/artifact/B9vVcHutYdXdg4sscpA1gR"
+   ],
+   "sessions": [
+    "b043ac4c-1647-425c-9154-303ee80b8dbc"
+   ],
+   "paths": [
+    "Plzeň Trolleybus Peak Fleet.html"
+   ]
+  },
+  "Prague Bus Lines Check.html": {
+   "firstSeen": "2026-09-29T16:02:14.910Z",
+   "firstPublished": "2026-09-29T16:02:14.910Z",
+   "lastPublished": "2026-09-29T17:33:23.889Z",
+   "publishCount": 6,
+   "latestVersion": 6,
+   "artifactUrls": [
+    "https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF"
+   ],
+   "sessions": [
+    "e03a85dc-f430-434a-99fb-e6daceff5db2"
+   ],
+   "paths": [
+    "Prague Bus Lines Check.html"
+   ]
+  },
+  "Prague Tram Peak Fleet.html": {
+   "firstSeen": "2026-09-28T14:55:04.795Z",
+   "firstPublished": "2026-09-28T14:55:04.795Z",
+   "lastPublished": "2026-10-13T18:43:38.788Z",
+   "publishCount": 25,
+   "latestVersion": 25,
+   "artifactUrls": [
+    "https://claude.ai/artifact/5Dt65EJ7F8YJnMbJugLGTi"
+   ],
+   "sessions": [
+    "8a44f3bb-6add-4675-9520-28a3e1b24585",
+    "a42d5596-0da0-4c33-8e6a-a84ac2ae3555",
+    "e03a85dc-f430-434a-99fb-e6daceff5db2"
+   ],
+   "paths": [
+    "Prague Tram Peak Fleet.html"
+   ]
+  },
+  "Prague Trolleybus Peak Fleet.html": {
+   "firstSeen": "2026-09-29T14:40:48.873Z",
+   "firstPublished": "2026-09-29T14:40:48.873Z",
+   "lastPublished": "2026-09-29T17:41:34.866Z",
+   "publishCount": 4,
+   "latestVersion": 4,
+   "artifactUrls": [
+    "https://claude.ai/artifact/7P7BZSczRixGop15Fd6zmX"
+   ],
+   "sessions": [
+    "e03a85dc-f430-434a-99fb-e6daceff5db2"
+   ],
+   "paths": [
+    "Prague Trolleybus Peak Fleet.html"
+   ]
+  },
+  "R18 Slovácký expres.html": {
+   "firstSeen": "2026-10-09T16:56:05.716Z",
+   "firstPublished": "2026-10-09T16:56:05.716Z",
+   "lastPublished": "2026-10-09T16:56:05.716Z",
+   "publishCount": 1,
+   "latestVersion": 1,
+   "artifactUrls": [
+    "https://claude.ai/artifact/V8hoXRQ3jnL3DbpR941PQ3"
+   ],
+   "sessions": [
+    "294c6d25-bab6-48aa-ad87-d14e632837cf"
+   ],
+   "paths": [
+    "R18 Slovácký expres.html"
+   ]
+  },
+  "S49 Hostivař Roztoky.html": {
+   "firstSeen": "2026-10-09T17:00:12.089Z",
+   "firstPublished": "2026-10-09T17:00:12.089Z",
+   "lastPublished": "2026-10-09T17:00:12.089Z",
+   "publishCount": 1,
+   "latestVersion": 1,
+   "artifactUrls": [
+    "https://claude.ai/artifact/EVZrB7zSxCzxEU2rGfsaLk"
+   ],
+   "sessions": [
+    "294c6d25-bab6-48aa-ad87-d14e632837cf"
+   ],
+   "paths": [
+    "S49 Hostivař Roztoky.html"
+   ]
+  },
+  "S75 Beroun Rakovník.html": {
+   "firstSeen": "2026-10-13T20:28:47.691Z",
+   "firstPublished": "2026-10-13T20:28:47.691Z",
+   "lastPublished": "2026-10-13T20:28:47.691Z",
+   "publishCount": 1,
+   "latestVersion": 1,
+   "artifactUrls": [
+    "https://claude.ai/artifact/8Ci1ZEfk4aNP89HntfvTbH"
+   ],
+   "sessions": [
+    "869cad64-eb55-4684-9c62-16b8936eb818"
+   ],
+   "paths": [
+    "S75 Beroun Rakovník.html"
+   ]
+  },
+  "Trains Beroun Plzeň Příbram.html": {
+   "firstSeen": "2026-10-10T16:56:49.348Z",
+   "firstPublished": "2026-10-10T16:56:49.348Z",
+   "lastPublished": "2026-10-15T17:59:04.925Z",
+   "publishCount": 10,
+   "latestVersion": 12,
+   "artifactUrls": [
+    "https://claude.ai/artifact/HopRNc92gS41cs9kQ6jroj"
+   ],
+   "sessions": [
+    "294c6d25-bab6-48aa-ad87-d14e632837cf",
+    "869cad64-eb55-4684-9c62-16b8936eb818",
+    "e9b5fede-a5b9-4e20-aab2-33579bfb8991"
+   ],
+   "paths": [
+    "Trains Beroun Plzeň Příbram.html",
+    "archive/Trains Beroun Plzeň Příbram.html"
+   ]
+  },
+  "Trains S4 to S3.html": {
+   "firstSeen": "2026-10-14T18:02:28.332Z",
+   "firstPublished": "2026-10-14T18:02:28.332Z",
+   "lastPublished": "2026-10-15T17:25:06.486Z",
+   "publishCount": 6,
+   "latestVersion": 6,
+   "artifactUrls": [
+    "https://claude.ai/artifact/UkDVhoRyabQp2EPeQNMKeD"
+   ],
+   "sessions": [
+    "e9b5fede-a5b9-4e20-aab2-33579bfb8991"
+   ],
+   "paths": [
+    "Trains S4 to S3.html"
+   ]
+  },
+  "Trains S5 to S4.html": {
+   "firstSeen": "2026-10-14T14:44:51.215Z",
+   "firstPublished": "2026-10-14T14:44:51.215Z",
+   "lastPublished": "2026-10-15T19:00:13.985Z",
+   "publishCount": 8,
+   "latestVersion": 8,
+   "artifactUrls": [
+    "https://claude.ai/artifact/9V24sqWFpnjztqobgL1CLP"
+   ],
+   "sessions": [
+    "e9b5fede-a5b9-4e20-aab2-33579bfb8991"
+   ],
+   "paths": [
+    "Trains S5 to S4.html"
+   ]
+  },
+  "leoexpress-lines.html": {
+   "firstSeen": "2026-09-26T13:46:54.944Z",
+   "firstPublished": "2026-09-26T13:46:54.944Z",
+   "lastPublished": "2026-09-26T13:46:54.944Z",
+   "publishCount": 1,
+   "latestVersion": 1,
+   "artifactUrls": [
+    "https://claude.ai/artifact/TQewhSff6xiK6whk3EKxZL"
+   ],
+   "sessions": [
+    "1603c574-aba6-4687-b659-0a06224039bd"
+   ],
+   "paths": [
+    "leoexpress-lines.html"
+   ]
+  },
+  "pardubice-mhd.html": {
+   "firstSeen": "2026-09-25T17:46:29.887Z",
+   "firstPublished": "2026-09-25T17:46:29.887Z",
+   "lastPublished": "2026-09-25T17:46:29.887Z",
+   "publishCount": 1,
+   "latestVersion": 1,
+   "artifactUrls": [
+    "https://claude.ai/artifact/KrzshkuVv9T5GqpiUKLJ7y"
+   ],
+   "sessions": [
+    "b398b318-70c3-4152-a076-9b9889b6db85"
+   ],
+   "paths": [
+    "pardubice-mhd.html"
+   ]
+  },
+  "regiojet-lines.html": {
+   "firstSeen": "2026-09-26T13:16:44.223Z",
+   "firstPublished": "2026-09-26T13:16:44.223Z",
+   "lastPublished": "2026-09-26T13:16:44.223Z",
+   "publishCount": 1,
+   "latestVersion": 1,
+   "artifactUrls": [
+    "https://claude.ai/artifact/WgToBBtsy9HSNG64rWM3jA"
+   ],
+   "sessions": [
+    "8052aff5-bba1-414e-ade9-852fc414dc33"
+   ],
+   "paths": [
+    "regiojet-lines.html"
+   ]
+  }
+ }
+}
