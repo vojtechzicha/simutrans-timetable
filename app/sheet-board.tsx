@@ -29,7 +29,7 @@ type Sort = 'region' | 'created' | 'updated';
 export default function SheetBoard({ rows, regions }: { rows: BoardRow[]; regions: string[] }) {
   const [q, setQ] = useState('');
   const [modes, setModes] = useState<string[]>([]);
-  const [statuses, setStatuses] = useState<string[]>(['active', 'reference']);
+  const [statuses, setStatuses] = useState<string[]>([]);
   const [sort, setSort] = useState<Sort>('region');
 
   const toggle = (list: string[], set: (v: string[]) => void, v: string) =>

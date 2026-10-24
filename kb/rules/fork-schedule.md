@@ -26,6 +26,8 @@ its `CLAUDE.md` has the "Coupling trains" section). Engine questions go to an en
 
 - **Rail and every interval that does not divide 60:** offset = **(real time − 60) mod interval** — "odd hours first".
   With interval 120, offset 4 = L:04 (odd hours), offset 66 = S:06 (even hours). User-confirmed for 120 and 240 (8:08 → 188).
+- `mirror/pipeline/README.md` still says offsets "count from midnight": that wording predates the owner's 3 Oct correction —
+  **this page wins**.
 - City sheets with intervals dividing 60 are unaffected. A 20 Oct 2026 bug in the shared Ostrava `loop_shift` ignored the 01:00
   origin for intervals like 40/45/80/90/120 — check any sheet using such intervals.
 - **Fold evenly spaced slots:** never write "every 60, Offset 17, Also at 47" — it is "every 30, Offset 17". A shared interval
