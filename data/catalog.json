@@ -1150,10 +1150,10 @@
    ],
    "region": "Ostrava",
    "kind": "fleet",
-   "summary": "56 Simutrans lines on 47 DPO lines observed at the Wed 30 Sep peak (167 buses), plus every line at Hranečník including the ODIS ones; many hand-set lines and bunching fixes.",
+   "summary": "56 Simutrans lines on 47 DPO lines observed at the Wed 30 Sep peak (167 buses), plus every line at Hranečník including the ODIS ones, and every line at sad Boženy Němcové (its ODIS lines shown as their regional sheets set them); many hand-set lines and bunching fixes.",
    "pipeline": "pipeline/ostrava-bus",
    "build": "python scripts/run.py",
-   "fetch": "python scripts/01b_live_poll.py <date>T19:45 (before 15:00); python scripts/01_fetch.py [--jdf] [--fleet] [--records] (JDF ~107 MB); ODIS lines: 01c_fetch_odis.py, 01e_odis_live.py (by hand)",
+   "fetch": "python scripts/01b_live_poll.py <date>T19:45 (before 15:00); python scripts/01_fetch.py [--jdf] [--fleet] [--records] (JDF ~107 MB); ODIS lines: 01c_fetch_odis.py, 01e_odis_live.py (by hand); hub lines: 01c_fetch_odis.py --hubs",
    "sources": [
     {
      "name": "CIS JŘ bus JDF export",
@@ -1205,12 +1205,15 @@
     "After the peak python scripts/run.py; check no branch has many designed buses.",
     "Republish to https://claude.ai/artifact/6rNwavbbnG4H2aJVZPNx8R."
    ],
-   "notes": "Branches by rule; each line at its own afternoon anchor; interleave/circuitize/path_variants; owner line_overrides (41) and schedule_overrides. keep_roster (roster_2026-10-20_v7.json). Needs from pattern_need (DPO 182). Hranečník ODIS cards (8 lines) hand-set per bus-schedule method.",
+   "notes": "Branches by rule; each line at its own afternoon anchor; interleave/circuitize/path_variants; owner line_overrides (41) and schedule_overrides. keep_roster (roster_2026-10-20_v7.json). Needs from pattern_need (DPO 182). Hranečník ODIS cards (8 lines) hand-set per bus-schedule method. Sad B. Němcové section (25 Oct 2026, v35, 08_hubs.py): its 8 ODIS lines are read from the Opavsko (281, 282, 290, 292; 283 not modelled), HKO (543, 553) and Novojičínsko (331 not modelled) sheets, linked, buses counted there, not here.",
    "dependsOn": [
     "pipeline/ostrava",
     "pipeline/ostrava-trolleybus",
     "pipeline/brno-trolleybus",
-    "pipeline/havirov-karvina-orlova"
+    "pipeline/havirov-karvina-orlova",
+    "pipeline/odis-regional-hko",
+    "pipeline/odis-regional-opavsko",
+    "pipeline/odis-regional-novojicinsko"
    ],
    "rawSnapshots": [
     "2026-09-29",
@@ -1226,7 +1229,15 @@
    ],
    "refreshTriggers": [
     "Vehicles come from a live feed with no history: a refresh needs a new poll on a weekday peak",
-    "Open owner choices: Hlučínská 56/67/68 bunching (68 every 80)"
+    "Open owner choices: Hlučínská 56/67/68 bunching (68 every 80)",
+    "A regional sheet (Opavsko, HKO, Novojičínsko) is rebuilt: python scripts/08_hubs.py && python scripts/06_render.py, then republish"
+   ],
+   "publishes": [
+    {
+     "at": "2026-10-25T01:44:00.000Z",
+     "version": 35,
+     "note": "All lines at sad Boženy Němcové"
+    }
    ]
   },
   {

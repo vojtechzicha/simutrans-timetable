@@ -5,7 +5,7 @@ import os, subprocess, sys
 here = os.path.dirname(os.path.abspath(__file__))
 steps = []
 if '--fetch' in sys.argv: steps += [['01_fetch.py'], ['01c_fetch_odis.py']]
-steps += [['02_timetable.py'], ['03_fleet.py'], ['05_schedule.py'], ['04_roster.py'], ['07_odis.py'], ['06_render.py']]   # schedule first: needs are sized from it
+steps += [['02_timetable.py'], ['03_fleet.py'], ['05_schedule.py'], ['04_roster.py'], ['07_odis.py'], ['08_hubs.py'], ['06_render.py']]   # schedule first: needs are sized from it
 for s in steps:
     print('==', ' '.join(s), flush=True)
     subprocess.run([sys.executable, os.path.join(here, s[0])] + s[1:], cwd=here, check=True)

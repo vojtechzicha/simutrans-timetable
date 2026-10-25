@@ -3,33 +3,43 @@ operators' fleet lists. Lines are found by scanning the national JDF (the bus sn
 matching config.odis.hub_stop_match in hub_town, so new or removed ODIS lines need no config edit. The ODIS number of a
 line is the last three digits of its licence number; each one is checked against the records (operator rows on that line).
 
-usage: python 01c_fetch_odis.py [--scan] [--records] [--fleet]   (no flag = all)"""
+--hubs scans, in the same pass, every hub of config.hubs (lines modelled on the regional sheets, shown by 08_hubs.py) into
+hub_<id>.json; no records or fleet are fetched for them.
+
+usage: python 01c_fetch_odis.py [--scan] [--hubs] [--records] [--fleet]   (no flag = all)"""
 import csv, datetime, io, json, os, re, sys, zipfile
 from lib import CONFIG, RAW, http, parse_vypravenost, next_page, record_date, day
 
 O = CONFIG['odis']; OUT = os.path.join(os.path.dirname(RAW), O['snapshot'], 'odis'); os.makedirs(OUT, exist_ok=True)
-args = set(sys.argv[1:]) or {'--scan', '--records', '--fleet'}
+args = set(sys.argv[1:]) or {'--scan', '--hubs', '--records', '--fleet'}
 
 def rows(inner, prefix):
     n = [x for x in inner.namelist() if x.lower().startswith(prefix)]
     return [r for r in csv.reader(io.StringIO(inner.read(n[0]).decode('cp1250').replace(';\r\n', '\n').replace(';\n', '\n'))) if r] if n else []
 
-if '--scan' in args:
-    outer = zipfile.ZipFile(os.path.join(RAW, 'JDF.zip')); res = []
+want = {}                                   # scan key -> (stop text, town); one pass over the export for all of them
+if '--scan' in args: want['odis'] = (O['hub_stop_match'], O['hub_town'])
+if '--hubs' in args: want.update({h['id']: (h['match'], h['town']) for h in CONFIG.get('hubs', [])})
+if want:
+    outer = zipfile.ZipFile(os.path.join(RAW, 'JDF.zip')); res = {k: [] for k in want}
     for name in outer.namelist():
         try: inner = zipfile.ZipFile(io.BytesIO(outer.read(name)))
         except zipfile.BadZipFile: continue
-        if not any(O['hub_stop_match'] in ','.join(r[1:4]) and O['hub_town'] in r[1] for r in rows(inner, 'zastavky')): continue
+        zs = rows(inner, 'zastavky')
+        ks = [k for k, (m, town) in want.items() if any(m in ','.join(r[1:4]) and town in r[1] for r in zs)]
+        if not ks: continue
         for r in rows(inner, 'linky'):
-            if r[2] == O['dpo_ic']: continue
+            ks_ = [k for k in ks if k != 'odis' or r[2] != O['dpo_ic']]   # a hub keeps its DPO lines too (the off-peak ones)
+            if not ks_: continue
             ds = []
             for x in r[2:]:
                 if re.fullmatch(r'\d{8}', x):
                     try: ds.append(datetime.datetime.strptime(x, '%d%m%Y').date().isoformat())
                     except ValueError: pass
-            res.append(dict(inner=name, line=r[0], name=r[1], ic=r[2], valid_from=ds[0], valid_to=ds[1], diversion=len(r) > 5 and r[5] == '1'))
-    json.dump(res, open(os.path.join(OUT, 'lines.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    print('ODIS line versions', len(res), 'lines', sorted({x['line'] for x in res}))
+            for k in ks_: res[k].append(dict(inner=name, line=r[0], name=r[1], ic=r[2], valid_from=ds[0], valid_to=ds[1], diversion=len(r) > 5 and r[5] == '1'))
+    for k, v in res.items():
+        json.dump(v, open(os.path.join(OUT, 'lines.json' if k == 'odis' else f'hub_{k}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        print('ODIS line versions' if k == 'odis' else f'hub {k}: line versions', len(v), 'lines', sorted({x['line'] for x in v}))
 
 lines = sorted({x['line'][-3:] for x in json.load(open(os.path.join(OUT, 'lines.json'), encoding='utf-8'))})
 if '--records' in args:

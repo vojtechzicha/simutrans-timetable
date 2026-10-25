@@ -65,6 +65,10 @@ No every 1440 / 720 — max 480 ("we can bend the reality a bit"). Shift-change 
 - Scope = kraj contract area by **licence prefix** (912 Havířovsko, 873 Karvinsko, 874 Orlovsko, 871/863/864/861 TFJ, 902/903/904 +
   905 MHD Opava, 883/882/884 + 886/887 Novojičínsko, 852/853/854 + 856/855 Bruntálsko). Lines shared between sheets are listed and
   linked, not repeated (see each README's "other_sheets").
+- **Hub sections on the Ostrava sheet** ("All lines at <stop>"): Hranečník's ODIS lines are modelled there (20 Oct, before the
+  regional sheets). For a hub added later (sad Boženy Němcové, 25 Oct 2026), lines a regional sheet already models are shown as
+  that sheet sets them, read from its derived data, and linked; their buses stay counted there (`ostrava-bus/scripts/08_hubs.py`,
+  `config.hubs`). Moving a line between sheets is the owner's call: it changes two sheets and the in-game lines.
 - All five run on `odis-regional-hko/scripts` with `--base odis-regional-<x>`; each sheet's config is written by its
   `authoring/*_spec.py` + `*_config.py`. Edit those, rerun them, then the pipeline.
 - Short diversions → regular timetable; long diversions (to Nov/Dec) are modelled as run, or put to the owner as a choice.

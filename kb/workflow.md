@@ -30,6 +30,8 @@ The working folder is the source of truth for pipelines and data; this repo is t
    - `pnpm sync` here, check the report, commit, push → Vercel redeploys.
 7. Tell the owner what changed **and the in-game change list**: line, entry, old → new Every/Offset/Also at, vehicles in/out.
 8. Update `data/catalog.json` (dataDay, status, notes) and, if a rule changed, `kb/rules/*` + an entry in `kb/lessons.md`.
+   A publish made from a session in this repo is not mined (the miner skips this project folder): append it to the sheet's
+   `publishes` list (`at` ISO time, `version`, `note`) so the board shows the new date and version.
 
 Known refresh triggers:
 - **13 Dec 2026** national timetable change (JR2027): every rail sheet; RegioJet ÚK takes over U1/U3/U32/U51/U54; most city feeds too.

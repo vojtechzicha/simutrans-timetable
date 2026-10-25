@@ -356,8 +356,85 @@ hub = (f'''<h2 id="hranecnik">All lines at Hranečník ({len(hub_dpo) + len(ODO)
 <div class="types"><table class="tlist"><thead><tr><th>Line</th><th>Route</th><th>Operator</th><th class="n">Simutrans lines</th><th class="n">Needed</th><th>Card</th></tr></thead><tbody>{''.join(hubrow(L, False) for L in hub_dpo)}{''.join(hubrow(L, True) for L in ODO)}</tbody></table></div>
 <div class="grid" style="margin-top:18px">{''.join(ocards)}</div>''') if OD else ''
 
-# not in the afternoon peak
+# all lines at a hub whose ODIS lines are modelled on the regional sheets (08_hubs.py, config.hubs; owner, 25 Oct 2026): the
+# DPO lines link to their cards; each ODIS line is shown as its home sheet sets it and links there. Its buses are counted on
+# that sheet, not in this sheet's totals, depots or nav, so no bus is on two sheets.
 CLSN = {'morning': 'morning only', 'night': 'night only', 'none': 'no trips on this day (weekend or holiday service)'}
+HB = load('hubs.json')['hubs'] if os.path.exists(os.path.join(ROOT, 'data', 'derived', 'hubs.json')) else []
+def slot_txt(P, r, w0=780):
+    """the real departure a typed slot stands for, as on the DPO cards: the minute where P divides 60, else the first clock
+    time from the start of the model hours (w0), every P"""
+    if 60 % P == 0: return ':%02d' % (r % 60)
+    t = w0 + (r - w0) % P; return f"{hm(t)}, every {P}"
+def times_txt(ts): return ', '.join(hm(t) for t in ts) or '&mdash;'
+def short_sheet(h): return h['title'].replace('ODIS Regional ', '').replace('ODIS ', '')
+def mirror_card(H, x):
+    hs = x['home']; sims = x['sims']; nb = sum(len(s['buses']) for s in sims); sh_ = short_sheet(hs)
+    link = f'<a href="{E(hs["url"])}">{E(sh_)} sheet</a>'
+    rows = chips = ''
+    for s in sims:
+        P = s['every']; ends = list(dict.fromkeys([s['legs'][0]['fr'], s['legs'][0]['to']]))
+        rows += f"<tr class='brh'><td colspan='5'>Simutrans line {E(s['name'])}: {E(' ⇄ '.join(ends))}</td></tr>"
+        for g in s['legs']:
+            hb = g['hub']
+            vb = {'from': 'leaves', 'to': 'reaches', 'via': 'passes'}[hb['kind']] if hb else ''
+            at = (f"<b>{vb} {E(H['nav'])} {times_txt(hb['model'])}</b> (real {times_txt(hb['real'])}). " if hb and hb['model'] else
+                  f"<b>{vb} {E(H['nav'])} outside the model hours.</b> " if hb else '')
+            pth = (' via ' + ', '.join(g['via'])) if g['via'] else (' not via ' + ', '.join(g['notvia'])) if g['notvia'] else ''
+            if g['untimed']:
+                rows += (f"<tr><td>{E(g['fr'])} &rarr; {E(g['to'])}<span class='lp'>empty return</span></td><td class='n sv'>0</td><td class='n sv'>&mdash;</td><td class='sv'>&mdash;</td>"
+                         f"<td class='fit'>no timetable: the bus returns empty ({g['rt']} min) and waits at the terminal for its next slot</td></tr>")
+                continue
+            st = g['stat']; sets, reals = g['set'], g['real']
+            fit = f"{st['exact']} of {st['n']} real departures over the day on the minute, {st['w3']} within 3 min (worst {st['worst']}); {g['rt']} min to the far end"
+            if g.get('knot'): fit += f"; timed so the bus passes {E(g['knot']['stop'])} at {', '.join(slot_txt(P, r, s['window'][0]) for r in g['knot']['at'])}"
+            if g['empty']: fit += f"<small>slot without a real departure in the model hours: {', '.join(hm(t) for t in g['empty'])}</small>"
+            rows += (f"<tr{' class=chk' if g['empty'] else ''}><td>{E(g['fr'])} &rarr; {E(g['to'])}{f'<span class=\"lp lnt\">{E(pth.strip())}</span>' if pth else ''}<span class='lp'>{'1 min early' if s['loop'] else 'timetable minute'}</span></td>"
+                     f"<td class='n sv'>{P}</td><td class='n sv'>{sets[0]}<small class='real'>real {slot_txt(P, reals[0], s['window'][0])}</small></td>"
+                     f"<td class='sv'>{', '.join(map(str, sets[1:])) or '&mdash;'}{f'<small class=\"real\">real {', '.join(slot_txt(P, r, s['window'][0]) for r in reals[1:])}</small>' if len(sets) > 1 else ''}</td>"
+                     f"<td class='fit'>{at}{fit}</td></tr>")
+        nseen = sum(1 for b in s['buses'] if b['kind'] == 'seen')
+        chips += (f'<p class="brsub">Simutrans line {E(s["name"])} · {len(s["buses"])} bus{"es" if len(s["buses"]) != 1 else ""} on the {E(sh_)} sheet '
+                  f'({nseen} seen on the ODIS live map on {E(hs["day"])}), {s["need"]} needed · not counted on this sheet</p><ul class="vs">'
+                  + ''.join(f'<li class="v {"seen" if b["kind"] == "seen" else "added"} there"><div class="num"><span class="veh" data-v="{E(b["num"])}">{E(b["num"])}</span> <span class="dp">{E(x["operator"])}</span></div>'
+                            f'<div class="vt">{E(b["full"])} · {E(b["len"] or "?")}{(" · plate " + E(b["plate"])) if b.get("plate") else ""}</div>'
+                            f'<div class="addn">{E(("seen " + b["why"]) if b["kind"] == "seen" else (b["why"] if (b["why"] or "").startswith("designed") else "designed: " + (b["why"] or "")))}; pak object on the {E(sh_)} sheet</div></li>' for b in s['buses']) + '</ul>')
+    a_ = x.get('anchor') or {}
+    when = f" Modelled at its afternoon peak, {hm(a_['busiest'][0])}–{hm(a_['busiest'][1])}." if a_.get('moved') else ''
+    note = (f'<p class="lnote"><b>Modelled, with its buses, on the {link}</b> ({E(hs["day"])}), and shown here as set there: the values are read from that sheet&#x27;s data, so the two cannot disagree. '
+            f'{E(x["note"])}{when} Core points: {E(", ".join(x["core"]))}.</p>')
+    if any((g['hub'] or {}).get('kind') == 'via' for s in sims for g in s['legs']):
+        note += f'<p class="lnote">The line does not turn at {E(H["name"])}: it passes it, so its timetables sit on its terminals, and the minutes it passes are worked out from each slot and its own trips&#x27; running time.</p>'
+    return f"""<article class="card mirror" id="h{H['id']}-{x['line']}"><header><span class="badge">{x['line']}</span><div class="hd"><h3>{E(x['name'])}</h3><p>{E(x['operator'])} · licence{'s' if len(x['codes']) > 1 else ''} {', '.join(x['codes'])} · {len(sims)} Simutrans line{'s' if len(sims) > 1 else ''} on the {link}</p></div><div class="cnt"><b>{nb}</b><span>buses, counted there</span></div></header>
+<div class="sched"><h4>Simutrans schedule, as on the {E(sh_)} sheet</h4><div class="tw0"><table class="st2"><thead><tr><th>Terminus entry</th><th class="n">Departure every (min)</th><th class="n">Offset (min)</th><th>Also at (min)</th><th>At {E(H['nav'])} · fit</th></tr></thead><tbody>{rows}</tbody></table></div></div>
+{note}{chips}</article>"""
+hubs_html = ''
+for H in HB:
+    mods = [x for x in H['odis'] if x['status'] == 'modelled']; rest = [x for x in H['odis'] if x['status'] != 'modelled']
+    dpo = [L for L in H['dpo'] if L in BR]
+    bysheet = collections.defaultdict(list)
+    for x in mods: bysheet[short_sheet(x['home'])].append(x['line'])
+    def hrow(x):
+        where = (f"below; modelled on the <a href=\"{E(x['home']['url'])}\">{E(short_sheet(x['home']))} sheet</a>" if x['status'] == 'modelled' else
+                 f"not modelled: {E(x['reason'])} (<a href=\"{E(x['home']['url'])}\">{E(short_sheet(x['home']))} sheet</a>)" if x['status'] == 'unmodelled' else
+                 '<b>on no sheet yet</b>: it would have to be modelled here')
+        sims = x.get('sims', [])
+        return (f"<tr><td><a class='badge sm' href='#h{H['id']}-{x['line']}'>{E(x['line'])}</a></td><td>{E(x['name'])}</td><td>{E(x['operator'])}</td>"
+                f"<td class='n'>{len(sims) or '&mdash;'}</td><td class='n'>{sum(s['need'] for s in sims) or '&mdash;'}</td><td>{where}</td></tr>")
+    offr = ''.join(f"<tr><td><b>{E(o['line'])}</b></td><td>{E(nm0(CLS[o['line']]['name'].split(' - ')[0]) + ' – ' + nm0(CLS[o['line']]['name'].split(' - ')[-1]) if ' - ' in CLS[o['line']]['name'] else CLS[o['line']]['name'])}</td><td>DPO</td>"
+                   f"<td class='n'>&mdash;</td><td class='n'>&mdash;</td><td>{E(CLSN.get(o['cls'], o['cls'] or ''))}: see <a href='#offpeak'>Not in the afternoon peak</a></td></tr>" for o in H['dpo_off'] if o['line'] in CLS)
+    oth = '; '.join(f"{m} {', '.join(v)}" for m, v in H['other'].items() if v)
+    nott = [m for m, v in H['other'].items() if not v]
+    unrows = ''.join(f"<tr><td><span class='badge sm' style='background:var(--muted)'>{E(x['line'])}</span></td><td>{E(x['name'])}</td><td>{E(x['operator'])}</td><td>{E(x.get('reason', 'on no regional sheet'))}"
+                     + (f" (<a href=\"{E(x['home']['url'])}\">{E(short_sheet(x['home']))} sheet</a>)" if x.get('home') else '') + '</td></tr>' for x in rest)
+    hubs_html += (f'''<h2 id="{H['id']}">All lines at {E(H['name'])} ({len(dpo) + len(H['dpo_off']) + len(H['odis'])})</h2>
+<p class="sub">Every bus line with a stop at {E(H['stop'])}: the {len(dpo)} DPO lines of the afternoon (their cards are in Lines above), {len(H['dpo_off'])} DPO line{'s' if len(H['dpo_off']) != 1 else ''} outside it, and {len(H['odis'])} ODIS lines of other operators, found by scanning the national JDF ({E(H['snapshot'])}). Unlike the Hranečník lines, which are modelled on this sheet, every ODIS line here was already on a regional sheet, with its buses: {E('; '.join(f'{k}: {", ".join(v)}' for k, v in bysheet.items()))}. Lines shared between sheets are listed and linked, not repeated. So the cards below show each line as its home sheet sets it (typed values, real minutes, buses), read from that sheet&#x27;s data; its buses are counted there, not in this sheet&#x27;s totals, depots or line bar, and no bus is on two sheets. Those sheets model {E(mods[0]['home']['day'] if mods else '')} with the ODIS live map, not DPO&#x27;s 30 Sep. The column “At {E(H['name'])}” gives the minutes each leg leaves, passes or reaches the stop: the slot plus the median running time of the leg&#x27;s own trips, against the real times in the model hours.{(' ' + E(oth[0].upper() + oth[1:]) + ' also stop here (their own sheets).') if oth else ''}{(' No ' + ' or '.join(m.rstrip('s') for m in nott) + ' stops here.') if nott else ''}</p>
+<div class="types"><table class="tlist"><thead><tr><th>Line</th><th>Route</th><th>Operator</th><th class="n">Simutrans lines</th><th class="n">Needed</th><th>Card</th></tr></thead><tbody>{''.join(hubrow(L, False) for L in dpo)}{offr}{''.join(hrow(x) for x in H['odis'])}</tbody></table></div>
+<div class="grid" style="margin-top:18px">{''.join(mirror_card(H, x) for x in mods)}</div>'''
+                  + (f'<h3 style="margin-top:22px">Not modelled</h3><div class="types"><table class="tlist"><thead><tr><th>Line</th><th>Route</th><th>Operator</th><th>Why (home sheet)</th></tr></thead><tbody>{unrows}</tbody></table></div>' if rest else ''))
+HUBNAV = ''.join(f'<a href="#{H["id"]}">{E(H["nav"])}</a>' for H in HB)
+
+# not in the afternoon peak
 offpeak = ''.join(f"<tr><td><b>{L}</b></td><td>{E(nm0(v['name'].split(' - ')[0]) + ' – ' + nm0(v['name'].split(' - ')[-1]) if ' - ' in v['name'] else v['name'])}</td>"
                   f"<td>{E(CLSN[v['cls']])}{(', ' + str(v['trips']) + ' trips, ' + v['first'] + '–' + v['last']) if v.get('first') else ''}</td></tr>"
                   for L, v in sorted(CLS.items(), key=lambda x: int(x[0])) if v['cls'] != 'peak')
@@ -510,7 +587,7 @@ if UNC:
                 + ''.join(uncrow(s_, v) for s_, v in sorted(UNC.items())) + '</tbody></table></div>')
 else:
     coverage = cov_head + 'Every one of them is on a modelled line.</p>'
-rep = dict(HUB=hub, CHECKS=checks + coverage, TITLE=C['title'], VEHICLE_DAY_LABEL=C['vehicle_day_label'], VEHICLE_DAY_EN=C['vehicle_day_label_en'], PEAK=PEAK,
+rep = dict(HUB=hub + hubs_html, HUBNAV=HUBNAV, CHECKS=checks + coverage, TITLE=C['title'], VEHICLE_DAY_LABEL=C['vehicle_day_label'], VEHICLE_DAY_EN=C['vehicle_day_label_en'], PEAK=PEAK,
            STATE_LABEL=C['network_state_label'], STATE=state, BRANCHES_WHY=E(C['branches_why']), CARDS='\n'.join(cards),
            DEPOTS=dsec, DEPNAV=DEPNAV, SPARE=spsec, SPAREHEAD=sparehead, PAKS=paks, TYPES=trows, NEED=str(need),
            NOBS='pending' if PENDING else str(len(OBS)), NOBSLAB=('seen ' + PL + '–' + W[1]) if PROV else 'observed live at the peak', NLINES=str(len(order)), NSIM=str(sum(len(BR[L]) for L in order)),

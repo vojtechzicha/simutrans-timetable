@@ -159,6 +159,8 @@ input[type=search]:focus-visible{outline:2px solid var(--vp);outline-offset:2px}
 @media (max-width:700px){.controls .nav.dnav{flex-wrap:nowrap;overflow-x:auto;max-width:100%;min-width:0}.controls .nav.dnav a{flex-shrink:0;white-space:nowrap}}
 li.v.eve{border-color:var(--vp)}
 li.v.spare{opacity:.55;border-style:dotted}
+.card.mirror{border-style:dashed}
+.v.there{border-style:dashed}
 details.nn{border-top:0;margin:6px 16px 0;padding:0}
 details.nn>summary{font:600 13px var(--font-display);text-transform:none;letter-spacing:.02em;color:var(--muted);padding:4px 0}
 details.nn ul.vs{padding:6px 0 4px}
@@ -181,7 +183,7 @@ details.nn ul.vs{padding:6px 0 4px}
 
 <div class="controls">
   <nav class="nav lines" aria-label="Lines"><span class="lab">Lines</span>{{NAV}}</nav>
-  <nav class="nav dnav" aria-label="Depots"><span class="lab">Depots</span>{{DEPNAV}}<a href="#checks">To check</a><a href="#coverage">Coverage</a><a href="#hranecnik">Hranečník</a><a href="#offpeak">Not in the peak</a><a href="#pak">Pak128 objects</a><a href="#fleet">Vehicle types</a><a href="#method">How this was built</a></nav>
+  <nav class="nav dnav" aria-label="Depots"><span class="lab">Depots</span>{{DEPNAV}}<a href="#checks">To check</a><a href="#coverage">Coverage</a><a href="#hranecnik">Hranečník</a>{{HUBNAV}}<a href="#offpeak">Not in the peak</a><a href="#pak">Pak128 objects</a><a href="#fleet">Vehicle types</a><a href="#method">How this was built</a></nav>
   <input type="search" id="q" placeholder="Find vehicle, e.g. 7866" aria-label="Find vehicle number" inputmode="numeric"><span id="hits" aria-live="polite"></span>
 </div>
 {{PENDING}}

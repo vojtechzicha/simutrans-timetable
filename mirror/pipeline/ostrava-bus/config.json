@@ -1590,5 +1590,28 @@
       ],
       "exception": "owner approved for 57 only, 20 Oct 2026; further cases are asked with supporting info"
     }
-  }
+  },
+  "hubs_why": "Owner, 25 Oct 2026: 'similarly how we did the Hranečník, do the regional lines from Sad B.Němcové'. Unlike Hranečník (20 Oct, before the regional sheets existed), every ODIS line at sad B. Němcové was modelled, with its buses, on a regional sheet on 21–22 Oct. Lines shared between sheets are listed and linked, not repeated, and no bus is on two sheets (kb/rules/bus-sheets.md), so the section shows each line as its home sheet sets it, read from that sheet's derived data. Nothing here changes those sheets or the game.",
+  "hubs": [
+    {
+      "id": "sad-bn",
+      "name": "sad Boženy Němcové",
+      "stop": "Přívoz, sad Boženy Němcové",
+      "match": "sad B.N",
+      "town": "Ostrava",
+      "nav": "Sad B. Němcové"
+    }
+  ],
+  "hubs_other_modes": {
+    "trams": "../ostrava/data/derived/trips.json",
+    "trolleybuses": "../ostrava-trolleybus/data/derived/trips.json"
+  },
+  "regional_sheets_why": "In build order. A line's home is the first of these sheets that models it (its derived schedule.json), else the first that lists it as not modelled (config.unmodelled, with the reason).",
+  "regional_sheets": [
+    "../odis-regional-hko",
+    "../odis-regional-tfj",
+    "../odis-regional-opavsko",
+    "../odis-regional-novojicinsko",
+    "../odis-regional-bruntalsko"
+  ]
 }

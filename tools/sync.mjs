@@ -98,6 +98,13 @@ function main() {
     if (!cat) report.uncatalogued.push(s.file);
     // Provenance is keyed by file name; a renamed sheet also inherits its earlier names' history.
     const provs = [s.file, ...(cat?.previousFiles ?? [])].map((f) => provenance[f]).filter(Boolean);
+    // Publishes from this repo's own sessions are not mined (tools/mine_transcripts.py skips them); the catalogue logs them.
+    const own = cat?.publishes ?? [];
+    if (own.length) {
+      const at = own.map((p) => p.at).sort();
+      provs.push({ firstSeen: at[0], firstPublished: at[0], lastPublished: at.at(-1), publishCount: own.length,
+        latestVersion: Math.max(...own.map((p) => p.version ?? 0)), artifactUrls: cat.artifactUrl ? [cat.artifactUrl] : [], sessions: [] });
+    }
     const min = (k) => provs.map((p) => p[k]).filter(Boolean).sort()[0] ?? null;
     const max = (k) => provs.map((p) => p[k]).filter(Boolean).sort().at(-1) ?? null;
     sheets.push({
