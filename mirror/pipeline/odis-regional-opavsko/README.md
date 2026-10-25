@@ -14,7 +14,7 @@ This folder holds only the sheet's config, data and authoring scripts. The pipel
 | MHD Opava, trolleybuses | 905201–905204 (`mhd-opava-trol`, prefix 90520) | Městský dopravní podnik Opava | 3xx | VZ-DPOpava-trolleybus |
 | MHD Opava, buses | 905xxx | MDPO | 1xx, 40x | VZ-DPOpava-bus |
 
-- 70 ODIS numbers: 59 modelled as 76 Simutrans lines, 131 vehicles (121 seen on the 20 Oct live map, 10 designed). Was 73 lines and 125 vehicles before the 25 Oct hand check of 281, 282, 290 and 292.
+- 70 ODIS numbers: 59 modelled as 73 Simutrans lines, 126 vehicles (116 seen on the 20 Oct live map, 10 designed). Was 125 vehicles before the 25 Oct hand check of 281, 282, 290 and 292.
 - Not modelled (`config.unmodelled`): 214, 256, 275 (sparse / shift, stops on other lines), 283 (two trips), 228 and 229 (night lines).
 - Lines shared with other sheets (the sheet with most trips models them): 615, 620, 691, 692, 693 are on the Novojičínsko/Bílovecko sheet; this sheet models 260 and 920 (also Bruntálsko/Rýmařovsko licences), 261, 263, 270, 285, 678 (also Novojičínsko/Bílovecko licences) and 555 (904555; the HKO sheet lists it).
 
@@ -43,16 +43,18 @@ The owner asked for 281, 282, 290 and 292 to be checked step by step ("that's th
 produce incorrect results"). Their 21 Oct rows were automatic fits and all failed Step 4. The check is in
 `method-check-2026-10-25.md`.
 - **Outstation lines:** the buses sleep at the far ends (Hať garage, Třebom, Strahovice, Chuchelná, Píšť), so the afternoon
-  sends more buses out of Ostrava than come back (19 out, 12 in at sad B. Němcové, 14:00–17:00). Each line has a balanced core
-  timed both ways, and the extra peak departures are a B line with an empty return (387 / 543B precedent): 281B (:48 to
-  Kobeřice), 290B (:19, every 120), 292B (14:58 / 15:33, every 120).
+  sends more buses out of Ostrava than come back (19 out, 12 in at sad B. Němcové, 14:00–17:00). Each line is timed both
+  ways at its inbound rate; the extra peak departures (buses going home) are off the pattern. v7 had them on B lines with
+  empty returns (5 more buses); the owner: "Unless those empty runs add something really needed and specific, don't add them
+  just for frequency". They served no stop of their own, so v8 dropped them.
 - **290:** every 120 with four slots each way, exact (Ostrava 14:44, 14:59, 15:24, 15:49; Hať 14:47, 15:31, 16:07, 16:37).
 - **281:** Třebom :58, timed so the bus passes Kobeřice at :13 (was Třebom :16, 15–20 min off); Ostrava :18 unchanged.
 - **282:** every 120 (Píšť :55 is exactly every 2 h; Ostrava :53), model hour set to 16:00 (`anchor`) because its busiest
   stretch was the Hlučín – Závada shuttles.
 - **292:** every 80, Ostrava 14:33 / 15:53, back timed at Hlučín :59 (the trips start at Píšť, Chuchelná or Strahovice).
-- Needs 9 → 15, all seen buses; 075 swaps 24-1115 for 24-1109. Owner checks: the B lines and 290's four slots, each with
-  the cheaper option.
+- Needs 9 → 10. `config.keep_roster` (`data/published/roster_v6.json`, new opt-in step in the shared 04_roster) keeps the
+  published buses where they are still seen on their line: 281 24-0004 → 24-0002, 290 + 24-1111, nothing else moves.
+  Owner check: 290's four slots against every 40 (3 buses).
 
 ## Authoring and review (`authoring/`)
 

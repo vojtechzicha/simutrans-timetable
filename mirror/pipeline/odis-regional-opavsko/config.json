@@ -1924,28 +1924,9 @@
        "core_to": "Kobeřice, autobusová stanice"
       }
      ]
-    },
-    {
-     "name": "281B",
-     "every": 60,
-     "legs": [
-      {
-       "fr": "Ostrava, Přívoz, sad B.Němcové",
-       "to": "Kobeřice, autobusová stanice",
-       "at": [
-        48
-       ]
-      },
-      {
-       "fr": "Kobeřice, autobusová stanice",
-       "to": "Ostrava, Přívoz, sad B.Němcové",
-       "untimed": true
-      }
-     ],
-     "why": "the :48 departures (14:48 Třebom, 15:48 Strahovice; 12:48 Kobeřice) take buses home; empty return"
     }
    ],
-   "note": "Třebom – Kobeřice – Hlučín – Ostrava, Přívoz, read at Kobeřice, where the Třebom, Strahovice and Kobeřice trips split. Out of Ostrava exactly every 30 at :18 / :48 (14:18–15:48); back hourly, at Kobeřice 14:11, 15:16, 16:11 (slot :13, within 3 min; Třebom :58). The buses sleep at Třebom and Strahovice, so half the afternoon departures do not come back (live map, 20 Oct): 281 is :18 out and Třebom :58 back, three buses; 281B runs the :48 departures to Kobeřice with an empty return. The Hlučín – Bolatice shuttles are off the pattern."
+   "note": "Třebom – Kobeřice – Hlučín – Ostrava, Přívoz, read at Kobeřice, where the Třebom, Strahovice and Kobeřice trips split. Out of Ostrava exactly every 30 at :18 / :48 (14:18–15:48); back hourly, at Kobeřice 14:11, 15:16, 16:11 (slot :13, within 3 min; Třebom :58). The buses sleep at Třebom and Strahovice, so half the afternoon departures do not come back (live map, 20 Oct): 281 runs at the inbound rate, hourly, :18 out and Třebom :58 back, three buses. The :48 departures (14:48, 15:48) take buses home and are off the pattern, as are the Hlučín – Bolatice shuttles."
   },
   "282": {
    "core": [
@@ -2078,28 +2059,9 @@
        ]
       }
      ]
-    },
-    {
-     "name": "290B",
-     "every": 120,
-     "legs": [
-      {
-       "fr": "Ostrava, Přívoz, sad B.Němcové",
-       "to": "Hať, točna",
-       "at": [
-        "16:19"
-       ]
-      },
-      {
-       "fr": "Hať, točna",
-       "to": "Ostrava, Přívoz, sad B.Němcové",
-       "untimed": true
-      }
-     ],
-     "why": "the :19 buses do not come back as 290 (16:19 goes home to the Hať garage, 14:19 back empty for 281 at 15:48); empty return"
     }
    ],
-   "note": "Hať – Hlučín – Ostrava, Přívoz. 14:40–16:40: out of Ostrava 14:44, 14:59, 15:24, 15:49, 16:19, back from Hať 14:47, 15:31, 16:07, 16:37. No single interval fits (every 40 leaves two of the five Ostrava departures out and its 15:39 slot empty), so 290 runs every 120 with four slots each way, exact; the plates pair 14:44 → 15:31, 15:24 → 16:07 and 15:49 → 16:37. The :19 buses do not come back as 290 (16:19 goes home to the Hať garage; 14:19 runs back empty for 281 at 15:48): 290B, every 120 with an empty return. Taking 16:19 rather than 14:59 as the B slot saves a bus (4 + 1 instead of 5 + 1)."
+   "note": "Hať – Hlučín – Ostrava, Přívoz. 14:40–16:40: out of Ostrava 14:44, 14:59, 15:24, 15:49, 16:19, back from Hať 14:47, 15:31, 16:07, 16:37. No single interval fits (every 40 leaves two of the five Ostrava departures out and its 15:39 slot empty), so 290 runs every 120 with four slots each way, exact; the plates pair 14:44 → 15:31, 15:24 → 16:07 and 15:49 → 16:37. The fifth departure, 16:19 (and 14:19 before the window), takes a bus home to the Hať garage and is off the pattern; with 16:19 off rather than 14:59, the four slots need four buses, not five."
   },
   "292": {
    "core": [
@@ -2130,30 +2092,9 @@
        ]
       }
      ]
-    },
-    {
-     "name": "292B",
-     "every": 120,
-     "legs": [
-      {
-       "fr": "Ostrava, Přívoz, sad B.Němcové",
-       "to": "Chuchelná, železniční stanice",
-       "at": [
-        "14:58",
-        "15:33"
-       ],
-       "core_to": "Píšť, Mýto"
-      },
-      {
-       "fr": "Chuchelná, železniční stanice",
-       "to": "Ostrava, Přívoz, sad B.Němcové",
-       "untimed": true
-      }
-     ],
-     "why": "the 14:58 and 15:33 buses go home to Chuchelná / Strahovice; empty return"
     }
    ],
-   "note": "Ostrava, Přívoz – Hlučín – Vřesina – Píšť – Chuchelná / Strahovice. Out of Ostrava every 30 in 14:33–15:53 (:33 and :53–:58); back only about every 75 (at Hlučín 13:39, 15:02, 16:16, 17:26, from Píšť, Chuchelná and Strahovice), because the buses sleep at Strahovice, Chuchelná and Píšť. 292 runs every 80: Ostrava 14:33 / 15:53, back timed at Hlučín :59 (13:39, 14:59, 16:19; within 3 min). 292B runs 14:58 and 15:33 with an empty return. Off the pattern: the Píšť-only trips (13:29 out, 14:30 from Hlučín) and the Chuchelná – Strahovice / Bělá shuttles; their stops are on 292 and 282."
+   "note": "Ostrava, Přívoz – Hlučín – Vřesina – Píšť – Chuchelná / Strahovice. Out of Ostrava every 30 in 14:33–15:53 (:33 and :53–:58); back only about every 75 (at Hlučín 13:39, 15:02, 16:16, 17:26, from Píšť, Chuchelná and Strahovice), because the buses sleep at Strahovice, Chuchelná and Píšť. 292 runs at the inbound rate, every 80: Ostrava 14:33 / 15:53, back timed at Hlučín :59 (13:39, 14:59, 16:19; within 3 min). Off the pattern: 14:58 and 15:33 (their buses go home to Chuchelná / Strahovice), the Píšť-only trips (13:29 out, 14:30 from Hlučín) and the Chuchelná – Strahovice / Bělá shuttles; their stops are on 292 and 282."
   },
   "293": {
    "core": [
@@ -2294,18 +2235,8 @@
   ],
   [
    "290",
-   "every 120 with four slots each way (Ostrava 14:44, 14:59, 15:24, 15:49; Hať 14:47, 15:31, 16:07, 16:37), exact in the model hours, 4 buses; plus 290B (Ostrava :19, every 120: 14:19, 16:19) with an empty return, 1 bus.",
+   "every 120 with four slots each way (Ostrava 14:44, 14:59, 15:24, 15:49; Hať 14:47, 15:31, 16:07, 16:37), exact in the model hours, 4 buses.",
    "every 40 with one slot each way (Ostrava :19, Hať :07): fewer typed values and 3 buses, but only three of the five Ostrava departures, and the 15:39 and 15:27 slots have no real trip."
-  ],
-  [
-   "281",
-   "281B: the :48 departures out of Ostrava (14:48 to Třebom, 15:48 to Strahovice; their buses go home there) as their own line to Kobeřice with an empty return, 2 buses.",
-   "drop 281B: 281 alone (Ostrava :18, Třebom :58), 3 buses; out of Ostrava hourly instead of every 30."
-  ],
-  [
-   "292",
-   "292B: 14:58 and 15:33 (their buses go home to Chuchelná and Strahovice) as their own line every 120 with an empty return, 2 buses.",
-   "drop 292B: 292 alone every 80 (Ostrava 14:33, 15:53), 2 buses; out of Ostrava every 80 instead of every 30."
   ]
  ],
  "texts": {
@@ -2676,5 +2607,7 @@
   "authoring/offwire.py",
   "authoring/alt_drive.py",
   "authoring/fill_designed.py"
- ]
+ ],
+ "keep_roster": "data/published/roster_v6.json",
+ "keep_roster_why": "The owner may have the sheet in the game (published v6, 22 Oct 2026). A rebuild keeps each published bus on its Simutrans line wherever it is still evidence for that line, so the 25 Oct hand check of 281/282/290/292 moves the fewest buses."
 }

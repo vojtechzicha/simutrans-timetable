@@ -104,22 +104,20 @@ L['075'] = dict(core=[S('Hlučín, sídliště OKD'), S('Ostrava, Poruba, Studen
 # Hlučínsko lines at sad B. Němcové (281, 282, 290, 292): set by hand on 25 Oct 2026 with the bus schedule method, steps 1-11
 # (../method-check-2026-10-25.md; owner: "I want you to check"). The buses sleep at the far ends (Hať garage, Třebom,
 # Strahovice, Chuchelná, Píšť), so the afternoon peak sends more buses out of Ostrava than come back (live map, 20 Oct): each
-# line's balanced core is timed both ways, and the extra peak departures are a B line with an empty return (387 / 543B).
-def why(sim, w): sim['why'] = w; return sim
+# line is timed both ways at the inbound rate, and the extra peak departures are off the pattern. No B lines with empty
+# returns for frequency (owner, 25 Oct 2026: "Unless those empty runs add something really needed and specific, don't add
+# them just for frequency"); they ran the same stops as the core lines.
 L['281'] = dict(core=[S('Třebom, náměstí'), S('Kobeřice, autobusová stanice'), S(HLU), S(PRV)], sim=[
-    two('281', 'Třebom, náměstí', PRV, a=dict(knot='Kobeřice, autobusová stanice', knot_at=[13]), b=dict(at=[18], core_to='Kobeřice, autobusová stanice'), every=60),
-    why(oneway('281B', PRV, 'Kobeřice, autobusová stanice', every=60, a=dict(at=[48])), 'the :48 departures (14:48 Třebom, 15:48 Strahovice; 12:48 Kobeřice) take buses home; empty return')])
+    two('281', 'Třebom, náměstí', PRV, a=dict(knot='Kobeřice, autobusová stanice', knot_at=[13]), b=dict(at=[18], core_to='Kobeřice, autobusová stanice'), every=60)])
 L['282'] = dict(core=[S('Píšť, kostel'), S(HLU), S(PRV)], anchor='16:00',
                 sim=[two('282', 'Píšť, kostel', PRV, a=dict(at=['15:55'], core_to=HLU), b=dict(at=['16:53']), every=120)])
 L['284'] = dict(core=[S(HLU), S('Štěpánkovice, Svoboda')], sim=[two('284', HLU, 'Štěpánkovice, Svoboda')])
 L['285'] = dict(core=[S('Ostrava, Poruba, Dílny DP Ostrava'), S('Štítina, škola'), S('Dobroslavice')],
                 sim=[two('285', 'Ostrava, Poruba, Dílny DP Ostrava', 'Štítina, škola'), two('285 Dobroslavice', 'Ostrava, Poruba, Dílny DP Ostrava', 'Dobroslavice')])
 L['290'] = dict(core=[S('Hať, točna'), S(HLU), S(PRV)], sim=[
-    two('290', 'Hať, točna', PRV, a=dict(at=['14:47', '15:31', '16:07', '16:37']), b=dict(at=['14:44', '14:59', '15:24', '15:49']), every=120),
-    why(oneway('290B', PRV, 'Hať, točna', every=120, a=dict(at=['16:19'])), 'the :19 buses do not come back as 290 (16:19 goes home to the Hať garage, 14:19 back empty for 281 at 15:48); empty return')])
+    two('290', 'Hať, točna', PRV, a=dict(at=['14:47', '15:31', '16:07', '16:37']), b=dict(at=['14:44', '14:59', '15:24', '15:49']), every=120)])
 L['292'] = dict(core=[S(PRV), S(HLU), S('Píšť, Mýto'), S('Chuchelná, železniční stanice')], sim=[
-    two('292', PRV, 'Chuchelná, železniční stanice', a=dict(at=['14:33'], core_to='Píšť, Mýto'), b=dict(knot=HLU, knot_at=['14:59']), every=80),
-    why(oneway('292B', PRV, 'Chuchelná, železniční stanice', every=120, a=dict(at=['14:58', '15:33'], core_to='Píšť, Mýto')), 'the 14:58 and 15:33 buses go home to Chuchelná / Strahovice; empty return')])
+    two('292', PRV, 'Chuchelná, železniční stanice', a=dict(at=['14:33'], core_to='Píšť, Mýto'), b=dict(knot=HLU, knot_at=['14:59']), every=80)])
 L['293'] = dict(core=[S(HLU), S('Bohumín, Nový Bohumín, autobusová stanice')], sim=[two('293', HLU, 'Bohumín, Nový Bohumín, autobusová stanice'), two('293 ŽD', HLU, 'Bohumín, Nový Bohumín, ŽD vrát.III', a=dict(at=['13:05']), b=dict(at=['14:13']), every=480)])
 L['555'] = dict(core=[S('Bohumín, Starý Bohumín, náměstíSvobody'), S('Ostrava, Mor.Ostrava, Náměstí Republiky')],
                 sim=[two('555', 'Bohumín, Starý Bohumín, náměstíSvobody', 'Ostrava, Mor.Ostrava, Náměstí Republiky')])

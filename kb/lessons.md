@@ -113,4 +113,6 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   also show if you can use the kb well." → every ODIS line there was already on a regional sheet: hub section that reads them
   from their home sheet and links (no bus on two sheets).
 - **25 Oct:** "Yes, I want you to check - that's the point of you doing it, so you'll not produce incorrect results." → scripted
-  fits get the step-by-step method check before they ship; 281/282/290/292 rebuilt as outstation lines with B lines.
+  fits get the step-by-step method check before they ship; 281/282/290/292 rebuilt as outstation lines.
+- **25 Oct:** "Unless those empty runs add something really needed and specific, don't add them just for frequency" → the
+  281B/290B/292B empty-return lines (5 buses) were dropped; extra peak departures are listed, not modelled.

@@ -52,10 +52,14 @@ No every 1440 / 720 — max 480 ("we can bend the reality a bit"). Shift-change 
   slots with a real trip within 3 min), written into a dated method-check file (owner, 25 Oct 2026: "that's the point of you
   doing it, so you'll not produce incorrect results"). The Opavsko Hlučínsko lines 281/282/290/292 had all failed it.
 - **Outstation lines:** where buses sleep at the far ends (Hať garage, Třebom, Strahovice…), the afternoon sends more buses
-  out of the city than come back, and Step 5b can't pair them. Time a balanced core both ways at the inbound rate, and put the
-  extra peak departures on a B line with an empty return (281B, 290B, 292B; 387 / 543B precedent). Choose which slot is the
-  B slot by the plates and by the core's waits (290: 16:19, not 14:59, saved a bus). Name the drop-the-B-line option as an
-  owner check with its bus cost.
+  out of the city than come back, and Step 5b can't pair them. Time the line both ways at the inbound rate and list the extra
+  peak departures (buses going home) as off the pattern. **No empty-return lines just for frequency** (owner, 25 Oct 2026:
+  "Unless those empty runs add something really needed and specific, don't add them just for frequency"): in the game a line
+  repeats all day, so an empty return shuttles back every period. Add one only for something specific, e.g. a stop nobody
+  else serves (387, 543B). Pick which departures fall off by the plates and by the waits (290: 16:19 off, not 14:59, needs
+  4 buses instead of 5).
+- A sheet the owner may already have in the game is rebuilt with `keep_roster` (Ostrava bus; regional sheets' shared
+  04_roster step 6): published buses stay on their line wherever they are still evidence for it.
 - A multi-slot row on a long interval (290: every 120, four slots each way) is fine when it is exact in the window and no
   simpler interval passes Step 4; put the simpler option on the owner checks.
 - Label every typed value with its own real time, worked out from the value (+61 at loops), never by zipping two sorted lists.

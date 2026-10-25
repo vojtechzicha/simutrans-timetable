@@ -14,6 +14,9 @@
 5. Short lines get designed buses: (a) a bus seen on the same line's trips at another time of the day and free in this
    line's window; (b) a free bus of the line's area fleet with the line's commonest type that day; each marked with its
    reason. Free = not on any line of any sheet in the line's window.
+6. config.keep_roster (optional, a published roster.json): a sheet the owner already has in the game keeps each published
+   bus on its Simutrans line wherever the bus is still evidence for that line, so a rebuild moves the fewest buses (the
+   Ostrava bus pipeline's keep_roster). The matching fills the rest.
 """
 import collections, json, os
 from lib import CONFIG, RAW, load, save, hm, rel, PIPE, plate_key, tlen
@@ -81,17 +84,27 @@ for k, ev in EV.items():
     for pl, (d, lab, br) in ev.items(): cand[pl].append((d, k))
 for pl in cand: cand[pl].sort()
 owner = {}       # slot -> plate
+locked = set()   # slots held by a kept published bus (config.keep_roster)
+if CONFIG.get('keep_roster'):
+    prev = json.load(open(rel(CONFIG['keep_roster']), encoding='utf-8'))['lines']
+    for L, i, s in sims:
+        ps = next((r for r in prev.get(L, []) if r['name'] == s['name']), None)
+        for v in (ps or {}).get('seen', []):
+            pl = v['plate']; k = (L, i)
+            if pl in EV[k] and pl not in owner.values():
+                j = next((j for j in range(NEED[k]) if (k, j) not in owner), None)
+                if j is not None: owner[(k, j)] = pl; locked.add((k, j))
 def try_assign(pl, vis):
     for d, k in cand[pl]:
         for j in range(NEED[k]):
             sl = (k, j)
-            if sl in vis: continue
+            if sl in vis or sl in locked: continue
             vis.add(sl)
             if sl not in owner or try_assign(owner[sl], vis):
                 owner[sl] = pl; return True
     return False
 for pl in sorted(cand, key=lambda p: (len(cand[p]), cand[p][0][0])):
-    try_assign(pl, set())
+    if pl not in owner.values(): try_assign(pl, set())
 assigned = collections.defaultdict(list)
 for (k, j), pl in owner.items(): assigned[k].append(pl)
 used = {pl: k for k, pls in assigned.items() for pl in pls}
@@ -113,7 +126,8 @@ for k, ev in EV.items():
         ty = info(pl)['type']; mine = assigned[k]
         if ty in {info(p)['type'] for p in mine}: continue
         cnt = collections.Counter(info(p)['type'] for p in mine)
-        dup = [p for p in mine if cnt[info(p)['type']] > 1]
+        kept = {owner[sl] for sl in locked if sl[0] == k}
+        dup = [p for p in mine if cnt[info(p)['type']] > 1 and p not in kept]
         if dup:
             out_ = max(dup, key=lambda p: ev[p][0]); mine[mine.index(out_)] = pl; used[pl] = k; used.pop(out_, None)
 

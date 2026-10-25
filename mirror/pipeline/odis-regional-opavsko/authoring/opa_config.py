@@ -87,6 +87,8 @@ c['network_state'] = [
     ['out', 'Lines shared with other sheets',
      '615, 620, 691, 692 and 693 (minor Vítkovsko/Opavsko licences) are on the Novojičínsko/Bílovecko sheet. This sheet models 260 and 920 (also Bruntálsko/Rýmařovsko licences), 261, 263, 270, 285 and 678 (also Novojičínsko/Bílovecko licences) and 555 (the Havířovsko/Karvinsko/Orlovsko sheet lists it as Hlučínsko\'s).'],
 ]
+c['keep_roster'] = 'data/published/roster_v6.json'
+c['keep_roster_why'] = 'The owner may have the sheet in the game (published v6, 22 Oct 2026). A rebuild keeps each published bus on its Simutrans line wherever it is still evidence for that line, so the 25 Oct hand check of 281/282/290/292 moves the fewest buses.'
 c['owner_checks'] = [
     ['204', 'modelled as the regular trolleybus line (Kylešovice, škola – Englišova, every 60 with three slots :00 / :24 / :36), with designed MDPO trolleybuses that have an auxiliary drive, battery or diesel generator (about 2.6 km of the 10 km route has no wire); on the vehicle day it ran with replacement buses during the Vrchní street closure (to 23 Oct).',
      'model it as it ran: buses via Partyzánská (Citelis 150–157 were seen), skipping U Cukrovaru, Vrchní and Ratibořská.'],
@@ -97,12 +99,8 @@ c['owner_checks'] = [
     ['920', 'three Simutrans lines: Svinov – Šumperk and Svinov – Rýmařov every 120 each (together hourly at :17 from Svinov) and Opava – Rýmařov every 480 (13:24 / 15:02); the Bruntál short trips (11:17, 12:17; back 13:03, 14:43) are off the pattern.',
      'one Svinov – Bruntál trunk every 60 with the Rýmařov and Šumperk ends as variants.'],
     # Hlučínsko lines at sad B. Němcové, set by hand on 25 Oct 2026 (../method-check-2026-10-25.md)
-    ['290', 'every 120 with four slots each way (Ostrava 14:44, 14:59, 15:24, 15:49; Hať 14:47, 15:31, 16:07, 16:37), exact in the model hours, 4 buses; plus 290B (Ostrava :19, every 120: 14:19, 16:19) with an empty return, 1 bus.',
+    ['290', 'every 120 with four slots each way (Ostrava 14:44, 14:59, 15:24, 15:49; Hať 14:47, 15:31, 16:07, 16:37), exact in the model hours, 4 buses.',
      'every 40 with one slot each way (Ostrava :19, Hať :07): fewer typed values and 3 buses, but only three of the five Ostrava departures, and the 15:39 and 15:27 slots have no real trip.'],
-    ['281', '281B: the :48 departures out of Ostrava (14:48 to Třebom, 15:48 to Strahovice; their buses go home there) as their own line to Kobeřice with an empty return, 2 buses.',
-     'drop 281B: 281 alone (Ostrava :18, Třebom :58), 3 buses; out of Ostrava hourly instead of every 30.'],
-    ['292', '292B: 14:58 and 15:33 (their buses go home to Chuchelná and Strahovice) as their own line every 120 with an empty return, 2 buses.',
-     'drop 292B: 292 alone every 80 (Ostrava 14:33, 15:53), 2 buses; out of Ostrava every 80 instead of every 30.'],
 ]
 c['unmodelled'] = {
     '214': 'Shift trips Dobrovského → Komárov, TEVA 2 (5:03, 5:30, 6:30, 13:03; one back at 6:15). Its stops are on other town lines (211, 220, 203, 213); TEVA 2 is on 223.',
