@@ -712,7 +712,12 @@ Not changed: 304, 306, 307, 309 (pass), 302 Tesco, 316 Riviéra (pass).
 
 ### 314 Frýdek – Baška – Janovice
 
-- **(a)** Frýdek, železniční stanice; Baška, železniční stanice (the knot every trip passes); Janovice, konečná. Model hours 14:10–16:10.
+Corrected by the branch check (`../audit/branch-check-2026-10-25.md`): (b) below shows the afternoon trips use Revoluční,
+yet the row kept the station as its town end, so three of its four slots were trips of the other end. The town end is now
+Frýdek, Revoluční (Revoluční Offset 85, Also at 116, real 14:26, 14:57, exact; Janovice Offset 34, Also at 71, real 14:12,
+15:35), 2 buses; the Baška slots are unchanged.
+
+- **(a)** Frýdek, Revoluční (was the station); Baška, železniční stanice (the knot every trip passes); Janovice, konečná. Model hours 14:10–16:10.
 - **(b)** The afternoon trips start at the poliklinika (13:33, 14:20, 17:06) or Revoluční (14:57, 16:07), not the station,
   and end at Janovice, konečná or škola. At Baška station: towards Janovice 13:52, 14:39, 15:10, 16:20, 17:25, 18:53;
   towards Frýdek 13:12, 14:36, 15:19, 15:59, 16:58, 18:03, 19:37. Buses 724 and 709 run it.

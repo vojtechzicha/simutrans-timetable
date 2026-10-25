@@ -27,8 +27,16 @@ Version 4 (25 Oct 2026): the rules below from the hand check of the Hlučínsko 
   waits the choice makes (290: leaving 16:19 off, not 14:59, needs 4 buses instead of 5).
 - **An exact multi-slot row on a long interval beats a simpler interval that fails Step 4** (290: every 120 with four slots
   each way, exact, 4 buses, against every 40 with 3 buses and two departures missed; owner: "290 uses more buses").
-- **Mixed origins: read at the knot.** When a line's trips towards the city start at different far ends (292: Píšť,
-  Chuchelná, Strahovice), time the way back at the knot they all pass (`knot` + `knot_at`), not at one terminal.
+- **Mixed origins: read at the knot.** When a line's trips towards the city start at different points on its path (292
+  Strahovice: Strahovice or Píšť), time the way back at the knot they all pass (`knot` + `knot_at`), not at one terminal.
+- **Read before a fork? Split by destination first.** A leg read at a midpoint (`core_to` short of its terminal, or a
+  `knot`) counts trips wherever they end or start, so if the line forks past that point a Step 4 pass says nothing about
+  where a slot's trip goes. 292 was read at Píšť, Mýto and both its Ostrava slots were Strahovice trips, while the line
+  ended at Chuchelná (owner: "half of the services going to Chuchelná, half going to Strahovice, kaple - but you model
+  as one line?"). Give each end its own Simutrans line (Step 5; `notvia` keeps the other end's trips out), and pick a
+  town end where the slot trips go (314: Revoluční, not the station). After any change run `audit/branch_check.py` (legs
+  read at a midpoint: trips that end or start off the path) and `audit/path_check.py` (each slot's trip against the
+  modelled stops: 246's way back skipped the stop its slot trips start from); fix or explain every flag on the card.
 - **Model hour set by hand** (`anchor`) when the line's busiest two hours are shuttles whose stops are on the line anyway
   (282's Hlučín – Závada shuttles): model the hour where the line's own pattern runs.
 - **Typed values and their real times:** work the real time out from each typed value (+61 at loops, mod every); never pair

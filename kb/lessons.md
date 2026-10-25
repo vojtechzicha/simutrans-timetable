@@ -120,3 +120,11 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   the 01:00 offset origin had only been fixed in the Ostrava pipelines; Brno, Olomouc, Plzeň, Praha and Most–Litvínov still
   counted from midnight on intervals not dividing 60 (and Pardubice was built before the 20 Oct fix). A rule fix must be applied
   to every copy of the shared code, then checked across all pipelines by script (`audit/city_systemic.py`), not sheet by sheet.
+- **25 Oct:** "looking at 292 I see in peak half of the services going to Chuchelná, half going to Strahovice, kaple - but
+  you model as one line?" → the 292 row was read at Píšť, Mýto, before the fork, so it "passed" Step 4 on two Strahovice
+  trips while the line ended at Chuchelná; and its plates were read backwards. Now 292 + 292 Strahovice, each every 160.
+  Then: "Unless you'll show me a good reason why you have not modelled this as two branches, do the check mentioned" →
+  every leg read at a midpoint on the five regional sheets (`audit/branch_check.py`) and every slot's trip against the
+  modelled path (`audit/path_check.py`): 314 (wrong town end), 340 (skipped the stop it exists for) and 246 (way back
+  skipped its slot trips' stop) fixed; 51 path-variant slots listed for review. A Step 4 pass only says the minutes fit;
+  check where each slot's trip actually goes.

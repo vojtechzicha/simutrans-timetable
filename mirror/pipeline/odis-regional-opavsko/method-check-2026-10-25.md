@@ -40,7 +40,7 @@ balanced on its own path.
 | 281 | every 60, Třebom :16 / Ostrava :18 | Třebom :16 is 15–20 min off the afternoon (15:01, 15:56) | every 60, Třebom :58 (Kobeřice :13) / Ostrava :18 | 3 → 3 |
 | 282 | every 180, Píšť 15:55 / Ostrava 13:54 slot, model hour 13:00–15:00 | the 13:54 slot has no trip | every 120, Píšť :55 / Ostrava :53, model hour 16:00 | 1 → 1 |
 | 290 | every 40, Hať :07 / Ostrava :19 | 3 slots for 5 departures out; 15:39 and 15:27 slots empty | every 120, four slots each way, exact | 3 → 4 |
-| 292 | every 90, Ostrava 14:04 / Chuchelná 14:21 | 14:04 slot empty; 15:51 slot empty | every 80, Ostrava 14:33 / 15:53, back timed at Hlučín :59 | 2 → 2 |
+| 292 | every 90, Ostrava 14:04 / Chuchelná 14:21 | 14:04 slot empty; 15:51 slot empty | v8: every 80, Ostrava 14:33 / 15:53 → Chuchelná (wrong, see below); now two lines, 292 (Chuchelná) and 292 Strahovice, each every 160 | 2 → 2 |
 | **Total** | | | | **9 → 10** |
 
 The sheet needs 126 buses (was 125). The published buses stay where they are still seen on their line
@@ -109,37 +109,64 @@ a real departure" kind. The owner chose 290's four slots (4 buses) over every 40
 - **(f) Off the pattern:** Ostrava 14:18; Hlučín → Píšť 16:10, 18:10 (their stops are on 282); the Závada shuttles.
 - **(g) Need:** 1 (waits Píšť 16, Ostrava 13). Bohuslavice has no other line.
 
-## 292 Ostrava, Přívoz – Hlučín – Vřesina – Píšť – Chuchelná / Strahovice
+## 292 Ostrava, Přívoz – Hlučín – Vřesina – Píšť – Bělá – Chuchelná / Strahovice
 
-- **(a) Core points:** sad B. Němcové; Hlučín (the knot for the way back: the trips start at Píšť, Chuchelná or
-  Strahovice); Píšť, Mýto (where the Chuchelná and Strahovice paths split); Chuchelná, železniční stanice. Model hours
-  14:00–16:00.
-- **(b) Afternoon:** out of Ostrava 13:29 (Píšť only), 13:53, **14:33, 14:58, 15:33, 15:53**, 17:04, 18:49; towards
-  Ostrava, at Hlučín 13:39 (Píšť), **15:02** (Chuchelná), 16:16 (Píšť), 17:26 (Strahovice), 19:34 (Strahovice).
-- **(c) Step 4:** back at Hlučín: every 80 :59 (13:39, 14:59, 16:19; within 3, 17:26 is 13 off) and every 72 (15:02, 16:14,
-  17:26; 13:39 11 off) both pass in the window; 72 hits one more on the minute, but only 80 lets the line leave Ostrava on
-  two exact departures (14:33, 15:53), so 80. The published every 90 (Ostrava 14:04) 1 of 2 FAIL, Chuchelná 15:51 slot
-  empty. Out of Ostrava the timetable is every 30 (:33 and :53–:58); the line runs at the inbound rate.
-- **(d) Simutrans line 292:** every 80, Ostrava Offset 12 (real 14:33, 15:53), Chuchelná Offset 77 (real 14:18, 15:38; the
-  bus passes Hlučín at 14:59 / 16:19). Out trips are counted to Píšť, Mýto, so the Strahovice runs (15:53) count.
-- **(e) Knots:** out Hlučín 14:49 / 16:09 (real 14:50 / 16:10). The sheet's knot check shows 18–19 min for the 15:53 slot and 77
-  at sad B. Němcové for the 15:38 slot. Those compare only with trips that run the whole Chuchelná path; the 15:53 runs to
-  Strahovice by the other path and the 15:38 slot stands for the Píšť 15:53 trip, both within 1–3 min at Hlučín.
-- **(f) Off the pattern:** out 12:34, 13:29 (Píšť only), 13:53, 14:58 and 15:33 (their buses go home to Chuchelná /
-  Strahovice), 17:04, 18:49; back at Hlučín 17:26 (13), 19:34; the Hlučín – Vřesina / Píšť Mýto shorts and the
-  Chuchelná – Strahovice and Bělá shuttles (stops on 292 and 282).
-- **(g) Need:** 2 (waits Ostrava 39, Chuchelná 9).
+Corrected after v8. Owner: "looking at 292 I see in peak half of the services going to Chuchelná, half going to
+Strahovice, kaple - but you model as one line?" The v8 row (every 80, Ostrava 14:33 / 15:53 → Chuchelná, železniční
+stanice; back from Chuchelná timed at Hlučín :59) counted the out trips at Píšť, Mýto, before the fork past Bělá. Both of
+its exact slots were Strahovice trips, so in the game 292 sent them to Chuchelná and nothing ran Ostrava – Strahovice.
+Its (f) also read the plates the wrong way round: the 14:33 and 15:53 buses stay at Strahovice, and the 15:33 Chuchelná
+trip's bus is the one that comes back. A Step 4 pass at a point before a fork says nothing about where the slot goes.
+
+- **(a) Core points:** sad B. Němcové; Hlučín (the knot for the way back: trips start at Píšť, Chuchelná or Strahovice);
+  Píšť, Mýto; Chuchelná, železniční stanice and Strahovice, kaple (the two ends past Bělá). Model hours 14:00–16:00.
+- **(b) Afternoon, by destination** (at sad B. Němcové): out to Chuchelná 13:53, **14:58, 15:33**, 17:04; to Strahovice
+  12:34, **14:33, 15:53**, 18:49 (14:33 via Chuchelná, železniční stanice; 15:53 and 18:49 straight to LNH vodárna).
+  Back: from Chuchelná **14:21** (Hlučín 15:02); from Strahovice 16:43 (Hlučín 17:26), 18:53 (19:34), and 13:36 to Píšť
+  only; from Píšť, kostel 13:18 (Hlučín 13:39), 15:53 (16:16).
+- **(c) Plates (live map, 20 Oct):** 24-1007 runs Chuchelná 14:21 → Ostrava 15:19, out 15:33 → Chuchelná 16:29, on to
+  Strahovice, 16:43 → Ostrava. 24-1108 runs Píšť 15:53 → Ostrava, out 17:04 → Chuchelná, Strahovice 18:53 → Ostrava.
+  24-0004 (14:33) and 24-1009 (15:53) end their day at Strahovice, 83-1052 (14:58) at Chuchelná; 24-1116 (13:53) goes on
+  empty from Chuchelná to Hlučín for 293.
+- **(d) Step 5 + outstation rule:** one Simutrans line per destination, each at half the inbound rate, so together they
+  run every 80 at Hlučín (as v8's way back, which passed Step 4: 13:39, 14:59, 16:19 within 3 min). Each line every 160:
+  - **292** (Chuchelná, `notvia` Strahovice): Ostrava 15:33, Chuchelná 14:21. Step 4: out 1 slot / 2 real in the window
+    (14:58, 15:33), filled 1/1; back 1 / 1, filled 1/1. Typed: Ostrava Offset 72 (real 15:33), Chuchelná Offset 0
+    (real 14:21). One bus: 56 + 16 + 56 + 32 = 160 min (waits Ostrava 16, Chuchelná 32); the same round as 24-1007's.
+  - **292 Strahovice** (via the station, `stops_via`): Ostrava 14:33; back from Strahovice 15:36, timed at Hlučín 16:19
+    (`knot_at`, `notvia` the station, so Chuchelná's trips don't count for it): it stands for the Píšť trips 15:53
+    (Hlučín 16:16, 3 min) and, 160 min earlier, 13:18 (13:39, exact). Strahovice has no trip to Ostrava between 6:03
+    and 16:43, and a back slot at 16:43 would need a second bus (60 + 70 + 60 > 160). Step 4: out 1 slot / 2 real
+    (14:33, 15:53), filled 1/1; back 1 / 1, filled 1/1. Typed: Ostrava Offset 12 (real 14:33), Strahovice Offset 75
+    (real 15:36). One bus: 60 + 3 + 58 + 39 = 160 min.
+  - Rejected: both lines every 80 (out exact on 14:33 / 15:53 and 14:58, but 4 buses and back slots with no trip in the
+    window: Step 4 FAIL inbound, and empty returns for frequency, which the owner refused); one 160 circuit Ostrava –
+    Strahovice – Ostrava – Chuchelná (its Chuchelná slot falls on 15:53, a Strahovice trip).
+  - Simpler alternative, on the card: one line every 80 through both ends, Ostrava → Chuchelná, železniční stanice →
+    Strahovice → Ostrava (the 14:33 path, and the rounds of 24-1007 / 24-1108), 2 buses, both stops every 80.
+- **(e) Knots:** 292 out passes Hlučín 15:50, Píšť, Mýto 16:12, Chuchelná 16:29 (all exact); back Píšť, Mýto 14:38,
+  Hlučín 15:02 (exact). 292 Strahovice out passes Hlučín 14:49, Chuchelná, železniční stanice 15:26, Strahovice 15:32
+  (within 1); back Hlučín 16:19 (3), Píšť, Mýto 15:54 (no real trip passes Mýto towards Ostrava then; the Píšť trip
+  starts at Píšť, kostel). Combined at sad B. Němcové out: 14:33, 15:33, 17:13, 18:13 (60 / 100 min apart, as the real
+  departures are uneven); at Hlučín back: 13:39, 15:02, 16:19, 17:42.
+- **(f) Off the pattern:** out 13:53, 14:58, 15:53, 17:04, 12:34, 18:49 (buses going home, or the rounds below); back
+  16:43 and 18:53 from Strahovice (the Ostrava – Chuchelná – Strahovice – Ostrava rounds of 24-1007 and 24-1108); 13:36
+  Strahovice → Píšť; the Hlučín – Vřesina / Píšť, Mýto shorts and the Chuchelná – Strahovice and Bělá shuttles (all
+  their stops are on the two 292 lines; Strahovice also on 255).
+- **(g) Need:** 1 + 1 = 2, as v8. Buses: 292 24-1007 (kept from v8), 292 Strahovice 24-0004 (seen on the 14:33);
+  24-1116 is not needed.
 
 ## Shared stop: sad B. Němcové (Step 5)
 
-Model departures 14:00–16:20 of the four lines: 14:18 (281), 14:33 (292), 14:44 (290), 14:53 (282), 14:59 (290), 15:18
-(281), 15:24 (290), 15:49 (290), 15:53 (292), 16:18 (281). Every one but 281's 16:18 (real 16:13, a Strahovice trip) is a
-real departure, and no two leave within 3 min. The DPO lines at the same stop (34, 56, 67, 68 …) were not changed.
+Model departures 14:00–16:20 of the four lines: 14:18 (281), 14:33 (292 Strahovice), 14:44 (290), 14:53 (282), 14:59
+(290), 15:18 (281), 15:24 (290), 15:33 (292), 15:49 (290), 16:18 (281). Every one but 281's 16:18 (real 16:13, a
+Strahovice trip) is a real departure, and no two leave within 3 min (v8 had 292 at 15:53 instead of 15:33). The DPO lines at the same stop (34, 56, 67, 68 …) were not changed.
 
 ## Buses and other sheets
 
 - 281: 24-1103, 24-1010, 24-0002 (in place of 24-0004). 282: 24-1001. 290: 24-1104, 24-1102, 24-1009, 24-1111 (added).
-  292: 24-1116, 24-1007. All seen on these lines on 20 Oct; every other line of the sheet keeps its buses.
+  292: 24-1116, 24-1007 in v8; after the split 292 24-1007, 292 Strahovice 24-0004. All seen on these lines on 20 Oct;
+  every other line of the sheet keeps its buses.
 - No bus is on two sheets: checked against the HKO, TFJ, Novojičínsko and Bruntálsko rosters, the Ostrava Hranečník cards
   and the Havířov/Karviná/Orlová town sheet (the roster step excludes the 304 plates of the earlier sheets).
 - `keep_roster` is new in the shared `odis-regional-hko/scripts/04_roster.py` (step 6, opt-in per sheet): published buses

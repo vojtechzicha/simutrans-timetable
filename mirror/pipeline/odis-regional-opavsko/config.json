@@ -1242,12 +1242,16 @@
        "fr": "Jakartovice, Hoř.Kunčice, točna",
        "to": "Opava, Bílovecká TQM",
        "at": "auto",
-       "knot": "Dolní Životice, hor.konec"
+       "knot": "Dolní Životice, hor.konec",
+       "stops_via": [
+        "Dolní Životice, hor.konec",
+        "Jakartovice, mateřská škola"
+       ]
       }
      ]
     }
    ],
-   "note": "Opava – Slavkov – Dolní Životice – Litultovice – Jakartovice, Hořejší Kunčice hourly in the early afternoon (Opava :18), timed so trips that end at Dolní Životice count there."
+   "note": "Opava – Slavkov – Dolní Životice – Litultovice – Jakartovice, Hořejší Kunčice hourly in the early afternoon (Opava :18), timed so trips that end at Dolní Životice count there. Back via the Jakartovice villages and Dolní Životice, as 17:32 runs, because the :12 slot stands for the Dolní Životice trips (13:47, 14:47); until 25 Oct 2026 the way back took the path through Hertice that skips Dolní Životice, the stop where the trips of its slot start."
   },
   "247": {
    "core": [
@@ -2199,33 +2203,62 @@
     "Ostrava, Přívoz, sad B.Němcové",
     "Hlučín, autobusové nádraží",
     "Píšť, Mýto",
-    "Chuchelná, železniční stanice"
+    "Chuchelná, železniční stanice",
+    "Strahovice, kaple"
    ],
    "sim": [
     {
      "name": "292",
-     "every": 80,
+     "every": 160,
      "legs": [
       {
        "fr": "Ostrava, Přívoz, sad B.Němcové",
        "to": "Chuchelná, železniční stanice",
        "at": [
-        "14:33"
+        "15:33"
        ],
-       "core_to": "Píšť, Mýto"
+       "notvia": [
+        "Strahovice, kaple"
+       ]
       },
       {
        "fr": "Chuchelná, železniční stanice",
        "to": "Ostrava, Přívoz, sad B.Němcové",
+       "at": [
+        "14:21"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "292 Strahovice",
+     "every": 160,
+     "legs": [
+      {
+       "fr": "Ostrava, Přívoz, sad B.Němcové",
+       "to": "Strahovice, kaple",
+       "at": [
+        "14:33"
+       ],
+       "stops_via": [
+        "Chuchelná, železniční stanice"
+       ]
+      },
+      {
+       "fr": "Strahovice, kaple",
+       "to": "Ostrava, Přívoz, sad B.Němcové",
        "knot": "Hlučín, autobusové nádraží",
        "knot_at": [
-        "14:59"
+        "16:19"
+       ],
+       "notvia": [
+        "Chuchelná, železniční stanice"
        ]
       }
      ]
     }
    ],
-   "note": "Ostrava, Přívoz – Hlučín – Vřesina – Píšť – Chuchelná / Strahovice. Out of Ostrava every 30 in 14:33–15:53 (:33 and :53–:58); back only about every 75 (at Hlučín 13:39, 15:02, 16:16, 17:26, from Píšť, Chuchelná and Strahovice), because the buses sleep at Strahovice, Chuchelná and Píšť. 292 runs at the inbound rate, every 80: Ostrava 14:33 / 15:53, back timed at Hlučín :59 (13:39, 14:59, 16:19; within 3 min). Off the pattern: 14:58 and 15:33 (their buses go home to Chuchelná / Strahovice), the Píšť-only trips (13:29 out, 14:30 from Hlučín) and the Chuchelná – Strahovice / Bělá shuttles; their stops are on 292 and 282."
+   "note": "Ostrava, Přívoz – Hlučín – Vřesina – Píšť – Bělá – Chuchelná, železniční stanice / Strahovice, kaple. Past Bělá the line forks: out of Ostrava 13:53 Chuchelná, 14:33 Strahovice, 14:58 Chuchelná, 15:33 Chuchelná, 15:53 Strahovice, 17:04 Chuchelná, 18:49 Strahovice; far fewer come back (from Chuchelná 14:21, from Strahovice 16:43 and 18:53, from Píšť, kostel 13:18 and 15:53), because the buses sleep at Strahovice, Chuchelná and Píšť. One Simutrans line per destination (Step 5), each every 160, so together they run at the inbound rate (every 80 at Hlučín): 292 to Chuchelná, Ostrava 15:33 and Chuchelná 14:21, both exact (one bus, 24-1007, runs both in reality); 292 Strahovice, Ostrava 14:33 exact, via Chuchelná, železniční stanice as that trip runs, and back from Strahovice at 15:36, timed so the bus passes Hlučín at 16:19 and 13:39 for the Píšť trips 15:53 and 13:18 (within 3 min; Strahovice has no trip to Ostrava between 6:03 and 16:43). Off the pattern, by the plates: 14:58 (83-1052 stays at Chuchelná), 15:53 (24-1009 stays at Strahovice), 13:53 (24-1116 goes on as 293), and 17:04 → 18:53 and 16:43, rounds Ostrava – Chuchelná – Strahovice – Ostrava (24-1108, 24-1007); the Hlučín – Vřesina / Píšť short trips and the Chuchelná – Strahovice / Bělá shuttles, whose stops are on the two 292 lines. Simpler alternative: one line every 80 through both ends, Ostrava → Chuchelná, železniční stanice → Strahovice → Ostrava (the 14:33 path), the same 2 buses, both stops every 80. Until 25 Oct 2026 (v8) 292 was one line to Chuchelná that read every trip at Píšť, Mýto, so both its Ostrava slots were Strahovice trips (owner: \"half of the services going to Chuchelná, half going to Strahovice, kaple - but you model as one line?\")."
   },
   "293": {
    "core": [

@@ -95,8 +95,11 @@ def finish(L, sl, legs, W, anchor):
         if rt is None: raise ValueError(f'{L} {sl["name"]}: no trip for leg {g["fr"]} -> {g["to"]} and no rt given')
         g['rt'] = rt
         # stops: the commonest path of the leg's own trips in the afternoon; `stops_via` picks the path through a stop only a
-        # variant serves (367 back via Bruzovice, Zámostí and Lučina, as its evening trips run, so Zámostí is on a line)
-        aft = [x for x in full if 780 <= x['d'] < 1140] or full
+        # variant serves (367 back via Bruzovice, Zámostí and Lučina, as its evening trips run, so Zámostí is on a line).
+        # A leg read at a knot takes its path from the trips that run it from its terminal (mt): its own trips are read from
+        # the knot, so their path starts there (until 25 Oct 2026 such legs listed only the stops from the knot on)
+        ps = ([x for x in g['mt'] if all(v in x['st'] for v in sv)] or g['mt']) if g['knot_stop'] and g['mt'] else full
+        aft = [x for x in ps if 780 <= x['d'] < 1140] or ps
         g['stops'] = g['spec'].get('stops') or (list(collections.Counter(tuple(x['st']) for x in aft).most_common(1)[0][0]) if aft else [g['fr'], g['to']])
         if g['untimed']: continue
         D = [(x['d0'], min(cd(x['d0'], r, P) for r in g['real'])) for x in own if FW[0] <= x['d0'] < FW[1]]
@@ -157,7 +160,9 @@ def finish(L, sl, legs, W, anchor):
             if c not in g['stops'][1:]: continue
             off = [x['times'][x['st'].index(c)] - x['d'] for x in m if c in x['st']]
             if not off: continue
-            o = med(off); real = sorted(x['times'][x['st'].index(c)] for x in m if c in x['st'])
+            # the real times there: the trips that run the leg, and every trip it stands for that passes c (a leg read at a
+            # knot stands for trips that start beyond its terminal: 292 Strahovice's Píšť trips at Hlučín)
+            o = med(off); real = sorted({x['times'][x['st'].index(c)] for x in m + g['cand'] if c in x['st']})
             model = [s + o for s in g['window']['slots']] or [r + o for r in g['real']]
             ks.append(dict(stop=c, rt=o, model=model, dev=[min((abs(t - r) for r in real), default=None) for t in model]))
         g['knots'] = ks

@@ -58,6 +58,13 @@ No every 1440 / 720 — max 480 ("we can bend the reality a bit"). Shift-change 
   repeats all day, so an empty return shuttles back every period. Add one only for something specific, e.g. a stop nobody
   else serves (387, 543B). Pick which departures fall off by the plates and by the waits (290: 16:19 off, not 14:59, needs
   4 buses instead of 5).
+- **Forks past the reading point:** a leg read at a midpoint (`core_to` short of the terminal, or a `knot`) counts trips
+  wherever they end, so Step 4 can pass on another branch's trips. 292 was read at Píšť, Mýto and its two Ostrava slots were
+  Strahovice trips on a line that ended at Chuchelná (owner, 25 Oct 2026: "half of the services going to Chuchelná, half
+  going to Strahovice, kaple - but you model as one line?"). One Simutrans line per end (Step 5, `notvia` for the other
+  end); a knot may mix trips that start on the line's own path, never trips of another branch. Pick the town end the slot
+  trips use (314: Revoluční, not the station). Run `pipeline/audit/branch_check.py` and `path_check.py` after any change;
+  every flag is fixed or explained on the card (`pipeline/audit/branch-check-2026-10-25.md`).
 - A sheet the owner may already have in the game is rebuilt with `keep_roster` (Ostrava bus; regional sheets' shared
   04_roster step 6): published buses stay on their line wherever they are still evidence for it.
 - A multi-slot row on a long interval (290: every 120, four slots each way) is fine when it is exact in the window and no

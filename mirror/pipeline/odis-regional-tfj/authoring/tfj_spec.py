@@ -159,8 +159,10 @@ L['312'] = dict(core=[S(FZS), S(FPOL), S('Brušperk, točna')],
 # 313: every 120, žst 13:31 (odd hours), Nošovice 14:10 (even hours).
 L['313'] = dict(core=[S('Nošovice, střed'), S(FZS)], sim=[two('313', FZS, 'Nošovice, střed', a=dict(at=['13:31']), b=dict(at=['14:10']), every=120)])
 # 314: mixed Frýdek ends (žst, poliklinika, Revoluční) and Janovice ends (konečná, škola): read at Baška, železniční stanice both ways.
-L['314'] = dict(core=[S(FZS), S('Baška, železniční stanice'), S('Janovice, konečná')],
-                sim=[two('314', FZS, 'Janovice, konečná',
+# 314's afternoon trips start and end at Revoluční (or run on to the poliklinika), not the station: the town end is Revoluční,
+# where its two Frýdek paths meet (25 Oct 2026 branch check: three of the four slots were Revoluční trips)
+L['314'] = dict(core=[S('Frýdek, Revoluční'), S('Baška, železniční stanice'), S('Janovice, konečná')],
+                sim=[two('314', 'Frýdek, Revoluční', 'Janovice, konečná',
                          a=dict(knot='Baška, železniční stanice', knot_at=['14:39', '15:10'], core_to='Janovice, škola', stops_via=[S('Frýdek, Na Veselé')]),
                          b=dict(knot='Baška, železniční stanice', knot_at=['14:36', '15:59'], core_to='Staré Město, střed', stops_via=[S('Janovice, Řezáč')]), every=120)])
 # 316: the 315/316 round runs 13:12-16:15 (last out 15:42): its own model hours 14:00-16:00 (sim window); 316 Riviéra unchanged.
@@ -204,7 +206,7 @@ L['985'] = dict(core=[S(NR), S('Frenštát p.Radh., u škol'), S('Rožnov p.Radh
 # ---------------- Frýdlantsko (864), added 21 Oct 2026
 FZ, FZA = 'Frýdlant n.Ost., železniční stanice', 'Frýdlant n.Ost., zahradnictví'
 L['340'] = dict(core=[S(FZ), S('Frýdek, Revoluční'), S(NR)],
-                sim=[dict(name='340', every=480, legs=[leg(FZ, NR, at=['12:06']), leg(NR, FZ, at=['14:12'], core_to='Frýdek, Revoluční')])])
+                sim=[dict(name='340', every=480, legs=[leg(FZ, NR, at=['12:06']), leg(NR, FZ, at=['14:12'], core_to='Frýdek, Revoluční', stops_via=[S('Kunčice, nádraží Kunčice')])])])
 L['341'] = dict(core=[S(FZ), S('Janovice, konečná')],
                 sim=[dict(name='341', every=120, legs=[leg(FZ, 'Janovice, konečná', at=['14:19']), leg('Janovice, konečná', FZ, at=['15:00'])])])
 L['342'] = dict(core=[S(FZ), S('Kozlovice, střed')], sim=[two('342', FZ, 'Kozlovice, střed')])

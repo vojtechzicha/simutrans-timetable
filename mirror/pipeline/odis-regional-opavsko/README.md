@@ -15,7 +15,8 @@ This folder holds only the sheet's config, data and authoring scripts. The pipel
 | MHD Opava, buses | 905xxx | MDPO | 1xx, 40x | VZ-DPOpava-bus |
 
 - 70 ODIS numbers: 59 modelled as 73 Simutrans lines, 126 vehicles (116 seen on the 20 Oct live map, 10 designed). Was 125 vehicles before the 25 Oct hand check of 281, 282, 290 and 292.
-- After the 25 Oct check of the rest of the sheet (below): 72 Simutrans lines (285 Dobroslavice folded into 285), and the schedule (`05_schedule`) needs 133 buses, 7 more than 126; the roster is not rebuilt yet.
+- After the 25 Oct check of the rest of the sheet (below): 72 Simutrans lines (285 Dobroslavice folded into 285), and the schedule (`05_schedule`) needs 133 buses, 7 more than 126.
+- After the 292 split (25 Oct, below): 73 Simutrans lines, still 133 buses; the roster was rebuilt in the working folder (`04_roster` with `keep_roster` = v8), not published.
 - Not modelled (`config.unmodelled`): 214, 256, 275 (sparse / shift, stops on other lines), 283 (two trips), 228 and 229 (night lines).
 - Lines shared with other sheets (the sheet with most trips models them): 615, 620, 691, 692, 693 are on the Novojičínsko/Bílovecko sheet; this sheet models 260 and 920 (also Bruntálsko/Rýmařovsko licences), 261, 263, 270, 285, 678 (also Novojičínsko/Bílovecko licences) and 555 (904555; the HKO sheet lists it).
 
@@ -52,10 +53,38 @@ produce incorrect results"). Their 21 Oct rows were automatic fits and all faile
 - **281:** Třebom :58, timed so the bus passes Kobeřice at :13 (was Třebom :16, 15–20 min off); Ostrava :18 unchanged.
 - **282:** every 120 (Píšť :55 is exactly every 2 h; Ostrava :53), model hour set to 16:00 (`anchor`) because its busiest
   stretch was the Hlučín – Závada shuttles.
-- **292:** every 80, Ostrava 14:33 / 15:53, back timed at Hlučín :59 (the trips start at Píšť, Chuchelná or Strahovice).
+- **292:** v8 had one line, every 80, Ostrava 14:33 / 15:53 → Chuchelná, back timed at Hlučín :59. Wrong: it read the
+  trips at Píšť, Mýto, before the fork, and both its Ostrava slots were Strahovice trips (see "292 split" below).
 - Needs 9 → 10. `config.keep_roster` (`data/published/roster_v6.json`, new opt-in step in the shared 04_roster) keeps the
   published buses where they are still seen on their line: 281 24-0004 → 24-0002, 290 + 24-1111, nothing else moves.
   290: the owner chose the four exact slots and 4 buses over every 40 with 3 (25 Oct 2026: "290 uses more buses").
+
+## 292 split by destination (25 Oct 2026)
+
+Owner, after v8: "looking at 292 I see in peak half of the services going to Chuchelná, half going to Strahovice, kaple -
+but you model as one line?" Past Bělá the line forks; the v8 row counted every trip passing Píšť, Mýto (`core_to`), so it
+"passed" Step 4 with two Strahovice trips (14:33, 15:53) while the Simutrans line ended at Chuchelná, and the plates were
+read the wrong way round (the 14:33 and 15:53 buses stay at Strahovice; 24-1007's 15:33 Chuchelná trip is the one that
+comes back, via Strahovice at 16:43). Now one line per destination (method Step 5), each every 160, together the inbound
+rate (every 80 at Hlučín), 2 buses as before:
+- **292** (Chuchelná, železniční stanice): Ostrava 15:33, Chuchelná 14:21, both exact; `notvia` Strahovice, so the
+  Strahovice trips via the station don't count for it. Bus 24-1007 (it runs both trips in reality).
+- **292 Strahovice:** Ostrava 14:33 exact, via Chuchelná, železniční stanice (`stops_via`, as that trip runs); back from
+  Strahovice 15:36, timed at Hlučín 16:19 / 13:39 (`knot_at`, `notvia` the station) for the Píšť trips 15:53 / 13:18,
+  within 3 min. Bus 24-0004 (seen on the 14:33).
+- Off the pattern by the plates: 14:58 (83-1052 stays at Chuchelná), 15:53 (24-1009 stays at Strahovice), 13:53
+  (24-1116 goes on as 293), the Ostrava – Chuchelná – Strahovice – Ostrava rounds (15:33 → 16:43, 17:04 → 18:53).
+- Simpler alternative on the card (not an owner check: the sheet is at seven): one line every 80 through both ends.
+- Shared-script fixes found on the way (all five regional sheets, typed values unchanged): a leg timed at a knot listed
+  its stops only from the knot on (28 legs, e.g. 281 back from Třebom started at Kobeřice); `05_schedule` now takes the
+  path from the trips that run the leg from its terminal, and its knot check compares with every trip the leg stands
+  for. `04_roster`'s `keep_roster` keeps the published bus with the closest evidence when a line needs fewer buses (292
+  keeps 24-1007, not 24-1116).
+
+- **Branch check of every line read at a midpoint** (`../audit/branch-check-2026-10-25.md`): on this sheet **246**'s way
+  back now runs via the Jakartovice villages and Dolní Životice, as 17:32 runs (its :12 slot stands for the Dolní Životice
+  trips, and the old path through Hertice skipped Dolní Životice); typed values and buses unchanged. 263 (Hlubočec), 281
+  (Strahovice, one way) and 246's Hlavnice trip are single or one-way trips whose stops are on other lines.
 
 ## The rest of the sheet, checked by hand (25 Oct 2026)
 

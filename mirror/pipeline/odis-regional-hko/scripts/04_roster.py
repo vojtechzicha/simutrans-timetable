@@ -88,9 +88,11 @@ locked = set()   # slots held by a kept published bus (config.keep_roster)
 if CONFIG.get('keep_roster'):
     prev = json.load(open(rel(CONFIG['keep_roster']), encoding='utf-8'))['lines']
     for L, i, s in sims:
-        ps = next((r for r in prev.get(L, []) if r['name'] == s['name']), None)
-        for v in (ps or {}).get('seen', []):
-            pl = v['plate']; k = (L, i)
+        ps = next((r for r in prev.get(L, []) if r['name'] == s['name']), None); k = (L, i)
+        # where the line now needs fewer buses than it had, the closest evidence stays (292, 25 Oct 2026: 24-1007 ran both
+        # pattern trips, 24-1116 an off-pattern one), not the first listed
+        for v in sorted((ps or {}).get('seen', []), key=lambda v: EV[k][v['plate']][0] if v['plate'] in EV[k] else 1e9):
+            pl = v['plate']
             if pl in EV[k] and pl not in owner.values():
                 j = next((j for j in range(NEED[k]) if (k, j) not in owner), None)
                 if j is not None: owner[(k, j)] = pl; locked.add((k, j))

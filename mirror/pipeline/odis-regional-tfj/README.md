@@ -54,6 +54,17 @@ After the Hlučínsko hand check the owner asked for every sheet to be checked a
 
 Now 180 of 184 legs pass. The four left are 980's out row (approximate on purpose) and 732, 745, 750 one direction each, FEWER by design (the extras are buses going on to other lines). Need is 143 → 150, and each +1 has its cheaper option on the owner checks. The in-game change list is at the end of the method-check file.
 
+## Branch check, 25 Oct 2026 (after Opavsko 292)
+
+Every leg read at a midpoint was checked for trips that end or start off its path (`../audit/branch-check-2026-10-25.md`):
+- **314:** the town end is Frýdek, Revoluční, not the station (three of the four slots were Revoluční trips): Revoluční
+  Offset 85, Also at 116 (real 14:26, 14:57); Janovice Offset 34, Also at 71 (real 14:12, 15:35); still 2 buses.
+- **340:** the way out runs via Kunčice (as the 14:12 runs) and on via Baška – Janovice – Pržno (as the 22:05), not via
+  Hrabůvka: the line is modelled for Ostrava, Kunčice, nádraží Kunčice, which the old way out skipped.
+- 732's Havířov, Podlesí, Těšínská branch is listed, not modelled (its stops are on the Havířov town lines): owner's choice.
+- The shared `04_roster` now keeps the published bus with the closest evidence where a line needs fewer: 732 keeps 73-0013,
+  73-0031 goes to 735 in place of a designed bus, 783 keeps 74-1102. 724 stays one bus short in the held schedule.
+
 ## Roster
 
 As the HKO sheet, plus:

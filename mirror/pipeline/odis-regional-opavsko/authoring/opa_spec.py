@@ -70,7 +70,7 @@ L['245'] = dict(core=[S(TQM), S('Hradec n.Moravicí, Benkovice, střed')], sim=[
                      two('245 zámek', 'Hradec n.Moravicí, Benkovice, střed', 'Hradec n.Moravicí, zámek', a=dict(at=['13:15']), b=dict(at=['13:52']), every=480)])
 L['244'] = dict(core=[S('Hradec n.Moravicí, škola'), S('Opava, Východní nádraží')], sim=[oneway('244', 'Hradec n.Moravicí, škola', 'Opava, Východní nádraží', every=480, a=dict(at=['14:20']))])
 L['246'] = dict(core=[S(TQM), S('Dolní Životice, hor.konec'), S('Jakartovice, Hoř.Kunčice, točna')],
-                sim=[two('246', TQM, 'Jakartovice, Hoř.Kunčice, točna', a=dict(core_to='Dolní Životice, hor.konec'), b=dict(knot='Dolní Životice, hor.konec'))])
+                sim=[two('246', TQM, 'Jakartovice, Hoř.Kunčice, točna', a=dict(core_to='Dolní Životice, hor.konec'), b=dict(knot='Dolní Životice, hor.konec', stops_via=['Dolní Životice, hor.konec', 'Jakartovice, mateřská škola']))])
 L['247'] = dict(core=[S(TQM), S('Moravice, střed')], sim=[two('247', TQM, 'Moravice, střed', a=dict(at=['15:00']), b=dict(at=['17:00']), every=480)])
 L['248'] = dict(core=[S(TQM), S('Svobodné Heřmanice, rozcestí')], sim=[two('248', TQM, 'Svobodné Heřmanice, rozcestí', a=dict(at=[53]), b=dict(at=[45]), every=60)])
 L['249'] = dict(core=[S(TQM), S('Velké Heraltice, autobusová stanice')], sim=[two('249', TQM, 'Velké Heraltice, autobusová stanice', a=dict(at=['15:02']), b=dict(at=['14:07']), every=120),
@@ -120,8 +120,14 @@ L['285'] = dict(core=[S('Ostrava, Poruba, Dílny DP Ostrava'), S('Štítina, šk
                 sim=[dict(two('285', 'Ostrava, Poruba, Dílny DP Ostrava', 'Štítina, škola', a=dict(at=['13:09', '14:09']), b=dict(at=['13:48', '14:53']), every=120), window=['13:00', '15:00'])])
 L['290'] = dict(core=[S('Hať, točna'), S(HLU), S(PRV)], sim=[
     two('290', 'Hať, točna', PRV, a=dict(at=['14:47', '15:31', '16:07', '16:37']), b=dict(at=['14:44', '14:59', '15:24', '15:49']), every=120)])
-L['292'] = dict(core=[S(PRV), S(HLU), S('Píšť, Mýto'), S('Chuchelná, železniční stanice')], sim=[
-    two('292', PRV, 'Chuchelná, železniční stanice', a=dict(at=['14:33'], core_to='Píšť, Mýto'), b=dict(knot=HLU, knot_at=['14:59']), every=80)])
+# 292 forks past Bělá: half the peak trips end at Chuchelná, železniční stanice, half at Strahovice, kaple (owner, 25 Oct
+# 2026: "half of the services going to Chuchelná, half going to Strahovice, kaple - but you model as one line?"). One line
+# per destination (Step 5), each every 160, so together they run at the inbound rate (every 80); each leg reads only its own
+# destination's trips (the v8 row read every trip at Píšť, Mýto and sent two Strahovice trips to Chuchelná).
+L['292'] = dict(core=[S(PRV), S(HLU), S('Píšť, Mýto'), S('Chuchelná, železniční stanice'), S('Strahovice, kaple')], sim=[
+    two('292', PRV, 'Chuchelná, železniční stanice', a=dict(at=['15:33'], notvia=['Strahovice, kaple']), b=dict(at=['14:21']), every=160),
+    two('292 Strahovice', PRV, 'Strahovice, kaple', a=dict(at=['14:33'], stops_via=['Chuchelná, železniční stanice']),
+        b=dict(knot=HLU, knot_at=['16:19'], notvia=['Chuchelná, železniční stanice']), every=160)])
 L['293'] = dict(core=[S(HLU), S('Bohumín, Nový Bohumín, autobusová stanice')], sim=[two('293', HLU, 'Bohumín, Nový Bohumín, autobusová stanice', a=dict(at=['17:05']), b=dict(at=['16:22']), every=96), two('293 ŽD', HLU, 'Bohumín, Nový Bohumín, ŽD vrát.III', a=dict(at=['13:05']), b=dict(at=['14:13']), every=480)])
 L['555'] = dict(core=[S('Bohumín, Starý Bohumín, náměstíSvobody'), S('Ostrava, Mor.Ostrava, Náměstí Republiky')], anchor='16:00',
                 sim=[two('555', 'Bohumín, Starý Bohumín, náměstíSvobody', 'Ostrava, Mor.Ostrava, Náměstí Republiky', a=dict(at=[1, 28]), b=dict(at=[20, 50]), every=60)])
