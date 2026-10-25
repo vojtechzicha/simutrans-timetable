@@ -33,7 +33,9 @@ its `CLAUDE.md` has the "Coupling trains" section). Engine questions go to an en
 - **Every city pipeline uses `(real − 60 − 1 at loops) mod interval`** (fixed 25 Oct 2026 in the Brno, Olomouc, Plzeň, Praha and
   Most–Litvínov copies, which still counted from midnight; the Prague metro / ferry rows too). After any change to a typed value,
   run `pipeline/audit/city_systemic.py`: it reports ORIGIN, RANGE (> 8 slots, out of range), FOLD and RATE (ends at different
-  rates) for every city pipeline and must come back clean.
+  rates) for every city pipeline. Every flag must be fixed or explained. Known false flags: ORIGIN on entries marked
+  `loop: false` (it assumes a loop; e.g. Ostrava bus 41 at Hrabůvka, Poliklinika), and its "approximate" counts include
+  automatic fits that hand-set rows replace on the sheet (Ostrava bus `odis.json` fits, the town sheet's `line_overrides`).
 - **Fold evenly spaced slots:** never write "every 60, Offset 17, Also at 47" — it is "every 30, Offset 17". A shared interval
   from interleaving must be folded back per row before output.
 
