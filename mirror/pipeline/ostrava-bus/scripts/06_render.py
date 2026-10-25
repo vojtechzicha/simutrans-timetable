@@ -385,13 +385,14 @@ def mirror_card(H, x):
                 rows += (f"<tr><td>{E(g['fr'])} &rarr; {E(g['to'])}<span class='lp'>empty return</span></td><td class='n sv'>0</td><td class='n sv'>&mdash;</td><td class='sv'>&mdash;</td>"
                          f"<td class='fit'>no timetable: the bus returns empty ({g['rt']} min) and waits at the terminal for its next slot</td></tr>")
                 continue
-            st = g['stat']; sets, reals = g['set'], g['real']
+            st = g['stat']; sets = g['set']
+            def rl(v): return (v + 60 + (1 if s['loop'] else 0)) % P   # the real minute of each typed value, never zipped by order
             fit = f"{st['exact']} of {st['n']} real departures over the day on the minute, {st['w3']} within 3 min (worst {st['worst']}); {g['rt']} min to the far end"
             if g.get('knot'): fit += f"; timed so the bus passes {E(g['knot']['stop'])} at {', '.join(slot_txt(P, r, s['window'][0]) for r in g['knot']['at'])}"
             if g['empty']: fit += f"<small>slot without a real departure in the model hours: {', '.join(hm(t) for t in g['empty'])}</small>"
             rows += (f"<tr{' class=chk' if g['empty'] else ''}><td>{E(g['fr'])} &rarr; {E(g['to'])}{f'<span class=\"lp lnt\">{E(pth.strip())}</span>' if pth else ''}<span class='lp'>{'1 min early' if s['loop'] else 'timetable minute'}</span></td>"
-                     f"<td class='n sv'>{P}</td><td class='n sv'>{sets[0]}<small class='real'>real {slot_txt(P, reals[0], s['window'][0])}</small></td>"
-                     f"<td class='sv'>{', '.join(map(str, sets[1:])) or '&mdash;'}{f'<small class=\"real\">real {', '.join(slot_txt(P, r, s['window'][0]) for r in reals[1:])}</small>' if len(sets) > 1 else ''}</td>"
+                     f"<td class='n sv'>{P}</td><td class='n sv'>{sets[0]}<small class='real'>real {slot_txt(P, rl(sets[0]), s['window'][0])}</small></td>"
+                     f"<td class='sv'>{', '.join(map(str, sets[1:])) or '&mdash;'}{f'<small class=\"real\">real {'; '.join(slot_txt(P, rl(v), s['window'][0]) for v in sets[1:])}</small>' if len(sets) > 1 else ''}</td>"
                      f"<td class='fit'>{at}{fit}</td></tr>")
         nseen = sum(1 for b in s['buses'] if b['kind'] == 'seen')
         chips += (f'<p class="brsub">Simutrans line {E(s["name"])} · {len(s["buses"])} bus{"es" if len(s["buses"]) != 1 else ""} on the {E(sh_)} sheet '
@@ -400,7 +401,8 @@ def mirror_card(H, x):
                             f'<div class="vt">{E(b["full"])} · {E(b["len"] or "?")}{(" · plate " + E(b["plate"])) if b.get("plate") else ""}</div>'
                             f'<div class="addn">{E(("seen " + b["why"]) if b["kind"] == "seen" else (b["why"] if (b["why"] or "").startswith("designed") else "designed: " + (b["why"] or "")))}; pak object on the {E(sh_)} sheet</div></li>' for b in s['buses']) + '</ul>')
     a_ = x.get('anchor') or {}
-    when = f" Modelled at its afternoon peak, {hm(a_['busiest'][0])}–{hm(a_['busiest'][1])}." if a_.get('moved') else ''
+    when = (f" Modelled at {hm(a_['anchor'])}, set by hand on that sheet." if a_.get('set') else
+            f" Modelled at its afternoon peak, {hm(a_['busiest'][0])}–{hm(a_['busiest'][1])}." if a_.get('moved') and a_.get('busiest') else '')
     note = (f'<p class="lnote"><b>Modelled, with its buses, on the {link}</b> ({E(hs["day"])}), and shown here as set there: the values are read from that sheet&#x27;s data, so the two cannot disagree. '
             f'{E(x["note"])}{when} Core points: {E(", ".join(x["core"]))}.</p>')
     if any((g['hub'] or {}).get('kind') == 'via' for s in sims for g in s['legs']):

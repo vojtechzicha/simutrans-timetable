@@ -48,6 +48,17 @@ No every 1440 / 720 — max 480 ("we can bend the reality a bit"). Shift-change 
 ## Hand review (owner, 20 Oct: "Is the lines the best schedule that fits my intent (not necessarily the scripts)?")
 - A scripted fit is a **draft**. Before publishing, dump each line's real peak departures per direction and how its buses chain
   trips, next to the suggested rows, and judge every approximate row.
+- On a regional sheet, no `at: 'auto'` row ships without the Step 4 test per direction (window slots = real ±1, ≥ 80 % of
+  slots with a real trip within 3 min), written into a dated method-check file (owner, 25 Oct 2026: "that's the point of you
+  doing it, so you'll not produce incorrect results"). The Opavsko Hlučínsko lines 281/282/290/292 had all failed it.
+- **Outstation lines:** where buses sleep at the far ends (Hať garage, Třebom, Strahovice…), the afternoon sends more buses
+  out of the city than come back, and Step 5b can't pair them. Time a balanced core both ways at the inbound rate, and put the
+  extra peak departures on a B line with an empty return (281B, 290B, 292B; 387 / 543B precedent). Choose which slot is the
+  B slot by the plates and by the core's waits (290: 16:19, not 14:59, saved a bus). Name the drop-the-B-line option as an
+  owner check with its bus cost.
+- A multi-slot row on a long interval (290: every 120, four slots each way) is fine when it is exact in the window and no
+  simpler interval passes Step 4; put the simpler option on the owner checks.
+- Label every typed value with its own real time, worked out from the value (+61 at loops), never by zipping two sorted lists.
 - Seen artefacts: merged variant minutes made an exactly hourly line approximate; sparse-band fallback gave every 120 to hourly
   lines; a minimax slot rule moved :06 to :01; daily timetables for sporadic lines.
 - Hand-set (`line_overrides` / `schedule_overrides`) where the main pair alone fits exactly or one bus runs a fixed sequence.

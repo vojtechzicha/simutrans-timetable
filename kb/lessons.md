@@ -109,3 +109,8 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   change list after every change.
 - **22 Oct:** "Do what needs to be done - ask the fleet session. Finish all, don't guess."
 - **22 Oct:** "The OLD lines ARE WRONG THO - I am redoing it. They were created before the fork" → ODIS sheets are the target.
+- **25 Oct:** "to the Ostrava sheet, similarly how we did the Hranečník, do the regional lines from Sad B.Němcové please. It will
+  also show if you can use the kb well." → every ODIS line there was already on a regional sheet: hub section that reads them
+  from their home sheet and links (no bus on two sheets).
+- **25 Oct:** "Yes, I want you to check - that's the point of you doing it, so you'll not produce incorrect results." → scripted
+  fits get the step-by-step method check before they ship; 281/282/290/292 rebuilt as outstation lines with B lines.

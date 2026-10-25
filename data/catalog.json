@@ -1237,6 +1237,11 @@
      "at": "2026-10-25T01:44:00.000Z",
      "version": 35,
      "note": "All lines at sad Boženy Němcové"
+    },
+    {
+     "at": "2026-10-25T02:12:30.000Z",
+     "version": 36,
+     "note": "sad Boženy Němcové cards rebuilt from the checked Opavsko lines"
     }
    ]
   },
@@ -1548,7 +1553,7 @@
     "python -X utf8 06_render.py --base odis-regional-opavsko.",
     "Republish to artifact_url (https://claude.ai/artifact/K5ZeDCY2YYqV1Sz3tQwj3j). After a new 01b plate lookup run authoring/fix_plates.py once first."
    ],
-   "notes": "README has 'How to rebuild', not a new-day recipe. Includes Opava trolleybuses; 204 modelled as regular trolleybus, designed battery/diesel cars via fill_designed. 59 lines, 73 Simutrans lines, 125 vehicles. Config written by authoring/opa_spec.py and opa_config.py.",
+   "notes": "README has 'How to rebuild', not a new-day recipe. Includes Opava trolleybuses; 204 modelled as regular trolleybus, designed battery/diesel cars via fill_designed. 59 lines, 73 Simutrans lines, 125 vehicles. Config written by authoring/opa_spec.py and opa_config.py. 25 Oct 2026 (v7): 281, 282, 290 and 292 set by hand after the owner asked for the bus-method check (method-check-2026-10-25.md): outstation lines, balanced core + B lines with empty returns (281B, 290B, 292B); 131 vehicles, 76 Simutrans lines.",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/havirov-karvina-orlova",
@@ -1567,6 +1572,13 @@
    ],
    "refreshTriggers": [
     "Vehicles come from a live feed with no history: a refresh needs a new poll on a weekday peak"
+   ],
+   "publishes": [
+    {
+     "at": "2026-10-25T02:12:00.000Z",
+     "version": 7,
+     "note": "281, 282, 290, 292 checked by hand with the bus schedule method"
+    }
    ]
   },
   {

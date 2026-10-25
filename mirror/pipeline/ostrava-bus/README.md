@@ -183,8 +183,9 @@ Result: 26 seen + 2 designed (387, 440) for a need of 28; no bus is on the Haví
 - **`01c_fetch_odis.py --hubs`** scans the national JDF for every line (DPO too) with a stop matching each `config.hubs[].match` in `town`, in the same pass as the Hranečník scan, into `data/raw/<odis.snapshot>/odis/hub_<id>.json`. No records or fleets are fetched for them.
 - **`08_hubs.py`** (run.py, before 06_render) → `derived/hubs.json`. Each ODIS line's home is the first of `config.regional_sheets` (build order) whose derived `schedule.json` models it, else the first whose `config.unmodelled` lists it. It reads the home sheet's Simutrans lines (typed values, real minutes, fit, slots without a real departure), its buses (`roster.json`: seen on the ODIS live map on 20 Oct, or designed) and its trips. The minute each leg leaves, passes or reaches the hub is its slot plus the median time from the leg's terminal to the hub on its own trips, shown against the real times in the model hours. Trams and trolleybuses at the hub come from the sister sheets' trips (`config.hubs_other_modes`: trolleybuses 101, 102, 103, 106, 108; no tram).
 - **06_render:** the cards (dashed) show the home sheet's values and buses with a link; pak objects stay on the home sheet. Their buses are not in this sheet's totals, depot tables, line bar or coverage check. The DPO part of the page is byte-identical to v34. Rebuild after any regional sheet changes: `python scripts/08_hubs.py && python scripts/06_render.py`.
-- **Checked by hand, not changed (they are the home sheet's rows):**
-  - 281 Třebom → Ostrava is set at :16, but its afternoon buses leave Třebom at 15:01 and 15:56, so the model reaches sad B. Němcové at 15:19 / 16:19 against real 15:59 / 16:54.
-  - 290 is every 40 against a real ~every 25 out of sad B. Němcové (14:44, 14:59, 15:24, 15:49, 16:19); the 15:39 slot has no real trip.
-  - 292's 14:04 slot and 282's 13:54 slot have no real trip.
+- **Opavsko rows checked and fixed (25 Oct 2026, owner: "I want you to check"):** the first version of this section showed that
+  281, 282, 290 and 292 had slots without real trips on the Opavsko sheet (281 Třebom :16 against real 15:01 / 15:56; 290 every
+  40 against about every 25; empty 292 and 282 slots). They were set by hand there with the bus schedule method
+  (`../odis-regional-opavsko/method-check-2026-10-25.md`) and the cards here were rebuilt from that sheet. The cards label
+  each typed value with its own real time (multi-slot rows such as 290's four slots).
   - The model's DPO/ODIS departures 0–1 min apart at sad B. Němcové (towards Důl Odra) mostly copy the real timetables, which are not coordinated either (292 15:33 / DPO 34 15:34; 282 16:54 / 34 16:54; 281 :18 / 32 :18).

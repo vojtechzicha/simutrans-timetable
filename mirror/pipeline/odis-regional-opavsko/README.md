@@ -14,7 +14,7 @@ This folder holds only the sheet's config, data and authoring scripts. The pipel
 | MHD Opava, trolleybuses | 905201–905204 (`mhd-opava-trol`, prefix 90520) | Městský dopravní podnik Opava | 3xx | VZ-DPOpava-trolleybus |
 | MHD Opava, buses | 905xxx | MDPO | 1xx, 40x | VZ-DPOpava-bus |
 
-- 70 ODIS numbers: 59 modelled as 73 Simutrans lines, 125 vehicles (115 seen on the 20 Oct live map, 10 designed).
+- 70 ODIS numbers: 59 modelled as 76 Simutrans lines, 131 vehicles (121 seen on the 20 Oct live map, 10 designed). Was 73 lines and 125 vehicles before the 25 Oct hand check of 281, 282, 290 and 292.
 - Not modelled (`config.unmodelled`): 214, 256, 275 (sparse / shift, stops on other lines), 283 (two trips), 228 and 229 (night lines).
 - Lines shared with other sheets (the sheet with most trips models them): 615, 620, 691, 692, 693 are on the Novojičínsko/Bílovecko sheet; this sheet models 260 and 920 (also Bruntálsko/Rýmařovsko licences), 261, 263, 270, 285, 678 (also Novojičínsko/Bílovecko licences) and 555 (904555; the HKO sheet lists it).
 
@@ -36,6 +36,23 @@ This folder holds only the sheet's config, data and authoring scripts. The pipel
 - **Variants** (each covers stops no other line serves): 236 Podlesí, 237 Dvorce, 241 Lipina, 245 zámek, 249 Tábor, 250 Krnov / Holasovice, 253 Vrbka, 260 Heřmanice, 262 Skřipov, 285 Dobroslavice, 293 ŽD, 920 Rýmařov / Opava. One-trip deviations are taken with `stops_via` (216 OPAVIA, 217 Otice, 232 Hvězdová, 238 Loučky, 241 Zálužné, 252 Albertovec, 261 Hladké Životice / Gručovice, 262 Slatina, 267 Jezdkovice, 678 Bravantice Lidl). `terminus_alias` joins Opava, Jaktař škola (town JDF) and Opava, Jaktař, škola (regional).
 - **Hand-set after review:** 204 (three slots :00/:24/:36), 217 (hourly :04/:25, rt 20), 247 (15:00/17:00), 248 (hourly :53/:45), 261 (every 120, 14:22/14:35), 920 (every 120 Šumperk / Rýmařov alternating at :17, Opava variant 13:24/15:02).
 - **Owner checks** on the page: 204 as trolleybus (with auxiliary-drive trolleybuses) vs as it ran; 217 Divadlo trips; regular routes of 241/243/262; the 920 split.
+
+## Hlučínsko lines at sad B. Němcové, checked by hand (25 Oct 2026)
+
+The owner asked for 281, 282, 290 and 292 to be checked step by step ("that's the point of you doing it, so you'll not
+produce incorrect results"). Their 21 Oct rows were automatic fits and all failed Step 4. The check is in
+`method-check-2026-10-25.md`.
+- **Outstation lines:** the buses sleep at the far ends (Hať garage, Třebom, Strahovice, Chuchelná, Píšť), so the afternoon
+  sends more buses out of Ostrava than come back (19 out, 12 in at sad B. Němcové, 14:00–17:00). Each line has a balanced core
+  timed both ways, and the extra peak departures are a B line with an empty return (387 / 543B precedent): 281B (:48 to
+  Kobeřice), 290B (:19, every 120), 292B (14:58 / 15:33, every 120).
+- **290:** every 120 with four slots each way, exact (Ostrava 14:44, 14:59, 15:24, 15:49; Hať 14:47, 15:31, 16:07, 16:37).
+- **281:** Třebom :58, timed so the bus passes Kobeřice at :13 (was Třebom :16, 15–20 min off); Ostrava :18 unchanged.
+- **282:** every 120 (Píšť :55 is exactly every 2 h; Ostrava :53), model hour set to 16:00 (`anchor`) because its busiest
+  stretch was the Hlučín – Závada shuttles.
+- **292:** every 80, Ostrava 14:33 / 15:53, back timed at Hlučín :59 (the trips start at Píšť, Chuchelná or Strahovice).
+- Needs 9 → 15, all seen buses; 075 swaps 24-1115 for 24-1109. Owner checks: the B lines and 290's four slots, each with
+  the cheaper option.
 
 ## Authoring and review (`authoring/`)
 
