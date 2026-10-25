@@ -40,9 +40,9 @@ the owner's choice. A first look, not built: every 240 with two slots each way h
 ## Check 2: does each slot's trip run on the modelled path? (`audit/path_check.py`)
 
 The wider question: for every timed leg, the real trip each window slot stands for, and the stops it serves that the
-modelled stop list skips. This found 246: its way back took the path through Hertice that skips Dolní Životice, while its
-:12 slot stands for the Dolní Životice trips (13:47, 14:47), so in the game nothing ran back from Dolní Životice. **Fixed**
-(below).
+modelled stop list skips. This found 246: listed from its terminal (the stop-list fix below), its way back takes the
+commonest path, which skips Dolní Životice, while its :12 slot stands for the Dolní Životice trips (13:47, 14:47). v8 had
+listed the way back only from Dolní Životice on. **Fixed** (below).
 
 After the fixes, 51 slots on the five sheets stand for a trip that leaves the modelled path somewhere along the way. These
 are path variants (a loop through a village, a detour to a works gate, a different street in town): the line follows the
@@ -62,8 +62,9 @@ other, or `stops_via` for a one-trip deviation):
 - **Opavsko 292:** two lines, each every 160. 292 Ostrava Offset 72 (real 15:33), Chuchelná, železniční stanice Offset 0
   (real 14:21); 292 Strahovice Ostrava Offset 12 (real 14:33), Strahovice, kaple Offset 75 (real 15:36). Buses 24-1007,
   24-0004 (was 24-1116, 24-1007).
-- **Opavsko 246:** the way back runs via the Jakartovice villages, Mladecko, točna and Dolní Životice, hor.konec + střed (as
-  17:32 runs), not via U Sušárny. Typed values and buses unchanged.
+- **Opavsko 246:** the way back is listed from Hořejší Kunčice via the Jakartovice villages, Mladecko and Litultovice to
+  Dolní Životice, hor.konec + střed, as 17:32 runs (v8 listed it only from Dolní Životice on). Typed values and buses
+  unchanged.
 - **TFJ 314:** the town end is Frýdek, Revoluční (via magistrát, T.G.Masaryka, Na Veselé), not the station. Revoluční
   Offset 85, Also at 116 (real 14:26, 14:57, both exact); Janovice Offset 34, Also at 71 (real 14:12, 15:35); every 120,
   2 buses, as before the fix. (The every-120 row itself is from the held 25 Oct check; published v5 is every 240.)

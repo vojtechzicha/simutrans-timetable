@@ -83,7 +83,8 @@ rate (every 80 at Hlučín), 2 buses as before:
 
 - **Branch check of every line read at a midpoint** (`../audit/branch-check-2026-10-25.md`): on this sheet **246**'s way
   back now runs via the Jakartovice villages and Dolní Životice, as 17:32 runs (its :12 slot stands for the Dolní Životice
-  trips, and the old path through Hertice skipped Dolní Životice); typed values and buses unchanged. 263 (Hlubočec), 281
+  trips; v8 listed the way back only from Dolní Životice on, and listed from the terminal its commonest path skips Dolní
+  Životice); typed values and buses unchanged. 263 (Hlubočec), 281
   (Strahovice, one way) and 246's Hlavnice trip are single or one-way trips whose stops are on other lines.
 
 ## The rest of the sheet, checked by hand (25 Oct 2026)
