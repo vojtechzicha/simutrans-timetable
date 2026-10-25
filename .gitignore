@@ -45,3 +45,6 @@ next-env.d.ts
 **/data/derived/
 *.jsonl
 __pycache__/
+
+.vercel
+.env*
