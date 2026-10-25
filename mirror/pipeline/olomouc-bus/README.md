@@ -62,7 +62,16 @@ Fetching: plain browser User-Agent, ~1.2 s between requests.
   Free history cars left over are listed once, dimmed, as "not needed", on the Simutrans line where they last ran (26 buses).
 - **Garage runs:** Ladova and Na Střelnici (by the Dolní Hejčínská garage) are depot stops; trips to or from them are left out.
 - **Aliases** (`alias`): 12 and 19 Průmyslová → Holice (two stops further); 14 Čistička → Ahold, Civilní obrana → Panelárna;
-  25 Kaufland → Hlavní nádraží (next door); 28 Tržnice, plocha → Tržnice.
+  25 Kaufland → Hlavní nádraží (next door); 28 Tržnice, plocha → Tržnice. A trip that starts at the folded stop and passes
+  the terminus is fitted at its time there (`dep_fit` in 03; method check 25 Oct 2026): the 12 trips from Průmyslová pass
+  Holice 4 min after they start, the 25 trips from Kaufland pass Hlavní nádraží 4 min after. Needs still use the real
+  first and last stops.
+- **Method check 25 Oct 2026** (`../olomouc/method-check-2026-10-25.md`): **12** runs every 20 min both ways 13:47–16:27
+  (9 departures in a row at each end, read at Holice), so it is set every 20 at :07 at both ends (`rate` 3,
+  `fit.overrides`); it had been 2 an hour from the 16:00–16:59 departures alone (the 16:47 trips run only to Hlavní
+  nádraží or to the garage). The line's 4 buses hold every 20. **25** Hlavní nádraží moved from :22 (the Kaufland
+  minute) to :26. Rows with one departure in 16:00–16:59 and no repeating run are labelled "single" instead of
+  "exact X–X"; hand-set rows show their exact span.
 - **Line shapes:** 11 split into 11R (Radíkov) and 11L (Lošov, Svolinského): buses switch between ends, Also at can't change
   the route. 16 is one circuit Tabulový vrch – Nové Sady – Centrum Haná, Nové Sady a through stop (the feed splits trips there).
   14: Panelárna – Ahold, with Ahold → Hlavní nádraží merged into the Ahold row; its Hlavní nádraží → Panelárna short trips are not

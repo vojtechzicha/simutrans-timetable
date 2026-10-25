@@ -197,8 +197,11 @@ def best_offset(deps, I, lo=900, hi=990):
     return best[1], best[2]
 
 def loop_shift(I, R, loop):
-    """Values to type in: real minute - 1 at loop termini (mod interval)."""
-    return [(r - 1) % I for r in R] if loop else list(R)
+    """Values to type in. R are departure times mod I counted from midnight; the fork counts its offsets from 01:00 (owner,
+    3 Oct 2026; kb/rules/fork-schedule.md), so typed = (real - 60) mod I, and a loop terminus is entered 1 min early. For
+    intervals dividing 60 the 01:00 origin changes nothing; for 8 it is 4 min. Fixed here 25 Oct 2026 (it had been left out of
+    this copy when the Ostrava lib was fixed on 20 Oct). The order of R is kept, so set[i] stays paired with real[i]."""
+    return [(r - 60 - (1 if loop else 0)) % I for r in R]
 
 # ---- seznam-autobusu.cz parsing (Prague additions) -------------------------------------------------
 import re, html as _html

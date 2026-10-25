@@ -70,6 +70,11 @@ for sl in S['simutrans_lines']:
             if not f:                                  # the 16:xx departures differ from the line's rate
                 g = runfit_rate(D, rate, DIV1440, (960, 1020)) or runfit(D, DIV1440, (960, 1020))
                 f = g
+        # an override's "passing" (minutes after midnight): real departures from this stop by trips of the line that start or
+        # end beyond it (48: the Prace, Mohyla míru trips leave Úzká at :43 and pass Prace, točna at :34). They count for the
+        # match and the span, not for sizing (added 25 Oct 2026)
+        pas = F['overrides'].get(key, {}).get('passing', [])
+        if pas: D = sorted(set(D + pas)); H = sorted(set(H + [m for m in pas if 960 <= m < 1020]))
         I, R = f['I'], list(f['R'])
         # report the exact run that holds the 16:00 hour (a fit found elsewhere, e.g. 48 at 14:04-15:04, still
         # reproduces 16:xx when repeated; its printed span should say so)
@@ -88,10 +93,14 @@ for sl in S['simutrans_lines']:
         if tag in S.get('turn', []): turn = True
         if len(legs) == 1 and o != d: turn = True
         run = round(statistics.mean(t['arr'] - t['dep'] for t in xs if 900 <= t['dep'] < 1080))
+        # a hand-set row (fit.overrides) whose first-last stretch it reproduces exactly: the sheet then names that stretch
+        # next to "partial" (added 25 Oct 2026)
+        stretch = key in F['overrides'] and f['last'] > f['first'] and all((m in Dset) == (m % I in Rs) for m in range(f['first'], f['last'] + 1))
         rows.append(dict(line=l, stop=o, to=d, every=I, real=R, set=loop_shift(I, R, turn), loop=turn,
                          perh=len(R) * 60 / I, span=f"{hm(f['first'])}–{hm(f['last'])}", run=run,
                          exact=not missing and not extra, missing=[m - 960 for m in missing], extra=[m - 960 for m in extra],
-                         hour=[m - 960 for m in H], deps=sorted(x for x in D if 900 <= x < 1080)))
+                         hour=[m - 960 for m in H], deps=sorted(x for x in D if 900 <= x < 1080),
+                         **({'stretch': True} if stretch else {})))
     links = dict(S.get('links', {})); links.update(sl.get('empty_return', {}))
     for st, (back, mn) in sl.get('empty_return', {}).items():
         rows.append(dict(line=sl['id'].split('+')[0].rstrip('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz') or sl['id'],

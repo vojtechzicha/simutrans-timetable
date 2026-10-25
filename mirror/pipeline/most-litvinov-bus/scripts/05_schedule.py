@@ -6,14 +6,44 @@ Sparse lines (12, 27, 31): a terminus of a Simutrans line (branch) whose every v
 15:00–20:00 (runfit, >= 2 departures, one of them in 15:00–18:00), marked "sparse"; where no pattern of at most
 60 minutes is exact, the entry keeps "Departure every 0" (no timetable) and the real departures are listed.
 Every terminus is set as a loop (−1 min), as agreed for all bus and trolleybus sheets on 29 Sep 2026 (block turns
-and turning points included); the real minutes are kept next to the values."""
+and turning points included); the real minutes are kept next to the values.
+
+Two hand-set mechanisms in config.json (method check of 25 Oct 2026, pipeline/olomouc/method-check-2026-10-25.md):
+- core_points {line: {a, b, why}}: every trip of the line that passes both stops is read at them, as a trip a -> b (or
+  b -> a) leaving at its time there, whatever stop it starts or ends at (kb/rules/bus-sheets.md "read each trip at the
+  core points it passes"). Line 13: the Osek, Lom Československé armády and Křížatky trips all pass Janov, otočka and
+  Lom, Loučná, Libkovická, so both ends of the Simutrans line run every 15 min; they had been read by their own first
+  stop, which gave the Lom end 2 an hour against 4 from Janov.
+- schedule_override {line: {why, rows: [{fr, to, every, real, first, last}]}}: a fitted row replaced by hand-set values
+  (as the tram pipeline's config.schedule_override); its other rows stay as fitted. Line 10: both ends at one rate."""
 import collections
 from lib import CONFIG, load, save, plans, make_nm, hm, runfit, loop_shift
 
 nm = make_nm(CONFIG); F = CONFIG['fit']; LOOP = CONFIG['all_termini_are_loops']
+CORE = CONFIG.get('core_points', {}); OV = CONFIG.get('schedule_override', {})
+def at_core(tr, a, b):
+    """trips passing both a and b, read at them (fr/to/dep = the core stops and the time at the first of them)"""
+    out = []
+    for t in tr:
+        st = [nm(s) for s in t['stops']]
+        if a in st and b in st:
+            i, j = st.index(a), len(st) - 1 - st[::-1].index(b)
+            k, l = st.index(b), len(st) - 1 - st[::-1].index(a)
+            if i < j and t['times'][i] is not None: out.append(dict(t, fr=a, to=b, dep=t['times'][i], core_read=True)); continue
+            if k < l and t['times'][k] is not None: out.append(dict(t, fr=b, to=a, dep=t['times'][k], core_read=True)); continue
+        out.append(t)
+    return out
 trips = load('trips.json'); NEEDS = load('needs.json'); out = {}
 for L, tr in trips.items():
+    if L in CORE: tr = at_core(tr, CORE[L]['a'], CORE[L]['b'])
     ps = plans(tr, nm, F, set(CONFIG['depot_stops']), loop=LOOP)
+    for r in OV.get(L, {}).get('rows', []):
+        p = next(p for p in ps if p['fr'] == r['fr'] and p['to'] == r['to'])
+        p.update(every=r['every'], real=r['real'], set=loop_shift(r['every'], r['real'], LOOP), first=r['first'], last=r['last'],
+                 n=r['n'], merged=[], override=True)
+    if L in CORE:
+        for p in ps:
+            if {p['fr'], p['to']} == {CORE[L]['a'], CORE[L]['b']}: p['core_read'] = True
     g = collections.defaultdict(list)
     for t in tr: g[(nm(t['fr']), nm(t['to']))].append(t['dep'])
     for p in ps:

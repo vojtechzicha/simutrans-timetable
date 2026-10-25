@@ -265,7 +265,7 @@
   "lede": "Every trolleybus and bus the DPMP afternoon peak needs at 16:00, line by line, on the network running on Tue 29 Sep 2026, with the vehicles logged on Fri 25 Sep 2026 (one real day). Each vehicle shows its number, depot, full type, length and custom pak128 object; each line has the values for the Simutrans fork’s schedule. The old sheet’s reference (battery sections, stops and their lines, termini, specials and closures) follows below the vehicles.",
   "network": "All DPMP day lines with afternoon service in the timetable in force on Tue 29 Sep 2026 (CIS JŘ JDF, export of 28 Sep 2026: trolleybus lines from the city export, bus lines from the bus export). The table lists the trip patterns starting 15:00–17:59; for line 20, which ends at 14:43, 6:30–9:29, and for airport line 90, which runs only to the flight schedule and not on Tuesdays, the Monday 5 Oct trips 8:00–10:59 (as on the old sheet). “Leaves at” gives the minutes in the reference hour, 16:00–16:59. 29 Sep is a school day, so the school-day trips run. Depot runs are left out.",
   "network_after": "Simutrans lines follow a rule (as on the Ostrava bus sheet): the terminus pair with the most trips is the line; another pair is a Simutrans line of its own when it has at least 6 trips in 15:00–17:59 (3 for a loop), a departure between 16:00 and 16:59 and no depot end. Everything else (the extensions of 3 to Lázně Bohdaneč, U Mlýnů, of 18 to Živanice and of 7 and 11 to Rybitví, the Mikulovice trip of 1, 4 to Globus before 15:30, the short workings) is merged into the line leaving the same terminus.",
-  "schedule": "Values to type into the fork’s Scheduling tab, on the stop entry each vehicle leaves from. Units are calendar minutes, Offset counts from midnight modulo the interval, and Leave up to stays automatic. <b>Every DPMP terminus is a turning loop or turning point (točna), so every departure is set 1 min before the timetable</b>: Offset and Also at are the real minute − 1, with the real minutes underneath. Branches are separate lines. Every entry reproduces the whole 16:00–16:59 hour: an exact repeating pattern where one exists, otherwise the hour’s own minutes repeated hourly (many DPMP afternoon timetables are irregular). An entry with at most 8 departures a day gets Departure every 1440 with all of them (exact all day).",
+  "schedule": "Values to type into the fork’s Scheduling tab, on the stop entry each vehicle leaves from. Units are calendar minutes, Offset counts from 01:00, as the fork does: minutes after 01:00 modulo the interval (the same as after midnight for every interval that divides 60; on the every-1440 rows 60 min less), and Leave up to stays automatic. <b>Every DPMP terminus is a turning loop or turning point (točna), so every departure is set 1 min before the timetable</b>: Offset and Also at are the real minute − 1, with the real minutes underneath. Branches are separate lines. Every entry reproduces the whole 16:00–16:59 hour: an exact repeating pattern where one exists, otherwise the hour’s own minutes repeated hourly (many DPMP afternoon timetables are irregular). Hand-set rows (25 Oct 2026, with a note on the row) instead follow the line’s exact afternoon stretch, or on an irregular line one even pattern, so that both ends of every Simutrans line send the same number of vehicles an hour. An entry with at most 8 departures a day gets Departure every 1440 with all of them (exact all day).",
   "schedule_after": "Vehicles needed at 16:00 = the timetable cycle (cycle_need): follow a vehicle leaving around 16:00 through its round trip, taking at each end the first departure at least 3 min after arriving, or sooner where the timetable itself turns faster; a round trip that would wait longer than 1.5 × the headway (at least 30 min) for its next trip is skipped. A DPMP line never gets fewer vehicles than the most of its trips on the road at once between 16:00 and 16:59 (each trip holding its vehicle until arrival plus the turnaround); the extra goes to its main line. Every Simutrans line gets at least 1 vehicle. Lines 20 and 90 are sized at their own reference time.",
   "lines": "One row per vehicle, grouped by Simutrans line, trolleybus lines first. Kurz numbers are DPMP’s, written line/kurz. Each vehicle shows its number and depot, its full type, length and traction battery, and the pak128 core. The vehicles are the afternoon cars logged on Fri 25 Sep 2026 (tram-bus.cz via seznam-autobusu.cz): one real day, not a mix. Where a line was logged short, the missing vehicles are <b>designed, not recorded</b>: real cars from the line’s own history, active in the register and not out anywhere that day, covering every type of the line’s roster first. Where more were logged than needed, the surplus is <b>not needed</b>: dimmed at the bottom of the card and left out of every count, the depot and the pak totals.",
   "pak": "Each type and livery at 16:00, mapped to the custom Czech pak128 packages VZ-DPPardubice-trolleybus and VZ-DPPardubice-bus. Object names are VZ-DPPardubice-&lt;type&gt;-&lt;livery&gt;-&lt;core&gt;; the vehicle lists show the core. A full advert wrap (CVR) keeps the type’s normal DPMP livery; plain white is a livery of its own. A requested object does not exist yet: it is listed in pipeline/pardubice/pak_request.md for the pak session, and no stand-in from another city is used.",
@@ -285,5 +285,283 @@
    "<b>Earlier user decisions kept.</b> Airport line 90 included; night lines 98 and 99, school line 29, the Škola Svítání service 910 and the cancelled bridge lines 902 and 906 left out; line 20 (ends 14:43) and line 90 modelled on their own times; long-term closures modelled as they run (the provisional Kapitána Bartoše bridge, line 13’s detour, the Tuněchody works), short-term ones ignored; no accessibility data.",
    "<b>Rebuild.</b> Generated by pipeline/pardubice (state “2026-09-29”); the README there lists every decision and how to update the sheet."
   ]
+ },
+ "fit_overrides": {
+  "1|Jesničánky, točna|Slovany, točna": {
+   "I": 60,
+   "R": [
+    6,
+    30,
+    54
+   ],
+   "first": 870,
+   "last": 990,
+   "how": "override",
+   "note": "Exact 14:30–16:30; the 16:58 departure (16:54 in the pattern) is the first of the after-peak form."
+  },
+  "2|Polabiny, točna|Zámeček": {
+   "I": 30,
+   "R": [
+    13
+   ],
+   "first": 883,
+   "last": 943,
+   "how": "override",
+   "note": "The peak form until about 16:15: 2 every 30 (:13 :43) between the 2P departures (:03 :23 :33 :53), together every 10 from Polabiny. From 16:13 the 2P buses come back as 2 and 2 runs every 15 from 16:43."
+  },
+  "2|Zámeček|Polabiny, točna": {
+   "I": 30,
+   "R": [
+    12
+   ],
+   "first": 912,
+   "last": 972,
+   "how": "override",
+   "note": "The peak form until about 16:15 (every 30, :12 :42); from 16:57 2 runs every 15."
+  },
+  "2P|Polabiny, točna|Pardubičky, točna": {
+   "I": 30,
+   "R": [
+    3,
+    23
+   ],
+   "first": 873,
+   "last": 953,
+   "how": "override",
+   "note": "The Pardubičky branch runs 14:13–16:13 only: 4 an hour (:03 :23 :33 :53) exact 14:33–15:53; its last departure, 16:13, takes the 2 slot."
+  },
+  "2P|Pardubičky, točna|Polabiny, točna": {
+   "I": 30,
+   "R": [
+    4,
+    24
+   ],
+   "first": 904,
+   "last": 984,
+   "how": "override",
+   "note": "4 an hour (:04 :24 :34 :54) exact 15:04–16:24; the last return is 16:44."
+  },
+  "3|Hlavní nádraží|Lázně Bohdaneč, točna": {
+   "I": 60,
+   "R": [
+    12,
+    27,
+    42
+   ],
+   "first": 852,
+   "last": 1032,
+   "how": "override",
+   "note": "The line’s own trips only (3 an hour, as at the other end). The hourly Lázně Bohdaneč, U Mlýnů trips (Hlavní nádraží :57, back :26) are not modelled."
+  },
+  "5|Dubina, sever|Dukla, točna": {
+   "I": 10,
+   "R": [
+    1
+   ],
+   "first": 841,
+   "last": 1001,
+   "how": "override",
+   "note": "Every 10, exact 14:01–16:41 (16:52 is the first departure of the after-peak every 15)."
+  },
+  "6|Vápenka|Rosice, točna": {
+   "I": 20,
+   "R": [
+    0
+   ],
+   "first": 860,
+   "last": 980,
+   "how": "override",
+   "note": "The peak form: every 20, exact 14:20–16:20, interleaved with 6H (:10 :30 :50), together every 10 from Vápenka. After 16:20 6 runs every 30."
+  },
+  "6|Rosice, točna|Vápenka": {
+   "I": 20,
+   "R": [
+    16
+   ],
+   "first": 876,
+   "last": 976,
+   "how": "override",
+   "note": "Every 20, exact 14:36–16:16; every 30 from 16:43."
+  },
+  "6H|Vápenka|Hlavní nádraží": {
+   "I": 20,
+   "R": [
+    10
+   ],
+   "first": 850,
+   "last": 970,
+   "how": "override",
+   "note": "The peak form: every 20, exact 14:10–16:10, between the 6 departures to Rosice. Every 30 from 16:42."
+  },
+  "6H|Hlavní nádraží|Vápenka": {
+   "I": 20,
+   "R": [
+    18
+   ],
+   "first": 878,
+   "last": 978,
+   "how": "approx",
+   "note": "Every 20 at :18, 2 min after the real :16 :36 :56 (exact 14:36–16:16 at :16), so that a bus arriving from Vápenka at :35 leaves at once and the round is 60 min: 3 buses, the sheet’s need (at the real :16 it would need 4). Every 30 from 16:38."
+  },
+  "8|Dubina, Dubinská|Hlavní nádraží": {
+   "I": 30,
+   "R": [
+    11
+   ],
+   "first": 881,
+   "last": 971,
+   "how": "override",
+   "note": "Every 30, exact 14:41–16:11, the same rate as the other end."
+  },
+  "10|Hlavní nádraží|Ostřešany, točna": {
+   "I": 60,
+   "R": [
+    22
+   ],
+   "first": 862,
+   "last": 1042,
+   "how": "override",
+   "note": "The line’s own trips only (hourly, as at the other end). The Nemošice and Ostřešany, park trips (:52) are not modelled."
+  },
+  "11|Dubina, sever|Globus": {
+   "I": 30,
+   "R": [
+    15
+   ],
+   "first": 915,
+   "last": 975,
+   "how": "override",
+   "note": "Every 30, exact 15:15–16:15, the same rate as the other end; the Rybitví trips and the 16:35 departure are not modelled."
+  },
+  "13|Dubina, sever|Ohrazenice, točna": {
+   "I": 10,
+   "R": [
+    7
+   ],
+   "first": 847,
+   "last": 1007,
+   "how": "override",
+   "note": "Every 10, exact 14:07–16:47; every 15 from 16:59."
+  },
+  "13|Ohrazenice, točna|Dubina, sever": {
+   "I": 10,
+   "R": [
+    8
+   ],
+   "first": 848,
+   "last": 998,
+   "how": "override",
+   "note": "Every 10, exact 14:08–16:38; every 15 from 16:49."
+  },
+  "30|Hlavní nádraží|Univerzita": {
+   "I": 30,
+   "R": [
+    25
+   ],
+   "first": 865,
+   "last": 1075,
+   "how": "override",
+   "note": "The line’s own trips only (every 30, as at the other end). The 3 Ohrazenice trips (:10) are not modelled."
+  },
+  "9|Hlavní nádraží|Hůrka": {
+   "I": 60,
+   "R": [
+    23
+   ],
+   "first": 983,
+   "last": 983,
+   "how": "approx",
+   "note": "Hourly at both ends, one bus (the need): the real 16:23 → Hůrka 16:48 turn. The real trips run about every 30–65 min (15:16, 16:23, 16:52, 17:35); every 30 would need a second bus."
+  },
+  "9|Hůrka|Hlavní nádraží": {
+   "I": 60,
+   "R": [
+    48
+   ],
+   "first": 1008,
+   "last": 1008,
+   "how": "approx",
+   "note": "Hourly, the return of the 16:23 bus (real 15:36, 16:48, 17:13, 17:54)."
+  },
+  "9S|Hlavní nádraží|Spojil, točna": {
+   "I": 60,
+   "R": [
+    1
+   ],
+   "first": 961,
+   "last": 961,
+   "how": "approx",
+   "note": "Hourly at both ends, one bus (the need): the real 16:01 → Spojil 16:22 turn (real 15:39, 16:01, 17:13); every 30 would need a second bus."
+  },
+  "9S|Spojil, točna|Hlavní nádraží": {
+   "I": 60,
+   "R": [
+    22
+   ],
+   "first": 982,
+   "last": 982,
+   "how": "approx",
+   "note": "Hourly, the return of the 16:01 bus (real 15:08, 16:01, 16:22, 17:35)."
+  },
+  "12M|Hlavní nádraží|Mnětice": {
+   "I": 60,
+   "R": [
+    51
+   ],
+   "first": 951,
+   "last": 951,
+   "how": "approx",
+   "note": "Hourly at both ends, one bus (the need): :51, 1 min after the real 15:50, so the bus back from Mnětice (:22, arriving :48) makes the 60-min round (real 14:24, 15:50, 17:03, 17:33)."
+  },
+  "12M|Mnětice|Hlavní nádraží": {
+   "I": 60,
+   "R": [
+    22
+   ],
+   "first": 982,
+   "last": 982,
+   "how": "approx",
+   "note": "Hourly, the return of the 15:50 bus (real 15:00, 16:22, 17:33)."
+  },
+  "14|Polabiny, točna|Staré Čívice, Průmyslová zóna": {
+   "I": 30,
+   "R": [
+    16
+   ],
+   "first": 916,
+   "last": 976,
+   "how": "approx",
+   "note": "Every 30 at both ends (3 buses, the need), within 5 min of the real 15:12, 15:41, 16:21, 17:12 and 17:20; the slower option is every 40 (Polabiny :21, Staré Čívice :25, up to 19 min off)."
+  },
+  "14|Staré Čívice, Průmyslová zóna|Polabiny, točna": {
+   "I": 30,
+   "R": [
+    10
+   ],
+   "first": 910,
+   "last": 1000,
+   "how": "approx",
+   "note": "Every 30, within 7 min of the real 15:03, 15:45, 16:11 (to K Polabinám) and 16:36."
+  },
+  "17|Hlavní nádraží|Srch, točna": {
+   "I": 30,
+   "R": [
+    15
+   ],
+   "first": 915,
+   "last": 975,
+   "how": "approx",
+   "note": "Every 30 at both ends (2 buses, the need), within 2 min of the real 15:13, 15:45 and 16:16; after that the real line runs every 40–45 (17:02, 17:44)."
+  },
+  "17|Srch, točna|Hlavní nádraží": {
+   "I": 30,
+   "R": [
+    13
+   ],
+   "first": 943,
+   "last": 1003,
+   "how": "approx",
+   "note": "Every 30, within 3 min of the real 15:43, 16:13 and 16:46."
+  }
  }
 }

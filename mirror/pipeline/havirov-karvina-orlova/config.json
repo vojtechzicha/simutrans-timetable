@@ -1044,18 +1044,20 @@
    "lines": [
     {
      "name": "411",
-     "every": 60,
+     "every": 480,
      "window": [
       840,
       1080
      ],
-     "why": "One bus, about hourly: Podlesí (Těšínská) :05 → Horní Bludovice, Adámek, back :33 (14:09/14:38 and 15:05/15:33; then a gap to 16:50/17:21). The automatic fit had every 120, up to 28 min off.",
+     "why": "One bus, back to back: Podlesí (Těšínská) 14:09, 15:05 and 16:50 → Horní Bludovice, Adámek, back 14:38, 15:33 and 17:21 (then 18:25 to Lapačka as 411B, and 19:50 / 20:21). Method check, 25 Oct 2026: the hand-set hourly pattern (Podlesí :05 / Adámek :33) had 4 slots in 14:00-18:00 and only 15:05 / 15:33 on the real trips (14:09 and 14:38 4-5 min off, nothing at 16:05 / 16:33, 16:50 and 17:21 12-15 min off), so it failed the Step 4 test; no hourly or 2-hourly pattern passes. Every 480 with the three afternoon trips each way is exact (the 290 precedent: an exact multi-slot row on a long interval), 1 bus as before; it repeats at 6:09 / 7:05 / 8:50 (real 6:05) and 22:09-1:21. The simpler option, hourly at :05 / :33 (1 bus), is the owner's choice.",
      "legs": [
       {
        "fr": "Podlesí, autobusové nádraží",
        "to": "Horní Bludovice, Adámek",
        "at": [
-        5
+        369,
+        425,
+        50
        ],
        "src": "411 14:09, 15:05, 16:50 (from Podlesí, Těšínská)"
       },
@@ -1063,7 +1065,9 @@
        "fr": "Horní Bludovice, Adámek",
        "to": "Podlesí, autobusové nádraží",
        "at": [
-        33
+        398,
+        453,
+        81
        ],
        "src": "411 14:38, 15:33, 17:21"
       }
@@ -1116,13 +1120,13 @@
       300,
       1380
      ],
-     "why": "A mine shift line, the only service to Důl Darkov and Doly, zastávka ČSA. Shifts change every 8 hours, so every 480: Fryštát :54 (4:54, 12:54, 20:54; the real afternoon one is 12:22), back from Důl Darkov :10 (6:10, 14:10, 22:10).",
+     "why": "A mine shift line, the only service to Důl Darkov and Doly, zastávka ČSA. Shifts change every 8 hours, so every 480: Fryštát 12:22 (also 4:22 and 20:22), back from Důl Darkov :10 (6:10, 14:10, 22:10). The out slot is the afternoon trip, the only one in the line's window (method check, 25 Oct 2026: the earlier 12:54 slot was 32 min from it and failed the Step 4 test); the early and late trips (4:54, 5:14, 20:56) are off the pattern.",
      "legs": [
       {
        "fr": "Fryštát, autobusové nádraží",
        "to": "Důl Darkov",
        "at": [
-        294
+        262
        ],
        "src": "515 4:54, 5:14, 12:22, 20:56"
       },
@@ -1378,7 +1382,7 @@
       300,
       1380
      ],
-     "why": "Separate trips a few times a day to Těrlicko, Zelené Město U Goduly (its only service): 12:30 and 15:10, exactly 160 min apart, back 13:03 and 15:38. Bent onto every 160 (no daily lines, owner; 160 divides 1440): also 7:10, 9:50, 17:50, 20:30. The 17:30 / 18:00 trips to Těrlicko, obecní úřad run over 417's stops.",
+     "why": "Separate trips a few times a day to Těrlicko, Zelené Město U Goduly (its only service): 12:30 and 15:10, exactly 160 min apart, back 13:03 and 15:38 (155 apart), so the way back is set at 13:01 / 15:41, within 2 and 3 min of both (method check, 25 Oct 2026: at 13:03 / 15:43 the 15:38 trip was 5 min off and the row failed the Step 4 test). Bent onto every 160 (no daily lines, owner; 160 divides 1440): also 7:10, 9:50, 17:50, 20:30. The 17:30 / 18:00 trips to Těrlicko, obecní úřad run over 417's stops.",
      "legs": [
       {
        "fr": "Podlesí, autobusové nádraží",
@@ -1392,9 +1396,43 @@
        "fr": "Těrlicko, Zelené Město U Goduly",
        "to": "Podlesí, autobusové nádraží",
        "at": [
-        143
+        141
        ],
        "src": "420 13:03, 15:38"
+      }
+     ]
+    }
+   ]
+  },
+  "419": {
+   "mode": "replace",
+   "lines": [
+    {
+     "name": "419",
+     "every": 160,
+     "window": [
+      900,
+      1140
+     ],
+     "why": "One bus shuttling Šumbark, točna 2. etapa ⇄ Město, obchodní dům about hourly but irregularly (Šumbark 13:15, 14:10, 15:30, 16:20, 18:07, 19:00; obchodní dům 13:50, 14:50, 15:50, 17:00, 18:30). Method check, 25 Oct 2026: the automatic fit, every 60 at :25 / :55, had none of the line's real departures within 3 min all day (every one 5-25 min off) and failed the Step 4 test. Every 160 with two slots each way is the real afternoon: Šumbark 15:30 and 16:20, obchodní dům 15:50 and 17:00, repeating at 18:10 / 19:00 and 18:30 (real 18:07, 19:00, 18:30), 1 bus as before. The simpler option, every 60 at :25 / :55 (up to 5 min off in 15:30-17:30, 1 bus), is the owner's choice.",
+     "legs": [
+      {
+       "fr": "Šumbark, točna 2. etapa",
+       "to": "Město, obchodní dům",
+       "at": [
+        20,
+        130
+       ],
+       "src": "419 15:30, 16:20, 18:07, 19:00"
+      },
+      {
+       "fr": "Město, obchodní dům",
+       "to": "Šumbark, točna 2. etapa",
+       "at": [
+        60,
+        150
+       ],
+       "src": "419 15:50, 17:00, 18:30"
       }
      ]
     }

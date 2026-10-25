@@ -30,5 +30,562 @@
  "history_fallback_pages": 3,
  "holidays": [
   "2026-09-28"
- ]
+ ],
+ "schedule_overrides": {
+  "_why": "Hand-set terminus rows (02_gtfs_lines.py applies them, 05_render.py shows them instead of the main-pattern rows) for lines where the shared fit broke the rules: the two ends at different rates, more slots than real departures, or a pair made of two different routes. Each line's _why says what was wrong.",
+  "102": {
+   "_why": "Method check 25 Oct 2026: the card paired Šimůnkova → Sídliště Bohnice with Sídliště Bohnice → Kobylisy, the long line and its short working. The buses interwork them: Šimůnkova → Kobylisy → Sídliště Bohnice, then the short working Sídliště Bohnice → Kobylisy → Sídliště Bohnice, then back to Šimůnkova (60 min round, 4 buses, as the need). One Simutrans circuit line with Sídliště Bohnice twice and Kobylisy three times in the schedule; these four rows are its timed entries, every 15.",
+   "rows": [
+    {
+     "o": "Šimůnkova",
+     "d": "Sídliště Bohnice",
+     "every": 15,
+     "real": [
+      4
+     ],
+     "why": "Long line via Kobylisy, every 15 at :04."
+    },
+    {
+     "o": "Sídliště Bohnice",
+     "d": "Kobylisy",
+     "every": 15,
+     "real": [
+      9
+     ],
+     "why": "Short working, the same buses 4 min after they arrive from Šimůnkova: every 15 at :09 (15:01 is an extra trip).",
+     "extra": [
+      "15:01"
+     ]
+    },
+    {
+     "o": "Kobylisy",
+     "d": "Sídliště Bohnice",
+     "every": 15,
+     "real": [
+      3
+     ],
+     "why": "Short working, every 15 at :03 (the bus turns at Kobylisy as it arrives)."
+    },
+    {
+     "o": "Sídliště Bohnice",
+     "d": "Šimůnkova",
+     "every": 15,
+     "real": [
+      1
+     ],
+     "why": "Long line back via Kobylisy, the same buses 3 min after the short working arrives: every 15 at :01."
+    }
+   ]
+  },
+  "103": {
+   "_why": "Method check 25 Oct 2026: the card paired Ládví → Březiněves with Ďáblice → Ládví, the ends of two different routes. 103 is the Březiněves line and its short working to Ďáblice (own Simutrans line), each every 15 from 16:00 and interleaved at Ládví (:05 Ďáblice, :13 Březiněves).",
+   "rows": [
+    {
+     "o": "Ládví",
+     "d": "Březiněves",
+     "every": 15,
+     "real": [
+      13
+     ],
+     "why": "Březiněves line, every 15 at :13. Before 16:00 the timetable runs 15:07, 15:37, 15:57."
+    },
+    {
+     "o": "Březiněves",
+     "d": "Ládví",
+     "every": 15,
+     "real": [
+      7
+     ],
+     "why": "Březiněves line, every 15 at :07. Before 16:00: 15:16, 15:46, 16:06."
+    },
+    {
+     "o": "Ládví",
+     "d": "Ďáblice",
+     "every": 15,
+     "real": [
+      5
+     ],
+     "why": "Short working to Ďáblice, every 15 at :05. Before 16:00: 15:17, 15:27, 15:47."
+    },
+    {
+     "o": "Ďáblice",
+     "d": "Ládví",
+     "every": 15,
+     "real": [
+      2
+     ],
+     "why": "Short working from Ďáblice, every 15 at :02. Before 16:00: 15:09, 15:29, 15:39, 15:59."
+    }
+   ]
+  },
+  "107": {
+   "_why": "Method check 25 Oct 2026: the fit gave Dejvická every 30 with 7 slots (14 an hour, from 8 departures 16:09–16:39) against every 5 from Suchdol (12 an hour); the two ends must run at one rate. 107 runs irregularly 2–7 min apart, busiest 15:00–17:00 (31 departures from Suchdol, 15.5 an hour).",
+   "rows": [
+    {
+     "o": "Suchdol",
+     "d": "Dejvická",
+     "every": 4,
+     "real": [
+      1
+     ],
+     "why": "Every 4 (15 an hour), approximate: 47 departures 15:00–17:59, 2–7 min apart; 19 on a slot minute, the rest at most 2 min off. Slower option: every 5 at :00 (12 an hour), exact only 16:00–16:45.",
+     "approx": true
+    },
+    {
+     "o": "Dejvická",
+     "d": "Suchdol",
+     "every": 4,
+     "real": [
+      3
+     ],
+     "why": "Every 4 (15 an hour), approximate: 45 departures 15:00–17:59, 2–7 min apart; 16 on a slot minute, the rest at most 2 min off; no bus at 16:31 and 17:55. Slower option: every 5 (12 an hour).",
+     "approx": true
+    }
+   ]
+  },
+  "110": {
+   "_why": "Method check 25 Oct 2026: the fit gave Obchodní centrum Čakovice every 60 with three slots (3 an hour) against every 15 from Hloubětín (4 an hour), which cannot run. The gaps are the trips to and from Třeboradický hřbitov (2 each way in 15:00–17:59, not a peak branch).",
+   "rows": [
+    {
+     "o": "Obchodní centrum Čakovice",
+     "d": "Hloubětín",
+     "every": 15,
+     "real": [
+      5
+     ],
+     "why": "Every 15 at :05. The 15:20 and 16:20 slots are the trips that start at Třeboradický hřbitov (15:12, 16:12); in Simutrans the bus leaves Obchodní centrum Čakovice in every slot."
+    },
+    {
+     "o": "Hloubětín",
+     "d": "Obchodní centrum Čakovice",
+     "every": 15,
+     "real": [
+      0
+     ],
+     "why": "Every 15 at :00. The 15:30 and 17:30 buses go to Třeboradický hřbitov instead (not modelled); in Simutrans every slot goes to Obchodní centrum Čakovice."
+    }
+   ]
+  },
+  "111": {
+   "_why": "Method check 25 Oct 2026: the card paired Skalka → Koloděje with Dubeč → Skalka, the ends of two different routes (1 an hour against 2). 111 is the Koloděje line, hourly, and its short working to Dubeč (own Simutrans line) every 30, interleaved at Skalka (:19 :34 :49).",
+   "rows": [
+    {
+     "o": "Skalka",
+     "d": "Koloděje",
+     "every": 60,
+     "real": [
+      34
+     ],
+     "why": "Koloděje line, hourly at :34 (14:34–16:34, 17:34). The extra peak trips 16:49 and 17:04 are listed, not modelled (16:49 takes the Dubeč slot).",
+     "extra": [
+      "16:49",
+      "17:04"
+     ]
+    },
+    {
+     "o": "Koloděje",
+     "d": "Skalka",
+     "every": 60,
+     "real": [
+      11
+     ],
+     "why": "Koloděje line, hourly at :11 (15:11–17:11). The extra peak trips 17:26 and 17:41 are listed, not modelled.",
+     "extra": [
+      "17:26",
+      "17:41"
+     ]
+    },
+    {
+     "o": "Skalka",
+     "d": "Dubeč",
+     "every": 30,
+     "real": [
+      19
+     ],
+     "why": "Short working to Dubeč, every 30 at :19 and :49 (14:19–16:19, 17:19); no Dubeč bus at 16:49 and 17:49."
+    },
+    {
+     "o": "Dubeč",
+     "d": "Skalka",
+     "every": 30,
+     "real": [
+      4
+     ],
+     "why": "Short working from Dubeč, every 30 at :04 and :34 (15:04–17:04); no bus at 17:34."
+    }
+   ]
+  },
+  "122": {
+   "_why": "Method check 25 Oct 2026: the fit gave Újezd u Průhonic every 45 from 2 departures (1.3 an hour) against hourly from Opatov. One bus, hourly both ways.",
+   "rows": [
+    {
+     "o": "Opatov",
+     "d": "Újezd u Průhonic",
+     "every": 60,
+     "real": [
+      45
+     ],
+     "why": "Hourly at :45, as the timetable 13:45–19:45."
+    },
+    {
+     "o": "Újezd u Průhonic",
+     "d": "Opatov",
+     "every": 60,
+     "real": [
+      24
+     ],
+     "why": "Hourly at :24 (13:24–16:24, 19:24). The 17:09 and 18:09 departures run 15 min before the slot."
+    }
+   ]
+  },
+  "139": {
+   "_why": "Method check 25 Oct 2026: the card paired Želivského → Komořany with Sídliště Zbraslav → Želivského, the ends of two different routes. 139 is the Sídliště Zbraslav line and its short working to Komořany (own Simutrans line), each every 15 and interleaved at Želivského (:06 Komořany, :14 Zbraslav).",
+   "rows": [
+    {
+     "o": "Želivského",
+     "d": "Komořany",
+     "every": 15,
+     "real": [
+      6
+     ],
+     "why": "Short working to Komořany, every 15 at :06."
+    },
+    {
+     "o": "Komořany",
+     "d": "Želivského",
+     "every": 15,
+     "real": [
+      5
+     ],
+     "why": "Short working from Komořany, every 15 at :05 (from 17:36 the evening timetable)."
+    },
+    {
+     "o": "Želivského",
+     "d": "Sídliště Zbraslav",
+     "every": 15,
+     "real": [
+      14
+     ],
+     "why": "Zbraslav line, every 15 at :14."
+    },
+    {
+     "o": "Sídliště Zbraslav",
+     "d": "Želivského",
+     "every": 15,
+     "real": [
+      2
+     ],
+     "why": "Zbraslav line, every 15 at :02 (from 17:33 the evening timetable)."
+    }
+   ]
+  },
+  "143": {
+   "_why": "Method check 25 Oct 2026: the fit gave Dejvická every 45 with 7 slots (9.3 an hour) against every 15 with 2 slots from Stadion Strahov (8 an hour). 143 runs every 7–8 min (8 an hour) plus one extra bus an hour.",
+   "rows": [
+    {
+     "o": "Dejvická",
+     "d": "Stadion Strahov",
+     "every": 15,
+     "real": [
+      4,
+      12
+     ],
+     "why": "Every 15 at :04 and :12 (8 an hour): :04 :12 :19 :27 :34 :42 :49 are the timetable's own minutes every hour; its :57 slot runs as two buses, :55 and :59 (the extra bus, listed, not modelled)."
+    },
+    {
+     "o": "Stadion Strahov",
+     "d": "Dejvická",
+     "every": 15,
+     "real": [
+      0,
+      7
+     ],
+     "why": "Every 15 at :00 and :07 (8 an hour), as before; the extra bus an hour (15:05/15:09, 16:05/16:11/16:16, 17:29/17:34/17:39) is up to 4 min off."
+    }
+   ]
+  },
+  "157": {
+   "_why": "Method check 25 Oct 2026: the fit gave Násirovo náměstí every 60 with 7 slots (7 an hour, 9 departures 15:40–16:48) against every 15 with 2 slots from Kačerov (8 an hour). Both ends now every 15 with 2 slots.",
+   "rows": [
+    {
+     "o": "Kačerov",
+     "d": "Násirovo náměstí",
+     "every": 15,
+     "real": [
+      2,
+      9
+     ],
+     "why": "Every 15 at :02 and :09 (8 an hour), the timetable's own pattern 15:09–18:02."
+    },
+    {
+     "o": "Násirovo náměstí",
+     "d": "Kačerov",
+     "every": 15,
+     "real": [
+      3,
+      10
+     ],
+     "why": "Every 15 at :03 and :10 (8 an hour): exact 15:10–15:48 and 16:40–17:33. In between the timetable has one bus fewer (15:56, 16:04, 16:12, 16:21, 16:30, up to 3 min off; no bus in the 16:18, 16:25 and 16:33 slots). It has 21 departures 15:00–17:59 here against 24 from Kačerov. No regular slower option: 7 an hour would need every 60 with 7 slots, which repeats only 15:40–16:48."
+    }
+   ]
+  },
+  "176": {
+   "_why": "Method check 25 Oct 2026: the fit gave both ends every 60 with 7 slots (13 departures on 7 slots). 176 runs the every-7.5 pattern (every 15 with 2 slots) with about one bus an hour left out.",
+   "rows": [
+    {
+     "o": "Stadion Strahov",
+     "d": "Karlovo náměstí",
+     "every": 15,
+     "real": [
+      2,
+      9
+     ],
+     "why": "Every 15 at :02 and :09 (8 an hour), the timetable's own minutes; the timetable leaves out 15:17, 16:39 and 17:32 (7 an hour). No regular slower option: the left-out bus moves round the hour, so 7 an hour (every 60 with 7 slots) repeats only for about 1.5 h."
+    },
+    {
+     "o": "Karlovo náměstí",
+     "d": "Stadion Strahov",
+     "every": 15,
+     "real": [
+      0,
+      8
+     ],
+     "why": "Every 15 at :00 and :08 (8 an hour), the timetable's own minutes; the timetable leaves out 15:45, 17:08 and 18:00. No regular slower option, as from Stadion Strahov."
+    }
+   ]
+  },
+  "187": {
+   "_why": "Method check 25 Oct 2026: the fit gave every 60 with 6 slots, exact only 15:07–16:37 (9 departures). The timetable repeats every 90 min all afternoon: every 15 at :07 :22 :37 :52, plus two extra buses every 90 min (15:45 and 16:00, 17:15 and 17:30).",
+   "rows": [
+    {
+     "o": "Nádraží Holešovice",
+     "d": "Nádraží Holešovice",
+     "every": 90,
+     "real": [
+      7,
+      22,
+      37,
+      45,
+      52,
+      60,
+      67,
+      82
+     ],
+     "why": "Every 90 with 8 slots: the base every 15 (real 7, 22, 37, 52, 67, 82) and the two extra trips (real 45, 60). Simpler option: every 15 at :07 (4 an hour), leaving out the two extra trips every 90 min."
+    }
+   ]
+  },
+  "189": {
+   "_why": "Method check 25 Oct 2026: Kačerov sends a bus every 6 min (10 an hour) but Sídliště Lhotka only every 7–8 (8 an hour); in reality the extra buses return out of service. In Simutrans both ends must run at one rate.",
+   "rows": [
+    {
+     "o": "Kačerov",
+     "d": "Sídliště Lhotka",
+     "every": 6,
+     "real": [
+      5
+     ],
+     "why": "Every 6 at :x5, the timetable's own pattern 15:05–18:59."
+    },
+    {
+     "o": "Sídliště Lhotka",
+     "d": "Kačerov",
+     "every": 6,
+     "real": [
+      2
+     ],
+     "why": "Every 6 (10 an hour), approximate: the timetable leaves every 7–8 min (24 departures 15:00–17:59, up to 3 min off), so about 2 slots an hour have no real bus. Slower option for both ends: 8 an hour (every 15 with 2 slots), which leaves out 2 of Kačerov's 10.",
+     "approx": true
+    }
+   ]
+  },
+  "191": {
+   "_why": "Method check 25 Oct 2026: the card paired Na Knížecí → Letiště with Dědina → Na Knížecí, the ends of two different routes. 191 is three Simutrans lines from Na Knížecí: Letiště every 20, Dědina 3 an hour and the trips one stop on to Obchodní centrum Ruzyně 3 an hour, interleaved at Na Knížecí as the timetable runs them (:05 :12 :19 :25 :32 :39 :45 :52 :59).",
+   "rows": [
+    {
+     "o": "Na Knížecí",
+     "d": "Letiště",
+     "every": 20,
+     "real": [
+      5
+     ],
+     "why": "Letiště line, every 20 at :05."
+    },
+    {
+     "o": "Terminál 1",
+     "d": "Na Knížecí",
+     "every": 20,
+     "real": [
+      5
+     ],
+     "why": "Letiště line, every 20 at :05 (17:49 runs 4 min late)."
+    },
+    {
+     "o": "Na Knížecí",
+     "d": "Dědina",
+     "every": 60,
+     "real": [
+      19,
+      32,
+      52
+     ],
+     "why": "Dědina line, hourly at :19, :32 and :52."
+    },
+    {
+     "o": "Dědina",
+     "d": "Na Knížecí",
+     "every": 60,
+     "real": [
+      10,
+      23,
+      43
+     ],
+     "why": "Dědina line, hourly at :10, :23 and :43."
+    },
+    {
+     "o": "Na Knížecí",
+     "d": "Obchodní centrum Ruzyně",
+     "every": 60,
+     "real": [
+      12,
+      39,
+      59
+     ],
+     "why": "Trips on to Obchodní centrum Ruzyně (one stop past Dědina), hourly at :12, :39 and :59."
+    },
+    {
+     "o": "Obchodní centrum Ruzyně",
+     "d": "Na Knížecí",
+     "every": 60,
+     "real": [
+      1,
+      28,
+      48
+     ],
+     "why": "Trips from Obchodní centrum Ruzyně, hourly at :01, :28 and :48."
+    }
+   ]
+  },
+  "207": {
+   "_why": "Method check 25 Oct 2026: the fit gave Ohrada every 36 with 6 slots (11 departures 15:38–16:38). 207 runs every 6 min both ways from about 15:30.",
+   "rows": [
+    {
+     "o": "Staroměstská",
+     "d": "Ohrada",
+     "every": 6,
+     "real": [
+      3
+     ],
+     "why": "Every 6 at :x3, exact 15:33–18:15. Before 15:30 the timetable is every 7 (up to 3 min off)."
+    },
+    {
+     "o": "Ohrada",
+     "d": "Staroměstská",
+     "every": 6,
+     "real": [
+      2
+     ],
+     "why": "Every 6 at :x2: from 15:32 every bus is on the slot except every seventh, which leaves 2 min late on a faster variant (16:10, 16:52, 17:34). Before 15:30 the timetable is every 7 (up to 3 min off)."
+    }
+   ]
+  },
+  "211": {
+   "_why": "Method check 25 Oct 2026: the fit gave Sídliště Rohožník every 30 (2 an hour) against 3 an hour from Nádraží Klánovice.",
+   "rows": [
+    {
+     "o": "Nádraží Klánovice",
+     "d": "Sídliště Rohožník",
+     "every": 60,
+     "real": [
+      27,
+      37,
+      57
+     ],
+     "why": "Hourly at :27, :37 and :57 (3 an hour), as the timetable 14:27–19:37."
+    },
+    {
+     "o": "Sídliště Rohožník",
+     "d": "Nádraží Klánovice",
+     "every": 60,
+     "real": [
+      23,
+      43,
+      53
+     ],
+     "why": "Hourly at :23, :43 and :53 (3 an hour), as the timetable 15:23–19:43; no bus at 16:43."
+    }
+   ]
+  },
+  "226": {
+   "_why": "Method check 25 Oct 2026: the card paired Háje → Lipany with Benice → Háje, the ends of two different routes. 226 is the hourly Benice line and its hourly short working to Lipany (own Simutrans line, one stop short), at :37 and :07 from Háje.",
+   "rows": [
+    {
+     "o": "Háje",
+     "d": "Lipany",
+     "every": 60,
+     "real": [
+      7
+     ],
+     "why": "Short working to Lipany, hourly at :07."
+    },
+    {
+     "o": "Lipany",
+     "d": "Háje",
+     "every": 60,
+     "real": [
+      55
+     ],
+     "why": "Short working from Lipany, hourly at :55."
+    },
+    {
+     "o": "Háje",
+     "d": "Benice",
+     "every": 60,
+     "real": [
+      37
+     ],
+     "why": "Benice line, hourly at :37."
+    },
+    {
+     "o": "Benice",
+     "d": "Háje",
+     "every": 60,
+     "real": [
+      20
+     ],
+     "why": "Benice line, hourly at :20."
+    }
+   ]
+  },
+  "232": {
+   "_why": "Method check 25 Oct 2026: the fit counted the peak extras at Smíchovské nádraží into every 30 with 2 slots (4 an hour) against every 30 from Na Knížecí (2 an hour).",
+   "rows": [
+    {
+     "o": "Smíchovské nádraží",
+     "d": "Na Knížecí",
+     "every": 30,
+     "real": [
+      8
+     ],
+     "why": "Every 30 at :08 and :38, the line's all-day pattern. The 5 extra peak trips (15:01, 15:46, 16:01, 16:31, 17:01) have no trip back in the timetable, so they are listed, not modelled.",
+     "extra": [
+      "15:01",
+      "15:46",
+      "16:01",
+      "16:31",
+      "17:01"
+     ]
+    },
+    {
+     "o": "Na Knížecí",
+     "d": "Smíchovské nádraží",
+     "every": 30,
+     "real": [
+      26
+     ],
+     "why": "Every 30 at :26 and :56, as the timetable all day."
+    }
+   ]
+  }
+ }
 }

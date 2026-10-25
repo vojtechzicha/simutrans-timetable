@@ -1,5 +1,5 @@
 {
- "_source": "VZ pak session objects, checked against simutrans-custom-czech-pak128 main, simutrans-custom-czech-pak128-mhd mhd-fleets, simutrans-custom-czech-pak128-pidops bus-pid-oper. Status \"requested\" = not yet in any local pak build; the name is the one asked for in pak_request.md.",
+ "_source": "VZ pak session objects, checked against simutrans-custom-czech-pak128 main. Status \"requested\" = not yet in any local pak build; the name is the one asked for in pak_request.md.",
  "objects": {
   "PMDP|SOR NB 12|pmdpcervenobila": {
    "package": "VZ-PMDP-bus",

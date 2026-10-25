@@ -141,7 +141,7 @@ def main():
                     dx = sorted(t['dep'] for t in ts if (t['o'], t['d']) == (x, y))
                     f = runfit(dx)
                     if f and f['first'] <= 965 and f['last'] >= 1015:     # exact over (practically) the whole 16:00 hour
-                        simu.append(dict(o=x, d=y, every=f['I'], set=list(f['R']), first=f['first'], last=f['last'], n=f['n'], exact=True,
+                        simu.append(dict(o=x, d=y, every=f['I'], real=list(f['R']), set=[(r - 60) % f['I'] for r in f['R']], first=f['first'], last=f['last'], n=f['n'], exact=True,
                                          per_hour=sum(1 for t in dx if 960 <= t < 1020)))
                     else:
                         # approximate (shared rule: label the largest deviation): an interval I with k = trains per hour * I / 60
@@ -155,9 +155,9 @@ def main():
                             key = (abs(len(R) * 60 / I - len(h)), dev, I)     # keep the real trains per hour first, then accuracy
                             if best is None or key < best[3]: best = (dev, I, R, key)
                         if best:
-                            simu.append(dict(o=x, d=y, every=best[1], set=best[2], exact=False, max_dev=best[0], per_hour=len(h)))
+                            simu.append(dict(o=x, d=y, every=best[1], real=list(best[2]), set=[(r - 60) % best[1] for r in best[2]], exact=False, max_dev=best[0], per_hour=len(h)))
                         else:
-                            off, dev = best_offset(dx, 3); simu.append(dict(o=x, d=y, every=3, set=[off], exact=False, max_dev=dev))
+                            off, dev = best_offset(dx, 3); simu.append(dict(o=x, d=y, every=3, real=[off], set=[(off - 60) % 3], exact=False, max_dev=dev))
                 rows.append(dict(o=o, d=d, simutrans=simu, need_by_reverse=by_lay, per_hour=len(d16), gap_min=min(gaps) if gaps else None, gap_max=max(gaps) if gaps else None,
                                  runtime=rt, need=n, cycle=max(c[1] for c in cs) if cs else None))
             minor = [dict(o=o, d=d, n=cnt) for (o, d), cnt in pats.items() if cnt < 0.3 * top]

@@ -1,17 +1,17 @@
 {
- "commit": "VZ-DPPraha-bus: fb42eb7; VZ-Praha-bus: fb42eb7; VZ-Praha-water: fb42eb7",
+ "commit": "VZ-DPPraha-bus: 4ee2f12; VZ-Praha-bus: 4ee2f12; VZ-Praha-water: 4ee2f12",
  "source": {
   "VZ-DPPraha-bus": {
-   "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128-pidops",
-   "commit": "fb42eb7 2026-09-29 Prague and Brno city buses of other operators, PID ferries, DPP gaps"
+   "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
+   "commit": "4ee2f12 2026-10-25 SOR base: keep the bumpers, aprons and lamps on fronts and rears"
   },
   "VZ-Praha-bus": {
-   "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128-pidops",
-   "commit": "fb42eb7 2026-09-29 Prague and Brno city buses of other operators, PID ferries, DPP gaps"
+   "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
+   "commit": "4ee2f12 2026-10-25 SOR base: keep the bumpers, aprons and lamps on fronts and rears"
   },
   "VZ-Praha-water": {
-   "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128-pidops",
-   "commit": "fb42eb7 2026-09-29 Prague and Brno city buses of other operators, PID ferries, DPP gaps"
+   "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
+   "commit": "4ee2f12 2026-10-25 SOR base: keep the bumpers, aprons and lamps on fronts and rears"
   }
  },
  "objects": {

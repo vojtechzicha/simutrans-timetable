@@ -105,6 +105,13 @@ w(f'<p class="sub" style="margin-top:12px">{X["network_after"]}</p>')
 
 # ---- schedule -------------------------------------------------------------------------------------------------------
 def match(r):
+    return match_(r) + (f'<br><span class="muted">{E(r["note"])}</span>' if r.get('note') else '')
+def match_(r):
+    if r['how'] == 'approx':    # hand-set even pattern (state.fit_overrides): no repeating pattern is exact here
+        t = f'<span class="chip warn">approximate, up to {r["dev"]} min off</span> in {r["window"][0]}–{r["window"][1]}; reference hour real {" ".join(mm(x) for x in r["hour"]) or "none"}'
+        if r['missing']: t += f'; not modelled {" ".join(mm(x) for x in r["missing"])}'
+        if r['extra']: t += f'; added {" ".join(mm(x) for x in r["extra"])}'
+        return t
     if r['how'] == 'daily':
         return '<span class="chip ok">exact all day</span> every departure of the day (at most 8), as Offset + Also at of a 1440-minute interval'
     if r['how'] == 'hour':
@@ -131,14 +138,14 @@ for grp in S['groups']:
             else:
                 real = f'<small class="real">real {", ".join(hm(x) if r["every"] == 1440 else str(x) for x in r["real"][:1])}' + (f'; {", ".join(hm(x) if r["every"] == 1440 else str(x) for x in r["real"][1:])}' if r['real'][1:] else '') + '</small>'
                 setv = r['set']; daily = r['every'] == 1440
-                if daily:      # minutes from midnight: show the clock time under each value
-                    also = ' '.join(f'<span class="dv">{x}<small class="real">{hm(x + 1)} real</small></span>' for x in setv[1:]) or '–'
+                if daily:      # the fork counts from 01:00 and the stop is a turn: real = value + 61 (fixed 25 Oct 2026; was value + 1)
+                    also = ' '.join(f'<span class="dv">{x}<small class="real">{hm((x + 61) % 1440)} real</small></span>' for x in setv[1:]) or '–'
                     real = f'<small class="real">{hm(r["real"][0])} real</small>'
                 else:
                     also = ', '.join(map(str, setv[1:])) or '–'
                 w(f'<td>{lbl}</td><td class="big">{r["every"]}</td><td class="big">{setv[0]}{real}</td><td class="big{" wrapv" if daily else ""}">{also}</td><td class="muted">auto</td>'
                   f'<td class="n">{("%g" % r["perh"]) if r.get("perh") is not None else "–"}</td><td class="note">{match(r)}'
-                  + (f'<br><span class="muted">merged minutes of other patterns from this stop: {" ".join(r["merged"])}</span>' if r.get('merged') else '') + '</td>')
+                  + (f'<br><span class="muted">merged minutes of other patterns from this stop: {" ".join(r["merged"])}</span>' if r.get('merged') and r.get('how') not in ('override', 'approx') else '') + '</td>')
             if i == 0:
                 us = LINES.get(s['id'], []); nn = sum(1 for u in us if not u.get('spare')); nd = sum(1 for u in us if u.get('designed') and not u.get('spare'))
                 how = {'round trip': 'by timetable cycle', 'loop round trip': 'by timetable cycle (loop)'}.get(s['how'], s['how'])

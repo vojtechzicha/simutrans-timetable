@@ -79,13 +79,21 @@ c['network_state'] = [
      '351, 355, 980 and 985 hold a few trips on Novojičínsko licences but are Frýdecko-Místecko lines, on the Těšínsko/Třinecko/Frýdecko sheet. 261, 263, 270, 285 and 678 are modelled on the Opavsko/Vítkovsko/Hlučínsko sheet, where most of their trips are. 655 is modelled here: 41 of its 45 trips are on the Novojičínsko licence.'],
 ]
 
+c['keep_roster'] = 'data/published/roster_v5.json'
+c['keep_roster_why'] = 'The owner may have the sheet in the game (published v5). A rebuild keeps each published bus on its Simutrans line wherever it is still evidence for that line (shared 04_roster step 6), so the 25 Oct method check moves the fewest buses.'
 c['owner_checks'] = [
     ['601', 'the Nový Jičín town lines are one Simutrans line, 601–604, with three buses running 602, 601, 604 and 603 in turn, as ARRIVA ran them on 20 Oct (three buses leave the bus station at :10 every hour).',
      'four separate town lines, one bus each (a fourth bus, which ARRIVA does not run).'],
     ['655', 'modelled on this sheet (883655: 41 trips) although the Těšínsko/Třinecko/Frýdecko sheet also carries it as a 4-trip Frýdecko-Místecko line.',
      'leave 655 on the Těšínsko sheet only (every 240, one bus) and drop it here.'],
-    ['698', 'every 60 with two slots each way (Nový Jičín :10 and :30, Kopřivnice :15 and :35), the busiest hours 13:10–15:30 around the Tatra shift change; four buses, as four were seen.',
-     'one slot each way (every 60), two buses.'],
+    ['698', 'every 120 with four slots each way, all on the minute (Nový Jičín 13:10, 13:30, 14:20, 14:45; Kopřivnice 13:15, 13:35, 14:15, 14:35), the busiest hours 13:10–15:10 around the Tatra shift change; four buses, as four were seen (method check 25 Oct 2026).',
+     'one slot each way every 60, two buses; most shift-change departures then fall off the pattern.'],
+    ['618', 'every 120 with three slots each way, all on the minute (Fulnek 14:10, 14:45, 15:25; Nový Jičín 14:00, 14:35, 15:12): the three rounds of 62-1010, 62-3007 and 62-1005; three buses (method check 25 Oct 2026).',
+     'every 72 with one slot each way (Fulnek 14:10, 15:22; Nový Jičín 14:00, 15:12), two buses; 14:45 and 14:35 fall off the pattern.'],
+    ['620 Pohoř', 'every 180 with one slot each way, on the minute (Nový Jičín 15:15, Pohoř 13:20), one bus as published (method check 25 Oct 2026); 14:00 and 14:48 are off the pattern.',
+     'every 120 with two slots each way, all on the minute (Nový Jičín 14:00, 15:15; Pohoř 13:20, 14:48), three buses.'],
+    ['370', 'every 90 with one slot each way (Dubina 16:19, Řepiště 16:02), two buses (method check 25 Oct 2026).',
+     'every 240 (Dubina 16:19, Řepiště 17:02), one bus; Řepiště then gets a bus every 4 h.'],
     ['653', '653 Kopřivnice is the Kopřivnice town loop (station – Kolonie – Družební – station) every 30, which runs inside licence 883653.',
      'leave the loop out (its stops are on other Kopřivnice lines only in part).'],
 ]

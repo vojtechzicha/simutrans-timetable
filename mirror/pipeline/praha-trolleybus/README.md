@@ -45,6 +45,10 @@ seznam-autobusu.cz returns 403 to plain curl, so use `common.fetch` (full browse
 - **Pak:** VZ-DPPraha-trolleybus.pak, pak128 main b84c15c (read from `C:\Users\vojte\Developer\simutrans-custom-czech-pak128\build\VZ-DPPraha-trolleybus`). Every peak type has an exact object: TNS_18 (A + B), TNS_12, SNG_12T, Skoda_Solaris_24m (A + B + C) and 36Tr. The objects are waytype=road with an electric engine, so the wire does not matter in the game.
 - **Display:** follows the trolleybus rules agreed on 29 Sep with the Brno (3a) and Ostrava (f5) trolleybus sessions: the tram 3-line cell, per-line battery sections, and a bus on a trolleybus line counted separately (class BUS). There is one difference. Their rule (d) keeps the real minute at a block turn, but here block turns count as loops, following the Prague tram sheet.
 
+## Method check 25 Oct 2026
+
+All 14 rows checked against the trips (`../praha/method-check-2026-10-25.md`); nothing changed. Both ends of every line run at one rate; 52's branches alternate 4 min apart at Na Knížecí. For the owner to decide: 51 fits exactly at every 120 with 2 slots (Hradčanská real 92 and 44, i.e. 15:32, 16:44, 17:32: Offset 31, Also at 103; Bořislavka real 72 and 24, i.e. 15:12, 16:24, 17:12: Offset 11, Also at 83; loop −1 and the 01:00 origin included), against the hourly approximation (up to 16 min off) on the sheet.
+
 ## How to update when the timetable changes
 
 1. Save the new PID GTFS in `data/raw/gtfs/<export date>/gtfs.zip` (or copy it from `../praha/data/raw/gtfs`, which gets the same feed).

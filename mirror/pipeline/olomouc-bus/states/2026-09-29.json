@@ -103,7 +103,8 @@
     ]
    ],
    "chip": "terminus",
-   "text": "Holice and Průmyslová are one terminus here: 12 turns at Holice or runs on two stops to Průmyslová (5 of the 7 departures back to Řepčín start at Průmyslová). The Simutrans line ends at Holice; the Průmyslová minutes are used as they are."
+   "text": "Holice and Průmyslová are one terminus here: 12 turns at Holice or runs on two stops to Průmyslová (5 of the 7 departures back to Řepčín start at Průmyslová). The Simutrans line ends at Holice; a trip from Průmyslová is read at Holice, 4 min after it starts. So read, 12 runs every 20 min both ways from 13:47 to 16:27 (:07 :27 :47 at both ends); at 16:47 one bus runs only to Hlavní nádraží and one goes to the garage, and from 17:00 the line runs every 30. The Simutrans line keeps every 20 (method check 25 Oct 2026; it had been set at 2 an hour from the 16:00–16:59 departures alone). The 4 buses the line needs hold every 20.",
+   "rate": 3
   },
   {
    "id": "13",
@@ -357,7 +358,8 @@
      "Topolany",
      "Hlavní nádraží"
     ]
-   ]
+   ],
+   "note": "Approximate (method check 25 Oct 2026): Hlavní nádraží → Topolany runs about hourly, 14:55 and 15:55, then 17:00, 5 min after the :55 slot; largest deviation 5 min. One bus, so there is no slower option."
   },
   {
    "id": "27",
@@ -448,6 +450,24 @@
     "first": 891,
     "last": 981,
     "_why": "every 30 as in the peak (14:51-16:21); the 16:51 runs to the garage (Ladova) in reality, so the Simutrans line keeps one more return trip than the timetable"
+   },
+   "12|Řepčín, železárny": {
+    "I": 20,
+    "R": [
+     7
+    ],
+    "first": 827,
+    "last": 987,
+    "_why": "every 20 as the real timetable runs 13:47-16:27 (9 departures in a row); at 16:47 the bus runs only to Hlavní nádraží, then the line goes every 30. Method check 25 Oct 2026."
+   },
+   "12|Holice": {
+    "I": 20,
+    "R": [
+     7
+    ],
+    "first": 827,
+    "last": 987,
+    "_why": "every 20 as the real timetable runs 13:47-16:27 read at Holice (the Průmyslová trips pass Holice 4 min after they start); the 16:47 runs to the garage, then every 30. Method check 25 Oct 2026."
    }
   }
  },
@@ -468,7 +488,7 @@
   "lede": "Every Olomouc city bus line with afternoon-peak service in the timetable in force on Tue 29 Sep 2026, with the buses that run it at 16:00: the buses logged on Tue 29 Sep 2026 (the only weekday with a useful number of bus records), and designed buses with real car numbers from each line’s history for the rest. All lines are run by DPMO (Dopravní podnik města Olomouce) from one garage; no subcontractor runs a city line.",
   "day": "Coverage of DPMO bus records is thin. Fri 25 Sep, the day the other sheets use, has <b>no bus record at all</b>, and neither has Fri 18 Sep, the day of the Olomouc tram sheet. No weekday of September is complete. <b>Tue 29 Sep 2026</b>, the network day itself, has by far the most: 29 buses on 15 of the 17 afternoon lines, so it is the vehicle day: one real day, not a mix of days. The records carry no kurz and no time of day, so every logged bus counts for its line. Lines and slots the day does not cover get designed buses with real car numbers (see Buses by line). Records for 29 Sep may still be added tonight: re-running the pipeline picks them up.",
   "network": "Bus lines of the DPMO GTFS (version 17 Sep 2026, valid to 12 Dec 2026) on the service day Tue 29 Sep 2026, trips 15:00–18:00 per terminus pair, garage runs (Ladova, Na Střelnici) left out. Departures are the trips starting between 16:00 and 16:59; headway is the median gap between 15:00 and 18:00, and runtime the average scheduled time.",
-  "schedule": "Values to type into the fork’s Scheduling tab, on the stop entries listed for each Simutrans line. Units are calendar minutes; the offset is minutes after midnight modulo the interval, and Leave up to stays automatic. <b>Where the bus turns, every departure is set 1 min before the timetable departure</b> so it leaves the turning point on time (as on every bus and trolleybus sheet since 29 Sep): offset and Also at are the real minute − 1, with the real minutes underneath. <b>Through stops</b> (Nové Sady on 16) keep the real minute. Each Simutrans line is fitted at one rate (the 16:00–16:59 departures most of its entries share) so that no end sends more buses than the other; where an end runs a different number, the row is marked partial and lists the minutes left out or added. A “+” line under a stop names a variant whose departures are folded into that row.",
+  "schedule": "Values to type into the fork’s Scheduling tab, on the stop entries listed for each Simutrans line. Units are calendar minutes; the fork counts offsets from 01:00 (offset = (real minute − 60) mod the interval, which for an interval dividing 60 is just the clock minute), and Leave up to stays automatic. <b>Where the bus turns, every departure is set 1 min before the timetable departure</b> so it leaves the turning point on time (as on every bus and trolleybus sheet since 29 Sep): offset and Also at are the real minute − 1, with the real minutes underneath. <b>Through stops</b> (Nové Sady on 16) keep the real minute. Each Simutrans line is fitted at one rate (the 16:00–16:59 departures most of its entries share) so that no end sends more buses than the other; where an end runs a different number, the row is marked partial and lists the minutes left out or added. A “+” line under a stop names a variant whose departures are folded into that row.",
   "need": "Buses needed at 16:00: follow a bus leaving the first entry around 16:00 through every leg of its line, taking the first departure at least 3 min after arriving, or less where the timetable itself turns faster (the timetable cycle); a round trip that would wait longer than the line’s interval (at least 30 min) is skipped. As on the Prague, Ostrava and Brno bus sheets, a real line never gets fewer buses than the most it has on the road at once between 16:00 and 16:59 (each trip holding its bus until arrival plus the terminus’s shortest turnaround, at most 3 min); the difference goes to the line’s first Simutrans line.",
   "lines": "One row per bus, grouped by Simutrans line. <span class=\"chip ok\">logged</span> buses were recorded on the line on Tue 29 Sep 2026 (seznam-autobusu.cz). <span class=\"chip des\">designed</span> buses are not recorded that day: each is a real DPMO bus that ran the line on weekdays before (dates given), is in service, and was not logged anywhere on 29 Sep. The picks first cover every bus type of the line’s roster that the other buses lack, then take the buses that ran the line most recently. Rows marked <span class=\"chip spare\">not needed</span> are dimmed at the bottom: logged buses beyond the line’s need (one of every type kept first; with no kurz numbers, the buses listed later on the record page go first), and free buses from the line history that the need does not use. They are left out of every count, the depot and the pak totals (user rule, 29 Sep). Every bus shows its number and garage, its full type and length, and the pak128 core.",
   "pak": "Each type and livery in the peak, mapped to the objects of the custom Czech pak128, package VZ-DPOlomouc-bus (DPMO buses, imported and completed in pak commit 0c2cc6a; read from the local checkout, main b84c15c). Full names follow VZ-DPOlomouc-&lt;family&gt;-&lt;livery&gt;-&lt;core&gt;. Urbino 12 II and III share one body (Urbino_12). The livery comes from the register paint: DPMO white-blue-red, plain lime green (616–618) or plain white (615); an advert wrap (CVR) uses the type’s normal livery, as the pak session does. The Urbino_12 family has more than one livery object, so its core shows the livery. Articulated buses are two objects (front -A, rear -B), shown by the first core. Car units per vehicle (16 = one tile).",

@@ -4,7 +4,9 @@
 
 Follows pipeline/brno-bus/scripts/03_timetable.py (the shared fit rule of pipeline/README.md), with two Olomouc additions:
 - "alias" {line: {stop: terminus}}: a stop folded into a nearby terminus of that line (12 and 19 turn at Holice or run on
-  to Průmyslová, two stops further; 28 ends at Tržnice, plocha). Applied to the trips before anything else.
+  to Průmyslová, two stops further; 28 ends at Tržnice, plocha). Applied to the trips before anything else. A trip that
+  starts at the folded stop and passes the terminus is fitted at its time there (dep_fit; method check 25 Oct 2026: the
+  12 trips from Průmyslová pass Holice 4 min after they start, which had made the Holice row approximate).
 - an entry may carry {"merge": [[line, from, to], ...]}: departures of a variant from the same terminus that are run by the
   same buses (25 from Kaufland next to Hlavní nádraží, 21 to Tabulový vrch after 16:30, 14 Ahold to Hlavní nádraží only).
 Each entry is fitted at one rate per Simutrans line (the 16:00-16:59 departures most entries share). Where the bus turns,
@@ -24,7 +26,9 @@ raw = gtfs_trips(gtfs_path(S), S['gtfs']['service_date'], '3')
 trips = []
 for t in raw:
     al = AL.get(t['line'], {})
-    trips.append(dict(t, o=al.get(t['o'], t['o']), d=al.get(t['d'], t['d']), o_real=t['o'], d_real=t['d']))
+    o = al.get(t['o'], t['o'])
+    fit = t['times'][t['stops'].index(o)] if o != t['o'] and o in t['stops'] else t['dep']   # read at the terminus it passes
+    trips.append(dict(t, o=o, d=al.get(t['d'], t['d']), o_real=t['o'], d_real=t['d'], dep_fit=fit))
 alltrips = trips
 trips = [t for t in trips if not ({t['o'], t['d']} & DEP)]
 peak_lines = [sl['records'] for sl in S['simutrans_lines']]
@@ -51,14 +55,14 @@ for sl in S['simutrans_lines']:
     def entry_trips(e):
         keys = [tuple(e[:3])] + [tuple(x) for x in (e[3].get('merge', []) if len(e) > 3 else [])]
         return [t for t in trips if (t['line'], t['o'], t['d']) in keys]
-    hour = {i: sorted(t['dep'] for t in entry_trips(e) if 960 <= t['dep'] < 1020) for i, e in enumerate(E)}
+    hour = {i: sorted(t['dep_fit'] for t in entry_trips(e) if 960 <= t['dep_fit'] < 1020) for i, e in enumerate(E)}
     cnt = collections.Counter(len(h) for h in hour.values() if h); top = max(cnt.values())
     rate = sl.get('rate') or min(r for r, n in cnt.items() if n == top)
     def pattern_hour(I, R): return sorted(m for m in range(960, 1020) if m % I in R)
     rows = []
     for i, e in enumerate(E):
         l, o, d = e[:3]
-        xs = entry_trips(e); D = sorted(set(t['dep'] for t in xs))
+        xs = entry_trips(e); D = sorted(set(t['dep_fit'] for t in xs))
         used |= {t['id'] for t in xs}
         H = hour[i]; key = '|'.join([sl['id'], o])
         if key in F['overrides']:
@@ -96,7 +100,7 @@ for sl in S['simutrans_lines']:
         run = round(statistics.mean(t['arr'] - t['dep'] for t in pk))
         rows.append(dict(line=l, stop=o, to=d, every=I, real=R, set=loop_shift(I, R, turn), loop=turn,
                          perh=len(R) * 60 / I, span=f"{hm(f['first'])}–{hm(f['last'])}", run=run,
-                         exact=not missing and not extra, missing=[m - 960 for m in missing], extra=[m - 960 for m in extra],
+                         exact=not missing and not extra, missing=[m - 960 for m in missing], extra=[m - 960 for m in extra], override=key in F['overrides'],
                          hour=[m - 960 for m in H], deps=[x for x in D if 900 <= x < 1080],
                          merged=[x[1:] for x in (e[3].get('merge', []) if len(e) > 3 else [])]))
     own, klegs = [], []

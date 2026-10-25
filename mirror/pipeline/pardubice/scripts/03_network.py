@@ -169,6 +169,12 @@ for grp, L in order:
             allm = sorted(set(own + merged))
             dayall = [t['dep'] for t in tr if t['o'] == o and t['d'] == d]
             f = fit(allm, tuple(fw['core']), fw['lo'], fw['hi'], dayall, t0)
+            # hand-set rows (state.fit_overrides, "<Simutrans id>|<from>|<to>": {I, R, first, last, how, note}; added 25 Oct
+            # 2026 for the both-ends-same-rate check): how 'override' = an exact stretch first-last, 'approx' = an even pattern
+            fo = S.get('fit_overrides', {}).get(f"{b['id']}|{o}|{d}")
+            if fo:
+                f = dict(I=fo['I'], R=sorted(fo['R']), first=fo['first'], last=fo['last'], core=True, how=fo.get('how', 'override'),
+                         n=sum(1 for x in allm if fo['first'] <= x <= fo['last']))
             h0, h1 = t0, t0 + 60
             real16 = sorted(x for x in allm if h0 <= x < h1)
             if f:
@@ -179,7 +185,7 @@ for grp, L in order:
                            exact=setm == real16, missing=[x % 60 for x in real16 if x not in setm], extra=[x % 60 for x in setm if x not in real16],
                            hour=[x % 60 for x in real16], merged=sorted(set(hhmm(x) for x in merged if W[0] <= x < W[1])),
                            dev=deviation(f, allm, W[0], W[1]), window=[hhmm(W[0]), hhmm(W[1])],
-                           deps=[hhmm(x) for x in allm if W[0] <= x < W[1]])
+                           deps=[hhmm(x) for x in allm if W[0] <= x < W[1]], note=fo.get('note', '') if fo else '')
             else:
                 row = dict(stop=o, to=d, every=None, hour=[x % 60 for x in real16], deps=[hhmm(x) for x in allm if W[0] <= x < W[1]])
             rows.append(row)

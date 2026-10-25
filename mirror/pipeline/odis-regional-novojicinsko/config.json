@@ -268,17 +268,23 @@
    "sim": [
     {
      "name": "286",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Hlubočec, točna",
        "to": "Ostrava, Svinov, nádraží",
-       "at": "auto"
+       "at": [
+        "14:43",
+        "15:50"
+       ]
       },
       {
        "fr": "Ostrava, Svinov, nádraží",
        "to": "Hlubočec, točna",
-       "at": "auto"
+       "at": [
+        "14:59",
+        "15:49"
+       ]
       }
      ]
     },
@@ -299,7 +305,7 @@
      ]
     }
    ],
-   "note": "Hlubočec – Hrabyně – Ostrava-Svinov about every 65–70 min (Hlubočec 13:33, 14:43, 15:48; Svinov 12:44, 13:49, 14:59, 15:49): one slot an hour each way, two buses; the Svinov end is set 6 min off its best fit for the shortest round. The through trips Svinov – Hradec nad Moravicí run every 4 h (14:46 / 15:58) as 286 Hradec. The Vratimov trips (every 4 h) serve stops other lines have."
+   "note": "Hlubočec – Hrabyně – Ostrava-Svinov about every 65–70 min (Hlubočec 13:33, 14:43, 15:48, 17:58; Svinov 12:44, 13:49, 14:59, 15:49, 17:05). Every 120 with two slots each way, as 64-1010 (13:49, 14:43, 15:49) and 64-1004 (14:59, 15:48) run them: Hlubočec 14:43 and 15:50 (the real 15:48, set 2 min later for a 3-min turn at the model's running time), Svinov 14:59 and 15:49 (also 13:49 on the minute); two buses. Off the pattern: Hlubočec 13:33, 17:58; Svinov 12:44, 17:05. The through trips Svinov – Hradec nad Moravicí run every 4 h (14:46 / 15:58) as 286 Hradec. The Vratimov trips (every 4 h) serve stops other lines have."
   },
   "287": {
    "core": [
@@ -309,17 +315,24 @@
    "sim": [
     {
      "name": "287",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Kyjovice, has.zbroj.",
        "to": "Ostrava, Svinov, nádraží",
-       "at": "auto"
+       "at": [
+        "16:42"
+       ]
       },
       {
        "fr": "Ostrava, Svinov, nádraží",
        "to": "Kyjovice, has.zbroj.",
-       "at": "auto"
+       "at": [
+        "15:37"
+       ],
+       "notvia": [
+        "Pustá Polom, Nový Dvůr"
+       ]
       }
      ]
     },
@@ -342,7 +355,7 @@
      ]
     }
    ],
-   "note": "Kyjovice – Velká Polom – Ostrava-Svinov about hourly at irregular minutes (Kyjovice 12:17, 13:17, 14:12, 15:22; Svinov 13:30, 14:35, 14:52, 15:37): two buses, both ends set 5–6 min off their best fits for the shortest round. The 16:47 from Svinov to Pustá Polom (the only afternoon trip to Nový Dvůr) is 287 Pustá Polom, every 480, back empty."
+   "note": "Kyjovice – Velká Polom – Ostrava-Svinov about hourly at irregular minutes (Kyjovice 12:17, 13:17, 14:12, 15:22, 16:42; Svinov 13:30, 14:35, 14:52, 15:37, 18:47). The model hours 15:30–17:30 hold one departure each way, so every 120 on 64-0002's round (Kyjovice 16:42, Svinov 15:37), one bus; the earlier afternoon trips are off the pattern. The 16:47 from Svinov to Pustá Polom (the only afternoon trip to Nový Dvůr) is 287 Pustá Polom, every 480, back empty; 287 itself does not count it."
   },
   "288": {
    "core": [
@@ -382,22 +395,26 @@
    "sim": [
     {
      "name": "628",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Bílovec, železniční stanice",
        "to": "Ostrava, Dubina",
-       "at": "auto"
+       "at": [
+        "13:43"
+       ]
       },
       {
        "fr": "Ostrava, Dubina",
        "to": "Bílovec, železniční stanice",
-       "at": "auto"
+       "at": [
+        "14:44"
+       ]
       }
      ]
     }
    ],
-   "note": "Bílovec – Jistebník – Stará Ves – Ostrava, Dubina every 3 h (Bílovec 15:35, Dubina 16:49). The Bílovec – Jistebník short trips run between them on the same road."
+   "note": "Bílovec – Jistebník – Stará Ves – Ostrava, Dubina about every 2 h (Bílovec 13:43, 15:45, 18:35; Dubina 14:44, 16:49, 19:49): every 120 on 64-1014's round (Bílovec 13:43, Dubina 14:44), one bus; 15:45 and 16:49 are 2 and 5 min off. The Bílovec – Jistebník short trips run between them on the same road."
   },
   "671": {
    "core": [
@@ -408,24 +425,28 @@
    "sim": [
     {
      "name": "671",
-     "every": "auto",
+     "every": 80,
      "legs": [
       {
        "fr": "Ostrava, Svinov, mosty",
        "to": "Skřipov, U Kostela",
-       "at": "auto",
-       "core_to": "Bílovec, Výškovice, restaurace"
+       "core_to": "Bílovec, Výškovice, restaurace",
+       "at": [
+        "16:10"
+       ]
       },
       {
        "fr": "Skřipov, U Kostela",
        "to": "Ostrava, Svinov, mosty",
-       "at": "auto",
-       "knot": "Bílovec, Výškovice, restaurace"
+       "knot": "Bílovec, Výškovice, restaurace",
+       "knot_at": [
+        "16:24"
+       ]
       }
      ]
     }
    ],
-   "note": "Ostrava-Svinov – Klimkovice – Bílovec, Výškovice – Skřipov about every 70–90 min at irregular minutes; read at Výškovice, where the short trips turn, and run on to Skřipov (Svinov 13:30, 14:45, 16:10; back 13:05, 14:14, 15:24, 16:15). Every 90 with two buses; most afternoon trips are off the pattern."
+   "note": "Ostrava-Svinov – Klimkovice – Bílovec, Výškovice – Skřipov at irregular minutes, read at Výškovice, where the short trips turn, and run on to Skřipov (Svinov 13:30, 14:45, 16:10, 18:50; at Výškovice 13:14, 14:14, 15:24, 16:24, 19:04). Every 80: Svinov 16:10 (on the minute also at 13:30 and 18:50), Skřipov 16:15, timed to pass Výškovice at 16:24; two buses. 14:45 is 5 min off; 13:14, 14:14 and 15:24 from Výškovice are off the pattern."
   },
   "672": {
    "core": [
@@ -435,22 +456,26 @@
    "sim": [
     {
      "name": "672",
-     "every": "auto",
+     "every": 144,
      "legs": [
       {
        "fr": "Slatina",
        "to": "Ostrava, Svinov, mosty",
-       "at": "auto"
+       "at": [
+        "16:04"
+       ]
       },
       {
        "fr": "Ostrava, Svinov, mosty",
        "to": "Slatina",
-       "at": "auto"
+       "at": [
+        "14:30"
+       ]
       }
      ]
     }
    ],
-   "note": "Slatina – Tísek – Klimkovice – Ostrava-Svinov every 1½ h at irregular minutes (Slatina 14:44, 16:04; Svinov 13:50, 17:00); the Slatina end is set 7 min off its best fit."
+   "note": "Slatina – Tísek – Klimkovice – Ostrava-Svinov at irregular times (Slatina 12:19, 14:44, 16:04, 17:46; Svinov 13:50, 14:30, 14:50, 17:00). One bus, 64-1009, works the line all afternoon (Svinov 14:30, Slatina 16:04, Svinov 17:00): every 144 on its round (Slatina 16:04, Svinov 14:30), one bus. Off the pattern: Slatina 14:44 (64-1015, on to 673), Svinov 14:50 (64-1002, to Bílovec), 13:50, and 17:00 (the next Svinov slot is 16:54)."
   },
   "679": {
    "core": [
@@ -461,22 +486,26 @@
    "sim": [
     {
      "name": "679",
-     "every": "auto",
+     "every": 180,
      "legs": [
       {
        "fr": "Zbyslavice, střed",
        "to": "Ostrava, Svinov, nádraží",
-       "at": "auto"
+       "at": [
+        "15:45"
+       ]
       },
       {
        "fr": "Ostrava, Svinov, nádraží",
        "to": "Zbyslavice, střed",
-       "at": "auto"
+       "at": [
+        "16:40"
+       ]
       }
      ]
     }
    ],
-   "note": "Zbyslavice – Klimkovice – Vřesina – Ostrava-Svinov every 2 h (Zbyslavice 14:05, 18:05; Svinov 16:40, 18:45); the Klimkovice short trips run between on the same road."
+   "note": "Zbyslavice – Klimkovice – Vřesina – Ostrava-Svinov (Zbyslavice 14:05, 15:45, 16:45, 18:05, 19:35; Svinov to Zbyslavice 16:40, 17:20, 18:45). The afternoon buses reach Zbyslavice on 288 and 674, so no 679 trip leaves Svinov for Zbyslavice in the model hours 13:50–15:50. Every 180 on 64-2003's round: Zbyslavice 15:45, Svinov 16:40 (outside the model hours, as the real trips are); one bus. Off the pattern: Zbyslavice 14:05, 16:45, 18:05; Svinov 17:20, 18:45. The Klimkovice short trips run between on the same road."
   },
   "692": {
    "core": [
@@ -485,17 +514,20 @@
    "sim": [
     {
      "name": "692",
-     "every": "auto",
+     "every": 180,
      "legs": [
       {
        "fr": "Bílovec, železniční stanice",
        "to": "Bílovec, železniční stanice",
-       "at": "auto"
+       "at": [
+        "15:44",
+        "17:19"
+       ]
       }
      ]
     }
    ],
-   "note": "Bílovec station circle via Bítov, Těškovice and Slatina, about hourly (12:49, 14:49, 15:44; one bus)."
+   "note": "Bílovec station circle via Bítov, Těškovice and Slatina at irregular times (12:49, 14:14, 14:49, 15:44, 17:19, 19:37): every 180 with two slots, 15:44 and 17:19 (so also 12:44 and 14:19, 5 min from the real 12:49 and 14:14); one bus."
   },
   "693": {
    "core": [
@@ -504,17 +536,20 @@
    "sim": [
     {
      "name": "693",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Bílovec, železniční stanice",
        "to": "Bílovec, železniční stanice",
-       "at": "auto"
+       "at": [
+        "13:44",
+        "14:49"
+       ]
       }
      ]
     }
    ],
-   "note": "The same circle the other way round, every 1½ h (13:44, 14:49, 17:14)."
+   "note": "The same circle the other way round (12:54, 13:44, 14:49, 17:14, 18:24): every 120 with two slots, 13:44 and 14:49; one bus. 17:14 and 18:24 are off the pattern."
   },
   "613": {
    "core": [
@@ -524,22 +559,26 @@
    "sim": [
     {
      "name": "613",
-     "every": "auto",
+     "every": 96,
      "legs": [
       {
        "fr": "Fulnek, náměstí",
        "to": "Studénka, železniční stanice",
-       "at": "auto"
+       "at": [
+        "15:58"
+       ]
       },
       {
        "fr": "Studénka, železniční stanice",
        "to": "Fulnek, náměstí",
-       "at": "auto"
+       "at": [
+        "16:11"
+       ]
       }
      ]
     }
    ],
-   "note": "Fulnek – Pustějov – Studénka station about hourly at irregular minutes (Fulnek 13:20, 15:58, 17:08; Studénka 14:01, 15:11, 16:11): two buses."
+   "note": "Fulnek – Pustějov – Studénka station about every 70–80 min at irregular minutes (Fulnek 13:20, 14:38, 15:58, 17:08; Studénka 14:01, 15:11, 16:11, 17:46): every 96 (Fulnek 15:58, Studénka 16:11; 17:47 is 1 min from the real 17:46), two buses. Off the pattern: Fulnek 13:20, 14:38, 17:08; Studénka 14:01, 15:11."
   },
   "626": {
    "core": [
@@ -657,22 +696,26 @@
    "sim": [
     {
      "name": "614",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Odry, autobusová stanice",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "14:50"
+       ]
       },
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Odry, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "13:30"
+       ]
       }
      ]
     }
    ],
-   "note": "Odry – Fulnek – Nový Jičín every 2 h (Odry 14:45, 18:45; Nový Jičín 13:30, 15:30): two buses."
+   "note": "Odry – Fulnek – Nový Jičín every 2 h (Odry 12:35, 14:50, 18:45; Nový Jičín 12:00, 13:30, 15:30, 17:10): every 120 (Odry 14:50, Nový Jičín 13:30 and 15:30), two buses. The 13:45 from Odry, ZŠ Komenského (62-1015, on to 667), 12:35 and 17:10 are off the pattern."
   },
   "615": {
    "core": [
@@ -683,22 +726,26 @@
    "sim": [
     {
      "name": "615",
-     "every": "auto",
+     "every": 80,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Luboměř, Heltinov",
-       "at": "auto"
+       "at": [
+        "14:05"
+       ]
       },
       {
        "fr": "Luboměř, Heltinov",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "13:58"
+       ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Jeseník nad Odrou – Odry – Luboměř, Heltinov hourly (Nový Jičín :35, Heltinov :05); three buses, as seen. The Nový Jičín – Odry and Mankovice short trips run on the same road."
+   "note": "Nový Jičín – Jeseník nad Odrou – Odry – Luboměř, Heltinov. The buses sleep at Heltinov (the first trips start there; 62-1006 and 62-1008 end their day there), so the afternoon sends more out of Nový Jičín (14:05, 14:35, 15:25, 16:05, 17:35) than come back (13:58, 15:16, 17:06). Timed both ways at the inbound rate: every 80, Nový Jičín 14:05 and 15:25 on the minute, Heltinov 13:58 (then 15:18 for the real 15:16); two buses. Off the pattern: 14:35, 16:05, 17:35 out (buses going home). The Nový Jičín – Odry and Mankovice short trips run on the same road."
   },
   "616": {
    "core": [
@@ -733,22 +780,30 @@
    "sim": [
     {
      "name": "618",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Fulnek, železniční stanice",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "14:10",
+        "14:45",
+        "15:25"
+       ]
       },
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Fulnek, železniční stanice",
-       "at": "auto"
+       "at": [
+        "14:00",
+        "14:35",
+        "15:12"
+       ]
       }
      ]
     }
    ],
-   "note": "Fulnek – Suchdol nad Odrou – Nový Jičín hourly at irregular minutes (Fulnek :10; Nový Jičín :29, set 6 min off its best fit): two buses."
+   "note": "Fulnek – Suchdol nad Odrou – Nový Jičín: three rounds in the model hours, by 62-1010, 62-3007 and 62-1005 (Fulnek 14:10, 14:45, 15:25; Nový Jičín 14:00, 14:35, 15:12): every 120 with three slots each way, all on the minute; three buses. Off the pattern: Fulnek 12:10, 17:40; Nový Jičín 12:45, 16:32, 18:35."
   },
   "620": {
    "core": [
@@ -759,23 +814,35 @@
    "sim": [
     {
      "name": "620",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Odry, autobusová stanice",
-       "at": "auto"
+       "notvia": [
+        "Odry, Pohoř, dolní konec"
+       ],
+       "at": [
+        "13:40",
+        "15:10"
+       ]
       },
       {
        "fr": "Odry, autobusová stanice",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "notvia": [
+        "Odry, Pohoř, dolní konec"
+       ],
+       "at": [
+        "13:58",
+        "14:33"
+       ]
       }
      ]
     },
     {
      "name": "620 Pohoř",
-     "every": 120,
+     "every": 180,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
@@ -788,13 +855,13 @@
        "fr": "Odry, Pohoř, dolní konec",
        "to": "Nový Jičín, autobusové nádraží",
        "at": [
-        "16:08"
+        "13:20"
        ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Suchdol nad Odrou – Odry hourly at irregular minutes (Nový Jičín :50, Odry :58): two buses. The trips to Odry, Pohoř are 620 Pohoř every 2 h on the real 15:15 / 16:08 round."
+   "note": "Nový Jičín – Suchdol nad Odrou – Odry (Nový Jičín 13:40, 15:10, 16:50; Odry 13:58, 14:33, 15:50, 18:08): every 120 with two slots each way on the minute (Nový Jičín 13:40, 15:10; Odry 13:58, 14:33), two buses; 15:50 is 8 min off. The trips to Odry, Pohoř are 620 Pohoř and are not counted on 620 (Nový Jičín 12:45, 14:00, 15:15, 18:25; Pohoř 13:20, 14:48, 16:08): every 180, Nový Jičín 15:15 and Pohoř 13:20 on the minute, one bus; 14:00 and 14:48 (the round of 62-1021) are off the pattern. Pohoř has no other line."
   },
   "621": {
    "core": [
@@ -805,38 +872,48 @@
    "sim": [
     {
      "name": "621",
-     "every": "auto",
+     "every": 160,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Frýdek-Místek, Frýdek, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "15:17",
+        "15:47"
+       ]
       },
       {
        "fr": "Frýdek-Místek, Frýdek, autobusové nádraží",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "14:06",
+        "14:36"
+       ]
       }
      ]
     },
     {
      "name": "621 Ostrava",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
-       "at": "auto"
+       "at": [
+        "14:42"
+       ]
       },
       {
        "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "15:18"
+       ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Příbor – Frýdek-Místek every 1½ h at irregular minutes (Nový Jičín 14:12, Frýdek 14:06); the trips on to Ostrava, Náměstí Republiky every 2 h are 621 Ostrava (Nový Jičín 14:37 / 16:37, Ostrava 15:15 / 17:15). The Frýdek – Nošovice, Hyundai shift trips run on 358's road."
+   "note": "Nový Jičín – Příbor – Frýdek-Místek (Nový Jičín 12:35, 13:12, 14:12, 15:17, 15:47, 18:27; Frýdek 12:11, 14:06, 14:36, 18:40): every 160 with two slots each way, 30 min apart, on the minute (Nový Jičín 15:17, 15:47, also 18:27; Frýdek 14:06, 14:36); two buses. 14:12 (63-1403, on to 641) is off the pattern. The trips on to Ostrava, Náměstí Republiky are 621 Ostrava, every 120 (Nový Jičín 14:42, Ostrava 15:18; 17:15 and 19:20 within 3 min). The Frýdek – Nošovice, Hyundai shift trips run on 358's road."
   },
   "622": {
    "core": [
@@ -846,22 +923,28 @@
    "sim": [
     {
      "name": "622",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Mořkov, železniční stanice",
-       "at": "auto"
+       "at": [
+        "14:32",
+        "15:20"
+       ]
       },
       {
        "fr": "Mořkov, železniční stanice",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "14:55",
+        "16:07"
+       ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Hodslavice road – Mořkov station every 1½ h (Mořkov 16:10; Nový Jičín slots set 18 min off for one bus)."
+   "note": "Nový Jičín – Hodslavice road – Mořkov station (Nový Jičín 13:05, 14:35, 15:20, 17:40; Mořkov 14:55, 16:10): every 120 with two slots each way, Nový Jičín 14:32 (real 14:35) and 15:20, Mořkov 14:55 and 16:07 (real 16:10); one bus (on the exact minutes it needs two). 622 and 665 swap buses at Mořkov one for one (62-1014 out on 622, back on 665; 62-1108 the other way)."
   },
   "623": {
    "core": [
@@ -897,41 +980,49 @@
    "sim": [
     {
      "name": "625",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Bílovec, restaurace Beseda",
-       "at": "auto"
+       "at": [
+        "16:37"
+       ]
       },
       {
        "fr": "Bílovec, restaurace Beseda",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "17:16"
+       ]
       }
      ]
     },
     {
      "name": "625 Tísek",
-     "every": "auto",
+     "every": 240,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Tísek, obecní úřad",
-       "at": "auto",
        "stops_via": [
         "Tísek, u kostela"
+       ],
+       "at": [
+        "15:32"
        ]
       },
       {
        "fr": "Tísek, obecní úřad",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "14:24"
+       ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Pustějov – Bílovec every 3 h at irregular times (Nový Jičín 16:40, Bílovec 17:16); the trips on to Tísek are 625 Tísek every 3 h (Nový Jičín 15:32, Tísek 13:22), via Tísek, u kostela."
+   "note": "Nový Jičín – Pustějov – Bílovec (Nový Jičín 12:37, 14:37, 16:40; Bílovec, Beseda 12:04, 17:16, 19:04): every 120, Nový Jičín 16:37 (on the minute at 12:37 and 14:37), Bílovec 17:16; two buses, because the 16:40 bus reaches Bílovec after the 17:16 leaves (two buses, 62-1011 and 62-1023). The trips on to Tísek are 625 Tísek, via Tísek, u kostela: every 240, Nový Jičín 15:32, Tísek 14:24 (no trip leaves Tísek for Nový Jičín in the model hours 15:30–17:30, and no slot does); one bus. 62-1023 goes out to Tísek at 15:32 and comes back via Bílovec as 625's 17:16."
   },
   "619": {
    "core": [
@@ -941,25 +1032,29 @@
    "sim": [
     {
      "name": "619",
-     "every": "auto",
+     "every": 180,
      "legs": [
       {
        "fr": "Fulnek, železniční stanice",
        "to": "Jeseník n.Odrou, Blahutovice, restaurace",
-       "at": "auto",
        "stops_via": [
         "Jeseník n.Odrou, Hrabětice, točna"
+       ],
+       "at": [
+        "17:48"
        ]
       },
       {
        "fr": "Jeseník n.Odrou, Blahutovice, restaurace",
        "to": "Fulnek, železniční stanice",
-       "at": "auto"
+       "at": [
+        "15:45"
+       ]
       }
      ]
     }
    ],
-   "note": "Fulnek – Suchdol – Jeseník nad Odrou, Blahutovice every 3 h (Fulnek 13:25, Blahutovice 15:38), via Hrabětice, točna, which has no other afternoon line."
+   "note": "Fulnek – Suchdol – Jeseník nad Odrou, Blahutovice, via Hrabětice, točna, which has no other afternoon line (Fulnek 13:25, 17:48; Blahutovice 15:45, 18:55): every 180, Fulnek 17:48 (Fulnek has no departure in the model hours 15:30–17:30, and the slot falls outside them too) and Blahutovice 15:45; one bus. 13:25 (62-3001, on to 616) and 18:55 (10 min) are off the pattern."
   },
   "927": {
    "core": [
@@ -969,25 +1064,29 @@
    "sim": [
     {
      "name": "927",
-     "every": "auto",
+     "every": 180,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Hranice, autobusová stanice",
-       "at": "auto",
        "stops_via": [
         "Hranice, Tř.1.máje"
+       ],
+       "at": [
+        "16:01"
        ]
       },
       {
        "fr": "Hranice, autobusová stanice",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "17:00"
+       ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Polom – Hranice every 3 h (Nový Jičín 13:01, 16:01; Hranice 13:55, 16:55). Polom and Hranice have no other ODIS line."
+   "note": "Nový Jičín – Polom – Hranice every 3 h (Nový Jičín 13:01, 16:01; Hranice 13:55, 17:00): every 180 (Nový Jičín 16:01, Hranice 17:00), one bus; 13:55 is 5 min off. Polom and Hranice have no other ODIS line."
   },
   "929": {
    "core": [
@@ -1026,22 +1125,26 @@
    "sim": [
     {
      "name": "665",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Mořkov, železniční stanice",
-       "at": "auto"
+       "at": [
+        "16:17"
+       ]
       },
       {
        "fr": "Mořkov, železniční stanice",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "15:52"
+       ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Životice – Mořkov station every 1½ h (Nový Jičín 14:15; Mořkov 12:10, 15:10)."
+   "note": "Nový Jičín – Životice – Mořkov station (Nový Jičín 14:15, 14:50, 16:15; Mořkov 12:10, 13:45, 15:10, 15:55, 18:10): every 120, Nový Jičín 16:17 (real 16:15; also 14:17 for 14:15) and Mořkov 15:52 (real 15:55); one bus (on the exact minutes it needs two). 14:50 and the other Mořkov trips are off the pattern; 665 and 622 swap buses at Mořkov."
   },
   "667": {
    "core": [
@@ -1051,22 +1154,26 @@
    "sim": [
     {
      "name": "667",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Starý Jičín, Heřmanice, točna",
-       "at": "auto"
+       "at": [
+        "15:35"
+       ]
       },
       {
        "fr": "Starý Jičín, Heřmanice, točna",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "16:06"
+       ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Starý Jičín, Heřmanice hourly at irregular minutes (Nový Jičín :40, Heřmanice :29): two buses."
+   "note": "Nový Jičín – Starý Jičín, Heřmanice (Nový Jičín 12:40, 13:55, 15:05, 15:35, 17:40; Heřmanice 13:04, 13:29, 14:39, 15:29, 16:06). The model hours 15:30–17:30 hold one departure each way: every 120 on 62-1014's round (Nový Jičín 15:35, Heřmanice 16:06, with its real 1-min turn), one bus. The earlier trips are off the pattern."
   },
   "677": {
    "core": [
@@ -1077,22 +1184,26 @@
    "sim": [
     {
      "name": "677",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Ostrava, Svinov, nádraží",
-       "at": "auto"
+       "at": [
+        "16:06"
+       ]
       },
       {
        "fr": "Ostrava, Svinov, nádraží",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "15:35"
+       ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Studénka – Klimkovice – Ostrava-Svinov every 1½ h (Nový Jičín 15:06, Svinov 13:35, 16:35): two buses. The Studénka short trips run on the same road."
+   "note": "Nový Jičín – Studénka – Klimkovice – Ostrava-Svinov (Nový Jičín 12:06, 15:06, 16:06; Svinov 13:35, 15:35, 16:35, 17:35): every 120 (Nový Jičín 16:06, also 12:06; Svinov 15:35, also 13:35 and 17:35), two buses. 15:06 and 16:35 (62-3013's round) are off the pattern. The Studénka short trips run on the same road."
   },
   "689": {
    "core": [
@@ -1102,26 +1213,26 @@
    "sim": [
     {
      "name": "689",
-     "every": 60,
+     "every": 120,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Bernartice n.Odrou, točna",
        "at": [
-        45
+        "15:45"
        ]
       },
       {
        "fr": "Bernartice n.Odrou, točna",
        "to": "Nový Jičín, autobusové nádraží",
        "at": [
-        10
+        "16:10"
        ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Bernartice nad Odrou hourly at the afternoon peak (Nový Jičín :45, Bernartice :10, 13:45–16:10), one bus."
+   "note": "Nový Jičín – Bernartice nad Odrou: three hourly rounds 13:45–16:10 (Nový Jičín :45, Bernartice :10), then 19:50. The model hours 15:30–17:30 hold one of them, so every 120 (Nový Jičín 15:45, also 13:45; Bernartice 16:10, also 14:10), one bus; 14:45 and 15:10 are off the pattern."
   },
   "696": {
    "core": [
@@ -1131,22 +1242,32 @@
    "sim": [
     {
      "name": "696",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Frenštát p.Radh., u škol",
-       "at": "auto"
+       "at": [
+        "14:38",
+        "15:10",
+        "15:30",
+        "16:03"
+       ]
       },
       {
        "fr": "Frenštát p.Radh., u škol",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "14:20",
+        "14:45",
+        "15:20",
+        "15:57"
+       ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Veřovice – Frenštát about every 30 (Nový Jičín :00 / :30, Frenštát, u škol :20 / :50): three buses. Trips to Frenštát station pass u škol and count there."
+   "note": "Nový Jičín – Veřovice – Frenštát about every 30–35 min (Nový Jičín 13:20, 13:55, 14:35, 15:10, 15:30, 16:05, 16:30, 17:00, 17:30; Frenštát, u škol 13:10, 13:45, 14:20, 14:30, 14:45, 15:20, 16:00, 16:25). Every 120 with four slots each way: Nový Jičín 14:38, 15:10, 15:30, 16:03 (real 14:35, 16:05), Frenštát 14:20, 14:45, 15:20, 15:57 (real 16:00); three buses (on the exact minutes it needs four, five with 3-min turns). 14:30 from Frenštát (62-3014, from the station) is off the pattern. Trips to Frenštát station pass u škol and count there."
   },
   "697": {
    "core": [
@@ -1156,22 +1277,26 @@
    "sim": [
     {
      "name": "697",
-     "every": "auto",
+     "every": 96,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Kopřivnice, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "15:13"
+       ]
       },
       {
        "fr": "Kopřivnice, autobusové nádraží",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "14:38"
+       ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Mořkov – Kopřivnice every 2 h (Nový Jičín 12:25, 16:25; Kopřivnice 14:21, 16:21). The Hodslavice short trips run on 987's road; the Tymphany trips on 690."
+   "note": "Nový Jičín – Mořkov – Kopřivnice (Nový Jičín 12:28, 15:13, 16:43, 18:25; Kopřivnice 12:01, 14:23, 14:38, 16:21, 18:35): every 96 (Nový Jičín 15:13, Kopřivnice 14:38), two buses; 16:43 and 16:21 are 6–7 min off and 14:23 (62-1103 from Tymphany) is off the pattern. The Hodslavice short trips run on 987's road; the Tymphany trips on 690."
   },
   "908": {
    "core": [
@@ -1206,22 +1331,28 @@
    "sim": [
     {
      "name": "987",
-     "every": "auto",
+     "every": 180,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Valašské Meziříčí, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "13:55",
+        "15:20"
+       ]
       },
       {
        "fr": "Valašské Meziříčí, autobusová stanice",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "13:30",
+        "15:05"
+       ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Hodslavice – Valašské Meziříčí hourly at irregular minutes (Nový Jičín :55, Valašské Meziříčí :30): two buses."
+   "note": "Nový Jičín – Hodslavice – Valašské Meziříčí (Nový Jičín 12:20, 13:55, 15:20, 16:45; Valašské Meziříčí 13:30, 14:35, 15:05, 16:10, 17:55): every 180 with two slots each way on the minute (Nový Jičín 13:55, 15:20, also 12:20; Valašské Meziříčí 13:30, 15:05), two buses. 987 and 988 swap buses at Valašské Meziříčí: 14:35 is 62-1013 coming back from a 988 trip out, off the pattern."
   },
   "988": {
    "core": [
@@ -1231,28 +1362,32 @@
    "sim": [
     {
      "name": "988",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Valašské Meziříčí, autobusová stanice",
-       "at": "auto",
        "lines": [
         "988"
+       ],
+       "at": [
+        "16:40"
        ]
       },
       {
        "fr": "Valašské Meziříčí, autobusová stanice",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto",
        "lines": [
         "988"
+       ],
+       "at": [
+        "16:15"
        ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Starý Jičín – Lešná – Valašské Meziříčí hourly at irregular minutes (Nový Jičín :40, Valašské Meziříčí :30): two buses."
+   "note": "Nový Jičín – Starý Jičín – Lešná – Valašské Meziříčí (Nový Jičín 12:15, 13:00, 14:15, 15:25, 16:40, 18:40; Valašské Meziříčí 12:05, 13:20, 14:30, 16:15, 17:30, 19:30). The model hours 15:30–17:30 hold one departure each way: every 120 (Nový Jičín 16:40, also 18:40; Valašské Meziříčí 16:15), two buses. The other trips are off the pattern; their buses swap with 987 at Valašské Meziříčí."
   },
   "379": {
    "core": [
@@ -1262,22 +1397,26 @@
    "sim": [
     {
      "name": "379",
-     "every": "auto",
+     "every": 180,
      "legs": [
       {
        "fr": "Petřvald, náměstí",
        "to": "Ostrava, Zábřeh, Kotva",
-       "at": "auto"
+       "at": [
+        "15:38"
+       ]
       },
       {
        "fr": "Ostrava, Zábřeh, Kotva",
        "to": "Petřvald, náměstí",
-       "at": "auto"
+       "at": [
+        "14:57"
+       ]
       }
      ]
     }
    ],
-   "note": "Petřvald – Krmelín – Ostrava, Zábřeh every 3 h (Petřvald 15:38, Zábřeh 13:42). Petřvaldík and Proskovice have no other line."
+   "note": "Petřvald – Krmelín – Ostrava, Zábřeh (Petřvald 12:58, 14:18, 15:38; Zábřeh to Petřvald, náměstí 13:42, 14:57). After 15:38 the line runs only short trips (Petřvaldík, Košatka, Petřvald kino), so no trip leaves Zábřeh for Petřvald, náměstí in the model hours 15:30–17:30. Every 180 on 63-1321's real turn: Zábřeh 14:57, Petřvald 15:38; one bus. Off the pattern: 12:58, 14:18 and 13:42. Petřvaldík and Proskovice have no other line."
   },
   "632": {
    "core": [
@@ -1358,22 +1497,28 @@
    "sim": [
     {
      "name": "670",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Ostrava, Dubina",
-       "at": "auto"
+       "at": [
+        "15:55",
+        "17:05"
+       ]
       },
       {
        "fr": "Ostrava, Dubina",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "16:20",
+        "17:20"
+       ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Sedlnice – Mošnov – Ostrava, Dubina hourly (Nový Jičín :05, Dubina :50): three buses. Trips on to Ostrava, Náměstí Republiky and Hrabůvka pass Dubina and count there."
+   "note": "Nový Jičín – Sedlnice – Mošnov – Ostrava, Dubina (Nový Jičín 13:01, 15:05, 15:55, 17:08, 17:38; Dubina 13:50, 14:50, 16:20, 17:20, 18:45): every 120 with two slots each way (Nový Jičín 15:55 and 17:05, so also 15:05 on the minute; Dubina 16:20, 17:20), three buses; 63-1324 runs 15:05, 16:20 and 17:08 on the pattern. 17:38 (63-1206, on to 621) is off it. Trips on to Ostrava, Náměstí Republiky and Hrabůvka pass Dubina and count there."
   },
   "370": {
    "core": [
@@ -1383,22 +1528,26 @@
    "sim": [
     {
      "name": "370",
-     "every": "auto",
+     "every": 90,
      "legs": [
       {
        "fr": "Ostrava, Dubina",
        "to": "Řepiště, u kříže",
-       "at": "auto"
+       "at": [
+        "16:19"
+       ]
       },
       {
        "fr": "Řepiště, u kříže",
        "to": "Ostrava, Dubina",
-       "at": "auto"
+       "at": [
+        "16:02"
+       ]
       }
      ]
     }
    ],
-   "note": "Ostrava, Dubina – Paskov – Řepiště hourly (Dubina :49 / :19, Řepiště :02): one bus, both ends set 6 min off their best fits so one bus works the line."
+   "note": "Ostrava, Dubina – Paskov – Řepiště about hourly, each round by another bus (Dubina 12:49, 13:49, 15:19, 16:19, 17:49; Řepiště 13:02, 14:02, 14:52, 16:02, 17:02). The model hours 15:30–17:30 hold Dubina 16:19 and Řepiště 16:02, 17:02, which no hourly pattern hits: every 90 (Dubina 16:19, so also 17:49; Řepiště 16:02, so also 13:02), two buses."
   },
   "371": {
    "core": [
@@ -1409,24 +1558,28 @@
    "sim": [
     {
      "name": "371",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Ostrava, Dubina",
        "to": "Kozlovice, střed",
-       "at": "auto",
-       "core_to": "Hukvaldy, hotel"
+       "core_to": "Hukvaldy, hotel",
+       "at": [
+        "16:58"
+       ]
       },
       {
        "fr": "Kozlovice, střed",
        "to": "Ostrava, Dubina",
-       "at": "auto",
-       "knot": "Hukvaldy, hotel"
+       "knot": "Hukvaldy, hotel",
+       "knot_at": [
+        "16:23"
+       ]
       }
      ]
     }
    ],
-   "note": "Ostrava, Dubina – Brušperk – Hukvaldy – Kozlovice hourly at irregular minutes (Dubina :55; Kozlovice :09, set 6 min off), read at Hukvaldy, hotel, where the short trips turn: two buses."
+   "note": "Ostrava, Dubina – Brušperk – Hukvaldy – Kozlovice, read at Hukvaldy, hotel, where the short trips turn (Dubina 13:45, 14:20, 15:50, 16:55, 17:55; Kozlovice 14:15, 15:15, 16:15, 17:45): every 120, Dubina 16:58 (real 16:55) and Kozlovice 16:12 (real 16:15; at Hukvaldy 16:23); one bus (on the exact minutes it needs two). 15:50 (63-1402, to Horní Sklenov) and the trips between are off the pattern."
   },
   "373": {
    "core": [
@@ -1436,22 +1589,28 @@
    "sim": [
     {
      "name": "373",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Ostrava, Dubina",
        "to": "Kopřivnice, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "14:20",
+        "15:20"
+       ]
       },
       {
        "fr": "Kopřivnice, autobusové nádraží",
        "to": "Ostrava, Dubina",
-       "at": "auto"
+       "at": [
+        "14:38",
+        "15:43"
+       ]
       }
      ]
     }
    ],
-   "note": "Ostrava, Dubina – Petřvald – Příbor – Kopřivnice hourly 14:20–18:20 (Dubina :20, Kopřivnice :38 / :44): three buses."
+   "note": "Ostrava, Dubina – Petřvald – Příbor – Kopřivnice: Dubina hourly at :20 (12:20–18:20), Kopřivnice alternating :38 and :43 (14:38, 15:43, 16:38, 17:44, 18:44): every 120 with two slots each way (Dubina 14:20, 15:20; Kopřivnice 14:38, 15:43), three buses; 18:44 is 6 min off."
   },
   "374": {
    "core": [
@@ -1461,22 +1620,28 @@
    "sim": [
     {
      "name": "374",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Ostrava, Svinov, mosty",
        "to": "Trnávka, požární zbrojnice",
-       "at": "auto"
+       "at": [
+        "14:21",
+        "15:25"
+       ]
       },
       {
        "fr": "Trnávka, požární zbrojnice",
        "to": "Ostrava, Svinov, mosty",
-       "at": "auto"
+       "at": [
+        "14:35",
+        "15:32"
+       ]
       }
      ]
     }
    ],
-   "note": "Ostrava-Svinov – Stará Ves – Brušperk – Trnávka hourly in the afternoon (Svinov :25, Trnávka :35): two buses."
+   "note": "Ostrava-Svinov – Stará Ves – Brušperk – Trnávka hourly in the afternoon, by two buses taking turns, 63-1346 and 63-1338 (Svinov 13:50, 14:20, 15:25, 16:25, 17:30, 18:30; Trnávka 14:35, 15:35, 16:35, 17:35): every 120 with two slots each way, Svinov 14:21 (real 14:20) and 15:25, Trnávka 14:35 and 15:32 (real 15:35); two buses (on the exact minutes it needs three). 13:50 (63-1351, on to 634) is off the pattern."
   },
   "376": {
    "core": [
@@ -1486,22 +1651,28 @@
    "sim": [
     {
      "name": "376",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Ostrava, Dubina",
        "to": "Hukvaldy, Rychaltice, pod mostem",
-       "at": "auto"
+       "at": [
+        "16:10",
+        "17:05"
+       ]
       },
       {
        "fr": "Hukvaldy, Rychaltice, pod mostem",
        "to": "Ostrava, Dubina",
-       "at": "auto"
+       "at": [
+        "16:03",
+        "17:03"
+       ]
       }
      ]
     }
    ],
-   "note": "Ostrava, Dubina – Stará Ves – Hukvaldy, Rychaltice hourly at the peak (Dubina :05, Rychaltice :03): two buses."
+   "note": "Ostrava, Dubina – Stará Ves – Hukvaldy, Rychaltice at the peak (Dubina 12:40, 13:05, 16:10, 17:05; Rychaltice hourly at :03, 15:03–17:03): every 120 with two slots each way on the minute (Dubina 16:10, 17:05; Rychaltice 16:03, 17:03), two buses."
   },
   "634": {
    "core": [
@@ -1511,28 +1682,32 @@
    "sim": [
     {
      "name": "634",
-     "every": "auto",
+     "every": 90,
      "legs": [
       {
        "fr": "Kopřivnice, autobusové nádraží",
        "to": "Frenštát p.Radh., u škol",
-       "at": "auto",
        "lines": [
         "634"
+       ],
+       "at": [
+        "15:38"
        ]
       },
       {
        "fr": "Frenštát p.Radh., u škol",
        "to": "Kopřivnice, autobusové nádraží",
-       "at": "auto",
        "lines": [
         "634"
+       ],
+       "at": [
+        "14:28"
        ]
       }
      ]
     }
    ],
-   "note": "Kopřivnice – Lichnov – Frenštát hourly at irregular minutes (Kopřivnice :38, Frenštát :28): two buses."
+   "note": "Kopřivnice – Lichnov – Frenštát at irregular minutes (Kopřivnice 12:38, 13:08, 14:28, 15:38, 16:38, 18:15; Frenštát, u škol 12:35, 13:20, 14:28, 14:58, 15:58, 17:28): every 90 (Kopřivnice 15:38, also 12:38; Frenštát 14:28 and 15:58, also 17:28), two buses. 14:28 from Kopřivnice (63-1303, on to 657) and 14:58 from Frenštát (63-1304, on to 638) are off the pattern; every 180 with two slots each way keeps them but needs three buses."
   },
   "635": {
    "core": [
@@ -1542,28 +1717,34 @@
    "sim": [
     {
      "name": "635",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Kopřivnice, autobusové nádraží",
        "to": "Frenštát p.Radh., u škol",
-       "at": "auto",
        "lines": [
         "635"
+       ],
+       "at": [
+        "14:18",
+        "15:28"
        ]
       },
       {
        "fr": "Frenštát p.Radh., u škol",
        "to": "Kopřivnice, autobusové nádraží",
-       "at": "auto",
        "lines": [
         "635"
+       ],
+       "at": [
+        "14:25",
+        "15:55"
        ]
       }
      ]
     }
    ],
-   "note": "Kopřivnice – Frenštát (direct) hourly at irregular minutes (Kopřivnice :18, Frenštát :25): two buses."
+   "note": "Kopřivnice – Frenštát (direct): Kopřivnice 13:51, 14:18, 15:28; Frenštát 13:20, 14:05, 14:15, 14:25, 15:55. The Continental shift change sends four buses from Frenštát in 14:05–15:55 against two from Kopřivnice; the extra ones go on at Kopřivnice as 634, 646 and 653. Timed both ways at the Kopřivnice rate: every 120 with two slots each way (Kopřivnice 14:18, 15:28; Frenštát 14:25 and 15:55, the latter on 63-1003's round), two buses. 14:05 and 14:15 from Frenštát are off the pattern (two slots for four real departures, by hand)."
   },
   "638": {
    "core": [
@@ -1573,22 +1754,26 @@
    "sim": [
     {
      "name": "638",
-     "every": "auto",
+     "every": 180,
      "legs": [
       {
        "fr": "Kopřivnice, autobusové nádraží",
        "to": "Hukvaldy, Dolní Sklenov, rozcestí",
-       "at": "auto"
+       "at": [
+        "15:14"
+       ]
       },
       {
        "fr": "Hukvaldy, Dolní Sklenov, rozcestí",
        "to": "Kopřivnice, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "15:51"
+       ]
       }
      ]
     }
    ],
-   "note": "Kopřivnice – Příbor, Hájov – Hukvaldy, Dolní Sklenov every 1½ h (Kopřivnice 13:37, 15:07, set 7 min off; Sklenov 12:36, 14:06): one bus."
+   "note": "Kopřivnice – Příbor, Hájov – Hukvaldy, Dolní Sklenov (Kopřivnice 13:27, 14:27, 15:14, 17:39; Sklenov 12:36, 14:16, 15:51, 18:36). Every 180 on 63-1010's round: Kopřivnice 15:14 (on to Rychaltice; Kopřivnice has no departure in the model hours 15:30–17:30, and the slot falls outside them too), Sklenov 15:51; one bus. 13:27, 14:27, 17:39, 14:16 and 18:36 are off the pattern."
   },
   "641": {
    "core": [
@@ -1598,22 +1783,26 @@
    "sim": [
     {
      "name": "641",
-     "every": "auto",
+     "every": 60,
      "legs": [
       {
        "fr": "Kopřivnice, autobusové nádraží",
        "to": "Ostrava, Dubina",
-       "at": "auto"
+       "at": [
+        25
+       ]
       },
       {
        "fr": "Ostrava, Dubina",
        "to": "Kopřivnice, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        0
+       ]
       }
      ]
     }
    ],
-   "note": "Kopřivnice – Příbor – Mošnov – Ostrava, Dubina hourly (Kopřivnice :25, Dubina :00): three buses. The Tatra shift trips to Ostrava-Hrabůvka run on the same road."
+   "note": "Kopřivnice – Příbor – Mošnov – Ostrava, Dubina: Kopřivnice hourly at :25 (12:25–18:25), Dubina at irregular minutes: every 60, Kopřivnice :25, Dubina :00 (15:00, 16:00 on the minute), three buses. Around the Tatra shift change more buses come back from Dubina (14:28, 15:00, 15:28, 16:00) than leave Kopřivnice (14:25, 14:55, 15:25); they end at the Kopřivnice garage or go on to 638 and 699, so the line is timed at the Kopřivnice rate and 14:28, 15:28 are off the pattern (two slots for four real departures, by hand), as is 14:55 (63-1330, a Tatra shift trip, on to 376). The Tatra shift trips to Ostrava-Hrabůvka run on the same road."
   },
   "644": {
    "core": [
@@ -1623,22 +1812,26 @@
    "sim": [
     {
      "name": "644",
-     "every": "auto",
+     "every": 180,
      "legs": [
       {
        "fr": "Kopřivnice, autobusové nádraží",
        "to": "Štramberk, Libotín, koupaliště",
-       "at": "auto"
+       "at": [
+        "15:45"
+       ]
       },
       {
        "fr": "Štramberk, Libotín, koupaliště",
        "to": "Kopřivnice, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "16:12"
+       ]
       }
      ]
     }
    ],
-   "note": "Kopřivnice – Štramberk, Libotín every 2 h at irregular minutes (Kopřivnice 14:40, Libotín 13:12)."
+   "note": "Kopřivnice – Štramberk, Libotín, each round by another bus (Kopřivnice 12:00, 15:45, 17:10, 18:40; Libotín 13:12, 16:12, 17:52, 19:12): every 180 (Kopřivnice 15:45, Libotín 16:12, so also 13:12 and 19:12), one bus. 17:10 and 17:52 (63-1009's round) are off the pattern."
   },
   "646": {
    "core": [
@@ -1648,28 +1841,34 @@
    "sim": [
     {
      "name": "646",
-     "every": "auto",
+     "every": 90,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Kopřivnice, autobusové nádraží",
-       "at": "auto",
        "lines": [
         "646"
+       ],
+       "at": [
+        "14:00",
+        "14:30"
        ]
       },
       {
        "fr": "Kopřivnice, autobusové nádraží",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto",
        "lines": [
         "646"
+       ],
+       "at": [
+        "14:10",
+        "14:40"
        ]
       }
      ]
     }
    ],
-   "note": "Kopřivnice – Štramberk – Rybí – Nový Jičín hourly (Nový Jičín :30, Kopřivnice :10): two buses."
+   "note": "Kopřivnice – Štramberk – Rybí – Nový Jičín around the Tatra shift change (Nový Jičín 13:30, 14:00, 14:30, 15:10, 15:30, 16:40; Kopřivnice 13:10, 14:10, 14:40): every 90 with two slots each way on the minute (Nový Jičín 14:00, 14:30, so also 15:30; Kopřivnice 14:10, 14:40), three buses. 15:10 (63-1341) is off the pattern. The line swaps buses with 698 and 699 at both ends."
   },
   "653": {
    "core": [
@@ -1680,15 +1879,17 @@
    "sim": [
     {
      "name": "653",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Kopřivnice, autobusové nádraží",
        "to": "Frenštát p.Radh., železniční stanice",
-       "at": "auto",
        "core_to": "Frenštát p.Radh., u škol",
        "stops_via": [
         "Frenštát p.Radh., Continental"
+       ],
+       "at": [
+        "15:15"
        ]
       },
       {
@@ -1700,7 +1901,9 @@
       {
        "fr": "Frenštát p.Radh., u škol",
        "to": "Kopřivnice, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "15:55"
+       ]
       }
      ]
     },
@@ -1716,7 +1919,7 @@
      ]
     }
    ],
-   "note": "Kopřivnice – Tichá – Frenštát hourly (Kopřivnice :10, Frenštát, u škol :55); the bus runs on to Frenštát station past Continental (the factory, no other afternoon line) and back to u škol empty. 653 Kopřivnice is the Kopřivnice town loop (station – Kolonie – Družební – station) every 30 that runs inside this licence."
+   "note": "Kopřivnice – Tichá – Frenštát (Kopřivnice 12:00, 13:10, 14:10, 15:15, 17:15; Frenštát, u škol 12:00, 13:00, 14:25, 15:55, 16:55): every 120 (Kopřivnice 15:15 and 17:15 on the minute, 63-1309's two runs; Frenštát, u škol 15:55), two buses; the bus runs on to Frenštát station past Continental (the factory, no other afternoon line) and back to u škol empty. 16:55 (63-1351) and the hourly trips before 15:00 are off the pattern. 653 Kopřivnice is the Kopřivnice town loop (station – Kolonie – Družební – station) every 30 that runs inside this licence."
   },
   "655": {
    "core": [
@@ -1726,22 +1929,30 @@
    "sim": [
     {
      "name": "655",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Frenštát p.Radh., u škol",
        "to": "Trojanovice, restaurace Ráztoka",
-       "at": "auto"
+       "at": [
+        "16:05",
+        "16:55",
+        "17:18"
+       ]
       },
       {
        "fr": "Trojanovice, restaurace Ráztoka",
        "to": "Frenštát p.Radh., u škol",
-       "at": "auto"
+       "at": [
+        "15:40",
+        "16:20",
+        "17:10"
+       ]
       }
      ]
     }
    ],
-   "note": "Frenštát, u škol – Trojanovice, Ráztoka about every 30–40 min (u škol :18 / :48, Ráztoka :05 / :35): one bus shuttles. Modelled here: 41 of its 45 trips are on the Novojičínsko licence (883655)."
+   "note": "Frenštát, u škol – Trojanovice, Ráztoka, a 12-min shuttle about every 35–40 min, each round by another bus (u škol 13:08, 13:48, 14:18, 14:50, 15:25, 16:05, 16:58, 17:18; Ráztoka 13:25, 14:00, 14:35, 15:05, 15:40, 16:20, 17:10, 17:30). Every 120 with three slots each way: u škol 16:05, 16:55 (real 16:58), 17:18; Ráztoka 15:40, 16:20, 17:10; two buses (on the exact minutes it needs three). Modelled here: 41 of its 45 trips are on the Novojičínsko licence (883655)."
   },
   "656": {
    "core": [
@@ -1751,25 +1962,33 @@
    "sim": [
     {
      "name": "656",
-     "every": "auto",
+     "every": 180,
      "legs": [
       {
        "fr": "Frenštát p.Radh., u škol",
        "to": "Trojanovice, Bystré, Maralův kopec",
-       "at": "auto"
+       "at": [
+        "13:15",
+        "13:55",
+        "14:49"
+       ]
       },
       {
        "fr": "Trojanovice, Bystré, Maralův kopec",
        "to": "Frenštát p.Radh., u škol",
-       "at": "auto",
        "stops_via": [
         "Trojanovice, pod Dílem"
+       ],
+       "at": [
+        "13:33",
+        "14:11",
+        "15:05"
        ]
       }
      ]
     }
    ],
-   "note": "Frenštát – Trojanovice, Bystré hourly (Frenštát :50, Bystré :05, 14:50–17:05), one bus; the bus comes back via pod Dílem, as five of the twelve return trips do."
+   "note": "Frenštát – Trojanovice, Bystré: 63-1204 runs two rounds 13:15–14:23, then the line is hourly (u škol 13:15, 13:55, 14:50, 15:50, 16:50, 18:15; Bystré 13:35, 14:10, 15:05, 16:05, 17:05, 18:35). The model hours are 13:10–15:10: every 180 with three slots each way (u škol 13:15, 13:55, 14:49; Bystré 13:33, 14:11, 15:05, within 2 min of the real ones so one bus works them), one bus. The hourly trips after 15:10 fall 5–30 min off. The bus comes back via pod Dílem, as five of the twelve return trips do."
   },
   "657": {
    "core": [
@@ -1795,21 +2014,22 @@
     },
     {
      "name": "657 Kunčice",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Frenštát p.Radh., u škol",
        "to": "Kunčice p.Ondřejníkem, železniční stanice",
-       "at": "auto",
        "lines": [
         "657",
         "651"
+       ],
+       "at": [
+        "14:00"
        ]
       },
       {
        "fr": "Kunčice p.Ondřejníkem, železniční stanice",
        "to": "Frenštát p.Radh., u škol",
-       "at": "auto",
        "lines": [
         "657",
         "651"
@@ -1817,12 +2037,15 @@
        "stops_via": [
         "Frenštát p.Radh., Žuchov",
         "Kunčice p.Ondřejníkem, Rákovec"
+       ],
+       "at": [
+        "13:06"
        ]
       }
      ]
     }
    ],
-   "note": "Frenštát – Tichá – Frýdlant nad Ostravicí every 1½ h (Frenštát 13:32, Frýdlant 14:13, 15:43). 657 Kunčice takes 657's and 651's trips to Kunčice pod Ondřejníkem station every 3 h, via Žuchov and Rákovec."
+   "note": "Frenštát – Tichá – Frýdlant nad Ostravicí every 1½ h (Frenštát 13:32, Frýdlant 14:13, 15:43). 657 Kunčice takes 657's and 651's trips to Kunčice pod Ondřejníkem station, via Žuchov and Rákovec: every 120 (Frenštát 14:00, Kunčice 13:06), one bus."
   },
   "661": {
    "core": [
@@ -1936,24 +2159,28 @@
    "sim": [
     {
      "name": "690",
-     "every": "auto",
+     "every": 96,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Kopřivnice, Tymphany",
-       "at": "auto",
-       "core_to": "Kopřivnice, autobusové nádraží"
+       "core_to": "Kopřivnice, autobusové nádraží",
+       "at": [
+        "15:54"
+       ]
       },
       {
        "fr": "Kopřivnice, Tymphany",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto",
-       "knot": "Kopřivnice, autobusové nádraží"
+       "knot": "Kopřivnice, autobusové nádraží",
+       "knot_at": [
+        "16:50"
+       ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Rybí – Štramberk – Kopřivnice – Tymphany hourly (Nový Jičín :40, Tymphany :30), read at Kopřivnice bus station, where half the trips turn; the bus runs on to Tymphany (the industrial zone, served by no other line). Two buses."
+   "note": "Nový Jičín – Rybí – Štramberk – Kopřivnice – Tymphany (Nový Jičín 13:45, 15:55, 17:40, 18:40, 19:40; from Tymphany or Kopřivnice 14:15, 14:30, 15:40, 16:40, 17:30, 18:35), read at Kopřivnice bus station, where half the trips turn; the bus runs on to Tymphany (the industrial zone, served by no other line). Every 96: Nový Jičín 15:54 (real 15:55), Tymphany 16:40 (Kopřivnice 16:50); one bus. 15:40 from Tymphany and the other afternoon trips are off the pattern."
   },
   "698": {
    "core": [
@@ -1963,28 +2190,32 @@
    "sim": [
     {
      "name": "698",
-     "every": 60,
+     "every": 120,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Kopřivnice, autobusové nádraží",
        "at": [
-        10,
-        30
+        "13:10",
+        "13:30",
+        "14:20",
+        "14:45"
        ]
       },
       {
        "fr": "Kopřivnice, autobusové nádraží",
        "to": "Nový Jičín, autobusové nádraží",
        "at": [
-        15,
-        35
+        "13:15",
+        "13:35",
+        "14:15",
+        "14:35"
        ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Rybí – Kopřivnice: busiest 13:10–15:30 around the Tatra shift change, two trips an hour each way (Nový Jičín :10 and :30, Kopřivnice :15 and :35); four buses, as four were seen."
+   "note": "Nový Jičín – Rybí – Kopřivnice: busiest 13:10–15:10 around the Tatra shift change (Nový Jičín 13:10, 13:30, 14:20, 14:45; Kopřivnice 13:15, 13:35, 13:55, 14:15, 14:35): every 120 with four slots each way, all on the minute (Nový Jičín 13:10, 13:30, 14:20, 14:45; Kopřivnice 13:15, 13:35, 14:15, 14:35); four buses, as four were seen. 13:55 (63-1315) is off the pattern."
   },
   "699": {
    "core": [
@@ -1994,28 +2225,32 @@
    "sim": [
     {
      "name": "699",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Nový Jičín, autobusové nádraží",
        "to": "Kopřivnice, autobusové nádraží",
-       "at": "auto",
        "lines": [
         "699"
+       ],
+       "at": [
+        "16:25"
        ]
       },
       {
        "fr": "Kopřivnice, autobusové nádraží",
        "to": "Nový Jičín, autobusové nádraží",
-       "at": "auto",
        "lines": [
         "699"
+       ],
+       "at": [
+        "16:55"
        ]
       }
      ]
     }
    ],
-   "note": "Nový Jičín – Příbor – Kopřivnice hourly (Nový Jičín :25, Kopřivnice :25): two buses."
+   "note": "Nový Jičín – Příbor – Kopřivnice (Nový Jičín 12:55, 14:25, 15:10, 15:45, 16:25, 18:25; Kopřivnice 12:55, 13:25, 14:25, 15:25, 16:55, 19:25): every 120 (Nový Jičín 16:25, also 14:25 and 18:25; Kopřivnice 16:55, also 12:55), two buses. 15:45 (63-1307) and the :25 trips from Kopřivnice are off the pattern."
   },
   "601": {
    "core": [
@@ -2091,7 +2326,7 @@
      ]
     }
    ],
-   "note": "601–604: ARRIVA's three town buses run the four town lines in turn — 602 at :10, 601 at :50, 604 at :10, 603 to Tesco at :10 (back :46) — so three buses leave the bus station at :10 every hour (seen on the live map on 20 Oct). One Simutrans line every 60 with three buses; the turns at the bus station are 1 min, as in the real timetable."
+   "note": "601–604: ARRIVA's three town buses run the four town lines in turn — 602 at :10, 601 at :50, 604 at :10, 603 to Tesco at :10 (back :46) — so three buses leave the bus station at :10 every hour (seen on the live map on 20 Oct). One Simutrans line every 60 with three buses; the turns at the bus station are 1 min, as in the real timetable. 602 and 603 end their hourly :10 runs at 16:10, so the 17:10 slots of the circuit for them have no real trip (the model hours run to 17:30); the circuit keeps them (owner check)."
   },
   "611": {
    "core": [
@@ -2178,8 +2413,23 @@
   ],
   [
    "698",
-   "every 60 with two slots each way (Nový Jičín :10 and :30, Kopřivnice :15 and :35), the busiest hours 13:10–15:30 around the Tatra shift change; four buses, as four were seen.",
-   "one slot each way (every 60), two buses."
+   "every 120 with four slots each way, all on the minute (Nový Jičín 13:10, 13:30, 14:20, 14:45; Kopřivnice 13:15, 13:35, 14:15, 14:35), the busiest hours 13:10–15:10 around the Tatra shift change; four buses, as four were seen (method check 25 Oct 2026).",
+   "one slot each way every 60, two buses; most shift-change departures then fall off the pattern."
+  ],
+  [
+   "618",
+   "every 120 with three slots each way, all on the minute (Fulnek 14:10, 14:45, 15:25; Nový Jičín 14:00, 14:35, 15:12): the three rounds of 62-1010, 62-3007 and 62-1005; three buses (method check 25 Oct 2026).",
+   "every 72 with one slot each way (Fulnek 14:10, 15:22; Nový Jičín 14:00, 15:12), two buses; 14:45 and 14:35 fall off the pattern."
+  ],
+  [
+   "620 Pohoř",
+   "every 180 with one slot each way, on the minute (Nový Jičín 15:15, Pohoř 13:20), one bus as published (method check 25 Oct 2026); 14:00 and 14:48 are off the pattern.",
+   "every 120 with two slots each way, all on the minute (Nový Jičín 14:00, 15:15; Pohoř 13:20, 14:48), three buses."
+  ],
+  [
+   "370",
+   "every 90 with one slot each way (Dubina 16:19, Řepiště 16:02), two buses (method check 25 Oct 2026).",
+   "every 240 (Dubina 16:19, Řepiště 17:02), one bus; Řepiště then gets a bus every 4 h."
   ],
   [
    "653",
@@ -2500,5 +2750,7 @@
   "691": "bilovecko",
   "696": "nj-zapad",
   "374": "nj-vychod"
- }
+ },
+ "keep_roster": "data/published/roster_v5.json",
+ "keep_roster_why": "The owner may have the sheet in the game (published v5). A rebuild keeps each published bus on its Simutrans line wherever it is still evidence for that line (shared 04_roster step 6), so the 25 Oct method check moves the fewest buses."
 }

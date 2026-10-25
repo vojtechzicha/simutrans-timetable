@@ -142,8 +142,9 @@ def srow_fit(L, p):
                f"<small>real {hm(w_[0])}–{hm(w_[1])}: {', '.join(hm(x) for x in realw) or 'none'}</small>")
     elif p.get('override'):
         ow_ = p['override'].get('window') or [T0_(L), T0_(L) + 90]
-        fit = (f"set by the owner: every {p['every']}, spaced from the other branch on the shared section; real departures "
-               f"{'exact' if not p['override']['dev'] else 'up to ' + str(p['override']['dev']) + ' min off a slot'} in {hm(ow_[0])}–{hm(ow_[1])}"
+        fit = ((f"{E(p['override']['label'])}: every {p['every']}; real departures " if p['override'].get('label') else   # a row set by hand for another reason than spacing (21, 25 Oct 2026)
+                f"set by the owner: every {p['every']}, spaced from the other branch on the shared section; real departures ")
+               + f"{'exact' if not p['override']['dev'] else 'up to ' + str(p['override']['dev']) + ' min off a slot'} in {hm(ow_[0])}–{hm(ow_[1])}"
                f"<small>real {hm(ow_[0])}–{hm(ow_[1])}: {', '.join(hm(x) for x in deps if ow_[0] <= x <= ow_[1]) or 'none'}"
                + (f"; more than 3 min off: {', '.join(hm(x) for x in p['override']['extra'])}" if p['override'].get('extra') else '') + "</small>")
     elif p.get('manual'):
@@ -158,7 +159,10 @@ def srow_fit(L, p):
                + (f", read over the whole day as it repeats" + (f"; {', '.join(hm(x) for x in ex_['displaced'])} is a few minutes off its slot" if ex_.get('displaced') else '')
                   if ex_.get('whole_day') else '')
                + (f"<small>outside the run: {', '.join(hm(x) for x in out)}</small>" if out else ''))
-    slots = len(p['real']) * (W_[1] - W_[0]) // p['every']; chk = 'approx' in p and slots > len(band)
+    # every approximate row is listed for the owner (fork-schedule rule: "anything approximate is ... listed for the owner to
+    # check with the slower alternative"; method check of 25 Oct 2026), not only those with more slots than real departures
+    # (DPO lines only: the Hranečník ODIS cards keep their own, hand-checked list)
+    slots = len(p['real']) * (W_[1] - W_[0]) // p['every']; chk = 'approx' in p and (slots > len(band) or L not in ODO)
     if p.get('_miss'):
         chk = True; CCHECKS.append((L, p))
         fit += (f"<div class='chkn'><b>Check:</b> {p['_miss'][1] - p['_miss'][0]} slot{'s' if p['_miss'][1] - p['_miss'][0] > 1 else ''} more than 3 min off a real departure (real times above). "
@@ -166,12 +170,22 @@ def srow_fit(L, p):
                    "A merged row would serve one path only.</div>" if p.get('paths') else f"As separate branch lines: {p['sep']} buses.</div>"))
     if chk and 'approx' in p:
         al = p.get('alt'); fmt = lambda x: f"every {x['every']}, Offset {x['set'][0]}" + (f", Also at {', '.join(map(str, x['set'][1:]))}" if len(x['set']) > 1 else '')
-        alt = (f" Slower option: {fmt(al)} (real {', '.join(f':{(v + 1) % al['every']:02d}' for v in al['set'])}), up to {al['approx']} min off."
+        ca = next((x for x in C.get('check_alt', {}).get(L, []) if x['fr'] == p['fr'] and x['to'] == p['to']), None)
+        if ca:   # a slower option found by hand (method check, 25 Oct 2026: 38 every 40), shown in place of the computed one
+            sl_ = [t for t in range(W_[0], W_[1]) if t % ca['every'] in ca['real']]   # worst slot: its distance to the nearest real departure
+            al = dict(every=ca['every'], real=ca['real'], set=loop_shift(ca['every'], ca['real'], C['all_termini_are_loops']),
+                      approx=max([min(abs(t - d) for d in band) for t in sl_] or [0]) if band else 0, why=ca.get('note', ''), buses=ca.get('buses'))
+        rl_ = lambda x, v: f":{(v + 1) % x['every']:02d}" if 60 % x['every'] == 0 else rtxt(x, v, C['all_termini_are_loops'])   # real minute of a typed value (+61 from 01:00)
+        alt = (f" Slower option: {fmt(al)} (real {', '.join(rl_(al, v) for v in al['set'])}), up to {al['approx']} min off"
+               + (f": {al['why']}" if al.get('why') else '') + "."
                if al and al['every'] > p['every'] else '')
         fit += (f"<div class='chkn'><b>Check:</b> {slots} slots in {hm(W_[0])}–{hm(W_[1])} against {len(band)} real departures, so "
                 f"{slots - len(band)} slot{'s' if slots - len(band) > 1 else ''} would run empty or spread the buses thinner.{E(alt)} "
+                f"Switch both ends of the line together.</div>" if slots > len(band) else
+                f"<div class='chkn'><b>Check:</b> approximate: the real timetable is irregular here, so the {slots} slot{'s' if slots > 1 else ''} in "
+                f"{hm(W_[0])}–{hm(W_[1])} {'are' if slots > 1 else 'is'} up to {p['approx']} min off the {len(band)} real departures (real times above).{E(alt)} "
                 f"Switch both ends of the line together.</div>")
-        CHECKS.append((L, p, slots, band, al))
+        CHECKS.append((L, p, slots, band, al, W_))
     if p.get('refit'):
         rf = p['refit']; nh = len(p['real']) * 60 / p['every']
         fit += (f"<small>matched to the other end ({nh:g} an hour); this end alone fitted every {rf['every']} "
@@ -542,17 +556,17 @@ def bneed(L, p):
     return (b['need'], b.get('alt_need')) if b else (None, None)
 chk_rows = ''.join(
     f"<tr><td><a class='badge sm' href='#l{L}'>{E(L)}</a></td><td>{E(p['fr'])} &rarr; {E(p['to'])}</td><td class='n'>every {p['every']} · Offset {p['set'][0]} · up to {p['approx']} min off{(' · ' + str(bneed(L, p)[0]) + ' buses') if bneed(L, p)[0] else ''}</td>"
-    f"<td class='mono'>{', '.join(hm(x) for x in band) or '—'}</td><td class='n'>{slots} / {len(band)}</td>"
-    f"<td>{(f'every {al[chr(101)+chr(118)+chr(101)+chr(114)+chr(121)]} · Offset {al[chr(115)+chr(101)+chr(116)][0]} · up to {al[chr(97)+chr(112)+chr(112)+chr(114)+chr(111)+chr(120)]} min off') + ((' · ' + str(bneed(L, p)[1]) + ' buses') if bneed(L, p)[1] else '') if al and al['every'] > p['every'] else '—'}</td></tr>"
-    for L, p, slots, band, al in CHECKS)
+    f"<td class='mono'>{hm(W_[0])}–{hm(W_[1])}: {', '.join(hm(x) for x in band) or '—'}</td><td class='n'>{slots} / {len(band)}</td>"
+    f"<td>{(f'every {al[chr(101)+chr(118)+chr(101)+chr(114)+chr(121)]} · Offset {al[chr(115)+chr(101)+chr(116)][0]}' + (' · Also at ' + ', '.join(map(str, al['set'][1:])) if len(al['set']) > 1 else '') + f' · up to {al[chr(97)+chr(112)+chr(112)+chr(114)+chr(111)+chr(120)]} min off') + ((' · ' + str(al.get('buses') or bneed(L, p)[1]) + ' buses') if (al.get('buses') or bneed(L, p)[1]) else '') if al and al['every'] > p['every'] else '—'}</td></tr>"
+    for L, p, slots, band, al, W_ in CHECKS)
 cchk_rows = ''.join(f"<tr><td><a class='badge sm' href='#l{L}'>{E(L)}</a></td><td>{E(p['fr'])} &rarr; {E(p['to'])}{(' (' + E(p['note']) + ')') if p.get('note') else ''}</td>"
                     f"<td class='n'>every {p['every']} · Offset {p['set'][0]} · stop {p['circuit_leg']} of a circuit</td><td class='n'>{p['_miss'][0]} of {p['_miss'][1]} slots on a real departure</td><td>{'none: a merged row serves one path only' if p.get('paths') else f'separate branch lines: {p[chr(115)+chr(101)+chr(112)]} buses'}</td></tr>" for L, p in CCHECKS)
 cchecks = (f'''<h3 style="margin-top:18px">Circuit legs off the timetable ({len(CCHECKS)})</h3>
 <p class="sub">Circuits across branches (or across two paths) run on the line&#x27;s fitted slots. These legs have slots more than 3 min from any real departure in the line&#x27;s window, because the real timetable is irregular there. The alternative is the separate branch lines, at the bus count shown.</p>
 <div class="types"><table class="tlist"><thead><tr><th>Line</th><th>Leg</th><th class="n">Set now</th><th class="n">On the timetable</th><th>Alternative</th></tr></thead><tbody>{cchk_rows}</tbody></table></div>''') if CCHECKS else ''
 checks = (f'''<h2 id="checks">Approximate schedules to check ({len(CHECKS)})</h2>
-<p class="sub">These rows have an irregular real timetable, so they get an even approximate pattern with the same rate at both ends of the line. Each one has more slots in {hm(FW[0])}–{hm(FW[1])} than real departures, so the extra slots would run empty or spread the buses thinner. Where a slower pattern exists, it is shown with its own worst deviation. If you pick it, switch both ends of that Simutrans line together. The rows are also marked on their line cards.</p>
-<div class="types"><table class="tlist"><thead><tr><th>Line</th><th>Terminus entry</th><th class="n">Set now</th><th>Real departures {hm(FW[0])}–{hm(FW[1])}</th><th class="n">Slots / real</th><th>Slower option</th></tr></thead><tbody>{chk_rows}</tbody></table></div>''' + cchecks) if CHECKS else cchecks
+<p class="sub">These rows have an irregular real timetable, so they get an even approximate pattern with the same rate at both ends of the line. Every approximate row is listed. Where a row has more slots in its line&#x27;s window than real departures (Slots / real), the extra slots would run empty or spread the buses thinner; the others are as many slots as real departures, a few minutes off. Where a slower pattern exists, it is shown with its own worst deviation and bus count. If you pick it, switch both ends of that Simutrans line together. The rows are also marked on their line cards.</p>
+<div class="types"><table class="tlist"><thead><tr><th>Line</th><th>Terminus entry</th><th class="n">Set now</th><th>Real departures in the line&#x27;s window</th><th class="n">Slots / real</th><th>Slower option</th></tr></thead><tbody>{chk_rows}</tbody></table></div>''' + cchecks) if CHECKS else cchecks
 # stop coverage (owner rule, 20 Oct 2026, via the Havířov/Karviná/Orlová sheet: "501 is the only line running to Dětmarovice,
 # how can we not model that?"): every stop the sheet's lines serve 13:00-19:00 is on a modelled Simutrans line, or listed here
 COV = set(); SRV = collections.defaultdict(lambda: collections.defaultdict(list))

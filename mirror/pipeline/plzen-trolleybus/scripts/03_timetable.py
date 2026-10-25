@@ -99,6 +99,10 @@ for sl in S['simutrans_lines']:
         # 16:xx departure to the nearest modelled one
         PP = [m for m in range(900, 1080) if m % I in set(R)]
         dev = max([min(abs(m - x) for x in D) for m in P] + [min(abs(m - x) for x in PP) for m in H] or [0]) if (missing or extra) and D else 0
+        # a hand-set row (fit.overrides, not 'auto') whose first-last stretch it reproduces exactly: the sheet then says
+        # "partial, exact <span>" instead of "approximate" (added 25 Oct 2026)
+        ovk = F.get('overrides', {}).get(key, {})
+        stretch = bool(ovk) and not ovk.get('auto') and f['last'] > f['first'] and all((m in Dset) == (m % I in Rs) for m in range(f['first'], f['last'] + 1))
         prev = legs[i - 1] if len(legs) > 1 else None
         turn = prev is None or prev[1] == d or o == d or (prev[0], prev[1]) == (l, d)
         tag = f"{sl['id']}|{o}"
@@ -110,7 +114,8 @@ for sl in S['simutrans_lines']:
         rows.append(dict(line=l, stop=o, to=d, every=I, real=R, set=loop_shift(I, R, turn), loop=turn,
                          perh=len(R) * 60 / I, span=f"{hm(f['first'])}–{hm(f['last'])}", run=run,
                          exact=not missing and not extra, missing=[m - 960 for m in missing], extra=[m - 960 for m in extra],
-                         dev=dev, hour=[m - 960 for m in H], deps=sorted(x for x in D if 900 <= x < 1080)))
+                         dev=dev, hour=[m - 960 for m in H], deps=sorted(x for x in D if 900 <= x < 1080),
+                         **({'stretch': True} if stretch else {})))
     links = dict(S.get('links', {})); links.update(sl.get('empty_return', {}))
     for st, (back, mn) in sl.get('empty_return', {}).items():
         rows.append(dict(line=E[0][0], stop=st, to=back, every=0, real=[], set=[], loop=False, untimed=True, perh=0, span='',

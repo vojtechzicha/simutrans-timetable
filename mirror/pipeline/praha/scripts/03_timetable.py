@@ -90,11 +90,15 @@ def main():
                 alld = sorted(t['dep'] for t in ts if (t['o'], t['d']) == (r['o'], r['d']))
                 real = {x for x in alld if WIN[0] <= x < WIN[1]}
                 fit = sorted(x for x in real if x % I in R)        # the override covers the whole peak window
+                if o_.get('approx'):     # approximate hand-set pattern (23, 25 Oct): every real departure counts, max_dev = farthest from a slot
+                    fit = sorted(real)
                 lo, hi = fit[0], fit[-1]
                 slots = {k * I + x for x in R for k in range(1440 // I + 2) if lo <= k * I + x <= hi}
-                r.update(every=I, real=R, set=loop_shift(I, R, r['loop']), exact=False, max_dev=0, override=o_['why'],
+                dev = max(min(abs(x - k * I - y) for y in R for k in range(1440 // I + 2)) for x in fit) if o_.get('approx') else 0
+                r.update(every=I, real=R, set=loop_shift(I, R, r['loop']), exact=False, max_dev=dev, override=o_['why'],
                          first=lo, last=hi, n=len(fit), outside=sorted(x for x in real if not lo <= x <= hi),
-                         missing=sorted(real & set(range(lo, hi + 1)) - slots), extra=sorted(slots - real))
+                         missing=[] if o_.get('approx') else sorted(real & set(range(lo, hi + 1)) - slots),
+                         extra=[] if o_.get('approx') else sorted(slots - real))
         # tram counts
         c16, _ = chain_at(ts, 960)
         mn = None
@@ -154,7 +158,7 @@ def main():
                     dx = sorted(t['dep'] for t in ts if (t['o'], t['d']) == (x, y))
                     f = runfit(dx)
                     if f and f['first'] <= 965 and f['last'] >= 1015:     # exact over (practically) the whole 16:00 hour
-                        simu.append(dict(o=x, d=y, every=f['I'], set=list(f['R']), first=f['first'], last=f['last'], n=f['n'], exact=True,
+                        simu.append(dict(o=x, d=y, every=f['I'], real=list(f['R']), set=[(r - 60) % f['I'] for r in f['R']], first=f['first'], last=f['last'], n=f['n'], exact=True,
                                          per_hour=sum(1 for t in dx if 960 <= t < 1020)))
                     else:
                         # approximate (shared rule: label the largest deviation): an interval I with k = trains per hour * I / 60
@@ -168,9 +172,9 @@ def main():
                             key = (abs(len(R) * 60 / I - len(h)), dev, I)     # keep the real trains per hour first, then accuracy
                             if best is None or key < best[3]: best = (dev, I, R, key)
                         if best:
-                            simu.append(dict(o=x, d=y, every=best[1], set=best[2], exact=False, max_dev=best[0], per_hour=len(h)))
+                            simu.append(dict(o=x, d=y, every=best[1], real=list(best[2]), set=[(r - 60) % best[1] for r in best[2]], exact=False, max_dev=best[0], per_hour=len(h)))
                         else:
-                            off, dev = best_offset(dx, 3); simu.append(dict(o=x, d=y, every=3, set=[off], exact=False, max_dev=dev))
+                            off, dev = best_offset(dx, 3); simu.append(dict(o=x, d=y, every=3, real=[off], set=[(off - 60) % 3], exact=False, max_dev=dev))
                 rows.append(dict(o=o, d=d, simutrans=simu, need_by_reverse=by_lay, per_hour=len(d16), gap_min=min(gaps) if gaps else None, gap_max=max(gaps) if gaps else None,
                                  runtime=rt, need=n, cycle=max(c[1] for c in cs) if cs else None))
             minor = [dict(o=o, d=d, n=cnt) for (o, d), cnt in pats.items() if cnt < 0.3 * top]
@@ -196,9 +200,9 @@ def main():
                 dx = sorted(t['dep'] for t in ts if (t['o'], t['d']) == (o, d))
                 d16 = [x for x in dx if 960 <= x < 1020]; gaps = [b - a for a, b in zip(d16, d16[1:])]
                 f = runfit(dx, core=(960, 1020))
-                if f: sim = dict(every=f['I'], set=list(f['R']), exact=True, first=f['first'], last=f['last'], n=f['n'])
+                if f: sim = dict(every=f['I'], real=list(f['R']), set=[(r - 60) % f['I'] for r in f['R']], exact=True, first=f['first'], last=f['last'], n=f['n'])
                 else:
-                    I = min(gaps) if gaps else 60; off, dev = best_offset(dx, I, lo=WIN[0], hi=WIN[1]); sim = dict(every=I, set=[off], exact=False, max_dev=dev)
+                    I = min(gaps) if gaps else 60; off, dev = best_offset(dx, I, lo=WIN[0], hi=WIN[1]); sim = dict(every=I, real=[off], set=[(off - 60) % I], exact=False, max_dev=dev)
                 dirs.append(dict(o=o, d=d, trips=cnt, first=dx[0], last=dx[-1], per_hour=len(d16), gap=[min(gaps), max(gaps)] if gaps else None,
                                  crossing=round(statistics.median(t['arr'] - t['dep'] for t in ts if (t['o'], t['d']) == (o, d))), simutrans=sim))
             a, b = dirs[0]['o'], dirs[0]['d']

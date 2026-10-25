@@ -4,6 +4,41 @@
 
 Version 3 (20 Oct 2026): no daily lines, 480 at most. Version 2 was sharpened after a test run by a smaller model on the Ostrava sheet's ODIS lines (`ostrava-bus/method-check-odis-2026-10-20.md`).
 
+Version 4 (25 Oct 2026): the rules below from the hand check of the Hlučínsko lines 281, 282, 290, 292 (worked example:
+`odis-regional-opavsko/method-check-2026-10-25.md`). They override anything older in this document.
+
+## Rules added on 25 Oct 2026 (v4)
+
+- **A scripted fit is never shipped unchecked.** Every row the builder fitted (`at: 'auto'`) gets the Step 4 test per
+  direction before publishing, written into a dated `method-check-<date>.md` in the sheet's folder (owner: "that's the point
+  of you doing it, so you'll not produce incorrect results"). Tools: `audit/step4.py` (one direction: real departures, a
+  candidate's window slots, fill, exact hits, off-pattern trips) and `audit/step4_regional.py` (every leg of the regional
+  sheets, with the passing-candidate search). A leg fails Step 4 when its window slots differ from the real departures by
+  more than 1, or fewer than 80 % of its window slots have a real departure within 3 min. If a passing pattern exists, use it;
+  if none does, the simplest even pattern at the real rate, approximate and on the To check list (rule 4 of Step 4).
+- **Outstation lines.** Where the buses sleep at the far ends (garages or villages: the first morning trips start there),
+  the afternoon sends more buses out of the city than come back, and Step 5b cannot pair the surplus across lines. Time the
+  line both ways at its inbound rate and list the extra outbound departures (buses going home) as off the pattern. Its
+  outbound row then has fewer slots than real departures; say why on the card.
+- **No empty-return lines just for frequency** (owner: "Unless those empty runs add something really needed and specific,
+  don't add them just for frequency"). In the game a line repeats all day, so an empty return shuttles back every period.
+  Add one only for something specific, such as a stop that has no other service (387, 543B, 553 Orlová kept their reasons).
+- **Which departures fall off the pattern:** choose by the plates (the buses that go home or on to another line) and by the
+  waits the choice makes (290: leaving 16:19 off, not 14:59, needs 4 buses instead of 5).
+- **An exact multi-slot row on a long interval beats a simpler interval that fails Step 4** (290: every 120 with four slots
+  each way, exact, 4 buses, against every 40 with 3 buses and two departures missed; owner: "290 uses more buses").
+- **Mixed origins: read at the knot.** When a line's trips towards the city start at different far ends (292: Píšť,
+  Chuchelná, Strahovice), time the way back at the knot they all pass (`knot` + `knot_at`), not at one terminal.
+- **Model hour set by hand** (`anchor`) when the line's busiest two hours are shuttles whose stops are on the line anyway
+  (282's Hlučín – Závada shuttles): model the hour where the line's own pattern runs.
+- **Typed values and their real times:** work the real time out from each typed value (+61 at loops, mod every); never pair
+  two separately sorted lists.
+- **Buses already in the game:** rebuild with `keep_roster` (the sheet's published roster in `data/published/`), so each
+  published bus stays on its Simutrans line wherever it is still seen on that line's trips; give the owner the in-game change
+  list (old → new per entry, buses in / out).
+- **Owner choices** go on the sheet's owner checks with the cheaper option and its bus cost; once the owner decides, remove
+  the check and record the decision on the card and in the README.
+
 This is how to turn a real bus timetable (CIS JŘ JDF trips) into Simutrans lines for the owner's fork. Follow the steps in order, and do the checks at the end before publishing. The method was worked out with the owner on 20 Oct 2026 on the Havířov/Karviná/Orlová sheet (`havirov-karvina-orlova/`, reference code and examples). Regional lines are harder than town lines: they pass several towns, have more variants and share points with other lines. They need every step.
 
 The owner's own words:

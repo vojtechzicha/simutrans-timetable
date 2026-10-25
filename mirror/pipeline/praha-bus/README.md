@@ -82,6 +82,16 @@ seznam-autobusu.cz returns 403 to plain curl, so use `common.fetch` (full browse
   - A name missing from `pak_objects.json` is shown as "requested". Stand-ins from DPP or other cities are not used (user, 29 Sep).
 - **Vehicle cell:** number · garage (other operators: operator · garage) / full type · length / pak core. The livery is added where the type has more than one.
 
+## Hand-set schedule rows (method check 25 Oct 2026)
+
+`schedule_overrides` in the state (`02_gtfs_lines.py` applies it, `05_render.py` shows it) replaces a line's terminus rows with hand-set ones: `rows` = list of `{o, d, every, real, why}` with optional `extra` (peak trips left out of the model, HH:MM) and `approx` (no exact run shown). The script works out each row's exact run and its largest deviation in 15:00–17:59 from the trips. Write-up: `../praha/method-check-2026-10-25.md`.
+
+- Different rates at the two ends: 107 (every 4 both ends), 110 (every 15), 122 (hourly), 143 and 157 (every 15 with 2 slots), 189 (every 6), 211 (3 an hour), 232 (every 30; the 5 peak extras have no trip back).
+- More slots than departures: 176 (every 15 with 2 slots, not every 60 with 7), 187 (every 90 with 8 slots, the timetable's own 90-min repeat), 207 (every 6).
+- The card's two rows were the ends of two different routes: 102 (long line and short working interworked: one circuit line), 103, 111, 139, 226 (line plus its short working), 191 (three lines); all their rows are given.
+- Not changed, for the owner: the school lines 251–280 (1–4 trips a day) still show an hourly fit; lines 109, 113, 120, 138, 146, 160, 174, 177, 186, 197 and 221 have branches with ≥ 3 peak trips that are listed as own Simutrans lines but have no rows (values proposed in the write-up).
+- The card text now says how the 01:00 origin changes typed values where a row's interval does not divide 60 (116, 131, 187, 218).
+
 ## Pak session hand-off
 
 `06_pak_request.py` writes, for the pak session (simutrans-custom-czech-pak128-bd):

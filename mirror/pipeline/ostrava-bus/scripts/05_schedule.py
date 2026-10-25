@@ -52,7 +52,7 @@ for L, rows in CONFIG.get('schedule_overrides', {}).items():
         extra = [x for x in deps if min(abs(t - x) for t in slots) > 3]
         for k in ('approx', 'alt', 'refit', 'interleave', 'fitwin'): p.pop(k, None)
         p.update(every=I, real=r['real'], set=loop_shift(I, r['real'], CONFIG['all_termini_are_loops']), first=deps[0] if deps else W[0],
-                 last=deps[-1] if deps else W[1], n=len(deps), override=dict(why=r['why'], dev=dev, extra=extra, window=W))
+                 last=deps[-1] if deps else W[1], n=len(deps), override=dict(why=r['why'], dev=dev, extra=extra, window=W, **({'label': r['label']} if r.get('label') else {})))
 for L in out:
     T0_ = PEAKS[L]['anchor']; AL_ = CONFIG['terminus_alias']
     ch = exactify(out[L], trips[L], nm, (T0_ - 30, T0_ + 90), CONFIG['all_termini_are_loops'], lambda x: AL_.get(x, x))   # no whole-day reading: local lines are modelled at their afternoon peak (owner, 20 Oct 2026)

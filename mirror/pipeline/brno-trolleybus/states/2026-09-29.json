@@ -75,7 +75,16 @@
    930,
    990
   ],
-  "overrides": {}
+  "overrides": {
+   "37N|37|Mendlovo náměstí|Nemocnice Bohunice": {
+    "I": 15,
+    "R": [
+     3
+    ],
+    "first": 1008,
+    "last": 1083
+   }
+  }
  },
  "turnaround_default": 3,
  "links": {
@@ -353,7 +362,8 @@
      "Nemocnice Bohunice",
      "Mendlovo náměstí"
     ]
-   ]
+   ],
+   "note": "Mendlovo náměstí is set every 15 at :03, the form 37 runs from 16:48 (exact 16:48–18:03), so it alternates with 37J (:11 :26 :41 :56) every 7–8 min as in reality; before 16:33 the two branches leave irregularly (13, 13, 20, 14 min on this branch)."
   },
   {
    "id": "37J",

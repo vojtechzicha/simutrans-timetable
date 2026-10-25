@@ -428,24 +428,32 @@
    "sim": [
     {
      "name": "212",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Opava, Divadlo",
        "to": "Opava, Vlaštovičky",
-       "at": "auto",
+       "at": [
+        "15:37",
+        "16:02",
+        "16:54"
+       ],
        "core_to": "Opava, Milostovice"
       },
       {
        "fr": "Opava, Vlaštovičky",
        "to": "Opava, Divadlo",
-       "at": "auto",
+       "at": [
+        "15:35",
+        "16:27",
+        "16:39"
+       ],
        "knot": "Opava, Milostovice"
       }
      ]
     }
    ],
-   "note": "Divadlo – Milostovice – Vlaštovičky about every 40 at irregular minutes; trips that end at Milostovice count there (the bus passes Milostovice on the real times)."
+   "note": "Divadlo – Milostovice – Vlaštovičky at irregular minutes (two buses, 160 and 408); read at Milostovice, where the short trips turn. 15:30–17:30: out of Divadlo 15:37, 16:02, 16:54, back at Milostovice 15:41, 16:33, 16:45 (Vlaštovičky 16:27, 16:39) and 17:21. Every 120 with three slots each way fits them exactly: Divadlo 15:37 / 16:02 / 16:54, Vlaštovičky 15:35 / 16:27 / 16:39 (15:35 timed to pass Milostovice at 15:41); 2 buses. No shorter interval passes the slot test (method Step 4; the earlier every 40 left 16:14, 15:47 and 17:07 without a trip). 16:54 and 15:41 are Milostovice short trips; the model bus runs them to Vlaštovičky. Off the pattern: back 17:15 (Milostovice 17:21) and the trips outside the window, whose minutes do not repeat."
   },
   "213": {
    "core": [
@@ -482,24 +490,30 @@
    "sim": [
     {
      "name": "215",
-     "every": "auto",
+     "every": 80,
      "legs": [
       {
        "fr": "Opava, Liliová",
        "to": "Opava, Globus",
-       "at": "auto",
+       "at": [
+        "15:57",
+        "16:45"
+       ],
        "core_to": "Opava, Kylešovice, škola"
       },
       {
        "fr": "Opava, Globus",
        "to": "Opava, Liliová",
-       "at": "auto",
+       "at": [
+        "16:14",
+        "16:46"
+       ],
        "knot": "Opava, Kylešovice, škola"
       }
      ]
     }
    ],
-   "note": "Liliová – Kylešovice, škola – Globus about hourly at irregular minutes; trips that end at Kylešovice, škola count there."
+   "note": "Liliová – Kylešovice, škola – Globus at irregular minutes; trips that end at Kylešovice, škola count there. In 15:30–17:30 two buses ran it on 20 Oct (405 on the whole line, 403 on Liliová – Kylešovice, škola short trips): out of Liliová 15:57, 16:45, 17:16, back at Kylešovice, škola 16:20, 16:52. Every 80 with two slots each way fits them exactly (Liliová 15:57 / 16:45, Globus 16:14 / 16:46; the next slots 17:17 and 18:05 are within 2 min of 17:16 and 18:07); 2 buses. No hourly row passes (owner check: the earlier hourly :09 / :39 with 1 bus). The 15:57 and 17:17 slots stand for short trips; the model bus runs them to Globus."
   },
   "216": {
    "core": [
@@ -509,12 +523,17 @@
    "sim": [
     {
      "name": "216",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Opava, Dolní náměstí",
        "to": "Opava, Vávrovice, Držkovice",
-       "at": "auto",
+       "at": [
+        "14:34",
+        "14:57",
+        "15:34",
+        "15:54"
+       ],
        "stops_via": [
         "Opava, Vávrovice, OPAVIA"
        ]
@@ -522,12 +541,17 @@
       {
        "fr": "Opava, Vávrovice, Držkovice",
        "to": "Opava, Dolní náměstí",
-       "at": "auto"
+       "at": [
+        "14:00",
+        "14:26",
+        "15:01",
+        "15:24"
+       ]
       }
      ]
     }
    ],
-   "note": "Dolní náměstí – Vávrovice, Držkovice about every 35–40 at irregular minutes; modelled every 30, via Vávrovice, OPAVIA (as a third of the trips run)."
+   "note": "Dolní náměstí – Vávrovice, Držkovice, about every 30 at irregular minutes in the early afternoon. 14:00–16:00: Dolní náměstí 14:34, 14:57, 15:34, 15:54, Držkovice 14:00, 14:26, 15:01, 15:24: every 120 with four slots each way, all exact; 2 buses (every 60 at :34 / :54 and :00 / :26 also passes, one departure fewer on the minute). Routed via Vávrovice, OPAVIA (as a third of the trips run). Off the pattern: the later trips (16:42, 17:21, 18:06 …; back 16:09, 16:47 …), every 35–40 min at drifting minutes."
   },
   "217": {
    "core": [
@@ -572,22 +596,28 @@
    "sim": [
     {
      "name": "218",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Opava, Koupaliště",
        "to": "Chvalíkovice",
-       "at": "auto"
+       "at": [
+        "16:19",
+        "17:10"
+       ]
       },
       {
        "fr": "Chvalíkovice",
        "to": "Opava, Koupaliště",
-       "at": "auto"
+       "at": [
+        "15:46",
+        "16:10"
+       ]
       }
      ]
     }
    ],
-   "note": "Koupaliště – Chvalíkovice about hourly at irregular minutes (more often 14:00–16:30); the Koupaliště – Dolní náměstí short trips are on the trunk path."
+   "note": "Koupaliště – Chvalíkovice about hourly at irregular minutes; the Koupaliště – Dolní náměstí short trips are on the trunk path. 15:30–17:30: Koupaliště 15:38, 16:19, 17:10, Chvalíkovice 15:46, 16:10 (bus 407 also runs Chvalíkovice → Praskova at 16:54): every 120 with two slots each way, exact (Koupaliště 16:19 / 17:10, Chvalíkovice 15:46 / 16:10); 2 buses. Off the pattern: Koupaliště 15:38 and the trips outside the window."
   },
   "219": {
    "core": [
@@ -598,22 +628,32 @@
    "sim": [
     {
      "name": "219",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Opava, Malé Hoštice",
        "to": "Otice, kaple",
-       "at": "auto"
+       "at": [
+        "15:46",
+        "16:16",
+        "16:42",
+        "17:12"
+       ]
       },
       {
        "fr": "Otice, kaple",
        "to": "Opava, Malé Hoštice",
-       "at": "auto"
+       "at": [
+        "15:42",
+        "16:12",
+        "16:42",
+        "17:08"
+       ]
       }
      ]
     }
    ],
-   "note": "Malé Hoštice – Otice every 30 (Malé Hoštice :16 / :46, Otice :12 / :42)."
+   "note": "Malé Hoštice – Otice every 30 most of the day (Malé Hoštice :16 / :46, Otice :12 / :42), but from 16:42 the minutes move 4 min earlier, so every 30 leaves two slots each way 4 min off in 15:30–17:30. Every 120 with four slots each way copies that window exactly: Malé Hoštice 15:46, 16:16, 16:42, 17:12; Otice 15:42, 16:12, 16:42, 17:08; 2 buses. Outside it the slots are on, or 4 min from, the real every 30."
   },
   "220": {
    "core": [
@@ -623,22 +663,28 @@
    "sim": [
     {
      "name": "220",
-     "every": "auto",
+     "every": 60,
      "legs": [
       {
        "fr": "Opava, Praskova",
        "to": "Opava, Suché Lazce, Přerovec",
-       "at": "auto"
+       "at": [
+        15,
+        40
+       ]
       },
       {
        "fr": "Opava, Suché Lazce, Přerovec",
        "to": "Opava, Praskova",
-       "at": "auto"
+       "at": [
+        12,
+        50
+       ]
       }
      ]
     }
    ],
-   "note": "Praskova – Suché Lazce, Přerovec about every 30 at uneven minutes (Praskova :15 / :45, Přerovec :18 / :48)."
+   "note": "Praskova – Suché Lazce, Přerovec about every 30 at uneven minutes: hourly with two slots each way, Praskova :15 / :40, Přerovec :12 / :50 (15:30–17:30 every slot within 3 min; Praskova 16:37 is 3 early, Přerovec 17:10 2 early). Off the pattern: Praskova 17:29 and the 13:20–14:20 trips at :20 / :50."
   },
   "222": {
    "core": [
@@ -728,22 +774,26 @@
    "sim": [
     {
      "name": "233",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Vítkov, autobusová stanice",
        "to": "Melč, střed",
-       "at": "auto"
+       "at": [
+        "16:15"
+       ]
       },
       {
        "fr": "Melč, střed",
        "to": "Vítkov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "15:45"
+       ]
       }
      ]
     }
    ],
-   "note": "Vítkov – Moravice – Melč every 1½ h (Vítkov 14:45, 16:15); the Melč end is set 15 min off its best fit for one bus."
+   "note": "Vítkov – Moravice – Melč every 2 h in the afternoon: Vítkov 14:45, 16:15, 18:35; Melč 14:01, 15:02, 15:45 (the extra Melč starts are Opava buses off 240 and 247). Every 120: Vítkov 16:15, Melč 15:45, both exact. It needs 2 buses, because Melč 15:45 leaves before the Vítkov bus gets there (on 20 Oct 23-1013 and 23-2001 ran them). Owner check: the earlier every 90 with 1 bus, whose Melč slots (15:30, 17:00) have no trip. Off the pattern: Vítkov 12:00, 14:45, 18:35; Melč 13:00, 14:01, 15:02, 19:15."
   },
   "234": {
    "core": [
@@ -799,17 +849,23 @@
    "sim": [
     {
      "name": "236",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Vítkov, autobusová stanice",
        "to": "Budišov n.Bud., autobusová stanice",
-       "at": "auto"
+       "at": [
+        "15:35",
+        "16:00"
+       ]
       },
       {
        "fr": "Budišov n.Bud., autobusová stanice",
        "to": "Vítkov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "15:40",
+        "16:50"
+       ]
       }
      ]
     },
@@ -830,7 +886,7 @@
      ]
     }
    ],
-   "note": "Vítkov – Budišov about every 40 at irregular minutes; the Podlesí trips are 236 Podlesí (Budišov 15:20, Podlesí 13:06), every 480. Podlesí has no other line."
+   "note": "Vítkov – Budišov at irregular minutes. 15:30–17:30: out of Vítkov 15:35, 16:00, 16:20, 17:25, back from Budišov 15:40, 16:50. The buses work 237 at Budišov and sleep there (the 16:20 and 17:25 buses end their day at Budišov; the morning trips start there), so 236 runs at its inbound rate: every 120, Budišov 15:40 / 16:50 and Vítkov 15:35 / 16:00, the two buses that come back (23-1007 at 16:50, 23-1008 at 17:30), all exact; 2 buses. Vítkov 16:20 and 17:25 are off the pattern (buses going home), so the Vítkov row has two slots for four departures. The Podlesí trips are 236 Podlesí (Budišov 15:20, Podlesí 13:06), every 480. Podlesí has no other line."
   },
   "237": {
    "core": [
@@ -882,12 +938,14 @@
    "sim": [
     {
      "name": "238",
-     "every": "auto",
+     "every": 90,
      "legs": [
       {
        "fr": "Vítkov, autobusová stanice",
        "to": "Odry, autobusová stanice",
-       "at": "auto",
+       "at": [
+        "16:32"
+       ],
        "stops_via": [
         "Odry, Loučky, škola"
        ]
@@ -895,12 +953,14 @@
       {
        "fr": "Odry, autobusová stanice",
        "to": "Vítkov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "16:10"
+       ]
       }
      ]
     }
    ],
-   "note": "Vítkov – Jakubčovice – Odry about hourly at irregular minutes, routed via Klokočůvek and Loučky, škola (as some trips run)."
+   "note": "Vítkov – Jakubčovice – Odry every 70–90 min at irregular minutes, routed via Klokočůvek and Loučky, škola (as some trips run). One trip each way in 15:30–17:30 (Vítkov 16:32, Odry 16:10): every 90, both exact (Odry also 14:40 exact, 17:40 against 17:30); 2 buses. Off the pattern: Vítkov 12:57, 13:50, 14:12, 15:23, 17:55; Odry 12:20, 17:30, 18:30."
   },
   "678": {
    "core": [
@@ -911,17 +971,21 @@
    "sim": [
     {
      "name": "678",
-     "every": "auto",
+     "every": 144,
      "legs": [
       {
        "fr": "Ostrava, Svinov, nádraží",
        "to": "Vítkov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "16:35"
+       ]
       },
       {
        "fr": "Vítkov, autobusová stanice",
        "to": "Ostrava, Svinov, nádraží",
-       "at": "auto",
+       "at": [
+        "17:20"
+       ],
        "stops_via": [
         "Bravantice, Lidl"
        ]
@@ -929,7 +993,7 @@
      ]
     }
    ],
-   "note": "Ostrava, Svinov – Bílovec – Fulnek – Vítkov every 2 h (Svinov 16:55 / 18:55, Vítkov 14:45), back via Bravantice, Lidl."
+   "note": "Ostrava, Svinov – Bílovec – Fulnek – Vítkov about every 2 h 20 (Svinov 13:05, 15:25, 16:35, 18:55; Vítkov 14:45, 17:20, 19:39), back via Bravantice, Lidl. Every 144: Svinov 16:35, Vítkov 17:20, both exact; 2 buses (the same two departures every 120 would need 3). Off the pattern: Svinov 13:05, 15:25, 18:55 (4 min); Vítkov 14:45, 19:39 (5 min)."
   },
   "240": {
    "core": [
@@ -941,22 +1005,28 @@
    "sim": [
     {
      "name": "240",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Opava, Bílovecká TQM",
        "to": "Vítkov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "14:06",
+        "14:58"
+       ]
       },
       {
        "fr": "Vítkov, autobusová stanice",
        "to": "Opava, Bílovecká TQM",
-       "at": "auto"
+       "at": [
+        "14:32",
+        "15:16"
+       ]
       }
      ]
     }
    ],
-   "note": "Opava – Hradec – Melč – Vítkov about hourly (Opava :06, Vítkov :40); the Melč short trips are off the pattern."
+   "note": "Opava – Hradec – Melč – Vítkov. 14:00–16:00: Opava 14:06, 14:58, Vítkov 14:32, 15:16, 15:51: every 120 with two slots each way, exact (Opava 14:06 / 14:58, Vítkov 14:32 / 15:16); 3 buses. Vítkov 15:51 is off the pattern: it is 23-1010 coming back from a 242 express run (Opava 14:45). The Melč short trips are off the pattern too. 240, 241 and 242 share their buses at Opava and Vítkov (one pool would need fewer; not applied)."
   },
   "241": {
    "core": [
@@ -967,17 +1037,23 @@
    "sim": [
     {
      "name": "241",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Opava, Bílovecká TQM",
        "to": "Vítkov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "14:14",
+        "15:04"
+       ]
       },
       {
        "fr": "Vítkov, autobusová stanice",
        "to": "Opava, Bílovecká TQM",
-       "at": "auto",
+       "at": [
+        "14:51",
+        "15:15"
+       ],
        "stops_via": [
         "Vítkov, Zálužné"
        ]
@@ -1005,7 +1081,7 @@
      ]
     }
    ],
-   "note": "Opava – Štáblovice – Melč – Vítkov every 1½ h, back via Vítkov, Zálužné (as some trips run); the Štáblovice, Lipina trips are 241 Lipina (14:28 / 15:01), every 480. Regular route via Psychiatrická léčebna (owner check)."
+   "note": "Opava – Štáblovice – Melč – Vítkov, back via Vítkov, Zálužné (as some trips run). 14:00–16:00: Opava 14:14, 15:04, Vítkov 14:51, 15:15, four trips by four buses of the Opava – Vítkov pool. Every 120 with two slots each way, exact; alone it needs 4 buses (owner check: every 90 with Opava 15:04 / Vítkov 15:15 only, 2 buses). The Štáblovice, Lipina trips are 241 Lipina (14:28 / 15:01), every 480. Regular route via Psychiatrická léčebna (owner check)."
   },
   "242": {
    "core": [
@@ -1015,22 +1091,34 @@
    "sim": [
     {
      "name": "242",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Opava, Bílovecká TQM",
        "to": "Vítkov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "14:35",
+        "16:25"
+       ],
+       "via": [
+        "Branka u Opavy"
+       ]
       },
       {
        "fr": "Vítkov, autobusová stanice",
        "to": "Opava, Bílovecká TQM",
-       "at": "auto"
+       "at": [
+        "15:33",
+        "16:15"
+       ],
+       "via": [
+        "Branka u Opavy"
+       ]
       }
      ]
     }
    ],
-   "note": "Opava – Hradec – Březová – Vítkov hourly (Opava :40, Vítkov :15). The diversion to 11 Dec (Březová, střed not served) runs."
+   "note": "Opava – Hradec – Březová – Vítkov. 14:30–16:30: Opava 14:35, 15:30, 16:25, Vítkov 15:33, 16:15, plus an express pair via Vítkov, Jelenice (Vítkov 14:30, Opava 14:45), listed here, not folded in (its stops are on 242 and 234). Every 120 with two slots each way, exact: Opava 14:35 / 16:25, Vítkov 15:33 / 16:15; 3 buses. Opava 15:30 is off the pattern (23-1002 goes on as 238 at Vítkov). The diversion to 11 Dec (Březová, střed not served) runs."
   },
   "243": {
    "core": [
@@ -1065,17 +1153,21 @@
    "sim": [
     {
      "name": "245",
-     "every": "auto",
+     "every": 80,
      "legs": [
       {
        "fr": "Opava, Bílovecká TQM",
        "to": "Hradec n.Moravicí, Benkovice, střed",
-       "at": "auto"
+       "at": [
+        "14:08"
+       ]
       },
       {
        "fr": "Hradec n.Moravicí, Benkovice, střed",
        "to": "Opava, Bílovecká TQM",
-       "at": "auto"
+       "at": [
+        "14:35"
+       ]
       }
      ]
     },
@@ -1100,7 +1192,7 @@
      ]
     }
    ],
-   "note": "Opava – Hradec – Benkovice every 3 h (Opava 15:23, Benkovice 15:55); the local Benkovice – zámek trips are 245 zámek (13:15 / 13:52), every 480."
+   "note": "Opava – Hradec – Benkovice every 80 in the afternoon: Opava 12:48, 14:08, 15:28, Benkovice 14:35, 15:55. Every 80: Opava 14:08, Benkovice 14:35, all five exact; 1 bus. Off the pattern: Opava 18:23 (to Žimrovice). The local Benkovice – zámek trips are 245 zámek (13:15 / 13:52), every 480; the Benkovice slot of 245 also falls on 13:15."
   },
   "244": {
    "core": [
@@ -1213,7 +1305,7 @@
      ]
     }
    ],
-   "note": "Opava – Stěbořice – Hlavnice – Svobodné Heřmanice hourly (Opava :53, Heřmanice :45)."
+   "note": "Opava – Stěbořice – Hlavnice – Svobodné Heřmanice hourly with gaps (Opava 13:53, 14:53, 16:53, 18:43; Heřmanice 14:45, 15:45, 17:55). Kept hourly (Opava :53, Heřmanice :45), approximate: Heřmanice 13:45 and 16:45 and Opava 15:53 have no trip (a narrow window must not halve an hourly line). Owner check: every 120 (Opava 13:53 / 15:53, Heřmanice 14:45 / 16:45) passes the slot test with 1 bus instead of 2, but runs every second hour."
   },
   "249": {
    "core": [
@@ -1223,17 +1315,21 @@
    "sim": [
     {
      "name": "249",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Opava, Bílovecká TQM",
        "to": "Velké Heraltice, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "15:02"
+       ]
       },
       {
        "fr": "Velké Heraltice, autobusová stanice",
        "to": "Opava, Bílovecká TQM",
-       "at": "auto"
+       "at": [
+        "14:07"
+       ]
       }
      ]
     },
@@ -1258,7 +1354,7 @@
      ]
     }
    ],
-   "note": "Opava – Jaktař – Velké Heraltice every 2 h; the Velké Heraltice škola – Tábor shuttle is 249 Tábor (13:28 / 13:35), every 480."
+   "note": "Opava – Jaktař – Velké Heraltice every 2 h at irregular minutes. 13:30–15:30: Opava 15:02, Velké Heraltice 14:07: every 120, both exact; 1 bus. Off the pattern: Opava 16:33, 18:43; Velké Heraltice 12:55, 15:50, 17:12. The Velké Heraltice škola – Tábor shuttle is 249 Tábor (13:28 / 13:35), every 480."
   },
   "250": {
    "core": [
@@ -1330,22 +1426,26 @@
    "sim": [
     {
      "name": "251",
-     "every": "auto",
+     "every": 60,
      "legs": [
       {
        "fr": "Opava, Bílovecká TQM",
        "to": "Chlebičov, točna",
-       "at": "auto"
+       "at": [
+        35
+       ]
       },
       {
        "fr": "Chlebičov, točna",
        "to": "Opava, Bílovecká TQM",
-       "at": "auto"
+       "at": [
+        5
+       ]
       }
      ]
     }
    ],
-   "note": "Opava – Velké Hoštice – Chlebičov hourly (Opava :35, Chlebičov :05)."
+   "note": "Opava – Velké Hoštice – Chlebičov hourly (Opava :35, Chlebičov :05; 7 of 9 and 7 of 10 departures exact over the day). The 15:35 runs at 15:05 instead (22-1008), so the 15:35 slot has no trip and the slot test fails out of Opava: kept hourly, approximate (a narrow window must not halve an hourly line). Every 120 (Opava 16:35, Chlebičov 17:05) would pass, with the same 1 bus. Off the pattern: Opava 12:30, 15:05; Chlebičov 12:55."
   },
   "252": {
    "core": [
@@ -1356,12 +1456,15 @@
    "sim": [
     {
      "name": "252",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Opava, Bílovecká TQM",
        "to": "Kobeřice, autobusová stanice",
-       "at": "auto",
+       "at": [
+        "14:20",
+        "14:50"
+       ],
        "stops_via": [
         "Štěpánkovice, Albertovec"
        ]
@@ -1369,12 +1472,15 @@
       {
        "fr": "Kobeřice, autobusová stanice",
        "to": "Opava, Bílovecká TQM",
-       "at": "auto"
+       "at": [
+        "13:45",
+        "14:45"
+       ]
       }
      ]
     }
    ],
-   "note": "Opava – Kravaře – Štěpánkovice – Kobeřice hourly (Opava :25, Kobeřice :45), out via Štěpánkovice, Albertovec (as one trip runs)."
+   "note": "Opava – Kravaře – Štěpánkovice – Kobeřice, hourly at Opava :25 / Kobeřice :45 outside the peak; out via Štěpánkovice, Albertovec (as one trip runs). 13:40–15:40: Opava 14:20, 14:50, Kobeřice 13:45, 14:45: every 120 with two slots each way, exact (the Kobeřice entry is every 60 at :45); 3 buses (owner check: the earlier hourly :25 / :45 with 2). The Opava – Štěpánkovice short trips are on the line. At Kobeřice the 252 buses go on as 255 and come back from it (not paired; pooling not applied). Off the pattern: Opava 12:45, 15:45, 16:25, 17:25, 18:25."
   },
   "253": {
    "core": [
@@ -1428,22 +1534,26 @@
    "sim": [
     {
      "name": "254",
-     "every": "auto",
+     "every": 90,
      "legs": [
       {
        "fr": "Opava, Bílovecká TQM",
        "to": "Chuchelná, rehabilitační ústav",
-       "at": "auto"
+       "at": [
+        "16:28"
+       ]
       },
       {
        "fr": "Chuchelná, rehabilitační ústav",
        "to": "Opava, Bílovecká TQM",
-       "at": "auto"
+       "at": [
+        "14:30"
+       ]
       }
      ]
     }
    ],
-   "note": "Opava – Kravaře – Bolatice – Chuchelná every 1½ h (Opava 14:58, Chuchelná 14:30 …)."
+   "note": "Opava – Kravaře – Bolatice – Chuchelná, out 12:48, 14:38, 15:18, 16:28, 18:38, back 14:30, 16:30, 17:30. No pattern passes both ways (14:30–16:30 holds three out and one back; the 16:30 sits on the window end): approximate, every 90 with Opava 16:28 and Chuchelná 14:30 / 17:30 exact (16:28 → 17:30 is one bus, 22-1040); the 14:58 and 16:00 slots have no trip. Off the pattern: Opava 14:38 (22-0001 goes on as 292 at Chuchelná), 15:18, 12:48, 18:38; Chuchelná 16:30; the Bolatice short trips."
   },
   "255": {
    "core": [
@@ -1613,12 +1723,15 @@
    "sim": [
     {
      "name": "262",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Opava, Bílovecká TQM",
        "to": "Bílovec, železniční stanice",
-       "at": "auto",
+       "at": [
+        "14:15",
+        "14:43"
+       ],
        "stops_via": [
         "Slatina"
        ]
@@ -1626,7 +1739,10 @@
       {
        "fr": "Bílovec, železniční stanice",
        "to": "Opava, Bílovecká TQM",
-       "at": "auto"
+       "at": [
+        "14:45",
+        "15:45"
+       ]
       }
      ]
     },
@@ -1656,7 +1772,7 @@
      ]
     }
    ],
-   "note": "Opava – Hradec – Skřipov – Bílovec every 1½ h, out via Slatina; the Skřipov, Hrabství trips are 262 Skřipov (15:42 via Otice, Rybníčky), every 480. Regular route via Psychiatrická léčebna (owner check)."
+   "note": "Opava – Hradec – Skřipov – Bílovec, out via Slatina. 13:50–15:50: Opava 14:15, 14:43, Bílovec 14:45, 15:45: every 120 with two slots each way, exact (the Bílovec entry is every 60 at :45); 3 buses (owner check: every 80 with Opava 14:43 / Bílovec 14:45 only, 2). The Skřipov, Hrabství trips are 262 Skřipov (15:42 via Otice, Rybníčky), every 480. Regular route via Psychiatrická léčebna (owner check)."
   },
   "263": {
    "core": [
@@ -1667,24 +1783,28 @@
    "sim": [
     {
      "name": "263",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Opava, Bílovecká TQM",
        "to": "Těškovice, střed",
-       "at": "auto",
+       "at": [
+        "15:31"
+       ],
        "core_to": "Pustá Polom, autobusová stanice"
       },
       {
        "fr": "Těškovice, střed",
        "to": "Opava, Bílovecká TQM",
-       "at": "auto",
+       "at": [
+        "15:58"
+       ],
        "knot": "Pustá Polom, autobusová stanice"
       }
      ]
     }
    ],
-   "note": "Opava – Hrabyně – Pustá Polom – Těškovice every 2 h, timed so trips that end at Pustá Polom count there."
+   "note": "Opava – Hrabyně – Pustá Polom – Těškovice; trips that end at Pustá Polom count there. 15:30–17:30: Opava 15:31, 16:59, back at Pustá Polom 16:12. The buses sleep at Pustá Polom (the morning trips start there; 16:59 is 22-1008 going home), so 263 runs at its inbound rate: every 120, Opava 15:31 and Těškovice 15:58 (passing Pustá Polom 16:12), exact; 2 buses. Off the pattern: Opava 16:59, 18:38, 19:46; Těškovice 17:40."
   },
   "264": {
    "core": [
@@ -1694,22 +1814,26 @@
    "sim": [
     {
      "name": "264",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Opava, Bílovecká TQM",
        "to": "Těškovice, střed",
-       "at": "auto"
+       "at": [
+        "16:44"
+       ]
       },
       {
        "fr": "Těškovice, střed",
        "to": "Opava, Bílovecká TQM",
-       "at": "auto"
+       "at": [
+        "16:03"
+       ]
       }
      ]
     }
    ],
-   "note": "Opava – Hlubočec – Pustá Polom – Těškovice every 2 h (Opava 14:21 / 16:21)."
+   "note": "Opava – Hlubočec – Pustá Polom – Těškovice. 15:30–17:30: Opava 16:44, Těškovice 16:03, run by two buses (22-0106, 22-1011): every 120, both exact; it needs 2 buses because Těškovice 16:03 leaves before the Opava bus gets there (owner check: the earlier 1-bus row, Opava 16:21 / Těškovice 17:29). Off the pattern: Opava 14:21, 15:01."
   },
   "267": {
    "core": [
@@ -1747,22 +1871,26 @@
    "sim": [
     {
      "name": "270",
-     "every": "auto",
+     "every": 80,
      "legs": [
       {
        "fr": "Opava, Bílovecká TQM",
        "to": "Ostrava, Svinov, nádraží",
-       "at": "auto"
+       "at": [
+        "16:19"
+       ]
       },
       {
        "fr": "Ostrava, Svinov, nádraží",
        "to": "Opava, Bílovecká TQM",
-       "at": "auto"
+       "at": [
+        "16:26"
+       ]
       }
      ]
     }
    ],
-   "note": "Opava – Mokré Lazce – Hrabyně – Ostrava, Svinov every 1½ h (Opava 15:19, Svinov 14:08 …)."
+   "note": "Opava – Mokré Lazce – Hrabyně – Ostrava, Svinov at irregular minutes (about every 80–90). 15:30–17:30: Opava 16:19, Svinov 16:26: every 80, both exact (Svinov also 17:46 against 17:45); 2 buses. Off the pattern: Opava 12:59, 15:19; Svinov 13:21, 14:21."
   },
   "920": {
    "core": [
@@ -1875,25 +2003,30 @@
     "Hlučín, sídliště OKD",
     "Ostrava, Poruba, Studentská"
    ],
+   "anchor": "16:00",
    "sim": [
     {
      "name": "075",
-     "every": "auto",
+     "every": 20,
      "legs": [
       {
        "fr": "Hlučín, sídliště OKD",
        "to": "Ostrava, Poruba, Studentská",
-       "at": "auto"
+       "at": [
+        12
+       ]
       },
       {
        "fr": "Ostrava, Poruba, Studentská",
        "to": "Hlučín, sídliště OKD",
-       "at": "auto"
+       "at": [
+        19
+       ]
       }
      ]
     }
    ],
-   "note": "Hlučín, sídliště OKD – Ostrava, Poruba, Studentská every 20 (Hlučín :12 / :32 / :52, Poruba :19 / :39 / :59); extra trips at :02 / :22 before 14:00 are off the pattern."
+   "note": "Hlučín, sídliště OKD – Ostrava, Poruba, Studentská every 20 (Hlučín :12 / :32 / :52, Poruba :19 / :39 / :59). Extra trips at :02 / :22 until 14:02 (same path) made 13:40–15:40 the busiest stretch, so the model hour is set to 16:00 by hand (as 282), where every 20 is exact both ways; 4 buses. The extras are off the pattern."
   },
   "281": {
    "core": [
@@ -1968,22 +2101,26 @@
    "sim": [
     {
      "name": "284",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Hlučín, autobusové nádraží",
        "to": "Štěpánkovice, Svoboda",
-       "at": "auto"
+       "at": [
+        "17:28"
+       ]
       },
       {
        "fr": "Štěpánkovice, Svoboda",
        "to": "Hlučín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "16:24"
+       ]
       }
      ]
     }
    ],
-   "note": "Hlučín – Kravaře – Štěpánkovice every 2 h (the Hlučín end set 23 min off for one bus). Regular route via Dolní Benešov, Zábřeh, Mexiko (diversion 16–21 Oct)."
+   "note": "Hlučín – Kravaře – Štěpánkovice. Out of Hlučín 14:45, 15:15, 16:15, 17:28, 19:05; back only 16:24 all afternoon: the other buses go on from Štěpánkovice to other lines or end there (24-1116 to 283, 2TD2679, 24-1008). 284 runs at its inbound rate: every 120, Štěpánkovice 16:24 and Hlučín 17:28, exact, 1 bus (with 16:15 instead of 17:28 it needs 2). Off the pattern: Hlučín 14:45, 15:15, 16:15, 19:05. Regular route via Dolní Benešov, Zábřeh, Mexiko (diversion 16–21 Oct)."
   },
   "285": {
    "core": [
@@ -1994,38 +2131,32 @@
    "sim": [
     {
      "name": "285",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Ostrava, Poruba, Dílny DP Ostrava",
        "to": "Štítina, škola",
-       "at": "auto"
+       "at": [
+        "13:09",
+        "14:09"
+       ]
       },
       {
        "fr": "Štítina, škola",
        "to": "Ostrava, Poruba, Dílny DP Ostrava",
-       "at": "auto"
+       "at": [
+        "13:48",
+        "14:53"
+       ]
       }
-     ]
-    },
-    {
-     "name": "285 Dobroslavice",
-     "every": "auto",
-     "legs": [
-      {
-       "fr": "Ostrava, Poruba, Dílny DP Ostrava",
-       "to": "Dobroslavice",
-       "at": "auto"
-      },
-      {
-       "fr": "Dobroslavice",
-       "to": "Ostrava, Poruba, Dílny DP Ostrava",
-       "at": "auto"
-      }
+     ],
+     "window": [
+      "13:00",
+      "15:00"
      ]
     }
    ],
-   "note": "Ostrava, Poruba – Děhylov – Štítina every 1½ h, and the Dobroslavice short line hourly (285 Dobroslavice, :08 / :21)."
+   "note": "Ostrava, Poruba – Děhylov – Dobroslavice – Štítina. The Štítina trips run 13:03–15:50 only, about hourly by two buses (24-1112, 22-0005): Poruba 13:09, 14:09, 15:09; Štítina 13:03, 13:48, 14:53, 15:50. Timed in their own afternoon (window 13:00–15:00): every 120, Poruba 13:09 / 14:09 (hourly at :09), Štítina 13:48 / 14:53, exact; 2 buses. The Poruba – Dobroslavice short trips (hourly :09 / :41 at midday, 16:49 / 17:01) and the Háj and Mokré Lazce trips are no longer a line of their own: all their stops are on 285 (method Step 8), and the old 285 Dobroslavice line counted the 285 trips past Dobroslavice. Off the pattern: Štítina 13:03."
   },
   "290": {
    "core": [
@@ -2061,7 +2192,7 @@
      ]
     }
    ],
-   "note": "Hať – Hlučín – Ostrava, Přívoz. 14:40–16:40: out of Ostrava 14:44, 14:59, 15:24, 15:49, 16:19, back from Hať 14:47, 15:31, 16:07, 16:37. No single interval fits (every 40 leaves two of the five Ostrava departures out and its 15:39 slot empty), so 290 runs every 120 with four slots each way, exact; the plates pair 14:44 → 15:31, 15:24 → 16:07 and 15:49 → 16:37. The fifth departure, 16:19 (and 14:19 before the window), takes a bus home to the Hať garage and is off the pattern; with 16:19 off rather than 14:59, the four slots need four buses, not five."
+   "note": "Hať – Hlučín – Ostrava, Přívoz. 14:40–16:40: out of Ostrava 14:44, 14:59, 15:24, 15:49, 16:19, back from Hať 14:47, 15:31, 16:07, 16:37. No single interval fits (every 40 leaves two of the five Ostrava departures out and its 15:39 slot empty), so 290 runs every 120 with four slots each way, exact; the plates pair 14:44 → 15:31, 15:24 → 16:07 and 15:49 → 16:37. The fifth departure, 16:19 (and 14:19 before the window), takes a bus home to the Hať garage and is off the pattern; with 16:19 off rather than 14:59, the four slots need four buses, not five. The owner chose this over every 40 (3 buses, three of the five Ostrava departures), 25 Oct 2026."
   },
   "292": {
    "core": [
@@ -2104,17 +2235,21 @@
    "sim": [
     {
      "name": "293",
-     "every": "auto",
+     "every": 96,
      "legs": [
       {
        "fr": "Hlučín, autobusové nádraží",
        "to": "Bohumín, Nový Bohumín, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "17:05"
+       ]
       },
       {
        "fr": "Bohumín, Nový Bohumín, autobusová stanice",
        "to": "Hlučín, autobusové nádraží",
-       "at": "auto"
+       "at": [
+        "16:22"
+       ]
       }
      ]
     },
@@ -2139,41 +2274,48 @@
      ]
     }
    ],
-   "note": "Hlučín – Šilheřovice – Bohumín every 1½ h; the shift trips to Bohumín ŽD gate III are 293 ŽD (13:05 / 14:13), every 480."
+   "note": "Hlučín – Šilheřovice – Bohumín about every 95 min in the afternoon (Hlučín 13:55, 15:10, 17:05; Bohumín 15:02, 16:22, 18:17). Every 96: Hlučín 17:05, Bohumín 16:22, exact; 1 bus (every 120 would put a Hlučín slot on 13:05, the minute 293 ŽD leaves). Off the pattern: Hlučín 15:10; Bohumín 15:02, 18:17. The shift trips to Bohumín ŽD gate III are 293 ŽD (13:05 / 14:13), every 480."
   },
   "555": {
    "core": [
     "Bohumín, Starý Bohumín, náměstíSvobody",
     "Ostrava, Mor.Ostrava, Náměstí Republiky"
    ],
+   "anchor": "16:00",
    "sim": [
     {
      "name": "555",
-     "every": "auto",
+     "every": 60,
      "legs": [
       {
        "fr": "Bohumín, Starý Bohumín, náměstíSvobody",
        "to": "Ostrava, Mor.Ostrava, Náměstí Republiky",
-       "at": "auto"
+       "at": [
+        1,
+        28
+       ]
       },
       {
        "fr": "Ostrava, Mor.Ostrava, Náměstí Republiky",
        "to": "Bohumín, Starý Bohumín, náměstíSvobody",
-       "at": "auto"
+       "at": [
+        20,
+        50
+       ]
       }
      ]
     }
    ],
-   "note": "Bohumín, Starý Bohumín – Ostrava, Náměstí Republiky every 30 (Bohumín :28 / :58, Ostrava :20 / :50)."
+   "note": "Bohumín, Starý Bohumín – Ostrava, Náměstí Republiky. From 15:00 Bohumín leaves at :01 / :28 and Ostrava at :20 / :50. Two Bohumín, Nový Bohumín short trips (13:35, 14:03; stops on the line) made 13:30–15:30 the busiest stretch, so the model hour is set to 16:00 by hand (as 282): hourly with two slots each way, exact in 15:30–17:30, Bohumín :01 / :28, Ostrava :20 / :50 (that entry is every 30 at :20); 4 buses. Off the pattern: the earlier afternoon minutes (13:08, 13:41; 14:00, 14:30) and the evening."
   }
  },
  "unmodelled": {
-  "214": "Shift trips Dobrovského → Komárov, TEVA 2 (5:03, 5:30, 6:30, 13:03; one back at 6:15). Its stops are on other town lines (211, 220, 203, 213); TEVA 2 is on 223.",
-  "228": "Night line (Divadlo – Kylešovice, 23:20 – 0:57); no afternoon trips.",
-  "229": "Night line (23:33 – 3:15); no afternoon trips.",
   "256": "Opava – Dolní Benešov – Píšť / Kravaře, Kouty: 10 trips a day, in the afternoon 14:02 and 14:11 out, 14:30 and 15:10 back. Its stops are on 282, 254, 252, 253 and 257.",
   "275": "Opava – Dolní Benešov – Hlučín: 13 trips, mostly before 8:00; in the afternoon 14:33 and 15:21 out, 14:47 back. Its stops are on 254, 252, 253, 284 and 281.",
-  "283": "Two trips a day (Kobeřice 18:48 → Ostrava, Ostrava 21:05 → Kobeřice). Its stops are on 252, 284 and 281."
+  "283": "Two trips a day (Kobeřice 18:48 → Ostrava, Ostrava 21:05 → Kobeřice). Its stops are on 252, 284 and 281.",
+  "214": "Shift trips Dobrovského → Komárov, TEVA 2 (5:03, 5:30, 6:30, 13:03; one back at 6:15). Its stops are on other town lines (211, 220, 203, 213); TEVA 2 is on 223.",
+  "228": "Night line (Divadlo – Kylešovice, 23:20 – 0:57); no afternoon trips.",
+  "229": "Night line (23:33 – 3:15); no afternoon trips."
  },
  "network_state": [
   [
@@ -2234,9 +2376,19 @@
    "one Svinov – Bruntál trunk every 60 with the Rýmařov and Šumperk ends as variants."
   ],
   [
-   "290",
-   "every 120 with four slots each way (Ostrava 14:44, 14:59, 15:24, 15:49; Hať 14:47, 15:31, 16:07, 16:37), exact in the model hours, 4 buses.",
-   "every 40 with one slot each way (Ostrava :19, Hať :07): fewer typed values and 3 buses, but only three of the five Ostrava departures, and the 15:39 and 15:27 slots have no real trip."
+   "241 252 262",
+   "every 120 with two exact slots each way: 241 Opava 14:14 / 15:04, Vítkov 14:51 / 15:15 (4 buses); 252 Opava 14:20 / 14:50, Kobeřice 13:45 / 14:45 (3); 262 Opava 14:15 / 14:43, Bílovec 14:45 / 15:45 (3). Every real departure of the model window is on the minute; the real buses come from the Opava pool, so each line alone needs more of them.",
+   "one slot each way, 4 buses fewer: 241 every 90 with Opava 15:04 / Vítkov 15:15 (2 buses) and 262 every 80 with Opava 14:43 / Bílovec 14:45 (2), both passing the slot test with one slot for two departures; 252 the earlier hourly Opava :25 / Kobeřice :45 (2, approximate: 14:25 is 5 min from 14:20, 15:25 has no trip)."
+  ],
+  [
+   "215 233 264",
+   "exact window departures that one bus cannot run: 215 every 80 (Liliová 15:57 / 16:45, Globus 16:14 / 16:46; two buses ran it on 20 Oct, 405 and 403), 233 every 120 (Vítkov 16:15, Melč 15:45), 264 every 120 (Opava 16:44, Těškovice 16:03): 2 buses each.",
+   "the earlier 1-bus rows, 3 buses fewer, approximate (their window slots are 7 min to over an hour from the real departures): 215 hourly Liliová :09 / Globus :39; 233 every 90 Vítkov 16:15 / Melč 17:00; 264 every 120 Opava 16:21 / Těškovice 17:29."
+  ],
+  [
+   "248",
+   "hourly as hand-set (Opava :53, Heřmanice :45), approximate: the line runs hourly with gaps, and Heřmanice 13:45 / 16:45 and Opava 15:53 have no trip.",
+   "every 120 with Opava 13:53 / 15:53 and Heřmanice 14:45 / 16:45: passes the slot test and needs 1 bus instead of 2, but runs every second hour (14:53, 16:53 and 15:45 off the pattern)."
   ]
  ],
  "texts": {
@@ -2608,6 +2760,6 @@
   "authoring/alt_drive.py",
   "authoring/fill_designed.py"
  ],
- "keep_roster": "data/published/roster_v6.json",
- "keep_roster_why": "The owner may have the sheet in the game (published v6, 22 Oct 2026). A rebuild keeps each published bus on its Simutrans line wherever it is still evidence for that line, so the 25 Oct hand check of 281/282/290/292 moves the fewest buses."
+ "keep_roster": "data/published/roster_v8.json",
+ "keep_roster_why": "The owner may have the sheet in the game (published v8). A rebuild keeps each published bus on its Simutrans line wherever it is still evidence for that line (shared 04_roster step 6), so the 25 Oct method check moves the fewest buses."
 }

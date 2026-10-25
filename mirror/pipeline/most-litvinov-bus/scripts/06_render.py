@@ -79,7 +79,10 @@ for L in order:
                         f"its bus is counted in the main branch.</td></tr>")
             return (f"<tr class='all'><td>{E(p['fr'])} &rarr; {E(p['to'])}</td><td class='n sv'>0</td><td colspan='3'>no timetable (Departure every 0): too few trips for a pattern. "
                     f"Real departures {', '.join(hm(x) for x in alld)}.</td></tr>")
-        real = ', '.join(f':{m:02d}' for m in range(60) if m % p['every'] in p['real']) if 60 % p['every'] == 0 else ', '.join(map(str, p['real'])) + f' (mod {p["every"]})'
+        # intervals not dividing 60: the real clock times of one cycle from the first exact departure (25 Oct 2026; it had
+        # printed the minutes mod the interval, e.g. "11, 41 (mod 45)")
+        real = (', '.join(f':{m:02d}' for m in range(60) if m % p['every'] in p['real']) if 60 % p['every'] == 0 else
+                ', '.join(hm(m) for m in range(p['first'], p['first'] + p['every']) if m % p['every'] in p['real']) + f', repeating every {p["every"]} min')
         sp = ' · sparse line, fitted over 15:00–20:00' if p.get('sparse') else ''
         return (f"<tr><td>{E(p['fr'])} &rarr; {E(p['to'])}<div class='win'>1 min before timetable {real} · exact {hm(p['first'])}–{hm(p['last'])}{sp}</div></td>"
                 f"<td class='n sv'>{p['every']}</td><td class='n sv'>{p['set'][0]}</td><td class='mono'>{', '.join(map(str, p['set'][1:])) or '&mdash;'}</td><td class='n'>auto</td></tr>")
@@ -121,7 +124,7 @@ for L in order:
     badge = C['nad'].get('badge', 'Tram replacement') if L == C['nad']['label'] else L
     cards.append(f"""<article class="card" id="l{L}"><header><span class="badge{' nad' if L == C['nad']['label'] else ''}">{badge}</span><div class="hd"><h3>{E(title(L))}</h3><p>{E(sub_h)}</p></div><div class="cnt"><b>{len(ros)}</b><span>buses at {PEAK}</span></div></header>
 {note}<div class="tw"><table class="tt"><thead><tr><th>From</th><th></th><th>To</th><th class="n">Headway</th><th class="n">Leaves 16:xx</th><th class="n">Runtime</th></tr></thead><tbody>{rows}</tbody></table></div>
-<div class="sched"><h4>Simutrans schedule · departures set 1 min early</h4><div class="tw0"><table class="st2"><thead><tr><th>Terminus entry</th><th class="n">Departure every (min)</th><th class="n">Offset (min)</th><th>Also at (min)</th><th class="n">Leave up to</th></tr></thead><tbody>{sch}</tbody></table></div></div>
+<div class="sched"><h4>Simutrans schedule · departures set 1 min early · offsets count from 01:00 ((real − 61) mod the interval)</h4><div class="tw0"><table class="st2"><thead><tr><th>Terminus entry</th><th class="n">Departure every (min)</th><th class="n">Offset (min)</th><th>Also at (min)</th><th class="n">Leave up to</th></tr></thead><tbody>{sch}</tbody></table></div></div>
 {othtxt}{chips}
 <details><summary>Stops</summary>{stopsd}</details></article>""")
 

@@ -78,16 +78,23 @@ def leg_rows(s):
         if g['untimed']:
             rows.append(f'<tr><td>{stop}</td><td class="n sv">0</td><td class="n">–</td><td>–</td><td class="fit">no timetable (empty return; leaves on arrival), {g["rt"]} min</td></tr>')
             continue
-        sets = g['set']; reals = [((v + 60 + (1 if LOOP else 0)) % P) for v in sets]
-        off = f'<span class="sv">{sets[0]}</span><small class="real">{slot_clock(P, reals[0])}</small>'
-        also = ' '.join(f'<span class="sv">{v}</span><small class="real">{slot_clock(P, r)}</small>' for v, r in zip(sets[1:], reals[1:])) or '–'
+        sets = g['set']; P_ = P
+        rs_ = sorted(((v + 60 + (1 if LOOP else 0)) % P) for v in sets)
+        if len(rs_) >= 2 and P % len(rs_) == 0 and all((rs_[(i + 1) % len(rs_)] - rs_[i]) % P == P // len(rs_) for i in range(len(rs_))):
+            # evenly spaced slots are typed as the plain interval (owner rule: "every 60, Offset 17, Also at 47" is every 30);
+            # the same typed value reduced mod the shorter interval (fold added 25 Oct 2026)
+            P_ = P // len(rs_); sets = [sets[0] % P_]
+        reals = [((v + 60 + (1 if LOOP else 0)) % P_) for v in sets]
+        off = f'<span class="sv">{sets[0]}</span><small class="real">{slot_clock(P_, reals[0])}</small>'
+        also = ' '.join(f'<span class="sv">{v}</span><small class="real">{slot_clock(P_, r)}</small>' for v, r in zip(sets[1:], reals[1:])) or '–'
         st = g['stat']; win = g['window']
         fit = f"{st['exact']} of {st['n']} real departures on the minute, {st['w3']} within 3 min; {g['rt']} min to {E(g['to'].split(', ')[-1])}"
         if g.get('knot'): fit += f"; timed at the terminal so the bus passes {E(g['knot']['stop'])} at {', '.join(slot_clock(P, r) for r in g['knot']['at'])} ({g['knot']['rt']} min on)"
         if g.get('joint'): fit += f"; set {g['joint']['moved']} min off its best fit ({slot_clock(P, g['joint']['fit'])}) so the buses turn in the shortest round"
         chk = ''
         if win['empty']: chk += f'<small>window slot without a real departure: {", ".join(hm(t) for t in win["empty"])}</small>'
-        rows.append(f'<tr{" class=chk" if win["empty"] else ""}><td>{stop}</td><td class="n sv">{P}</td><td class="n">{off}</td><td>{also}</td><td class="fit">{fit}{chk}</td></tr>')
+        if P_ != P: fit += f"; written as every {P_}: its {P // P_} slots of the every-{P} line are evenly spaced"
+        rows.append(f'<tr{" class=chk" if win["empty"] else ""}><td>{stop}</td><td class="n sv">{P_}</td><td class="n">{off}</td><td>{also}</td><td class="fit">{fit}{chk}</td></tr>')
     return ''.join(rows)
 
 def day_line(g, P):
@@ -320,7 +327,7 @@ page = f'''{style}
 <p class="sub"><b>Buses needed.</b> One bus followed round the line's own slots with the real running times and at least 3 min at each terminal (less where the slots chain closer, as the real timetable turns). Real buses swap lines at {E(CF.get("texts", {}).get("swap_places", "Frýdek-Místek, Podlesí, Karviná and Lutyně"))} all afternoon, so per-line totals are higher than what Transdev runs; pooling lines would be the owner's choice and is not done.</p>
 
 <h2 id="checks">To check</h2>
-<p class="sub">First, {["no", "one", "two", "three", "four", "five", "six", "seven"][len(CF.get("owner_checks", []))]} choices made here that you may want to flip, each with its alternative. Then the Simutrans lines whose model window has a slot without a real departure, or a real departure more than 3 min off: mostly the real timetable is irregular there, and the card says why.</p>
+<p class="sub">First, {(["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"] + [str(i) for i in range(13, 100)])[len(CF.get("owner_checks", []))]} choices made here that you may want to flip, each with its alternative. Then the Simutrans lines whose model window has a slot without a real departure, or a real departure more than 3 min off: mostly the real timetable is irregular there, and the card says why.</p>
 <div class="types"><table class="tlist"><thead><tr><th>Line</th><th>Simutrans line</th><th>Entry</th><th>Pattern</th><th>In the window</th></tr></thead><tbody>{chk_rows}</tbody></table></div>
 
 {areas_html}

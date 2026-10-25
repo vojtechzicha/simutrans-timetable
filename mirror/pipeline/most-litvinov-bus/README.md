@@ -49,7 +49,9 @@ make_nm), `cycle_need_peak` from `../ostrava-trolleybus/scripts/lib.py` and `mar
    need = `cycle_need_peak` (or a loop version), topped up to the buses on the road in 16:00–16:59.
 5. `04_roster.py` → `roster.json`: designed buses (rules in its docstring), "not needed" history buses.
 6. `05_schedule.py` → `schedule.json`: runfit per terminus, −1 min everywhere; sparse lines get a 15:00–20:00 fit
-   where a pattern exists, else "Departure every 0" with the real departures.
+   where a pattern exists, else "Departure every 0" with the real departures. Two hand-set mechanisms in `config.json`
+   (method check 25 Oct 2026): `core_points` reads every trip of a line at the two stops it passes (line 13), and
+   `schedule_override` replaces a fitted row by hand-set values with a `why` (line 10).
 7. `06_render.py` fills `templates/page.html` → the HTML in the project root.
 
 `python scripts/run.py` rebuilds offline; `--fetch` refreshes the seznam-autobusu and dpmost.cz data first.
@@ -87,6 +89,12 @@ make_nm), `cycle_need_peak` from `../ostrava-trolleybus/scripts/lib.py` and `mar
 - **Branches**: only line 5 splits (5A Okružní Shell, 5B Zázvorová, 2 buses each) and line 30 (30A Jezero Most every
   30, 5 buses; 30B the Nádraží – Nemocnice loop every 15, 4 buses). Line 13 is one Simutrans line on Janov ⇄ Loučná
   with 7 buses (the Osek and Lom, Československé armády trips are folded in).
+- **Schedule, method check 25 Oct 2026** (`../olomouc/method-check-2026-10-25.md`): **13** is read at Janov, otočka and
+  Lom, Loučná, Libkovická, which every trip passes (the Osek, Lom ČSA and Křížatky trips included): every 15 min both ways,
+  exact 13:13–18:43 / 13:27–18:57 (the Lom end had been every 60 at :12 :57, 2 an hour against 4 from Janov). **10** is
+  set by hand on one 2-hour cycle of 4 slots at both ends (2 an hour, exact 15:11–17:11 from Most and 15:34–17:34 from
+  Obrnice; it had been every 45 at Most, 2.67 an hour, against 2 at Obrnice). 2 buses hold it while Obrnice → Most takes
+  at most 15 min and Most → Obrnice at most 20; every 30 at both ends is the simpler, approximate option.
 - **Summer timetables** of 16 and 30 (to 30 Sep) are the ones in force on 29 Sep; from 1 Oct both change and the
   station forecourt closes (line 30 ends at Rudolická). Listed as not modelled.
 - **Stop names** expanded (config `stop_name_expansions`): 1. náměstí, Československé mládeže/armády, 14. základní

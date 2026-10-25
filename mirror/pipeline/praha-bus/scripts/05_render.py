@@ -138,24 +138,32 @@ def main():
     # ---------- schedule ----------
     def sched_block(L):
         p = P[L]; rows = []
-        for m in p.get('main', []):
+        hand = p.get('schedule_rows')      # hand-set rows (state schedule_overrides, method check 25 Oct 2026) replace the main rows
+        for m in (hand or p.get('main', [])):
             sc = m.get('schedule')
             if not sc: continue
             also = ', '.join(str(a) for a in sc['set'][1:]) or '—'
             real_o = f'<small class="real">real {sc["real"][0]}</small>'
             real_a = f'<small class="real">real {", ".join(str(x) for x in sc["real"][1:])}</small>' if len(sc['real']) > 1 else ''
             fit = (f'exact {hm(sc["first"])}–{hm(sc["last"])} ({sc["n"]} departures)' if sc['exact'] else f'approximate, up to {sc["max_dev"]} min off')
+            if sc.get('override'):
+                fit = (f'set by hand' + (', approximate' if sc.get('approx') else '') + (f', exact {hm(sc["first"])}–{hm(sc["last"])} ({sc["n"]} departures)' if sc['n'] >= 4 else '') +
+                       (f', up to {sc["max_dev"]} min off in 15:00–17:59' if sc['max_dev'] else ', every 15:00–17:59 departure on a slot') +
+                       f'<small>{esc(sc["override"])}</small>')
             if not p.get('peak'): fit += '<small>no trips in 15:00–17:59; fitted over the whole day</small>'
             rows.append(f'<tr><td>{esc(m["o"])} <span class="arr">→</span> {esc(m["d"])}<span class="lp">terminus · 1 min early</span></td>'
                         f'<td class="num sv">{sc["every"]}</td><td class="num sv">{sc["set"][0]}{real_o}</td><td class="sv">{esc(also)}{real_a}</td><td class="sv">auto</td><td class="fit">{fit}</td></tr>')
         if not rows: return ''
         others = [x for x in p.get('patterns', []) if not any(x['stops'] == m['stops'] for m in p['main'])]
+        handod = {(m['o'], m['d']) for m in (hand or [])}
         pat = ''
         if others:
             pat = ('<details class="pats"><summary>Other stop patterns in 15:00–17:59 (' + str(len(others)) + ')</summary><ul>' +
                    ''.join(f'<li>{esc(x["o"])} → {esc(x["d"])}: {x["n"]} trip{"s" if x["n"] != 1 else ""} in the peak, {len(x["stops"])} stops'
-                           + (' · a peak trip: own Simutrans line' if x['n'] >= 3 else ' · not a peak trip, not modelled') + '</li>' for x in others) + '</ul></details>')
-        return (f'<div class="sch"><h4>Simutrans schedule</h4><p class="lpn">Buses turn at every terminus (loop, bus-station circuit or block), so Offset and Also at are set 1 min before the timetable departure, with the real minute under each value. Put the values on the departure stand.</p>'
+                           + (' · its terminus entry is in the table above' if (x['o'], x['d']) in handod else ' · a peak trip: own Simutrans line' if x['n'] >= 3 else ' · not a peak trip, not modelled') + '</li>' for x in others) + '</ul></details>')
+        odd = sorted({m['schedule']['every'] for m in (hand or p.get('main', [])) if m.get('schedule') and 60 % m['schedule']['every']})
+        orig = (f' The fork counts offsets from 01:00, so on an interval that does not divide 60 (every {", ".join(map(str, odd))}) the typed value is (real − 60 − 1) mod the interval.' if odd else '')
+        return (f'<div class="sch"><h4>Simutrans schedule</h4><p class="lpn">Buses turn at every terminus (loop, bus-station circuit or block), so Offset and Also at are set 1 min before the timetable departure, with the real minute under each value.{orig} Put the values on the departure stand.</p>'
                 f'<div class="tw"><table class="st"><thead><tr><th>Terminus entry</th><th class="num">Departure every</th><th class="num">Offset</th><th>Also at</th><th>Leave up to</th><th>Fit</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>{pat}</div>')
 
     def stops_block(L):

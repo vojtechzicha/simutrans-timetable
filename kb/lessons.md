@@ -116,3 +116,7 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   fits get the step-by-step method check before they ship; 281/282/290/292 rebuilt as outstation lines.
 - **25 Oct:** "Unless those empty runs add something really needed and specific, don't add them just for frequency" → the
   281B/290B/292B empty-return lines (5 buses) were dropped; extra peak departures are listed, not modelled.
+- **25 Oct:** "290 uses more buses, then verify all sheets with this level of detail" → full check of all 28 active sheets. Found:
+  the 01:00 offset origin had only been fixed in the Ostrava pipelines; Brno, Olomouc, Plzeň, Praha and Most–Litvínov still
+  counted from midnight on intervals not dividing 60 (and Pardubice was built before the 20 Oct fix). A rule fix must be applied
+  to every copy of the shared code, then checked across all pipelines by script (`audit/city_systemic.py`), not sheet by sheet.

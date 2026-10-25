@@ -262,22 +262,27 @@
    "sim": [
     {
      "name": "822",
-     "every": "auto",
+     "every": 80,
      "legs": [
       {
        "fr": "Krnov, autobusová stanice",
        "to": "Hošťálkovy, Staré Purkartice, točna",
-       "at": "auto"
+       "at": [
+        "14:25"
+       ],
+       "rt": 29
       },
       {
        "fr": "Hošťálkovy, Staré Purkartice, točna",
        "to": "Krnov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "14:55"
+       ]
       }
      ]
     }
    ],
-   "note": "Krnov – Hošťálkovy, Staré Purkartice every 1½ h in the afternoon (Krnov 14:25, 15:45, 17:25; Purkartice 14:55, 16:15, 17:55): one bus every 90."
+   "note": "Krnov – Hošťálkovy, Staré Purkartice: one bus (83-2009), every 80 in the afternoon (Krnov 14:25, 15:45; Purkartice 14:55, 16:15), every 80 on the minute both ways (also Krnov 7:45, 11:45). The bus turns at the Purkartice loop in 0 min, so the run out is set to 29 min (as most of the day's trips) and one bus works it. Off the pattern: Krnov 17:25, 19:15; Purkartice 12:45, 17:55, 19:55 (the evening runs every 100–120 min)."
   },
   "831": {
    "core": [
@@ -344,12 +349,14 @@
    "sim": [
     {
      "name": "833",
-     "every": "auto",
+     "every": 240,
      "legs": [
       {
        "fr": "Krnov, autobusová stanice",
        "to": "Jindřichov, železniční stanice",
-       "at": "auto",
+       "at": [
+        "15:45"
+       ],
        "stops_via": [
         "Město Albrechtice, rozcestí Dakon"
        ]
@@ -357,7 +364,9 @@
       {
        "fr": "Jindřichov, železniční stanice",
        "to": "Krnov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "17:20"
+       ]
       }
      ]
     },
@@ -378,7 +387,7 @@
      ]
     }
    ],
-   "note": "Krnov – Město Albrechtice – Jindřichov, station every 3 h (Krnov 14:25), the stop list via Město Albrechtice, rozcestí Dakon; the back slot is set 34 min off so one bus works both ends. Jindřichov – Vysoká – Osoblaha is 833 Osoblaha every 180 (Jindřichov 15:39, Osoblaha 16:44)."
+   "note": "Krnov – Město Albrechtice – Jindřichov, station every 240 on the window's trips (Krnov 15:45; Jindřichov 17:20, also 9:20), one bus, the stop list via Město Albrechtice, rozcestí Dakon. The afternoon sends more buses out of Krnov (12:35, 14:25, 15:45, 18:05) than come back on 833 (17:20, 19:20): they go on to Osoblaha and 902 or end at Jindřichov, so the line runs at its return rate and the other Krnov departures are off the pattern (14:25 is the bus that runs 833 Osoblaha 15:39, 82-1005). Jindřichov – Vysoká – Osoblaha is 833 Osoblaha every 180 (Jindřichov 15:39, Osoblaha 16:44)."
   },
   "824": {
    "core": [
@@ -441,25 +450,30 @@
     "Město Albrechtice, autobusová stanice",
     "Zlaté Hory, autobusová stanice"
    ],
+   "anchor": "16:00",
    "sim": [
     {
      "name": "901",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Krnov, autobusová stanice",
        "to": "Zlaté Hory, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "17:15"
+       ]
       },
       {
        "fr": "Zlaté Hory, autobusová stanice",
        "to": "Krnov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "15:44"
+       ]
       }
      ]
     }
    ],
-   "note": "Krnov – Heřmanovice – Zlaté Hory every 2 h (Krnov 15:15, 17:15; Zlaté Hory 15:44, 17:44): two buses. The diversion timetable (29 Sep – 19 Dec) runs."
+   "note": "Krnov – Heřmanovice – Zlaté Hory every 2 h (Krnov 17:15, also 9:15; Zlaté Hory :44 from 15:44 to 19:44): two buses. Modelled at 16:00: the busier 13:20–15:20 is the Město Albrechtice – Holčovice shorts (13:24, 13:59), whose stops are all on the line (as 282 on the Opavsko sheet). Off the pattern: Krnov 13:45, 15:05; Zlaté Hory 12:19. The diversion timetable (29 Sep – 19 Dec) runs."
   },
   "902": {
    "core": [
@@ -490,22 +504,26 @@
     },
     {
      "name": "902 Zlaté Hory",
-     "every": "auto",
+     "every": 480,
      "legs": [
       {
        "fr": "Jindřichov, železniční stanice",
        "to": "Zlaté Hory, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "13:21"
+       ]
       },
       {
        "fr": "Zlaté Hory, autobusová stanice",
        "to": "Jindřichov, železniční stanice",
-       "at": "auto"
+       "at": [
+        "14:36"
+       ]
       }
      ]
     }
    ],
-   "note": "Jindřichov, station – Petrovice, U hájenky every 2 h (station :41, Petrovice :06; 11:41, 15:41, 17:46 and 12:06, 16:06, 18:06). The trips on to Zlaté Hory (Jindřichov 13:21, Zlaté Hory 14:36) are 902 Zlaté Hory every 240; Petrovy Boudy, hřeben has no other line."
+   "note": "Jindřichov, station – Petrovice, U hájenky every 2 h (station :41, Petrovice :06; 11:41, 15:41, 17:46 and 12:06, 16:06, 18:06). The round on to Zlaté Hory (Jindřichov 13:21, Zlaté Hory 14:36, one bus, 82-2002) is 902 Zlaté Hory every 480 on that round; Petrovy Boudy, hřeben has no other line."
   },
   "811": {
    "core": [
@@ -515,17 +533,21 @@
    "sim": [
     {
      "name": "811",
-     "every": "auto",
+     "every": 90,
      "legs": [
       {
        "fr": "Krnov, autobusová stanice",
        "to": "Horní Benešov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "15:05"
+       ]
       },
       {
        "fr": "Horní Benešov, autobusová stanice",
        "to": "Krnov, autobusová stanice",
-       "at": "auto",
+       "at": [
+        "15:50"
+       ],
        "stops_via": [
         "Lichnov, Dubnice, pohostinství"
        ]
@@ -553,7 +575,7 @@
      ]
     }
    ],
-   "note": "Krnov – Horní Benešov every 2 h at irregular minutes (Krnov 13:00, 15:05, 17:40; Horní Benešov 12:45, 14:17, 15:50): one bus every 120, back via Lichnov, Dubnice, pohostinství as some trips run. The Sosnová trips (Krnov 14:10, 15:40; Sosnová 14:40, 16:10) are 811 Sosnová every 90, on the minute."
+   "note": "Krnov – Horní Benešov every 90, one bus: Krnov 15:05, Horní Benešov 14:20 and 15:50 (each Krnov departure comes back on the same bus about 75 min later, 83-1007 15:05 → 15:50), back via Lichnov, Dubnice, pohostinství as some trips run. Off the pattern: Krnov 13:00, 17:40, 19:45; Horní Benešov 12:45, 18:40. The Sosnová trips (Krnov 14:10, 15:40; Sosnová 14:40, 16:10) are 811 Sosnová every 90, on the minute."
   },
   "814": {
    "core": [
@@ -564,17 +586,21 @@
    "sim": [
     {
      "name": "814",
-     "every": "auto",
+     "every": 180,
      "legs": [
       {
        "fr": "Krnov, autobusová stanice",
        "to": "Čaková, konečná",
-       "at": "auto"
+       "at": [
+        "15:24"
+       ]
       },
       {
        "fr": "Čaková, konečná",
        "to": "Krnov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "15:55"
+       ]
       }
      ]
     },
@@ -597,7 +623,7 @@
      ]
     }
    ],
-   "note": "Krnov – Zátor – Čaková every 3 h (Krnov 15:25, 18:20; Čaková 15:55, 18:50). The trip to Zátor, točna (Krnov 15:00) is 814 Zátor every 480 with an empty return; Zátor village stops have no other line."
+   "note": "Krnov – Zátor – Čaková every 3 h on the 15:25 / 15:55 round (also 18:20 / 18:50, 4–5 min off), one bus; the bus turns at Čaková in 0 min, so Krnov is set 1 min early (15:24). The 13:40 / 14:15 round is off the pattern (its bus goes on to Zátor). The trip to Zátor, točna (Krnov 15:00) is 814 Zátor every 480 with an empty return; Zátor village stops have no other line."
   },
   "816": {
    "core": [
@@ -607,22 +633,26 @@
    "sim": [
     {
      "name": "816",
-     "every": "auto",
+     "every": 180,
      "legs": [
       {
        "fr": "Krnov, železniční stanice",
        "to": "Krasov, točna",
-       "at": "auto"
+       "at": [
+        "15:10"
+       ]
       },
       {
        "fr": "Krasov, točna",
        "to": "Krnov, železniční stanice",
-       "at": "auto"
+       "at": [
+        "15:45"
+       ]
       }
      ]
     }
    ],
-   "note": "Krnov, station – Krasov every 3 h (station 13:50; Krasov 15:45): one bus."
+   "note": "Krnov, station – Krasov every 3 h on the 15:10 round (Krasov 15:45, 83-1008), one bus. The other rounds (11:55, 13:50, 17:45 out; 12:30, 19:00 back) are off the pattern."
   },
   "817": {
    "core": [
@@ -652,33 +682,49 @@
    "sim": [
     {
      "name": "818",
-     "every": "auto",
+     "every": 240,
      "legs": [
       {
        "fr": "Krnov, autobusová stanice",
        "to": "Brumovice, Úblo, točna",
-       "at": "auto"
+       "at": [
+        "17:40"
+       ]
       },
       {
        "fr": "Brumovice, Úblo, točna",
        "to": "Krnov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "15:03"
+       ]
       }
      ]
     },
     {
      "name": "818 Skrochovice",
-     "every": "auto",
+     "every": 240,
      "legs": [
       {
        "fr": "Brumovice, Úblo, točna",
        "to": "Brumovice, Skrochovice, most",
-       "at": "auto"
+       "at": [
+        "14:30",
+        "15:40"
+       ],
+       "notvia": [
+        "Neplachovice, škola"
+       ]
       },
       {
        "fr": "Brumovice, Skrochovice, most",
        "to": "Brumovice, Úblo, točna",
-       "at": "auto"
+       "at": [
+        "14:50",
+        "16:00"
+       ],
+       "notvia": [
+        "Neplachovice, škola"
+       ]
       }
      ]
     },
@@ -705,7 +751,7 @@
      ]
     }
    ],
-   "note": "Krnov – Brumovice, Úblo every 3 h (Krnov 15:10; Úblo 15:03, 17:40), the Úblo end set 26 min off so one bus works both. The Úblo – Skrochovice shuttle runs about every 1½ h (818 Skrochovice), and the school trips Úblo – Neplachovice (12:30, 13:30; back 13:05, 14:10) are 818 Neplachovice every 480."
+   "note": "Krnov – Brumovice, Úblo every 240 on the trips of the bus that sleeps at Úblo (83-2006: Úblo 15:03, Krnov 17:40), one bus. Krnov 15:10 is off the pattern: its bus (82-2006) works the Skrochovice shuttle and goes back at 17:40; Úblo 17:40 and 19:40 are off too. The Úblo – Skrochovice shuttle is 818 Skrochovice every 240 on its two afternoon rounds (Úblo 14:30, 15:40; Skrochovice 14:50, 16:00; also 11:40 / 12:00). The school trips Úblo – Neplachovice (12:30, 13:30; back 13:05, 14:10) are 818 Neplachovice every 480; they pass Skrochovice, most, but are not counted on the shuttle."
   },
   "819": {
    "core": [
@@ -715,22 +761,28 @@
    "sim": [
     {
      "name": "819",
-     "every": "auto",
+     "every": 160,
      "legs": [
       {
        "fr": "Krnov, autobusová stanice",
        "to": "Bruntál, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "14:35",
+        "16:00"
+       ]
       },
       {
        "fr": "Bruntál, autobusová stanice",
        "to": "Krnov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "14:20",
+        "15:40"
+       ]
       }
      ]
     }
    ],
-   "note": "Krnov – Bruntál about hourly at irregular minutes (Krnov 12:00, 12:40, 14:25, 14:35, 16:00, 17:15; Bruntál :40 mostly): every 60 with two buses, both ends set a few minutes off their best fit for the shortest round; most Krnov departures are off the pattern."
+   "note": "Krnov – Bruntál about hourly at irregular minutes: every 160 with two slots each way on the real minutes (Krnov 14:35, 16:00, also 10:40, 17:15; Bruntál 14:20, 15:40, also 5:00, 22:20), two buses. Off the pattern in the afternoon: Krnov 12:00, 12:40, 14:25 (83-2004's one round); Bruntál 12:00, 13:20, 14:40, 16:50, 18:40. Three slots each way would catch 14:25 and 14:40 too, for four buses (owner check)."
   },
   "861": {
    "core": [
@@ -740,26 +792,28 @@
    "sim": [
     {
      "name": "861",
-     "every": 60,
+     "every": 160,
      "legs": [
       {
        "fr": "Bruntál, železniční stanice",
        "to": "Vrbno p.Prad., zámeček",
        "at": [
-        40
+        "15:40",
+        "16:40"
        ]
       },
       {
        "fr": "Vrbno p.Prad., zámeček",
        "to": "Bruntál, železniční stanice",
        "at": [
-        54
+        "15:44",
+        "16:54"
        ]
       }
      ]
     }
    ],
-   "note": "Bruntál, station – Vrbno – Karlova Studánka – Vrbno, zámeček hourly (station :40; zámeček :54, as 16:54 and 14:49). Three buses. The diversion timetable (12 Oct – 20 Dec) runs."
+   "note": "Bruntál, station – Vrbno – Karlova Studánka – Vrbno, zámeček about hourly: every 160 on the window's real minutes (Bruntál 15:40, 16:40; zámeček 15:44, 16:54, also 14:14, 22:14), three buses. Keeping Bruntál hourly at :40 (every 120) costs a fourth bus (owner check). Off the pattern: Bruntál 12:30, 14:30, 17:45, 19:40; zámeček 12:09, 14:49, 19:09. The diversion timetable (12 Oct – 20 Dec) runs."
   },
   "862": {
    "core": [
@@ -769,26 +823,28 @@
    "sim": [
     {
      "name": "862",
-     "every": 60,
+     "every": 240,
      "legs": [
       {
        "fr": "Bruntál, železniční stanice",
        "to": "Karlova Studánka, dolní parkoviště",
        "at": [
-        10
+        "15:15",
+        "16:05"
        ]
       },
       {
        "fr": "Karlova Studánka, dolní parkoviště",
        "to": "Bruntál, železniční stanice",
        "at": [
-        10
+        "16:05",
+        "17:15"
        ]
       }
      ]
     }
    ],
-   "note": "Bruntál, station – Malá Morávka – Karlova Studánka, dolní parkoviště about hourly in the afternoon (15:15, 16:05, 18:20, 19:10; back 15:10, 16:05, 17:15, 19:15): every 60 at :10 both ends, two buses."
+   "note": "Bruntál, station – Malá Morávka – Karlova Studánka, dolní parkoviště: every 240 on the two afternoon rounds (Bruntál 15:15, 16:05; Karlova Studánka 16:05, 17:15; also 12:05 both ways), two buses (83-2011 15:15 → 16:05, 84-1006 16:05 → 17:15). One bus every 120 (Bruntál 16:05, Karlova Studánka 17:15) would leave the 15:15 round off. Off the pattern: Bruntál 18:20, 19:10; Karlova Studánka 12:40, 15:10, 19:15."
   },
   "863": {
    "core": [
@@ -799,22 +855,26 @@
    "sim": [
     {
      "name": "863",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Bruntál, autobusová stanice",
        "to": "Vrbno p.Prad., rozcestí Ludvíkov",
-       "at": "auto"
+       "at": [
+        "14:20"
+       ]
       },
       {
        "fr": "Vrbno p.Prad., rozcestí Ludvíkov",
        "to": "Bruntál, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "14:15"
+       ]
       }
      ]
     }
    ],
-   "note": "Bruntál, bus station – Široká Niva – Vrbno, rozcestí Ludvíkov every 1½ h (Bruntál 15:00, 16:25; Ludvíkov 14:40, 16:15). The trips to Karlova Studánka, Hvězda have no line of their own: their stops are on 861, 862 and 885."
+   "note": "Bruntál, bus station – Široká Niva – Vrbno, rozcestí Ludvíkov every 120 on 84-1009's round (Bruntál 14:20 → Ludvíkov 15:10, back 16:15; Ludvíkov also 14:15, 18:15, 22:15), two buses. Off the pattern: Bruntál 12:45, 15:00, 16:25, 18:25; Ludvíkov 12:35, 14:40. Both window rounds (Bruntál 14:20, 15:00; Ludvíkov 14:15, 14:40) need four buses (owner check). The trips to Karlova Studánka, Hvězda have no line of their own: their stops are on 861, 862 and 885."
   },
   "865": {
    "core": [
@@ -895,26 +955,29 @@
    "sim": [
     {
      "name": "872",
-     "every": 90,
+     "every": 480,
      "legs": [
       {
        "fr": "Bruntál, autobusová stanice",
        "to": "Milotice n.Opavou, škola",
        "at": [
-        "13:50"
+        "13:50",
+        "15:15"
        ]
       },
       {
        "fr": "Milotice n.Opavou, škola",
        "to": "Bruntál, autobusová stanice",
        "at": [
-        "14:10"
-       ]
+        "14:10",
+        "15:35"
+       ],
+       "core_to": "Bruntál, železniční stanice"
       }
      ]
     }
    ],
-   "note": "Bruntál – Milotice nad Opavou: two afternoon rounds (Bruntál 13:50, 15:15; Milotice 14:10, 15:35); every 90 on 13:50 and 14:10 with one bus (15:20 and 15:40 a few minutes off)."
+   "note": "Bruntál – Milotice nad Opavou: two afternoon rounds with one bus (Bruntál 13:50, 15:15; Milotice 14:10, 15:35), every 480 on both. The way back is counted at Bruntál, station, where the 14:10 ends."
   },
   "874": {
    "core": [
@@ -975,26 +1038,30 @@
    "sim": [
     {
      "name": "907",
-     "every": 120,
+     "every": 480,
      "legs": [
       {
        "fr": "Vrbno p.Prad., železniční stanice",
        "to": "Zlaté Hory, autobusová stanice",
        "at": [
-        "15:15"
+        "12:50",
+        "15:15",
+        "17:30"
        ]
       },
       {
        "fr": "Zlaté Hory, autobusová stanice",
        "to": "Vrbno p.Prad., železniční stanice",
        "at": [
-        "16:25"
+        "14:25",
+        "16:30",
+        "18:20"
        ]
       }
      ]
     }
    ],
-   "note": "Vrbno, station – Vidly – Zlaté Hory about every 2 h (Vrbno 15:15, 17:30; Zlaté Hory 14:25, 16:30, 18:20): every 120 on 15:15 and 16:25, one bus. The diversion timetable (29 Sep – 19 Dec) runs."
+   "note": "Vrbno, station – Vidly – Zlaté Hory: three afternoon rounds (Vrbno 12:50, 15:15, 17:30; Zlaté Hory 14:25, 16:30, 18:20), every 480 on all six with one bus (also Zlaté Hory 6:25). The diversion timetable (29 Sep – 19 Dec) runs."
   },
   "873": {
    "core": [
@@ -1027,20 +1094,31 @@
     "Bruntál, železniční stanice",
     "Bruntál, KARLA"
    ],
+   "anchor": "16:00",
    "sim": [
     {
      "name": "877",
-     "every": "auto",
+     "every": 120,
      "legs": [
       {
        "fr": "Rýmařov, autobusová stanice",
        "to": "Bruntál, železniční stanice",
-       "at": "auto"
+       "at": [
+        "15:40"
+       ],
+       "notvia": [
+        "Bruntál, KARLA"
+       ]
       },
       {
        "fr": "Bruntál, železniční stanice",
        "to": "Rýmařov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "16:20"
+       ],
+       "notvia": [
+        "Bruntál, KARLA"
+       ]
       }
      ]
     },
@@ -1065,7 +1143,7 @@
      ]
     }
    ],
-   "note": "Rýmařov – Břidličná – Bruntál, station hourly (Rýmařov :40, Bruntál :20 mostly): every 60 with two buses at :34 and :24, 6 and 4 min before the real minutes, for the shortest round (owner check). The trips to and from Bruntál, KARLA (Rýmařov 12:40, KARLA 14:17, also 4:40/6:17 and 20:40/22:17) are 877 KARLA every 480, on the minute."
+   "note": "Rýmařov – Břidličná – Bruntál, station, modelled at 16:00: the busier 14:00–16:00 is the KARLA trip and a Kovohutě – Rýmařov short, whose stops are on the line. Every 120, Rýmařov 15:40 (also 17:40) and Bruntál 16:20 (also 18:20, 20:20), two buses. Rýmařov sends more buses out (13:20, 14:00, 14:40, 15:40, 16:40) than 877 brings back (13:20, 15:40, 16:20): they return on 920 (Opavsko sheet) and 877 KARLA, so the other Rýmařov departures and Bruntál 15:40 are off the pattern. Rýmařov hourly at :40 costs a third bus (owner check). The trips to and from Bruntál, KARLA (Rýmařov 12:40, KARLA 14:17, also 4:40/6:17 and 20:40/22:17) are 877 KARLA every 480, on the minute, and are not counted on 877."
   },
   "878": {
    "core": [
@@ -1075,12 +1153,13 @@
    "sim": [
     {
      "name": "878",
-     "every": 90,
+     "every": 480,
      "legs": [
       {
        "fr": "Rýmařov, autobusová stanice",
        "to": "Malá Morávka, Karlov, garáž",
        "at": [
+        "14:10",
         "15:30"
        ]
       },
@@ -1088,13 +1167,14 @@
        "fr": "Malá Morávka, Karlov, garáž",
        "to": "Rýmařov, autobusová stanice",
        "at": [
+        "14:55",
         "16:10"
        ]
       }
      ]
     }
    ],
-   "note": "Rýmařov – Malá Morávka, Karlov two rounds in the afternoon (Rýmařov 14:10, 15:30; Karlov 14:55, 16:10): every 90 on 15:30 and 16:10, one bus."
+   "note": "Rýmařov – Malá Morávka, Karlov: two rounds in the afternoon with one bus (Rýmařov 14:10, 15:30; Karlov 14:55, 16:10), every 480 on all four (the morning 6:00 / 6:45 is 10 min off)."
   },
   "879": {
    "core": [
@@ -1129,22 +1209,30 @@
    "sim": [
     {
      "name": "880",
-     "every": "auto",
+     "every": 180,
      "legs": [
       {
        "fr": "Rýmařov, autobusová stanice",
        "to": "Stará Ves, Anenská Huť",
-       "at": "auto"
+       "at": [
+        "14:25",
+        "15:15",
+        "15:59"
+       ]
       },
       {
        "fr": "Stará Ves, Anenská Huť",
        "to": "Rýmařov, autobusová stanice",
-       "at": "auto"
+       "at": [
+        "14:45",
+        "15:35",
+        "16:15"
+       ]
       }
      ]
     }
    ],
-   "note": "Rýmařov – Stará Ves, Anenská Huť about every 45–90 min (Rýmařov 14:25, 15:15, 16:00; Anenská Huť 14:45, 15:35, 16:15): one bus every 90. The diversion timetable (20 Jul – 14 Dec) runs."
+   "note": "Rýmařov – Stará Ves, Anenská Huť: three back-to-back rounds in the afternoon (Rýmařov 14:25, 15:15, 16:00; Anenská Huť 14:45, 15:35, 16:15), every 180 on all of them with one bus (also Anenská Huť 6:35, 7:15). The bus turns at Anenská Huť in 0 min after the 16:00, so that departure is set at 15:59. Off the pattern: 12:50 / 13:05. The diversion timetable (20 Jul – 14 Dec) runs."
   },
   "909": {
    "core": [
@@ -1314,19 +1402,33 @@
    "sim": [
     {
      "name": "922",
-     "every": "auto",
+     "every": 480,
      "legs": [
       {
        "fr": "Rýmařov, železniční stanice",
        "to": "Tvrdkov, Ruda, restaurace",
-       "at": "auto",
-       "knot": "Rýmařov, autobusová stanice"
+       "knot": "Rýmařov, autobusová stanice",
+       "knot_at": [
+        "13:55",
+        "15:50",
+        "17:25"
+       ],
+       "notvia": [
+        "Uničov, autobusová stanice"
+       ]
       },
       {
        "fr": "Tvrdkov, Ruda, restaurace",
        "to": "Rýmařov, železniční stanice",
-       "at": "auto",
-       "core_to": "Rýmařov, autobusová stanice"
+       "at": [
+        "14:20",
+        "16:20",
+        "17:50"
+       ],
+       "core_to": "Rýmařov, autobusová stanice",
+       "notvia": [
+        "Uničov, autobusová stanice"
+       ]
       }
      ]
     },
@@ -1357,7 +1459,7 @@
      ]
     }
    ],
-   "note": "Rýmařov, station – bus station – Tvrdkov, Ruda every 1½ h (station 15:45, 17:20; Ruda 16:20, 17:50), timed so the bus passes the bus station on time. The Uničov trips (Rýmařov 12:30, also 4:30 and 20:30; Uničov 15:09) are 922 Uničov every 480; the Uničov region stops have no other line."
+   "note": "Rýmařov, station – bus station – Tvrdkov, Ruda: three afternoon rounds (bus station 13:55, 15:50, 17:25; Ruda 14:20, 16:20, 17:50), every 480 on all six with one bus, timed so the bus passes the bus station on time (station 13:50, 15:45, 17:20). The Uničov trips pass Ruda but belong to 922 Uničov (Rýmařov 12:30, also 4:30 and 20:30; Uničov 15:09), every 480; the Uničov region stops have no other line."
   },
   "801": {
    "core": [
@@ -1368,17 +1470,21 @@
    "sim": [
     {
      "name": "801",
-     "every": "auto",
+     "every": 30,
      "legs": [
       {
        "fr": "Krnov, Nemocnice hl.brána",
        "to": "Krnov, Petrův důl",
-       "at": "auto"
+       "at": [
+        5
+       ]
       },
       {
        "fr": "Krnov, Petrův důl",
        "to": "Krnov, Nemocnice hl.brána",
-       "at": "auto"
+       "at": [
+        5
+       ]
       }
      ]
     },
@@ -1415,7 +1521,7 @@
      ]
     }
    ],
-   "note": "Nemocnice, hlavní brána – bus stand – Petrův důl every 30 (:06 / :36, back :07 / :37), two buses. At the shift changes (12:48–16:05, 4:49–6:30) trips run on from Petrův důl to the industrial zone II: that is 801 PZ, a Petrův důl – průmyslová zóna II shuttle every 480 at their times there (13:05, 13:30, 14:05, 14:34, 15:22, 15:52; back 13:15–16:06 at the točna), so the trunk is not doubled (owner check)."
+   "note": "Nemocnice, hlavní brána – bus stand – Petrův důl every 30 at :05 / :35 at both ends (the real minutes 8:35–12:05 and 14:35–15:35), two buses. At the shift changes (12:48–16:05, 4:49–6:30) trips run on from Petrův důl to the industrial zone II: that is 801 PZ, a Petrův důl – průmyslová zóna II shuttle every 480 at their times there (13:05, 13:30, 14:05, 14:34, 15:22, 15:52; back 13:15–16:06 at the točna), so the trunk is not doubled (owner check). The zone trips come back past Petrův důl at 13:46, 14:20 and 14:47, off the :05 / :35, so the way back is approximate in 13:40–15:40; every 120 with five slots each way would be exact there, for four buses (owner check)."
   },
   "802": {
    "core": [
@@ -1425,22 +1531,30 @@
    "sim": [
     {
      "name": "802",
-     "every": "auto",
+     "every": 160,
      "legs": [
       {
        "fr": "Krnov, Aut.stanoviště",
        "to": "Krnov, Ježník, sanatorium",
-       "at": "auto"
+       "at": [
+        "13:10",
+        "13:55",
+        "14:55"
+       ]
       },
       {
        "fr": "Krnov, Ježník, sanatorium",
        "to": "Krnov, Aut.stanoviště",
-       "at": "auto"
+       "at": [
+        "13:30",
+        "14:15",
+        "15:19"
+       ]
       }
      ]
     }
    ],
-   "note": "Bus stand – Ježník, sanatorium hourly in the afternoon (13:10, 13:55, 14:55, 16:34; back 13:30, 14:15, 15:19, 16:55): every 60 at :55 / :15, one bus."
+   "note": "Bus stand – Ježník, sanatorium: three 45-min rounds in the afternoon (bus stand 13:10, 13:55, 14:55; back 13:30, 14:15, 15:19), every 160 on all six with one bus (also 16:35 / 16:55, 1 and 0 min off)."
   },
   "805": {
    "core": [
@@ -1450,26 +1564,30 @@
    "sim": [
     {
      "name": "805",
-     "every": 90,
+     "every": 480,
      "legs": [
       {
        "fr": "Krnov, Hlubčická Na špici",
        "to": "Krnov, Chomýž, točna",
        "at": [
-        "14:40"
+        "13:25",
+        "14:40",
+        "16:10"
        ]
       },
       {
        "fr": "Krnov, Chomýž, točna",
        "to": "Krnov, Hlubčická Na špici",
        "at": [
+        "10:30",
+        "14:03",
         "15:35"
        ]
       }
      ]
     }
    ],
-   "note": "Hlubčická, Na špici – Chomýž, točna every 1½ h (Hlubčická 14:40, 16:10; Chomýž 14:03, 15:35): every 90 on 14:40 / 15:35, one bus."
+   "note": "Hlubčická, Na špici – Chomýž, točna: one bus alternating in the afternoon (Hlubčická 13:25, 14:40, 16:10; Chomýž 14:03, 15:35, with the 10:30 as the third), every 480 on all six."
   },
   "806": {
    "core": [
@@ -1480,20 +1598,22 @@
    "sim": [
     {
      "name": "806",
-     "every": 90,
+     "every": 480,
      "legs": [
       {
        "fr": "Krnov, Aut.stanoviště",
        "to": "Krnov, Cvilín točna",
        "at": [
-        "14:45"
+        "14:45",
+        "16:00"
        ]
       },
       {
        "fr": "Krnov, Cvilín točna",
        "to": "Krnov, Aut.stanoviště",
        "at": [
-        "15:05"
+        "15:05",
+        "16:20"
        ]
       }
      ]
@@ -1524,7 +1644,7 @@
      ]
     }
    ],
-   "note": "Bus stand – Cvilín every 1½ h (14:45, 16:00; Cvilín 15:05, 16:20): every 90 on 14:45 / 15:05. The trip via the state border (bus stand 17:50 → st. hranice CLO, 18:04 → Cvilín) is 806 CLO every 480; those stops have no other line."
+   "note": "Bus stand – Cvilín: two afternoon rounds (bus stand 14:45, 16:00; Cvilín 15:05, 16:20), every 480 on both, one bus. The trip via the state border (bus stand 17:50 → st. hranice CLO, 18:04 → Cvilín) is 806 CLO every 480; those stops have no other line."
   },
   "807": {
    "core": [
@@ -1570,12 +1690,15 @@
    "sim": [
     {
      "name": "851",
-     "every": "auto",
+     "every": 480,
      "legs": [
       {
        "fr": "Bruntál, železniční stanice",
        "to": "Bruntál, KARLA",
-       "at": "auto",
+       "at": [
+        "12:50",
+        "16:40"
+       ],
        "stops_via": [
         "Bruntál, nový hřbitov"
        ]
@@ -1583,20 +1706,23 @@
       {
        "fr": "Bruntál, KARLA",
        "to": "Bruntál, železniční stanice",
-       "at": "auto"
+       "at": [
+        "14:12",
+        "17:27"
+       ]
       }
      ]
     }
    ],
-   "note": "Bruntál town: station – nový hřbitov – KARLA (12:50, 16:40) and KARLA – station (14:12, 17:27): every 180 with one bus, the station end set 14 min off for the shortest round. The second loop, 852, has no line of its own: its stops are on 851 and the regional lines."
+   "note": "Bruntál town: station – nový hřbitov – KARLA (12:50, 16:40) and KARLA – station (14:12, 17:27), every 480 on both pairs with one bus (also KARLA 22:12). The second loop, 852, has no line of its own: its stops are on 851 and the regional lines."
   }
  },
  "unmodelled": {
-  "803": "Krnov town line to Červený dvůr: five trips a day (4:40, 5:45, 6:35, 21:29, 22:10), none in the afternoon.",
   "815": "Krnov – Krasov – Čaková – Zátor: three trips a day (6:10; Krasov 14:30 and Zátor, škola 15:40 back to Krnov). Its stops are on 814, 814 Zátor and 816.",
-  "852": "Bruntál town loop via U Rybníka: eight trips a day, in the afternoon only KARLA 15:12 and 18:27 to the station. Its afternoon stops are on 851 and the regional lines.",
   "876": "Rýmařov – Břidličná – Lomnice: five trips a day, the last at 12:44; none in the afternoon. Its stops are on 877, 911 and 921.",
-  "914": "Bruntál – Šternberk – Olomouc: two trips a day (6:35, back 11:50), none in the afternoon."
+  "914": "Bruntál – Šternberk – Olomouc: two trips a day (6:35, back 11:50), none in the afternoon.",
+  "852": "Bruntál town loop via U Rybníka: eight trips a day, in the afternoon only KARLA 15:12 and 18:27 to the station. Its afternoon stops are on 851 and the regional lines.",
+  "803": "Krnov town line to Červený dvůr: five trips a day (4:40, 5:45, 6:35, 21:29, 22:10), none in the afternoon."
  },
  "network_state": [
   [
@@ -1628,8 +1754,28 @@
  "owner_checks": [
   [
    "877",
-   "Rýmařov – Bruntál every 60 at Rýmařov :34 and Bruntál :24, 6 and 4 min before the real :40 and :20, so two buses work it (shortest round).",
-   "keep the real :40 / :20 and give the line a third bus."
+   "Rýmařov – Bruntál every 120 at Rýmařov 15:40 and Bruntál 16:20 (modelled at 16:00), two buses: every 60 fails Step 4 at Bruntál, where the real 15:40 and 16:20 are 40 min apart, and the published :34 / :24 were 6 and 4 min off the real minutes.",
+   "Rýmařov hourly at :40 (every 120 with Rýmařov 15:40 / 16:40 and Bruntál 15:40 / 16:20): a third bus; it also leaves Rýmařov together with 877 KARLA at 4:40, 12:40 and 20:40, unless the Rýmařov entry is written as every 480 with seven slots."
+  ],
+  [
+   "819",
+   "Krnov – Bruntál every 160 with two slots each way (Krnov 14:35, 16:00; Bruntál 14:20, 15:40), two buses; Krnov 14:25 and Bruntál 14:40 are off the pattern.",
+   "three slots each way (adding Krnov 14:25 and Bruntál 14:40, all six afternoon departures exact): four buses."
+  ],
+  [
+   "861",
+   "Bruntál – Vrbno, zámeček every 160 (Bruntál 15:40, 16:40; zámeček 15:44, 16:54), three buses.",
+   "every 120: Bruntál stays hourly at :40 (it can stay typed as every 60, Offset 39) and only the zámeček entry changes (every 120 at 15:44 and 16:54): a fourth bus."
+  ],
+  [
+   "863",
+   "Bruntál – Ludvíkov every 120 on one afternoon round (Bruntál 14:20, Ludvíkov 14:15 / 16:15), two buses; Bruntál 15:00 and Ludvíkov 14:40 are off the pattern.",
+   "both afternoon rounds (every 120, Bruntál 14:20 / 15:00, Ludvíkov 14:15 / 14:40, all exact): four buses."
+  ],
+  [
+   "801",
+   "the trunk is every 30 at :05 / :35 at both ends (two buses); the industrial-zone trips come back past Petrův důl at 13:46, 14:20 and 14:47, so the way back is approximate in 13:40–15:40.",
+   "every 120 with five slots each way (Nemocnice 13:48, 14:08, 14:35, 15:05, 15:35; Petrův důl 13:46, 14:20, 14:47, 15:05, 15:37), exact there: four buses instead of two and ten typed values."
   ],
   [
    "801 PZ",
@@ -1887,5 +2033,7 @@
   "854876": "The diversion of 876 (1 Sep – 23 Oct 2026) ends two days after the vehicle day, so the regular timetable is modelled (shared rule: short-term closures as the regular state).",
   "854912": "The diversion of 912 (15 – 21 Oct 2026) ends the day after the vehicle day, so the regular timetable is modelled.",
   "854921": "The diversion of 921 (1 Sep – 23 Oct 2026) ends two days after the vehicle day, so the regular timetable is modelled."
- }
+ },
+ "keep_roster": "data/published/roster_v2.json",
+ "keep_roster_why": "The owner may have the sheet in the game (published v2). A rebuild keeps each published bus on its Simutrans line wherever it is still evidence for that line (shared 04_roster step 6), so the 25 Oct method check moves the fewest buses."
 }

@@ -2,7 +2,7 @@
 
 Output: `ODIS Tesinsko Trinecko Frydecko.html` in the project root, published at the URL in `config.json` → `artifact_url` (republish to the same URL). Built on 21 Oct 2026, when the owner asked: "Can we now in separate sheet do Českotěšínsko, Frýdeckomístecko (probably the names are slightly different), Třinecko and Jablunkovsko? With special sections for MHD Cesky Tesin, Frydek-Mistek and Trinec?"
 
-This folder holds only the sheet's config and data. The scripts are the shared ones in `../odis-regional-hko/scripts/`, run with `--base odis-regional-tfj`. The method is `../bus-schedule-method.md` (v3), the same as on the Havířovsko/Karvinsko/Orlovsko sheet; the three town networks are small towns and take the same method (as Havířov does).
+This folder holds only the sheet's config and data. The scripts are the shared ones in `../odis-regional-hko/scripts/`, run with `--base odis-regional-tfj`. The method is `../bus-schedule-method.md` (v3 when built; v4 since the 25 Oct method check), the same as on the Havířovsko/Karvinsko/Orlovsko sheet; the three town networks are small towns and take the same method (as Havířov does).
 
 ## Scope
 
@@ -41,7 +41,18 @@ As the HKO sheet: CIS JŘ JDF of 20 Oct 2026 and the ODIS live map poll of Tue 2
   - 773 and 771 Hluchová: every 480 on their afternoon trips (773 timed at Nýdek, náměstí 12:33 with a knot).
   - 782 (Návsí – Radvanov – Jablunkov), 721 Mosty and 358 Steel: manual every 480 / 60 rounds from the real trips.
   - 985 (22 Oct, with the 883985 trips): the Frenštát short trips are an afternoon burst out of Ostrava every 30, 14:33 – 16:03. 985 = the two in-then-out rounds the live map shows (Frenštát 12:47 → Ostrava 14:33 out, 32-1002; Frenštát 14:42 → Ostrava 16:03 out, 63-1011), every 480; 985B = Ostrava 15:03 and 15:33 out only with an empty return (33-1015; 63-1005, which came in on 980 at 14:17), as 543B on the HKO sheet. Both legs `notvia` Rožnov, whose trips are 985 Rožnov's (unchanged).
-- **Owner checks** on the page: 731 regular route; 784's back slot :19 (two buses) instead of the real :25 (three); the 302 Tesco shuttle; 706 as two branch lines (as until 15:00) rather than the later combined trip; 985 as the burst (985 + 985B) rather than the old two-way every 90.
+- **Owner checks** on the page: 731 regular route; the 302 Tesco shuttle; 706 as two branch lines (as until 15:00) rather than the later combined trip; 985 as the burst (985 + 985B) rather than the old two-way every 90. Since 25 Oct also the cheaper option of every line that now needs a bus more (770, 738, 722, 702, 703, 708, 716, 301, 314), 358 listed with 358 Steel, and 980's passing every-120 row against the kept every 30. The 784 check (:19 instead of :25) is gone: 784 is exact at two buses.
+
+## Method check, 25 Oct 2026 (bus schedule method v4)
+
+After the Hlučínsko hand check the owner asked for every sheet to be checked at that level ("that's the point of you doing it, so you'll not produce incorrect results"). The Step 4 audit failed 88 of this sheet's 184 timed legs (scripted `at: 'auto'` rows and some hand rows). Every failing line was set by hand in `authoring/tfj_spec.py`, both directions together, with one rule for all lines. The rule, and per line the reading, the candidates tested, the typed values with their real times, the knots, the off-pattern trips and the need, are in `method-check-2026-10-25.md`. In short:
+- each direction passes Step 4 and keeps the real 13:00–18:00 rate (lower bound);
+- need is at most the published one where a passing option exists, then exactness, then the fewest typed values;
+- variant trips come off the main rows (`via` / `notvia`);
+- hand anchors only with a reason (302, 303, 343, 345, 708, 715; 316 has its own window);
+- shift lines are every 480 (703, 358, 308 Mitrovice).
+
+Now 180 of 184 legs pass. The four left are 980's out row (approximate on purpose) and 732, 745, 750 one direction each, FEWER by design (the extras are buses going on to other lines). Need is 143 → 150, and each +1 has its cheaper option on the owner checks. The in-game change list is at the end of the method-check file.
 
 ## Roster
 

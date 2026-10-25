@@ -83,6 +83,30 @@ def main():
                 w = WIN if any(WIN[0] <= x < WIN[1] for x in deps) else (0, 1800)   # off-peak-only line: whole day
                 off, dev = best_offset(deps, I, lo=w[0], hi=w[1])
                 m['schedule'] = dict(every=I, real=[off], set=loop_shift(I, [off], True), exact=False, max_dev=dev)
+        # hand-set Simutrans rows (state schedule_overrides, method check 25 Oct 2026): they replace the main-pattern rows on the
+        # card where the fit broke the shared rules (different rates at the two ends, more slots than departures, or a pair made
+        # of two different branches, which then get all their rows). Each row: o, d, every, real (timetable minutes mod every),
+        # why; optional extra = peak extras listed in the why and left out of the model (HH:MM), approx = no exact run to show.
+        # The exact run (as runfit walks it: no extra departure, no empty slot) and the largest deviation in 15:00-17:59 are
+        # worked out here from the trips, so the card can say how well the row fits.
+        ov = s.get('schedule_overrides', {}).get(L)
+        if ov:
+            rows = []
+            for o_ in ov['rows']:
+                I, R = o_['every'], o_['real']; skip = {mins(x) for x in o_.get('extra', [])}
+                deps = sorted(t['dep'] for t in ts if (t['o'], t['d']) == (o_['o'], o_['d']) and t['dep'] not in skip)
+                S = set(deps); pk = [x for x in deps if WIN[0] <= x < WIN[1]]
+                runs, a = [], None
+                for t in range(780, 1201):                       # maximal stretches where departures and slots agree
+                    okm = t < 1200 and ((t in S) == (t % I in R))
+                    if okm and a is None: a = t
+                    if not okm and a is not None: runs.append([x for x in deps if a <= x < t]); a = None
+                runs = [r_ for r_ in runs if len(r_) >= 2]
+                run = max(runs, key=lambda r_: (max(0, min(r_[-1] + 1, 1050) - max(r_[0], 930)), len(r_))) if runs and not o_.get('approx') else []
+                dev = max((min(abs(x - k * I - y) for y in R for k in range(-1, 1440 // I + 2)) for x in pk), default=0)
+                rows.append(dict(o=o_['o'], d=o_['d'], schedule=dict(every=I, real=R, set=loop_shift(I, R, True), exact=False, override=o_['why'], approx=bool(o_.get('approx')),
+                                 max_dev=dev, first=run[0] if run else None, last=run[-1] if run else None, n=len(run))))
+            rec['schedule_rows'] = rows
         if len(rec['main']) == 2:
             # cycle_need by direction, not by stop name: a terminus often has a separate alighting stop
             # (100: trips end at Letiste and start at Terminal 1), so match the two main terminus pairs as A and B

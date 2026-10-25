@@ -72,9 +72,21 @@ c['network_state'] = [
      'The export already holds a new version of 909 valid from 22 Oct 2026, two days after the vehicle day; the sheet keeps the version of the vehicle day.'],
 ]
 
+c['keep_roster'] = 'data/published/roster_v2.json'
+c['keep_roster_why'] = 'The owner may have the sheet in the game (published v2). A rebuild keeps each published bus on its Simutrans line wherever it is still evidence for that line (shared 04_roster step 6), so the 25 Oct method check moves the fewest buses.'
 c['owner_checks'] = [
-    ['877', 'Rýmařov – Bruntál every 60 at Rýmařov :34 and Bruntál :24, 6 and 4 min before the real :40 and :20, so two buses work it (shortest round).',
-     'keep the real :40 / :20 and give the line a third bus.'],
+    # 25 Oct 2026 method check (method-check-2026-10-25.md): rows that pass Step 4 at the published bus count are the default; a more exact
+    # option that needs more buses is offered here with its cost
+    ['877', 'Rýmařov – Bruntál every 120 at Rýmařov 15:40 and Bruntál 16:20 (modelled at 16:00), two buses: every 60 fails Step 4 at Bruntál, where the real 15:40 and 16:20 are 40 min apart, and the published :34 / :24 were 6 and 4 min off the real minutes.',
+     'Rýmařov hourly at :40 (every 120 with Rýmařov 15:40 / 16:40 and Bruntál 15:40 / 16:20): a third bus; it also leaves Rýmařov together with 877 KARLA at 4:40, 12:40 and 20:40, unless the Rýmařov entry is written as every 480 with seven slots.'],
+    ['819', 'Krnov – Bruntál every 160 with two slots each way (Krnov 14:35, 16:00; Bruntál 14:20, 15:40), two buses; Krnov 14:25 and Bruntál 14:40 are off the pattern.',
+     'three slots each way (adding Krnov 14:25 and Bruntál 14:40, all six afternoon departures exact): four buses.'],
+    ['861', 'Bruntál – Vrbno, zámeček every 160 (Bruntál 15:40, 16:40; zámeček 15:44, 16:54), three buses.',
+     'every 120: Bruntál stays hourly at :40 (it can stay typed as every 60, Offset 39) and only the zámeček entry changes (every 120 at 15:44 and 16:54): a fourth bus.'],
+    ['863', 'Bruntál – Ludvíkov every 120 on one afternoon round (Bruntál 14:20, Ludvíkov 14:15 / 16:15), two buses; Bruntál 15:00 and Ludvíkov 14:40 are off the pattern.',
+     'both afternoon rounds (every 120, Bruntál 14:20 / 15:00, Ludvíkov 14:15 / 14:40, all exact): four buses.'],
+    ['801', 'the trunk is every 30 at :05 / :35 at both ends (two buses); the industrial-zone trips come back past Petrův důl at 13:46, 14:20 and 14:47, so the way back is approximate in 13:40–15:40.',
+     'every 120 with five slots each way (Nemocnice 13:48, 14:08, 14:35, 15:05, 15:35; Petrův důl 13:46, 14:20, 14:47, 15:05, 15:37), exact there: four buses instead of two and ten typed values.'],
     ['801 PZ', 'the industrial-zone trips are a Petrův důl – průmyslová zóna II shuttle every 480 at their times there (one bus), so the every-30 trunk is not doubled at the shift changes (as 302 Tesco on the Těšínsko sheet).',
      'run the zone trips from Nemocnice as they do (every 480, six slots), two Simutrans buses leaving Nemocnice together six times a shift.'],
     ['913', 'Krnov – Olomouc (one return a day) is every 480 with the Krnov departure at 12:07 instead of the real 5:55, so one bus works it.',

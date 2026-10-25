@@ -189,3 +189,24 @@ Result: 26 seen + 2 designed (387, 440) for a need of 28; no bus is on the Haví
   (`../odis-regional-opavsko/method-check-2026-10-25.md`) and the cards here were rebuilt from that sheet. The cards label
   each typed value with its own real time (multi-slot rows such as 290's four slots).
   - The model's DPO/ODIS departures 0–1 min apart at sad B. Němcové (towards Důl Odra) mostly copy the real timetables, which are not coordinated either (292 15:33 / DPO 34 15:34; 282 16:54 / 34 16:54; 281 :18 / 32 :18).
+
+## Method check of 25 Oct 2026 (owner: "verify all sheets with this level of detail")
+
+Every approximate DPO row and every short exact row was checked by hand against its real departures; the evidence is in
+`method-check-city-2026-10-25.md` (it also covers the tram, trolleybus and Havířov/Karviná/Orlová sheets). No timetable
+value and no bus changed.
+- **21:** both rows were the real timetable within 1 min (Hranečník every 20 :16, Horní Datyně :19) but marked approximate by
+  the rate-matching fallback. `schedule_overrides['21']` keeps the same values with a `label` (new, optional: `05_schedule`
+  passes it on and `06_render` prints it instead of "set by the owner … spaced from the other branch").
+- **To check list:** every approximate DPO row is now listed (5 → 18), not only those with more slots than real departures;
+  the card note says how far the slots are off, and the table shows each row's own window. The Hranečník ODIS cards keep
+  their own list.
+- **`config.check_alt`** (new, render only): a slower option found by hand, shown on the To check list and the card in place
+  of the computed `alt`. 38: every 40 (Hranečník :24, Bartovice :25; the line's own every 40 from 13:00 to 17:00), 2 buses.
+- 41's ORIGIN flag in `audit/city_systemic.py` is a false alarm: its Poliklinika entries are `loop: false` through stops.
+- The published `odis.json` / `hubs.json` were kept for this render, and `04_roster.py` was run with `PYTHONHASHSEED=4`:
+  `07_odis.py` and `04_roster.py` write hand-set lines' waits (five ODIS cards, 57) in a hash-dependent order
+  (`lib.slot_need` iterates a set), and `08_hubs.py` would pick up a newer Opavsko 290 card text. To reproduce the published
+  sheet: `run.py`, copy `odis.json` and `hubs.json` from `../_snapshots/2026-10-25/derived/ostrava-bus/` into `data/derived/`,
+  then `PYTHONHASHSEED=4 python 04_roster.py && python 06_render.py`. Lasting fix (shared lib, not done): iterate a sorted list
+  in `slot_need`.

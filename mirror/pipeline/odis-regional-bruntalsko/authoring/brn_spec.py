@@ -1,6 +1,9 @@
 """config.lines of the Bruntálsko/Krnovsko/Rýmařovsko sheet: the Simutrans lines of every modelled ODIS line, with notes
 (brn_notes.py). Intervals and minutes are 'auto' where the review found the fit right, hand-set where it did not.
 Idempotent: rerun after editing, then the pipeline (python -X utf8 run.py --base odis-regional-bruntalsko)."""
+# 25 Oct 2026: every leg that failed Step 4 in ../audit/audit-regional-2026-10-25.md was set by hand with the bus schedule method v4
+# (../method-check-2026-10-25.md): real minutes per direction, both ends at the same rate, no more buses than published unless
+# nothing passes; the more exact options that cost buses are on the owner checks (brn_config.py).
 import os, sys, json
 os.environ['ODIS_BASE'] = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'odis-regional-hko', 'scripts'))
@@ -33,43 +36,44 @@ JZS = 'Jindřichov, železniční stanice'
 VZS = 'Vrbno p.Prad., železniční stanice'
 MBN = 'Moravský Beroun, náměstí'
 # ---------------- Krnovsko (852)
-L['822'] = dict(core=[S(KAS), S('Staré Purkartice, točna')], sim=[two('822', KAS, 'Staré Purkartice, točna')])
+L['822'] = dict(core=[S(KAS), S('Staré Purkartice, točna')], sim=[two('822', KAS, 'Staré Purkartice, točna', a=dict(at=['14:25'], rt=29), b=dict(at=['14:55']), every=80)])
 L['831'] = dict(core=[S(KAS), S(MAAS), S('Slezské Pavlovice')], sim=[two('831', KAS, 'Slezské Pavlovice')])
 L['832'] = dict(core=[S(KAS), S(MAAS), S(OAS)], sim=[two('832', KAS, OAS, a=dict(at=['16:20']), b=dict(at=['15:41']), every=180)])
-L['833'] = dict(core=[S(KAS), S(JZS), S(OAS)], sim=[two('833', KAS, JZS, a=dict(stops_via=[S('rozcestí Dakon')])), two('833 Osoblaha', JZS, OAS)])
+L['833'] = dict(core=[S(KAS), S(JZS), S(OAS)], sim=[two('833', KAS, JZS, a=dict(at=['15:45'], stops_via=[S('rozcestí Dakon')]), b=dict(at=['17:20']), every=240), two('833 Osoblaha', JZS, OAS)])
 L['824'] = dict(core=[S(KAS), S(MAAS), S('Vrbno p.Prad., zámeček')], sim=[two('824', KAS, 'Vrbno p.Prad., zámeček', a=dict(at=['12:05']), b=dict(at=['14:18']), every=480)])
 L['913'] = dict(core=[S(KAS), S('Olomouc, autobusové nádraží')], sim=[two('913', KAS, 'Olomouc, autobusové nádraží', every=480)])
-L['901'] = dict(core=[S(KAS), S(MAAS), S(ZHAS)], sim=[two('901', KAS, ZHAS)])
-L['902'] = dict(core=[S(JZS), S('restaurace U hájenky'), S(ZHAS)], sim=[two('902', JZS, 'restaurace U hájenky', a=dict(at=['15:41']), b=dict(at=['16:06']), every=120), two('902 Zlaté Hory', JZS, ZHAS)])
+L['901'] = dict(core=[S(KAS), S(MAAS), S(ZHAS)], anchor='16:00', sim=[two('901', KAS, ZHAS, a=dict(at=['17:15']), b=dict(at=['15:44']), every=120)])
+L['902'] = dict(core=[S(JZS), S('restaurace U hájenky'), S(ZHAS)], sim=[two('902', JZS, 'restaurace U hájenky', a=dict(at=['15:41']), b=dict(at=['16:06']), every=120), two('902 Zlaté Hory', JZS, ZHAS, a=dict(at=['13:21']), b=dict(at=['14:36']), every=480)])
 # ---------------- Bruntálsko (853)
-L['811'] = dict(core=[S(KAS), S(HBAS)], sim=[two('811', KAS, HBAS, b=dict(stops_via=[S('Dubnice, pohostinství')])), two('811 Sosnová', KAS, 'Sosnová, Obecní úřad', a=dict(at=['14:10']), b=dict(at=['14:40']), every=90)])
-L['814'] = dict(core=[S(KAS), S('Čaková, konečná'), S('Zátor, točna')], sim=[two('814', KAS, 'Čaková, konečná'), oneway('814 Zátor', KAS, 'Zátor, točna', every=480, a=dict(at=['15:00']))])
-L['816'] = dict(core=[S(KZS), S('Krasov, točna')], sim=[two('816', KZS, 'Krasov, točna')])
+L['811'] = dict(core=[S(KAS), S(HBAS)], sim=[two('811', KAS, HBAS, a=dict(at=['15:05']), b=dict(at=['15:50'], stops_via=[S('Dubnice, pohostinství')]), every=90), two('811 Sosnová', KAS, 'Sosnová, Obecní úřad', a=dict(at=['14:10']), b=dict(at=['14:40']), every=90)])
+L['814'] = dict(core=[S(KAS), S('Čaková, konečná'), S('Zátor, točna')], sim=[two('814', KAS, 'Čaková, konečná', a=dict(at=['15:24']), b=dict(at=['15:55']), every=180), oneway('814 Zátor', KAS, 'Zátor, točna', every=480, a=dict(at=['15:00']))])
+L['816'] = dict(core=[S(KZS), S('Krasov, točna')], sim=[two('816', KZS, 'Krasov, točna', a=dict(at=['15:10']), b=dict(at=['15:45']), every=180)])
 L['817'] = dict(core=[S(KAS)], sim=[loop('817', KAS)])
-L['818'] = dict(core=[S(KAS), S('Úblo, točna'), S('Skrochovice, most')], sim=[two('818', KAS, 'Úblo, točna'), two('818 Skrochovice', 'Úblo, točna', 'Skrochovice, most'),
+L['818'] = dict(core=[S(KAS), S('Úblo, točna'), S('Skrochovice, most')], sim=[two('818', KAS, 'Úblo, točna', a=dict(at=['17:40']), b=dict(at=['15:03']), every=240),
+                     two('818 Skrochovice', 'Úblo, točna', 'Skrochovice, most', a=dict(at=['14:30', '15:40'], notvia=['Neplachovice, škola']), b=dict(at=['14:50', '16:00'], notvia=['Neplachovice, škola']), every=240),
                      two('818 Neplachovice', 'Úblo, točna', 'Neplachovice, škola', a=dict(at=['12:30', '13:30']), b=dict(at=['13:05', '14:10']), every=480)])
-L['819'] = dict(core=[S(KAS), S(BAS)], sim=[two('819', KAS, BAS)])
-L['861'] = dict(core=[S(BZS), S('Vrbno p.Prad., zámeček')], sim=[two('861', BZS, 'Vrbno p.Prad., zámeček', a=dict(at=[40]), b=dict(at=[54]), every=60)])
-L['862'] = dict(core=[S(BZS), S('Karlova Studánka, dolní parkoviště')], sim=[two('862', BZS, 'Karlova Studánka, dolní parkoviště', a=dict(at=[10]), b=dict(at=[10]), every=60)])
+L['819'] = dict(core=[S(KAS), S(BAS)], sim=[two('819', KAS, BAS, a=dict(at=['14:35', '16:00']), b=dict(at=['14:20', '15:40']), every=160)])
+L['861'] = dict(core=[S(BZS), S('Vrbno p.Prad., zámeček')], sim=[two('861', BZS, 'Vrbno p.Prad., zámeček', a=dict(at=['15:40', '16:40']), b=dict(at=['15:44', '16:54']), every=160)])
+L['862'] = dict(core=[S(BZS), S('Karlova Studánka, dolní parkoviště')], sim=[two('862', BZS, 'Karlova Studánka, dolní parkoviště', a=dict(at=['15:15', '16:05']), b=dict(at=['16:05', '17:15']), every=240)])
 L['863'] = dict(core=[S(BAS), S('rozcestí Ludvíkov'), S('Karlova Studánka, Hvězda autobusová stanice')],
-                sim=[two('863', BAS, 'rozcestí Ludvíkov')])
+                sim=[two('863', BAS, 'rozcestí Ludvíkov', a=dict(at=['14:20']), b=dict(at=['14:15']), every=120)])
 SHAS = 'Světlá Hora, autobusová stanice'
 L['865'] = dict(core=[S(BZS), S('Dětřichovice, točna'), S(SHAS)],
                 sim=[dict(name='865', every=480, legs=[leg(BZS, 'Dětřichovice, točna', at=['15:05']), leg('Dětřichovice, točna', SHAS, at=['15:37']),
                                                      leg(SHAS, BZS, untimed=True, lines=['866', '865'])])])
 L['866'] = dict(core=[S('Světlá Hora, autobusová stanice'), S('Světlá Hora, Podlesí')],
                 sim=[two('866', 'Světlá Hora, autobusová stanice', 'Světlá Hora, Podlesí', a=dict(at=['13:40', '14:20', '15:50']), b=dict(at=['13:55', '14:35']), every=480)])
-L['872'] = dict(core=[S(BAS), S('Milotice n.Opavou, škola')], sim=[two('872', BAS, 'Milotice n.Opavou, škola', a=dict(at=['13:50']), b=dict(at=['14:10']), every=90)])
+L['872'] = dict(core=[S(BAS), S('Milotice n.Opavou, škola')], sim=[two('872', BAS, 'Milotice n.Opavou, škola', a=dict(at=['13:50', '15:15']), b=dict(at=['14:10', '15:35'], core_to=BZS), every=480)])
 L['874'] = dict(core=[S(HBAS), S('Horní Životice, střed'), S('Svobodné Heřmanice, obecní úřad')],
                 sim=[two('874', HBAS, 'Horní Životice, střed')])
 L['885'] = dict(core=[S(BZS), S('Ovčárna točna')], sim=[two('885', BZS, 'Ovčárna točna')])
-L['907'] = dict(core=[S(VZS), S(ZHAS)], sim=[two('907', VZS, ZHAS, a=dict(at=['15:15']), b=dict(at=['16:25']), every=120)])
+L['907'] = dict(core=[S(VZS), S(ZHAS)], sim=[two('907', VZS, ZHAS, a=dict(at=['12:50', '15:15', '17:30']), b=dict(at=['14:25', '16:30', '18:20']), every=480)])
 # ---------------- Rýmařovsko (854)
 L['873'] = dict(core=[S(BZS), S('Václavov, dolní')], sim=[two('873', BZS, 'Václavov, dolní')])
-L['877'] = dict(core=[S(RAS), S(BZS), S('Bruntál, KARLA')], sim=[two('877', RAS, BZS), two('877 KARLA', RAS, 'Bruntál, KARLA', a=dict(at=['12:40']), b=dict(at=['14:17']), every=480)])
-L['878'] = dict(core=[S(RAS), S('Karlov, garáž')], sim=[two('878', RAS, 'Karlov, garáž', a=dict(at=['15:30']), b=dict(at=['16:10']), every=90)])
+L['877'] = dict(core=[S(RAS), S(BZS), S('Bruntál, KARLA')], anchor='16:00', sim=[two('877', RAS, BZS, a=dict(at=['15:40'], notvia=['Bruntál, KARLA']), b=dict(at=['16:20'], notvia=['Bruntál, KARLA']), every=120), two('877 KARLA', RAS, 'Bruntál, KARLA', a=dict(at=['12:40']), b=dict(at=['14:17']), every=480)])
+L['878'] = dict(core=[S(RAS), S('Karlov, garáž')], sim=[two('878', RAS, 'Karlov, garáž', a=dict(at=['14:10', '15:30']), b=dict(at=['14:55', '16:10']), every=480)])
 L['879'] = dict(core=[S(RAS), S('Nová Ves, konečná')], sim=[two('879', RAS, 'Nová Ves, konečná')])
-L['880'] = dict(core=[S(RAS), S('Anenská Huť')], sim=[two('880', RAS, 'Anenská Huť')])
+L['880'] = dict(core=[S(RAS), S('Anenská Huť')], sim=[two('880', RAS, 'Anenská Huť', a=dict(at=['14:25', '15:15', '15:59']), b=dict(at=['14:45', '15:35', '16:15']), every=180)])
 L['909'] = dict(core=[S(BZS), S(MBN)], sim=[two('909', BZS, MBN, a=dict(at=['14:45']), b=dict(at=['15:10']), every=120),
                                                    two('909 Leskovec', BZS, 'rozcestí Bohdanovice', a=dict(at=['15:10']), b=dict(at=['12:50']), every=180)])
 L['910'] = dict(core=[S(BZS), S(MBN), S('Moravský Beroun, železniční stanice')],
@@ -80,26 +84,26 @@ L['921'] = dict(core=[S(RAS), S('Olomouc, autobusové nádraží'), S('Břidlič
                 sim=[two('921', RAS, 'Olomouc, autobusové nádraží', a=dict(at=['12:25']), b=dict(at=['16:55']), every=480)])
 RZS = 'Rýmařov, železniční stanice'
 L['922'] = dict(core=[S(RZS), S(RAS), S('Tvrdkov, Ruda, restaurace'), S('Uničov, autobusová stanice')],
-                sim=[two('922', RZS, 'Tvrdkov, Ruda, restaurace', a=dict(knot=RAS), b=dict(core_to=RAS)),
+                sim=[two('922', RZS, 'Tvrdkov, Ruda, restaurace', a=dict(knot=RAS, knot_at=['13:55', '15:50', '17:25'], notvia=['Uničov, autobusová stanice']), b=dict(at=['14:20', '16:20', '17:50'], core_to=RAS, notvia=['Uničov, autobusová stanice']), every=480),
                      dict(name='922 Uničov', every=480, legs=[leg(RAS, 'Uničov, autobusová stanice', at=['12:30']), leg('Uničov, autobusová stanice', RZS, at=['15:09']),
                                                              leg(RZS, RAS, untimed=True, rt=5)])])
 # ---------------- MHD Krnov (856)
 NEM = 'Krnov, Nemocnice hl.brána'
 L['801'] = dict(core=[S(NEM), S('Krnov, Petrův důl'), S('průmyslová zóna II, točna')],
-                sim=[two('801', NEM, 'Krnov, Petrův důl'),
+                sim=[two('801', NEM, 'Krnov, Petrův důl', a=dict(at=[5]), b=dict(at=[5]), every=30),
                      dict(name='801 PZ', every=480, legs=[leg('Krnov, Petrův důl', 'Hájnický potok', core_to='průmyslová zóna II, točna', at=['13:05', '13:30', '14:05', '14:34', '15:22', '15:52']),
                                                         leg('Hájnický potok', 'Krnov, Petrův důl', knot='průmyslová zóna II, točna', knot_at=['13:15', '13:42', '14:16', '14:43', '15:34', '16:06'])])])
-L['802'] = dict(core=[S('Krnov, Aut.stanoviště'), S('Ježník, sanatorium')], sim=[two('802', 'Krnov, Aut.stanoviště', 'Ježník, sanatorium')])
-L['805'] = dict(core=[S('Hlubčická Na špici'), S('Chomýž, točna')], sim=[two('805', 'Hlubčická Na špici', 'Chomýž, točna', a=dict(at=['14:40']), b=dict(at=['15:35']), every=90)])
+L['802'] = dict(core=[S('Krnov, Aut.stanoviště'), S('Ježník, sanatorium')], sim=[two('802', 'Krnov, Aut.stanoviště', 'Ježník, sanatorium', a=dict(at=['13:10', '13:55', '14:55']), b=dict(at=['13:30', '14:15', '15:19']), every=160)])
+L['805'] = dict(core=[S('Hlubčická Na špici'), S('Chomýž, točna')], sim=[two('805', 'Hlubčická Na špici', 'Chomýž, točna', a=dict(at=['13:25', '14:40', '16:10']), b=dict(at=['10:30', '14:03', '15:35']), every=480)])
 L['806'] = dict(core=[S('Krnov, Aut.stanoviště'), S('Cvilín točna'), S('st.hranice CLO')],
-                sim=[two('806', 'Krnov, Aut.stanoviště', 'Cvilín točna', a=dict(at=['14:45']), b=dict(at=['15:05']), every=90),
+                sim=[two('806', 'Krnov, Aut.stanoviště', 'Cvilín točna', a=dict(at=['14:45', '16:00']), b=dict(at=['15:05', '16:20']), every=480),
                      dict(name='806 CLO', every=480, legs=[leg('Krnov, Aut.stanoviště', 'st.hranice CLO', at=['17:50']), leg('st.hranice CLO', 'Cvilín točna', at=['18:04']),
                                                          leg('Cvilín točna', 'Krnov, Aut.stanoviště', untimed=True)])])
 L['807'] = dict(core=[S(NEM), S('Guntramovice, točna'), S('Krnov, Aut.stanoviště')],
                 sim=[dict(name='807', every=480, legs=[leg(NEM, 'Guntramovice, točna', at=['14:13']), leg('Guntramovice, točna', 'Krnov, Aut.stanoviště', at=['14:33']),
                                                      leg('Krnov, Aut.stanoviště', NEM, untimed=True, rt=7)])])
 # ---------------- MHD Bruntál (855)
-L['851'] = dict(core=[S(BZS), S('Bruntál, KARLA')], sim=[two('851', BZS, 'Bruntál, KARLA', a=dict(stops_via=[S('Bruntál, nový hřbitov')]))])
+L['851'] = dict(core=[S(BZS), S('Bruntál, KARLA')], sim=[two('851', BZS, 'Bruntál, KARLA', a=dict(at=['12:50', '16:40'], stops_via=[S('Bruntál, nový hřbitov')]), b=dict(at=['14:12', '17:27']), every=480)])
 
 NF = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'brn_notes.py')
 NOTES = {}

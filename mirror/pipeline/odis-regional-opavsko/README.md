@@ -15,6 +15,7 @@ This folder holds only the sheet's config, data and authoring scripts. The pipel
 | MHD Opava, buses | 905xxx | MDPO | 1xx, 40x | VZ-DPOpava-bus |
 
 - 70 ODIS numbers: 59 modelled as 73 Simutrans lines, 126 vehicles (116 seen on the 20 Oct live map, 10 designed). Was 125 vehicles before the 25 Oct hand check of 281, 282, 290 and 292.
+- After the 25 Oct check of the rest of the sheet (below): 72 Simutrans lines (285 Dobroslavice folded into 285), and the schedule (`05_schedule`) needs 133 buses, 7 more than 126; the roster is not rebuilt yet.
 - Not modelled (`config.unmodelled`): 214, 256, 275 (sparse / shift, stops on other lines), 283 (two trips), 228 and 229 (night lines).
 - Lines shared with other sheets (the sheet with most trips models them): 615, 620, 691, 692, 693 are on the Novojičínsko/Bílovecko sheet; this sheet models 260 and 920 (also Bruntálsko/Rýmařovsko licences), 261, 263, 270, 285, 678 (also Novojičínsko/Bílovecko licences) and 555 (904555; the HKO sheet lists it).
 
@@ -33,9 +34,9 @@ This folder holds only the sheet's config, data and authoring scripts. The pipel
 ## Decisions (21 Oct 2026)
 
 - **Network state:** short diversions → regular route (`regular_not_diversion`): 241, 243, 262 (Psychiatrická léčebna, to 23 Nov), 253 (Služovice, obecní úřad, to 31 Oct), 256, 275, 284 (Dolní Benešov, Zábřeh, Mexiko, 16–21 Oct). Diversions to the end of the timetable year run as they are: 234, 242, 261 (Březová, střed) and 263, 264.
-- **Variants** (each covers stops no other line serves): 236 Podlesí, 237 Dvorce, 241 Lipina, 245 zámek, 249 Tábor, 250 Krnov / Holasovice, 253 Vrbka, 260 Heřmanice, 262 Skřipov, 285 Dobroslavice, 293 ŽD, 920 Rýmařov / Opava. One-trip deviations are taken with `stops_via` (216 OPAVIA, 217 Otice, 232 Hvězdová, 238 Loučky, 241 Zálužné, 252 Albertovec, 261 Hladké Životice / Gručovice, 262 Slatina, 267 Jezdkovice, 678 Bravantice Lidl). `terminus_alias` joins Opava, Jaktař škola (town JDF) and Opava, Jaktař, škola (regional).
+- **Variants** (each covers stops no other line serves): 236 Podlesí, 237 Dvorce, 241 Lipina, 245 zámek, 249 Tábor, 250 Krnov / Holasovice, 253 Vrbka, 260 Heřmanice, 262 Skřipov, 293 ŽD, 920 Rýmařov / Opava (285 Dobroslavice was one until 25 Oct: all its stops are on 285, so it is listed on the 285 card now). One-trip deviations are taken with `stops_via` (216 OPAVIA, 217 Otice, 232 Hvězdová, 238 Loučky, 241 Zálužné, 252 Albertovec, 261 Hladké Životice / Gručovice, 262 Slatina, 267 Jezdkovice, 678 Bravantice Lidl). `terminus_alias` joins Opava, Jaktař škola (town JDF) and Opava, Jaktař, škola (regional).
 - **Hand-set after review:** 204 (three slots :00/:24/:36), 217 (hourly :04/:25, rt 20), 247 (15:00/17:00), 248 (hourly :53/:45), 261 (every 120, 14:22/14:35), 920 (every 120 Šumperk / Rýmařov alternating at :17, Opava variant 13:24/15:02).
-- **Owner checks** on the page: 204 as trolleybus (with auxiliary-drive trolleybuses) vs as it ran; 217 Divadlo trips; regular routes of 241/243/262; the 920 split.
+- **Owner checks** on the page: 204 as trolleybus (with auxiliary-drive trolleybuses) vs as it ran; 217 Divadlo trips; regular routes of 241/243/262; the 920 split. Added 25 Oct (below): 241/252/262 with fewer buses, 215/233/264 with one bus, 248 every 120. The shared 06 writes the number of checks as a word up to seven, so this sheet is at its limit.
 
 ## Hlučínsko lines at sad B. Němcové, checked by hand (25 Oct 2026)
 
@@ -54,7 +55,27 @@ produce incorrect results"). Their 21 Oct rows were automatic fits and all faile
 - **292:** every 80, Ostrava 14:33 / 15:53, back timed at Hlučín :59 (the trips start at Píšť, Chuchelná or Strahovice).
 - Needs 9 → 10. `config.keep_roster` (`data/published/roster_v6.json`, new opt-in step in the shared 04_roster) keeps the
   published buses where they are still seen on their line: 281 24-0004 → 24-0002, 290 + 24-1111, nothing else moves.
-  Owner check: 290's four slots against every 40 (3 buses).
+  290: the owner chose the four exact slots and 4 buses over every 40 with 3 (25 Oct 2026: "290 uses more buses").
+
+## The rest of the sheet, checked by hand (25 Oct 2026)
+
+Every leg the regional Step 4 audit (`../audit/audit-regional-2026-10-25.md`) listed as failing was checked by hand with the
+same method; the reading and the candidates are in `method-check-2026-10-25.md` ("The rest of the sheet"). All rows are
+hand-set now (no `at: 'auto'` on the changed lines).
+- **Set exact in the model window** (every leg passes Step 4): 212, 216, 218, 219 every 120 with three or four slots;
+  220 hourly with two; 238 every 90; 240, 242 every 120 with two; 245 every 80; 249 every 120; 270 every 80; 293 every 96
+  (every 120 would leave Hlučín on 293 ŽD's 13:05); 678 every 144 (every 120 needs 3 buses for the same two departures).
+- **Model hour set by hand to 16:00 (`anchor`)**, as 282: 075 (its :02 / :22 extras made 13:40–15:40 the busiest) and 555
+  (two Bohumín, Nový Bohumín short trips did). **285** is timed in its own afternoon (`window` 13:00–15:00): its Štítina
+  trips end at 15:50.
+- **Inbound rate (outstation, owner rule of 25 Oct):** 236 (buses sleep at Budišov), 263 (at Pustá Polom), 284 (its buses
+  go on from Štěpánkovice); the extra departures are off the pattern.
+- **Variants listed, not folded in:** 242's express pair via Jelenice (Vítkov 14:30, Opava 14:45; `via` Branka u Opavy);
+  285 Dobroslavice is no longer a line (all its stops are on 285, and it counted 285's own trips past Dobroslavice).
+- **Kept approximate:** 251 and 248 hourly (a narrow window must not halve an hourly line), 254 every 90 (no pattern passes
+  both ways), 217 and 920 (their owner checks).
+- **Buses:** 215, 233, 264 +1 (exact departures one bus cannot chain), 241 +2, 252 +1, 262 +1, 285 +1 and 285 Dobroslavice
+  −1: 126 → 133. The cheaper options are on the owner checks (241/252/262 −4, 215/233/264 −3, 248 −1).
 
 ## Authoring and review (`authoring/`)
 

@@ -133,7 +133,7 @@ def main():
         elif brs:
             head = '<p class="lpn"><b>' + str(len(brs)) + ' separate Simutrans lines</b>, one per branch: ' + '; '.join(f'{esc(l)} needs {b["need"]} trolleybuses (round trip about {b["cycle"]} min)' for l, b in brs.items()) + '.</p>'
         nt = f'<details class="nm"><summary>Not modelled in 15:00–17:59 ({len(notes)})</summary><ul>{"".join(notes)}</ul></details>' if notes else ''
-        return (f'<div class="sch"><h4>Simutrans schedule</h4><p class="lpn">Every trolleybus terminus is a turn (loop, bus-station circuit or block): Offset and Also at are set 1 min before the timetable departure, so the trolleybus clears the turn on time; the real minute is printed under each value. Put the values on the departure stand, not on the arrival stop.</p>'
+        return (f'<div class="sch"><h4>Simutrans schedule</h4><p class="lpn">Every trolleybus terminus is a turn (loop, bus-station circuit or block): Offset and Also at are set 1 min before the timetable departure, so the trolleybus clears the turn on time; the real minute is printed under each value. The fork counts offsets from 01:00, so on an interval that does not divide 60 the typed value is (real − 60 − 1) mod the interval: the real minute is under each value. Put the values on the departure stand, not on the arrival stop.</p>'
                 f'{head}<div class="tw"><table class="st"><thead><tr>{lh}<th>Terminus entry</th><th class="num">Departure every</th><th class="num">Offset</th><th>Also at</th><th>Leave up to</th><th>Fit</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>{nt}</div>')
 
     # ---------- battery (off-wire) sections ----------

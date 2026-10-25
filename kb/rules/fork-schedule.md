@@ -30,6 +30,10 @@ its `CLAUDE.md` has the "Coupling trains" section). Engine questions go to an en
   **this page wins**.
 - City sheets with intervals dividing 60 are unaffected. A 20 Oct 2026 bug in the shared Ostrava `loop_shift` ignored the 01:00
   origin for intervals like 40/45/80/90/120 — check any sheet using such intervals.
+- **Every city pipeline uses `(real − 60 − 1 at loops) mod interval`** (fixed 25 Oct 2026 in the Brno, Olomouc, Plzeň, Praha and
+  Most–Litvínov copies, which still counted from midnight; the Prague metro / ferry rows too). After any change to a typed value,
+  run `pipeline/audit/city_systemic.py`: it reports ORIGIN, RANGE (> 8 slots, out of range), FOLD and RATE (ends at different
+  rates) for every city pipeline and must come back clean.
 - **Fold evenly spaced slots:** never write "every 60, Offset 17, Also at 47" — it is "every 30, Offset 17". A shared interval
   from interleaving must be folded back per row before output.
 

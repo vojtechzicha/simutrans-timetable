@@ -19,7 +19,7 @@ const MIRROR = path.join(REPO, 'mirror', 'pipeline');
 
 // Pipeline files worth versioning: code, configs, docs, templates. Everything under data/ stays behind.
 const KEEP_EXT = new Set(['.py', '.md', '.json', '.html', '.css', '.txt', '.tsv']);
-const SKIP_DIRS = new Set(['data', '__pycache__', 'legacy', 'node_modules', '.git']);
+const SKIP_DIRS = new Set(['data', '_snapshots', '__pycache__', 'legacy', 'node_modules', '.git']);   // _snapshots: pre-change copies of sheets and derived data
 const SKIP_FILES = new Set(['vagonweb_cookies.txt']);
 
 export function slugify(name) {
@@ -40,8 +40,11 @@ function listSheets() {
   for (const [dir, location] of [['', 'root'], ['archive', 'archive']]) {
     const abs = path.join(SOURCE, dir);
     if (!fs.existsSync(abs)) continue;
-    for (const f of fs.readdirSync(abs)) {
+    const names = fs.readdirSync(abs);
+    for (const f of names) {
       if (!f.toLowerCase().endsWith('.html')) continue;
+      // OneDrive conflict copies ("<sheet>-<device name>.html", e.g. from the owner's MacBook) are not sheets
+      if (names.some((g) => g !== f && f.startsWith(g.slice(0, -5) + '-') && g.toLowerCase().endsWith('.html'))) continue;
       const full = path.join(abs, f);
       const buf = fs.readFileSync(full);
       const title = /<title>([^<]*)<\/title>/i.exec(buf.toString('utf8'))?.[1]?.trim() ?? null;

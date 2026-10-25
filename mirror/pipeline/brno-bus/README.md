@@ -71,8 +71,13 @@ Left out:
 - **Fit (after the Prague trolleybus review, 29 Sep):**
   - A Simutrans line's rate is the number of real 16:00–16:59 departures that most entries share (on a tie the lower).
   - Every entry must reproduce the whole 16:00 hour. The fit tries the shared core, then the 16:00 hour, then the 16:xx minutes repeated hourly.
-  - Where an end runs more buses than the line's rate (48 Úzká, 72L Lesná, 75 Slatina, 77L Letiště), the sheet says partial and lists the real minutes not modelled.
+  - Where an end runs more buses than the line's rate (77L Letiště), the sheet says partial and lists the real minutes not modelled.
   - E50 turns at Areál Slatina (`turn`).
+- **Hand-set rows (method check of 25 Oct 2026, `pipeline/brno/method-check-2026-10-25.md`), in `fit.overrides` (key `<line id>|<line>|<from>|<to>`):**
+  - **48** every 30 at both ends (Úzká :13, Prace, točna :04). Every other hour the :43 / :34 trip starts or ends two stops further at Prace, Mohyla míru; an override's `passing` lists those departures (minutes after midnight) so they count for the match, not for sizing. 48 has `period: 60` so `circuit_need` closes its 90-min round (the real 17:43 runs on to Mohyla míru).
+  - **72L** at 4 an hour (`rate: 4`; Lesná :15 :25, Technologický park :08 :18): the Lesná section runs 4 an hour until about 17:00; the 16:48 slot is the bus that runs to Královo Pole instead.
+  - **75** at 4 an hour (`rate: 4`; Tomkovo náměstí :01, Slatina :14): its every-15 peak form, which needs the same 4 buses.
+  - A hand-set row that reproduces its first–last stretch exactly is shown as "partial, exact <span>" (`stretch` in timetable.json).
 - **Need = max(circuit need, on the road)** (the Prague/Ostrava bus rule, 29 Sep): the most trips of a record group holding a bus at once in 16:00–16:59, each until arrival + min(3, the terminus's shortest turnaround). The extra goes to the main line. Only 75 rises (3 → 4, 7 out). On the trolleybus sheet the on-road count never exceeds the cycle need, so nothing changes there.
 - **Swaps:** 52/28 and 67/7 keep the bus from before the swap, because the replacement worked another kurz in the afternoon (`fleet.keep_before`).
 - **Unrecorded lines and their kurzy:** bmhd.cz files several lines under other line numbers. The sources are the IDS JMK timetable PDFs ("jede jako linka …"), jrbrno.cz joint timetables and trip codes, and bmhd.cz.

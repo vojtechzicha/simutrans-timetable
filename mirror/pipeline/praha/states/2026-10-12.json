@@ -449,6 +449,35 @@
    "drop_short": {
     "Hotel Golf": "pull-out from Vozovna Motol that fills a 4-minute slot from Sídliště Řepy (15:55); covered by the Řepy departure, so not modelled."
    }
+  },
+  "22": {
+   "_why": "Method check 25 Oct 2026: the fit had picked the pre-peak pattern from Vypich (every 40 with three slots, 14:42–16:10, 8 departures), because the peak run every 8 starts at 16:02 and overlaps the fit's 15:30–16:30 core by 28 min, 2 short of the 30 it needs. Every 40 also sent 4.5 trams an hour from Vypich against 7.5 from Nádraží Hostivař, which cannot run.",
+   "Vypich": {
+    "every": 8,
+    "real": [
+     2
+    ],
+    "why": "Every 8 min, as the timetable runs from 16:02 to 17:54 (15 departures in a row). Before that the 15:14, 15:38 and 15:54 slots start at Nad Džbánem instead (15:07, 15:31, 15:47: trams from Vozovna Vokovice that join the route at Brusnice in the Vypich slot). In Simutrans the tram simply leaves Vypich in every slot."
+   }
+  },
+  "23": {
+   "_why": "Method check 25 Oct 2026: the fit gave Královka every 60 with three slots (3 trams an hour, 3 departures) and Bílá labuť every 32 (1.9 an hour), which cannot run. Line 23 runs 2 an hour all afternoon with gaps of 24–32 min (three trams on an 88–90 min round), so both ends get every 30. Considered and rejected: every 120 with four slots (exact 15:12–17:12 and 15:22–17:22, but only 5 departures on 4 slots) and every 32 (8 min off at either end).",
+   "Královka": {
+    "every": 30,
+    "real": [
+     12
+    ],
+    "approx": true,
+    "why": "Every 30 min, approximate (up to 4 min off). The timetable runs 2 an hour with uneven gaps of 24–32 min: 15:12, 15:44, 16:08, 16:40, 17:12, 17:42, 18:08. :12 and :42 are its own minutes (15:12, 17:12, 17:42); 16:08 is the farthest off."
+   },
+   "Bílá labuť": {
+    "every": 30,
+    "real": [
+     22
+    ],
+    "approx": true,
+    "why": "Every 30 min, approximate (up to 4 min off). The timetable runs 2 an hour with uneven gaps of 24–32 min: 15:22, 15:54, 16:26, 16:50, 17:22 (17:54 goes to Brusnice). :22 and :52 are its own minutes (15:22, 17:22); 16:26 is the farthest off."
+   }
   }
  },
  "changes": {
@@ -516,9 +545,13 @@
     "kind": "minor",
     "what": "New stop Hodkovičky between Černý kůň and Belárie, both directions. Same minutes, same trams."
    },
+   "22": {
+    "kind": "minor",
+    "what": "Schedule corrected 25 Oct: from Vypich every 8, Offset 5 (was every 40 with Also at). The old values were the pattern before the peak and sent fewer trams from Vypich than from Nádraží Hostivař; now Vypich runs every 8 like the other termini. Same route, same trams."
+   },
    "23": {
     "kind": "minor",
-    "what": "Departures from Královka are 1 minute earlier (Offset and Also at). Same route, same trams."
+    "what": "Schedule corrected 25 Oct: every 30 from both ends, Královka Offset 11, Bílá labuť Offset 22, no Also at. The old values (Královka every 60 with three slots, Bílá labuť every 32) sent different numbers of trams from the two ends. Same route, same trams."
    }
   },
   "cancelled": {

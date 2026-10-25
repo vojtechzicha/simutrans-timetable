@@ -2,7 +2,7 @@
 
 Output: `ODIS Bruntalsko Krnovsko Rymarovsko.html` in the project root, published at the URL in `config.json` → `artifact_url` (republish to the same URL). Built on 21 Oct 2026 after the owner's "Yes, do those next sheets" (the ODIS segments list: Krnovsko, Bruntálsko and Rýmařovsko with the Krnov town lines).
 
-This folder holds the sheet's config, data and authoring scripts. The pipeline scripts are the shared ones in `../odis-regional-hko/scripts/`, run with `--base odis-regional-bruntalsko`. The method is `../bus-schedule-method.md` (v3), as on the HKO and Těšínsko sheets; the two town networks take the same method.
+This folder holds the sheet's config, data and authoring scripts. The pipeline scripts are the shared ones in `../odis-regional-hko/scripts/`, run with `--base odis-regional-bruntalsko`. The method is `../bus-schedule-method.md` (v4 since 25 Oct), as on the HKO and Těšínsko sheets; the two town networks take the same method.
 
 ## Scope
 
@@ -31,7 +31,17 @@ pak128: the fleet desk confirmed on 21 Oct 2026 that every bus has its object (V
 - **Network state:** diversions to the timetable change or beyond (824, 880, 901, 907, 861) as they run; 876, 912 and 921 ran diversions ending within days, so `regular_not_diversion` keeps their regular timetables. A new 909 version starts 22 Oct; the sheet keeps the vehicle day's.
 - **Hand-set after review** (`authoring/brn_spec.py`): real-minute slots where the auto fit or the shortest-round pairing left trips far off (811 Sosnová, 832, 861, 862, 872, 878, 902, 907, 909, 909 Leskovec, 805, 806); shift and school variants every 480 on their real trips (814 Zátor, 818 Neplachovice, 824, 865, 866, 873, 877 KARLA, 806 CLO, 807, 921, 922 Uničov); 801's industrial-zone trips as a Petrův důl – zone shuttle (as 302 Tesco on the Těšínsko sheet); knots where trips start beyond a terminal (910 at Moravský Beroun, náměstí; 922 at Rýmařov bus station; 801 PZ at the zone točna).
 - **Dropped variants** (Step 8, no stop of their own): 863 Karlova Studánka, 874 Heřmanice, 921 Ryžoviště.
-- **Owner checks** on the page: 877 at :34/:24 with two buses (real :40/:20 needs three); the 801 PZ shuttle; 913 out at 12:07 (one bus) instead of 5:55; 832 on the real minutes with two buses instead of the one-bus shortest round.
+- **Owner checks** on the page: the 801 PZ shuttle; 913 out at 12:07 (one bus) instead of 5:55; 832 on the real minutes with two buses instead of the one-bus shortest round. (877's check was rewritten on 25 Oct, see below.)
+
+## Method check (25 Oct 2026)
+
+Every leg that failed the method's Step 4 in `../audit/audit-regional-2026-10-25.md` (36 legs on 23 lines) was checked by hand, both directions together, and reset in `authoring/brn_spec.py`; the reading, candidates, typed values and needs are in `method-check-2026-10-25.md` (method v4, `../bus-schedule-method.md`). The audit now passes 99 of the 100 timed legs; the need stays 63.
+
+- **Tie rule:** among patterns that pass Step 4 both ways at the same rate, the method's order (exact over the day, then within 1, then fewer slots, then the longer interval), but never more buses than the line had: a more exact pattern that needs more buses is on the owner checks with its cost (819, 861, 863, 877, 801).
+- **Model hour by hand** (as 282 on the Opavsko sheet): 901 and 877 at 16:00, as their busier early-afternoon stretches are shorts on the line's own stops (Holčovice; Kovohutě) and, for 877, the KARLA variant.
+- **Variant trips no longer counted twice:** 818 Skrochovice leaves out the Neplachovice school trips, 877 the KARLA trips and 922 the Uničov trips (`notvia`); each has its own Simutrans line. 872's way back is counted at Bruntál, station, where the 14:10 ends (`core_to`).
+- **0-min turns** (the real bus leaves the loop as it arrives): 822 runs out in 29 min, as most of its trips do; 814 and 880 leave Krnov / Rýmařov 1 min early (15:24, 15:59), so one bus still works each.
+- **Left approximate:** the 801 trunk's way back (every 30 at :05 / :35; the industrial-zone trips pass Petrův důl at 13:46, 14:20, 14:47).
 
 ## Authoring and review tools (`authoring/`)
 

@@ -72,7 +72,70 @@
    930,
    990
   ],
-  "overrides": {}
+  "overrides": {
+   "48|48|Úzká|Prace, točna": {
+    "I": 30,
+    "R": [
+     13
+    ],
+    "first": 793,
+    "last": 1093,
+    "passing": [
+     823,
+     943,
+     1063
+    ],
+    "why": "every 30 at both core points: the Úzká :43 trips of 15:43 and 17:43 run on to Prace, Mohyla míru past Prace, točna"
+   },
+   "48|48|Prace, točna|Úzká": {
+    "I": 30,
+    "R": [
+     4
+    ],
+    "first": 814,
+    "last": 1114,
+    "passing": [
+     874,
+     994,
+     1114
+    ],
+    "why": "every 30 at both core points: the 14:31, 16:31 and 18:31 trips from Prace, Mohyla míru leave Prace, točna at :34"
+   },
+   "72L|72|Poliklinika Lesná|Technologický park": {
+    "I": 30,
+    "R": [
+     15,
+     25
+    ],
+    "first": 825,
+    "last": 1015
+   },
+   "72L|72|Technologický park|Poliklinika Lesná": {
+    "I": 30,
+    "R": [
+     8,
+     18
+    ],
+    "first": 848,
+    "last": 998
+   },
+   "75|75|Tomkovo náměstí|Slatina, nádraží": {
+    "I": 15,
+    "R": [
+     1
+    ],
+    "first": 856,
+    "last": 946
+   },
+   "75|75|Slatina, nádraží|Tomkovo náměstí": {
+    "I": 15,
+    "R": [
+     14
+    ],
+    "first": 869,
+    "last": 989
+   }
+  }
  },
  "turnaround_default": 3,
  "links": {},
@@ -284,7 +347,10 @@
      "Prace, točna",
      "Úzká"
     ]
-   ]
+   ],
+   "rate": 2,
+   "period": 60,
+   "note": "Every 30 at both ends, as the line runs 13:13–18:34: every other hour the Úzká :43 departure (15:43, 17:43) and the Prace :34 departure (14:34, 16:34, 18:34) are the trips that start or end two stops further at Prace, Mohyla míru; they are read at Prace, točna, where they pass. The Aloise Slováka and Mohyla míru extension itself is not modelled."
   },
   {
    "id": "49M",
@@ -652,7 +718,9 @@
      "Technologický park",
      "Poliklinika Lesná"
     ]
-   ]
+   ],
+   "rate": 4,
+   "note": "Both ends 4 an hour, as the Lesná section runs all afternoon until about 17:00 (Lesná :15 :25 :45 :55, exact 13:45–16:55; Technologický park :08 :18 :38 :48, exact 14:08–16:38). The 16:48 slot has no Lesná trip in reality: from 16:48 the buses run to Královo Pole, nádraží instead (the post-peak form of 72, not modelled)."
   },
   {
    "id": "72S",
@@ -703,7 +771,9 @@
      "Slatina, nádraží",
      "Tomkovo náměstí"
     ]
-   ]
+   ],
+   "rate": 4,
+   "note": "Both ends every 15, the line's peak form (Tomkovo náměstí :01, exact 14:16–15:46; Slatina, nádraží :14, exact 14:29–16:29); from 15:46 Tomkovo náměstí and from 16:29 Slatina run every 30, so the slots Tomkovo 16:01 and 16:31 and Slatina 16:44 have no real trip. Four buses, the same as before."
   },
   {
    "id": "x75",

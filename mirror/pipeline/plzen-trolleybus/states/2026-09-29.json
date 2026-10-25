@@ -48,6 +48,32 @@
    "22|22|Koterov|Škoda VIII. brána": {
     "I": 30,
     "auto": true
+   },
+   "16|16|Sídliště Bory|Doubravka": {
+    "I": 6,
+    "R": [
+     0
+    ],
+    "first": 934,
+    "last": 1014
+   },
+   "12|12|Nová Hospoda|Božkov": {
+    "I": 15,
+    "R": [
+     0,
+     8
+    ],
+    "first": 932,
+    "last": 1018
+   },
+   "12|12|Božkov|Nová Hospoda": {
+    "I": 15,
+    "R": [
+     0,
+     7
+    ],
+    "first": 932,
+    "last": 1014
    }
   }
  },
@@ -128,7 +154,7 @@
      "Nová Hospoda"
     ]
    ],
-   "note": "The battery branch to Letkov, V Podlesí has 5 trips a day each way and none in 15:00–17:59 on 29 Sep, so it is not a peak trip and not modelled.",
+   "note": "The battery branch to Letkov, V Podlesí has 5 trips a day each way and none in 15:00–17:59 on 29 Sep, so it is not a peak trip and not modelled. Both ends 8 an hour as every 15 with two slots, 7 and 8 min apart (Nová Hospoda :00 :08, Božkov :00 :07): the real headway thins from 6 to 8 min over the hour, so no repeating pattern is exact; these are within 2 min of every real 16:xx departure (3 min over 15:30–17:00). This replaces every-60 and every-45 rows with eight and six slots that matched the real minutes for one cycle only.",
    "rate": 8
   },
   {
@@ -222,7 +248,8 @@
      "Sídliště Bory",
      "Doubravka"
     ]
-   ]
+   ],
+   "note": "Both ends every 6 (10 an hour), as the real line runs every 5–7 min all afternoon: Sídliště Bory :00 mod 6 and Doubravka :04 mod 6, each within 2 min of every real 16:xx departure (3 min over 15:30–17:00). This replaces an every-48 row with eight slots that matched the real minutes for one 48-minute cycle only."
   },
   {
    "id": "18",
@@ -438,7 +465,7 @@
   "lede": "Every PMDP trolleybus line in the afternoon peak of the timetable in force on Tue 29 Sep 2026, with the vehicles logged on Fri 18 Sep 2026 (the latest complete Friday; 23–25 Sep have almost no records), the Simutrans schedule for each line, the battery sections, and the pak128 object for every trolleybus.",
   "network": "PMDP GTFS (jizdnirady.pmdp.cz/jr/gtfs, fetched 29 Sep 2026), trolleybus routes (route_type 11), service day Tue 29 Sep 2026. Departures are the trips starting from each terminus between 16:00 and 16:59. Headway is the median gap between 15:00 and 18:00, runtime the average scheduled time from first to last stop. Depot runs (to and from Karlov) and patterns with fewer than 3 trips in 15:00–18:00 are left out.",
   "not_modelled": "17 (Doubravka – Nová Hospoda, 3 trips in 15:00–18:00), 19 (Karlov – Nová Hospoda, none) and the night line N7 have no afternoon-peak service. The 12 branch to Letkov, V Podlesí has no trip in 15:00–17:59.",
-  "schedule": "Values to type into the fork’s Scheduling tab, on the stop entries listed for each Simutrans line. Units are calendar minutes; the offset is minutes after midnight, modulo the interval; Leave up to stays automatic. Every PMDP trolleybus terminus is a turning loop (as on the Brno, Prague and Ostrava trolleybus sheets), so every departure is set 1 min before the timetable departure to clear the loop on time: offset and each Also at value are the real minute − 1 (mod the interval), with the real minutes shown underneath. Put the timetable on the entry the trolleybus leaves from. Branches that trolleybuses alternate between (10, 11) are one Simutrans line with the shared terminus twice; the 15 branch to Nová Hospoda is its own line. Each line is fitted at one rate, the number of 16:00–16:59 departures most of its entries share, so no end sends more trolleybuses than the other. Plzeň’s afternoon timetable is irregular (gaps of 5 to 9 min on 12 and 16, 12 and 24 on 10), so many entries cannot be exact: they are marked approximate with their largest deviation and the real 16:xx minutes. Depot runs are not modelled.",
+  "schedule": "Values to type into the fork’s Scheduling tab, on the stop entries listed for each Simutrans line. Units are calendar minutes; the offset counts from 01:00, as the fork does: minutes after 01:00 modulo the interval (the same as after midnight for every interval that divides 60); Leave up to stays automatic. Every PMDP trolleybus terminus is a turning loop (as on the Brno, Prague and Ostrava trolleybus sheets), so every departure is set 1 min before the timetable departure to clear the loop on time: offset and each Also at value are the real minute − 1 (mod the interval), with the real minutes shown underneath. Put the timetable on the entry the trolleybus leaves from. Branches that trolleybuses alternate between (10, 11) are one Simutrans line with the shared terminus twice; the 15 branch to Nová Hospoda is its own line. Each line is fitted at one rate, the number of 16:00–16:59 departures most of its entries share, so no end sends more trolleybuses than the other. Plzeň’s afternoon timetable is irregular (gaps of 5 to 9 min on 12 and 16, 12 and 24 on 10), so many entries cannot be exact: they are marked approximate with their largest deviation and the real 16:xx minutes. Depot runs are not modelled.",
   "need": "Trolleybuses needed at 16:00: follow a trolleybus leaving the first entry around 16:00 through every leg of its line, taking at each terminus the first departure at least 3 min after arriving, or less where the timetable itself turns faster; a round trip waiting longer than the line’s interval (at least 30 min) is skipped. The need is never below the most trolleybuses on the road at once between 16:00 and 16:59 (each trip holding its vehicle until arrival plus min(3 min, the terminus’s shortest timetabled turnaround)); this adds one on 13, 16 and 22. Where more were logged than the need, exactly the need stays counted and the rest is marked not needed (dimmed, left out of every count, the depot and the pak totals): one of every type of the line first, then afternoon-only kurzy and the highest kurz numbers are dropped first (user rule, 29 Sep 2026; pipeline/brno-trolleybus common.mark_spares). Where fewer were logged, real cars from the line’s own history are designed in; on 18 Sep no trolleybus line was short.",
   "lines": "One row per kurz out in the afternoon peak on Fri 18 Sep 2026, grouped by Simutrans line. Each vehicle shows its number and depot, its full type and length, battery capability, and the pak128 core (requested = the object is not in the pak yet). Kurz numbers are PMDP’s, written record line / kurz. No note on the record means the car was out all day; ráno i odpoledne is a split duty out in both peaks; odpoledne is the afternoon car of a kurz whose morning car is listed under Not counted.",
   "pak": "Each type counted in the peak, mapped to the object the VZ pak session is asked to make in VZ-PMDP-trolleybus. There is no PMDP trolleybus package yet, so every object is requested, never a stand-in from another city. Full names follow VZ-PMDP-<type>-<livery>-<core>; an articulated trolleybus is the front object plus its -B rear, and the lists show the first core only. Car units per vehicle (16 = one tile). Every PMDP trolleybus is in the green-white livery; advert wraps map to it. The request list is pipeline/plzen-trolleybus/pak_request.md.",

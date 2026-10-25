@@ -65,7 +65,8 @@ def nice(d):
 # ---- GTFS ----------------------------------------------------------------------------------------
 def gtfs_trips(zip_path, service_date, route_type='3'):
     """All trips of the given route_type running on service_date (YYYYMMDD):
-    list of dict(id, line, o, d, dep, arr, stops) with first/last stop names and minutes after midnight."""
+    list of dict(id, line, o, d, dep, arr, stops, times) with first/last stop names and minutes after midnight;
+    times = the departure minute at each stop (added 25 Oct 2026, for reading a trip at a terminus it passes)."""
     z = zipfile.ZipFile(zip_path)
     rd = lambda n: csv.DictReader(io.TextIOWrapper(z.open(n), encoding='utf-8-sig'))
     routes = {r['route_id']: r['route_short_name'] for r in rd('routes.txt') if r['route_type'] == route_type}
@@ -89,7 +90,7 @@ def gtfs_trips(zip_path, service_date, route_type='3'):
         s = sorted(st.get(k, []))
         if len(s) < 2: continue
         out.append(dict(id=k, line=routes[t['route_id']], o=stops[s[0][1]], d=stops[s[-1][1]], dep=mins(s[0][3]), arr=mins(s[-1][2]),
-                        stops=[stops[x[1]] for x in s]))
+                        stops=[stops[x[1]] for x in s], times=[mins(x[3]) for x in s]))
     return out
 
 def cycle_need_peak(trips, a, b, t0=960, lay=3, max_wait=30):
@@ -234,8 +235,11 @@ def runfit_rate(deps, rate, divs=None, core=(930, 990), lo=780, hi=1200):
     return min(ok, key=lambda c: (len(c['R']), c['I'], -c['n']))
 
 def loop_shift(I, R, loop):
-    """Values to type in: real minute - 1 where the bus turns (mod interval)."""
-    return [(r - 1) % I for r in R] if loop else list(R)
+    """Values to type in. R are departure times mod I counted from midnight; the fork counts its offsets from 01:00 (owner,
+    3 Oct 2026; kb/rules/fork-schedule.md), so typed = (real - 60) mod I, and a loop terminus is entered 1 min early. For
+    intervals dividing 60 the 01:00 origin changes nothing; for 8 it is 4 min. Fixed here 25 Oct 2026 (it had been left out of
+    this copy when the Ostrava lib was fixed on 20 Oct). The order of R is kept, so set[i] stays paired with real[i]."""
+    return [(r - 60 - (1 if loop else 0)) % I for r in R]
 
 def mark_spares(units, need, pm_notes=('odpoledne', 'odpolední kurz'), type_of=lambda u: u['type']):
     """User rule (29 Sep 2026; brno-trolleybus common.py): keep exactly `need` counted, one of every roster type first

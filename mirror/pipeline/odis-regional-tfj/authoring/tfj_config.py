@@ -90,15 +90,39 @@ c['network_state'] = [
      '383 and 387 (Frýdecko-Místecko licences) stop at Ostrava, Hranečník and are on the Ostrava sheet (section All lines at Hranečník). 365 Havířov – Frýdek-Místek is on the Havířovsko/Karvinsko/Orlovsko regional sheet. 655 Frenštát – Trojanovice is on the Novojičínsko/Bílovecko sheet, where its main licence (883655, 41 of 45 trips) is. Their buses stay there.'],
 ]
 
+c['keep_roster'] = 'data/published/roster_v5.json'
+c['keep_roster_why'] = 'The owner may have the sheet in the game (published v5). A rebuild keeps each published bus on its Simutrans line wherever it is still evidence for that line (shared 04_roster step 6), so the 25 Oct method check moves the fewest buses.'
 c['owner_checks'] = [
     ['731', 'the regular route is modelled; on the vehicle day 731 ran a diversion (28 Aug – 30 Nov) that skips the Stonava mines, as 582 on the Havířovsko/Karvinsko/Orlovsko sheet.',
      'model the diversion as it ran (Stonava, Bonkov instead of Bonkov rozcestí and the two mines) until 30 Nov.'],
-    ['784', 'the back slot from Horní Přelač is :19, 6 min before the real :25, so the line needs two buses (two were seen).',
-     'keep the real :25 and give the line a third bus.'],
+    # 25 Oct 2026 method check (../method-check-2026-10-25.md): the 784 check (:19 instead of :25) is gone, 784 is every 180 with
+    # two exact slots each way at two buses; each line below that now needs a bus more keeps its cheaper option here
+    ['770', 'every 180 with two exact slots each way (station 13:45, 14:51; Paseky 13:30, 15:05), the real afternoon rate, two buses.',
+     'one bus every 120 (station 13:45, Paseky 15:05): one bus fewer, half the real afternoon rate.'],
+    ['738', 'every 90 with four slots each way (Slovenská 13:52, 14:17, 14:37, 14:57; Karviná 14:34, 14:52, 15:12, 15:39), exact on the afternoon peak, four buses.',
+     'every 30 as before (Slovenská :17 / :47, Karviná :12 / :42), three buses (one fewer); in 13:50–15:50 half of its slots have no real departure.'],
+    ['722', 'every 180 with five slots (13:22, 14:01, 14:25, 14:55, 15:15), exact, two buses.',
+     'every 40 as before, one bus (one fewer); two of its three slots in 13:20–15:20 have no real trip.'],
+    ['702', 'every 90 with four slots each way (Kanada, školy 13:05, 13:25, 13:50, 14:05; bus station 13:05, 13:25, 13:35, 14:05), two buses: the only pattern that passes the method check on the 13:00–15:00 departures.',
+     'one bus every 40 as before (Kanada 13:25, 14:05, 14:45; bus station 13:10, 13:50, 14:30): two of its six afternoon slots have no real departure (one bus less).'],
+    ['703', 'the works line is every 480 with two slots each way (bus station 13:18, 13:30; Konská, PZ 14:03, 14:08), two buses: the shift change as it runs (three buses out, two back).',
+     'one bus every 480 (bus station 13:18, PZ 14:08, as 2TE1612 ran them), the 13:30 / 14:03 round off the pattern (one bus less).'],
+    ['706', 'Kojkovice and Osůvky are two lines every 120 with two slots each (Kojkovice: bus station 13:40, 14:35, back 13:05, 13:55; Osůvky: bus station 13:35, 14:30, back 13:05, 14:01), as they run until 15:00; from 15:35 one trip an hour serves both and is off the pattern.',
+     'model the later shape: one line every 60 via Borek and Osůvky to Kojkovice (bus station :35, Kojkovice :00; one bus instead of two).'],
+    ['708', 'every 30 as it runs 14:45–17:09 (bus station :15 / :45, Kamionka :09 / :39), model hour 15:10–17:10, two buses.',
+     'one bus every 60 as before (bus station :45, Kamionka :09): 16:15 out and 15:39 / 16:39 back off the pattern (one bus less).'],
+    ['716', 'every 120 with two slots each way (bus station 14:20, 15:35; Guty 16:10, 16:55): both afternoon rounds, two buses, as two ran.',
+     'one bus every 120 (bus station 16:20, Guty 16:55), the 15:35 / 16:10 round off the pattern (one bus less; half the afternoon rate).'],
+    ['301', 'every 60 with four slots at each end, as the line runs 14:03–16:03 (Riviéra :03 :13 :33 :43; Marlenka :03 :23 :33 :43, its :23 being the Řepiště loop bus), 5 buses; one bus waits 55 min at Riviéra.',
+     'every 30 at :03 / :13 at both ends as published (4 buses, one fewer); Marlenka’s :23 departures are then 10 min off the pattern and Step 4 fails there (6 of 8 slots).'],
     ['302 Tesco', 'the Tesco extension is a Riviéra – Tesco shuttle every 480 (one bus), so the every-30 trunk is not doubled at the shift changes.',
      'run the Tesco trips from Frýdecká skládka as they do (every 480 at 13:12, 13:42, 14:12), two Simutrans buses leaving skládka together three times a shift.'],
-    ['706', 'Kojkovice and Osůvky are two hourly lines, as they run until 15:00; from 15:35 one trip an hour serves both.',
-     'model the later shape: one line every 60 via Borek and Osůvky to Kojkovice (one bus instead of two).'],
+    ['314', 'read at Baška, železniční stanice, where every trip passes (they start at the Frýdek station, the poliklinika or Revoluční and end at Janovice, konečná or škola): every 120 with two slots each way, 2 buses (724 and 709 ran it).',
+     'one bus every 240 as published (station 14:44, Janovice 13:45 / 17:45), which counted only the trips from the station; most afternoon trips are then off the pattern and Step 4 fails.'],
+    ['358', 'the Krytý bazén – Hyundai shift trips are a Simutrans line of their own, every 480 (Krytý bazén 13:03, Hyundai 14:25; one bus), next to 358 Steel.',
+     'list them with 358 Steel instead (method Step 8: every one of their stops is on 358 Steel, which runs Riviéra 12:53 / IZS 14:17 at the same shift change): one bus less.'],
+    ['980', 'every 30 as before (Ostrava :23 / :53, Rožnov :05 / :35), seven buses; approximate out of Ostrava: the 13:53 slot stands for the real 13:40 (13 min off), so it fails Step 4 there (3 of 4 window slots).',
+     'every 120 with four slots each way (Ostrava 13:40, 14:23, 14:53, 15:23; Rožnov every 30), also seven buses: it passes Step 4, but it adds a :40 departure to every odd hour (15:40 against the real 15:53, 17:40 against 17:55) and takes 8 typed values instead of 2.'],
     ['985', 'the Frenštát short trips are the afternoon burst as the buses ran it: 985 every 480 (Frenštát 12:47, 14:42; Ostrava 14:33, 16:03; two buses) and 985B out only (Ostrava 15:03, 15:33; two buses, empty return), with Z-Group’s 883985 trips read in.',
      'one two-way line every 90 as before (two buses), the burst trips off the pattern.'],
 ]

@@ -107,8 +107,13 @@ if nm_:
       + '; '.join(f'{E(x["line"])} {E(x["o"])} → {E(x["d"])} ({x["n"]}{", garage" if x["depot"] else ""})' for x in nm_) + '.</p>')
 
 def match(r):
+    a_, b_ = r['span'].split('–')
+    if r['exact'] and a_ == b_:   # one departure in the hour, no repeating run (method check 25 Oct 2026: it read "exact 16:38–16:38")
+        oth = [hm(x) for x in r['deps'] if hm(x) != a_]
+        return (f'<span class="chip warn">single</span> hourly at the only 16:xx departure ({a_}); no repeating pattern'
+                + (f'; other real departures 15:00–17:59: {" ".join(oth)}' if oth else ''))
     if r['exact']: return f'<span class="chip ok">exact</span> {r["span"]}'
-    t = f'<span class="chip warn">partial</span> real 16:xx {" ".join(mm(m) for m in r["hour"]) or "none"}'
+    t = (f'<span class="chip">set by hand</span> exact {r["span"]}; ' if r.get('override') else '') +         f'<span class="chip warn">partial</span> real 16:xx {" ".join(mm(m) for m in r["hour"]) or "none"}'
     if r['missing']: t += f'; not modelled: {" ".join(mm(m) for m in r["missing"])} (the other end runs fewer buses an hour)'
     if r['extra']: t += f'; added: {" ".join(mm(m) for m in r["extra"])} (not in the timetable)'
     return t
@@ -127,6 +132,7 @@ for s in SCHED:
         lbl = f'<b>{E(r["stop"])}</b><br><span class="muted">to {E(r["to"])}</span>{mg}'
         real = f'<small class="real">real {r["real"][0]}' + (f'; {",".join(map(str, r["real"][1:]))}' if r['real'][1:] else '') + '</small>' if r['loop'] else ''
         term = '<span class="chip loop">turn −1 min</span>' if r['loop'] else '<span class="chip">through stop</span><br><small class="muted">real minute</small>'
+        if 60 % r['every']: term += f'<br><small class="muted">offsets count from 01:00: typed = (real − 60{" − 1" if r["loop"] else ""}) mod {r["every"]}</small>'   # fork rule, fixed 25 Oct 2026
         w(f'<td>{lbl}</td><td class="big">{r["every"]}</td><td class="big">{r["set"][0]}{real}</td><td class="big">{",".join(map(str, r["set"][1:])) or "–"}</td><td>{term}</td><td class="muted">auto</td><td class="n">{round(r["perh"], 2):g}</td><td class="note">{match(r)}</td>')
         if i == 0:
             nn = sum(1 for u in LINES[s['id']] if not u.get('spare'))

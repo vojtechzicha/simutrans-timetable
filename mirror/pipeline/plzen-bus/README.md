@@ -34,6 +34,10 @@ Every PMDP city bus line with afternoon-peak service (≥ 3 trips in 15:00–18:
   - 24 and 25 (both Bory – Bolevec, different routes) stay separate: each has its own kurzy.
   - 32 Škoda VIII. brána → NC Černice (2 trips in 15–18 h) is not a peak trip.
 - **Stop types:** every entry is a turning point (−1). No through stops on these lines.
+- **Hand-set rows (method check of 25 Oct 2026, `pipeline/brno/method-check-2026-10-25.md`; `fit.overrides`, key `<line id>|<line>|<from>|<to>`, notes on each line):**
+  - **26** one bus an hour at both ends (`rate: 1`; Lhota :54, the turn of the 16:30 bus): the 16:00-hour fit had given Lhota 2 an hour against 1 from Bory.
+  - **25** Bolevec :00, the turn of the hourly Bory :07 trips (its 16:15 fit was a single departure).
+  - **29** every 15 at both ends (`rate: 4`), **33** and **40** every 15 in both directions (33 `rate: 4`), **38** every 30 (`rate: 2`): their peak forms, which need the same buses; the 16:00 hour is where they thin out.
 - **Need** = max(cycle, on the road per record line), as on the trolleybus sheet. On 18 Sep: 69 counted, 14 not needed, none short, none designed. The designed-vehicle path (history → real cars, roster types first, leftovers "not needed") was tested on 42 with 26's history and works; it is not needed with the 26 pool.
 - **Pak:** no PMDP bus objects exist; seven types are "requested" in `VZ-PMDP-bus`, in two liveries (`pmdpcervenobila` for SOR NB 12, Urbino 18 III/IV and the midibuses; `pmdpcervenocernobila` for SOR NS 12 and NS 18). Advert wraps map to the normal livery. Articulated: `-A` + `-B` (the Brno bus convention).
 

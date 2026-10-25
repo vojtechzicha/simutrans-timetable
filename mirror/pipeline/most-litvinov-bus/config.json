@@ -261,13 +261,14 @@
  },
  "line_notes": {
   "NAD": "Replacement buses for tram lines 1, 3 and 4 while the Litvínov track is rebuilt (since 1 Mar 2026). They copy the tram timetable between Záluží, Chempark and Citadela, so the minutes are the trams'. Buses show the tram line number and a “Náhradní doprava” plate. At 16:00 only tram line 4 runs, every 15 min.",
-  "13": "The trunk Litvínov, Janov – Litvínov – Lom with branches: most trips go on to Lom, Loučná; single trips run to Osek, Kolonie and to Lom, Československé armády, and a few start at Litvínov, Křížatky. One Simutrans line on the main pair, with the other trips' buses added to it.",
+  "13": "The trunk Litvínov, Janov – Litvínov – Lom with branches: most trips go on to Lom, Loučná; others run on to Osek, Kolonie and to Lom, Československé armády, and a few start at Litvínov, Křížatky. Every trip passes Janov, otočka and Lom, Loučná, Libkovická, so the Simutrans line runs between them and each trip is read at those two stops: every 15 min both ways. The branch stops beyond them are not on the Simutrans line; the branch buses are added to it.",
   "16": "Summer timetable to Jezero Most (1 May – 30 Sep 2026). From 1 Oct the line runs its winter version.",
   "30": "Summer timetable (1 May – 30 Sep 2026): a loop Nádraží – Nemocnice – Nádraží every 15 min, and every 30 min on to Jezero Most. From 1 Oct 2026 the line changes: the winter version, and all trips end at Rudolická, MUS a.s. while the station forecourt is closed.",
   "12": "The Chempark works line: a diversion version valid 14 Jun – 30 Sep 2026. The last trips of the afternoon shift leave Chempark at 15:21 and 15:51; after that the line is sparse, so the schedule covers the shift trips.",
   "9": "A short loop from Most, Dopravní podnik through Čepirohy, a few trips a day. One bus.",
   "27": "Litvínov, nádraží – Šumná: a few trips a day, back on its full route since 1 Sep 2026 (dpmost.cz/zvd2026016). One bus.",
-  "31": "Most, nádraží – Havraň, Joseph industrial zone: shift trips about every hour."
+  "31": "Most, nádraží – Havraň, Joseph industrial zone: shift trips about every hour.",
+  "10": "Most, nádraží – Obrnice: irregular, about 2 buses an hour each way at 16:00, with two path variants (via Rudolice, náměstí or direct; 10–20 min). Both ends are set on one 2-hour cycle of 4 slots, which repeats the real 15:11–17:11 departures from Most and 15:34–17:34 from Obrnice exactly. 2 buses hold it while Obrnice → Most takes at most 15 min and Most → Obrnice at most 20 min (the card's 13 and 16); slower, it needs a third bus. Simpler, approximate: every 30 at both ends (up to 15 min off), 2 buses."
  },
  "network_state": [
   [
@@ -290,5 +291,47 @@
    "Most station forecourt closed from 1 Oct 2026",
    "The bus station rebuild closes Nádražní street from Thu 1 Oct 2026 (dpmost.cz/zvd2026020): line 30 will end at Rudolická, MUS a.s. like the other lines. It starts after the modelled day, and lines 16 and 30 change to their winter versions the same day, so the sheet keeps the 29 Sep network."
   ]
- ]
+ ],
+ "core_points": {
+  "13": {
+   "a": "Litvínov, Janov, otočka",
+   "b": "Lom, Loučná, Libkovická",
+   "why": "Method check 25 Oct 2026: every trip of 13 passes both Janov, otočka and Lom, Loučná, Libkovická (the Osek and Lom, Československé armády trips run on from Libkovická, the Křížatky trips start two stops before Janov). Read at these two stops the line runs every 15 min both ways all afternoon (Janov :13 :28 :43 :58 from 13:13 to 18:43, Libkovická :12 :27 :42 :57 from 13:27 to 18:57). Read by each trip's own first stop, the Lom end had come out every 60 at :12 and :57 (2 an hour) against every 15 from Janov (4 an hour), which cannot run in Simutrans."
+  }
+ },
+ "schedule_override": {
+  "10": {
+   "why": "Method check 25 Oct 2026: both ends at one rate. Line 10 is irregular (two path variants with 10-20 min running times). Around 16:00 it runs 2 an hour each way with 2 buses; no every-30 or every-60 pattern reproduces more than 3 departures in a row at either end, while one 2-hour cycle of 4 slots reproduces 5 in a row at both ends exactly (Most, nádraží 15:11 15:41 15:56 16:26 17:11; Obrnice, sídliště 15:34 16:08 16:29 16:53 17:34). The sheet had every 45 (2.67 an hour) at Most against 2 an hour at Obrnice.",
+   "rows": [
+    {
+     "fr": "Most, nádraží",
+     "to": "Obrnice, sídliště",
+     "every": 120,
+     "real": [
+      71,
+      101,
+      116,
+      26
+     ],
+     "first": 911,
+     "last": 1031,
+     "n": 5
+    },
+    {
+     "fr": "Obrnice, sídliště",
+     "to": "Most, nádraží",
+     "every": 120,
+     "real": [
+      94,
+      8,
+      29,
+      53
+     ],
+     "first": 934,
+     "last": 1054,
+     "n": 5
+    }
+   ]
+  }
+ }
 }

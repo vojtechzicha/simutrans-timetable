@@ -4,6 +4,8 @@
 
 Os/Sp lines designed with `../rail-design-rules.md`. Data: `../md-cr/data/derived/trains.json` (CIS JŘ JR2026). A train counts only if it runs on all five days Mon–Fri 5–9 Oct 2026.
 
+`check_track.py` (25 Oct 2026) lays a sheet's lines out as the game runs them and flags trains that meet where the real timetable never has a meeting (single-track conflicts); see its docstring. `check_followers.py` (same day) lists, for every timing point, the closest faster real train behind it (the follower check of the S9 sheet, which had been only in a scratchpad).
+
 ## S9 · S2 · R49 · R17 · Ex7 (16 Oct 2026, current)
 
 `python pipeline/local-rail/build_s9_s2.py` writes `S9 S2 R17 R49 Ex7.html` in the project root. Artifact: https://claude.ai/artifact/KRDg2WHmtB5D5SV88D8Ptp
@@ -17,6 +19,7 @@ User (16 Oct 2026): one sheet with S9/R17/R49/Ex7, keep the existing variants an
 - XS9 (user, 16 Oct 2026: add it, "use the actual vypravenost", else the real operator's bus): synthetic legs `XS9_OUT` / `XS9_IN` (Háje 15:02, Říčany 15:55; PID JR-linka-XS9 PDF images, same minutes in PID GTFS L2209 of 16 Oct). Every 15, 5-min min turn, 6 buses; 'temporary' (not in totals). No real vypravenost: seznam-autobusu.cz has 0 XS9 records (2026 and Nov 2025), GTFS has no blocks; carrier is ČD, subcontractor unpublished. Bus: MAN Lion's Intercity LE 12 PID grey-red (pakset session's pick). The save has an empty placeholder line 100999 {XS9}.
 - Page has a "What the works are" section (D0 crossing near Říčany; back from the 2025 temporary alignment; single track Uhříněves – Říčany).
 - Save export: the simutrans-122-0 session can export the save to JSON (`-load NAME -export`, see the fork's CLAUDE.md).
+- **Method check 25 Oct 2026** (`method-check-2026-10-25.md`): no entry or vehicle changes. Added: the Kolín – Velký Osek works note on S2 Kolín (12 Jan – 11 Dec 2026, S2 skips Kolín-Zálabí and Veltruby workdays 6–20; CIS JŘ already has Os 25837 / 25840 passing them), R 326 / 324 from Gmünd in R17's real trains (svc None at their Austrian first stop, so the svc-17 inventory missed them), SC 500, and S3/S30/S34/R43/R21, Ex3/Ex6/EC, R9/R18/R19 in the "other lines" bullet. Uhříněves – Říčany works still in force (pid.cz, 25 Oct).
 
 ## Ex7 + R17 Praha – Tábor – Veselí nad Lužnicí (14 Oct 2026, superseded by the S9 · S2 sheet)
 
@@ -31,6 +34,7 @@ User (14 Oct 2026): "Research Ex7 and R17 - but for both the track ends in Vesel
 
 - Ex7 passes Veselí without stopping; the script's `load()` wrapper adds Veselí as a stop at the real passing minute from the CIS location list (only in this script).
 - Vehicles: loco + coaches; RAILL 193 since 14 June 2026, ČD 380 before (vagonweb). R17 "Lužnice" trains to České Velenice change to a 754 at Veselí.
+- 25 Oct 2026 (method check): R17 `extra_real` lists R 326 / 324 Gmünd – Praha (Veselí 12:38 / 18:38, the line's minutes; no CIS line number at their first stop). SC 500 (Praha 20:31 → ČB, stops at Veselí) and the Praha-approach trains added to Not modelled; works re-checked on pid.cz. No entry or vehicle changes.
 
 ## Trains from S4 to the S3 corridor (14 Oct 2026, current)
 
@@ -63,6 +67,7 @@ Scope (user, 14 Oct 2026): "finish all pid trains and related branch lines with 
 - **v2 (user, 14 Oct 2026):** "Bubny can have 4 trains max", "use [coupling at Kralupy] smartly", "R15 should go to Praha jih", and "Usti also can store trains at its depot run (11 minutes)". A minute-by-minute count over 2 h shows Bubny holds at most 2 trains; v1's "four or five" was wrong. The S4 shorts can't share the coupled unit, because the fork parts a pair only where the next stops differ, and S4 and S4 Ústí stop identically between Bubny and Kralupy. The pak128 session confirmed that line coupling ignores vehicle constraints. The synthetic depot legs come from `DEPOT_RUNS` in `load()`. v3: "R23 in reality goes back to západ to stable then returns to hl.n." R23 now uses Ústí hl. n. L:31 → Ústí západ L:34, then S:20 → hl. n. S:23. The S4 coupling engine work went to session simutrans-122-0-36, with R18/1 and R18/2 as the regression case.
 - **v6 (user, 15 Oct 2026, from the built game):** S4 Ústí reached Lovosice 21 min and Kralupy 36 min before departure. The CIS departures were checked for every train of the day (Ústí :05, Lovosice :29 out / :31 in), and the line got `TP` timing-point `wait_points` at real minutes. Towards Ústí: Nelahozeves :30, Vraňany :38, Hněvice :53, Roudnice :03. Towards Praha: Bohušovice :39, Roudnice :52, Hněvice :02, Vraňany :17, Nelahozeves :25. Outbound they stop at Roudnice because R15 / Ex5 (not timed before Ústí) follow and overtake at Lovosice. Inbound, R20 is timed at Lovosice :57 and overtakes at Kralupy. U54 (4054) was not added: it has no afternoon pattern.
 - **Checked against the save:** R23 at Kolín and Nymburk does not collide with S2 (Os231/1, /2) or R22.
+- 25 Oct 2026 (method check): no entry or vehicle changes. Added to Not modelled: S49 (1049) on Praha-Podbaba – Roztoky, Sp 1494 / 1495, R49 on hl. n. – Holešovice, and U52 (4052, every 2 h Lovosice – Ústí, comes off the unbuilt Libochovice branch; moved out of "Beyond Ústí"); works re-checked on pid.cz. `check_track.py build_s4`: no meetings outside real crossing places.
 
 ## Trains from S5 to the S4 corridor (14 Oct 2026)
 
@@ -94,6 +99,7 @@ Scope (user, 14 Oct 2026): "Now do the S5 (included) to S4 corridor (excluded)".
 - Alternatives on the page: S57 on Os 16774 / 16719 (2 vehicles), S40 as one circuit (4 instead of 5).
 - **U13 added (v6, 15 Oct 2026):** the user asked "then add to it U13 in full?". U13 = CIS 4013 Most – Žatec západ, the whole line, every 60 on Os 6519 / 6520 (`check_meetings.py 6519 6520 Most "Žatec západ" 60`: crossing at Volevčice). The save has an empty placeholder Os123 [U13]. The U12 trains outside the pattern on Most – Obrnice are listed (LISTED pair). R25, U52 (4052) and 4011 also use parts of the line; they are not on the sheet. Sheet total 27 → 29, artifact version 8.
 - Half-minute arrivals matter for tight turns: Vraňany is in 15:35½, out 15:41, so the turn is set to 5 (with 6 the builder adds a whole interval).
+- **S40 corrected (method check, 25 Oct 2026):** `rep_in` 9735 (Slaný 16:29) → 9711 (Slaný 14:31). With :29 the back train left Kralupy předměstí (:56) before the S:54 from Kralupy (Os 9712) got there (:57½), so they met on the single track Kralupy – předměstí (`check_meetings.py 9712 9735 "Kralupy n.V." Slaný 120`: CONFLICT; 9712 × 9711: cross at předměstí, as every real pair does). In-game change: S40 Slaný entry offset 89 → 91 (S:29 → S:31); still 2 vehicles, 29 in all. Also listed: S54 bus 26 – 30 Oct (pid.cz), Os 19746.
 - Not modelled: R45 Praha-Bubny peak trains (incl. Sp 1576 to Blatno), single Sp to/from Blatno, S5/S45/S50 off-pattern and morning trains, S54 Bubny pair and weekend Slaný extension, S40 16–19 peak extras, shorts on 4012/4014/4021/4022, no-workday branches (Kralovice, Kolešovice, 4105, Zlonice – Straškov).
 
 ## S75 Beroun – Křivoklát – Rakovník (13 Oct 2026, current)
@@ -111,6 +117,7 @@ Scope (user, 13 Oct 2026): "continue with trains north of Beroun up to S5 (exclu
 - Pattern: Beroun :59, Rakovník :56. This is the afternoon peak: 14:59, 15:59, 16:59 out; 14:57 and 15:56 back. The two directions cross at Zbečno, where the train to Rakovník waits :22 – :26 (timed as a wait point).
 - The turns are 10 min at Beroun and 59 min at Rakovník. The alternative :12 return crosses at Roztoky and needs 3 vehicles too, but puts 54 min at Beroun, so it was rejected under the short main-line stay rule.
 - The real line is irregular outside the peak; all those trains are listed under Not modelled.
+- **Corrected 25 Oct 2026 (method check):** `rep_out` 7717 → 7745. 7717 reaches Rakovník at :57, after the :56 back leaves, so the documented pattern met on the single track Chlum u Rakovníka – Rakovník (`check_meetings.py 7717 7718 Beroun Rakovník 60`: CONFLICT); 7745 (14:59 → 15:55) crosses only at Zbečno. No in-game change (Beroun :59, Zbečno :26, Rakovník :56, 3 vehicles); Zbečno stay 4 → 3 min, Rakovník 59 → 61 min on the page. Works now listed: Rakovník – Roztoky by bus 29 Sep – 8 Nov (not modelled, owner rule of 14 Oct), Rakovník – Blatno by day 19 – 31 Oct; Kralovice (S58) as a no-workday branch.
 
 ## Trains west of Praha: S7, Liteňka, S6, S65, Beroun – Plzeň, Příbram line, R16, R26 (10 Oct 2026, ARCHIVED 13 Oct)
 

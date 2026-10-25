@@ -46,7 +46,88 @@
    930,
    990
   ],
-  "overrides": {}
+  "overrides": {
+   "26|26|Lhota|Bory": {
+    "I": 60,
+    "R": [
+     54
+    ],
+    "first": 1014,
+    "last": 1014
+   },
+   "25|25|Bolevec|Bory": {
+    "I": 60,
+    "R": [
+     0
+    ],
+    "first": 1020,
+    "last": 1080
+   },
+   "29|29|Borská pole|Doubravka": {
+    "I": 15,
+    "R": [
+     4
+    ],
+    "first": 889,
+    "last": 979
+   },
+   "29|29|Doubravka|Borská pole": {
+    "I": 15,
+    "R": [
+     4
+    ],
+    "first": 949,
+    "last": 1009
+   },
+   "33|33|Hlavní nádraží|Sídliště Košutka": {
+    "I": 15,
+    "R": [
+     11
+    ],
+    "first": 866,
+    "last": 986
+   },
+   "33|40|Sídliště Košutka|Hlavní nádraží": {
+    "I": 15,
+    "R": [
+     10
+    ],
+    "first": 910,
+    "last": 1000
+   },
+   "40|40|Hlavní nádraží|Sídliště Košutka": {
+    "I": 15,
+    "R": [
+     4
+    ],
+    "first": 874,
+    "last": 994
+   },
+   "40|33|Sídliště Košutka|Hlavní nádraží": {
+    "I": 15,
+    "R": [
+     2
+    ],
+    "first": 902,
+    "last": 992
+   },
+   "38|38|Doubravka|Červený Hrádek": {
+    "I": 30,
+    "R": [
+     0
+    ],
+    "first": 900,
+    "last": 960
+   },
+   "38|38|Červený Hrádek|Doubravka": {
+    "I": 30,
+    "R": [
+     8
+    ],
+    "first": 908,
+    "last": 968
+   }
+  }
  },
  "turnaround_default": 3,
  "links": {},
@@ -117,7 +198,8 @@
      "Bolevec",
      "Bory"
     ]
-   ]
+   ],
+   "note": "Bolevec is set at :00, the turn of the hourly Bory :07 trips (16:07 → 17:00, 17:07 → 18:00). The 16:15 departure is the return of the 15:37 trip of the earlier half-hourly form, not modelled."
   },
   {
    "id": "26",
@@ -134,7 +216,9 @@
      "Lhota",
      "Bory"
     ]
-   ]
+   ],
+   "rate": 1,
+   "note": "Both ends one bus an hour (26 runs 2 an hour Bory :20/:40, Lhota :04/:44 until the 16:04 return, then hourly). Lhota is set at :54, the turn of the 16:30 bus (and 17:40 → 18:04); the 16:04 departure, the last return of the half-hourly form, is not modelled. Option for the owner: the half-hourly form (Bory :20 :40, Lhota :04 :44, exact 14:20–16:04) needs one more bus."
   },
   {
    "id": "26N",
@@ -216,7 +300,9 @@
      "Doubravka",
      "Borská pole"
     ]
-   ]
+   ],
+   "rate": 4,
+   "note": "The every-15 peak form at both ends: Borská pole :04 (exact 14:49–16:19, then 16:33 one minute early and every 30 from 17:04), Doubravka :04 (exact 15:49–16:49; 15:03, 15:18 and 15:33 one minute early). The same buses as before."
   },
   {
    "id": "30",
@@ -305,7 +391,9 @@
      "Hlavní nádraží"
     ]
    ],
-   "text": "33 and 40 both run Hlavní nádraží – Sídliště Košutka, 33 by the Lochotín hospital and 40 by Lochotín. In the chaining 8 of 10 buses arriving at Sídliště Košutka as 33 leave as 40, and 8 of 11 arriving at Hlavní nádraží as 40 leave as 33 (and the other way round), so each bus runs a loop. Two Simutrans lines, one for each direction of the loop. Since 1 Sep all their buses are logged as 33 kurzy (40 has no record after 31 Aug), so the two lines share the 33 kurzy."
+   "text": "33 and 40 both run Hlavní nádraží – Sídliště Košutka, 33 by the Lochotín hospital and 40 by Lochotín. In the chaining 8 of 10 buses arriving at Sídliště Košutka as 33 leave as 40, and 8 of 11 arriving at Hlavní nádraží as 40 leave as 33 (and the other way round), so each bus runs a loop. Two Simutrans lines, one for each direction of the loop. Since 1 Sep all their buses are logged as 33 kurzy (40 has no record after 31 Aug), so the two lines share the 33 kurzy.",
+   "rate": 4,
+   "note": "Every 15 in both directions, as the 33 + 40 loop runs until about 16:30 (Hlavní nádraží :11 exact 14:26–16:26, Sídliště Košutka :10 exact 15:10–16:40); after that every 20. The same buses as before."
   },
   {
    "id": "40",
@@ -324,7 +412,8 @@
      "Hlavní nádraží"
     ]
    ],
-   "text": "The other direction of the 33 + 40 loop: out as 40 by Lochotín, back as 33 by the Lochotín hospital. It shares the 33 kurzy (see line 33)."
+   "text": "The other direction of the 33 + 40 loop: out as 40 by Lochotín, back as 33 by the Lochotín hospital. It shares the 33 kurzy (see line 33).",
+   "note": "Every 15 in both directions, as the 33 + 40 loop runs until about 16:30 (Hlavní nádraží :04 exact 14:34–16:34, Sídliště Košutka :02 exact 15:02–16:32); after that every 20. The same buses as before."
   },
   {
    "id": "34",
@@ -375,7 +464,9 @@
      "Červený Hrádek",
      "Doubravka"
     ]
-   ]
+   ],
+   "rate": 2,
+   "note": "Every 30 (Doubravka :00, Červený Hrádek :08), the line's form 15:00–16:08 (every 15 before 14:43, hourly from 16:08); a 6-minute run, so one bus either way."
   },
   {
    "id": "39",
@@ -573,7 +664,7 @@
   "lede": "Every PMDP city bus line in the afternoon peak of the timetable in force on Tue 29 Sep 2026, with the buses logged on Fri 18 Sep 2026 (the latest complete Friday; 23–25 Sep have almost no records), the Simutrans schedule for each line, and the pak128 object for every bus.",
   "network": "PMDP GTFS (jizdnirady.pmdp.cz/jr/gtfs, fetched 29 Sep 2026), bus routes (route_type 3), service day Tue 29 Sep 2026. Every PMDP bus line with afternoon-peak service is included. Departures are the trips starting from each terminus between 16:00 and 16:59. Headway is the median gap between 15:00 and 18:00, runtime the average scheduled time. Patterns with fewer than 3 trips in 15:00–18:00 are left out.",
   "not_modelled": "Lines without afternoon-peak service: 23, 36, 37, 43, 50 and 58 have no trip in 15:00–18:00, 56 (Vinice – Město Touškov) has one each way, and the night lines N1–N6, N11 and N12 run at night only. No other operator runs a PMDP line in the afternoon peak: every bus logged on 18 Sep is a PMDP bus.",
-  "schedule": "Values to type into the fork’s Scheduling tab, on the stop entries listed for each Simutrans line. Units are calendar minutes; the offset is minutes after midnight, modulo the interval; Leave up to stays automatic. Every entry here is a terminus where the bus turns, so every departure is set 1 min before the timetable departure to leave the turning point on time: offset and each Also at value are the real minute − 1 (mod the interval), with the real minutes shown underneath. A timing point the bus passed without turning would keep the real minute; there is none on these lines. Put the timetable on the entry the bus leaves from. Branches are separate lines (26 Nová Ves, 30 Borská pole, 41 Křimice); 28 alternates between its two Bukovec termini and is one line with CAN Husova twice; 33 and 40 form a loop run in both directions, one Simutrans line per direction. Each line is fitted at one rate, the number of 16:00–16:59 departures most of its entries share. Where the afternoon timetable is irregular, the entry is marked approximate with its largest deviation and the real 16:xx minutes. Depot runs are not modelled.",
+  "schedule": "Values to type into the fork’s Scheduling tab, on the stop entries listed for each Simutrans line. Units are calendar minutes; the offset counts from 01:00, as the fork does: minutes after 01:00 modulo the interval (the same as after midnight for every interval that divides 60); Leave up to stays automatic. Every entry here is a terminus where the bus turns, so every departure is set 1 min before the timetable departure to leave the turning point on time: offset and each Also at value are the real minute − 1 (mod the interval), with the real minutes shown underneath. A timing point the bus passed without turning would keep the real minute; there is none on these lines. Put the timetable on the entry the bus leaves from. Branches are separate lines (26 Nová Ves, 30 Borská pole, 41 Křimice); 28 alternates between its two Bukovec termini and is one line with CAN Husova twice; 33 and 40 form a loop run in both directions, one Simutrans line per direction. Each line is fitted at one rate, the number of 16:00–16:59 departures most of its entries share. Lines whose 16:00 hour is where they thin out after their peak (25, 26, 29, 33, 38, 40) are hand-set (25 Oct 2026, with a note under the line) to their peak form or to the real turn of their bus, at the same number of buses; such a row is \"partial, exact <span>\" where it reproduces that stretch exactly. Where the afternoon timetable is irregular, the entry is marked approximate with its largest deviation and the real 16:xx minutes. Depot runs are not modelled.",
   "need": "Buses needed at 16:00: follow a bus leaving the first entry around 16:00 through every leg of its line, taking at each terminus the first departure at least 3 min after arriving, or less where the timetable itself turns faster; a round trip waiting longer than the line’s interval (at least 30 min) is skipped. The need is never below the most buses on the road at once between 16:00 and 16:59 per PMDP record line (each trip holding its bus until arrival plus min(3 min, the terminus’s shortest timetabled turnaround)); the extra goes to the main line. Where more buses were logged than the need, exactly the need stays counted and the rest is marked not needed (dimmed, left out of every count, the garage and the pak totals): one of every type of the line first, then afternoon-only kurzy and the highest kurz numbers are dropped first (user rule, 29 Sep 2026; pipeline/brno-trolleybus common.mark_spares). Where fewer were logged, real cars from the line’s own history are designed in; on 18 Sep no bus line was short once 40 and 42 are taken with the kurzy they run on.",
   "lines": "One row per kurz out in the afternoon peak on Fri 18 Sep 2026, grouped by Simutrans line. Each bus shows its number and garage, its full type and length, and the pak128 core (requested = the object is not in the pak yet). Kurz numbers are PMDP’s, written record line / kurz. No note on the record means the bus was out all day; ráno i odpoledne is a split duty out in both peaks; odpoledne is the afternoon bus of a kurz whose morning bus is listed under Not counted. Bus and trolleybus numbers overlap in Plzeň (559 is both a SOR NB 12 and a Škoda 26 Tr).",
   "pak": "Each type counted in the peak, mapped to the object the VZ pak session is asked to make in VZ-PMDP-bus. There is no PMDP bus package yet, so every object is requested, never a stand-in from another city. Full names follow VZ-PMDP-<type>-<livery>-<core>; an articulated bus is two objects, front -A and rear -B, and the lists show the first core only. The core shows the livery where a type has objects in two liveries. Car units per vehicle (16 = one tile). Advert wraps map to the type’s normal livery. The request list is pipeline/plzen-bus/pak_request.md.",

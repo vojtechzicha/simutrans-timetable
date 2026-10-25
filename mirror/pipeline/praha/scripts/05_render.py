@@ -97,10 +97,14 @@ def main():
             order = [(i, r, brlabel(r, i)) for i in ids for r in TT['lines'].get(i, {}).get('schedule', [])]
         for i, r, sub in order:
             if True:
-                ltag = '<span class="lp">loop · 1 min early</span>' if r['loop'] else '<span class="lp st">no loop · as timetabled</span>'
+                # real-minute subtitles wherever the typed values differ from the timetable residues: at loops (-1) and, since the
+                # 01:00 origin fix (25 Oct), at no-loop termini on intervals that do not divide 60 (every 8: typed = real - 4)
+                shifted = list(r['set']) != list(r['real'])
+                ltag = ('<span class="lp">loop · 1 min early</span>' if r['loop'] else
+                        '<span class="lp st">no loop · no 1-min shift</span>' if shifted else '<span class="lp st">no loop · as timetabled</span>')
                 also = ', '.join(str(a) for a in r['set'][1:]) or '—'
-                real_o = f'<small class="real">real {r["real"][0]}</small>' if r['loop'] else ''
-                real_a = f'<small class="real">real {", ".join(str(x) for x in r["real"][1:])}</small>' if r['loop'] and len(r['real']) > 1 else ''
+                real_o = f'<small class="real">real {r["real"][0]}</small>' if shifted else ''
+                real_a = f'<small class="real">real {", ".join(str(x) for x in r["real"][1:])}</small>' if shifted and len(r['real']) > 1 else ''
                 fit = (f'exact {hm(r["first"])}–{hm(r["last"])} ({r["n"]} dep.)' if r['exact'] else f'approximate, up to {r["max_dev"]} min off')
                 if r.get('override'): fit = f'set by hand, {hm(r["first"])}–{hm(r["last"])}: {esc(r["override"])}'
                 d = []
@@ -137,7 +141,7 @@ def main():
         elif brs:
             head = '<p class="lpn"><b>' + str(len(brs)) + ' separate Simutrans lines</b>, one per branch: ' + '; '.join(f'{esc(l)} needs {b["need"]} trams (round trip about {b["cycle"]} min)' for l, b in brs.items()) + '.</p>'
         nt = f'<details class="nm"><summary>Not modelled in 15:00–17:59 ({len(notes)})</summary><ul>{"".join(notes)}</ul></details>' if notes else ''
-        return (f'<div class="sch"><h4>Simutrans schedule</h4><p class="lpn">Loop terminus: Offset and Also at are set 1 min before the timetable departure, so the tram clears the loop on time. Stub, triangle and through termini keep the timetable minute. Put the values on the boarding stop the tram departs from, not on the arrival stop.</p>'
+        return (f'<div class="sch"><h4>Simutrans schedule</h4><p class="lpn">Loop terminus: Offset and Also at are set 1 min before the timetable departure, so the tram clears the loop on time. Stub, triangle and through termini keep the timetable minute. The fork counts offsets from 01:00, so on an interval that does not divide 60 (every 8) the typed value is (real − 60 − 1) mod 8: the real minute is under each value. Put the values on the boarding stop the tram departs from, not on the arrival stop.</p>'
                 f'{head}<div class="tw"><table class="st"><thead><tr>{lh}<th>Terminus entry</th><th class="num">Departure every</th><th class="num">Offset</th><th>Also at</th><th>Leave up to</th><th>Fit</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>{nt}</div>')
 
     # ---------- line cards ----------

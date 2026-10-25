@@ -142,7 +142,7 @@ if bat:
 # ---- schedule -----------------------------------------------------------------------------------------
 def match(r):
     if r['exact']: return f'<span class="chip ok">exact</span> {r["span"]}'
-    t = f'<span class="chip warn">approximate, ±{r["dev"]} min</span> real 16:xx {" ".join(mm(m) for m in r["hour"])}'
+    t = (f'<span class="chip warn">partial</span> exact {r["span"]};' if r.get('stretch') else f'<span class="chip warn">approximate, ±{r["dev"]} min</span>') + f' real 16:xx {" ".join(mm(m) for m in r["hour"])}'
     if r['missing']: t += f'; not reproduced: {" ".join(mm(m) for m in r["missing"])}'
     if r['extra']: t += f'; modelled but not in the timetable: {" ".join(mm(m) for m in r["extra"])}'
     return t
@@ -164,6 +164,7 @@ for s in SCHED:
         else:
             real = (f'<small class="real">real {r["real"][0]}' + (f'; {", ".join(map(str, r["real"][1:]))}' if r['real'][1:] else '') + '</small>') if r['loop'] else ''
             term = '<span class="chip loop">loop −1 min</span>' if r['loop'] else '<span class="chip">through stop</span><br><small class="muted">real minute</small>'
+            if 60 % r['every']: term += f'<br><small class="muted">offsets count from 01:00: typed = (real − 60{" − 1" if r["loop"] else ""}) mod {r["every"]}</small>'   # fork rule, fixed 25 Oct 2026
             w(f'<td>{lbl}</td><td class="big">{r["every"]}</td><td class="big wrap">{r["set"][0]}{real}</td><td class="big wrap">{", ".join(map(str, r["set"][1:])) or "–"}</td><td>{term}</td><td class="muted">auto</td><td class="n">{r["perh"]:g}</td><td class="note">{match(r)}</td>')
         if i == 0:
             nn = sum(1 for u in LINES[s['id']] if not u.get('spare')); sh = short.get(s['id'])

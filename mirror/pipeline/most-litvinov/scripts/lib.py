@@ -235,8 +235,11 @@ def runfit(deps, core=(930, 990), lo=780, hi=1200, divs=DIV1440):
     return min(ok, key=lambda c: (len(c['R']), c['I'], -c['n']))
 
 def loop_shift(I, R, loop=True):
-    """loop terminus (smyčka): enter every departure 1 min before the timetable minute"""
-    return sorted((r - 1) % I for r in R) if loop else list(R)
+    """Values to type in. R are departure times mod I counted from midnight; the fork counts its offsets from 01:00 (owner,
+    3 Oct 2026; kb/rules/fork-schedule.md), so typed = (real - 60) mod I, and a loop terminus is entered 1 min early. For
+    intervals dividing 60 the 01:00 origin changes nothing; for 8 it is 4 min. Fixed here 25 Oct 2026 (it had been left out of
+    this copy when the Ostrava lib was fixed on 20 Oct). The order of R is kept, so set[i] stays paired with real[i]."""
+    return [(r - 60 - (1 if loop else 0)) % I for r in R]
 
 def plans(trips, nm, fitcfg, pullin_dests, loop=True):
     """per (from,to) branch of one line. fitcfg = dict(window=[a,b], core=[c0,c1], lo, hi).

@@ -121,3 +121,19 @@ The owner asked to test the written method (`../bus-schedule-method.md`) by havi
 3. `python scripts/run.py --fetch` after the peak (~17:45).
 4. Check the To check list and any line with many designed buses.
 5. Republish to `artifact_url`. Send `pak_request.md` to the pak session if it lists anything new.
+
+## Method check of 25 Oct 2026 (bus schedule method v4, Step 4 on every row)
+
+Every timed row on the sheet (77) was tested with the Step 4 rule (window slots = real departures ± 1, ≥ 80 % of window slots
+with a real departure within 3 min); evidence in `../ostrava-bus/method-check-city-2026-10-25.md`. 50 passed before, 57 after;
+the 20 left are window-edge effects, the owner's structures (501/504, 502, the no-daily-lines bends, 514, 516, 517) or 410B.
+Changed, each with the same bus:
+- **515:** Fryštát → Důl Darkov at 12:22 (the window's only trip; was 12:54, 32 min off). Typed 233 → 201.
+- **420:** back from Zelené Město at 13:01 / 15:41 (real 13:03, 15:38; was 13:03 / 15:43, 5 min off). Typed 82 → 80.
+- **419:** hand-set (new `line_overrides['419']`): every 160, Šumbark 15:30 / 16:20, obchodní dům 15:50 / 17:00 (real; the
+  automatic every 60 :25 / :55 had no departure within 3 min all day). The hourly option is in its `why`, for the owner.
+- **411:** every 480 with the three afternoon trips each way (Podlesí 14:09, 15:05, 16:50; Adámek 14:38, 15:33, 17:21; the
+  hourly :05 / :33 had 1 of 4 window slots on a trip). The hourly option is in its `why`, for the owner.
+- **410B** (Podlesí ⇄ Dolní Datyně) fails too (14:32 from Dolní Datyně has no trip; only every second bus comes back) and
+  would run every 120 at the inbound rate, but hand-setting 410 moved buses on six lines, so it is left for the owner.
+- No keep_roster here: a change to a hand-set slot moves the observation window, so `roster.json` was diffed after each one.
