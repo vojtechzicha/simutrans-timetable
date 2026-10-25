@@ -15,8 +15,14 @@ This folder holds only the sheet's config, data and authoring scripts. The pipel
 | MHD Opava, buses | 905xxx | MDPO | 1xx, 40x | VZ-DPOpava-bus |
 
 - 70 ODIS numbers: 59 modelled as 73 Simutrans lines, 126 vehicles (116 seen on the 20 Oct live map, 10 designed). Was 125 vehicles before the 25 Oct hand check of 281, 282, 290 and 292.
-- After the 25 Oct check of the rest of the sheet (below): 72 Simutrans lines (285 Dobroslavice folded into 285), and the schedule (`05_schedule`) needs 133 buses, 7 more than 126.
-- After the 292 split (25 Oct, below): 73 Simutrans lines, still 133 buses; the roster was rebuilt in the working folder (`04_roster` with `keep_roster` = v8), not published.
+- **Published v9 (25 Oct 2026) = v8 + the 292 split only** (owner: "PUBLISH 292"): 74 Simutrans lines, 126 buses (24-0004 in
+  on 292 Strahovice, 24-1116 out), plus 246's way back listed through Dolní Životice and the shared 05 stop-list fix for legs
+  read at a knot (stops and "Passes" text only). `authoring/` builds v9; `keep_roster` = `data/published/roster_v8.json`,
+  and v9's own roster is `data/published/roster_v9.json`.
+- **Held, not published:** the check of the rest of the sheet (below; the regional A/B/C question, built as option B): 72
+  Simutrans lines (285 Dobroslavice folded into 285), 133 buses, 7 more than 126. Its authoring (with the 292 split) is in
+  `held/option-B-2026-10-25/` (`opa_spec.py`, `opa_notes.py`, `opa_config.py`, `config.json`): copy those three .py files
+  into `authoring/` (and `opa_config.py`'s keep_roster to roster_v9.json) to rebuild it once the owner answers.
 - Not modelled (`config.unmodelled`): 214, 256, 275 (sparse / shift, stops on other lines), 283 (two trips), 228 and 229 (night lines).
 - Lines shared with other sheets (the sheet with most trips models them): 615, 620, 691, 692, 693 are on the Novojičínsko/Bílovecko sheet; this sheet models 260 and 920 (also Bruntálsko/Rýmařovsko licences), 261, 263, 270, 285, 678 (also Novojičínsko/Bílovecko licences) and 555 (904555; the HKO sheet lists it).
 

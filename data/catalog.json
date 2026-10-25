@@ -1658,6 +1658,11 @@
      "at": "2026-10-25T02:25:00.000Z",
      "version": 8,
      "note": "empty-return B lines dropped (owner); v6 buses kept"
+    },
+    {
+     "at": "2026-10-25T16:30:00.000Z",
+     "version": 9,
+     "note": "292 split by destination: 292 (Chuchelná) and 292 Strahovice, each every 160 (owner)"
     }
    ]
   },
