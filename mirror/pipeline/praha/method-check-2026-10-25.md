@@ -137,8 +137,14 @@ Bohnice, so the shared every-15-with-4 row stays), the alias pairs 100, 138, 174
 
 - **School lines 251–280** (1–6 trips a day, mostly one at 7:xx) show "every 60, Offset N" fitted to that trip. By the brief
   (school-only lines excluded; sparse trips listed, not modelled) they should say "not modelled". Not changed.
-- **Branches with ≥ 3 peak trips but no rows** (the card says "own Simutrans line" without values). Proposed rows, all exact
-  fits of the real trips, interleaved as the timetable runs them:
+- **Branches with ≥ 3 peak trips but no rows** (the card says "own Simutrans line" without values). **Applied 28 Oct 2026**
+  (owner: "do include - and also for the other lines"): `schedule_overrides` in `praha-bus/states/2026-09-29.json` gives each
+  line its main rows unchanged plus these rows. Bus need if each Simutrans line runs its own buses (on the road 16:00–16:59):
+  109 Dolní Počernice 5 + VÚ Běchovice 3 (card 7); 113 Sídliště Písnice 3 + Točná 2 + Písnice 2 (7); 120 3 + 3 (6);
+  138 Skalka 8 + Sídliště Skalka 4 (11); 146 Habrová 2 + Vinice Hrdlořezy 2 (3); 160 1 + 2 (3); 174 Luka 4 + Třebonice 4 +
+  Řeporyjské náměstí 3 (8); 177 Mazurská 21 + Volha 2 (23); 186 2 + 1 (3); 197 Roztyly 7 + Sídliště Písnice 5 (11);
+  221 3 + 1 (4). The roster was not re-sized. The proposed rows, all exact fits of the real trips, interleaved as the
+  timetable runs them:
 
 | Line | Entry | Every / Offset / Also at | Real fit |
 |---|---|---|---|

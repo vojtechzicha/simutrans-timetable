@@ -245,6 +245,11 @@
      "at": "2026-10-25T03:58:39.000Z",
      "version": 7,
      "note": "25 Oct full check: typed values counted from 01:00, every row checked against the timetable"
+    },
+    {
+     "at": "2026-10-28T17:20:00.000Z",
+     "version": 8,
+     "note": "Branch rows on 109, 113, 120, 138, 146, 160, 174, 177, 186, 197, 221 (owner: every peak branch gets its own rows)"
     }
    ]
   },

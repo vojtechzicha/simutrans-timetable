@@ -143,6 +143,51 @@
     }
    ]
   },
+  "109": {
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 109 is the Dolní Počernice line (3 per 30 min) and the VÚ Běchovice line every 30, interleaved at Palmovka as the timetable runs them (:02 :09 :17 :24).",
+   "rows": [
+    {
+     "o": "Palmovka",
+     "d": "Dolní Počernice",
+     "every": 30,
+     "real": [
+      2,
+      17,
+      24
+     ],
+     "why": "Dolní Počernice line at :02, :17 and :24 every 30 (17:55 runs 1 min late)."
+    },
+    {
+     "o": "Dolní Počernice",
+     "d": "Palmovka",
+     "every": 30,
+     "real": [
+      9,
+      16,
+      24
+     ],
+     "why": "Dolní Počernice line at :09, :16 and :24 every 30; from 17:41 the evening timetable starts."
+    },
+    {
+     "o": "Palmovka",
+     "d": "VÚ Běchovice",
+     "every": 30,
+     "real": [
+      9
+     ],
+     "why": "VÚ Běchovice line, every 30 at :09 and :39, the gap in the Dolní Počernice slots."
+    },
+    {
+     "o": "VÚ Běchovice",
+     "d": "Palmovka",
+     "every": 30,
+     "real": [
+      23
+     ],
+     "why": "VÚ Běchovice line, every 30 at :23 and :53."
+    }
+   ]
+  },
   "110": {
    "_why": "Method check 25 Oct 2026: the fit gave Obchodní centrum Čakovice every 60 with three slots (3 an hour) against every 15 from Hloubětín (4 an hour), which cannot run. The gaps are the trips to and from Třeboradický hřbitov (2 each way in 15:00–17:59, not a peak branch).",
    "rows": [
@@ -215,6 +260,106 @@
     }
    ]
   },
+  "113": {
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 113 is three Simutrans lines from Kačerov: Sídliště Písnice every 15, Točná every 30 and Písnice every 30, interleaved as the timetable runs them (:01 Točná, :10 Sídliště Písnice, :16 Písnice, :25 Sídliště Písnice).",
+   "rows": [
+    {
+     "o": "Kačerov",
+     "d": "Sídliště Písnice",
+     "every": 15,
+     "real": [
+      10
+     ],
+     "why": "Sídliště Písnice line, every 15 at :10."
+    },
+    {
+     "o": "Sídliště Písnice",
+     "d": "Kačerov",
+     "every": 15,
+     "real": [
+      14
+     ],
+     "why": "Sídliště Písnice line, every 15 at :14."
+    },
+    {
+     "o": "Kačerov",
+     "d": "Točná",
+     "every": 30,
+     "real": [
+      1
+     ],
+     "why": "Točná line, every 30 at :01 and :31."
+    },
+    {
+     "o": "Točná",
+     "d": "Kačerov",
+     "every": 30,
+     "real": [
+      22
+     ],
+     "why": "Točná line, every 30 at :22 and :52."
+    },
+    {
+     "o": "Kačerov",
+     "d": "Písnice",
+     "every": 30,
+     "real": [
+      16
+     ],
+     "why": "Písnice line, every 30 at :16 and :46."
+    },
+    {
+     "o": "Písnice",
+     "d": "Kačerov",
+     "every": 30,
+     "real": [
+      16
+     ],
+     "why": "Písnice line, every 30 at :16 and :46."
+    }
+   ]
+  },
+  "120": {
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 120 is the Pod Lochkovem line and the Nádraží Radotín line, each every 30, interleaved at Na Knížecí (:14 Pod Lochkovem, :29 Nádraží Radotín).",
+   "rows": [
+    {
+     "o": "Na Knížecí",
+     "d": "Pod Lochkovem",
+     "every": 30,
+     "real": [
+      14
+     ],
+     "why": "Pod Lochkovem line, every 30 at :14 and :44."
+    },
+    {
+     "o": "Pod Lochkovem",
+     "d": "Na Knížecí",
+     "every": 30,
+     "real": [
+      7
+     ],
+     "why": "Pod Lochkovem line, every 30 at :07 and :37."
+    },
+    {
+     "o": "Na Knížecí",
+     "d": "Nádraží Radotín",
+     "every": 30,
+     "real": [
+      29
+     ],
+     "why": "Nádraží Radotín line, every 30 at :29 and :59."
+    },
+    {
+     "o": "Nádraží Radotín",
+     "d": "Na Knížecí",
+     "every": 30,
+     "real": [
+      15
+     ],
+     "why": "Nádraží Radotín line, every 30 at :15 and :45."
+    }
+   ]
+  },
   "122": {
    "_why": "Method check 25 Oct 2026: the fit gave Újezd u Průhonic every 45 from 2 departures (1.3 an hour) against hourly from Opatov. One bus, hourly both ways.",
    "rows": [
@@ -235,6 +380,51 @@
       24
      ],
      "why": "Hourly at :24 (13:24–16:24, 19:24). The 17:09 and 18:09 departures run 15 min before the slot."
+    }
+   ]
+  },
+  "138": {
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 138 is the Skalka (Michelangelova) line, 3 per 30 min, and the Sídliště Skalka line every 30, interleaved at Ústavy Akademie věd (:02 :10 :17 :25).",
+   "rows": [
+    {
+     "o": "Michelangelova",
+     "d": "Ústavy Akademie věd",
+     "every": 30,
+     "real": [
+      2,
+      9,
+      24
+     ],
+     "why": "Skalka line at :02, :09 and :24 every 30."
+    },
+    {
+     "o": "Ústavy Akademie věd",
+     "d": "Skalka",
+     "every": 30,
+     "real": [
+      2,
+      10,
+      25
+     ],
+     "why": "Skalka line at :02, :10 and :25 every 30; at 17:40 and 17:47 the two lines swap slots."
+    },
+    {
+     "o": "Ústavy Akademie věd",
+     "d": "Sídliště Skalka",
+     "every": 30,
+     "real": [
+      17
+     ],
+     "why": "Sídliště Skalka line, every 30 at :17 and :47; the last peak trip leaves at 17:40, 7 min early (the Skalka line takes 17:47)."
+    },
+    {
+     "o": "Sídliště Skalka",
+     "d": "Ústavy Akademie věd",
+     "every": 30,
+     "real": [
+      14
+     ],
+     "why": "Sídliště Skalka line, every 30 at :14 and :44 from 15:44; 15:21 runs 7 min late."
     }
    ]
   },
@@ -304,6 +494,49 @@
     }
    ]
   },
+  "146": {
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 146 is the Habrová line, 2 per 30 min, and the Vinice Hrdlořezy line every 30, interleaved at Želivského (:00 Vinice Hrdlořezy, :08 and :15 Habrová).",
+   "rows": [
+    {
+     "o": "Želivského",
+     "d": "Habrová",
+     "every": 30,
+     "real": [
+      8,
+      15
+     ],
+     "why": "Habrová line at :08 and :15 every 30."
+    },
+    {
+     "o": "Habrová",
+     "d": "Želivského",
+     "every": 30,
+     "real": [
+      15,
+      22
+     ],
+     "why": "Habrová line at :15 and :22 every 30."
+    },
+    {
+     "o": "Želivského",
+     "d": "Vinice Hrdlořezy",
+     "every": 30,
+     "real": [
+      0
+     ],
+     "why": "Vinice Hrdlořezy line, every 30 at :00 and :30."
+    },
+    {
+     "o": "Vinice Hrdlořezy",
+     "d": "Želivského",
+     "every": 30,
+     "real": [
+      27
+     ],
+     "why": "Vinice Hrdlořezy line, every 30 at :27 and :57."
+    }
+   ]
+  },
   "157": {
    "_why": "Method check 25 Oct 2026: the fit gave Násirovo náměstí every 60 with 7 slots (7 an hour, 9 departures 15:40–16:48) against every 15 with 2 slots from Kačerov (8 an hour). Both ends now every 15 with 2 slots.",
    "rows": [
@@ -329,6 +562,114 @@
     }
    ]
   },
+  "160": {
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 160 is the hourly Lysolaje line and the hourly Výhledy line from Dejvická (:25 Výhledy, :55 Lysolaje).",
+   "rows": [
+    {
+     "o": "Dejvická",
+     "d": "Lysolaje",
+     "every": 60,
+     "real": [
+      55
+     ],
+     "why": "Lysolaje line, hourly at :55."
+    },
+    {
+     "o": "Lysolaje",
+     "d": "Dejvická",
+     "every": 60,
+     "real": [
+      14
+     ],
+     "why": "Lysolaje line, hourly at :14."
+    },
+    {
+     "o": "Dejvická",
+     "d": "Výhledy",
+     "every": 60,
+     "real": [
+      25
+     ],
+     "why": "Výhledy line, hourly at :25."
+    },
+    {
+     "o": "Výhledy",
+     "d": "Dejvická",
+     "every": 60,
+     "real": [
+      23
+     ],
+     "why": "Výhledy line, hourly at :23."
+    }
+   ]
+  },
+  "174": {
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 174 is three Simutrans lines from Kukulova (back to Vypich, the same terminus): Luka 4 an hour, Třebonice every 20 and Řeporyjské náměstí 2 an hour, interleaved as the timetable runs them (:06 :12 :19 :26 :32 :38 :46 :52 :58).",
+   "rows": [
+    {
+     "o": "Kukulova",
+     "d": "Luka",
+     "every": 60,
+     "real": [
+      12,
+      19,
+      32,
+      52
+     ],
+     "why": "Luka line at :12, :19, :32 and :52."
+    },
+    {
+     "o": "Luka",
+     "d": "Vypich",
+     "every": 60,
+     "real": [
+      16,
+      30,
+      36,
+      56
+     ],
+     "why": "Luka line at :16, :30, :36 and :56."
+    },
+    {
+     "o": "Kukulova",
+     "d": "Třebonice",
+     "every": 20,
+     "real": [
+      6
+     ],
+     "why": "Třebonice line, every 20 at :06, :26 and :46 (15:05 and 17:25 1 min early)."
+    },
+    {
+     "o": "Třebonice",
+     "d": "Vypich",
+     "every": 20,
+     "real": [
+      10
+     ],
+     "why": "Třebonice line, every 20 at :10, :30 and :50 (15:49 1 min early)."
+    },
+    {
+     "o": "Kukulova",
+     "d": "Řeporyjské náměstí",
+     "every": 60,
+     "real": [
+      38,
+      58
+     ],
+     "why": "Řeporyjské náměstí line at :38 and :58 (16:37 1 min early)."
+    },
+    {
+     "o": "Řeporyjské náměstí",
+     "d": "Vypich",
+     "every": 60,
+     "real": [
+      3,
+      43
+     ],
+     "why": "Řeporyjské náměstí line at :03 and :43 (17:02 1 min early)."
+    }
+   ]
+  },
   "176": {
    "_why": "Method check 25 Oct 2026: the fit gave both ends every 60 with 7 slots (13 departures on 7 slots). 176 runs the every-7.5 pattern (every 15 with 2 slots) with about one bus an hour left out.",
    "rows": [
@@ -351,6 +692,96 @@
       8
      ],
      "why": "Every 15 at :00 and :08 (8 an hour), the timetable's own minutes; the timetable leaves out 15:45, 17:08 and 18:00. No regular slower option, as from Stadion Strahov."
+    }
+   ]
+  },
+  "177": {
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 177 is the Poliklinika Mazurská line and the Chodov – Volha shuttle (4 stops, two buses of its own: the trip numbers chain 1145, 1146, 1147, 1148 and 1260 to 1265, with 3–4 min turns at both ends), each 2 per 15 min. Owner choice: run the Volha trips as an extension of 100177 instead.",
+   "rows": [
+    {
+     "o": "Poliklinika Mazurská",
+     "d": "Chodov",
+     "every": 15,
+     "real": [
+      3,
+      10
+     ],
+     "why": "Mazurská line at :03 and :10 every 15 (from 17:41 every 8)."
+    },
+    {
+     "o": "Chodov",
+     "d": "Poliklinika Mazurská",
+     "every": 15,
+     "real": [
+      5,
+      13
+     ],
+     "why": "Mazurská line at :05 and :13 every 15 (before 15:28 and after 17:21 every 7–8, 1–3 min off)."
+    },
+    {
+     "o": "Chodov",
+     "d": "Volha",
+     "every": 15,
+     "real": [
+      1,
+      9
+     ],
+     "why": "Volha shuttle at :01 and :09 every 15 (before 15:31 and after 17:24, 1–4 min off)."
+    },
+    {
+     "o": "Volha",
+     "d": "Chodov",
+     "every": 15,
+     "real": [
+      2,
+      9
+     ],
+     "why": "Volha shuttle at :02 and :09 every 15 (16:25 and from 17:03 on, 1–3 min late)."
+    }
+   ]
+  },
+  "186": {
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 186 is the Nádraží Satalice line, 3 an hour, and the hourly Vinoř line, interleaved at Černý Most (:02, :17 Vinoř, :32, :47).",
+   "rows": [
+    {
+     "o": "Černý Most",
+     "d": "Nádraží Satalice",
+     "every": 60,
+     "real": [
+      2,
+      32,
+      47
+     ],
+     "why": "Nádraží Satalice line at :02, :32 and :47 (from 16:02; the 15:02 slot has no trip)."
+    },
+    {
+     "o": "Nádraží Satalice",
+     "d": "Černý Most",
+     "every": 60,
+     "real": [
+      16,
+      31,
+      46
+     ],
+     "why": "Nádraží Satalice line at :16, :31 and :46."
+    },
+    {
+     "o": "Černý Most",
+     "d": "Vinoř",
+     "every": 60,
+     "real": [
+      17
+     ],
+     "why": "Vinoř line, hourly at :17."
+    },
+    {
+     "o": "Vinoř",
+     "d": "Černý Most",
+     "every": 60,
+     "real": [
+      51
+     ],
+     "why": "Vinoř line, hourly at :51."
     }
    ]
   },
@@ -466,6 +897,47 @@
     }
    ]
   },
+  "197": {
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 197 is the Roztyly line and the Sídliště Písnice line, each every 15, interleaved at Smíchovské nádraží (:03 Roztyly, :10 Sídliště Písnice).",
+   "rows": [
+    {
+     "o": "Roztyly",
+     "d": "Smíchovské nádraží",
+     "every": 15,
+     "real": [
+      8
+     ],
+     "why": "Roztyly line, every 15 at :08."
+    },
+    {
+     "o": "Smíchovské nádraží",
+     "d": "Roztyly",
+     "every": 15,
+     "real": [
+      3
+     ],
+     "why": "Roztyly line, every 15 at :03 (17:49 1 min late)."
+    },
+    {
+     "o": "Smíchovské nádraží",
+     "d": "Sídliště Písnice",
+     "every": 15,
+     "real": [
+      10
+     ],
+     "why": "Sídliště Písnice line, every 15 at :10 (17:41 and 17:56 1 min late)."
+    },
+    {
+     "o": "Sídliště Písnice",
+     "d": "Smíchovské nádraží",
+     "every": 15,
+     "real": [
+      0
+     ],
+     "why": "Sídliště Písnice line, every 15 at :00 (from 15:15; the 15:00 slot has no trip)."
+    }
+   ]
+  },
   "207": {
    "_why": "Method check 25 Oct 2026: the fit gave Ohrada every 36 with 6 slots (11 departures 15:38–16:38). 207 runs every 6 min both ways from about 15:30.",
    "rows": [
@@ -513,6 +985,47 @@
       53
      ],
      "why": "Hourly at :23, :43 and :53 (3 an hour), as the timetable 15:23–19:43; no bus at 16:43."
+    }
+   ]
+  },
+  "221": {
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 221 is the Černý Most line and the Nádraží Klánovice-sever shuttle (6 stops), each every 30.",
+   "rows": [
+    {
+     "o": "Černý Most",
+     "d": "Klánovice",
+     "every": 30,
+     "real": [
+      19
+     ],
+     "why": "Černý Most line, every 30 at :19 and :49."
+    },
+    {
+     "o": "Klánovice",
+     "d": "Černý Most",
+     "every": 30,
+     "real": [
+      27
+     ],
+     "why": "Černý Most line, every 30 at :27 and :57."
+    },
+    {
+     "o": "Klánovice",
+     "d": "Nádraží Klánovice-sever",
+     "every": 30,
+     "real": [
+      13
+     ],
+     "why": "Klánovice-sever shuttle, every 30 at :13 and :43."
+    },
+    {
+     "o": "Nádraží Klánovice-sever",
+     "d": "Klánovice",
+     "every": 30,
+     "real": [
+      0
+     ],
+     "why": "Klánovice-sever shuttle, every 30 at :00 and :30."
     }
    ]
   },

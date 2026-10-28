@@ -60,6 +60,11 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   main pattern rather than replacing it after the peak. Otherwise list "not a peak trip, not modelled".
 - Bus branches (Ostrava rule): ≥ 6 trips 15–18 h, a 16:xx departure, no garage end; regular afternoon branches (≥ 3 trips each way
   13:00–19:00) are modelled too (owner on 23 Záblatí, 20 Oct).
+- **A branch that is its own Simutrans line gets its own rows** on the card, every time. "Own Simutrans line" without
+  values is not done (owner, 28 Oct, Prague 109 VÚ Běchovice: "Is it reasonable?" → "do include - and also for the other
+  lines"). Give each branch its Every / Offset / Also at, interleaved with the main rows, and say what the split costs:
+  separate Simutrans lines can't interwork, so per-line needs can add up to more than the card's one count (109: 5 + 3 vs 7).
+  A branch with no game line yet (Prague 177 Volha, 174 Luka) goes on the in-game change list as a line to build.
 - **Branches sharing a terminus must interleave** as the real timetable does (owner, 20 Oct: "if the real timetable interleaves, you
   should interleave. I thought that is the whole point?"). Fit them together on one interval; scan for bunching at shared termini
   **and** at junctions/intermediate stops (23 at Rychvald, rozcestí), and across different lines on shared trunks
