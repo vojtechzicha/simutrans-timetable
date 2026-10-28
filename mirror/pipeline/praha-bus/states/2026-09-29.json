@@ -696,7 +696,7 @@
    ]
   },
   "177": {
-   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 177 is the Poliklinika Mazurská line and the Chodov – Volha shuttle (4 stops, two buses of its own: the trip numbers chain 1145, 1146, 1147, 1148 and 1260 to 1265, with 3–4 min turns at both ends), each 2 per 15 min. Owner choice: run the Volha trips as an extension of 100177 instead.",
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 177 is the Poliklinika Mazurská line and the Chodov – Volha shuttle (4 stops, two buses of its own: the trip numbers chain 1145, 1146, 1147, 1148 and 1260 to 1265, with 3–4 min turns at both ends), each 2 per 15 min. The save already runs 100177 on to Volha (an extension, no line of its own): keep that and type only the Poliklinika Mazurská and Volha rows, or split the shuttle off as its own line (owner choice).",
    "rows": [
     {
      "o": "Poliklinika Mazurská",
@@ -726,7 +726,7 @@
       1,
       9
      ],
-     "why": "Volha shuttle at :01 and :09 every 15 (before 15:31 and after 17:24, 1–4 min off)."
+     "why": "Volha shuttle at :01 and :09 every 15 (before 15:31 and after 17:24, 1–4 min off). The save runs these trips as an extension of 100177: keep that and type only the Poliklinika Mazurská and Volha rows, or split the shuttle off as its own line (owner choice; the trip numbers chain as two shuttle buses)."
     },
     {
      "o": "Volha",

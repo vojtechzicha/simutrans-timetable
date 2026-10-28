@@ -133,5 +133,5 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
 - **28 Oct:** "The Prague buses 109 does not have VU Bechovice branch. Is it reasonable?" → no: the 25 Oct method check had
   left 11 lines (109, 113, 120, 138, 146, 160, 174, 177, 186, 197, 221) with branches marked "own Simutrans line" but no
   rows, as an open owner item. "Yes, do include - and also for the other lines" → every such branch gets its rows; an open
-  item that only needs values is a gap, not a decision. Per-line bus needs and branches with no game line yet (177 Volha,
-  174 Luka) go on the change list.
+  item that only needs values is a gap, not a decision. Per-line bus needs and branches with no game line yet (174 Luka;
+  177 Volha already runs as an extension of 100177) go on the change list.

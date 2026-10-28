@@ -64,7 +64,8 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   values is not done (owner, 28 Oct, Prague 109 VÚ Běchovice: "Is it reasonable?" → "do include - and also for the other
   lines"). Give each branch its Every / Offset / Also at, interleaved with the main rows, and say what the split costs:
   separate Simutrans lines can't interwork, so per-line needs can add up to more than the card's one count (109: 5 + 3 vs 7).
-  A branch with no game line yet (Prague 177 Volha, 174 Luka) goes on the in-game change list as a line to build.
+  A branch with no game line yet (Prague 174 Luka) goes on the in-game change list as a line to build; one the save already
+  runs as an extension of another line (177 Volha on 100177) is listed with both options.
 - **Branches sharing a terminus must interleave** as the real timetable does (owner, 20 Oct: "if the real timetable interleaves, you
   should interleave. I thought that is the whole point?"). Fit them together on one interval; scan for bunching at shared termini
   **and** at junctions/intermediate stops (23 at Rychvald, rozcestí), and across different lines on shared trunks
