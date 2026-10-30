@@ -153,6 +153,8 @@ def main():
                 dev = max((min(abs(x - k * I - y) for y in R for k in range(-1, 1440 // I + 2)) for x in pk), default=0)
                 rows.append(dict(o=o_['o'], d=o_['d'], schedule=dict(every=I, real=R, set=loop_shift(I, R, True), exact=False, override=o_['why'], approx=bool(o_.get('approx')),
                                  max_dev=dev, first=run[0] if run else None, last=run[-1] if run else None, n=len(run)), sl=o_.get('sl')))
+                via = collections.Counter(t.get('via') for t in ts if (t['o'], t['d']) == (o_['o'], o_['d'])).most_common(1)
+                if via and via[0][0]: rows[-1]['via'] = via[0][0]    # the row's trips are a companion's (state "regional")
             rec['schedule_rows'] = rows
             if sls:
                 rec['simlines'] = [dict(kind=x['kind'], need=x['need'], cycle=x['cycle'], waits=x['waits'], rts=x['rts'], period=x['period'],

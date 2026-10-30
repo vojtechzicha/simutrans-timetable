@@ -55,6 +55,12 @@ def build(L, ts, rows, s):
         n, cyc, w = obl.pattern_need([dict(every=e['every'], real=e['real']) for e in ents], [rt(e['o'], e['d']) for e in ents], [ly(e['o']) for e in ents])
         return dict(kind='circuit', entries=ents, need=n, cycle=cyc, waits=w, rts=[rt(e['o'], e['d']) for e in ents], period=ents[0]['every'])
 
+    # state simlines.groups[L] = row indices per group: each group is sized on its own (the rule above runs inside it), so a pooled
+    # regional line can stay its own Simutrans line (owner, 30 Oct 2026, 111 + 329: "the 111 seems to stretched. Could we have two variants?")
+    groups = cfg.get('groups', {}).get(L)
+    if groups and not s.get('_in_group'):
+        s2 = dict(s, _in_group=True)
+        return [x for g in groups for x in (build(L, ts, [rows[i] for i in g], s2) or [])]
     if mode == 'circuit':
         return [circuit([rows[i] for i in cfg['circuit'][L]])]
     pairs = [[rows[i], rows[i + 1]] for i in range(0, len(rows), 2)]

@@ -166,3 +166,9 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   adjusting but trying to fit the real timetable." → pool only where the records show the city courses running the regional line;
   interleave only where the real departures sit in the gaps; rows always from real minutes.
 - **30 Oct:** fleet desk: the "missing" regional buses already existed in `VZ-PID-bus`; look in every package before requesting.
+- **30 Oct (after v12):** "the 111 seems to stretched. Could we have two variants? also looking at selected buses, it would be better
+  (I don't think NB 12s are so used on 329)" → I started a hand-made split for 111; the owner stopped it: "This is specific for 111,
+  decide smarter? Is it really best for 329 to have its own circuit?" Sizing every grouping showed 329 belongs with the Koloděje
+  branch it extends (same 7 buses as its own line, shorter circuit). Offered the rule for every branch card with its effects; the owner
+  chose "Only 111". Answer such a question with the options measured, not with the first fix that comes to mind. The records also
+  showed 329 ran on 111's BN 12s, so those now sit on its line.

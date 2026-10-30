@@ -234,7 +234,7 @@
    ]
   },
   "111": {
-   "_why": "Method check 25 Oct 2026: the card paired Skalka → Koloděje with Dubeč → Skalka, the ends of two different routes (1 an hour against 2). 111 is the Koloděje line, hourly, and its short working to Dubeč (own Simutrans line) every 30, interleaved at Skalka (:19 :34 :49). Owner, 30 Oct 2026: 329 runs on 111's buses (pooled in real life), so its Škvorec trips are rows here too.",
+   "_why": "Method check 25 Oct 2026: the card paired Skalka → Koloděje with Dubeč → Skalka, the ends of two different routes (1 an hour against 2). 111 is the Koloděje line, hourly, and its short working to Dubeč (own Simutrans line) every 30, interleaved at Skalka (:19 :34 :49). Owner, 30 Oct 2026: 329 runs on 111's buses (pooled in real life), so its Škvorec trips are rows here too. Owner, 30 Oct 2026 (later): two Simutrans lines, Dubeč and Koloděje + 329 (simlines.groups).",
    "rows": [
     {
      "o": "Skalka",
@@ -1476,7 +1476,26 @@
     "Depo Hostivař → Doubek :19": "game line 100364",
     "Depo Hostivař → Doubek :49": "game line 100366 (the save runs it on to Mukařov)"
    }
-  }
+  },
+  "groups": {
+   "_why": "Row indices per Simutrans-line group, each sized on its own by the rule above (simlines.py). Owner, 30 Oct 2026: \"the 111 seems to stretched. Could we have two variants?\" / \"Is it really best for 329 to have its own circuit?\" -> only for 111: of the groupings with at most two branches per circuit, the fewest buses and then the shortest circuit is Dubeč on its own + Koloděje with 329 (Škvorec), 3 + 4 buses; 329 is the Koloděje branch extended (22 shared stops). The single circuit of all three needed 6 but ran 8 entries.",
+   "111": [
+    [
+     2,
+     3
+    ],
+    [
+     0,
+     1,
+     4,
+     5
+    ]
+   ]
+  },
+  "bus_by_record": [
+   "111"
+  ],
+  "_bus_by_record_why": "Cards whose buses go on their Simutrans lines by the records first: a course logged \"přejezd na linku R\" goes on the line that runs R's trips (owner, 30 Oct 2026, 329: \"I don't think NB 12s are so used on 329\"; 329 ran on 111's SOR BN 12s 4516, 4517, 4522, 4523, 4528)."
  },
  "regional": {
   "_why": "Owner, 30 Oct 2026: \"Now could you do the companion PID lines ...\" / \"Definitley include those that share buses so we have a full list. Also those that are \"proložené\" like 113/333.\" / \"I am 100% sure 301/352 are continuations of 174\" / \"Pool if they pool in real live\" / \"Include if they are interleaved in the real timetiable\". through: every trip of the regional line starts or ends at the minute a city trip ends or starts at the same stop (GTFS, 30 Sep): one through trip. pooled: the city line's courses also run the regional line (vehicle records, 25 Sep: 111 courses 2, 3, 4, 6, 7 -> 329; 161 courses 1, 2, 3, 5, 6 -> 312; 229 courses 1-9, 11 -> 364 and 366): the regional trips join the city card. interleaved: own buses, a shared stretch where the regional trips fall in the city line's gaps; own card after the city line. Left out (owner): 157/327, 157/331, 215/326 and 161/355 (one bus on one day).",

@@ -276,6 +276,11 @@
      "at": "2026-10-30T20:00:00.000Z",
      "version": 12,
      "note": "Regional companions: 301/352 and 396 as through lines, 329/312/364/366 pooled into their city cards, 333/318/363/325/376/378 interleaved with own cards; 174A Luka replaced by 301/352"
+    },
+    {
+     "at": "2026-10-30T21:00:00.000Z",
+     "version": 13,
+     "note": "111 as two Simutrans lines: Dubeč, and Koloděje with 329 (7 buses); 329 on its recorded SOR BN 12s"
     }
    ]
   },

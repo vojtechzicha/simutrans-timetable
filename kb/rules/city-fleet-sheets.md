@@ -89,6 +89,9 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
     its trips become rows of the city card and share its Simutrans lines (111 + 329, 161 + 312, 229 + 364 + 366).
   - *interleaved* (proložené): own buses, a long shared stretch (≥ 7 stops, touching the regional line's end) where its real departures
     fall in the city line's gaps: own card after the city line, with the merged spacing per stretch and direction.
+  A pooled companion need not share one circuit with every branch: size every grouping of the card's branches and show the owner the
+  options (buses against circuit length). Prague 111 + 329: the owner took 7 buses with two short lines over 6 with one 8-entry
+  circuit ("too stretched"), for 111 only. Put the buses the records show on a companion (přejezd notes) on its Simutrans line.
   One bus on one day is not a companion (owner left 157/327, 157/331, 215/326, 161/355 out). Fit every row to the real minutes and
   give every regional peak branch its rows (333 Zvole). The owner knows their save: if they say a line continues another, look for
   the evidence that shows it rather than doubting it (301/352: "why don't you know?").

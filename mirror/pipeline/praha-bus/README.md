@@ -132,6 +132,13 @@ interleaved in the real timetiable". State `regional`:
   numbered cars only, designed after every city line so no city card's picks move. `bus_types.json` gained lengths only for the
   types these cards use (Setra S 415 LE business, S 515 LE, Citaro C2 GÜ, Crossway LE LINE 12M, SOR ICN 10,5); a Solaris Urbino 12 III
   length had moved 226's designed bus, so it was left out. Five objects were requested from the fleet desk on 30 Oct.
+- 111 + 329 (owner, 30 Oct 2026, after v12: "the 111 seems to stretched. Could we have two variants?" / "Is it really best for 329 to
+  have its own circuit?"): every grouping of 111's three branches was sized. One circuit of all three needs 6 buses but runs 8 entries;
+  Dubeč on its own + Koloděje with 329 needs 7 with no circuit over 4 entries (329 is the Koloděje branch extended, 22 shared stops);
+  Dubeč + Koloděje with 329 alone also 7 but a 6-entry circuit; three plain lines 8. The owner chose the rule for 111 only
+  (`simlines.groups`), so the other cards keep their published grouping. `simlines.bus_by_record` ["111"]: a course logged "přejezd
+  na linku 329" goes on the line that runs 329's rows first, so 111B carries 329's SOR BN 12s (owner: "I don't think NB 12s are so used
+  on 329"). Schedule rows carry `via` (the companion their trips come from) for this.
 - Cards 100–108 are byte-identical to v11 (owner: "Never change lines 100-108").
 
 ## Pak session hand-off

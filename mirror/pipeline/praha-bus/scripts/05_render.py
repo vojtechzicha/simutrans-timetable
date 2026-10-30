@@ -356,14 +356,26 @@ def main():
             pool = [k for k, c in enumerate(rowc) if not c.get('spare') and not c['am_only']]
             order = sorted(range(len(sls)), key=lambda k: -sls[k]['need'])
             got = {}
+            # state simlines.bus_by_record (owner, 30 Oct 2026, 329 on 111's BN 12s): a course logged going over to a companion R goes
+            # on the line that runs R's rows first
+            by_rec = L in s.get('simlines', {}).get('bus_by_record', [])
+            if by_rec:
+                for k in range(len(sls)):
+                    vias = {p['schedule_rows'][i].get('via') for i in sls[k]['rows']} - {None}
+                    if not vias: continue
+                    mine = [i for i in pool if any(re.search(r'přejezd na link\S* [^.]*\b' + v + r'\b', ch['note']) for v in vias for ch in rowc[i]['chain'])]
+                    got[k] = mine[:sls[k]['need']]; pool = [i for i in pool if i not in got[k]]
             for k in order:
+                if k in got:
+                    extra = sls[k]['need'] - len(got[k]); got[k] += pool[:extra]; pool = pool[extra:]; continue
                 got[k] = pool[:sls[k]['need']]; pool = pool[sls[k]['need']:]
             used = {i for v in got.values() for i in v}
             new = []
             for k in range(len(sls)):
                 title, _ = sl_head(L, k)
                 new.append(f'<tr class="brh"><td colspan="3">Simutrans line {esc(sl_label(L, k))}: {esc(title)} · {len(got[k])} of {sls[k]["need"]} needed'
-                           f'{" (buses split over the lines in course order, a choice)" if k == 0 else ""}</td></tr>')
+                           + ((' (a course logged going over to a regional line is on the line that runs it; the rest in course order, a choice)' if by_rec else
+                               ' (buses split over the lines in course order, a choice)') if k == 0 else '') + '</td></tr>')
                 new += [rows[i] for i in got[k]]
             rows = new + [rows[i] for i in range(len(rows)) if i not in used]
         extra_note = ''
