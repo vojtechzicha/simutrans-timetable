@@ -222,7 +222,7 @@
     "Run python scripts/run.py --state <new> --fetch.",
     "Check printed counts (courses by source, designed lines, requested objects) and republish to https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF."
    ],
-   "notes": "Checks game lines vs PID stops. Need = max(cycle_need, buses on road). Designed buses from line history (roster coverage), then operator fleet; 213 logged surplus not needed, 797 counted. Pak hand-off via 06_pak_request.py; missing objects shown 'requested', no stand-ins.",
+   "notes": "Checks game lines vs PID stops. Need = max(cycle_need, buses on road). Designed buses from line history (roster coverage), then operator fleet; 213 logged surplus not needed, 797 counted. Pak hand-off via 06_pak_request.py; missing objects shown 'requested', no stand-ins. Branch cards (state simlines.auto) are split into Simutrans lines by simlines.py, each sized on its own; cards 100-108 frozen (owner, 30 Oct).",
    "rawSnapshots": [
     "game/2026-09-29",
     "gtfs/2026-09-29",
@@ -255,6 +255,11 @@
      "at": "2026-10-28T17:25:00.000Z",
      "version": 9,
      "note": "177 Volha row: the save already runs it as an extension of 100177 (both options on the card)"
+    },
+    {
+     "at": "2026-10-30T15:25:00.000Z",
+     "version": 10,
+     "note": "Branch cards say how many Simutrans lines they are (Ostrava style): per line its game line, rows and buses; 109, 111, 113, 120, 138, 139, 146, 160, 174, 177, 186, 191, 197, 221, 226; 100-108 unchanged"
     }
    ]
   },

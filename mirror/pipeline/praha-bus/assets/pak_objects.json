@@ -1,17 +1,17 @@
 {
- "commit": "VZ-DPPraha-bus: 9093ae8; VZ-Praha-bus: 9093ae8; VZ-Praha-water: 9093ae8",
+ "commit": "VZ-DPPraha-bus: 5e9ddee; VZ-Praha-bus: 5e9ddee; VZ-Praha-water: 5e9ddee",
  "source": {
   "VZ-DPPraha-bus": {
    "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
-   "commit": "9093ae8 2026-10-28 SOR bodies: one window line everywhere; the NB with a rounded roof"
+   "commit": "5e9ddee 2026-10-29 SOR NB 18 / 31Tr: sections 8 + 6, not 9 + 5"
   },
   "VZ-Praha-bus": {
    "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
-   "commit": "9093ae8 2026-10-28 SOR bodies: one window line everywhere; the NB with a rounded roof"
+   "commit": "5e9ddee 2026-10-29 SOR NB 18 / 31Tr: sections 8 + 6, not 9 + 5"
   },
   "VZ-Praha-water": {
    "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
-   "commit": "9093ae8 2026-10-28 SOR bodies: one window line everywhere; the NB with a rounded roof"
+   "commit": "5e9ddee 2026-10-29 SOR NB 18 / 31Tr: sections 8 + 6, not 9 + 5"
   }
  },
  "objects": {

@@ -186,7 +186,9 @@ def main():
         if not c['am_only']:
             for x in c['chain'][-1]['cars']:
                 if x['type'] != '?': by_op[x['operator']][x['type']] += 1
-    for L, p in P.items():
+    # lines sized from their Simutrans lines (gtfs_lines simlines, 28 Oct 2026) design last: their larger need must not take the
+    # free cars other lines were already given (146's +1 had shifted the fleet picks of 208, 211 and 220)
+    for L, p in sorted(P.items(), key=lambda kv: bool(kv[1].get('simlines'))):
         if p['route_type'] != '3' or not p.get('need'): continue
         got = logged.get(L, {})
         short = p['need'] - sum(1 for c in got.values() if not c['am_only'])

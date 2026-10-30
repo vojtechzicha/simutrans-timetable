@@ -726,7 +726,7 @@
       1,
       9
      ],
-     "why": "Volha shuttle at :01 and :09 every 15 (before 15:31 and after 17:24, 1–4 min off). The save runs these trips as an extension of 100177: keep that and type only the Poliklinika Mazurská and Volha rows, or split the shuttle off as its own line (owner choice; the trip numbers chain as two shuttle buses)."
+     "why": "Volha shuttle at :01 and :09 every 15 (before 15:31 and after 17:24, 1–4 min off). The save runs these trips as an extension of 100177; as its own line (177B) they come off 100177, which then turns at Chodov."
     },
     {
      "o": "Volha",
@@ -1099,6 +1099,44 @@
      "why": "Every 30 at :26 and :56, as the timetable all day."
     }
    ]
+  }
+ },
+ "simlines": {
+  "_why": "Owner, 28 Oct 2026: cards with branches show each Simutrans line on its own, sized from its own schedule, as the Ostrava sheet does (scripts/simlines.py); from 109 on the Ostrava rule decides: separate branch lines, or circuits where they save >= 1 bus (lib.circuitize). Owner, 30 Oct 2026: \"Never change lines 100-108\": 102 and 103 keep their published one-line cards, so no circuit entries here.",
+  "circuit": {},
+  "auto": [
+   "109",
+   "111",
+   "113",
+   "120",
+   "138",
+   "139",
+   "146",
+   "160",
+   "174",
+   "177",
+   "186",
+   "191",
+   "197",
+   "221",
+   "226"
+  ],
+  "terminus_alias": {
+   "138": {
+    "Michelangelova": "Skalka"
+   },
+   "174": {
+    "Vypich": "Kukulova"
+   },
+   "191": {
+    "Terminál 1": "Letiště"
+   }
+  },
+  "game_label": {
+   "_why": "Owner, 30 Oct 2026: a plain Simutrans line whose trips the save runs on another game line says so instead of 'not in the game'.",
+   "177": {
+    "1": "split off 100177 (the save runs Volha as its extension): a line to build"
+   }
   }
  }
 }

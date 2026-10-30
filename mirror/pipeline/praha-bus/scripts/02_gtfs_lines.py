@@ -14,6 +14,7 @@ Usage: python 02_gtfs_lines.py --state 2026-09-29
 """
 import argparse, collections, csv, io, os, statistics, zipfile, datetime
 from common import state, save, RAW, DER, mins, runfit, best_offset, loop_shift, cycle_need
+import simlines
 
 WIN = (900, 1080)
 
@@ -91,10 +92,17 @@ def main():
         # worked out here from the trips, so the card can say how well the row fits.
         ov = s.get('schedule_overrides', {}).get(L)
         if ov:
+            # cards with branches: the rows grouped into the Simutrans lines the owner types (simlines.py, 28 Oct 2026); a row
+            # then counts only the departures nearest its own slots, as its siblings on other lines (same o, d) take the rest
+            sls = simlines.build(L, ts, ov['rows'], s)
+            ents = [dict(e, sl=k) for k, sl in enumerate(sls) for e in sl['entries']] if sls else ov['rows']
+            def near(x, I, R): return min(min((x - y) % I, (y - x) % I) for y in R)
             rows = []
-            for o_ in ov['rows']:
+            for o_ in ents:
                 I, R = o_['every'], o_['real']; skip = {mins(x) for x in o_.get('extra', [])}
-                deps = sorted(t['dep'] for t in ts if (t['o'], t['d']) == (o_['o'], o_['d']) and t['dep'] not in skip)
+                sib = [e for e in ents if e is not o_ and (e['o'], e['d']) == (o_['o'], o_['d'])]
+                deps = sorted(t['dep'] for t in ts if (t['o'], t['d']) == (o_['o'], o_['d']) and t['dep'] not in skip
+                              and all(near(t['dep'], I, R) <= near(t['dep'], e['every'], e['real']) for e in sib))
                 S = set(deps); pk = [x for x in deps if WIN[0] <= x < WIN[1]]
                 runs, a = [], None
                 for t in range(780, 1201):                       # maximal stretches where departures and slots agree
@@ -105,8 +113,11 @@ def main():
                 run = max(runs, key=lambda r_: (max(0, min(r_[-1] + 1, 1050) - max(r_[0], 930)), len(r_))) if runs and not o_.get('approx') else []
                 dev = max((min(abs(x - k * I - y) for y in R for k in range(-1, 1440 // I + 2)) for x in pk), default=0)
                 rows.append(dict(o=o_['o'], d=o_['d'], schedule=dict(every=I, real=R, set=loop_shift(I, R, True), exact=False, override=o_['why'], approx=bool(o_.get('approx')),
-                                 max_dev=dev, first=run[0] if run else None, last=run[-1] if run else None, n=len(run))))
+                                 max_dev=dev, first=run[0] if run else None, last=run[-1] if run else None, n=len(run)), sl=o_.get('sl')))
             rec['schedule_rows'] = rows
+            if sls:
+                rec['simlines'] = [dict(kind=x['kind'], need=x['need'], cycle=x['cycle'], waits=x['waits'], rts=x['rts'], period=x['period'],
+                                        rows=[i for i, r in enumerate(rows) if r['sl'] == k]) for k, x in enumerate(sls)]
         if len(rec['main']) == 2:
             # cycle_need by direction, not by stop name: a terminus often has a separate alighting stop
             # (100: trips end at Letiste and start at Terminal 1), so match the two main terminus pairs as A and B
@@ -138,6 +149,8 @@ def main():
         if occ:
             rec['need_cycle'] = rec.get('need'); rec['need_on_road'] = occ
             rec['need'] = max(rec.get('need') or 0, occ)
+        if rec.get('simlines'):   # a card with Simutrans lines needs what its lines need, each run on its own buses
+            rec['need'] = sum(x['need'] for x in rec['simlines'])
         out[L] = rec
     save(dict(lines=out, service_date=sd, gtfs_raw=g['raw']), os.path.join(DER, s['name'], 'gtfs_lines.json'))
     print(len(out), 'lines;', sum(1 for r in out.values() if r.get('peak')), 'with peak trips;',

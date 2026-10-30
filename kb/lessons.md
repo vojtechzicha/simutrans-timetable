@@ -135,3 +135,16 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   rows, as an open owner item. "Yes, do include - and also for the other lines" → every such branch gets its rows; an open
   item that only needs values is a gap, not a decision. Per-line bus needs and branches with no game line yet (174 Luka;
   177 Volha already runs as an extension of 100177) go on the change list.
+
+## 30 Oct — Prague bus: how many Simutrans lines
+- **28 Oct (later):** "Is it truly one line as you describe? Or are those two independent lines? Look at Ostrava, that shows
+  it." → a session built `simlines.py` (each branch card split into Simutrans lines, Ostrava style) but never synced or
+  published it, so the owner still saw v9. Unpublished pipeline work is invisible to the owner: finish and publish it, or
+  say it is pending.
+- **30 Oct:** "is 109 two lines or one? I am still unsure. In Ostrava, that was so clear." / "I don't care if one or two -
+  just tell me if it is CLEAR OR NOT. I am asking about presentation." / "113 - is that one line, two lines, three lines - I
+  JUST DON'T KNOW." → the question was about presentation, not bus counts. Answer that first. v10: each branch card starts
+  with "N Simutrans lines" and, per line, its game line and buses. 113 had named 100113S under both of its circuits; now it
+  is "not needed".
+- **30 Oct:** "Never change lines 100-108" → the unpublished split had turned 102 into a circuit (4 → 5 buses). 102 and 103
+  stay out of the split, and cards 100–108 are diffed against the published sheet before every publish.

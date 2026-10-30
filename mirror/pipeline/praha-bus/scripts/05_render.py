@@ -135,12 +135,74 @@ def main():
                        f'{r["stop_entries"]} stop entries on {r["unique_halts"]} halts · {r["waypoints"]} waypoints{wl}</div>{halves}{fx}')
         return '<div class="game"><h4>In the game</h4>' + ''.join(out) + '</div>'
 
+    # ---------- Simutrans lines of a card with branches (02_gtfs_lines + simlines.py, owner 28 Oct 2026) ----------
+    def sl_label(L, k):
+        return L + 'ABCDEFGH'[k] if len(P[L]['simlines']) > 1 else L
+    def sl_game(L):
+        """Game line(s) behind each Simutrans line: a game line whose PID halves have both ends of a leg. A plain line takes its
+        game line; a circuit lists the game lines it replaces (those not taken by a plain line of the same card)."""
+        p = P[L]; rs = game_by.get(L, [])
+        ends = lambda r: {x for h in r.get('halves', []) for x in h['pattern'].split(' → ')}
+        al = s.get('simlines', {}).get('terminus_alias', {}).get(L, {})
+        def match(o, d):
+            want = {al.get(o, o), al.get(d, d)}
+            return [r['name'].split(' ')[0] for r in rs if want <= {al.get(x, x) for x in ends(r)}]
+        legs = [[(p['schedule_rows'][i]['o'], p['schedule_rows'][i]['d']) for i in x['rows']][::2] for x in p['simlines']]
+        taken = {}
+        for k, x in enumerate(p['simlines']):
+            if x['kind'] == 'plain':
+                for g in match(*legs[k][0]): taken[g] = k
+        gss = [list(dict.fromkeys(g for o, d in legs[k] for g in match(o, d))) for k in range(len(p['simlines']))]
+        # each game line belongs to one Simutrans line (owner, 30 Oct 2026: "113 - is that one line, two lines, three lines - I JUST
+        # DON'T KNOW"): one only a single circuit runs goes to it; one two circuits share (113's 100113S) goes to neither
+        circ = [k for k, x in enumerate(p['simlines']) if x['kind'] != 'plain']
+        for k in circ:
+            for g in gss[k]:
+                if g not in taken and sum(g in gss[j] for j in circ) == 1: taken[g] = k
+        spare = [g for k in circ for g in gss[k] if g not in taken]
+        out = []
+        for k, x in enumerate(p['simlines']):
+            gs = gss[k]
+            if x['kind'] == 'plain':
+                lab = s.get('simlines', {}).get('game_label', {}).get(L, {}).get(str(k))   # state: the save runs it on another line
+                out.append(lab or (f'game line {gs[0]}' if gs else 'not in the game: a line to build'))
+            else:
+                own = [g for g in gs if taken.get(g) == k]; also = list(dict.fromkeys(g for g in gs if taken.get(g) != k))
+                out.append((f'one line in place of {" + ".join(own)}' if len(own) > 1 else f'game line {own[0]}, extended' if own else 'a new line')
+                           + (f' (also runs trips of {", ".join(also)}’s branch)' if also else '') if gs else 'not in the game: a line to build')
+        sp = list(dict.fromkeys(spare))
+        note = (f'{", ".join(sp)} is then not needed: its trips run on ' + ' and '.join(sl_label(L, k) for k in circ if set(sp) & set(gss[k])) + '.'
+                if sp else '')
+        return out, note
+    def sl_head(L, k):
+        p = P[L]; x = p['simlines'][k]; rr = [p['schedule_rows'][i] for i in x['rows']]
+        if x['kind'] == 'plain':
+            a, b = rr[0]['o'], rr[0]['d']
+            how = (f'{x["need"]} bus{"es" if x["need"] != 1 else ""} on its own: {x["rts"][0]} + {x["rts"][1]} min running, waits '
+                   + '; '.join(f'{", ".join(map(str, w))} min at {t}' for t, w in x['waits'].items()))
+            title = f'{a} ⇄ {b}'
+        else:
+            hub = collections.Counter(r['o'] for r in rr).most_common(1)[0][0]
+            far = list(dict.fromkeys(r['d'] for r in rr if r['o'] == hub))
+            how = (f'one circuit of {len(rr)} entries, typed in this order: one round takes {x["cycle"]} min, a bus every {x["period"]} min '
+                   f'→ {x["need"]} bus{"es" if x["need"] != 1 else ""}')
+            title = f'{hub} ⇄ {" / ".join(far)}'
+        return title, how
+
     # ---------- schedule ----------
     def sched_block(L):
         p = P[L]; rows = []
         hand = p.get('schedule_rows')      # hand-set rows (state schedule_overrides, method check 25 Oct 2026) replace the main rows
-        for m in (hand or p.get('main', [])):
+        sls = p.get('simlines'); heads = {}
+        if sls:
+            games, gnote = sl_game(L)
+            for k, x in enumerate(sls):
+                title, how = sl_head(L, k)
+                heads[x['rows'][0]] = (f'<tr class="slh"><td colspan="6"><b>Simutrans line {esc(sl_label(L, k))}: {esc(title)}</b> · {esc(games[k])}'
+                                       + (f' · {esc(gnote)}' if gnote and k == len(sls) - 1 else '') + f'<small>{esc(how)}</small></td></tr>')
+        for i, m in enumerate(hand or p.get('main', [])):
             sc = m.get('schedule')
+            if i in heads: rows.append(heads[i])
             if not sc: continue
             also = ', '.join(str(a) for a in sc['set'][1:]) or '—'
             real_o = f'<small class="real">real {sc["real"][0]}</small>'
@@ -151,9 +213,15 @@ def main():
                        (f', up to {sc["max_dev"]} min off in 15:00–17:59' if sc['max_dev'] else ', every 15:00–17:59 departure on a slot') +
                        f'<small>{esc(sc["override"])}</small>')
             if not p.get('peak'): fit += '<small>no trips in 15:00–17:59; fitted over the whole day</small>'
-            rows.append(f'<tr><td>{esc(m["o"])} <span class="arr">→</span> {esc(m["d"])}<span class="lp">terminus · 1 min early</span></td>'
+            num = ''
+            if sls and sls[m['sl']]['kind'] == 'circuit': num = f'<span class="k">{sls[m["sl"]]["rows"].index(i) + 1}.</span> '
+            rows.append(f'<tr><td>{num}{esc(m["o"])} <span class="arr">→</span> {esc(m["d"])}<span class="lp">terminus · 1 min early</span></td>'
                         f'<td class="num sv">{sc["every"]}</td><td class="num sv">{sc["set"][0]}{real_o}</td><td class="sv">{esc(also)}{real_a}</td><td class="sv">auto</td><td class="fit">{fit}</td></tr>')
         if not rows: return ''
+        if sls:
+            rows.append('<tr><td colspan="6" class="fit">Each Simutrans line runs on its own buses; a bus need is its line’s own schedule followed round, '
+                        'with at least 2 min at a terminus (min(3, the timetable’s shortest turn there)): departures at loops are typed 1 min early, '
+                        'so a 0–1 min timetabled turn cannot be driven in the game. Running times are the median of the 15:00–17:59 trips.</td></tr>')
         others = [x for x in p.get('patterns', []) if not any(x['stops'] == m['stops'] for m in p['main'])]
         handod = {(m['o'], m['d']) for m in (hand or [])}
         pat = ''
@@ -186,7 +254,7 @@ def main():
         cnt = counted(L)
         mix = collections.Counter(ucls(x['length']) for c in cnt for x in c['chain'][-1]['cars'])
         per_class_total.update(mix)
-        rows = []
+        rows = []; rowc = []
         for c in cs:
             des = c['source'] == 'designed'; spare = c.get('spare')
             chain = '<div class="arr">then</div>'.join(''.join(unit_html(x, des) for x in ch['cars']) for ch in c['chain'])
@@ -220,6 +288,7 @@ def main():
             src = '' if des or spare == 'not needed' or c['source'] == vd else f'<span class="src">logged {int(c["source"][8:10])} Sep</span> '
             rows.append(f'<tr class="{"sp" if spare else ("unc" if (des or c["am_only"] or c["swap"]) else "")}"><td class="k">{esc(c["course"] if not des else "")}</td><td class="v">{chain}</td>'
                         f'<td class="n">{flag}{src}<span class="nt">{esc(" ".join(notes))}</span></td></tr>')
+            rowc.append(c)
             for k, ch in enumerate(c['chain'] if not spare else []):
                 for x in ch['cars']:
                     key = ('DPP ' + (x['garage'] or 'garage not known')) if x['operator'] == 'DPP' else OPN.get(x['operator'], x['operator'])
@@ -232,6 +301,23 @@ def main():
                                             mapped=pak_info.get(kk, {}).get('mapped', 0) + bool(x['pak']['mapped']))
         need = p.get('need')
         n = len(cnt)
+        sls = p.get('simlines')
+        if sls and len(sls) > 1:
+            # the counted buses split over the card's Simutrans lines in course order (a choice, as on the trolleybus sheet): the
+            # line with the most buses takes the lowest course numbers; buses not counted stay at the bottom
+            pool = [k for k, c in enumerate(rowc) if not c.get('spare') and not c['am_only']]
+            order = sorted(range(len(sls)), key=lambda k: -sls[k]['need'])
+            got = {}
+            for k in order:
+                got[k] = pool[:sls[k]['need']]; pool = pool[sls[k]['need']:]
+            used = {i for v in got.values() for i in v}
+            new = []
+            for k in range(len(sls)):
+                title, _ = sl_head(L, k)
+                new.append(f'<tr class="brh"><td colspan="3">Simutrans line {esc(sl_label(L, k))}: {esc(title)} · {len(got[k])} of {sls[k]["need"]} needed'
+                           f'{" (buses split over the lines in course order, a choice)" if k == 0 else ""}</td></tr>')
+                new += [rows[i] for i in got[k]]
+            rows = new + [rows[i] for i in range(len(rows)) if i not in used]
         extra_note = ''
         nsur = sum(1 for c in cs if c.get('spare') == 'surplus')
         if nsur:
@@ -239,8 +325,19 @@ def main():
                           'bottom. The counted buses keep one of every type on the line first, then the lowest course numbers. The records carry no times, '
                           'so morning-only or school courses cannot be picked out.</p>')
         how = 'by round trip' if (p.get('need_cycle') or 0) >= (p.get('need_on_road') or 0) else f'on the road at once over all patterns (the main round trip alone needs {p.get("need_cycle") or "fewer"})'
-        needtxt = f'<span class="need">timetable at 16:00: {need} bus{"es" if need != 1 else ""} needed {how}{" (circular line)" if p.get("circular") else ""}</span>' if need else \
+        if sls:
+            split = ' + '.join(f'{sl_label(L, k)} {x["need"]}' for k, x in enumerate(sls))
+            needtxt = (f'<span class="need">{need} bus{"es" if need != 1 else ""} needed, each Simutrans line sized from its own schedule'
+                       + (f' ({split})' if len(sls) > 1 else ' (one circuit line)') + '</span>')
+            # the count and the game line of each Simutrans line up front, as the Ostrava sheet does (owner, 30 Oct 2026: "is 109
+            # two lines or one? I am still unsure. In Ostrava, that was so clear.")
+            gms, gnote = sl_game(L)
+            sl_html = (f'<p class="callout info"><b>{len(sls)} Simutrans line{"s" if len(sls) > 1 else ""}</b>' + (':' if len(sls) > 1 else ' for this PID line:')
+                       + ''.join(f'<br><b>{esc(sl_label(L, k))}</b> {esc(sl_head(L, k)[0])} · {esc(gms[k])} · {x["need"]} bus{"es" if x["need"] != 1 else ""}'
+                                 for k, x in enumerate(sls)) + (f'<br>{esc(gnote)}' if gnote else '') + '</p>')
+        else: needtxt = f'<span class="need">timetable at 16:00: {need} bus{"es" if need != 1 else ""} needed {how}{" (circular line)" if p.get("circular") else ""}</span>' if need else \
                   ('<span class="need">no trips in the afternoon peak</span>' if not p.get('peak') else '<span class="need">too few peak trips to size by round trip</span>')
+        if not sls: sl_html = ''
         gr = game_by.get(L, [])
         gconv = sum(r['convoys'] for r in gr)
         mix_html = ' '.join(f'<span class="mx u-{k}"><b>{mix[k]}</b>× {CN[k]}</span>' for k, _, _ in CLASSES if mix[k])
@@ -250,7 +347,7 @@ def main():
 <article class="lc{' nopeak' if not p.get('peak') else ''}" id="l{L}">
   <header><a class="lb" href="#l{L}">{L}</a><div class="lh"><ul class="routes">{routes}</ul><span class="opn">{esc(ops)}</span>{needtxt}</div>
   <div class="cntx"><div class="cnt"><b>{n}</b><span>buses</span></div><div class="cnt"><b>{gconv if gr else '–'}</b><span>in game</span></div></div></header>
-  <div class="mix">{mix_html}</div>{extra_note}
+  <div class="mix">{mix_html}</div>{sl_html}{extra_note}
   {game_block(L)}
   {sched_block(L)}
   {stops_block(L)}
