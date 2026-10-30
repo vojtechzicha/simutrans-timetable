@@ -172,3 +172,6 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   branch it extends (same 7 buses as its own line, shorter circuit). Offered the rule for every branch card with its effects; the owner
   chose "Only 111". Answer such a question with the options measured, not with the first fix that comes to mind. The records also
   showed 329 ran on 111's BN 12s, so those now sit on its line.
+- **30 Oct:** "I see all 117 written as continues to 203 - isn't there something to consider?" → yes: 117's ten courses run 203
+  too and 203 has no record, yet the sheet dimmed 7 of 117's buses and designed 4 for 203. Read the přejezd notes as data: the
+  same fix found seven more pairs (195 → 158, 163 → 208, 227 → 226, 120 → 231, 162 → 169, 236 → 235, 245 → 248).

@@ -95,6 +95,10 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   One bus on one day is not a companion (owner left 157/327, 157/331, 215/326, 161/355 out). Fit every row to the real minutes and
   give every regional peak branch its rows (333 Zvole). The owner knows their save: if they say a line continues another, look for
   the evidence that shows it rather than doubting it (301/352: "why don't you know?").
+- **A line with no record of its own is often run by another line's courses** (přejezd notes). Before designing its buses, take the
+  other line's surplus courses logged going over to it; never mark real buses "not needed" on one card while inventing buses on
+  the next (owner, 30 Oct, Prague 117 → 203: "isn't there something to consider?"). Check whether pooling the two into one
+  Simutrans line saves a bus; if not, keep the schedules and move only the buses.
 - **Shared pools** (one Simutrans line for two real lines, e.g. Prague 5 + 6; or two lines from one pool, Olomouc 3 + 5) are the
   owner's modelling choice: mark them, with the real share that runs through. Don't pool silently; offer it.
 

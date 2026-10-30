@@ -95,6 +95,17 @@ seznam-autobusu.cz returns 403 to plain curl, so use `common.fetch` (full browse
 - Not changed, for the owner: the school lines 251–280 (1–4 trips a day) still show an hourly fit.
 - The card text now says how the 01:00 origin changes typed values where a row's interval does not divide 60 (116, 131, 187, 218).
 
+## Buses logged going over to another line (owner, 30 Oct 2026)
+
+"I see all 117 written as continues to 203 - isn't there something to consider?" Every 117 course is logged "přejezd na linku 203"
+on all six days, and 203 has no record of its own, so the sheet had marked 7 of 117's real buses "not needed" and designed 4 buses
+for 203. Pooling 117 and 203 into one Simutrans line saves nothing (7 buses either way: the turns at Poliklinika Budějovická do not
+fit a shared circuit), so the schedules stay. `04_courses` now gives a line its designed buses from another line's surplus courses
+logged going over to it first (course order), and marks those "counted on B" where they came from; no other line's picks move.
+On 30 Sep data: 195 → 158 (5), 117 → 203 (4), 163 → 208 (3), 227 → 226 (3), 120 → 231 (2), 162 → 169, 236 → 235, 245 → 248 (1 each).
+Lines whose courses all go over to another one on every day: 163 → 208, 210 → 221, 232 → 231 and 117 → 203 (90 %); 221 and 231 have
+too few spare courses on the other side to move.
+
 ## Regional companions (owner, 30 Oct 2026)
 
 "Now could you do the companion PID lines" / "Definitley include those that share buses so we have a full list. Also those that are

@@ -268,6 +268,17 @@ def main():
             if c not in keep: keep.append(c)
         for c in cs:
             if c not in keep: c['am_only'] = True; c['spare'] = 'surplus'
+    # a line's own surplus courses logged going over to another line (přejezd na linku B) are B's real buses: they replace B's designed
+    # ones, course order first (owner, 30 Oct 2026: "I see all 117 written as continues to 203 - isn't there something to consider?";
+    # 117's ten courses run 203 too, 203 has no record of its own). The designed picks of every other line stay as they were.
+    for B in sorted({c['line'] for c in out if c['source'] == 'designed'}, key=ckey):
+        des = [c for c in out if c['line'] == B and c['source'] == 'designed']
+        donors = [c for c in out if c.get('spare') == 'surplus' and c['line'] != B
+                  and any(re.search(r'přejezd na link\S* [^.]*\b' + B + r'\b', ch['note']) for ch in c['chain'])]
+        donors.sort(key=lambda c: (ckey(c['line']), ckey(c['course'])))
+        for d_, c in zip(des, donors):
+            out[out.index(d_)] = dict(c, line=B, am_only=False, spare=None, moved_from=c['line'])
+            c['spare'] = 'moved'; c['moved_to'] = B
     # the regional companions' non-DPP cars are in VZ-PID-bus, not VZ-Praha-bus (fleet desk, 30 Oct 2026: "VZ-Praha-bus is only for
     # city lines (100-299, 900s) run by non-DPP operators")
     for c in out:

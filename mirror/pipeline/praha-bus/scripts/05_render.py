@@ -310,9 +310,14 @@ def main():
             if c['split']: notes.append('Afternoon part of a split course; morning part ran ' + ', '.join(c['am']) + '.')
             if c['swap']: notes.append('Vehicle exchanged during the day, time not recorded: ' + ' → '.join(ch['set'] for ch in c['chain']) + '. The last one counts.')
             if c['am_only'] and not spare: notes.append('The same bus later replaced a vehicle on another course, so this course probably ends before the afternoon peak (not counted).')
-            for ch in c['chain']:
+            for ch in c['chain'] if not c.get('moved_from') else []:
                 m = re.search(r'přejezd na linku (\d+)', ch['note'])
                 if m: notes.append(f'Continues as line {m.group(1)} (přejezd na linku {m.group(1)}).')
+            if c.get('moved_from'):
+                notes.append(f'Course {c["course"]} of line {c["moved_from"]}, logged on {int(c["source"][8:10])} Sep going over to line {L} '
+                             f'(přejezd na linku {L}); {L} has no record of its own, so its buses are these.')
+            if spare == 'moved':
+                notes.append(f'Goes over to line {c["moved_to"]} (přejezd na linku {c["moved_to"]}) and is counted there.')
             dd = lambda ds: ', '.join(f'{int(d[8:10])} {MONTHS[int(d[5:7])]} {d[:4]}' for d in ds)
             nlog = len([x for x in cnt if x['source'] != 'designed'])
             if des and c.get('why') == 'history':
@@ -329,9 +334,11 @@ def main():
                 notes.append(f'In the line\'s history (last on {dd(c["hist"])}) and free on {int(vd[8:])} Sep, but not needed at 16:00. Not counted.')
             flag = ''
             if des: flag = '<span class="flag ds">designed, not recorded</span>'
+            elif spare == 'moved': flag = f'<span class="flag am">counted on {esc(c["moved_to"])}</span>'
             elif spare: flag = '<span class="flag am">not needed</span>'
             elif c['am_only']: flag = '<span class="flag am">not counted</span>'
             elif c['swap']: flag = '<span class="flag swap">swap</span>'
+            if c.get('moved_from'): flag = f'<span class="flag pm">from {esc(c["moved_from"])}</span>'
             if c['split']: flag += '<span class="flag pm">PM part</span>'
             src = '' if des or spare == 'not needed' or c['source'] == vd else f'<span class="src">logged {int(c["source"][8:10])} Sep</span> '
             rows.append(f'<tr class="{"sp" if spare else ("unc" if (des or c["am_only"] or c["swap"]) else "")}"><td class="k">{esc(c["course"] if not des else "")}</td><td class="v">{chain}</td>'

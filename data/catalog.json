@@ -281,6 +281,11 @@
      "at": "2026-10-30T21:00:00.000Z",
      "version": 13,
      "note": "111 as two Simutrans lines: Dubeč, and Koloděje with 329 (7 buses); 329 on its recorded SOR BN 12s"
+    },
+    {
+     "at": "2026-10-30T21:40:00.000Z",
+     "version": 14,
+     "note": "Real buses from přejezd records replace designed ones: 117 → 203, 195 → 158, 163 → 208, 227 → 226, 120 → 231, 162 → 169, 236 → 235, 245 → 248"
     }
    ]
   },
