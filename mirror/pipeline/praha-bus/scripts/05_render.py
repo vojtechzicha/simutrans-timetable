@@ -179,7 +179,7 @@ def main():
         if x['kind'] == 'plain':
             a, b = rr[0]['o'], rr[0]['d']
             how = (f'{x["need"]} bus{"es" if x["need"] != 1 else ""} on its own: {x["rts"][0]} + {x["rts"][1]} min running, waits '
-                   + '; '.join(f'{", ".join(map(str, w))} min at {t}' for t, w in x['waits'].items()))
+                   + '; '.join(f'{", ".join(map(str, w))} min at {t}' for t, w in sorted(x['waits'].items(), key=lambda kv: kv[0] != a)))   # origin first: dict order varied run to run
             title = f'{a} ⇄ {b}'
         else:
             hub = collections.Counter(r['o'] for r in rr).most_common(1)[0][0]

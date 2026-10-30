@@ -189,25 +189,47 @@
    ]
   },
   "110": {
-   "_why": "Method check 25 Oct 2026: the fit gave Obchodní centrum Čakovice every 60 with three slots (3 an hour) against every 15 from Hloubětín (4 an hour), which cannot run. The gaps are the trips to and from Třeboradický hřbitov (2 each way in 15:00–17:59, not a peak branch).",
+   "_why": "Method check 25 Oct 2026: the fit gave Obchodní centrum Čakovice every 60 with three slots against every 15 from Hloubětín. The gaps are the trips to and from Třeboradický hřbitov. Owner, 30 Oct 2026: \"The 110 line does not have a branch to Třebovice. Either model it as a real life or for it to use 1 vehicle\": the branch runs about hourly 13:00–19:00 (6 out, 5 back; the 20 Oct afternoon-branch rule) as an extension of the :30 Čakovice trip past Obchodní centrum Čakovice, so it gets its own rows and the Čakovice rows keep the other three slots.",
    "rows": [
-    {
-     "o": "Obchodní centrum Čakovice",
-     "d": "Hloubětín",
-     "every": 15,
-     "real": [
-      5
-     ],
-     "why": "Every 15 at :05. The 15:20 and 16:20 slots are the trips that start at Třeboradický hřbitov (15:12, 16:12); in Simutrans the bus leaves Obchodní centrum Čakovice in every slot."
-    },
     {
      "o": "Hloubětín",
      "d": "Obchodní centrum Čakovice",
-     "every": 15,
+     "every": 60,
      "real": [
-      0
+      0,
+      15,
+      45
      ],
-     "why": "Every 15 at :00. The 15:30 and 17:30 buses go to Třeboradický hřbitov instead (not modelled); in Simutrans every slot goes to Obchodní centrum Čakovice."
+     "why": "Every 15 at :00, :15 and :45; the :30 bus goes on to Třeboradický hřbitov (15:30, 17:30; 16:30 runs to Čakovice only, 13:03/14:03/14:43 are on a 20/40 pattern)."
+    },
+    {
+     "o": "Obchodní centrum Čakovice",
+     "d": "Hloubětín",
+     "every": 60,
+     "real": [
+      5,
+      35,
+      50
+     ],
+     "why": "Every 15 at :05, :35 and :50; the :20 slot is the bus back from Třeboradický hřbitov (15:12, 16:12), which passes Obchodní centrum Čakovice."
+    },
+    {
+     "o": "Hloubětín",
+     "d": "Třeboradický hřbitov",
+     "every": 60,
+     "real": [
+      30
+     ],
+     "why": "Třeboradice branch, every 60 at :30 via Obchodní centrum Čakovice (real 15:30, 17:30, 18:30; 13:23 and 14:23 run 7 min earlier, 16:30 does not run)."
+    },
+    {
+     "o": "Třeboradický hřbitov",
+     "d": "Hloubětín",
+     "every": 60,
+     "real": [
+      12
+     ],
+     "why": "Třeboradice branch back, every 60 at :12 (real 14:12, 15:12, 16:12, 18:12; 17:12 does not run, 19:07 is 5 min earlier)."
     }
    ]
   },
@@ -1105,6 +1127,7 @@
   "_why": "Owner, 28 Oct 2026: cards with branches show each Simutrans line on its own, sized from its own schedule, as the Ostrava sheet does (scripts/simlines.py); from 109 on the Ostrava rule decides: separate branch lines, or circuits where they save >= 1 bus (lib.circuitize). Owner, 30 Oct 2026: \"Never change lines 100-108\": 102 and 103 keep their published one-line cards, so no circuit entries here.",
   "circuit": {},
   "auto": [
+   "110",
    "109",
    "111",
    "113",

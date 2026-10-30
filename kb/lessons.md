@@ -148,3 +148,8 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   is "not needed".
 - **30 Oct:** "Never change lines 100-108" → the unpublished split had turned 102 into a circuit (4 → 5 buses). 102 and 103
   stay out of the split, and cards 100–108 are diffed against the published sheet before every publish.
+- **30 Oct:** "The 110 line does not have a branch to Třebovice. Either model it as a real life or for it to use 1 vehicle" →
+  Třeboradický hřbitov runs hourly 13:00–19:00 (6 out, 5 back) as the :30 Čakovice trip extended. The 25 Oct method check
+  counted only 15:00–17:59 (2 each way) and called it "not a peak trip". Apply the 20 Oct afternoon-branch window (≥ 3 each
+  way 13:00–19:00) to Prague as well. Modelled as in real life: 110B is a circuit that also takes the Čakovice :45, and 110
+  still needs 4 buses.

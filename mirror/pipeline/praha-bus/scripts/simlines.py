@@ -65,6 +65,29 @@ def build(L, ts, rows, s):
     brs = [dict(a=A(p[0]['o']), b=A(p[0]['d']), need=sp['need']) for p, sp in zip(pairs, seps)]
     circ = obl.circuitize(brs, R, syn, lay, 960, lambda x: x)
     if not circ: return seps
+    # lib.circuitize takes each job's first return slot after the layover, so two jobs can claim one slot (110, 30 Oct 2026:
+    # Čakovice :00 and :15 both back at :35, :50 left empty). Hand a slot claimed twice to the row's next free slot; if the
+    # slots still don't add up to the rows' own, run the branches separately.
+    for side in ('out_slot', 'back_slot'):
+        for r in R:
+            fr, to = (r['fr'], r['to'])
+            legs_ = [(c, g) for c in circ for g in c['legs'] if (g['X'], g['Y']) == ((fr, to) if side == 'out_slot' else (to, fr))]
+            P_ = circ[0]['period']; own = sorted({x + k * r['every'] for x in r['real'] for k in range(P_ // r['every'])}) if P_ % r['every'] == 0 else []
+            seen = set()
+            for c, g in legs_:
+                if g[side] in seen:
+                    free = [x for x in own if x not in seen and x not in {h[side] for _, h in legs_}]
+                    nxt = min(free, key=lambda x: (x - g[side]) % P_) if free else None
+                    if nxt is None: return seps
+                    g[side] = nxt
+                seen.add(g[side])
+    for r in R:
+        P_ = circ[0]['period']
+        if P_ % r['every']: continue
+        own = sorted({x + k * r['every'] for x in r['real'] for k in range(P_ // r['every'])})
+        used = sorted(g['out_slot'] if (g['X'], g['Y']) == (r['fr'], r['to']) else g['back_slot']
+                      for c in circ for g in c['legs'] if (g['X'], g['Y']) in ((r['fr'], r['to']), (r['to'], r['fr'])))
+        if used != own: return seps
     def orig(fr, to):   # the override row behind a leg, by its aliased ends
         return next(r for r in rows if A(r['o']) == fr and A(r['d']) == to)
     out = []
