@@ -136,12 +136,34 @@ def main():
         return '<div class="game"><h4>In the game</h4>' + ''.join(out) + '</div>'
 
     # ---------- Simutrans lines of a card with branches (02_gtfs_lines + simlines.py, owner 28 Oct 2026) ----------
+    _labels = {}
     def sl_label(L, k):
-        return L + 'ABCDEFGH'[k] if len(P[L]['simlines']) > 1 else L
+        """A Simutrans line typed into a regional companion's game line is named by that line (174's 352 and 301, 229's 364 and
+        366); the others are lettered among themselves (owner, 30 Oct 2026)."""
+        if L not in _labels:
+            sls = P[L]['simlines']
+            regs = {r['name'].split(' ')[0]: r['regional'] for r in game_by.get(L, []) if r.get('regional') and r['regional'] != L}
+            gms = _sl_game(L)[0]
+            own = [m.group(1) if m else None for m in (re.match(r'game line (\S+)', t) for t in gms)]
+            lab = [regs.get(g) if g else None for g in own]
+            rest = [k_ for k_ in range(len(sls)) if not lab[k_]]
+            for i, k_ in enumerate(rest): lab[k_] = L + 'ABCDEFGH'[i] if len(rest) > 1 else L
+            _labels[L] = lab
+        return _labels[L][k]
     def sl_game(L):
+        out, sp, gss, circ = _sl_game(L)
+        note = (f'{", ".join(sp)} is then not needed: its trips run on ' + ' and '.join(sl_label(L, k) for k in circ if set(sp) & set(gss[k])) + '.'
+                if sp else '')
+        return out, note
+    def _sl_game(L):
         """Game line(s) behind each Simutrans line: a game line whose PID halves have both ends of a leg. A plain line takes its
-        game line; a circuit lists the game lines it replaces (those not taken by a plain line of the same card)."""
+        game line; a circuit lists the game lines it replaces (those not taken by a plain line of the same card). The state's
+        simlines.game_label overrides it by the line's index, its first entry "o → d", or "o → d :mm" (two lines with the same ends)."""
         p = P[L]; rs = game_by.get(L, [])
+        GL = s.get('simlines', {}).get('game_label', {}).get(L, {})
+        def label_of(k):
+            r0 = p['schedule_rows'][p['simlines'][k]['rows'][0]]
+            return GL.get(str(k)) or GL.get(f"{r0['o']} → {r0['d']} :{r0['schedule']['real'][0]:02d}") or GL.get(f"{r0['o']} → {r0['d']}")
         ends = lambda r: {x for h in r.get('halves', []) for x in h['pattern'].split(' → ')}
         al = s.get('simlines', {}).get('terminus_alias', {}).get(L, {})
         def match(o, d):
@@ -163,17 +185,14 @@ def main():
         out = []
         for k, x in enumerate(p['simlines']):
             gs = gss[k]
+            lab = label_of(k)   # state: the save runs it on another line
             if x['kind'] == 'plain':
-                lab = s.get('simlines', {}).get('game_label', {}).get(L, {}).get(str(k))   # state: the save runs it on another line
                 out.append(lab or (f'game line {gs[0]}' if gs else 'not in the game: a line to build'))
             else:
                 own = [g for g in gs if taken.get(g) == k]; also = list(dict.fromkeys(g for g in gs if taken.get(g) != k))
-                out.append((f'one line in place of {" + ".join(own)}' if len(own) > 1 else f'game line {own[0]}, extended' if own else 'a new line')
-                           + (f' (also runs trips of {", ".join(also)}’s branch)' if also else '') if gs else 'not in the game: a line to build')
-        sp = list(dict.fromkeys(spare))
-        note = (f'{", ".join(sp)} is then not needed: its trips run on ' + ' and '.join(sl_label(L, k) for k in circ if set(sp) & set(gss[k])) + '.'
-                if sp else '')
-        return out, note
+                out.append(lab or ((f'one line in place of {" + ".join(own)}' if len(own) > 1 else f'game line {own[0]}, extended' if own else 'a new line')
+                           + (f' (also runs trips of {", ".join(also)}’s branch)' if also else '') if gs else 'not in the game: a line to build'))
+        return out, list(dict.fromkeys(spare)), gss, circ
     def sl_head(L, k):
         p = P[L]; x = p['simlines'][k]; rr = [p['schedule_rows'][i] for i in x['rows']]
         if x['kind'] == 'plain':
@@ -244,7 +263,36 @@ def main():
     per_class_total = collections.Counter()
     depot = collections.defaultdict(lambda: collections.defaultdict(list))
     pak_count = collections.Counter(); pak_info = {}
-    for L in sorted(bus, key=int):
+    # regional companions (state "regional", owner 30 Oct 2026): an interleaved line's card follows its city line's
+    RG = s.get('regional', {}); inter = RG.get('interleaved', {})
+    def card_order(L):
+        return (max(int(c) for c in inter[L]), 1, int(L)) if L in inter else (int(L), 0, 0)
+    def rel_html(L):
+        p = P[L]; out = []
+        if p.get('companions'):
+            ls = [c['line'] for c in p['companions']]
+            out.append(f'<p class="callout info"><b>With regional line{"s" if len(ls) > 1 else ""} {esc(" and ".join(ls))}.</b> {esc(RG.get("notes", {}).get(L, ""))}</p>')
+        def stretches(rr):      # one entry per shared stretch and direction: its stops and the two lines' merged spacing at its first stop
+            u = collections.OrderedDict()
+            for r in rr:
+                k = (r['first'], r['last'])
+                if r['gap_min'] is not None and (k not in u or r['stops'] > u[k]['stops']): u[k] = r
+            return '; '.join(f'{esc(r["first"])} – {esc(r["last"])}, {r["stops"]} stops, every {r["gap_min"]}–{r["gap_max"]} min' for r in u.values())
+        by = collections.OrderedDict()
+        for r in p.get('interleaved_by', []): by.setdefault(r['line'], []).append(r)
+        for Rl, rr in by.items():
+            out.append(f'<p class="callout info"><b>Proložené with <a href="#l{Rl}">{Rl}</a></b> {esc(rr[0]["long_name"])} ({esc(", ".join(gtfs_op(o) for o in rr[0]["operators"]))}, '
+                       f'its own buses). Shared stretch and the two lines together, real departures in 15:00–17:59: {stretches(rr)}. Its card follows this line’s.</p>')
+        if p.get('interleave'):
+            cs = collections.OrderedDict()
+            for r in p['interleave']: cs.setdefault(r['city'], []).append(r)
+            bits = []
+            for C, rr in cs.items():
+                bits.append(f'with <a href="#l{C}">{C}</a> ({stretches(rr)}, the two lines together in 15:00–17:59)')
+            out.append(f'<p class="callout info"><b>Regional line, proložené</b> ' + '; '.join(bits) + '. It runs on its own buses; its rows are fitted to its real minutes, '
+                       'so it falls in the city line’s gaps as the timetable has it.</p>')
+        return ''.join(out)
+    for L in sorted(bus, key=card_order):
         p = P[L]
         rs = [m for m in p.get('main', [])]
         routes = ''.join(f'<li><b>{esc(m["o"])} → {esc(m["d"])}</b> <span class="muted">· ' + (f'every {m["headway"]} min · ' if m.get('headway') else '') +
@@ -343,17 +391,19 @@ def main():
         mix_html = ' '.join(f'<span class="mx u-{k}"><b>{mix[k]}</b>× {CN[k]}</span>' for k, _, _ in CLASSES if mix[k])
         table = (f'<div class="tw"><table class="ct"><thead><tr><th>Course</th><th>Vehicle · garage / type · length / pak128 core</th><th>Notes</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>'
                  if rows else '<p class="callout warn">No vehicle logged on this line on any fetched day.</p>' if p.get('peak') else '')
+        anchors = ''.join(f'<span id="l{c["line"]}"></span>' for c in p.get('companions', []))
         cards.append(f'''
-<article class="lc{' nopeak' if not p.get('peak') else ''}" id="l{L}">
+<article class="lc{' nopeak' if not p.get('peak') else ''}" id="l{L}">{anchors}
   <header><a class="lb" href="#l{L}">{L}</a><div class="lh"><ul class="routes">{routes}</ul><span class="opn">{esc(ops)}</span>{needtxt}</div>
   <div class="cntx"><div class="cnt"><b>{n}</b><span>buses</span></div><div class="cnt"><b>{gconv if gr else '–'}</b><span>in game</span></div></div></header>
-  <div class="mix">{mix_html}</div>{sl_html}{extra_note}
+  <div class="mix">{mix_html}</div>{rel_html(L)}{sl_html}{extra_note}
   {game_block(L)}
   {sched_block(L)}
   {stops_block(L)}
   {table}
 </article>''')
         nav.append((f'#l{L}', L))
+        nav += [(f'#l{c["line"]}', c['line']) for c in p.get('companions', [])]
         hw = ' / '.join(str(m['headway']) for m in rs if m.get('headway')) or ('–' if p.get('peak') else 'no peak')
         rt = ' / '.join(str(m['runtime']) for m in rs if m.get('runtime'))
         gst = ''.join(game_status(r) for r in gr) if gr else ('<span class="chip st-warn">not built</span>' if p.get('peak') else '')
@@ -366,7 +416,8 @@ def main():
         fix = needs_fix(r); nfix += fix
         p = P.get(r['pid'])
         pst = ' / '.join(str(len(m['stops'])) for m in p.get('main', [])) if p else '–'
-        link = f'<a class="lb sm" href="#l{r["pid"]}">{r["pid"]}</a>' if p and p['route_type'] == '3' else f'<span class="lb sm">{esc(r["pid"])}</span>'
+        lt = r.get('regional') or r['pid']
+        link = f'<a class="lb sm" href="#l{lt}">{lt}</a>' if p and p['route_type'] == '3' else f'<span class="lb sm">{esc(r["pid"])}</span>'
         gc_rows.append(f'<tr class="{"fix" if fix else "ok"}"><td>{link}</td><td class="gn">{esc(r["name"])}</td><td class="num"><b>{r["convoys"]}</b></td>'
                        f'<td class="num">{r["stop_entries"]} / {r["unique_halts"]}</td><td class="num">{pst}</td><td>{game_status(r)}</td><td class="d">{diff_summary(r)}</td></tr>')
     absent = [a for a in CMP['absent_in_game'] if a['route_type'] == '3']
@@ -424,13 +475,20 @@ def main():
     n_diff = sum(1 for r in CMP['lines'] if r['status'] == 'stops differ')
     n_notpid = sum(1 for r in CMP['lines'] if r['status'].startswith('not in'))
     n_absent_peak = sum(1 for a in absent if a.get('peak'))
+    inside_ls = [R for how in ('through', 'pooled') for Rs in RG.get(how, {}).values() for R in Rs]
+    reg_lede = (f' ({", ".join(sorted(inside_ls, key=int))} are part of their city line\'s card; {", ".join(sorted(inter, key=int))} have their own card after it)'
+                if RG else '')
+    rsrc = CMP.get('regional_source')
+    n_reg_game = sum(1 for r in CMP['lines'] if r.get('regional'))
+    reg_game = (f' The {n_reg_game} game lines of the regional companions come from a second export of {esc(os.path.basename(rsrc["save_file"]))} '
+                f'(saved {esc(rsrc["save_file_mtime"][:16].replace("T", " "))}).' if rsrc else '')
     body = f'''<title>{esc(s["title"])}</title>
 {head}{sticky.CSS}
 <header class="top">
   <div>
-    <div class="eyebrow">Praha · autobusy MHD · linky 100–299 · hra proti jízdnímu řádu PID</div>
+    <div class="eyebrow">Praha · autobusy MHD · linky 100–299 a příměstské linky s nimi · hra proti jízdnímu řádu PID</div>
     <h1>{esc(s["title"])}</h1>
-    <p class="lede">Every Prague city bus line (PID 100–299) against the save game. The game check below lists every game line with its buses and stops against the PID timetable of {int(G["service_date"][6:])} September 2026. It shows which lines have no vehicles, which serve other stops, and which PID lines are not built. Each line card then gives the timetable, the Simutrans schedule, the stops, and the buses that ran it on Friday {int(vd[8:])} September (seznam-autobusu.cz deployment records) with their liveries and pak128 objects, for DPP and every other operator alike. Companion to the Prague tram and trolleybus sheets.</p>
+    <p class="lede">Every Prague city bus line (PID 100–299) against the save game, with the regional lines that run on a city line's buses or interleaved with one{reg_lede}. The game check below lists every game line with its buses and stops against the PID timetable of {int(G["service_date"][6:])} September 2026. It shows which lines have no vehicles, which serve other stops, and which PID lines are not built. Each line card then gives the timetable, the Simutrans schedule, the stops, and the buses that ran it on Friday {int(vd[8:])} September (seznam-autobusu.cz deployment records) with their liveries and pak128 objects, for DPP and every other operator alike. Companion to the Prague tram and trolleybus sheets.</p>
   </div>
   <div class="stats">
     <div class="stat"><b>{len(bus)}</b><span>PID bus lines</span></div>
@@ -442,7 +500,7 @@ def main():
 {ctrl}
 
 <h2 id="check">Game check</h2>
-<p class="lede" style="margin-bottom:6px">Save {esc(os.path.basename(gsrc["save_file"]))} (saved {esc(gsrc["save_file_mtime"][:16].replace("T", " "))}), exported with {esc(gsrc["exported_with"].split(",")[0])}. {n_lines_game} game lines are numbered 100100–100299: {n_zero} ha{"s" if n_zero == 1 else "ve"} no vehicles, {n_diff} serve stops that differ from PID, and {n_notpid} {"is" if n_notpid == 1 else "are"} no longer in the PID timetable. {len(absent)} PID bus lines have no game line, {n_absent_peak} of them with afternoon-peak trips. Stops: the game counts entries on its round trip and distinct halts; PID counts the stops of each direction's main pattern.</p>
+<p class="lede" style="margin-bottom:6px">Save {esc(os.path.basename(gsrc["save_file"]))} (saved {esc(gsrc["save_file_mtime"][:16].replace("T", " "))}), exported with {esc(gsrc["exported_with"].split(",")[0])}. {n_lines_game - n_reg_game} game lines are numbered 100100–100299.{reg_game} Of all {n_lines_game}, {n_zero} ha{"s" if n_zero == 1 else "ve"} no vehicles, {n_diff} serve stops that differ from PID, and {n_notpid} {"is" if n_notpid == 1 else "are"} no longer in the PID timetable. {len(absent)} PID bus lines have no game line, {n_absent_peak} of them with afternoon-peak trips. Stops: the game counts entries on its round trip and distinct halts; PID counts the stops of each direction's main pattern.</p>
 <div class="filter"><label><input type="checkbox" id="onlyfix" checked> Only lines to fix ({nfix})</label><span class="muted small">To fix: no vehicles, stops that differ from PID, a line no longer in PID, or a PID line with peak trips that is not built. Stop names the game abbreviates are listed but do not count as a difference.</span></div>
 <div class="tw sumt"><table class="gc onlyfix" id="gct"><thead><tr><th>Line</th><th>Game line</th><th class="num">Buses</th><th class="num">Game stops / halts</th><th class="num">PID stops</th><th>Status</th><th>Difference</th></tr></thead><tbody>{"".join(gc_rows)}</tbody></table></div>
 
@@ -455,7 +513,7 @@ def main():
 <p class="muted small" style="max-width:60ch">One bus = one vehicle on one course. When a bus was replaced during the day, both appear on the course and only the replacement counts. Courses probably run only in the morning are shown dimmed and not counted.</p></div>
 
 <h2 id="pak">Pak128 objects</h2>
-<p class="lede" style="margin-bottom:10px">Full object names, one per type and livery. DPP buses use VZ-DPPraha-bus; every other operator's buses share the Prague package VZ-Praha-bus, one object per type and livery whatever the operator. Advert wraps have no object: they use the type's normal livery. <b>Requested</b> objects ({n_req} buses) are not in the pak yet (checkout {esc(OBJ["commit"].split(" ")[0])}); the VZ pak session is making them under these names.</p>
+<p class="lede" style="margin-bottom:10px">Full object names, one per type and livery. DPP buses use VZ-DPPraha-bus; every other operator's buses share the Prague package VZ-Praha-bus, one object per type and livery whatever the operator; the regional companions' buses of other operators use the PID regional package VZ-PID-bus. Advert wraps have no object: they use the type's normal livery. <b>Requested</b> objects ({n_req} buses) are not in the pak yet (checkout {esc(OBJ["commit"].split(" ")[0])}); the VZ pak session is making them under these names.</p>
 <div class="tw sumt"><table class="pt"><thead><tr><th>Real type</th><th>Livery</th><th>Core</th><th>Objects, in order</th><th>Operators</th><th>Status</th><th class="num">Buses at peak</th></tr></thead><tbody>{pak_rows}</tbody></table></div>
 
 <h2 id="lines">Lines</h2>
@@ -470,12 +528,13 @@ def main():
 <h2>How this was built</h2>
 <div class="notes"><ul>
   <li><b>Game.</b> The save-game session exported every line of the save numbered 100100–100299 (PID licence numbers; the name's first six digits), with buses, schedule entries and halts. A game line is compared with the PID line of the same number. Variants (e.g. 100102K) are compared with the same PID line.</li>
+  <li><b>Regional companions</b> (owner, 30 October). A regional line goes on the sheet when it runs on a city line's buses, continues its trips, or is interleaved (proložené) with it. <i>Through</i>: every trip starts or ends at the minute a city trip ends or starts at the same stop (PID timetable; 174 → 301 and 352 at Luka, 186 → 396 at Vinoř), so the two make one trip. <i>Pooled</i>: the city line's courses also run it (vehicle records of 25 September: 111 → 329, 161 → 312, 229 → 364 and 366). Both become rows of the city line's card and share its Simutrans lines. <i>Interleaved</i>: a shared stretch where its departures fall in the city line's gaps (113 / 333, 129 / 318, 122 / 363, 228 / 325, 182 and 209 / 376 and 378): its own card and buses, after the city line. Every row is fitted to the real minutes. Their buses come from the day overview of 25 September, or, with no record, are real active buses of the operator's most common type. Left out at the owner's choice: 157 / 327, 157 / 331, 215 / 326 and 161 / 355 (one bus on one day). The national JDF export has no through-running data for these lines, so the timetable minutes are the evidence.</li>
   <li><b>Stops.</b> A game halt matches a PID stop when one of its names (the parts between “/”, without “Praha,” and the stand letter) equals the PID name. Abbreviated or misspelt names count as the same stop and are listed as names to fix. Layover stands (“odstav”) are skipped. The game's round trip is split at the PID termini and each half is compared with the busiest PID pattern of that direction: missing stops, extra stops, a stop in place of another, and order.</li>
   <li><b>Timetable.</b> PID GTFS (<code>data.pid.cz/PID_GTFS.zip</code>, export {esc(G["gtfs_raw"])}), service date {esc(G["service_date"])}, routes whose licence number is 100100–100299 with route type 3 (bus); trolleybus 275 is on the trolleybus sheet. Main pattern = the busiest stop sequence per direction in 15:00–17:59. Buses needed = the larger of <code>cycle_need</code> (a bus leaving around 16:00 followed round the main round trip, at least 3 minutes at each terminus) and the most buses on the road at once in 16:00–17:00 over every pattern of the line (each trip plus its terminus layover: 3 minutes, or less where the timetable turns faster). The second decides on lines with branches and short workings, which the main round trip misses (191: 6 by round trip, 15 on the road).</li>
   <li><b>Simutrans schedule.</b> The shared rule in <code>pipeline/README.md</code>: the longest exact run of one Departure every / Offset / Also at pattern around 16:00, at most 8 departures per cycle; approximate fits give their largest deviation. Every bus terminus is a turn, so all values are 1 minute early, with the real minute printed under each. Other patterns with at least 3 peak trips are separate Simutrans lines.</li>
   <li><b>Vehicles.</b> seznam-autobusu.cz, <code>vypravenost/pid/vypis</code> per line for Friday {int(vd[8:])} September, and for 21–24 and 29 September on lines not run by DPP or not logged on the 25th. Where the logged courses are fewer than the buses needed, courses logged on the nearest other day fill in, if that bus was not out anywhere in PID on the 25th (seznam-autobusu.cz day overview). Any still missing are designed, not recorded, with real buses. They come from the line's own history since 1 September (since January 2025 for lines with no September record), are active in the register, and were not out anywhere on the 25th. The picks first cover every bus type in the line's history that the logged buses lack, then take the most recent. The free history buses left over are listed dimmed as "not needed" and are not counted. Where the history has too few free buses, a free active bus of the line's type from its operator fills in. Each car is matched by its register id to type, garage, paint and year (all DPP buses and the registers of every PID city operator).</li>
   <li><b>Liveries.</b> PID grey-red, PID red-white-blue, DPP red-white, city red-white (Stenbus), Veolia red-grey, white, turquoise-yellow (Stenbus 1700) and the Fashion Arena wrap of Vega Tour's line 238 buses (kept as its own objects at the user's request), from the register's current paint. An advert wrap or another livery maps to the most common normal livery of the same operator, type and year (the pak session's rule).</li>
-  <li><b>Pak128.</b> Object names follow the VZ pak session's scheme of 29 September: <code>VZ-DPPraha-&lt;type&gt;-&lt;livery&gt;-&lt;id&gt;</code> for DPP and <code>VZ-Praha-&lt;type&gt;-&lt;livery&gt;-&lt;id&gt;</code> for every other operator; articulated buses are -A + -B. Which objects exist is read from the pak checkout ({esc(OBJ["commit"])}).</li>
+  <li><b>Pak128.</b> Object names follow the VZ pak session's scheme of 29 September: <code>VZ-DPPraha-&lt;type&gt;-&lt;livery&gt;-&lt;id&gt;</code> for DPP and <code>VZ-Praha-&lt;type&gt;-&lt;livery&gt;-&lt;id&gt;</code> for every other operator; the regional companions' non-DPP buses are in <code>VZ-PID-&lt;type&gt;-&lt;livery&gt;-&lt;type&gt;</code> (the PID regional package, fleet desk, 30 October); articulated buses are -A + -B. Which objects exist is read from the pak checkout ({esc(OBJ["commit"])}).</li>
   <li><b>Rebuilding.</b> <code>pipeline/praha-bus</code>: <code>python scripts/run.py --state {esc(s["name"])}</code>. The README there explains how to refresh the game export, the timetable and the vehicles.</li>
 </ul></div>
 <script>

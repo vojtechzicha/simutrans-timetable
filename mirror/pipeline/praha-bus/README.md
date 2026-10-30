@@ -95,6 +95,45 @@ seznam-autobusu.cz returns 403 to plain curl, so use `common.fetch` (full browse
 - Not changed, for the owner: the school lines 251–280 (1–4 trips a day) still show an hourly fit.
 - The card text now says how the 01:00 origin changes typed values where a row's interval does not divide 60 (116, 131, 187, 218).
 
+## Regional companions (owner, 30 Oct 2026)
+
+"Now could you do the companion PID lines" / "Definitley include those that share buses so we have a full list. Also those that are
+"proložené" like 113/333." / "I am 100% sure 301/352 are continuations of 174" / "Pool if they pool in real live" / "Include if they are
+interleaved in the real timetiable". State `regional`:
+
+- **through**: every trip of the regional line starts or ends at the minute a city trip ends or starts at the same stop (PID GTFS of
+  30 Sep; 0 min, no exception): 174 → 301 and 352 at Luka (28 + 68 trips), 186 → 396 at Vinoř / Nádraží Satalice (35). `02_gtfs_lines`
+  joins each pair into one trip, so the card models the through lines (352 Kukulova – Jinočany every 20, 301 Kukulova – Chýnice hourly,
+  186B Černý Most – Přezletice hourly). 174's old "174A Luka, a line to build" is gone: those trips are 301 and 352, as the save runs them.
+- **pooled**: the city line's courses also run the regional line (vehicle records of 25 Sep: 111 courses 2, 3, 4, 6, 7 → 329; 161
+  courses 1, 2, 3, 5, 6 → 312; 229 courses 1–9 and 11 → 364 and 366). Its trips join the city line's card and Simutrans lines.
+- **interleaved** (proložené): own buses, a shared stretch where its departures fall in the city line's gaps (real minutes): 113 / 333
+  (Kačerov – Písnice, 13 stops), 129 / 318 (Smíchovské nádraží – Baně, 13), 122 / 363 (Opatov – Újezd u Průhonic, 10), 228 / 325
+  (Benice – Nádraží Uhříněves, 8; 325 sits half-way between 228's departures), 182 and 209 / 376 and 378 (Kbely – Letňany, 7). Own card
+  after the city line, with the shared stretch and the two lines' merged spacing per direction.
+- Left out at the owner's choice: 157 / 327, 157 / 331, 215 / 326 and 161 / 355 (one bus on one day). Ruled out: 321 (Letňany – Brandýs),
+  331 (Opatov), 302 / 182 (11 stops shared, not coordinated).
+- How the set was found: there is no through-running data for these lines. The national JDF export (CIS JŘ, 20 Oct) has PID lines
+  but their `Navaznosti.txt` rows are only timed waits and train connections; PID GTFS `block_id` is empty. Through lines: the
+  0-minute trip-chain test over every city × regional pair (only 174/301, 174/352 and 186/396 chain at 100 %; the rest, under 45 %, are
+  chance coincidences at hubs). Pooled: přejezd notes in the city lines' records. Interleaved: the longest shared run of peak
+  patterns touching the regional line's end, ≥ 7 stops, with its departures in the city line's gaps.
+- Hand-set rows (real minutes): 111 + 329 Škvorec hourly :04 / :23; 161 at :10/:20 and :06/:16 every 30 with 312 every 30 at :00 / :14;
+  229 Královice every 30 :04 / :16, 364 hourly :19 / :41, 366 hourly :49 / :12 (its 15:04 and 16:04 start at Mukařov and leave Doubek at
+  :12; terminus alias Mukařov → Doubek); 174 and 186 as above; 318 Jíloviště every 30 at :03 :10 :25 / :06 :21 :29 with Řitka (:48 / :28)
+  and Trnová (:18 / :07) hourly; 363 Todice hourly :00 / :12, Čestlice :15 / :56 (back trips irregular, approximate), Chomutovice :30 /
+  :12; 333 Oleško every 30 :19 / :23 and Zvole every 30 :04 / :14. 325, 376 and 378 fit by themselves (every 60).
+- Game lines: a second export of the save (`data/raw/game/2026-10-30-regional/lines.json`, FORK-CZR-VZ.sve of 30 Oct, from the
+  engine session; 500 lines 100300–100960, only the sheet's lines are read). `03_compare` puts a through or pooled line's game line on
+  its city card and compares it with that line's own patterns (`via`). A Simutrans line typed into a regional game line is named by it
+  (352, 301, 364, 366). `simlines.game_label` sets 186's lines (100186S; 100186 + 100396) and 229's two Doubek lines (by "o → d :mm").
+- Vehicles: the interleaved lines' courses come from the day overview of 25 Sep (no per-line page was fetched: seznam-autobusu.cz
+  answered 429 all afternoon). Lines with no record (318, 325, 378) get real active buses of the operator's most common type,
+  numbered cars only, designed after every city line so no city card's picks move. `bus_types.json` gained lengths only for the
+  types these cards use (Setra S 415 LE business, S 515 LE, Citaro C2 GÜ, Crossway LE LINE 12M, SOR ICN 10,5); a Solaris Urbino 12 III
+  length had moved 226's designed bus, so it was left out. Five objects were requested from the fleet desk on 30 Oct.
+- Cards 100–108 are byte-identical to v11 (owner: "Never change lines 100-108").
+
 ## Pak session hand-off
 
 `06_pak_request.py` writes, for the pak session (simutrans-custom-czech-pak128-bd):
@@ -106,6 +145,7 @@ When the pak session reports new objects, run `00_pak_objects.py` (or `run.py`) 
 ## How to update
 
 1. Ask the save-game session for a new export → `data/raw/game/<date>/lines.json`, then set `game_raw`.
+   Also ask for the regional lines (100300 and up) → `data/raw/game/<date>-regional/lines.json`, then set `regional.game_raw`.
 2. New timetable: set `gtfs.raw` and `gtfs.service_date` (a normal weekday on the feed).
 3. New vehicles: set `vehicle_date`, `extra_days_non_dpp` and `register_raw`.
 4. Run `python scripts/run.py --state <new> --fetch`.

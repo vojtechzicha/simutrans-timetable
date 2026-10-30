@@ -234,7 +234,7 @@
    ]
   },
   "111": {
-   "_why": "Method check 25 Oct 2026: the card paired Skalka → Koloděje with Dubeč → Skalka, the ends of two different routes (1 an hour against 2). 111 is the Koloděje line, hourly, and its short working to Dubeč (own Simutrans line) every 30, interleaved at Skalka (:19 :34 :49).",
+   "_why": "Method check 25 Oct 2026: the card paired Skalka → Koloděje with Dubeč → Skalka, the ends of two different routes (1 an hour against 2). 111 is the Koloděje line, hourly, and its short working to Dubeč (own Simutrans line) every 30, interleaved at Skalka (:19 :34 :49). Owner, 30 Oct 2026: 329 runs on 111's buses (pooled in real life), so its Škvorec trips are rows here too.",
    "rows": [
     {
      "o": "Skalka",
@@ -279,6 +279,24 @@
       4
      ],
      "why": "Short working from Dubeč, every 30 at :04 and :34 (15:04–17:04); no bus at 17:34."
+    },
+    {
+     "o": "Skalka",
+     "d": "Škvorec,nám.",
+     "every": 60,
+     "real": [
+      4
+     ],
+     "why": "329 to Škvorec on 111's buses, hourly at :04 (15:04, 16:04; 13:49 and 17:49 run off the hour)."
+    },
+    {
+     "o": "Škvorec,nám.",
+     "d": "Skalka",
+     "every": 60,
+     "real": [
+      23
+     ],
+     "why": "329 back from Škvorec, hourly at :23 (15:23, 16:23; 14:08 and 17:38 run off the hour)."
     }
    ]
   },
@@ -626,31 +644,43 @@
    ]
   },
   "174": {
-   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 174 is three Simutrans lines from Kukulova (back to Vypich, the same terminus): Luka 4 an hour, Třebonice every 20 and Řeporyjské náměstí 2 an hour, interleaved as the timetable runs them (:06 :12 :19 :26 :32 :38 :46 :52 :58).",
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 174 is three Simutrans lines from Kukulova (back to Vypich, the same terminus): Luka 4 an hour, Třebonice every 20 and Řeporyjské náměstí 2 an hour, interleaved as the timetable runs them (:06 :12 :19 :26 :32 :38 :46 :52 :58). Owner, 30 Oct 2026: \"I am 100% sure 301/352 are continuations of 174\": the Luka rows became the through lines 352 (Jinočany, every 20) and 301 (Chýnice, hourly).",
    "rows": [
     {
      "o": "Kukulova",
-     "d": "Luka",
-     "every": 60,
+     "d": "Jinočany,náměstí",
+     "every": 20,
      "real": [
-      12,
-      19,
-      32,
-      52
+      12
      ],
-     "why": "Luka line at :12, :19, :32 and :52."
+     "why": "174 to Luka continuing as 352 to Jinočany (every trip, 0 min at Luka), every 20 at :12, :32 and :52 (13:52–17:52)."
     },
     {
-     "o": "Luka",
+     "o": "Jinočany,náměstí",
+     "d": "Vypich",
+     "every": 20,
+     "real": [
+      16
+     ],
+     "why": "352 continuing as 174 at Luka, every 20 at :16, :36 and :56 (14:56–17:36)."
+    },
+    {
+     "o": "Kukulova",
+     "d": "Chýnice",
+     "every": 60,
+     "real": [
+      19
+     ],
+     "why": "174 to Luka continuing as 301 to Chýnice, hourly at :19 (14:19–17:19)."
+    },
+    {
+     "o": "Chýnice",
      "d": "Vypich",
      "every": 60,
      "real": [
-      16,
-      30,
-      36,
-      56
+      9
      ],
-     "why": "Luka line at :16, :30, :36 and :56."
+     "why": "301 continuing as 174 at Luka, hourly at :09 (15:09–17:09)."
     },
     {
      "o": "Kukulova",
@@ -763,7 +793,7 @@
    ]
   },
   "186": {
-   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 186 is the Nádraží Satalice line, 3 an hour, and the hourly Vinoř line, interleaved at Černý Most (:02, :17 Vinoř, :32, :47).",
+   "_why": "Owner, 28 Oct 2026: every branch with 3 or more peak trips gets its own rows (method check 25 Oct, open item). 186 is the Nádraží Satalice line, 3 an hour, and the hourly Vinoř line, interleaved at Černý Most (:02, :17 Vinoř, :32, :47). Owner, 30 Oct 2026: every Vinoř trip runs on as 396, so the Vinoř rows became the through line Černý Most – Přezletice.",
    "rows": [
     {
      "o": "Černý Most",
@@ -789,21 +819,21 @@
     },
     {
      "o": "Černý Most",
-     "d": "Vinoř",
+     "d": "Přezletice,Vinořská",
      "every": 60,
      "real": [
       17
      ],
-     "why": "Vinoř line, hourly at :17."
+     "why": "186 to Vinoř continuing as 396 to Přezletice (every trip, 0 min at Vinoř), hourly at :17 (14:17–17:17)."
     },
     {
-     "o": "Vinoř",
+     "o": "Přezletice,Vinořská",
      "d": "Černý Most",
      "every": 60,
      "real": [
-      51
+      36
      ],
-     "why": "Vinoř line, hourly at :51."
+     "why": "396 continuing as 186 at Vinoř, hourly at :36 (14:36–17:36)."
     }
    ]
   },
@@ -1121,6 +1151,273 @@
      "why": "Every 30 at :26 and :56, as the timetable all day."
     }
    ]
+  },
+  "161": {
+   "_why": "Owner, 30 Oct 2026: 312 runs on 161's buses (pooled in real life) and takes the :00 and :30 slots at Bořislavka, so 161 runs at :10, :20, :40 and :50.",
+   "rows": [
+    {
+     "o": "Bořislavka",
+     "d": "Přední Kopanina",
+     "every": 30,
+     "real": [
+      10,
+      20
+     ],
+     "why": "161 to Přední Kopanina at :10, :20, :40 and :50 (15:10–17:50); the :00 and :30 departures are 312's."
+    },
+    {
+     "o": "Přední Kopanina",
+     "d": "Bořislavka",
+     "every": 30,
+     "real": [
+      6,
+      16
+     ],
+     "why": "161 from Přední Kopanina at :06, :16, :36 and :46 (15:06–17:46)."
+    },
+    {
+     "o": "Bořislavka",
+     "d": "Tuchoměřice,Špejchar",
+     "every": 30,
+     "real": [
+      0
+     ],
+     "why": "312 on 161's buses, every 30 at :00 and :30 (16:00–17:00 to Tuchoměřice,Špejchar; 15:00 runs to Středokluky, 15:30 to Lichoceves, 17:30 to the komerční zóna)."
+    },
+    {
+     "o": "Tuchoměřice,Špejchar",
+     "d": "Bořislavka",
+     "every": 30,
+     "real": [
+      14
+     ],
+     "why": "312 back, every 30 at :14 and :44 (16:44–17:44 and 15:14; 16:14 does not run, 16:06 comes from Lichoceves)."
+    }
+   ]
+  },
+  "229": {
+   "_why": "Owner, 30 Oct 2026: 364 and 366 run on 229's buses (pooled in real life), so their trips are rows of this card, each fitted to its own minutes.",
+   "rows": [
+    {
+     "o": "Depo Hostivař",
+     "d": "Královice",
+     "every": 30,
+     "real": [
+      4
+     ],
+     "why": "229 to Královice, every 30 at :04 and :34 (14:04–18:34)."
+    },
+    {
+     "o": "Královice",
+     "d": "Depo Hostivař",
+     "every": 30,
+     "real": [
+      16
+     ],
+     "why": "229 from Královice, every 30 at :16 and :46 (14:46–18:16)."
+    },
+    {
+     "o": "Depo Hostivař",
+     "d": "Doubek",
+     "every": 60,
+     "real": [
+      19
+     ],
+     "why": "364 to Doubek, hourly at :19 (14:19–17:19)."
+    },
+    {
+     "o": "Doubek",
+     "d": "Depo Hostivař",
+     "every": 60,
+     "real": [
+      41
+     ],
+     "why": "364 from Doubek, hourly at :41 (14:41–17:41; 17:12 is 366's)."
+    },
+    {
+     "o": "Depo Hostivař",
+     "d": "Doubek",
+     "every": 60,
+     "real": [
+      49
+     ],
+     "why": "366 to Doubek via Křenice, hourly at :49 (15:49–17:49; 14:49 runs on to Mukařov)."
+    },
+    {
+     "o": "Doubek",
+     "d": "Depo Hostivař",
+     "every": 60,
+     "real": [
+      12
+     ],
+     "why": "366 from Doubek via Křenice, hourly at :12 (17:12, 18:12; the 15:04 and 16:04 trips start at Mukařov and leave Doubek at 15:12 and 16:12)."
+    }
+   ]
+  },
+  "318": {
+   "_why": "Owner, 30 Oct 2026: interleaved companion of 129 (own buses, ČSAD Benešov). The fit gave every 30 with 3 slots out and every 60 with 7 slots back, which cannot run. The Jíloviště line runs 6 an hour each way; the Řitka and Trnová trips are its afternoon branches (≥ 3 each way 13:00–19:00).",
+   "rows": [
+    {
+     "o": "Smíchovské nádraží",
+     "d": "Jíloviště",
+     "every": 30,
+     "real": [
+      3,
+      10,
+      25
+     ],
+     "why": "Jíloviště line at :03, :10, :25, :33, :40 and :55 (15:03–17:55)."
+    },
+    {
+     "o": "Jíloviště",
+     "d": "Smíchovské nádraží",
+     "every": 30,
+     "real": [
+      6,
+      21,
+      29
+     ],
+     "why": "Jíloviště line at :06, :21, :29, :36, :51 and :59 (15:06–17:59); the extra 15:14, 16:44 and 17:44 are listed, not modelled."
+    },
+    {
+     "o": "Smíchovské nádraží",
+     "d": "Řitka",
+     "every": 60,
+     "real": [
+      48
+     ],
+     "why": "Řitka branch, hourly at :48 (15:48–17:48; 14:18 runs earlier)."
+    },
+    {
+     "o": "Řitka",
+     "d": "Smíchovské nádraží",
+     "every": 60,
+     "real": [
+      28
+     ],
+     "why": "Řitka branch back, hourly at :28 (13:28–15:28; 16:58 runs 30 min later).",
+     "approx": true
+    },
+    {
+     "o": "Smíchovské nádraží",
+     "d": "Trnová",
+     "every": 60,
+     "real": [
+      18
+     ],
+     "why": "Trnová branch, hourly at :18 (15:18, 16:18; 13:48 runs 30 min later)."
+    },
+    {
+     "o": "Trnová",
+     "d": "Smíchovské nádraží",
+     "every": 60,
+     "real": [
+      7
+     ],
+     "why": "Trnová branch back, hourly at :07 (13:07, 14:07, 16:07, 18:07; 15:07 and 17:07 do not run)."
+    }
+   ]
+  },
+  "363": {
+   "_why": "Owner, 30 Oct 2026: interleaved companion of 122 (own buses, ČSAD Polkost). The card's main pair mixed the Čestlice and Todice branches. Three branches from Opatov, each fitted to its own minutes.",
+   "rows": [
+    {
+     "o": "Opatov",
+     "d": "Velké Popovice,Todice",
+     "every": 60,
+     "real": [
+      0
+     ],
+     "why": "Todice line, hourly at :00 (14:00–19:00)."
+    },
+    {
+     "o": "Velké Popovice,Todice",
+     "d": "Opatov",
+     "every": 60,
+     "real": [
+      12
+     ],
+     "why": "Todice line, hourly at :12 (13:12–18:13)."
+    },
+    {
+     "o": "Opatov",
+     "d": "Čestlice",
+     "every": 60,
+     "real": [
+      15
+     ],
+     "why": "Čestlice branch, hourly at :15 (15:15–18:15; the extra 14:30 and 15:30 are listed, not modelled)."
+    },
+    {
+     "o": "Čestlice",
+     "d": "Opatov",
+     "every": 60,
+     "real": [
+      56
+     ],
+     "approx": true,
+     "why": "Čestlice branch back, hourly at :56 (14:56, 15:56; 15:26 and 16:26 are extra, then 17:11 and 18:12 run 15 min later): the back trips are irregular, to check."
+    },
+    {
+     "o": "Opatov",
+     "d": "Popovičky,Chomutovice",
+     "every": 60,
+     "real": [
+      30
+     ],
+     "why": "Chomutovice branch, hourly at :30 (16:30, 17:30; 13:28 earlier)."
+    },
+    {
+     "o": "Popovičky,Chomutovice",
+     "d": "Opatov",
+     "every": 60,
+     "real": [
+      12
+     ],
+     "why": "Chomutovice branch back, hourly at :12 (17:12, 18:12; 13:40 and 14:10 earlier)."
+    }
+   ]
+  },
+  "333": {
+   "_why": "Owner, 30 Oct 2026: interleaved companion of 113 (own buses, Umbrella City Lines). Two branches from Kačerov, each every 30 (together every 15): the Zvole branch has 6 peak trips each way, so it gets its own rows (owner, 28 Oct: no branch left without values).",
+   "rows": [
+    {
+     "o": "Kačerov",
+     "d": "Březová-Oleško,Oleško",
+     "every": 30,
+     "real": [
+      19
+     ],
+     "why": "Oleško branch, every 30 at :19 and :49 (14:20–18:19)."
+    },
+    {
+     "o": "Březová-Oleško,Oleško",
+     "d": "Kačerov",
+     "every": 30,
+     "real": [
+      23
+     ],
+     "why": "Oleško branch, every 30 at :23 and :53 (14:23–17:53)."
+    },
+    {
+     "o": "Kačerov",
+     "d": "Zvole,Nová Zvole",
+     "every": 30,
+     "real": [
+      4
+     ],
+     "why": "Zvole branch, every 30 at :04 and :34 (14:34–18:34)."
+    },
+    {
+     "o": "Zvole,Nová Zvole",
+     "d": "Kačerov",
+     "every": 30,
+     "real": [
+      14
+     ],
+     "why": "Zvole branch, every 30 at :14 and :44 (14:14–18:14)."
+    }
+   ]
   }
  },
  "simlines": {
@@ -1142,7 +1439,12 @@
    "191",
    "197",
    "221",
-   "226"
+   "226",
+   "161",
+   "229",
+   "318",
+   "363",
+   "333"
   ],
   "terminus_alias": {
    "138": {
@@ -1153,13 +1455,81 @@
    },
    "191": {
     "Terminál 1": "Letiště"
+   },
+   "229": {
+    "Mukařov": "Doubek"
+   },
+   "161": {
+    "Lichoceves": "Tuchoměřice,Špejchar"
    }
   },
   "game_label": {
-   "_why": "Owner, 30 Oct 2026: a plain Simutrans line whose trips the save runs on another game line says so instead of 'not in the game'.",
+   "_why": "Owner, 30 Oct 2026: a plain Simutrans line whose trips the save runs on another game line says so instead of 'not in the game'. Keys: the Simutrans line's index, or its first entry \"o → d\", or \"o → d :mm\" with its first real minute (two lines with the same ends, 229).",
    "177": {
     "1": "split off 100177 (the save runs Volha as its extension): a line to build"
+   },
+   "186": {
+    "Černý Most → Přezletice,Vinořská": "one line in place of 100186 + 100396: every Vinoř trip runs on as 396",
+    "Černý Most → Nádraží Satalice": "game line 100186S"
+   },
+   "229": {
+    "Depo Hostivař → Doubek :19": "game line 100364",
+    "Depo Hostivař → Doubek :49": "game line 100366 (the save runs it on to Mukařov)"
    }
+  }
+ },
+ "regional": {
+  "_why": "Owner, 30 Oct 2026: \"Now could you do the companion PID lines ...\" / \"Definitley include those that share buses so we have a full list. Also those that are \"proložené\" like 113/333.\" / \"I am 100% sure 301/352 are continuations of 174\" / \"Pool if they pool in real live\" / \"Include if they are interleaved in the real timetiable\". through: every trip of the regional line starts or ends at the minute a city trip ends or starts at the same stop (GTFS, 30 Sep): one through trip. pooled: the city line's courses also run the regional line (vehicle records, 25 Sep: 111 courses 2, 3, 4, 6, 7 -> 329; 161 courses 1, 2, 3, 5, 6 -> 312; 229 courses 1-9, 11 -> 364 and 366): the regional trips join the city card. interleaved: own buses, a shared stretch where the regional trips fall in the city line's gaps; own card after the city line. Left out (owner): 157/327, 157/331, 215/326 and 161/355 (one bus on one day).",
+  "game_raw": "2026-10-30-regional",
+  "through": {
+   "174": [
+    "301",
+    "352"
+   ],
+   "186": [
+    "396"
+   ]
+  },
+  "pooled": {
+   "111": [
+    "329"
+   ],
+   "161": [
+    "312"
+   ],
+   "229": [
+    "364",
+    "366"
+   ]
+  },
+  "interleaved": {
+   "333": [
+    "113"
+   ],
+   "318": [
+    "129"
+   ],
+   "363": [
+    "122"
+   ],
+   "325": [
+    "228"
+   ],
+   "376": [
+    "182",
+    "209"
+   ],
+   "378": [
+    "182",
+    "209"
+   ]
+  },
+  "notes": {
+   "174": "301 and 352 continue 174's Luka trips: every 301 and 352 trip leaves Luka the minute a 174 bus arrives there, and every one arriving at Luka leaves again as 174 (28 + 68 trips on 30 Sep, no exception). They are modelled as through lines Kukulova – Chýnice (301) and Kukulova – Jinočany (352), as the save already runs them.",
+   "186": "396 continues 186's Vinoř trips: every 396 trip leaves Vinoř (or Nádraží Satalice) the minute a 186 bus arrives, and returns into a 186 trip (35 trips on 30 Sep, no exception). The Vinoř trips are modelled as one through line Černý Most – Přezletice.",
+   "111": "329 Skalka – Škvorec runs on 111's buses: on 25 Sep courses 2, 3, 4, 6 and 7 of 111 also ran 329 (přejezd na linku 329). Its trips are rows of this card and share its Simutrans lines.",
+   "161": "312 Bořislavka – Tuchoměřice runs on 161's buses: on 25 Sep courses 1, 2, 3, 5 and 6 of 161 also ran 312. Its :00 and :30 departures fill 161's gaps at Bořislavka (together every 10). Its trips are rows of this card.",
+   "229": "364 (Doubek) and 366 (Doubek via Křenice; Mukařov) run on 229's buses: on 25 Sep ten of 229's eleven courses also ran 364 and 366. Their trips are rows of this card."
   }
  }
 }

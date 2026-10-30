@@ -1,5 +1,5 @@
 {
- "_doc": "Type tokens for pak object names, VZ-<package>-<Type>-<livery>-<id> (the VZ pak session's scheme, 29 Sep 2026): package DPPraha for cars DPP runs, Praha (one shared package VZ-Praha-bus) for every other operator; the operator is not part of the name, operators share an object per type and livery; articulated buses are -A/-B. 'type_tokens': register type -> Type token (DPP tokens are reused for the same model); 'id_tokens': Type token -> id where they differ (the DPP SOR objects). Which objects exist is read from pak_objects.json (00_pak_objects.py); every other name is 'requested' from the pak session.",
+ "_doc": "Type tokens for pak object names, VZ-<package>-<Type>-<livery>-<id> (the VZ pak session's scheme, 29 Sep 2026): package DPPraha for cars DPP runs, Praha (one shared package VZ-Praha-bus) for every other operator; the operator is not part of the name, operators share an object per type and livery; articulated buses are -A/-B. 'type_tokens': register type -> Type token (DPP tokens are reused for the same model); 'id_tokens': Type token -> id where they differ (the DPP SOR objects). Which objects exist is read from pak_objects.json (00_pak_objects.py); every other name is 'requested' from the pak session. 'pid_type_tokens' (fleet desk, 30 Oct 2026): the regional companions' non-DPP cars are in VZ-PID-bus (VZ-PID-<Type>-<livery>-<Type>), whose tokens differ (Setra_S_515_LE, SOR_ICN_10_5); VZ-Praha-bus is only for city lines run by non-DPP operators.",
  "type_tokens": {
   "SOR NB 12": "SOR_NB_12",
   "SOR NB 18": "SOR_NB_18",
@@ -74,5 +74,13 @@
   "Iveco Crossway LE CITY 13M": "Crossway_LE_12_8M",
   "Iveco Crossway LE CITY 12M": "Crossway_LE_12_8M"
  },
- "_merges": "Pak session, 29 Sep: BMC Procity 10,7 shares the Procity 10,6 object and the Stratos LF 38 the Dekstra LF 38 object (the Dekstra is the renamed Stratos); DPP Crossway LE City 12M and 13M use VZ-DPPraha-Crossway_LE_12_8M-dppcervenobila (look-alike named in its display text). Stenbus 1700 turquoise with a yellow stripe gets its own livery tyrkysovozluta. dpp_type_tokens override type_tokens for DPP cars."
+ "_merges": "Pak session, 29 Sep: BMC Procity 10,7 shares the Procity 10,6 object and the Stratos LF 38 the Dekstra LF 38 object (the Dekstra is the renamed Stratos); DPP Crossway LE City 12M and 13M use VZ-DPPraha-Crossway_LE_12_8M-dppcervenobila (look-alike named in its display text). Stenbus 1700 turquoise with a yellow stripe gets its own livery tyrkysovozluta. dpp_type_tokens override type_tokens for DPP cars.",
+ "pid_type_tokens": {
+  "Setra S 415 LE business": "Setra_S_415_LE_business",
+  "Setra S 515 LE": "Setra_S_515_LE",
+  "Mercedes-Benz Citaro C2 GÜ": "Citaro_C2_GU",
+  "SOR ICN 10,5": "SOR_ICN_10_5",
+  "Iveco Crossway LE LINE 12M": "Crossway_LE_Line_12M",
+  "Iveco Crossway LE LINE 12M NP": "Crossway_LE_Line_12M_NP"
+ }
 }

@@ -101,18 +101,33 @@ def main():
     G = load(os.path.join(RAW, 'game', s['game_raw'], 'lines.json'))
     P = load(os.path.join(DER, s['name'], 'gtfs_lines.json'))['lines']
     aliases = s.get('halt_aliases', {})
+    # regional companions (state "regional", owner 30 Oct 2026) come from a second export of the save (lines 100300 and up, 30 Oct):
+    # only the lines on the sheet; a through or pooled line's game line goes on its city line's card
+    RG = s.get('regional', {})
+    home = {R: C for how in ('through', 'pooled') for C, Rs in RG.get(how, {}).items() for R in Rs}
+    home.update({R: R for R in RG.get('interleaved', {})})
+    glines = [dict(gl, _src='main') for gl in G['lines']]
+    G2 = None
+    if RG.get('game_raw'):
+        G2 = load(os.path.join(RAW, 'game', RG['game_raw'], 'lines.json'))
+        glines += [dict(gl, _src='regional') for gl in G2['lines'] if str(gl.get('pid_number')) in home]
     res = []
-    for gl in G['lines']:
+    for gl in glines:
+        gl['licence_number'] = str(gl['licence_number'])
         pid = str(gl['pid_number']) if gl.get('pid_number') is not None else gl['licence_number'][3:].lstrip('0')
+        regional = pid if gl['_src'] == 'regional' else None
+        if regional: pid = home[regional]
         base = gl['name'].split(' ')[0] == gl['licence_number']
         halts = [e['halt_name'] for e in gl['entries'] if e.get('halt_name')]
         r = dict(line_id=gl['line_id'], name=gl['name'], pid=pid, variant=not base, convoys=gl['convoy_count'], vehicles=gl['vehicle_count'],
                  stop_entries=gl['stop_entry_count'], unique_halts=gl['unique_halt_count'], waypoints=gl['waypoint_count'],
                  wait_for_load=sum(1 for e in gl['entries'] if e.get('minimum_loading_pct')))
+        if regional: r['regional'] = regional; r['variant'] = regional != pid
         p = P.get(pid)
         if not p or not p.get('patterns'):
             r.update(status='not in the current PID timetable' if not p else 'no PID trips on the service date', aligned=False); res.append(r); continue
         pats = p['patterns']
+        if regional and regional != pid: pats = [pt for pt in pats if pt.get('via') == regional] or pats   # a companion: its own trips
         pid_names = {re.sub(r',\s+', ',', x): x for pt in pats for x in pt['stops']}
         gseq, name_fix, unknown = [], {}, []
         stands = s.get('layover_stand_words', ['odstav'])
@@ -167,7 +182,7 @@ def main():
     game_pids = {r['pid'] for r in res}
     absent = [dict(pid=L, long_name=v['long_name'], trips=v['trips'], peak=v.get('peak'), need=v.get('need'), route_type=v['route_type'],
                    operators=v['operators']) for L, v in P.items() if L not in game_pids]
-    save(dict(lines=res, absent_in_game=absent, game_source=G['source']), os.path.join(DER, s['name'], 'compare.json'))
+    save(dict(lines=res, absent_in_game=absent, game_source=G['source'], regional_source=G2['source'] if G2 else None), os.path.join(DER, s['name'], 'compare.json'))
     c = collections.Counter(r['status'] for r in res)
     print(dict(c), '| zero vehicles:', [r['name'] for r in res if not r['convoys']], '| PID lines absent in game:', len(absent),
           '| name fixes:', sum(len(r.get('name_fixes', {})) for r in res))

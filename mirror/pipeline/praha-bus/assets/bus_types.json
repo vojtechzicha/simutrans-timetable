@@ -1,5 +1,5 @@
 {
- "_doc": "Bus types as the seznam-autobusu.cz register names them (maker + type) -> nominal length in metres (blank where the register gives none and the type name does not say); 'garages': the register's garage codes (DPP and the other operators; Stenbus's 'PID' is its PID division, not a garage, so blank). Pak objects are not mapped here: 04_courses.py names each car's object from pak_requested.json and checks it against pak_objects.json (no stand-ins from DPP or other cities).",
+ "_doc": "Bus types as the seznam-autobusu.cz register names them (maker + type) -> nominal length in metres (blank where the register gives none and the type name does not say); 'garages': the register's garage codes (DPP and the other operators; Stenbus's 'PID' is its PID division, not a garage, so blank). Pak objects are not mapped here: 04_courses.py names each car's object from pak_requested.json and checks it against pak_objects.json (no stand-ins from DPP or other cities). Suburban types the PID regional companions use, added 30 Oct 2026 (Setra S 415 LE business and S 515 LE, Citaro C2 GÜ, Iveco Crossway LE LINE 12M, SOR ICN 10,5; manufacturer lengths, rounded). Only those: a length makes a type eligible as a designed fleet bus, and other types would change existing cards' picks (226).",
  "length_m": {
   "SOR NB 18": 18.75,
   "SOR NB 12": 12,
@@ -41,7 +41,13 @@
   "SKD Iveco Stratos LE 37": 7.7,
   "MAN NL 293 Lion’s City": 12,
   "SOR BN 8,5": 8.5,
-  "MAN LEÜ 330 Lion’s Intercity LE 12": 12.3
+  "MAN LEÜ 330 Lion’s Intercity LE 12": 12.3,
+  "Setra S 415 LE business": 12.3,
+  "Setra S 515 LE": 12.4,
+  "Mercedes-Benz Citaro C2 GÜ": 18.1,
+  "Iveco Crossway LE LINE 12M": 12,
+  "Iveco Crossway LE LINE 12M NP": 12,
+  "SOR ICN 10,5": 10.5
  },
  "garages": {
   "Klí": "Klíčov",

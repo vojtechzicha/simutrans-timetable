@@ -10,7 +10,7 @@ Usage: python 00_pak_objects.py [--pak C:/Users/vojte/Developer/simutrans-custom
 import argparse, glob, os, re, subprocess
 from common import save, ASSETS
 
-PKGS = ('VZ-DPPraha-bus', 'VZ-Praha-bus', 'VZ-Praha-water')
+PKGS = ('VZ-DPPraha-bus', 'VZ-Praha-bus', 'VZ-Praha-water', 'VZ-PID-bus')   # VZ-PID-bus: the PID suburban/regional contracts (fleet desk, 30 Oct 2026)
 
 def git(repo, *args):
     return subprocess.run(['git', '-C', repo, *args], capture_output=True, text=True, encoding='utf-8', errors='replace').stdout

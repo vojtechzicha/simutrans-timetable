@@ -153,3 +153,16 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   counted only 15:00–17:59 (2 each way) and called it "not a peak trip". Apply the 20 Oct afternoon-branch window (≥ 3 each
   way 13:00–19:00) to Prague as well. Modelled as in real life: 110B is a circuit that also takes the Čakovice :45, and 110
   still needs 4 buses.
+
+## 30 Oct — Prague regional companions
+- **30 Oct:** "Now could you do the companion PID lines to the local trains? I remember 111/321, 174/301/352, 113/331/333 (the PID
+  number are my guess only)" → asked first what "companion" meant; "Definitley include those that share buses so we have a full
+  list. Also those that are "proložené" like 113/333. Not the local train ones." Placement: on the Prague bus sheet.
+- **30 Oct:** "I am 100% sure 301/352 are continuations of 174 - why don't you know? That might mean you are missing some
+  Navaznosti.txt data." → JDF has no such data for PID and GTFS has no blocks; the evidence was in plain sight: every 301/352 trip
+  leaves Luka the minute a 174 arrives. Run the 0-minute chain test before saying a pair is unproven. It also showed the published
+  "174A Luka, a line to build" was wrong: those trips are 301/352, as the save already had them.
+- **30 Oct:** "Pool if they pool in real live" / "Include if they are interleaved in the real timetiable. I HOPE you are not
+  adjusting but trying to fit the real timetable." → pool only where the records show the city courses running the regional line;
+  interleave only where the real departures sit in the gaps; rows always from real minutes.
+- **30 Oct:** fleet desk: the "missing" regional buses already existed in `VZ-PID-bus`; look in every package before requesting.

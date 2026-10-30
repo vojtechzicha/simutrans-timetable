@@ -80,6 +80,18 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   should interleave. I thought that is the whole point?"). Fit them together on one interval; scan for bunching at shared termini
   **and** at junctions/intermediate stops (23 at Rychvald, rozcestí), and across different lines on shared trunks
   (`check_trunks.py`, `check_cross_lines.py`, `space_corridor.py` in ostrava-bus). Fix only model artefacts, not real bunching.
+- **Regional companions of city lines** (owner, 30 Oct, Prague: "Definitley include those that share buses so we have a full list.
+  Also those that are "proložené" like 113/333." / "Pool if they pool in real live" / "Include if they are interleaved in the real
+  timetiable"). Three kinds, each decided from evidence, never guessed:
+  - *through*: every trip of the regional line leaves a stop the minute a city trip ends there, and back (0 min, 100 % of trips): one
+    through trip (Prague 174 → 301 / 352 at Luka, 186 → 396 at Vinoř). Test every city × regional pair; under ~50 % is chance at hubs.
+  - *pooled*: the city line's courses also run the regional line in the vehicle records (several courses, not one bus on one day):
+    its trips become rows of the city card and share its Simutrans lines (111 + 329, 161 + 312, 229 + 364 + 366).
+  - *interleaved* (proložené): own buses, a long shared stretch (≥ 7 stops, touching the regional line's end) where its real departures
+    fall in the city line's gaps: own card after the city line, with the merged spacing per stretch and direction.
+  One bus on one day is not a companion (owner left 157/327, 157/331, 215/326, 161/355 out). Fit every row to the real minutes and
+  give every regional peak branch its rows (333 Zvole). The owner knows their save: if they say a line continues another, look for
+  the evidence that shows it rather than doubting it (301/352: "why don't you know?").
 - **Shared pools** (one Simutrans line for two real lines, e.g. Prague 5 + 6; or two lines from one pool, Olomouc 3 + 5) are the
   owner's modelling choice: mark them, with the real share that runs through. Don't pool silently; offer it.
 

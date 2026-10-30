@@ -21,13 +21,21 @@ WIN = (900, 1080)
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--state', required=True)
     s = state(ap.parse_args().state); g = s['gtfs']; lo, hi = s['licence_range']
+    # regional companions (state "regional", owner 30 Oct 2026): through and pooled lines become trips of their city line's card,
+    # interleaved lines get their own card
+    RG = s.get('regional', {})
+    comp = collections.defaultdict(list)
+    for how in ('through', 'pooled'):
+        for C, Rs in RG.get(how, {}).items(): comp[C] += [(how, R) for R in Rs]
+    inside = {R: C for C, v in comp.items() for _, R in v}
+    extra = {'100' + R for R in list(inside) + list(RG.get('interleaved', {}))}
     z = zipfile.ZipFile(os.path.join(RAW, 'gtfs', g['raw'], 'gtfs.zip'))
     rd = lambda n: csv.DictReader(io.TextIOWrapper(z.open(n), encoding='utf-8-sig'))
     routes = {r['route_id']: r for r in rd('routes.txt')}
     lic = {}
     for r in rd('route_sub_agencies.txt'):
         n = r['route_licence_number']
-        if n.isdigit() and lo <= int(n) <= hi and r['route_id'] in routes:
+        if n.isdigit() and (lo <= int(n) <= hi or n in extra) and r['route_id'] in routes:
             lic.setdefault(r['route_id'], dict(licence=n, operators=set()))['operators'].add(r['sub_agency_name'])
     sd = g['service_date']
     cal = {r['service_id']: r for r in rd('calendar.txt')}
@@ -45,16 +53,45 @@ def main():
         if r['trip_id'] in trips: st[r['trip_id']].append((int(r['stop_sequence']), r['stop_id'], r['departure_time'], r['arrival_time']))
     by_route = collections.defaultdict(list)
     for tid, rs in st.items():
-        rs.sort(); seq = []
-        for _, sid, _, _ in rs:
+        rs.sort(); seq = []; tm = []
+        for _, sid, dt, _ in rs:
             nm = stops[sid]
-            if not seq or seq[-1] != nm: seq.append(nm)      # a stop served twice in a row (two stands) counts once
-        by_route[trips[tid]['route_id']].append(dict(seq=tuple(seq), o=seq[0], d=seq[-1], dep=mins(rs[0][2]), arr=mins(rs[-1][3]), dir=trips[tid]['direction_id']))
-    out = {}
+            if not seq or seq[-1] != nm: seq.append(nm); tm.append(mins(dt))      # a stop served twice in a row (two stands) counts once
+        by_route[trips[tid]['route_id']].append(dict(seq=tuple(seq), tm=tm, o=seq[0], d=seq[-1], dep=mins(rs[0][2]), arr=mins(rs[-1][3]), dir=trips[tid]['direction_id']))
+    rid_of = {routes[rid]['route_short_name']: rid for rid in lic if routes[rid]['route_type'] == '3'}
+    def with_companions(C, ts):
+        """C's trips plus its pooled lines' trips; a through line's trip is joined to the C trip it continues (same stop, same
+        minute), so it runs as one trip. Companion trips take C's direction by the terminus they leave or reach."""
+        ts = [dict(t) for t in ts]
+        dir_from = {}; dir_to = {}
+        for t in ts: dir_from.setdefault(t['o'], t['dir']); dir_to.setdefault(t['d'], t['dir'])
+        for how, Rl in comp[C]:
+            rt = [dict(t, via=Rl) for t in by_route.get(rid_of.get(Rl), [])]
+            for t in rt: t['dir'] = dir_from.get(t['o'], dir_to.get(t['d'], t['dir']))
+            if how == 'pooled': ts += rt; continue
+            used = set()
+            for i, c in enumerate(ts):
+                if c.get('via'): continue
+                j = next((j for j, r in enumerate(rt) if j not in used and r['o'] == c['d'] and r['dep'] == c['arr']), None)
+                if j is not None:
+                    r = rt[j]; used.add(j); ts[i] = dict(c, seq=c['seq'] + r['seq'][1:], tm=c['tm'] + r['tm'][1:], d=r['d'], arr=r['arr'], via=Rl); continue
+                j = next((j for j, r in enumerate(rt) if j not in used and r['d'] == c['o'] and r['arr'] == c['dep']), None)
+                if j is not None:
+                    r = rt[j]; used.add(j); ts[i] = dict(c, seq=r['seq'] + c['seq'][1:], tm=r['tm'] + c['tm'][1:], o=r['o'], dep=r['dep'], via=Rl)
+            ts += [r for j, r in enumerate(rt) if j not in used]
+        return ts
+    out = {}; TS = {}
     for rid, info in sorted(lic.items(), key=lambda kv: int(kv[1]['licence'])):
         R = routes[rid]; L = R['route_short_name']; ts = by_route.get(rid, [])
+        if L in inside and R['route_type'] == '3': continue          # on its city line's card
+        if L in comp and R['route_type'] == '3': ts = with_companions(L, ts)
+        TS[L] = ts
         rec = dict(line=L, licence=info['licence'], route_type=R['route_type'], long_name=R['route_long_name'],
                    operators=sorted(info['operators']), trips=len(ts), night=R.get('is_night') == '1', regional=R.get('is_regional') == '1')
+        if L in comp and R['route_type'] == '3':
+            rec['companions'] = [dict(line=Rl, how=how, long_name=routes[rid_of[Rl]]['route_long_name'] if Rl in rid_of else '',
+                                      trips=sum(1 for t in ts if t.get('via') == Rl)) for how, Rl in comp[L]]
+        if L in RG.get('interleaved', {}): rec['interleaved_with'] = RG['interleaved'][L]
         if not ts:
             rec['status'] = 'no trips on the service date'; out[L] = rec; continue
         peak = [t for t in ts if WIN[0] <= t['dep'] < WIN[1]]
@@ -63,6 +100,8 @@ def main():
         pats = []
         for (dr, sq), n in seqs.most_common():
             pats.append(dict(dir=dr, o=sq[0], d=sq[-1], n=n, stops=list(sq), all_day=sum(1 for t in ts if t['seq'] == sq)))
+            via = collections.Counter(t.get('via') for t in base if (t['dir'], t['seq']) == (dr, sq)).most_common(1)[0][0]
+            if via: pats[-1]['via'] = via            # a companion's trips (state "regional"): 03_compare matches its game line to these
         main = {}
         for p in pats:
             main.setdefault(p['dir'], p)                   # busiest sequence per direction
@@ -152,6 +191,38 @@ def main():
         if rec.get('simlines'):   # a card with Simutrans lines needs what its lines need, each run on its own buses
             rec['need'] = sum(x['need'] for x in rec['simlines'])
         out[L] = rec
+    # interleaved companions: the longest stretch a regional line's peak pattern shares with one of its city line's, touching the
+    # regional line's own end, and the two lines' departures merged at the stretch's first stop in 15:00-17:59 (real minutes)
+    def peak_pats(L):
+        c = collections.Counter(t['seq'] for t in TS.get(L, []) if WIN[0] <= t['dep'] < WIN[1])
+        return [p for p, n in c.items() if n >= 3]
+    def shared(a, b):
+        best = (0, 0, 0)
+        for i in range(len(a)):
+            for j in range(len(b)):
+                k = 0
+                while i + k < len(a) and j + k < len(b) and a[i + k] == b[j + k]: k += 1
+                if k > best[0]: best = (k, i, j)
+        return best
+    for Rl, Cs in RG.get('interleaved', {}).items():
+        if Rl not in out: continue
+        rows = []
+        for C in Cs:
+            for rp in peak_pats(Rl):
+                best = None
+                for cp in peak_pats(C):
+                    k, i, j = shared(rp, cp)
+                    if k >= 3 and (i == 0 or i + k == len(rp)) and (best is None or k > best[0]): best = (k, i, j, cp)
+                if not best: continue
+                k, i, j, cp = best; run = rp[i:i + k]
+                def deps(L, pats):
+                    return sorted(t['tm'][t['seq'].index(run[0])] for t in TS[L] if t['seq'] in pats and WIN[0] <= t['tm'][t['seq'].index(run[0])] < WIN[1])
+                dr = deps(Rl, {rp}); dc = deps(C, {p for p in peak_pats(C) if any(p[x:x + k] == run for x in range(len(p) - k + 1))})
+                both = sorted(dr + dc); gaps = [b - a for a, b in zip(both, both[1:])]
+                rows.append(dict(city=C, stops=k, first=run[0], last=run[-1], n_reg=len(dr), n_city=len(dc), gap_min=min(gaps) if gaps else None, gap_max=max(gaps) if gaps else None))
+        out[Rl]['interleave'] = rows
+        for r_ in rows:
+            if r_['city'] in out: out[r_['city']].setdefault('interleaved_by', []).append(dict(r_, line=Rl, long_name=out[Rl]['long_name'], operators=out[Rl]['operators']))
     save(dict(lines=out, service_date=sd, gtfs_raw=g['raw']), os.path.join(DER, s['name'], 'gtfs_lines.json'))
     print(len(out), 'lines;', sum(1 for r in out.values() if r.get('peak')), 'with peak trips;',
           sum(1 for r in out.values() if not r.get('trips')), 'without trips on', sd)

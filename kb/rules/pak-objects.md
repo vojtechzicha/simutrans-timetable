@@ -11,6 +11,9 @@ city and show me clearly which."
 - Meaningless core (e.g. `A`) → show the family name instead.
 - Stand-ins (nearest or other-city object) are written `≈ core`, with the reason once in the pak table.
 - Prague: DPP cars `VZ-DPPraha-…`; every other operator shares `VZ-Praha-…` (no operator in the name); ferries `VZ-Praha-water`.
+  PID suburban/regional contracts (lines 300+ run by other operators) are `VZ-PID-…` in `VZ-PID-bus` (66 objects on 30 Oct;
+  tokens differ: `Setra_S_515_LE`, `SOR_ICN_10_5`). `VZ-Praha-bus` is only for city lines (100–299, 900s); check `build/VZ-PID-bus/*.dat`
+  before requesting a regional bus (fleet desk, 30 Oct: all five "missing" objects already existed there).
   Non-DPP lines must be exactly as good as DPP ones — never DPP or other-city stand-ins. Advert wraps → the type's normal livery.
 - ODIS: regional buses `VZ-ODIS-bus` (livery by real paint: 3ČSAD → `3csadbilozelena`, white → `bilazelenykruh`, Transdev
   `transdev`, Z-Group `bila`…); town lines `VZ-MHD<Town>` only (Havířov, Karviná, Orlová, Krnov, Nový Jičín, Třinec…).

@@ -179,7 +179,7 @@
    ],
    "region": "Praha",
    "kind": "lines-check",
-   "summary": "All 163 PID city bus lines 100–299 against the save game (filter \"to fix\"), with full line cards and designed vehicles with real numbers.",
+   "summary": "All 163 PID city bus lines 100–299 against the save game (filter \"to fix\"), plus the 13 regional lines that run on their buses or interleaved with them, with full line cards and designed vehicles with real numbers.",
    "pipeline": "pipeline/praha-bus",
    "build": "python scripts/run.py --state 2026-09-29",
    "fetch": "python scripts/run.py --state <new> --fetch (01_fetch_sources.py [--cars], 01_fetch_records.py); game export requested from save-game session simutrans-122-0-58",
@@ -211,18 +211,23 @@
      "name": "pak checkout VZ-DPPraha-bus, VZ-Praha-bus, VZ-Praha-water",
      "role": "other",
      "note": "00_pak_objects.py lists names into assets/pak_objects.json"
+    },
+    {
+     "name": "Save-game line export, regional",
+     "role": "other",
+     "note": "From session simutrans-122-0-d1, 30 Oct: lines 100300–100960 of FORK-CZR-VZ.sve; only the sheet's regional lines are read"
     }
    ],
    "vehicleDay": "Fri 25 Sep 2026 (fill-ins from 21–24 and 29 Sep)",
    "networkDate": "PID export of 29 Sep 2026, service date Wed 30 Sep 2026",
    "updateRecipe": [
-    "Ask the save-game session for a new export → data/raw/game/<date>/lines.json, set game_raw.",
+    "Ask the save-game session for a new export → data/raw/game/<date>/lines.json, set game_raw. Also the regional export (lines 100300+) → data/raw/game/<date>-regional/lines.json, set regional.game_raw.",
     "New timetable: set gtfs.raw and gtfs.service_date (a normal weekday).",
     "New vehicles: set vehicle_date, extra_days_non_dpp and register_raw.",
     "Run python scripts/run.py --state <new> --fetch.",
     "Check printed counts (courses by source, designed lines, requested objects) and republish to https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF."
    ],
-   "notes": "Checks game lines vs PID stops. Need = max(cycle_need, buses on road). Designed buses from line history (roster coverage), then operator fleet; 213 logged surplus not needed, 797 counted. Pak hand-off via 06_pak_request.py; missing objects shown 'requested', no stand-ins. Branch cards (state simlines.auto) are split into Simutrans lines by simlines.py, each sized on its own; cards 100-108 frozen (owner, 30 Oct).",
+   "notes": "Checks game lines vs PID stops. Need = max(cycle_need, buses on road). Designed buses from line history (roster coverage), then operator fleet; 213 logged surplus not needed, 797 counted. Pak hand-off via 06_pak_request.py; missing objects shown 'requested', no stand-ins. Branch cards (state simlines.auto) are split into Simutrans lines by simlines.py, each sized on its own; cards 100-108 frozen (owner, 30 Oct). Regional companions (state regional, owner 30 Oct): through (0-min trip chains), pooled (vehicle records), interleaved (shared stretch, real gaps); their non-DPP buses map to VZ-PID-bus.",
    "rawSnapshots": [
     "game/2026-09-29",
     "gtfs/2026-09-29",
@@ -233,7 +238,8 @@
     "vypravenost/2026-09-24",
     "vypravenost/2026-09-25",
     "vypravenost/2026-09-29",
-    "vypravenost/history"
+    "vypravenost/history",
+    "game/2026-10-30-regional"
    ],
    "sync": "Rebuilt from stored raw data by pipeline/praha-bus in the working folder; republished to the same artifact URL; copied here by pnpm sync.",
    "kbNotes": [
@@ -265,6 +271,11 @@
      "at": "2026-10-30T17:10:00.000Z",
      "version": 11,
      "note": "110 Třeboradický hřbitov modelled (110A Čakovice + 110B circuit with the Třeboradice branch, 4 buses as before)"
+    },
+    {
+     "at": "2026-10-30T20:00:00.000Z",
+     "version": 12,
+     "note": "Regional companions: 301/352 and 396 as through lines, 329/312/364/366 pooled into their city cards, 333/318/363/325/376/378 interleaved with own cards; 174A Luka replaced by 301/352"
     }
    ]
   },

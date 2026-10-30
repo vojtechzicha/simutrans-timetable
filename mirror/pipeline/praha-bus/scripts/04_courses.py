@@ -74,11 +74,14 @@ def main():
     P = load(os.path.join(DER, s['name'], 'gtfs_lines.json'))['lines']
     OBJ = load(os.path.join(ASSETS, 'pak_objects.json'))['objects']
     livery = make_livery(V)
-    def pak(v):
+    def pak(v, pkg=None):
         liv, why = livery(v)
         t = v['maker_type']
-        tok = (v['operator'] == 'DPP' and PR.get('dpp_type_tokens', {}).get(t)) or PR['type_tokens'].get(t) or re.sub(r'[^A-Za-z0-9]+', '_', t.replace('’', '')).strip('_')
-        pkg = 'DPPraha' if v['operator'] == 'DPP' else 'Praha'
+        if pkg == 'PID':   # a regional companion's non-DPP car: the PID regional package's own tokens (fleet desk, 30 Oct 2026)
+            tok = PR.get('pid_type_tokens', {}).get(t) or re.sub(r'[^A-Za-z0-9]+', '_', t.replace('’', '')).strip('_')
+        else:
+            tok = (v['operator'] == 'DPP' and PR.get('dpp_type_tokens', {}).get(t)) or PR['type_tokens'].get(t) or re.sub(r'[^A-Za-z0-9]+', '_', t.replace('’', '')).strip('_')
+        pkg = pkg or ('DPPraha' if v['operator'] == 'DPP' else 'Praha')
         name = f'VZ-{pkg}-{tok}-{liv}-{PR["id_tokens"].get(tok, tok)}'
         art = name + '-A' in OBJ or (BT['length_m'].get(t) or 0) >= 17
         chain = [name + '-A', name + '-B'] if art else [name]
@@ -149,6 +152,20 @@ def main():
     def spare_car(L, e, state_):
         return dict(line=L, course='', chain=[dict(set=e['num'], cars=[car(e['num'], e['id'])], note='')], swap=False, split=False, am=[],
                     am_only=True, spare=state_, source='history', hist=e['dates'][:3])
+    regional = set(s.get('regional', {}).get('interleaved', {}))
+    def overview_recs(d, L):
+        """A regional companion's courses from the day overview (vypravenost/pid?datum=D): no per-line page was fetched for it."""
+        f = os.path.join(RAW, 'vypravenost', d, 'overview.html')
+        if not os.path.exists(f): return []
+        out_ = []
+        for sec in open(f, encoding='utf-8').read().split('<div class="route-data">')[1:]:
+            m = re.search(r'linka=[^"&]+">([^<]+)</a>', sec)
+            if not m or m.group(1).strip() != L: continue
+            for it in sec.split('<span class="item">')[1:]:
+                c = re.search(r'class="course">([^<]*)<', it)
+                vs = re.findall(r'class="context-box" href="https://seznam-autobusu.cz/vuz/(\d+)/vypravenost">([^<]+)</a>', it)
+                if vs: out_.append(dict(car='+'.join(n for _, n in vs), ids=[i for i, _ in vs], course=c.group(1) if c else '', note=''))
+        return out_
     out, logged = [], {}
     for L, p in P.items():
         if p['route_type'] != '3': continue
@@ -156,6 +173,7 @@ def main():
         for d in days:
             path = os.path.join(RAW, 'vypravenost', d, f'{L}.html')
             recs = parse_records(path) if os.path.exists(path) else []
+            if not recs and L in regional and d == vd: recs = overview_recs(d, L)
             if recs: per_day[d] = courses_of(recs)
         got = {}
         if per_day:
@@ -188,7 +206,8 @@ def main():
                 if x['type'] != '?': by_op[x['operator']][x['type']] += 1
     # lines sized from their Simutrans lines (gtfs_lines simlines, 28 Oct 2026) design last: their larger need must not take the
     # free cars other lines were already given (146's +1 had shifted the fleet picks of 208, 211 and 220)
-    for L, p in sorted(P.items(), key=lambda kv: bool(kv[1].get('simlines'))):
+    # the regional companions (owner, 30 Oct 2026) design after every city line, so they cannot take a city line's free cars
+    for L, p in sorted(P.items(), key=lambda kv: (kv[0] in regional, bool(kv[1].get('simlines')))):
         if p['route_type'] != '3' or not p.get('need'): continue
         got = logged.get(L, {})
         short = p['need'] - sum(1 for c in got.values() if not c['am_only'])
@@ -218,11 +237,13 @@ def main():
             op = next((o for o in (reg_op(x) for x in p['operators']) if o), None)
             types = [ty for ty, _ in tfreq.most_common()]           # the line's own types first, then the operator's
             types += [ty for ty, _ in by_op.get(op, collections.Counter()).most_common() if ty not in types]
+            if L in regional:      # a companion with no record at all (318): the operator's most common active type, numbered cars only
+                types += [ty for ty, _ in collections.Counter(v['maker_type'] for v in V.values() if v['operator'] == op and v['state'] == 'zar').most_common() if ty not in types]
             garages = collections.Counter(x['garage'] for c in got.values() for x in c['chain'][-1]['cars'] if x['garage'])
             garages.update(V[e['id']]['garage'] for e in R.values())
             rank = lambda cid: (types.index(V[cid]['maker_type']) if V[cid]['maker_type'] in types else len(types), -garages.get(V[cid]['garage'], 0), V[cid]['num'])
             pool = sorted((cid for cid, v in V.items() if v['operator'] == op and v['state'] == 'zar' and cid not in taken
-                           and BT['length_m'].get(v['maker_type'])), key=rank)   # any city-sized type last, if its usual types are all out
+                           and BT['length_m'].get(v['maker_type']) and (v['num'] or L not in regional)), key=rank)   # any city-sized type last, if its usual types are all out
             for i, cid in enumerate(pool[:short - n0]):
                 taken.add(cid); out.append(designed_car(L, n0 + i, dict(num=V[cid]['num'], id=cid), 'fleet', []))
         for e in free:
@@ -247,6 +268,13 @@ def main():
             if c not in keep: keep.append(c)
         for c in cs:
             if c not in keep: c['am_only'] = True; c['spare'] = 'surplus'
+    # the regional companions' non-DPP cars are in VZ-PID-bus, not VZ-Praha-bus (fleet desk, 30 Oct 2026: "VZ-Praha-bus is only for
+    # city lines (100-299, 900s) run by non-DPP operators")
+    for c in out:
+        if c['line'] in regional:
+            for ch in c['chain']:
+                for x in ch['cars']:
+                    if x['pak'] and x['operator'] != 'DPP': x['pak'] = pak(V[x['id']], 'PID')
     save(dict(courses=out, vehicle_date=vd, days=days), os.path.join(DER, s['name'], 'courses.json'))
     st = collections.Counter(c['pak']['status'] for x in out for c in x['chain'][-1]['cars'] if c['pak'])
     src = collections.Counter(x.get('spare') or ('designed ' + x['why'] if x['source'] == 'designed' else ('base day' if x['source'] == vd else 'other day')) for x in out)
