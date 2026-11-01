@@ -150,6 +150,10 @@ interleaved in the real timetiable". State `regional`:
   (`simlines.groups`), so the other cards keep their published grouping. `simlines.bus_by_record` ["111"]: a course logged "přejezd
   na linku 329" goes on the line that runs 329's rows first, so 111B carries 329's SOR BN 12s (owner: "I don't think NB 12s are so used
   on 329"). Schedule rows carry `via` (the companion their trips come from) for this.
+- 329 via Květnice (owner, 1 Nov 2026: "Is it the line going via Květnice or not. If not, is it okay not to have it modeled?" → "I agree
+  with the way you modeled it", note asked for): the :04 row out is the 15:04 and 16:04 trips via Květnice + Dobročovice (54 min;
+  13:49 via Květnice only, 17:49 direct); the :23 row back is direct (47 min), as every afternoon trip back is (Květnice back only
+  06:17, 06:52). No own branch: 3 trips out, none back in 13:00–19:00. Game line 100329 runs the detour both ways; 111B keeps 4 buses.
 - Cards 100–108 are byte-identical to v11 (owner: "Never change lines 100-108").
 
 ## Pak session hand-off

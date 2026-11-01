@@ -179,3 +179,7 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   Prague bus render counted only the liveries its own buses used, not the pak's objects, so a type whose sheet buses all share
   one livery hid it although the pak has two. The rule in `rules/pak-objects.md` was right; the code now counts both (v15:
   Neocity 8,5, SOR BN 9,5, SOR BN 12, Crossway LE Line 12M). Other city renders already read the installed pak objects.
+- **1 Nov:** "I see that 329 has only one branch. Is it the line going via Květnice or not." → the :04 row out was the Květnice +
+  Dobročovice trips and the :23 back the direct ones, but the card never said so. "yes, please do put the note there, so I know -
+  otherwise I agree with the way you modeled it". When a row's trips run a variant route, name it in the row's note, with the
+  running time used, and say where the game line differs.

@@ -291,6 +291,11 @@
      "at": "2026-11-01T18:32:00.000Z",
      "version": 15,
      "note": "Livery shown wherever the pak has more than one for the type (BMC Neocity 8,5, SOR BN 9,5, SOR BN 12, Crossway LE Line 12M); no schedule or bus changes"
+    },
+    {
+     "at": "2026-11-01T18:50:00.000Z",
+     "version": 16,
+     "note": "329 rows say the :04 out runs via Květnice + Dobročovice and the :23 back runs direct; game line 100329 takes the detour both ways (still 4 buses on 111B)"
     }
    ]
   },

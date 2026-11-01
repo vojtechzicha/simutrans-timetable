@@ -287,7 +287,7 @@
      "real": [
       4
      ],
-     "why": "329 to Škvorec on 111's buses, hourly at :04 (15:04, 16:04; 13:49 and 17:49 run off the hour)."
+     "why": "329 to Škvorec on 111's buses, hourly at :04 (15:04, 16:04; 13:49 and 17:49 run off the hour). Via Květnice: 15:04 and 16:04 run Sibřina,Na Paloučku – Květnice – Dobročovice – Květnice – Sluštice (54 min, the running time used here), 13:49 via Květnice without Dobročovice, 17:49 direct (45 min). Owner, 1 Nov 2026: modelled as it runs, no own Květnice branch (3 trips out, none back in 13:00–19:00)."
     },
     {
      "o": "Škvorec,nám.",
@@ -296,7 +296,7 @@
      "real": [
       23
      ],
-     "why": "329 back from Škvorec, hourly at :23 (15:23, 16:23; 14:08 and 17:38 run off the hour)."
+     "why": "329 back from Škvorec, hourly at :23 (15:23, 16:23; 14:08 and 17:38 run off the hour). Direct Sluštice – Sibřina – Koloděje (47 min): no afternoon trip back runs via Květnice (only 06:17 and 06:52). Game line 100329 runs the Květnice + Dobročovice detour back as well (about 58 min): the bus reaches Skalka at :21 instead of :10, still before its :34 to Koloděje, so 111B keeps 4 buses. Drop the detour on the way back to match the timetable."
     }
    ]
   },

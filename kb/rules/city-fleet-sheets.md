@@ -61,6 +61,9 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
 - Bus branches (Ostrava rule): ≥ 6 trips 15–18 h, a 16:xx departure, no garage end; regular afternoon branches (≥ 3 trips each way
   13:00–19:00) are modelled too (owner on 23 Záblatí, 20 Oct). That window applies to Prague too (owner on 110 Třeboradice,
   30 Oct): a check over 15:00–17:59 alone misses hourly afternoon branches.
+- **A row whose trips run a variant route says so in its note**: which stops, the running time used, the other trips of the
+  row's direction, and where the game line differs (owner, 1 Nov 2026, Prague 329 via Květnice: "please do put the note there, so
+  I know"). A variant that fails the branch rule stays in its row; the note is how the owner sees it.
 - **A branch that is its own Simutrans line gets its own rows** on the card, every time. "Own Simutrans line" without
   values is not done (owner, 28 Oct, Prague 109 VÚ Běchovice: "Is it reasonable?" → "do include - and also for the other
   lines"). Give each branch its Every / Offset / Also at, interleaved with the main rows, and say what the split costs:
