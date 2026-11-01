@@ -58,10 +58,21 @@ def main():
             for x in ch['cars']:
                 if x['pak']: livs[(x['operator'] == 'DPP', x['pak']['core'])].add(x['pak']['livery'])
 
+    # ... and the liveries the pak itself has for the core in the car's package (owner, 1 Nov 2026: "117 1916 BMC Neocity does
+    # not say which livery (PID new or PID old)": every Neocity on the sheet is grey-red, but the pak has a red-white-blue one too)
+    # Object names are <package>-<type token>-<livery>-<id>[-A|-B]; the token can differ from the shown core (SOR_BN_12 / BN_12).
+    OBJ_RE = re.compile(r'(VZ-[A-Za-z]+)-(.+)-([a-z]+)-[^-]+(?:-[AB])?$')
+    pak_livs = collections.defaultdict(set)
+    for name in OBJ['objects']:
+        m = OBJ_RE.match(name)
+        if m: pak_livs[(m[1], m[2])].add(m[3])
+
     def core_html(x):
         pk = x['pak']
         if not pk: return '<b class="bad">no object: vehicle not in the register</b>'
-        multi = len(livs[(x['operator'] == 'DPP', pk['core'])]) > 1 or pk['mapped']
+        m = OBJ_RE.match(pk['object'])
+        in_pak = pak_livs[(m[1], m[2])] if m else set()
+        multi = len(livs[(x['operator'] == 'DPP', pk['core'])] | in_pak) > 1 or pk['mapped']
         txt = f'<code>{esc(pk["core"])}</code>' + (f' {esc(LIV.get(pk["livery"], pk["livery"]))}' if multi else '')
         if pk['mapped']: txt += f' <span class="mp">({esc(pk["mapped"])} → normal livery)</span>'
         if pk['status'] != 'in pak': txt += '<span class="rq">requested</span>'

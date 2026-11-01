@@ -175,3 +175,7 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
 - **30 Oct:** "I see all 117 written as continues to 203 - isn't there something to consider?" → yes: 117's ten courses run 203
   too and 203 has no record, yet the sheet dimmed 7 of 117's buses and designed 4 for 203. Read the přejezd notes as data: the
   same fix found seven more pairs (195 → 158, 163 → 208, 227 → 226, 120 → 231, 162 → 169, 236 → 235, 245 → 248).
+- **1 Nov:** "117 1916 BMD Neocity does not say which livery (PID new or PID old)" / "same for ABbout me SOR BN 9.5" → the
+  Prague bus render counted only the liveries its own buses used, not the pak's objects, so a type whose sheet buses all share
+  one livery hid it although the pak has two. The rule in `rules/pak-objects.md` was right; the code now counts both (v15:
+  Neocity 8,5, SOR BN 9,5, SOR BN 12, Crossway LE Line 12M). Other city renders already read the installed pak objects.

@@ -80,7 +80,7 @@ seznam-autobusu.cz returns 403 to plain curl, so use `common.fetch` (full browse
   - Articulated buses are `-A` + `-B`.
   - Type tokens reuse the DPP ones for the same model (`assets/pak_requested.json`). The id differs only for the DPP SOR objects: NB_12, NB_18, BN_12.
   - A name missing from `pak_objects.json` is shown as "requested". Stand-ins from DPP or other cities are not used (user, 29 Sep).
-- **Vehicle cell:** number · garage (other operators: operator · garage) / full type · length / pak core. The livery is added where the type has more than one.
+- **Vehicle cell:** number · garage (other operators: operator · garage) / full type · length / pak core. The livery is added where the type has more than one: in the pak (its package and type token), or among the sheet's own buses (owner, 1 Nov 2026: "117 1916 BMD Neocity does not say which livery (PID new or PID old)"; the render had counted only the sheet's buses, all grey-red).
 
 ## Hand-set schedule rows (method check 25 Oct 2026)
 

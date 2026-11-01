@@ -286,6 +286,11 @@
      "at": "2026-10-30T21:40:00.000Z",
      "version": 14,
      "note": "Real buses from přejezd records replace designed ones: 117 → 203, 195 → 158, 163 → 208, 227 → 226, 120 → 231, 162 → 169, 236 → 235, 245 → 248"
+    },
+    {
+     "at": "2026-11-01T18:32:00.000Z",
+     "version": 15,
+     "note": "Livery shown wherever the pak has more than one for the type (BMC Neocity 8,5, SOR BN 9,5, SOR BN 12, Crossway LE Line 12M); no schedule or bus changes"
     }
    ]
   },
