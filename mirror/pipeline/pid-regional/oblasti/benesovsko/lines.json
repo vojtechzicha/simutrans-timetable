@@ -1,0 +1,2436 @@
+{
+ "lines": {
+  "426": {
+   "core": [
+    "Praha, Roztyly",
+    "Benešov, Terminál",
+    "Vlašim, Terminál",
+    "Vlašim, zbrojovka"
+   ],
+   "note": "Praha, Roztyly – Benešov, Terminál – Postupice – Chotýšany – Vlašim, Terminál. Every 15 minutes between Benešov and Vlašim (Benešov :10 / :25 / :40 / :55, Vlašim :05 / :20 / :35 / :50), one of the four an hour running through to Prague: Roztyly :00, Vlašim :50. Two Simutrans lines, one per destination: 426 (Prague) and 426 Benešov (the three short trips an hour). The Vlašim, zbrojovka trips (Benešov 13:10, 17:10 out; zbrojovka 14:32, 18:17 back) run in the short line's slots and are run to Vlašim, Terminál in the game (zbrojovka is on 453, 792, 794, 795, 841, 842, 843, 848, 849).",
+   "sim": [
+    {
+     "name": "426",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Roztyly",
+       "to": "Vlašim, Terminál",
+       "at": [
+        0
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Praha, Roztyly",
+       "at": [
+        50
+       ]
+      }
+     ],
+     "why": "Praha, Roztyly :00 → Vlašim, Terminál, Vlašim :50 → Roztyly, 70 min each way via Benešov, Terminál (Prague 40 min). At Roztyly the arriving bus leaves on the same minute (0-minute turn as in the timetable, 13 of 15)."
+    },
+    {
+     "name": "426 Benešov",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Vlašim, Terminál",
+       "at": [
+        10,
+        25,
+        55
+       ],
+       "notvia": [
+        "Praha, Roztyly"
+       ]
+      },
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Benešov, Terminál",
+       "at": [
+        5,
+        20,
+        35
+       ],
+       "notvia": [
+        "Praha, Roztyly"
+       ]
+      }
+     ],
+     "why": "Benešov, Terminál :10 / :25 / :55 → Vlašim, Vlašim :05 / :20 / :35 → Benešov, 30 min, via Postupice, Jemniště, rozcestí and Chotýšany, Křemení (stops only 426 serves). With 426 the game runs every 15 minutes between Benešov and Vlašim, as in reality."
+    }
+   ]
+  },
+  "406": {
+   "core": [
+    "Praha, Roztyly",
+    "Divišov, náměstí",
+    "Vlašim, Terminál",
+    "Pacov, autobusové nádraží"
+   ],
+   "note": "Praha, Roztyly – Ostředek – Divišov – Vlašim – Načeradec – Lukavec – Pacov. Roztyly :30 every hour, alternating: even hours to Pacov (12:30, 14:30, 16:30, 18:30), odd hours to Vlašim only (13:30, 15:30, 17:30); towards Prague Vlašim :20 every hour (odd hours start at Vlašim, even hours are the Pacov :23 trips). The buses alternate between the two ends at Roztyly with 0-minute turns (16 of 18), so 406 is one circuit with Roztyly in it twice (the Plzeň 4 rule): 4 buses, against 5 as two lines.",
+   "sim": [
+    {
+     "name": "406",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Praha, Roztyly",
+       "to": "Vlašim, Terminál",
+       "at": [
+        "15:30"
+       ],
+       "notvia": [
+        "Pacov, autobusové nádraží"
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Praha, Roztyly",
+       "at": [
+        "17:20"
+       ],
+       "notvia": [
+        "Pacov, autobusové nádraží"
+       ]
+      },
+      {
+       "fr": "Praha, Roztyly",
+       "to": "Pacov, autobusové nádraží",
+       "at": [
+        "16:30"
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Pacov, autobusové nádraží",
+       "to": "Praha, Roztyly",
+       "at": [
+        "15:23"
+       ]
+      }
+     ],
+     "why": "One circuit every 120: Roztyly 15:30 → Vlašim (70 min) → Vlašim 17:20 → Roztyly (70 min) → Roztyly 16:30 (18:30) → Pacov, autobusové nádraží (127 min) → Pacov 15:23 (17:23) → Roztyly (127 min). Every slot is a real departure; the buses leave Roztyly on arrival (0-minute turn as in the timetable)."
+    }
+   ]
+  },
+  "401": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Košetice",
+    "Loket, u dálnice",
+    "Praha, Roztyly"
+   ],
+   "note": "Pelhřimov – Červená Řečice – Košetice – Čechtice – Loket, u dálnice – Praha, Roztyly (Vysočina operator). Exactly hourly all day: Roztyly :30, Pelhřimov :35. The Pelhřimov 15:35 and 17:35 trips end at Loket, u dálnice; they are read there and run to Prague in the game. Pelhřimov, Červená Řečice and Čechtice, Malá Paseka have no other line.",
+   "sim": [
+    {
+     "name": "401",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Roztyly",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        30
+       ]
+      },
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Praha, Roztyly",
+       "at": [
+        35
+       ],
+       "core_to": "Loket, u dálnice"
+      }
+     ],
+     "why": "Roztyly :30 → Pelhřimov, autobusové nádraží (115 min), Pelhřimov :35 → Roztyly (110 min), one path via the D1 and Loket, u dálnice. Waits 5 min at Roztyly, 10 at Pelhřimov."
+    }
+   ]
+  },
+  "408": {
+   "core": [
+    "Tábor, autobusové nádraží",
+    "Sedlec-Prčice, náměstí",
+    "Votice, autobusové stanoviště",
+    "Benešov, Terminál",
+    "Praha, Roztyly"
+   ],
+   "note": "Tábor – Jistebnice – Sedlec-Prčice – Votice – Bystřice – Benešov – Praha, Roztyly (two licences merged). Out of Prague hourly at :30 (12:30–16:30, 18:30); towards Prague hourly at Votice :27 (13:27–16:27), from Tábor at no fixed minute (13:05, 13:45, 15:00 take three roads north of Tábor), so the way back is timed at the Votice knot and runs the Radkov road (Radkov, Radkov, Paseka and Balkova Lhota have no other line). Listed: Roztyly → Olbramovice 17:30, → Votice 19:30; Votice 17:12; Tábor → Benešov 17:05; the Tábor – Jistebnice / Nadějkov / Chyšky shorts.",
+   "sim": [
+    {
+     "name": "408",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Roztyly",
+       "to": "Tábor, autobusové nádraží",
+       "at": [
+        30
+       ]
+      },
+      {
+       "fr": "Tábor, autobusové nádraží",
+       "to": "Praha, Roztyly",
+       "knot": "Votice, autobusové stanoviště",
+       "knot_at": [
+        27
+       ],
+       "knot_rt": 102,
+       "stops_via": [
+        "Radkov"
+       ]
+      }
+     ],
+     "why": "Roztyly :30 → Tábor, autobusové nádraží (162 min) by Benešov, Bystřice, Votice, Sedlec-Prčice, Nadějkov, Jistebnice, Makov, Pazderna, Tisová and Černý Les; Tábor :45 → Roztyly (175 min) by Radkov, Radkov, Paseka, Balkova Lhota, Makov and Hůrka (the 13:45 trip's road), timed so the bus passes Votice at :27 (102 min from Tábor). 7 buses."
+    }
+   ]
+  },
+  "332": {
+   "core": [
+    "Praha, Budějovická",
+    "Jílové u Prahy, náměstí",
+    "Neveklov"
+   ],
+   "note": "Praha, Budějovická – Vestec – Psáry – Jílové u Prahy, náměstí every 15 minutes (Budějovická :12, Jílové :02), and the Neveklov branch Jílové – Kamenný Přívoz – Krhanice – Lešany – Netvořice – Neveklov: from Jílové hourly at :30 (15:30–18:30; 12:57 and 13:57 run through from Prague), back 13:09, 14:06, 15:01, 15:51, 16:46 (the last two through to Prague). Two Simutrans lines: the trunk (Neveklov trips kept out) and 332 Neveklov between Jílové and Neveklov; Krhanice, most and Neveklov, Dalešice have no other line.",
+   "sim": [
+    {
+     "name": "332",
+     "every": 15,
+     "legs": [
+      {
+       "fr": "Praha, Budějovická",
+       "to": "Jílové u Prahy, náměstí",
+       "at": [
+        12
+       ],
+       "notvia": [
+        "Neveklov"
+       ]
+      },
+      {
+       "fr": "Jílové u Prahy, náměstí",
+       "to": "Praha, Budějovická",
+       "at": [
+        2
+       ],
+       "notvia": [
+        "Neveklov"
+       ]
+      }
+     ],
+     "why": "Budějovická :12 → Jílové u Prahy, náměstí (42 min), Jílové :02 → Budějovická (41 min), every 15. The 16:47 slot out of Jílové is the Neveklov trip in reality (the other seven window slots are trunk trips)."
+    },
+    {
+     "name": "332 Neveklov",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Jílové u Prahy, náměstí",
+       "to": "Neveklov",
+       "at": [
+        "15:30",
+        "16:30"
+       ]
+      },
+      {
+       "fr": "Neveklov",
+       "to": "Jílové u Prahy, náměstí",
+       "at": [
+        "15:51",
+        "16:46"
+       ],
+       "stops_via": [
+        "Neveklov, Dalešice"
+       ]
+      }
+     ],
+     "why": "Every 120 with two slots each way: Jílové u Prahy, náměstí 15:30 and 16:30 → Neveklov (48 min, via Kamenný Přívoz, Krhanice, most and Lešany; the Jílové entry is every 60 at :30, so 17:30 and 18:30 are the pattern's own repeats), Neveklov 15:51 and 16:46 → Jílové (56 and 61 min; the line runs the Dalešice road as the 16:46 does), both exact. 3 buses."
+    }
+   ]
+  },
+  "337": {
+   "core": [
+    "Benešov, Terminál",
+    "Nespeky",
+    "Kamenice, kulturní dům",
+    "Praha, Budějovická"
+   ],
+   "anchor": "16:00",
+   "note": "Benešov, Terminál – Poříčí nad Sázavou – Nespeky – Kamenice – Jesenice – Praha, Budějovická. Hourly in the afternoon: Benešov :50 (14:50–17:50), Budějovická 15:35, 16:37, 17:35, 18:37: every 120 with two slots each way holds all of them on the minute. Model hour set by hand to 16:00: the busiest stretch, 13:00–15:00, is the Benešov – Nespeky short trips (all on 337's own path). Those shorts (Benešov 14:25, 15:29; Nespeky 15:02) are listed: every one runs through at Nespeky as 651 to Pyšely (4 of 4 arrivals, 6 of 6 departures), see 651.",
+   "sim": [
+    {
+     "name": "337",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Praha, Budějovická",
+       "at": [
+        "15:50",
+        "16:50"
+       ]
+      },
+      {
+       "fr": "Praha, Budějovická",
+       "to": "Benešov, Terminál",
+       "at": [
+        "15:35",
+        "16:37"
+       ]
+      }
+     ],
+     "why": "Benešov, Terminál 15:50 and 16:50 → Praha, Budějovická (84 min; the Benešov entry is every 60 at :50), Budějovická 15:35 and 16:37 → Benešov (72 min), via Mrač, Poříčí nad Sázavou, Nespeky, Řehenice, Kamenice and Sulice; all exact. 3 buses."
+    }
+   ]
+  },
+  "339": {
+   "core": [
+    "Praha, Budějovická",
+    "Sulice, Želivec",
+    "Kamenice, kulturní dům",
+    "Týnec nad Sázavou, železniční stanice"
+   ],
+   "note": "Praha, Budějovická – Jesenice – Sulice – Kamenice – Řehenice – Týnec nad Sázavou, železniční stanice. Týnec → Prague hourly at :40 (14:40–18:40); Prague → Týnec hourly at :20, every 30 (:20 / :50) 15:20–17:20. The first trips start at Týnec (3:53–6:44) and the last ones end there (20:10, 21:38, 0:19), so the line is timed both ways at its inbound rate (the outstation rule): the 15:50 and 16:50 from Prague are off the pattern; the Kamenice :41 shorts are their probable returns (live map to confirm). Listed: the Kamenice shorts (Prague 13:05, 14:35; Kamenice 14:41, 15:41, 16:41) and the Sulice, Želivec shorts (13:55, 16:16; 7 of 7 follow a 335 arrival there), all on 339's path.",
+   "sim": [
+    {
+     "name": "339",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Budějovická",
+       "to": "Týnec nad Sázavou, železniční stanice",
+       "at": [
+        20
+       ]
+      },
+      {
+       "fr": "Týnec nad Sázavou, železniční stanice",
+       "to": "Praha, Budějovická",
+       "at": [
+        40
+       ]
+      }
+     ],
+     "why": "Budějovická :20 → Týnec nad Sázavou, železniční stanice (57 min), Týnec :40 → Budějovická (69 min), via Kamenice, Řehenice, Dařbože and Zbořený Kostelec, hrad. 3 buses."
+    }
+   ]
+  },
+  "382": {
+   "core": [
+    "Praha, Háje",
+    "Stříbrná Skalice, náměstí",
+    "Sázava, autobusové stanoviště"
+   ],
+   "note": "Praha, Háje – Uhříněves – Říčany – Mukařov – Jevany – Stříbrná Skalice – Sázava, autobusové stanoviště. Sázava → Prague hourly at :30 (12:30–17:30); Prague → Sázava every 30 at :20 / :50 (14:20–17:20). The buses sleep at Sázava (4:25–7:23 the trips start there), so 382 is timed both ways at the inbound rate. Of the two Háje departures an hour it keeps the :50, which the :48 arrivals from Sázava turn into in 2 minutes (3 buses; the :20 would need 4); the :20 departures (14:20–18:20) are off the pattern, the buses going home. The Stříbrná Skalice morning shorts are listed.",
+   "sim": [
+    {
+     "name": "382",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Háje",
+       "to": "Sázava, autobusové stanoviště",
+       "at": [
+        50
+       ],
+       "lay": 2
+      },
+      {
+       "fr": "Sázava, autobusové stanoviště",
+       "to": "Praha, Háje",
+       "at": [
+        30
+       ]
+      }
+     ],
+     "why": "Praha, Háje :50 → Sázava, autobusové stanoviště (78 min), Sázava :30 → Háje (78 min); the :48 arrivals leave Háje again at :50 (the real 2-minute turn). 3 buses (waits 2 at Háje, 22 at Sázava)."
+    }
+   ]
+  },
+  "383": {
+   "core": [
+    "Praha, Háje",
+    "Mukařov [PH]",
+    "Ondřejov, náměstí",
+    "Chocerady"
+   ],
+   "anchor": "15:00",
+   "note": "Praha, Háje – Kolovraty – Říčany – Mukařov – Tehovec – Struhařov – Ondřejov – Chocerady. Hourly: Háje :40 and Chocerady :11 from 14:40 to 16:40 (the line's model hour set by hand to 15:00, where this pattern runs), :45 and :06 before 14:00 and from 17:00. Off the pattern 12–20 h: Háje 12:45, 13:45, 17:45, 18:45, 19:45; Chocerady 13:06, 17:06, 18:06, 19:21 (5 to 10 min off). The Ondřejov – Mukařov shorts (12:53, 13:36, 13:38) are listed.",
+   "sim": [
+    {
+     "name": "383",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Háje",
+       "to": "Chocerady",
+       "at": [
+        40
+       ]
+      },
+      {
+       "fr": "Chocerady",
+       "to": "Praha, Háje",
+       "at": [
+        11
+       ]
+      }
+     ],
+     "why": "Praha, Háje :40 → Chocerady (70 min), Chocerady :11 → Háje (71 min), via Ondřejov, Třemblat. 3 buses."
+    }
+   ]
+  },
+  "651": {
+   "core": [
+    "Pyšely, náměstí",
+    "Nespeky",
+    "Senohraby, železniční stanice",
+    "Hrusice"
+   ],
+   "note": "Nespeky – Pyšely – Senohraby – Hrusice (ARRIVA). One bus in a fixed sequence in the afternoon, plus the Benešov 337 bus that runs on at Nespeky to Pyšely and back (337 14:25 → Nespeky 14:44 → 651 to Pyšely 14:51 → 14:55 → Nespeky 15:02 → 337 to Benešov). Two Simutrans lines: 651 is the 14:33–16:33 round of the Pyšely bus (Hrusice and Senohraby, exact), 651 Nespeky the Pyšely – Nespeky trips (Pyšely, hotel Doly has no other line). The Senohraby stops (okres Praha-východ) have no other line.",
+   "sim": [
+    {
+     "name": "651",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pyšely, náměstí",
+       "to": "Hrusice",
+       "at": [
+        "14:33"
+       ]
+      },
+      {
+       "fr": "Hrusice",
+       "to": "Pyšely, náměstí",
+       "at": [
+        "15:00"
+       ]
+      },
+      {
+       "fr": "Pyšely, náměstí",
+       "to": "Senohraby, železniční stanice",
+       "at": [
+        "15:33"
+       ]
+      },
+      {
+       "fr": "Senohraby, železniční stanice",
+       "to": "Pyšely, náměstí",
+       "at": [
+        "16:07"
+       ]
+      }
+     ],
+     "why": "Circuit every 120 from Pyšely, náměstí: 14:33 → Hrusice (via Pyšely, Nová Ves, Pětihosty and Senohraby, 20 min), Hrusice 15:00 → Pyšely (20 min), Pyšely 15:33 → Senohraby, železniční stanice (via Zaječice, 12 min), Senohraby 16:07 → Pyšely (via Pětihosty and Nová Ves, 11 min); the real 16:34 is the next round. One bus."
+    },
+    {
+     "name": "651 Nespeky",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pyšely, náměstí",
+       "to": "Nespeky",
+       "at": [
+        "14:55"
+       ]
+      },
+      {
+       "fr": "Nespeky",
+       "to": "Pyšely, náměstí",
+       "at": [
+        "15:48"
+       ]
+      }
+     ],
+     "why": "Pyšely, náměstí 14:55 → Nespeky (via hotel Doly, 7 min), Nespeky 15:48 → Pyšely (8 min): the two trips of the 337 through bus. One bus."
+    }
+   ]
+  },
+  "488": {
+   "core": [
+    "Benešov, Terminál",
+    "Netvořice, pošta",
+    "Štěchovice"
+   ],
+   "note": "Benešov, Terminál – Václavice – Chrášťany – Netvořice – Krňany – Štěchovice. Afternoon out of Benešov 13:10, 14:50, 16:05, 16:50, 17:50; from Štěchovice 12:25, 14:15, 16:15, 17:15. In the model hour (16:00) two departures each way: every 120 with two slots each, exact (Benešov 14:50, 16:05, 16:50; Štěchovice 14:15, 16:15, 17:15). Off: Benešov 13:10, 17:50; Štěchovice 12:25. The Netvořice shorts (13:43, 13:50, 15:53, 19:10) and the evening Štěchovice – Netvořice trips run on 488's path and are listed.",
+   "sim": [
+    {
+     "name": "488",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Štěchovice",
+       "at": [
+        "16:05",
+        "16:50"
+       ]
+      },
+      {
+       "fr": "Štěchovice",
+       "to": "Benešov, Terminál",
+       "at": [
+        "16:15",
+        "17:15"
+       ]
+      }
+     ],
+     "why": "Benešov, Terminál 16:05 and 16:50 → Štěchovice (59 min), Štěchovice 16:15 and 17:15 → Benešov (58 min), via Netvořice, pošta and Krňany. 3 buses."
+    }
+   ]
+  },
+  "553": {
+   "core": [
+    "Benešov, Terminál",
+    "Popovice",
+    "Jankov, Odlochovice"
+   ],
+   "note": "Benešov, Terminál – Bystřice – Popovice – Jankov – Jankov, Odlochovice. Every 2 hours: Benešov :35 even hours (8:35–16:35), Odlochovice :30 odd hours (13:30, 15:30); the bus turns at Odlochovice in 2 minutes. Off: Benešov 19:15; Odlochovice 18:00.",
+   "sim": [
+    {
+     "name": "553",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Jankov, Odlochovice",
+       "at": [
+        "14:35"
+       ]
+      },
+      {
+       "fr": "Jankov, Odlochovice",
+       "to": "Benešov, Terminál",
+       "at": [
+        "15:30"
+       ],
+       "lay": 2
+      }
+     ],
+     "why": "Benešov 14:35 → Jankov, Odlochovice (51 min), Odlochovice 15:30 → Benešov (49 min, via Popovice); 2-minute turn at Odlochovice as in the timetable. One bus."
+    }
+   ]
+  },
+  "558": {
+   "core": [
+    "Votice, autobusové stanoviště",
+    "Bystřice, náměstí",
+    "Bystřice, železniční stanice",
+    "Benešov, Terminál"
+   ],
+   "note": "Votice – Olbramovice – Ouběnice – Bystřice (– Benešov). Votice :37 every 2 hours (12:37 to Benešov, 14:37 to Bystřice, 16:37 to Ouběnice, rozcestí Jiřín); back from Bystřice, železniční stanice :51 (13:51 from Benešov, 15:51). Modelled Votice – Bystřice: the Benešov end is on 408. The 16:37 ends at Ouběnice, rozcestí Jiřín and runs to Bystřice in the game.",
+   "sim": [
+    {
+     "name": "558",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Votice, autobusové stanoviště",
+       "to": "Bystřice, železniční stanice",
+       "at": [
+        "14:37"
+       ],
+       "core_to": "Bystřice, Ouběnice, rozcestí Jiřín"
+      },
+      {
+       "fr": "Bystřice, železniční stanice",
+       "to": "Votice, autobusové stanoviště",
+       "at": [
+        "15:51"
+       ]
+      }
+     ],
+     "why": "Votice, autobusové stanoviště 14:37 → Bystřice, železniční stanice (33 min, via Olbramovice, Tomice II, Ouběnice and Líšno), Bystřice 15:51 → Votice (31 min). One bus."
+    }
+   ]
+  },
+  "564": {
+   "core": [
+    "Benešov, Terminál",
+    "Votice, autobusové stanoviště"
+   ],
+   "note": "Benešov, Terminál – Bystřice – Drachkov – Vrchotovy Janovice – Olbramovice – Votice. Benešov :30 and Votice :35 all day, every 2 hours at midday (9:30, 11:30; 10:35, 12:35), hourly 13:30–14:35, then every 2 hours (16:30, 18:30). Modelled hourly at the line's anchor (14:00), which also puts the most trips on the minute over the day; the 15:30 and 17:30 slots have no trip in reality.",
+   "sim": [
+    {
+     "name": "564",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Votice, autobusové stanoviště",
+       "at": [
+        30
+       ]
+      },
+      {
+       "fr": "Votice, autobusové stanoviště",
+       "to": "Benešov, Terminál",
+       "at": [
+        35
+       ]
+      }
+     ],
+     "why": "Benešov :30 → Votice, autobusové stanoviště (52 min), Votice :35 → Benešov (52 min), one path via Bystřice, Nesvačily, Drachkov and Vrchotovy Janovice. 2 buses."
+    }
+   ]
+  },
+  "750": {
+   "core": [
+    "Benešov, Terminál",
+    "Louňovice pod Blaníkem",
+    "Kamberk"
+   ],
+   "note": "Benešov, Terminál – Postupice – Veliš – Louňovice pod Blaníkem – Kamberk. Benešov :35 (8:35–12:35, 15:35, 16:35, 18:35), to Louňovice or on to Kamberk; back at Louňovice :40 (9:40, 11:40, 13:40 from Kamberk, 15:40). Every 120, the even-hour :35 out of Benešov and the odd-hour :40 at Louňovice, with every trip run to Kamberk in the game (Kamberk, Předbořice and Louňovice, škola have no other line). Off: Benešov 14:05, 15:35; Louňovice 12:40, 17:55; Kamberk 16:27 → Louňovice.",
+   "sim": [
+    {
+     "name": "750",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Kamberk",
+       "at": [
+        "16:35"
+       ],
+       "core_to": "Louňovice pod Blaníkem"
+      },
+      {
+       "fr": "Kamberk",
+       "to": "Benešov, Terminál",
+       "knot": "Louňovice pod Blaníkem",
+       "knot_at": [
+        "15:40"
+       ]
+      }
+     ],
+     "why": "Benešov 16:35 → Kamberk (48 min, read at Louňovice: the real 16:35 ends there), Kamberk 15:32 → Benešov (48 min), timed so the bus passes Louňovice pod Blaníkem at 15:40 (real 15:40 start there, 13:40 from Kamberk). One bus."
+    }
+   ]
+  },
+  "752": {
+   "core": [
+    "Benešov, Terminál",
+    "Týnec nad Sázavou, železniční stanice",
+    "Krhanice",
+    "Jílové u Prahy, náměstí"
+   ],
+   "note": "Benešov, Terminál – Týnec nad Sázavou – Krhanice – Kamenný Přívoz – Jílové u Prahy, náměstí, with Benešov – Týnec shorts. To Jílové hourly: Benešov :00 (14:00–17:00), Jílové :10 (14:10–16:10). Shorts: Benešov 13:35, 14:25, 15:30, 17:35; Týnec 14:13, 15:25, 16:05, 18:05. Two lines: 752 (Jílové) and 752 Týnec, each with its own road (752 via Úročnice and Krusičany, the shorts via Bukovany and Chlístov, Racek, osada, stops only 752 serves). Off: Benešov 13:05, 18:05; Jílové 12:50, 17:05, 18:04.",
+   "sim": [
+    {
+     "name": "752",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Jílové u Prahy, náměstí",
+       "at": [
+        0
+       ]
+      },
+      {
+       "fr": "Jílové u Prahy, náměstí",
+       "to": "Benešov, Terminál",
+       "at": [
+        10
+       ]
+      }
+     ],
+     "why": "Benešov :00 → Jílové u Prahy, náměstí (52 min, via Úročnice, Krusičany, Týnec and Krhanice), Jílové :10 → Benešov (55 min). 3 buses."
+    },
+    {
+     "name": "752 Týnec",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Týnec nad Sázavou, železniční stanice",
+       "at": [
+        "14:25",
+        "15:30"
+       ],
+       "notvia": [
+        "Jílové u Prahy, náměstí",
+        "Krhanice"
+       ],
+       "stops_via": [
+        "Chlístov, Racek, osada"
+       ]
+      },
+      {
+       "fr": "Týnec nad Sázavou, železniční stanice",
+       "to": "Benešov, Terminál",
+       "at": [
+        "15:25",
+        "16:05"
+       ],
+       "notvia": [
+        "Jílové u Prahy, náměstí",
+        "Krhanice"
+       ],
+       "stops_via": [
+        "Bukovany [BN]"
+       ]
+      }
+     ],
+     "why": "Benešov 14:25 and 15:30 → Týnec nad Sázavou, železniční stanice (23 min, via Bukovany and Chlístov, Racek, osada as the 14:25 runs), Týnec 15:25 and 16:05 → Benešov (20 min, via Bukovany). 2 buses."
+    }
+   ]
+  },
+  "753": {
+   "core": [
+    "Benešov, Terminál",
+    "Týnec nad Sázavou, železniční stanice",
+    "Netvořice",
+    "Neveklov"
+   ],
+   "note": "Benešov – Týnec nad Sázavou – Lešany – Kamenný Přívoz – Netvořice – Neveklov, a school line of single trips. The one afternoon round Benešov – Neveklov is 14:30 → 15:51 and Neveklov 15:57 → Benešov 17:20: every 240, one bus. It is the only service of Brodce, Zbořený Kostelec, Pecerady, Lešany, Brejlov, Kamenný Přívoz, Hostěradice and Neveklov, Ouštice. Listed: Benešov → Týnec 13:35, → Netvořice 16:35, 18:35; Týnec → Neveklov 13:30, → Benešov 14:30, 15:35; Neveklov → Týnec 14:37; Netvořice → Týnec 17:44.",
+   "sim": [
+    {
+     "name": "753",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Neveklov",
+       "at": [
+        "14:30"
+       ]
+      },
+      {
+       "fr": "Neveklov",
+       "to": "Benešov, Terminál",
+       "at": [
+        "15:57"
+       ]
+      }
+     ],
+     "why": "Benešov 14:30 → Neveklov (81 min, via Bukovany, rozcestí, Brodce, Zbořený Kostelec, Týnec, Lešany, Kamenný Přívoz, Hostěradice and Netvořice), Neveklov 15:57 → Benešov (83 min, via Netvořice, Lešany, Týnec, Pecerady). One bus."
+    }
+   ]
+  },
+  "755": {
+   "core": [
+    "Benešov, Terminál",
+    "Neveklov",
+    "Neveklov, Jablonná",
+    "Rabyně, Měřín",
+    "Rabyně, Měřín, zotavovna"
+   ],
+   "note": "Benešov, Terminál – Václavice, Vatěkov – Neveklov – Stranný – Blažim – Jablonná – Rabyně, Měřín. Benešov – Neveklov trips 13:50, 15:20, 16:20, 18:05, 18:50 out, 12:45, 15:15, 18:30 back; through to Měřín 15:05 and 17:00 (to the zotavovna) out, Měřín 13:45 and 16:02 back. The buses sleep at Neveklov and Jablonná, so the afternoon sends more out of Benešov than come back (outstation): two lines at the inbound rate, 755 (Neveklov) and 755 Měřín, together Benešov 15:05 / 16:20 and Neveklov 15:15 / 16:33 every 2 hours. Off: Benešov 13:50, 15:20, 15:50 (to Jablonná), 18:05, 18:50; Neveklov 12:45, 18:30.",
+   "sim": [
+    {
+     "name": "755",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Neveklov",
+       "at": [
+        "16:20"
+       ],
+       "notvia": [
+        "Rabyně, Měřín"
+       ]
+      },
+      {
+       "fr": "Neveklov",
+       "to": "Benešov, Terminál",
+       "at": [
+        "15:15"
+       ],
+       "notvia": [
+        "Rabyně, Měřín"
+       ]
+      }
+     ],
+     "why": "Benešov 16:20 → Neveklov (20 min, via Vatěkov and Přibyšice), Neveklov 15:15 → Benešov (24 min). One bus."
+    },
+    {
+     "name": "755 Měřín",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Rabyně, Měřín, zotavovna",
+       "at": [
+        "15:05"
+       ],
+       "core_to": "Rabyně, Měřín"
+      },
+      {
+       "fr": "Rabyně, Měřín, zotavovna",
+       "to": "Benešov, Terminál",
+       "knot": "Rabyně, Měřín",
+       "knot_at": [
+        "16:05"
+       ],
+       "knot_rt": 4,
+       "lay": 1
+      }
+     ],
+     "why": "Benešov 15:05 → Rabyně, Měřín, zotavovna (55 min: Neveklov, Stranný, Blažim, Nebřich, Kelce, Jablonná, Měřín, as the 17:00 runs), zotavovna 16:01 → Benešov (56 min), passing Rabyně, Měřín at 16:05 for the real 16:02 (3 min late: the real bus turns at Měřín, the game bus first runs the 4 minutes to the zotavovna, the only stop of this line no other line serves). One bus."
+    }
+   ]
+  },
+  "756": {
+   "core": [
+    "Neveklov",
+    "Křečovice",
+    "Křečovice, Nahoruby",
+    "Křečovice, Nová Živohošť"
+   ],
+   "note": "Neveklov – Maršovice, Vráce – Křečovice – Nahoruby – Nová Živohošť, a school line of single trips. Its one afternoon round is Neveklov 14:12 → Nová Živohošť 14:47 (via Křečovice and Nahoruby) and Nová Živohošť 14:58 → Neveklov 15:15 (via Lhotka, u Švarců and Stranný): every 240, one bus, the only service of Křečovice, Nahoruby (3 stops), Dráha, Lhotka, u Švarců, Nová Živohošť, Vráce and Řehovice, rozcestí. Listed: 15:35 Neveklov → Strážovice and the Křečovice – Nahoruby / Nová Živohošť shuttles.",
+   "sim": [
+    {
+     "name": "756",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Neveklov",
+       "to": "Křečovice, Nová Živohošť",
+       "at": [
+        "14:12"
+       ]
+      },
+      {
+       "fr": "Křečovice, Nová Živohošť",
+       "to": "Neveklov",
+       "at": [
+        "14:58"
+       ]
+      }
+     ],
+     "why": "Neveklov 14:12 → Křečovice, Nová Živohošť (35 min, via Vráce, Hořetice, Strážovice, Dráha, Křečovice and Nahoruby), Nová Živohošť 14:58 → Neveklov (17 min, via Nahoruby, Mlačina and Lhotka, u Švarců). The slots stand for these two real trips. One bus."
+    }
+   ]
+  },
+  "757": {
+   "core": [
+    "Benešov, Terminál",
+    "Bystřice, železniční stanice"
+   ],
+   "anchor": "13:40",
+   "note": "Benešov – Konopiště – Bystřice, a sparse line: Benešov 9:20, 11:00, 13:20 and 16:20 (to Tvoršovice) out, Bystřice 10:12, 12:35, 15:20 back, and one Votice – Maršovice – Benešov trip each way (6:50, 16:10). Every 240 at the real 13:20 out / 15:20 back, one bus. Model hour set by hand to 13:40: the line's only afternoon round starts at 13:20, and the 16:00 window holds only the 16:20 short to Tvoršovice, which is off the pattern. It is the only service of Benešov, Ke Stadionu, Benica, Konopiště (Šiberna, sv. Anna, sádky) and Bystřice, Jarkovice.",
+   "sim": [
+    {
+     "name": "757",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Bystřice, železniční stanice",
+       "at": [
+        "13:20"
+       ]
+      },
+      {
+       "fr": "Bystřice, železniční stanice",
+       "to": "Benešov, Terminál",
+       "at": [
+        "15:20"
+       ]
+      }
+     ],
+     "why": "Benešov 13:20 → Bystřice, železniční stanice (28 min, via Konopiště, Jarkovice, Tvoršovice and Nesvačily), Bystřice 15:20 → Benešov (26 min): the slots stand for these real trips. One bus."
+    }
+   ]
+  },
+  "758": {
+   "core": [
+    "Benešov, Terminál",
+    "Postupice, Pozov",
+    "Popovice",
+    "Postupice, škola"
+   ],
+   "note": "Benešov – Struhařov – Postupice, Pozov – Popovice – Postupice, škola, a school line: Benešov 11:50, 14:50, 17:40 out, Postupice 13:12, 15:32 back. Every 180, the interval its Benešov trips have (11:50 and 14:50 exact, 17:50 for the 17:40), with Postupice 15:32 (2-minute turn at Postupice, škola; 13:12 off), one bus; the only service of Popovice, Mladovice (3 stops) and the Postupice villages Chudláz, Jezviny, Kopaniny, Miroslav, Nová Ves, Podlesí and Pozov.",
+   "sim": [
+    {
+     "name": "758",
+     "every": 180,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Postupice, škola",
+       "at": [
+        "14:50"
+       ]
+      },
+      {
+       "fr": "Postupice, škola",
+       "to": "Benešov, Terminál",
+       "at": [
+        "15:32"
+       ],
+       "lay": 2
+      }
+     ],
+     "why": "Benešov 14:50 → Postupice, škola (40 min, via Černý les, Struhařov, Pozov, Kopaniny, Nová Ves and Popovice), Postupice 15:32 → Benešov (38 min): every 180, so the Benešov slot also stands for 11:50 and, 10 min late, 17:40. One bus."
+    }
+   ]
+  },
+  "759": {
+   "core": [
+    "Benešov, Terminál",
+    "Maršovice",
+    "Křečovice, Strážovice",
+    "Neveklov"
+   ],
+   "anchor": "15:00",
+   "note": "Benešov – Bystřice – Maršovice – Neveklov, plus Neveklov – Křečovice, Strážovice shorts. Benešov :04 hourly 14:04–16:04 (then 17:39), Neveklov 13:57, 14:57, 16:02; model hour set by hand to 15:00 (the 16:00 window holds one trip each way), every 120 with two slots each way, exact. The way back runs the 14:57 road via Jírovice, Kukačka, Tvoršovice and Zderadice (stops only 759 serves); the 16:02 really runs via Bystřice town (on 408, 558, 564). 759 Strážovice is the only service of Strnadice, Šebáňovice, rozcestí, Sedlečko, rozcestí and Hodětice.",
+   "sim": [
+    {
+     "name": "759",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Neveklov",
+       "at": [
+        "15:04",
+        "16:04"
+       ]
+      },
+      {
+       "fr": "Neveklov",
+       "to": "Benešov, Terminál",
+       "at": [
+        "14:57",
+        "16:02"
+       ],
+       "stops_via": [
+        "Bystřice, Jírovice"
+       ]
+      }
+     ],
+     "why": "Benešov :04 → Neveklov (38 min, via Bystřice, Nesvačily, Mlýny, Dlouhá Lhota, Libeč, Maršovice, Mstětice, Záhoří), Neveklov 14:57 and 16:02 → Benešov (43 min via Zderadice, Jírovice, Kukačka and Tvoršovice as the 14:57 runs). 2 buses."
+    },
+    {
+     "name": "759 Strážovice",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Neveklov",
+       "to": "Křečovice, Strážovice",
+       "at": [
+        "12:47"
+       ]
+      },
+      {
+       "fr": "Křečovice, Strážovice",
+       "to": "Neveklov",
+       "at": [
+        "13:21"
+       ]
+      }
+     ],
+     "why": "Neveklov 12:47 → Křečovice, Strážovice (23 min, via Zderadice, Maršovice, Strnadice, Šebáňovice, rozcestí, Sedlečko, rozcestí, Hodětice and Hořetice), Strážovice 13:21 → Neveklov (23 min): the real midday round, every 240. One bus."
+    }
+   ]
+  },
+  "791": {
+   "core": [
+    "Benešov, Terminál",
+    "Český Šternberk",
+    "Český Šternberk, Čejkovice",
+    "Uhlířské Janovice, náměstí"
+   ],
+   "note": "Benešov – Struhařov – Třebešice – Divišov – Český Šternberk – Uhlířské Janovice. Benešov :45 every hour, alternating: odd hours to Uhlířské Janovice (13:48, 15:45, 17:45), even hours to Český Šternberk, Čejkovice (12:45, 14:45, 16:45); back from Uhlířské Janovice :07 odd hours (13:07–19:07) and from Čejkovice :33 even hours (14:33, 16:33). One Simutrans line per end, each every 120 and exact. Pooling option (not applied): the buses alternate between the two ends at Benešov, which as one circuit would need 3 buses instead of 4.",
+   "sim": [
+    {
+     "name": "791",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Uhlířské Janovice, náměstí",
+       "at": [
+        "15:45"
+       ]
+      },
+      {
+       "fr": "Uhlířské Janovice, náměstí",
+       "to": "Benešov, Terminál",
+       "at": [
+        "15:07"
+       ]
+      }
+     ],
+     "why": "Benešov :45 odd hours → Uhlířské Janovice, náměstí (67 min, via Divišov, Český Šternberk and Zbizuby), Uhlířské Janovice :07 odd hours → Benešov (67 min). 2 buses."
+    },
+    {
+     "name": "791 Čejkovice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Český Šternberk, Čejkovice",
+       "at": [
+        "14:45"
+       ]
+      },
+      {
+       "fr": "Český Šternberk, Čejkovice",
+       "to": "Benešov, Terminál",
+       "at": [
+        "14:33"
+       ]
+      }
+     ],
+     "why": "Benešov :45 even hours → Český Šternberk, Čejkovice (42 min), Čejkovice :33 even hours → Benešov (40 min). 2 buses (the bus waits 66 min at Čejkovice, as in the timetable)."
+    }
+   ]
+  },
+  "796": {
+   "core": [
+    "Benešov, Terminál",
+    "Pyšely, náměstí"
+   ],
+   "note": "Benešov, Terminál – Soběhrdy – Přestavlky – Vranov – Čerčany – Pyšely, náměstí. Hourly: Benešov :35 (14:35–17:35; :40 before), Pyšely :56 (15:56–18:56; :11 before 15:00). Off: Benešov 12:40, 13:40; Pyšely 12:11, 13:11, 14:11, 15:21.",
+   "sim": [
+    {
+     "name": "796",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Pyšely, náměstí",
+       "at": [
+        35
+       ]
+      },
+      {
+       "fr": "Pyšely, náměstí",
+       "to": "Benešov, Terminál",
+       "at": [
+        56
+       ]
+      }
+     ],
+     "why": "Benešov :35 → Pyšely, náměstí (46 min), Pyšely :56 → Benešov (48 min), one path. 3 buses."
+    }
+   ]
+  },
+  "798": {
+   "core": [
+    "Benešov, Terminál",
+    "Teplýšovice, Kochánov",
+    "Ostředek",
+    "Sázava, autobusové stanoviště"
+   ],
+   "note": "Benešov – Struhařov – Teplýšovice – Čakov – Ostředek – Xaverov – Sázava. Every 2 hours: Benešov :18 even hours (exact 8:18–18:18), Sázava :31 (15:31, 17:31, 19:31; also 14:31). Off: Sázava 12:37, 14:31; the Sázava – Ostředek shuttle 13:31 / 14:00 is on 798's path.",
+   "sim": [
+    {
+     "name": "798",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Sázava, autobusové stanoviště",
+       "at": [
+        "16:18"
+       ]
+      },
+      {
+       "fr": "Sázava, autobusové stanoviště",
+       "to": "Benešov, Terminál",
+       "at": [
+        "15:31"
+       ]
+      }
+     ],
+     "why": "Benešov 16:18 → Sázava, autobusové stanoviště (69 min), Sázava 15:31 → Benešov (69 min). 2 buses."
+    }
+   ]
+  },
+  "799": {
+   "core": [
+    "Benešov, Terminál",
+    "Chotýšany",
+    "Bílkovice, u kapličky",
+    "Vlašim, Terminál"
+   ],
+   "anchor": "14:00",
+   "note": "Vlašim – Chotýšany – Struhařov – Benešov. Hourly 12:49–14:50 (Benešov :49, Vlašim :50, via Bílkovice, u kapličky), then Benešov 16:29, 17:59 and Vlašim 16:20 only. Model hour set by hand to 14:00, where the line's pattern runs (the 16:00 window holds one trip each way, both 20 min off any hourly slot). Off: Benešov 16:29, 17:59; Vlašim 16:20.",
+   "sim": [
+    {
+     "name": "799",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Vlašim, Terminál",
+       "at": [
+        49
+       ]
+      },
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Benešov, Terminál",
+       "at": [
+        50
+       ]
+      }
+     ],
+     "why": "Benešov :49 → Vlašim, Terminál (46 min, via Struhařov, Pecínov, Budkov, Bořeňovice, Býkovice and Chotýšany), Vlašim :50 → Benešov (52 min, via Bílkovice, u kapličky). Leaves Vlašim with 426 at :50, as at 13:50 and 14:50 in reality. 2 buses."
+    }
+   ]
+  },
+  "789": {
+   "core": [
+    "Vlašim, Terminál",
+    "Psáře",
+    "Divišov, náměstí"
+   ],
+   "note": "Vlašim – Kladruby – Tehov – Psáře – Divišov. Every 2 hours: Vlašim :08 even hours (14:08, 16:08, 18:08), Divišov :25 odd hours (11:25–17:25). Exact on every afternoon trip.",
+   "sim": [
+    {
+     "name": "789",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Divišov, náměstí",
+       "at": [
+        "16:08"
+       ]
+      },
+      {
+       "fr": "Divišov, náměstí",
+       "to": "Vlašim, Terminál",
+       "at": [
+        "15:25"
+       ]
+      }
+     ],
+     "why": "Vlašim 16:08 → Divišov, náměstí (58 min, via Psáře and Drahňovice), Divišov 15:25 → Vlašim (57 min). 2 buses."
+    }
+   ]
+  },
+  "790": {
+   "core": [
+    "Vlašim, Terminál",
+    "Divišov, náměstí"
+   ],
+   "anchor": "15:00",
+   "note": "Vlašim – Libež – Všechlapy – Divišov. Hourly: Vlašim :06 (13:06–16:06, 18:06), Divišov :20 (13:20–17:20). Model hour set by hand to 15:00: the 16:00 window holds the missing 17:06 (the 305 rule). Its buses arrive at Vlašim at :50, the minute 426 leaves for Prague (8 of 8: the Vlašim connection, not a through bus).",
+   "sim": [
+    {
+     "name": "790",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Divišov, náměstí",
+       "at": [
+        6
+       ]
+      },
+      {
+       "fr": "Divišov, náměstí",
+       "to": "Vlašim, Terminál",
+       "at": [
+        20
+       ]
+      }
+     ],
+     "why": "Vlašim :06 → Divišov, náměstí (29 min), Divišov :20 → Vlašim (30 min). 2 buses."
+    }
+   ]
+  },
+  "792": {
+   "core": [
+    "Vlašim, Terminál",
+    "Zdislavice",
+    "Rataje, dolní"
+   ],
+   "note": "Vlašim – Vracovice – Zdislavice – Rataje. Every 2 hours: Vlašim :45 even hours (14:45 from ZŠ Vorlina, 16:45, 18:45), Rataje :12 odd hours (13:12–17:12), with a 5-minute turn at Rataje. Exact all afternoon.",
+   "sim": [
+    {
+     "name": "792",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Rataje, dolní",
+       "at": [
+        "16:45"
+       ]
+      },
+      {
+       "fr": "Rataje, dolní",
+       "to": "Vlašim, Terminál",
+       "at": [
+        "15:12"
+       ]
+      }
+     ],
+     "why": "Vlašim 16:45 → Rataje, dolní (22 min), Rataje 15:12 → Vlašim (23 min). One bus."
+    }
+   ]
+  },
+  "794": {
+   "core": [
+    "Vlašim, Terminál",
+    "Trhový Štěpánov, náměstí",
+    "Kácov, náměstí"
+   ],
+   "note": "Vlašim – Zdislavice – Javorník – Trhový Štěpánov – Tichonice – Kácov. Vlašim :45 even hours to Kácov (12:45, 14:45, 16:45); back from Kácov 12:44, 14:44, 15:52, 17:42 (no fixed minute). Every 120 at Vlašim :45 and Kácov 15:52; the Kácov 15:52 bus leaves Vlašim again at 16:45 on arrival (0-minute turn, 4 of 7). Off: Kácov 12:44, 14:44, 17:42; Vlašim 15:45 → Zdislavice and 18:15 → Trhový Štěpánov.",
+   "sim": [
+    {
+     "name": "794",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Kácov, náměstí",
+       "at": [
+        "16:45"
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Kácov, náměstí",
+       "to": "Vlašim, Terminál",
+       "at": [
+        "15:52"
+       ]
+      }
+     ],
+     "why": "Vlašim 16:45 → Kácov, náměstí (51 min, via Javorník, Trhový Štěpánov and Tichonice), Kácov 15:52 → Vlašim (53 min); the bus leaves Vlašim on arrival (0-minute turn as in the timetable). One bus."
+    }
+   ]
+  },
+  "795": {
+   "core": [
+    "Vlašim, Terminál",
+    "Trhový Štěpánov, náměstí",
+    "Zruč nad Sázavou, Sázavan"
+   ],
+   "anchor": "17:00",
+   "note": "Vlašim – Kladruby – Trhový Štěpánov – Soutice – Hulice – Zruč nad Sázavou. Hourly from 16:00: Vlašim :00 (16:00–18:00, 19:00 to Trhový Štěpánov), Zruč :35 (16:35–18:35); before that no fixed minute (Vlašim 13:10, 14:45; Zruč 12:40, 15:10). Model hour set by hand to 17:00, where the hourly pattern runs. The Trhový Štěpánov shorts (12:10, 12:34, 14:10, 14:39) are on 795's path.",
+   "sim": [
+    {
+     "name": "795",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Zruč nad Sázavou, Sázavan",
+       "at": [
+        0
+       ],
+       "core_to": "Trhový Štěpánov, náměstí"
+      },
+      {
+       "fr": "Zruč nad Sázavou, Sázavan",
+       "to": "Vlašim, Terminál",
+       "at": [
+        35
+       ]
+      }
+     ],
+     "why": "Vlašim :00 → Zruč nad Sázavou, Sázavan (55 min), Zruč :35 → Vlašim (55 min). 3 buses."
+    }
+   ]
+  },
+  "840": {
+   "core": [
+    "Vlašim, Terminál",
+    "Vlašim, Nesperská Lhota"
+   ],
+   "note": "Vlašim town line to Nesperská Lhota. Vlašim 12:45, 14:50, 16:50 and Nesperská Lhota 12:55, 15:00, 17:00, each bus turning at Nesperská Lhota on arrival. Every 120, one bus: the only service of Nesperská Lhota, Polánka, Znosim and vodárna.",
+   "sim": [
+    {
+     "name": "840",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Vlašim, Nesperská Lhota",
+       "at": [
+        "16:50"
+       ]
+      },
+      {
+       "fr": "Vlašim, Nesperská Lhota",
+       "to": "Vlašim, Terminál",
+       "at": [
+        "17:00"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Vlašim, Terminál 16:50 → Vlašim, Nesperská Lhota (10 min), Nesperská Lhota 17:00 → Terminál (10 min); 0-minute turn at Nesperská Lhota as in the timetable. One bus."
+    }
+   ]
+  },
+  "841": {
+   "core": [
+    "Vlašim, Terminál",
+    "Vlašim, Domašín, náměstí",
+    "Vlašim, Hrazená Lhota"
+   ],
+   "note": "Vlašim town line: Terminál – Sukova loop – Terminál – Městský úřad – sídliště – Domašín – Hrazená Lhota. Hourly: Terminál :51 (12:51–14:51, 16:51), Hrazená Lhota :23 (13:23–15:23, 17:23), each bus turning at Hrazená Lhota on arrival. Modelled at its anchor (14:20). Listed: the Domašín shorts 14:18 / 14:59.",
+   "sim": [
+    {
+     "name": "841",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Vlašim, Hrazená Lhota",
+       "at": [
+        51
+       ]
+      },
+      {
+       "fr": "Vlašim, Hrazená Lhota",
+       "to": "Vlašim, Terminál",
+       "at": [
+        23
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Vlašim, Terminál :51 → Hrazená Lhota (32 min, round the Sukova loop and back through Terminál), Hrazená Lhota :23 → Terminál (21 min); 0-minute turn at Hrazená Lhota as in the timetable. One bus."
+    }
+   ]
+  },
+  "842": {
+   "core": [
+    "Vlašim, Terminál",
+    "Čechtice",
+    "Dolní Kralovice"
+   ],
+   "note": "Vlašim – Borovnice – Čechtice – Křivsoudov – Studený – Dolní Kralovice, with Vlašim – Čechtice shorts. To Dolní Kralovice every 2 hours: Vlašim :15 odd hours (13:15–17:15), Dolní Kralovice :01 odd hours (17:01, 19:01; 12:57 and 14:57 four minutes off). Shorts: Vlašim 14:20, 15:30, 16:20, 18:40; Čechtice 14:22, 16:22. One line per destination; the shorts' line is the real turn of the 15:30 bus (Čechtice 15:48, back 16:22); Vlašim 14:20, 16:20 and 18:40 are off the pattern.",
+   "sim": [
+    {
+     "name": "842",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Dolní Kralovice",
+       "at": [
+        "17:15"
+       ]
+      },
+      {
+       "fr": "Dolní Kralovice",
+       "to": "Vlašim, Terminál",
+       "at": [
+        "17:01"
+       ]
+      }
+     ],
+     "why": "Vlašim 17:15 → Dolní Kralovice (48 min, via Borovnice, Otročice, Čechtice, zámek, Křivsoudov and Studený), Dolní Kralovice 17:01 → Vlašim (46 min). 2 buses."
+    },
+    {
+     "name": "842 Čechtice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Čechtice",
+       "at": [
+        "15:30"
+       ],
+       "notvia": [
+        "Dolní Kralovice"
+       ]
+      },
+      {
+       "fr": "Čechtice",
+       "to": "Vlašim, Terminál",
+       "at": [
+        "16:22"
+       ],
+       "notvia": [
+        "Dolní Kralovice"
+       ]
+      }
+     ],
+     "why": "Vlašim 15:30 → Čechtice (18 min), Čechtice 16:22 → Vlašim (18 min): the real 34-minute turn at Čechtice. One bus."
+    }
+   ]
+  },
+  "843": {
+   "core": [
+    "Vlašim, Terminál",
+    "Mnichovice",
+    "Čechtice"
+   ],
+   "note": "Vlašim – Kuňovice – Mnichovice – Strojetice – Křivsoudov – Čechtice, a sparse line: Vlašim 6:15, 10:15, 12:15, 14:45, 18:15; Čechtice 5:03, 6:57, 8:13, 13:12 (from škola), 15:48 (to Mnichovice), 17:13. Bent onto every 240 at its afternoon round, Vlašim 14:45 → Čechtice 15:23 and Čechtice 17:13 → Vlašim (13:12 is 1 min off the 13:13 repeat): one bus, the only service of Keblov, Mnichovice and Strojetice. Off: Vlašim 6:15, 10:15, 18:15 (30 min off the repeats) and 12:15; Čechtice 15:48 to Mnichovice.",
+   "sim": [
+    {
+     "name": "843",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Čechtice",
+       "at": [
+        "14:45"
+       ]
+      },
+      {
+       "fr": "Čechtice",
+       "to": "Vlašim, Terminál",
+       "at": [
+        "17:13"
+       ]
+      }
+     ],
+     "why": "Vlašim 14:45 → Čechtice (38 min), Čechtice 17:13 → Vlašim (38 min), every 240. One bus."
+    }
+   ]
+  },
+  "844": {
+   "core": [
+    "Vlašim, Terminál",
+    "Trhový Štěpánov, městský úřad",
+    "Loket, u dálnice"
+   ],
+   "note": "Vlašim – Kladruby – Trhový Štěpánov – Keblov – Loket, u dálnice. Hourly: Vlašim :41 (12:41–14:41, 16:41), Loket :35 (13:35–15:35). Modelled at its anchor (14:10). The Trhový Štěpánov – Loket trips 17:35 / 18:02 are on its path.",
+   "sim": [
+    {
+     "name": "844",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Loket, u dálnice",
+       "at": [
+        41
+       ]
+      },
+      {
+       "fr": "Loket, u dálnice",
+       "to": "Vlašim, Terminál",
+       "at": [
+        35
+       ]
+      }
+     ],
+     "why": "Vlašim :41 → Loket, u dálnice (44 min), Loket :35 → Vlašim (43 min), via Trhový Štěpánov, Sedmpány and Keblov. 2 buses."
+    }
+   ]
+  },
+  "846": {
+   "core": [
+    "Dolní Kralovice",
+    "Loket, u dálnice",
+    "Ledeč nad Sázavou, Husovo náměstí"
+   ],
+   "note": "Dolní Kralovice – Loket, u dálnice – Bernartice – Hněvkovice – Kožlí – Ledeč nad Sázavou (Vysočina). Exactly hourly: Dolní Kralovice :17 (17:17 ends at Loket, u dálnice and runs on in the game), Ledeč :01, with a 3-minute turn at Ledeč.",
+   "sim": [
+    {
+     "name": "846",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Dolní Kralovice",
+       "to": "Ledeč nad Sázavou, Husovo náměstí",
+       "at": [
+        17
+       ],
+       "core_to": "Loket, u dálnice"
+      },
+      {
+       "fr": "Ledeč nad Sázavou, Husovo náměstí",
+       "to": "Dolní Kralovice",
+       "at": [
+        1
+       ]
+      }
+     ],
+     "why": "Dolní Kralovice :17 → Ledeč nad Sázavou, Husovo náměstí (41 min), Ledeč :01 → Dolní Kralovice (41 min). 2 buses."
+    }
+   ]
+  },
+  "847": {
+   "core": [
+    "Dolní Kralovice",
+    "Snět"
+   ],
+   "note": "Dolní Kralovice – Blažejovice – Snět – Šetějovice – Dolní Kralovice, a one-way circle (27 min). Afternoon 12:44, 14:44, 16:44 (every 2 hours) and 18:04. One bus every 120; the only service of its seven villages.",
+   "sim": [
+    {
+     "name": "847",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Dolní Kralovice",
+       "to": "Dolní Kralovice",
+       "at": [
+        "14:44"
+       ]
+      }
+     ],
+     "why": "Circle from Dolní Kralovice at :44 even hours (27 min round Snět and Šetějovice). One bus."
+    }
+   ]
+  },
+  "848": {
+   "core": [
+    "Vlašim, Terminál",
+    "Pravonín",
+    "Načeradec",
+    "Načeradec, Zdiměřice"
+   ],
+   "note": "Vlašim – Vracovice – Pravonín – Načeradec (– Zdiměřice). Hourly in the model hour (anchor 15:10): Vlašim :50 (14:50, 15:50; 12:50, 17:50, 19:50), Načeradec :38 (15:38, 16:38, 18:38). Off: Načeradec 12:08, 13:18, 14:48. The morning Zdiměřice round (Vlašim 6:15 → Zdiměřice 6:55 → Vlašim 7:34) is 848 Zdiměřice, every 480: by the owner's rule of 2 Nov 2026 the Načeradec villages whose only afternoon service is PID Haló 887 get a line from their fixed trips, and its bus also runs Haló's Novotinky loop, which has no fixed trip of its own.",
+   "sim": [
+    {
+     "name": "848",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Načeradec",
+       "at": [
+        50
+       ],
+       "notvia": [
+        "Načeradec, Zdiměřice"
+       ]
+      },
+      {
+       "fr": "Načeradec",
+       "to": "Vlašim, Terminál",
+       "at": [
+        38
+       ],
+       "notvia": [
+        "Načeradec, Zdiměřice"
+       ]
+      }
+     ],
+     "why": "Vlašim :50 → Načeradec (28 min, via Vracovice and Pravonín, Tisek / Buková), Načeradec :38 → Vlašim (28 min). 2 buses."
+    },
+    {
+     "name": "848 Zdiměřice",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Načeradec, Zdiměřice",
+       "at": [
+        "6:15"
+       ]
+      },
+      {
+       "fr": "Načeradec, Zdiměřice",
+       "to": "Načeradec",
+       "at": [
+        "6:55"
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Načeradec",
+       "to": "Načeradec",
+       "untimed": true,
+       "stops": [
+        "Načeradec",
+        "Načeradec, Horní Lhota",
+        "Načeradec, Horní Lhota, u váhy",
+        "Načeradec, Novotinky",
+        "Načeradec, Dolní Lhota",
+        "Načeradec, Novotinky",
+        "Načeradec, Horní Lhota, u váhy",
+        "Načeradec, Horní Lhota",
+        "Načeradec, Vračkovice",
+        "Načeradec"
+       ],
+       "rt": 18
+      },
+      {
+       "fr": "Načeradec",
+       "to": "Vlašim, Terminál",
+       "untimed": true
+      }
+     ],
+     "why": "Vlašim 6:15 → Načeradec, Zdiměřice (40 min, via Načeradec, Olešná, Jizbice and Slavětín), Zdiměřice 6:55 → Načeradec (11 min, via Řísnice and Slavětín; the real trip runs on to Vlašim), then untimed: the Načeradec – Horní Lhota, u váhy – Novotinky – Dolní Lhota – Vračkovice loop of Haló 887 (18 min) and back to Vlašim (28 min). Repeats at 14:15 / 22:15; Step 4 window set to 6:00–8:00, where its trips run; 0-minute turn at Zdiměřice as in the timetable. One bus.",
+     "window": [
+      "6:00",
+      "8:00"
+     ]
+    }
+   ]
+  },
+  "849": {
+   "core": [
+    "Vlašim, Terminál",
+    "Pravonín",
+    "Čechtice, Jeníkov"
+   ],
+   "note": "Vlašim – Bolina – Zdislavice – Miřetice – Chmelná – Pravonín – Čechtice, Jeníkov. Every 2 hours: Vlašim :50 even hours (14:50, 16:50, 18:50), Jeníkov :26 odd hours (15:26, 17:26), turning at Jeníkov in 1 minute. Off: Vlašim 12:30; Jeníkov 13:06. No stop is 849's alone; it is kept as a regular 2-hourly line (7 trips each way a day), not a sparse one.",
+   "sim": [
+    {
+     "name": "849",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Čechtice, Jeníkov",
+       "at": [
+        "16:50"
+       ]
+      },
+      {
+       "fr": "Čechtice, Jeníkov",
+       "to": "Vlašim, Terminál",
+       "at": [
+        "15:26"
+       ],
+       "lay": 1
+      }
+     ],
+     "why": "Vlašim 16:50 → Čechtice, Jeníkov (35 min), Jeníkov 17:26 → Vlašim (36 min); 1-minute turn at Jeníkov as in the timetable. One bus."
+    }
+   ]
+  },
+  "455": {
+   "core": [
+    "Vlašim, Terminál",
+    "Načeradec",
+    "Mladá Vožice, autobusové stanoviště"
+   ],
+   "note": "Mladá Vožice – Vilice – Načeradec – Pravonín – Kondrac – Vlašim (Jihočeský operator). Every 2 hours all day: Vlašim :55 odd hours, Mladá Vožice :00 even hours, exact; the bus turns at Vlašim in 5 minutes. Its arrivals at Vlašim (:50) meet 426 to Prague.",
+   "sim": [
+    {
+     "name": "455",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Mladá Vožice, autobusové stanoviště",
+       "at": [
+        "14:55"
+       ]
+      },
+      {
+       "fr": "Mladá Vožice, autobusové stanoviště",
+       "to": "Vlašim, Terminál",
+       "at": [
+        "16:00"
+       ]
+      }
+     ],
+     "why": "Vlašim 14:55 → Mladá Vožice, autobusové stanoviště (44 min), Mladá Vožice 16:00 → Vlašim (50 min). One bus."
+    }
+   ]
+  },
+  "453": {
+   "core": [
+    "Tábor, autobusové nádraží",
+    "Mladá Vožice, autobusové stanoviště",
+    "Vlašim, Terminál",
+    "Vlašim, zbrojovka"
+   ],
+   "anchor": "16:00",
+   "note": "Tábor – Ratibořské Hory – Mladá Vožice, every 30 minutes (Tábor :15 / :45, Mladá Vožice :15 / :45), the even-hour :15 out of Tábor running on to Vlašim (14:15, 16:15) and Vlašim :55 odd hours back (15:55, 17:55, passing Mladá Vožice at the even :45). Model hour set by hand to 16:00, where this holds; before 16:00 the Vlašim trips pass Mladá Vožice at 13:45 and 15:15. Two lines: 453 (three of the four 2-hour slots, Tábor – Mladá Vožice) and 453 Vlašim (the fourth). Off: Mladá Vožice 12:45, 14:45; Vlašim 12:55, 14:18.",
+   "sim": [
+    {
+     "name": "453",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Tábor, autobusové nádraží",
+       "to": "Mladá Vožice, autobusové stanoviště",
+       "at": [
+        "13:15",
+        "13:45",
+        "14:45"
+       ],
+       "notvia": [
+        "Vlašim, Terminál"
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Mladá Vožice, autobusové stanoviště",
+       "to": "Tábor, autobusové nádraží",
+       "at": [
+        "15:15",
+        "15:45",
+        "16:15"
+       ],
+       "notvia": [
+        "Vlašim, Terminál"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Tábor, autobusové nádraží :15 odd, :45 odd and :45 even → Mladá Vožice (30 min), Mladá Vožice :15 even, :15 odd and :45 odd → Tábor (30 min); the buses leave on arrival at both ends (0-minute turns as in the timetable). 2 buses."
+    },
+    {
+     "name": "453 Vlašim",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Tábor, autobusové nádraží",
+       "to": "Vlašim, Terminál",
+       "at": [
+        "14:15"
+       ]
+      },
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Tábor, autobusové nádraží",
+       "at": [
+        "15:55"
+       ],
+       "stops_via": [
+        "Hradiště"
+       ]
+      }
+     ],
+     "why": "Tábor 16:15 (even hours) → Vlašim, Terminál (73 min, via Mladá Vožice, Louňovice, Veliš and Kondrac), Vlašim 15:55 (odd) → Tábor (80 min, by Ostrov and Hradiště as the 15:55 runs). 2 buses."
+    }
+   ]
+  },
+  "452": {
+   "core": [
+    "Mladá Vožice, autobusové stanoviště",
+    "Votice, autobusové stanoviště",
+    "Olbramovice, železniční stanice"
+   ],
+   "note": "Mladá Vožice – Slapsko – Neustupov – Votice – Olbramovice, železniční stanice. Exactly hourly: Mladá Vožice :30, Olbramovice :45, with a 4-minute turn at Mladá Vožice.",
+   "sim": [
+    {
+     "name": "452",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Mladá Vožice, autobusové stanoviště",
+       "to": "Olbramovice, železniční stanice",
+       "at": [
+        30
+       ]
+      },
+      {
+       "fr": "Olbramovice, železniční stanice",
+       "to": "Mladá Vožice, autobusové stanoviště",
+       "at": [
+        45
+       ]
+      }
+     ],
+     "why": "Mladá Vožice :30 → Olbramovice, železniční stanice (40 min, via Neustupov and Votice), Olbramovice :45 → Mladá Vožice (41 min). 2 buses."
+    }
+   ]
+  },
+  "459": {
+   "core": [
+    "Tábor, autobusové nádraží",
+    "Miličín",
+    "Votice, autobusové stanoviště",
+    "Olbramovice, železniční stanice"
+   ],
+   "note": "Tábor – Chotoviny – Sudoměřice – Mezno – Miličín – Votice – Olbramovice, železniční stanice. Exactly hourly: Tábor :10, Olbramovice :50. The Votice – Miličín shorts (14:18, 14:30) are on its path.",
+   "sim": [
+    {
+     "name": "459",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Tábor, autobusové nádraží",
+       "to": "Olbramovice, železniční stanice",
+       "at": [
+        10
+       ]
+      },
+      {
+       "fr": "Olbramovice, železniční stanice",
+       "to": "Tábor, autobusové nádraží",
+       "at": [
+        50
+       ]
+      }
+     ],
+     "why": "Tábor, autobusové nádraží :10 → Olbramovice, železniční stanice (55 min), Olbramovice :50 → Tábor (53 min). 3 buses."
+    }
+   ]
+  },
+  "456": {
+   "core": [
+    "Miličín",
+    "Mladá Vožice, autobusové stanoviště",
+    "Rodná"
+   ],
+   "note": "Miličín – Neustupov – Šebířov – Mladá Vožice – Rodná. Every 2 hours: Miličín :10 odd hours (11:10–17:10), Rodná :03 even hours (12:03–16:03), exact. The Mladá Vožice – Rodná and Střezimíř shorts are morning or late only.",
+   "sim": [
+    {
+     "name": "456",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Miličín",
+       "to": "Rodná",
+       "at": [
+        "15:10"
+       ]
+      },
+      {
+       "fr": "Rodná",
+       "to": "Miličín",
+       "at": [
+        "16:03"
+       ]
+      }
+     ],
+     "why": "Miličín 15:10 → Rodná (47 min, via Šebířov and Mladá Vožice), Rodná 16:03 → Miličín (48 min). One bus."
+    }
+   ]
+  },
+  "457": {
+   "core": [
+    "Tábor, autobusové nádraží",
+    "Mezno, Mitrovice"
+   ],
+   "note": "Tábor – Chotoviny – Jedlany – Nemyšl – Mezno, Mitrovice, five trips a day each way (Tábor 6:05, 9:40, 12:40, 15:05, 18:20; Mezno 4:39, 6:49, 10:39, 13:39, 15:59), about every 3 hours. Bent onto every 180 at the afternoon round Tábor 15:05 / Mezno 15:59: one bus, the only service of its Jihočeský villages. Off: Tábor 12:40, 18:20; Mezno 13:39.",
+   "sim": [
+    {
+     "name": "457",
+     "every": 180,
+     "legs": [
+      {
+       "fr": "Tábor, autobusové nádraží",
+       "to": "Mezno, Mitrovice",
+       "at": [
+        "15:05"
+       ]
+      },
+      {
+       "fr": "Mezno, Mitrovice",
+       "to": "Tábor, autobusové nádraží",
+       "at": [
+        "15:59"
+       ]
+      }
+     ],
+     "why": "Tábor 15:05 → Mezno, Mitrovice (40 min), Mitrovice 15:59 → Tábor (39 min). One bus."
+    }
+   ]
+  },
+  "532": {
+   "core": [
+    "Votice, autobusové stanoviště",
+    "Votice, železniční stanice",
+    "Jankov, Bedřichovice"
+   ],
+   "note": "Votice town shuttles (autobusové stanoviště – železniční stanice – Beztahov) and Votice – Neustupov – Jankov, Bedřichovice. The Bedřichovice round of the afternoon is Votice 15:10 → 15:44, Bedřichovice 15:57 → Votice 16:27: every 240, one bus, the only service of Bedřichovice, Čestín, Skrýšov, Broumovice, Vlčkovice and Votice, Amerika. Off: Votice 13:05; Bedřichovice 13:47. Listed: the town shuttles (stops on 550 and 554) and Votice, železniční stanice → Vlčkovice 17:10.",
+   "sim": [
+    {
+     "name": "532",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Votice, autobusové stanoviště",
+       "to": "Jankov, Bedřichovice",
+       "at": [
+        "15:10"
+       ],
+       "stops_via": [
+        "Votice, Amerika"
+       ]
+      },
+      {
+       "fr": "Jankov, Bedřichovice",
+       "to": "Votice, autobusové stanoviště",
+       "at": [
+        "15:57"
+       ]
+      }
+     ],
+     "why": "Votice, autobusové stanoviště 15:10 → Jankov, Bedřichovice (34 min, via Amerika, Ohrada, Broumovice, Vlčkovice and Čestín, as the 13:05 runs), Bedřichovice 15:57 → Votice (30 min). One bus."
+    }
+   ]
+  },
+  "550": {
+   "core": [
+    "Vlašim, Terminál",
+    "Zvěstov, Roudný",
+    "Votice, autobusové stanoviště",
+    "Votice, železniční stanice",
+    "Votice, Beztahov"
+   ],
+   "note": "Vlašim – Kondrac – Louňovice – Zvěstov – Ratměřice – Jankov – Votice, Beztahov. Hourly: Vlašim :14 (13:14–15:14) then :21 (16:21–18:21), Beztahov :53 (13:53–16:53). Modelled at :21 / :53 (16:00). The trips via Zvěstov, Roudný (14:53, 16:53, 18:28) serve Roudný and Libouň, rozcestí Roudný, stops only 550 serves; the way back runs that road. Off: Vlašim 13:14, 14:14, 15:14; Beztahov 18:28, 19:28.",
+   "sim": [
+    {
+     "name": "550",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Votice, Beztahov",
+       "at": [
+        21
+       ],
+       "core_to": "Votice, železniční stanice"
+      },
+      {
+       "fr": "Votice, Beztahov",
+       "to": "Vlašim, Terminál",
+       "at": [
+        53
+       ],
+       "stops_via": [
+        "Zvěstov, Roudný"
+       ]
+      }
+     ],
+     "why": "Vlašim :21 → Votice, Beztahov (45 min; 16:21 ends at Votice, železniční stanice and runs on), Beztahov :53 → Vlašim (52 min via Zvěstov, Roudný as the 16:53 runs). 3 buses."
+    }
+   ]
+  },
+  "554": {
+   "core": [
+    "Votice, autobusové stanoviště",
+    "Votice, Kaliště",
+    "Smilkov"
+   ],
+   "note": "Votice – Kaliště and Votice – Smilkov, two hourly shuttles that one timetable chains (Smilkov :15 → Votice :24, wait, Votice :57 → Kaliště). Kaliště :14 back every hour 13:14–17:14; Votice → Kaliště :57 (13:57–15:57, 17:00); Votice → Smilkov :05 (14:05–18:05), Smilkov :15. One Simutrans line per end.",
+   "sim": [
+    {
+     "name": "554",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Votice, autobusové stanoviště",
+       "to": "Votice, Kaliště",
+       "at": [
+        57
+       ]
+      },
+      {
+       "fr": "Votice, Kaliště",
+       "to": "Votice, autobusové stanoviště",
+       "at": [
+        14
+       ]
+      }
+     ],
+     "why": "Votice, autobusové stanoviště :57 → Votice, Kaliště (11 min, via Otradovice and Budenín), Kaliště :14 → Votice (11 min). One bus."
+    },
+    {
+     "name": "554 Smilkov",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Votice, autobusové stanoviště",
+       "to": "Smilkov",
+       "at": [
+        5
+       ]
+      },
+      {
+       "fr": "Smilkov",
+       "to": "Votice, autobusové stanoviště",
+       "at": [
+        15
+       ],
+       "lay": 1
+      }
+     ],
+     "why": "Votice :05 → Smilkov (9 min), Smilkov :15 → Votice (9 min); 1-minute turn at Smilkov as in the timetable. One bus."
+    }
+   ]
+  },
+  "566": {
+   "core": [
+    "Votice, autobusové stanoviště",
+    "Vojkov, Sledovice",
+    "Vojkov"
+   ],
+   "note": "Votice – Olbramovice – Vrchotovy Janovice – Vojkov, school trips: Votice 13:40 and 14:55, Vojkov 14:15 and 15:30, one bus about every 75 minutes (2-minute turns at Vojkov). Every 72 (the 383 rule): both afternoon rounds within 3 minutes. The only service of Vojkov, Sledovice, Minartice and Bezmíř.",
+   "sim": [
+    {
+     "name": "566",
+     "every": 72,
+     "legs": [
+      {
+       "fr": "Votice, autobusové stanoviště",
+       "to": "Vojkov",
+       "at": [
+        "13:40"
+       ]
+      },
+      {
+       "fr": "Vojkov",
+       "to": "Votice, autobusové stanoviště",
+       "at": [
+        "14:15"
+       ],
+       "lay": 2
+      }
+     ],
+     "why": "Votice 13:40 → Vojkov (33 min), Vojkov 14:15 → Votice (34 min), every 72: the next slots, 14:52 and 15:27, stand for the real 14:55 and 15:30. One bus."
+    }
+   ]
+  },
+  "568": {
+   "core": [
+    "Miličín",
+    "Miličín, Petrovice",
+    "Mezno"
+   ],
+   "anchor": "14:30",
+   "note": "Miličín – Petrovice – Nové Dvory – Mezno – Miličín, a one-way circle (32 min): 11:15, 13:45, 14:45, 15:45. Hourly :45 at its afternoon trips (model hour set by hand to 14:30; the line ends at 16:17). The only service of Mezno and seven Miličín villages.",
+   "sim": [
+    {
+     "name": "568",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Miličín",
+       "to": "Miličín",
+       "at": [
+        45
+       ]
+      }
+     ],
+     "why": "Circle from Miličín at :45 (32 min, via Záhoří, Malovice, Petrovice, Nové Dvory, Nasavrky and Mezno). One bus."
+    }
+   ]
+  },
+  "569": {
+   "core": [
+    "Votice, autobusové stanoviště",
+    "Miličín",
+    "Červený Újezd [BN]",
+    "Sedlec-Prčice, náměstí"
+   ],
+   "note": "Votice – Miličín – Červený Újezd – Ješetice – Sedlec-Prčice. Miličín :15 odd hours to Sedlec (13:15 from Votice, 15:15, 17:15); Sedlec 13:48, 15:55, 17:45 back. Every 120 from Miličín, exact, with Sedlec 15:55; the Votice – Miličín part is on 459. Off: Sedlec 13:48, 17:45.",
+   "sim": [
+    {
+     "name": "569",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Miličín",
+       "to": "Sedlec-Prčice, náměstí",
+       "at": [
+        "15:15"
+       ]
+      },
+      {
+       "fr": "Sedlec-Prčice, náměstí",
+       "to": "Miličín",
+       "at": [
+        "15:55"
+       ]
+      }
+     ],
+     "why": "Miličín 15:15 → Sedlec-Prčice, náměstí (28 min, via Červený Újezd, Ješetice, Záběhlice, Dvorce and Staré Mitrovice), Sedlec 15:55 → Miličín (29 min). One bus."
+    }
+   ]
+  },
+  "465": {
+   "core": [
+    "Chocerady",
+    "Chocerady, Samechov"
+   ],
+   "note": "Chocerady – Vlkovec – Růženín – Samechov, three short rounds a day (7:16, 13:26, 15:16 out, back 13 min later, 1-minute turn). Bent onto every 480 at 7:16 / 15:16 (both exact): one bus, the only service of Samechov, Růženín sídliště and Vlkovec, železniční stanice. Off: 13:26 / 13:39.",
+   "sim": [
+    {
+     "name": "465",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Chocerady",
+       "to": "Chocerady, Samechov",
+       "at": [
+        "15:16"
+       ]
+      },
+      {
+       "fr": "Chocerady, Samechov",
+       "to": "Chocerady",
+       "at": [
+        "15:29"
+       ],
+       "lay": 1
+      }
+     ],
+     "why": "Chocerady 15:16 (7:16) → Chocerady, Samechov (12 min), Samechov 15:29 (7:29) → Chocerady (12 min); 1-minute turn as in the timetable. One bus."
+    }
+   ]
+  },
+  "483": {
+   "core": [
+    "Ostředek",
+    "Chocerady",
+    "Vranov, Vranovská Lhota"
+   ],
+   "note": "Ostředek – Vodslivy – Chocerady – Komorní Hrádek – Vranov, Vranovská Lhota. One bus all day: Ostředek :01 every hour to Chocerady, every other one on to Vranovská Lhota (13:06, 15:01); back at Chocerady :48 every hour (from Vranovská Lhota at 13:32, 15:32). In the game every trip runs to Vranovská Lhota (the bus has the time: real 1- and 2-minute turns). Off: Chocerady 12:53, 14:28.",
+   "sim": [
+    {
+     "name": "483",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Ostředek",
+       "to": "Vranov, Vranovská Lhota",
+       "at": [
+        1
+       ],
+       "core_to": "Chocerady",
+       "lay": 2
+      },
+      {
+       "fr": "Vranov, Vranovská Lhota",
+       "to": "Ostředek",
+       "knot": "Chocerady",
+       "knot_at": [
+        48
+       ],
+       "lay": 1
+      }
+     ],
+     "why": "Ostředek :01 → Vranov, Vranovská Lhota (30 min, read at Chocerady), Vranovská Lhota :32 → Ostředek (27 min) timed so the bus passes Chocerady at :48. One bus."
+    }
+   ]
+  },
+  "485": {
+   "core": [
+    "Týnec nad Sázavou, železniční stanice",
+    "Netvořice, pošta",
+    "Rabyně, Nová Rabyně",
+    "Rabyně, Měřín"
+   ],
+   "note": "Týnec nad Sázavou – Chleby – Netvořice – Rabyně (Nová Rabyně or Měřín), a school line of single trips. Afternoon: Týnec 14:50 → Nová Rabyně 15:32, Nová Rabyně 15:35 → Netvořice; Netvořice 14:20 → Měřín 14:40, Měřín 14:52 → Týnec 15:33. Every 240, one bus: 485 is the only service of Chleby, Netvořice, Maskovice, Nedvězí and Strážovna; its bus returns to Týnec untimed over its own stops. Listed: the Měřín round (Netvořice 14:20 → Měřín, Měřín 14:52 → Týnec; its stops are on 485, 488, 755 Měřín and X390), the Týnec – Chářovice shuttles and Jablonná – Vysoký Újezd 16:36 / 16:50.",
+   "sim": [
+    {
+     "name": "485",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Týnec nad Sázavou, železniční stanice",
+       "to": "Rabyně, Nová Rabyně",
+       "at": [
+        "14:50"
+       ]
+      },
+      {
+       "fr": "Rabyně, Nová Rabyně",
+       "to": "Netvořice, pošta",
+       "at": [
+        "15:35"
+       ]
+      },
+      {
+       "fr": "Netvořice, pošta",
+       "to": "Týnec nad Sázavou, železniční stanice",
+       "untimed": true
+      }
+     ],
+     "why": "Týnec nad Sázavou, železniční stanice 14:50 → Rabyně, Nová Rabyně (42 min, via Chleby, Netvořice, Maskovice, Nedvězí and Strážovna), Nová Rabyně 15:35 → Netvořice, pošta (17 min), then back to Týnec untimed (20 min). One bus."
+    }
+   ]
+  },
+  "200390": {
+   "core": [
+    "Rabyně, Nová Rabyně",
+    "Neveklov, Nebřich, Slapská přehrada",
+    "Slapy, Motorest"
+   ],
+   "note": "X390 Rabyně, Nová Rabyně – Blaženice – Jablonná – Nebřich – Slapská přehrada – Čím – Buš – Slapy, Motorest (ARRIVA): the replacement for line 390's closed section over the Slapy dam, which PID closes from 2 Mar 2026 to 31 Dec 2027, so it is modelled as it runs. One bus all day: Rabyně 12:10, 14:10, 16:10 (every 2 hours at :10) and 17:40; Slapy 13:15, 15:25, 16:55, 18:15 at no fixed minute. Every 120 at Rabyně :10 even hours and Slapy 16:55. Off: Rabyně 17:40; Slapy 13:15, 15:25, 18:15. The Rabyně – Chotilsko morning shorts are listed. It is the only service of Neveklov, Nebřich, Slapská přehrada and of Slapy, Jednota, Buš, Buš, pod Klíčem, Čím and Čím, Hrdlička (okres Praha-západ).",
+   "sim": [
+    {
+     "name": "X390",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Rabyně, Nová Rabyně",
+       "to": "Slapy, Motorest",
+       "at": [
+        "16:10"
+       ]
+      },
+      {
+       "fr": "Slapy, Motorest",
+       "to": "Rabyně, Nová Rabyně",
+       "at": [
+        "16:55"
+       ]
+      }
+     ],
+     "why": "Rabyně, Nová Rabyně 16:10 → Slapy, Motorest (35 min, via Blaženice, Jablonná, Nebřich, the dam, Čím and Buš), Slapy 16:55 → Rabyně (33 min). One bus (waits 10 at Slapy, 42 at Rabyně)."
+    }
+   ]
+  },
+  "865": {
+   "core": [
+    "Pacov, železniční stanice",
+    "Pacov, Jetřichovská ul.křižovatka",
+    "Lukavec",
+    "Čechtice"
+   ],
+   "note": "Pacov – Bratřice – Mezilesí – Lukavec – Čechtice (Vysočina), and Pacov town shuttles (železniční stanice – Jetřichovská křižovatka). Every 2 hours: Pacov :18 even hours to Čechtice (12:18–16:18), Čechtice :50 even hours (12:50–16:50), exact. The town shuttles' stops are on this line and 406; listed.",
+   "sim": [
+    {
+     "name": "865",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pacov, železniční stanice",
+       "to": "Čechtice",
+       "at": [
+        "16:18"
+       ]
+      },
+      {
+       "fr": "Čechtice",
+       "to": "Pacov, železniční stanice",
+       "at": [
+        "16:50"
+       ]
+      }
+     ],
+     "why": "Pacov, železniční stanice 16:18 → Čechtice (50 min), Čechtice 16:50 → Pacov (48 min). 2 buses (the bus waits 102 min at Čechtice, as in the timetable)."
+    }
+   ]
+  },
+  "866": {
+   "core": [
+    "Košetice",
+    "Chýstovice",
+    "Čechtice"
+   ],
+   "note": "Košetice – Chýstovice – Křešín – Čechtice (Vysočina). Every 2 hours: Košetice :10 even hours (14:10–18:10), Čechtice :23 odd hours (13:23–17:23; 13:21 and 15:21 start at Čechtice, škola). Exact.",
+   "sim": [
+    {
+     "name": "866",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Košetice",
+       "to": "Čechtice",
+       "at": [
+        "14:10"
+       ]
+      },
+      {
+       "fr": "Čechtice",
+       "to": "Košetice",
+       "at": [
+        "15:23"
+       ]
+      }
+     ],
+     "why": "Košetice 14:10 → Čechtice (25 min), Čechtice 15:23 → Košetice (26 min). One bus."
+    }
+   ]
+  },
+  "867": {
+   "core": [
+    "Ježov",
+    "Košetice, Malá strana",
+    "Buřenice"
+   ],
+   "note": "Ježov – Píšť – Hořice – Studený – Onšov – Košetice – Buřenice (Vysočina). Every 2 hours: Ježov :22 even hours (14:22 to Buřenice, 16:22 to Košetice), back at Košetice :09 odd hours (13:09 and 15:09 from Buřenice, 17:09 starting there). Exact.",
+   "sim": [
+    {
+     "name": "867",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Ježov",
+       "to": "Buřenice",
+       "at": [
+        "14:22"
+       ],
+       "core_to": "Košetice, Malá strana"
+      },
+      {
+       "fr": "Buřenice",
+       "to": "Ježov",
+       "knot": "Košetice, Malá strana",
+       "knot_at": [
+        "15:09"
+       ]
+      }
+     ],
+     "why": "Ježov 14:22 → Buřenice (34 min, read at Košetice, Malá strana: the 16:22 ends there), Buřenice 15:03 → Ježov (34 min) timed so the bus passes Košetice at :09. One bus."
+    }
+   ]
+  },
+  "205001": {
+   "core": [
+    "Benešov, U Náhonu",
+    "Benešov, Terminál",
+    "Benešov, Nemocnice Rudolfa a Stefanie",
+    "Benešov, Albert"
+   ],
+   "note": "MHD Benešov 1 (orange): U Náhonu – Terminál – Nemocnice – Čerčanská – Albert. Hourly: U Náhonu :30, Albert :06, 1-minute turn at U Náhonu. In the afternoon the Albert end loops: out via Neumannova, K Tužince, Čerčanská, Nezvalova and Tylova, back direct via Tyršova (the morning trips run both ways round). The Terminál – U Náhonu shorts end at 12:49.",
+   "sim": [
+    {
+     "name": "MHD Benešov 1",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Benešov, U Náhonu",
+       "to": "Benešov, Albert",
+       "at": [
+        30
+       ],
+       "lay": 1
+      },
+      {
+       "fr": "Benešov, Albert",
+       "to": "Benešov, U Náhonu",
+       "at": [
+        6
+       ]
+      }
+     ],
+     "why": "Benešov, U Náhonu :30 → Albert (29 min, via Terminál, Nemocnice, Čerčanská, Nezvalova, Tylova and Kaufland), Albert :06 → U Náhonu (23 min, via Lidl and Tyršova); 1-minute turn at U Náhonu as in the timetable. One bus."
+    }
+   ]
+  },
+  "205002": {
+   "core": [
+    "Benešov, MŠ Úsměv",
+    "Benešov, Terminál",
+    "Benešov, Mariánovice"
+   ],
+   "note": "MHD Benešov 2 (green): MŠ Úsměv – Terminál every 20 minutes (MŠ Úsměv :10 / :30 / :50), the :30 running on to Mariánovice, back from Mariánovice :06 and from Terminál :00 / :40, each bus leaving MŠ Úsměv a minute after it arrives (45 of 52). Two lines: the Terminál shorts and 2 Mariánovice.",
+   "sim": [
+    {
+     "name": "MHD Benešov 2",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Benešov, MŠ Úsměv",
+       "to": "Benešov, Terminál",
+       "at": [
+        10,
+        50
+       ],
+       "notvia": [
+        "Benešov, Mariánovice"
+       ],
+       "lay": 1
+      },
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Benešov, MŠ Úsměv",
+       "at": [
+        0,
+        40
+       ],
+       "notvia": [
+        "Benešov, Mariánovice"
+       ],
+       "lay": 1
+      }
+     ],
+     "why": "Benešov, MŠ Úsměv :10 and :50 → Terminál (9 min), Terminál :00 and :40 → MŠ Úsměv (9 min); 1-minute turns as in the timetable. One bus."
+    },
+    {
+     "name": "MHD Benešov 2 Mariánovice",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Benešov, MŠ Úsměv",
+       "to": "Benešov, Mariánovice",
+       "at": [
+        30
+       ],
+       "lay": 1
+      },
+      {
+       "fr": "Benešov, Mariánovice",
+       "to": "Benešov, MŠ Úsměv",
+       "at": [
+        6
+       ]
+      }
+     ],
+     "why": "MŠ Úsměv :30 → Mariánovice (22 min, via Terminál, Černoleská and Černý les), Mariánovice :06 → MŠ Úsměv (23 min). One bus."
+    }
+   ]
+  },
+  "205003": {
+   "core": [
+    "Benešov, Terminál",
+    "Benešov, Buková Lhota",
+    "Benešov, Vidlákova Lhota"
+   ],
+   "anchor": "15:00",
+   "note": "MHD Benešov 3 (blue): Terminál – Purkyňova – Pomněnice – Žabovřesky – Zbožnice – Buková Lhota – Vidlákova Lhota. Hourly: Terminál :40, Vidlákova Lhota :01 until 16:01 (the bus leaves on arrival), :06 from 17:06. Model hour set by hand to 15:00, where the :01 pattern runs; 17:06–22:06 are 5 min off.",
+   "sim": [
+    {
+     "name": "MHD Benešov 3",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Benešov, Vidlákova Lhota",
+       "at": [
+        40
+       ]
+      },
+      {
+       "fr": "Benešov, Vidlákova Lhota",
+       "to": "Benešov, Terminál",
+       "at": [
+        1
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Benešov, Terminál :40 → Vidlákova Lhota (21 min, via Pomněnice, Žabovřesky, Zbožnice and Buková Lhota), Vidlákova Lhota :01 → Terminál (18 min direct); 0-minute turn at Vidlákova Lhota as in the timetable. One bus."
+    }
+   ]
+  },
+  "205006": {
+   "core": [
+    "Benešov, Terminál",
+    "Benešov, Konopiště, informační centrum"
+   ],
+   "note": "MHD Benešov 6 (red): Terminál – Konopiště, informační centrum, every 2 hours all day (Terminál :21 even hours, Konopiště :33). The only service of Konopiště, informační centrum.",
+   "sim": [
+    {
+     "name": "MHD Benešov 6",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Benešov, Konopiště, informační centrum",
+       "at": [
+        "16:21"
+       ]
+      },
+      {
+       "fr": "Benešov, Konopiště, informační centrum",
+       "to": "Benešov, Terminál",
+       "at": [
+        "16:33"
+       ]
+      }
+     ],
+     "why": "Benešov, Terminál 16:21 → Konopiště, informační centrum (6 min), back 16:33 (5 min). One bus."
+    }
+   ]
+  }
+ },
+ "unmodelled": {
+  "205004": "No afternoon trips: MHD Benešov 4 (pink) runs MŠ Úsměv – Terminál – U Náhonu hourly 4:50–13:09 only, interlined with lines 1 and 2 (6 of 6 arrivals at U Náhonu go on as 1, 6 of 6 at MŠ Úsměv as 2). Every stop is on MHD Benešov 1 and 2 (Step 8).",
+  "205005": "Sparse town shuttle: MHD Benešov 5 (yellow) runs Terminál – Křižíkova and back three times in the afternoon (13:21, 14:21, 16:21; 5 min each way). Every stop (Konopišťská, Jana Nohy, Benea, Křižíkova) is on 408, 553, 564 and 759 (Step 8).",
+  "851": "School trips only, ending 15:51: Čechtice, škola → Loket, u dálnice 13:28, 15:28 and Čechtice → Pravonín → Jeníkov 13:35, 15:25, all one-way. Every stop it serves 13–19 is on modelled lines: Čechtice, Křivsoudov and Loket on 401 and 842; Otročice, rozcestí, Borovnice, rozcestí, Kuňovice, Miřetice, Chmelná, Pravonín, Dobříkovice, Nakvasovice and Jeníkov on 842, 843 and 849 (Step 8)."
+ },
+ "terminus_alias": {},
+ "terminus_alias_why": "",
+ "coverage_exceptions": {},
+ "owner_checks": [],
+ "notes": "Okres Benešov with its Prague lines (332, 337, 339 from Budějovická; 382, 383 from Háje; 406, 426, 401, 408 from Roztyly) and the lines from the Jihočeský kraj and Vysočina that reach it (401, 408, 453, 455, 456, 457, 459, 846, 865, 866, 867). Every terminus is a loop: each typed value is the real minute − 1. Outstation lines (339, 382, 755: the buses sleep at the far end) are timed both ways at the inbound rate; their extra departures towards the far end are listed, as the owner set on 25 Oct 2026. Where the real timetable sends the arriving bus straight back (426 and 406 at Roztyly, 453 at Tábor and Mladá Vožice, 794 at Vlašim, 840, 841, MHD Benešov 3, 848 Zdiměřice), the leg has a 0-minute wait so the bus count follows the real turn; this assumes the fork's automatic Leave up to lets a bus that arrives on the real minute leave although the loop rule typed it 1 min earlier (an engine question, still to confirm). Vlašim, Terminál is a timed pulse at :50, when 426 leaves for Prague and 790, 455, 842 and others arrive (their 0-minute chains to 426 are this connection, not through buses). Through-running seen in the timetable, to confirm on the live map of 2 Nov: 337's Benešov – Nespeky shorts run on as 651 to Pyšely (all of them); 408 and 459 buses go on as 453 at Tábor (9 of 16, 5 of 11); the Sulice, Želivec shorts of 339 follow 335 arrivals (7 of 7); MHD Benešov 4 is interlined with 1 and 2. Pooling (not applied): 426's Prague trips and its Benešov shorts turn into each other at Vlašim in about 10 minutes; 791's two ends alternate at Benešov (3 buses as one circuit instead of 4); 752 Týnec's shorts fit in the Jílové buses' 55-minute layover at Benešov (752 and 752 Týnec, 5 buses, about 3 pooled); 453 Vlašim runs with 453 at Tábor and Mladá Vožice (4 buses, 3 pooled). X390 (Rabyně – Slapy) replaces line 390's closed section over the Slapy dam until 31 Dec 2027 and is modelled as it runs. Alternative to 651 Nespeky, if the real working should show: one circuit 651 Benešov every 120 (Benešov 15:29 → Nespeky as 337, on at 15:48 → Pyšely as 651, Pyšely 14:55 → Nespeky, on at 15:02 → Benešov as 337), 1 bus, the same as now. Owner, 2 Nov 2026: places whose only afternoon service is PID Haló (on demand) get a Simutrans line from their fixed trips, at most every 480 (here 848 Zdiměřice, which also runs Haló 887's Novotinky loop).",
+ "artifact_url": "https://claude.ai/artifact/LHA5oGkvV95SvhwYH77ekU"
+}

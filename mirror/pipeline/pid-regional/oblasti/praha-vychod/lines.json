@@ -1,0 +1,2324 @@
+{
+ "lines": {
+  "302": {
+   "core": [
+    "Praha, Letňany",
+    "Přezletice, Vinořská",
+    "Veleň, u pomníku"
+   ],
+   "note": "Praha, Letňany – Kbely – Přezletice, Vinořská (short trips) and on to Veleň, u pomníku. Out of Letňany every 20 in the afternoon: :01 to Veleň (15:01–19:04, hourly all day from 9:04), :24 and :44 to Vinořská (14:24–18:44); back from Veleň :32 (hourly, 12:36–19:35) and from Vinořská :12 and :52 (14:54–19:12). Two Simutrans lines, one per destination, both exact at 16:00.",
+   "sim": [
+    {
+     "name": "302",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Letňany",
+       "to": "Veleň, u pomníku",
+       "at": [
+        1
+       ]
+      },
+      {
+       "fr": "Veleň, u pomníku",
+       "to": "Praha, Letňany",
+       "at": [
+        32
+       ],
+       "stops_via": [
+        "Přezletice, Panská pole"
+       ]
+      }
+     ],
+     "why": "Letňany :01 → Veleň, u pomníku via Kbely and Přezletice (Vinořská passed at :21), 29 min; Veleň :32 back via Přezletice, Panská pole (as the 7:32 trip and the 13:04 / 14:00 out; the other trips skip it) and Vinořská, about 32 min. Veleň turns in 2 min as in the timetable; at Letňany the real bus goes on as 158, so the game bus waits 59 min there (2 buses)."
+    },
+    {
+     "name": "302 Vinořská",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Letňany",
+       "to": "Přezletice, Vinořská",
+       "at": [
+        24,
+        44
+       ],
+       "notvia": [
+        "Veleň, u pomníku"
+       ]
+      },
+      {
+       "fr": "Přezletice, Vinořská",
+       "to": "Praha, Letňany",
+       "at": [
+        12,
+        52
+       ],
+       "notvia": [
+        "Veleň, u pomníku"
+       ]
+      }
+     ],
+     "why": "Letňany :24 and :44 → Přezletice, Vinořská (via Dolní náves), 20 min; Vinořská :12 and :52 back, 22 min."
+    }
+   ]
+  },
+  "375": {
+   "core": [
+    "Brandýs n.L.-St.Bol., železniční stanice",
+    "Brandýs n.L.-St.Bol., autobusové stanoviště",
+    "Brandýs n.L.-St.Bol., náměstí",
+    "Praha, Českomoravská"
+   ],
+   "note": "Brandýs nad Labem, železniční stanice – autobusové stanoviště – náměstí – Dřevčice – Vinoř – Kbely – Praha, Českomoravská. Every 15 minutes from 13:13 to 17:48 out of Brandýs (:03 / :18 / :33 / :48) and from 13:00 to 18:30 out of Českomoravská (:00 / :15 / :30 / :45), every 30 at midday and in the evening. One path both ways (Pražská and autobusové stanoviště only towards Prague, Školní only towards Brandýs).",
+   "sim": [
+    {
+     "name": "375",
+     "every": 15,
+     "legs": [
+      {
+       "fr": "Brandýs n.L.-St.Bol., železniční stanice",
+       "to": "Praha, Českomoravská",
+       "at": [
+        3
+       ]
+      },
+      {
+       "fr": "Praha, Českomoravská",
+       "to": "Brandýs n.L.-St.Bol., železniční stanice",
+       "at": [
+        0
+       ]
+      }
+     ],
+     "why": "Brandýs, železniční stanice :03 / :18 / :33 / :48 → Českomoravská, 51 min; Českomoravská :00 / :15 / :30 / :45 back, 47 min. At Českomoravská most buses go on as city line 152 (the 0-minute chain test: 46 of 61 departures follow a 152 arrival)."
+    }
+   ]
+  },
+  "321": {
+   "core": [
+    "Praha, Letňany",
+    "Veleň, u pomníku",
+    "Mratín",
+    "Brandýs n.L.-St.Bol., Pražská",
+    "Brandýs n.L.-St.Bol., nádraží"
+   ],
+   "note": "Praha, Letňany – Čakovice – Veleň – Brázdim – Sluhy – Mratín – Polerady – Brandýs nad Labem. Hourly: Brandýs, Pražská :04 towards Letňany (14:04–18:04; 11:10–13:10 at :10) and Letňany :11 towards Brandýs, nádraží (14:11–17:11; 13:05, 18:21, 19:18). The buses arrive at Brandýs, nádraží and leave from Pražská, two stops apart on the same street. The morning Mratín and Polerady shorts are listed (their stops are on the line).",
+   "sim": [
+    {
+     "name": "321",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Brandýs n.L.-St.Bol., Pražská",
+       "to": "Praha, Letňany",
+       "at": [
+        4
+       ]
+      },
+      {
+       "fr": "Praha, Letňany",
+       "to": "Brandýs n.L.-St.Bol., nádraží",
+       "at": [
+        11
+       ]
+      }
+     ],
+     "why": "Brandýs, Pražská :04 → Polerady, Mratín, Sluhy, Brázdim, Veleň, Čakovice → Letňany, 47 min; Letňany :11 back to Brandýs, nádraží, 46 min; the bus then takes the two stops to Pražská. 2 buses."
+    }
+   ]
+  },
+  "346": {
+   "core": [
+    "Praha, Černý Most",
+    "Brandýs n.L.-St.Bol., Pražská",
+    "Brandýs n.L.-St.Bol., nemocnice"
+   ],
+   "note": "A one-way loop: Praha, Černý Most – Zápy, Tesco – Brandýs, Vrábí – Pražská – nemocnice – u soudu – pekárny – Černý Most. Every 30 from 12:55 to 18:55 (:25 / :55), hourly before and after. The morning Pražská → Černý Most trips and the evening Černý Most → nemocnice trips are listed (their stops are on the loop).",
+   "sim": [
+    {
+     "name": "346",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Praha, Černý Most",
+       "at": [
+        25
+       ]
+      }
+     ],
+     "why": "Černý Most :25 / :55 round the loop through Brandýs (Vrábí, Pražská, nemocnice, u soudu, pekárny) and back to Černý Most, 42 min. 2 buses."
+    }
+   ]
+  },
+  "379": {
+   "core": [
+    "Brandýs n.L.-St.Bol., autobusové stanoviště",
+    "Praha, Černý Most"
+   ],
+   "note": "Brandýs nad Labem, autobusové stanoviště – Sídliště – Na panském – Praha, Černý Most (fast, by the expressway). Every 30 in the afternoon: Brandýs :14 / :44 (14:14–17:44), Černý Most :15 / :45 (13:45–19:15); morning every 15–20 into Prague. No trips between 9:00 and 13:45.",
+   "sim": [
+    {
+     "name": "379",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "to": "Praha, Černý Most",
+       "at": [
+        14
+       ]
+      },
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "at": [
+        15
+       ]
+      }
+     ],
+     "why": "Brandýs, autobusové stanoviště :14 / :44 → Černý Most, 18 min; Černý Most :15 / :45 back, 16 min. 2 buses."
+    }
+   ]
+  },
+  "367": {
+   "core": [
+    "Brandýs n.L.-St.Bol., autobusové stanoviště",
+    "Jenštejn",
+    "Praha, Černý Most"
+   ],
+   "note": "Praha, Černý Most – Radonice – Jenštejn – Dřevčice – Brandýs nad Labem, autobusové stanoviště. Every 30 in the afternoon: Černý Most :05 / :35 (13:05–19:05), Brandýs :17 / :47 (13:47–17:47; hourly :50 after). Towards Brandýs the buses skip Pražská; the evening trips (18:05, 19:45 on) also skip Radonice, Penny Market.",
+   "sim": [
+    {
+     "name": "367",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "at": [
+        5
+       ]
+      },
+      {
+       "fr": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "to": "Praha, Černý Most",
+       "at": [
+        17
+       ]
+      }
+     ],
+     "why": "Černý Most :05 / :35 → Radonice, Penny Market, Jenštejn, Dřevčice → Brandýs, autobusové stanoviště, 27 min; Brandýs :17 / :47 back via Pražská, 32 min. 3 buses."
+    }
+   ]
+  },
+  "353": {
+   "core": [
+    "Praha, Černý Most",
+    "Praha, Čertousy",
+    "Zeleneč",
+    "Svémyslice",
+    "Brandýs n.L.-St.Bol., nádraží"
+   ],
+   "note": "Praha, Černý Most – Horní Počernice – Čertousy – Zeleneč – Svémyslice, every second trip on to Zápy and Brandýs nad Labem, nádraží. Out of Černý Most every 30 all afternoon at :13 / :43 (12:53–18:43): to Brandýs 13:43, 15:13, 16:13, 18:13, to Svémyslice the others. Back from Brandýs hourly :22 (13:22–17:22, Svémyslice :40) and from Svémyslice hourly :10 (13:10–19:10; 14:55, 18:40, 19:40 extra). Two Simutrans lines: 353 to Svémyslice (:43 / :10) and 353 Brandýs (:13 / :22). The Černý Most – Čertousy trips (15:28, 15:58, 16:58, 17:28 out; 16:04, 16:34 back) run inside Prague and are listed. Three trips a day run to Horoušany, Horoušánky via Mstětice: 353 Mstětice.",
+   "sim": [
+    {
+     "name": "353",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Svémyslice",
+       "at": [
+        43
+       ]
+      },
+      {
+       "fr": "Svémyslice",
+       "to": "Praha, Černý Most",
+       "at": [
+        10
+       ],
+       "notvia": [
+        "Brandýs n.L.-St.Bol., nádraží"
+       ]
+      }
+     ],
+     "why": "Černý Most :43 → Horní Počernice, Čertousy, Zeleneč → Svémyslice, 20 min; Svémyslice :10 back, 22 min. The 13:43 slot is a Brandýs trip read at Svémyslice. 2 buses."
+    },
+    {
+     "name": "353 Brandýs",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Brandýs n.L.-St.Bol., nádraží",
+       "at": [
+        13
+       ],
+       "core_to": "Svémyslice"
+      },
+      {
+       "fr": "Brandýs n.L.-St.Bol., nádraží",
+       "to": "Praha, Černý Most",
+       "at": [
+        22
+       ]
+      }
+     ],
+     "why": "Černý Most :13 → Zeleneč, Svémyslice, Zápy, Brandýs, Královice, fakulta, náměstí → nádraží, 37 min (the real 14:13 and 17:13 turn at Svémyslice; the game bus runs on to Brandýs); Brandýs, nádraží :22 back via Zápy, PREFA, 40 min. 2 buses."
+    },
+    {
+     "name": "353 Mstětice",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Horoušany, Horoušánky, U Tří svatých",
+       "at": [
+        "16:28"
+       ]
+      },
+      {
+       "fr": "Horoušany, Horoušánky, U Tří svatých",
+       "to": "Praha, Černý Most",
+       "at": [
+        "7:24"
+       ]
+      }
+     ],
+     "why": "The only service of Zeleneč, Mstětice: Černý Most 16:28 → Zeleneč, Mstětice, Jirny → Horoušany, Horoušánky, 30 min (the real 16:28); Horoušánky 15:24 back, which stands for the real 7:24 (one period earlier; the line has no afternoon trip back), 33 min. 1 bus."
+    }
+   ]
+  },
+  "482": {
+   "core": [
+    "Brandýs n.L.-St.Bol., autobusové stanoviště",
+    "Brandýs n.L.-St.Bol., Pražská",
+    "Záryby",
+    "Neratovice, Kojetická",
+    "Mělník, autobusové nádraží",
+    "Mělník, Rožkovo údolí"
+   ],
+   "anchor": "15:00",
+   "note": "Brandýs nad Labem, autobusové stanoviště – Zápy – Pražská – nemocnice – Záryby – Kostelec nad Labem – Neratovice – Libiš – Kly – Mělník. Hourly most of the day (Brandýs :39, Mělník :45); in the afternoon peak every 30: extra trips start at Brandýs, Pražská (14:22, 15:22, 16:22) and end at Brandýs, nádraží (Mělník 14:15, 15:15) or Neratovice (16:15). So at Pražská every 30 from 14:22 to 16:52 (:22 / :52) and at Mělník every 30 from 14:15 to 16:45 (:15 / :45). Modelled at its own afternoon peak, 15:00 (window 14:30–16:30): its busiest two hours run every 30 (8 departures in 14:00–16:00 and in 15:00–17:00, 6 in 15:30–17:30); hourly :39 / :45 at 16:00 would be 4 buses instead of 6, with the six extra trips listed. Two trips a day run on in Mělník to Rožkovo údolí (out 12:24, 13:39; back 14:33, 15:33): 482 Rožkovo údolí.",
+   "sim": [
+    {
+     "name": "482",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "to": "Mělník, autobusové nádraží",
+       "knot": "Brandýs n.L.-St.Bol., Pražská",
+       "knot_at": [
+        22
+       ]
+      },
+      {
+       "fr": "Mělník, autobusové nádraží",
+       "to": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "at": [
+        15
+       ],
+       "core_to": "Neratovice, Kojetická"
+      }
+     ],
+     "why": "Brandýs, autobusové stanoviště :09 / :39 (Pražská :22 / :52) → Záryby, Kostelec nad Labem, Neratovice, Libiš, Kly (via Tuhaň, as the afternoon trips) → Mělník, autobusové nádraží; Mělník :15 / :45 back the same way via Brandýs, nádraží to autobusové stanoviště. The :22 trips really start at Pražská and the :15 trips end at Brandýs, nádraží or Neratovice; the game bus runs them through."
+    },
+    {
+     "name": "482 Rožkovo údolí",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Mělník, autobusové nádraží",
+       "to": "Mělník, Rožkovo údolí",
+       "at": [
+        "15:01"
+       ]
+      },
+      {
+       "fr": "Mělník, Rožkovo údolí",
+       "to": "Mělník, autobusové nádraží",
+       "at": [
+        "15:33"
+       ]
+      }
+     ],
+     "why": "The only service of Mělník, Rožkovo údolí and Strážnická: the real 13:39 Brandýs trip runs on from Mělník, autobusové nádraží at 15:01 to Rožkovo údolí, and the 15:33 from Rožkovo údolí reaches the autobusové nádraží at 15:45 and goes on as the 482 :45 (here: change buses). A shuttle so the every-30 482 keeps its slots. 1 bus."
+    }
+   ]
+  },
+  "655": {
+   "core": [
+    "Úvaly, železniční stanice",
+    "Jirny",
+    "Nehvizdy",
+    "Čelákovice, železniční stanice",
+    "Brandýs n.L.-St.Bol., nádraží"
+   ],
+   "note": "Úvaly – Horoušánky – Jirny – Nehvizdy – Čelákovice – Lázně Toušeň – Zápy – Brandýs nad Labem, nádraží. Hourly the whole way: Úvaly :35 (8:29–17:35), Brandýs :38 (8:38–17:39). Between Brandýs and Čelákovice an hourly short trip in between: Brandýs :21 (13:21–17:21), Čelákovice :55 (13:55–16:55). Two Simutrans lines. The evening Brandýs – Nehvizdy, škola trips (18:39, 19:39, back 19:17) are listed.",
+   "sim": [
+    {
+     "name": "655",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Úvaly, železniční stanice",
+       "to": "Brandýs n.L.-St.Bol., nádraží",
+       "at": [
+        35
+       ]
+      },
+      {
+       "fr": "Brandýs n.L.-St.Bol., nádraží",
+       "to": "Úvaly, železniční stanice",
+       "at": [
+        38
+       ]
+      }
+     ],
+     "why": "Úvaly :35 → Jirny, Nehvizdy, Čelákovice, Lázně Toušeň, Zápy → Brandýs, nádraží, 52 min; Brandýs :38 back the same way (also Zápy, PREFA), 51 min. 2 buses."
+    },
+    {
+     "name": "655 Čelákovice",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Brandýs n.L.-St.Bol., nádraží",
+       "to": "Čelákovice, železniční stanice",
+       "at": [
+        21
+       ],
+       "notvia": [
+        "Úvaly, železniční stanice",
+        "Nehvizdy, škola"
+       ]
+      },
+      {
+       "fr": "Čelákovice, železniční stanice",
+       "to": "Brandýs n.L.-St.Bol., nádraží",
+       "at": [
+        55
+       ],
+       "notvia": [
+        "Úvaly, železniční stanice",
+        "Nehvizdy, škola"
+       ]
+      }
+     ],
+     "why": "Brandýs, nádraží :21 → Zápy, Lázně Toušeň → Čelákovice, železniční stanice, 20 min; Čelákovice :55 back, 21 min. 1 bus."
+    }
+   ]
+  },
+  "666": {
+   "core": [
+    "Brandýs n.L.-St.Bol., autobusové stanoviště",
+    "Nový Vestec",
+    "Káraný, pošta"
+   ],
+   "note": "Brandýs nad Labem, autobusové stanoviště – Nový Vestec – Káraný. In the afternoon out at 13:05, 14:05, 15:35, 16:35, 18:03, 19:03, each bus back from Káraný 17 min later (13:22, 14:22, 15:52, 16:52, 18:22, 19:22): pairs of hourly trips with 90-min gaps. Modelled at 16:00: hourly Brandýs :35 / Káraný :52; the 13:05, 14:05, 18:03, 19:03 pairs are 30 min off the pattern.",
+   "sim": [
+    {
+     "name": "666",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "to": "Káraný, pošta",
+       "at": [
+        35
+       ]
+      },
+      {
+       "fr": "Káraný, pošta",
+       "to": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "at": [
+        52
+       ]
+      }
+     ],
+     "why": "Brandýs, autobusové stanoviště :35 → škola, Sokolovská, Vosí hnízdo, Vestecká, Nový Vestec → Káraný, pošta, 12 min; Káraný :52 back, 15 min. 1 bus."
+    }
+   ]
+  },
+  "667": {
+   "core": [
+    "Brandýs n.L.-St.Bol., nádraží",
+    "Brandýs n.L.-St.Bol., autobusové stanoviště",
+    "Skorkov",
+    "Benátky nad Jizerou, autobusové stanoviště",
+    "Horky nad Jizerou"
+   ],
+   "anchor": "16:00",
+   "note": "Brandýs nad Labem, nádraží – autobusové stanoviště – Skorkov – Tuřice – Předměřice – Benátky nad Jizerou. Hourly from 14:26 out of Brandýs (:26 to 19:26; 12:56 and 13:56 via Skorkov, Otradovice) and from 16:15 out of Benátky (:15 to 18:15; also 14:15, 15:45). Two trips start further at Horky nad Jizerou (12:55, 14:57). Modelled at 16:00 by hand: the busiest stretch (13:50–15:50) is the Otradovice and Horky trips; the line's own hourly pattern runs from 14:26.",
+   "sim": [
+    {
+     "name": "667",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Brandýs n.L.-St.Bol., nádraží",
+       "to": "Benátky nad Jizerou, autobusové stanoviště",
+       "at": [
+        26
+       ],
+       "stops_via": [
+        "Skorkov, Otradovice"
+       ]
+      },
+      {
+       "fr": "Benátky nad Jizerou, autobusové stanoviště",
+       "to": "Brandýs n.L.-St.Bol., nádraží",
+       "at": [
+        15
+       ]
+      }
+     ],
+     "why": "Brandýs, nádraží :26 → autobusové stanoviště, Skorkov (via Otradovice, as the 12:56 and 13:56 trips: the only service of Skorkov, Otradovice; the :26 trips run straight on), Tuřice, Předměřice → Benátky nad Jizerou, about 38 min; Benátky :15 back direct, 32 min. 1 bus."
+    }
+   ]
+  },
+  "669": {
+   "core": [
+    "Brandýs n.L.-St.Bol., autobusové stanoviště",
+    "Dřísy",
+    "Sudovo Hlavno",
+    "Kostelní Hlavno, u kostela",
+    "Mečeříž"
+   ],
+   "note": "Brandýs nad Labem, autobusové stanoviště – Borek – Lhota – Dřísy – Konětopy – Sudovo Hlavno, some trips on to Kostelní Hlavno and Mečeříž. In the afternoon Brandýs → Sudovo Hlavno every 30 from 15:05 to 17:35 (15:35 and 17:35 via Dřísy, železniční stanice and Křenek), but back from Sudovo Hlavno only 15:33, 16:18, 16:48, 17:33, 18:13: the buses sleep in the villages (first trips 4:18–6:06 start there). At the inbound rate: every 120 with three slots each way, all exact: out 15:05, 15:35, 16:05 (17:05, 17:35 on the repeat), back 15:33, 16:18, 16:48; 16:35 out is the departure left off, chosen by the waits (2 buses; 15:35, 16:05, 16:35 would need 3). The Mečeříž trips (out 12:20, 14:35 to Kostelní Hlavno, 18:35; back 13:43, 14:50, 19:05) are 669 Mečeříž.",
+   "sim": [
+    {
+     "name": "669",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "to": "Sudovo Hlavno",
+       "at": [
+        "15:05",
+        "15:35",
+        "16:05"
+       ],
+       "notvia": [
+        "Mečeříž",
+        "Kostelní Hlavno, u kostela"
+       ]
+      },
+      {
+       "fr": "Sudovo Hlavno",
+       "to": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "at": [
+        "15:33",
+        "16:18",
+        "16:48"
+       ],
+       "notvia": [
+        "Mečeříž",
+        "Kostelní Hlavno, u kostela"
+       ]
+      }
+     ],
+     "why": "Brandýs, autobusové stanoviště 15:05, 15:35, 16:05 (17:05, 17:35, 18:05 …) → Proboštská jezera, Borek, Lhota, Dřísy, Konětopy → Sudovo Hlavno, 18 min (the real 15:35 detours via Dřísy, železniční stanice and Křenek, 31 min; those stops are on 669 Mečeříž); Sudovo Hlavno 15:33, 16:18, 16:48 back, 19 min. 16:35 out is left off (the inbound rate; with these three slots the buses turn in 8–28 min): 2 buses."
+    },
+    {
+     "name": "669 Mečeříž",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "to": "Mečeříž",
+       "at": [
+        "14:35"
+       ],
+       "core_to": "Kostelní Hlavno, u kostela",
+       "stops_via": [
+        "Křenek"
+       ]
+      },
+      {
+       "fr": "Mečeříž",
+       "to": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "at": [
+        "13:43"
+       ]
+      }
+     ],
+     "why": "Brandýs 14:35 → Dřísy, Sudovo Hlavno → Kostelní Hlavno, u kostela → Mečeříž, 27 min (the real 14:35 turns at Kostelní Hlavno and the 18:35 runs to Mečeříž); Mečeříž 17:43 back, which is the real 13:43 one period later (the 19:05 would leave before the bus arrives), 27 min. Out via Dřísy, železniční stanice and Křenek (as the 15:35, 17:35 and 19:35 trips, about 13 min longer), back by the direct road. The only service of Kostelní Hlavno, u kostela besides two 670 short trips. 1 bus."
+    }
+   ]
+  },
+  "670": {
+   "core": [
+    "Brandýs n.L.-St.Bol., autobusové stanoviště",
+    "Hlavenec",
+    "Kostelní Hlavno, u pomníku",
+    "Mečeříž"
+   ],
+   "note": "Brandýs nad Labem, autobusové stanoviště – Hlavenec – Kostelní Hlavno – Mečeříž (direct road). Afternoon Brandýs 15:37, 16:37, 18:05; Mečeříž 16:02, 17:02, 18:32; short trips from Kostelní Hlavno, u kostela 13:40 and 15:07 and Sudovo Hlavno 14:28 (the 669 bus coming back), and from Brandýs, nádraží 12:58 and 14:01. Hourly at 16:00: Brandýs :37, Mečeříž :02.",
+   "sim": [
+    {
+     "name": "670",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "to": "Mečeříž",
+       "at": [
+        37
+       ]
+      },
+      {
+       "fr": "Mečeříž",
+       "to": "Brandýs n.L.-St.Bol., autobusové stanoviště",
+       "at": [
+        2
+       ]
+      }
+     ],
+     "why": "Brandýs, autobusové stanoviště :37 → Sídliště, Na panském, Hlavenec, Kostelní Hlavno, u pomníku → Mečeříž, 17 min; Mečeříž :02 back, 16 min. 1 bus."
+    }
+   ]
+  },
+  "657": {
+   "core": [
+    "Brandýs n.L.-St.Bol., nádraží",
+    "Mratín",
+    "Líbeznice, pošta",
+    "Bašť, Baštěk",
+    "Odolena Voda, závod"
+   ],
+   "anchor": "14:00",
+   "note": "Brandýs nad Labem, nádraží – Popovice – Brázdim – Veleň – Sluhy – Mratín – Měšice – Líbeznice – Bašť – Odolena Voda, závod. Hourly: Brandýs :25 (12:25–15:25; 12:25 and 15:25 end at Bašť, Baštěk), then 16:20, 17:20 (to Mratín, cukrovar), 18:28; back read at Bašť, Baštěk :24 hourly 12:25–17:25 (Odolena Voda :15; 13:24 and 16:25 start at Baštěk). Modelled at 14:00 by hand, where the line's own :25 runs; at 16:00 the window holds only the 16:20 and the Mratín short, both 5 min early.",
+   "sim": [
+    {
+     "name": "657",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Brandýs n.L.-St.Bol., nádraží",
+       "to": "Odolena Voda, závod",
+       "at": [
+        25
+       ],
+       "core_to": "Bašť, Baštěk"
+      },
+      {
+       "fr": "Odolena Voda, závod",
+       "to": "Brandýs n.L.-St.Bol., nádraží",
+       "knot": "Bašť, Baštěk",
+       "knot_at": [
+        24
+       ],
+       "knot_rt": 9
+      }
+     ],
+     "why": "Brandýs, nádraží :25 → Popovice, Starý Brázdim, Veleň, Sluhy, Mratín, Měšice, Líbeznice, Bašť → Odolena Voda, závod, 47 min (12:25 and 15:25 turn at Bašť, Baštěk); Odolena Voda :15 (Baštěk :24) back, 48 min. 2 buses."
+    }
+   ]
+  },
+  "371": {
+   "core": [
+    "Praha, Kobylisy",
+    "Klecany, u hřbitova",
+    "Husinec, Řež, závod",
+    "Klecany, Astrapark",
+    "Klecany, Klecánky",
+    "Vodochody, Hoštice"
+   ],
+   "note": "Praha, Kobylisy – Zdiby – Klecany, u hřbitova, where it splits: to Husinec, Řež (every 30, Kobylisy :15 / :45, Řež :05 / :35), to Klecany, Astrapark (Kobylisy :08 / :23 / :53 from 14:53 to 17:08, back only 15:33, 16:03, 17:33) and to Klecany, Klecánky (Kobylisy :38 hourly; back 15:02, 16:26, 17:02). Klecany is an outstation end: out of Kobylisy four buses an hour go to Astrapark and Klecánky, back come two (at u hřbitova :07 / :37, Astrapark and Klecánky alternating). So Astrapark and Klecánky are timed at the inbound rate, every 120 with two slots each way, which gives the real :07 / :37 back at u hřbitova; the other Astrapark departures (15:53, 16:08, 16:23, 16:53) are buses going home. Two trips run on to Vodochody, Hoštice (14:08, 17:23; back 14:35): 371 Vodochody.",
+   "sim": [
+    {
+     "name": "371",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Praha, Kobylisy",
+       "to": "Husinec, Řež, závod",
+       "at": [
+        15
+       ]
+      },
+      {
+       "fr": "Husinec, Řež, závod",
+       "to": "Praha, Kobylisy",
+       "at": [
+        5
+       ]
+      }
+     ],
+     "why": "Kobylisy :15 / :45 → Zdiby, Přemyšlení, Klecany, u hřbitova, u kostela, Husinec → Řež, závod, 25 min; Řež :05 / :35 back, 27 min. 3 buses."
+    },
+    {
+     "name": "371 Astrapark",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Praha, Kobylisy",
+       "to": "Klecany, Astrapark",
+       "at": [
+        "15:08",
+        "15:23"
+       ]
+      },
+      {
+       "fr": "Klecany, Astrapark",
+       "to": "Praha, Kobylisy",
+       "at": [
+        "15:33",
+        "16:03"
+       ]
+      }
+     ],
+     "why": "Kobylisy 15:08, 15:23 (17:08, 17:23 …) → Klecany, Astrapark, 17 min; Astrapark 15:33, 16:03 back, 19 min (the inbound rate; the real 15:53, 16:08, 16:23, 16:53 are off the pattern). 2 buses."
+    },
+    {
+     "name": "371 Klecánky",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Praha, Kobylisy",
+       "to": "Klecany, Klecánky",
+       "at": [
+        "15:38",
+        "16:38"
+       ]
+      },
+      {
+       "fr": "Klecany, Klecánky",
+       "to": "Praha, Kobylisy",
+       "at": [
+        "16:26",
+        "17:02"
+       ]
+      }
+     ],
+     "why": "Kobylisy :38 (that entry is every 60) → Klecany, u hřbitova → Klecany → Klecánky, 23 min; Klecánky 16:26 and 17:02 back (via Astrapark on the 16:26, direct on the 17:02), 26 min. 2 buses."
+    },
+    {
+     "name": "371 Vodochody",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Praha, Kobylisy",
+       "to": "Vodochody, Hoštice",
+       "at": [
+        "14:08"
+       ]
+      },
+      {
+       "fr": "Vodochody, Hoštice",
+       "to": "Praha, Kobylisy",
+       "at": [
+        "14:35"
+       ]
+      }
+     ],
+     "why": "The only service of Vodochody, Hoštice: Kobylisy 14:08 → Klecany, Astrapark → Hoštice, 25 min; Hoštice 14:35 back (2-min turn as in the timetable), 27 min. 1 bus."
+    }
+   ]
+  },
+  "373": {
+   "core": [
+    "Praha, Kobylisy",
+    "Klíčany",
+    "Veliká Ves",
+    "Úžice, Netřeba",
+    "Odolena Voda, Ke Stadionu"
+   ],
+   "note": "Praha, Kobylisy – Zdiby – Sedlec – Klíčany – Panenské Břežany – Veliká Ves – Odolena Voda, Ke Stadionu, half the trips via Neratovice, Korycany and Úžice (Netřeba, Kopeč) between Veliká Ves and Odolena Voda. Out of Kobylisy every 40 from 15:32 to 18:52 (:32 / :12 / :52; 16:12 and 18:12 via Úžice, before 15:32 hourly :55 via Úžice); back from Odolena Voda 15:38, 16:24 (via Úžice), 17:11, 17:45, 18:21, 19:07 (direct). Every 120 with three slots each way, exact in the window: out direct, back via Úžice, so both paths are on the line.",
+   "sim": [
+    {
+     "name": "373",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Praha, Kobylisy",
+       "to": "Odolena Voda, Ke Stadionu",
+       "at": [
+        "15:32",
+        "16:12",
+        "16:52"
+       ],
+       "stops": [
+        "Praha, Kobylisy",
+        "Praha, Vozovna Kobylisy",
+        "Praha, Počeradská",
+        "Praha, Prunéřovská",
+        "Zdiby, u Celnice",
+        "Zdiby, U Parku",
+        "Zdiby, Výzkumný ústav",
+        "Sedlec [PH]",
+        "Sedlec, PEMA",
+        "Klecany, Zdibsko",
+        "Klíčany",
+        "Klíčany, Břežanská",
+        "Panenské Břežany, zámek",
+        "Panenské Břežany",
+        "Veliká Ves",
+        "Odolena Voda, Dolní náměstí",
+        "Odolena Voda, Komenského",
+        "Odolena Voda, Ke Stadionu"
+       ],
+       "rt": 39
+      },
+      {
+       "fr": "Odolena Voda, Ke Stadionu",
+       "to": "Praha, Kobylisy",
+       "at": [
+        "15:38",
+        "16:24",
+        "17:11"
+       ],
+       "stops_via": [
+        "Úžice, Netřeba"
+       ]
+      }
+     ],
+     "why": "Kobylisy 15:32, 16:12, 16:52 (that entry is every 40) → Sedlec, Klíčany, Panenské Břežany, Veliká Ves → Odolena Voda direct, 39 min (the real 16:12 runs via Úžice); Odolena Voda 15:38, 16:24, 17:11 back via Úžice, Kopeč and Netřeba and Neratovice, Korycany (as the 15:38 and 16:24; the 17:11 runs direct)."
+    }
+   ]
+  },
+  "374": {
+   "core": [
+    "Praha, Kobylisy",
+    "Klecany, u kostela",
+    "Vodochody",
+    "Máslovice",
+    "Odolena Voda, závod"
+   ],
+   "note": "Praha, Kobylisy – Zdiby – Klecany – Větrušice – Drasty – Vodochody – Máslovice. Out of Kobylisy every 30 at :00 / :30 (15:00–19:00); back from Máslovice :11 / :38 (15:11–17:38). Some trips run via Klecany, Ahold (out 13:30, 14:00, 17:30, 18:00; back 13:36–14:38, 16:38, 17:38, 18:14): the line's way back takes that path. One trip each way runs on through Postřižín to Odolena Voda, závod (Kobylisy 14:30, back 15:31): listed, as Postřižín, u kapličky is served all afternoon by 370 (Mělnicko sheet) and Odolena Voda, závod by 657.",
+   "sim": [
+    {
+     "name": "374",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Kobylisy",
+       "to": "Máslovice",
+       "at": [
+        0,
+        30
+       ],
+       "stops": [
+        "Praha, Kobylisy",
+        "Praha, Vozovna Kobylisy",
+        "Praha, Počeradská",
+        "Praha, Prunéřovská",
+        "Zdiby, u Celnice",
+        "Zdiby, U Parku",
+        "Zdiby",
+        "Zdiby, Veltěž, pošta",
+        "Zdiby, Veltěž",
+        "Zdiby, Přemyšlení",
+        "Zdiby, Přemyšlení, V Remízkách",
+        "Klecany, u hřbitova",
+        "Klecany, u kostela",
+        "Větrušice",
+        "Klecany, Drasty, čistírna",
+        "Klecany, Drasty",
+        "Vodochody, rozcestí Hoštice",
+        "Vodochody",
+        "Vodochody, u školy",
+        "Máslovice"
+       ]
+      },
+      {
+       "fr": "Máslovice",
+       "to": "Praha, Kobylisy",
+       "at": [
+        11,
+        38
+       ],
+       "stops_via": [
+        "Klecany, Ahold"
+       ]
+      }
+     ],
+     "why": "Kobylisy :00 / :30 → Zdiby, Klecany, u kostela, Větrušice, Drasty, Vodochody → Máslovice, 27 min; Máslovice :11 / :38 back via Klecany, Ahold (the path of the :38 trips; the :11 trips skip Ahold), about 32 min."
+    }
+   ]
+  },
+  "411": {
+   "core": [
+    "Praha, Kobylisy",
+    "Zdiby",
+    "Zdiby, Holosmetky",
+    "Zdiby, Brnky"
+   ],
+   "note": "Praha, Kobylisy – Zdiby, then two ends: Zdiby, Holosmetky (hourly, Kobylisy :55 from 14:55 to 16:55, Holosmetky :16 from 15:16 to 17:16) and the Zdiby, Brnky loop (out via Pod Mezí, back via Pod Hájem, Zlatý kopec and Přemyšlení, Chaberská; Kobylisy 13:15, 14:15, 15:25, 16:25, 17:35, Brnky 13:42, 14:38, 15:42, 16:44, 17:58: hourly with a drift). Both ends turn at once (the 0-minute chain test: 8 of 11 Brnky and 8 of 13 Holosmetky arrivals leave again within 5 min). Two Simutrans lines; 411 Brnky is approximate (owner check).",
+   "sim": [
+    {
+     "name": "411",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Kobylisy",
+       "to": "Zdiby, Holosmetky",
+       "at": [
+        55
+       ]
+      },
+      {
+       "fr": "Zdiby, Holosmetky",
+       "to": "Praha, Kobylisy",
+       "at": [
+        16
+       ]
+      }
+     ],
+     "why": "Kobylisy :55 → Zdiby, Přemyšlení, Polní → Holosmetky, 14 min; Holosmetky :16 back, 16 min. 1 bus."
+    },
+    {
+     "name": "411 Brnky",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Kobylisy",
+       "to": "Zdiby, Brnky",
+       "at": [
+        25
+       ]
+      },
+      {
+       "fr": "Zdiby, Brnky",
+       "to": "Praha, Kobylisy",
+       "at": [
+        42
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Kobylisy :25 → Zdiby, Přemyšlení, Pod Mezí → Brnky, 17 min; Brnky :42 back via Pod Hájem, Zlatý kopec, Přemyšlení, Chaberská, 19 min (0-minute turn as in the timetable). Approximate: the real 17:35 out is 10 min after the 17:25 slot and 13:15 / 14:15 are 10 min before :25. 1 bus."
+    }
+   ]
+  },
+  "656": {
+   "core": [
+    "Hovorčovice, U Kostela",
+    "Líbeznice, škola",
+    "Čakovičky",
+    "Zlonín"
+   ],
+   "anchor": "14:00",
+   "note": "A loop Hovorčovice – Líbeznice – Měšice – Nová Ves – Čakovičky – Zlonín – Měšice – Líbeznice – Hovorčovice, hourly at :02 from 13:02 to 15:02 (also 12:13; the 16:02 ends at Zlonín). Modelled at 14:00 by hand: the line stops after 16:02, so the 16:00 window would hold only its last, shortened trip.",
+   "sim": [
+    {
+     "name": "656",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Hovorčovice, U Kostela",
+       "to": "Hovorčovice, U Kostela",
+       "at": [
+        2
+       ]
+      }
+     ],
+     "why": "Hovorčovice, U Kostela :02 round the loop (Líbeznice, zdrav.stř., Měšice, Nová Ves, Čakovičky, Zlonín, Měšice, Líbeznice) back to U Kostela, 39 min. 1 bus."
+    }
+   ]
+  },
+  "303": {
+   "core": [
+    "Praha, Černý Most",
+    "Šestajovice, Pražská",
+    "Praha, Újezd nad Lesy",
+    "Sibřina",
+    "Křenice"
+   ],
+   "note": "Praha, Černý Most – Horní Počernice – Šestajovice – Klánovice – Újezd nad Lesy – Koloděje – Sibřina – Křenice. Every 30 all afternoon: Černý Most :03 / :33 (13:03–19:03), Křenice :07 / :37 from 15:37 (13:04–15:04 at :04 / :37). Some trips run through Sibřina, škola and Na Paloučku (out 13:33, 14:33, back 13:04, 14:04, 15:04): those stops are on 765.",
+   "sim": [
+    {
+     "name": "303",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Křenice",
+       "at": [
+        3
+       ]
+      },
+      {
+       "fr": "Křenice",
+       "to": "Praha, Černý Most",
+       "at": [
+        7
+       ]
+      }
+     ],
+     "why": "Černý Most :03 / :33 → Horní Počernice, Šestajovice, Praha, Nádraží Klánovice, Újezd nad Lesy, Koloděje, Sibřina → Křenice, 47 min; Křenice :07 / :37 back (via Nádraží Klánovice-sever), 46 min. 4 buses."
+    }
+   ]
+  },
+  "343": {
+   "core": [
+    "Praha, Nádraží Klánovice-sever",
+    "Šestajovice, Balkán",
+    "Jirny",
+    "Jirny, Nové Jirny, hájovna",
+    "Horoušany, u rybníka",
+    "Nehvizdy, škola"
+   ],
+   "note": "Praha, Nádraží Klánovice-sever – Šestajovice – Jirny – Nové Jirny, hájovna, hourly (Klánovice-sever :10 from 14:10, hájovna :36 from 14:36). The line's other part, Horoušany, u rybníka – Nehvizdy, škola (Horoušany :50 / Nehvizdy :00 hourly, extra :20 / :30 until 15:30), is run by the 344 buses: every one of those trips meets a 344 bus at Horoušany within 0–5 minutes (9 of 9 arrivals, 8 of 9 departures), so it is modelled inside the 344 circuit. Two midday trips run Klánovice-sever – Zeleneč – Svémyslice (13:05, back 13:29; 12:15 / 12:49): 343 Zeleneč, the only service of Zeleneč, železniční zastávka.",
+   "sim": [
+    {
+     "name": "343",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Nádraží Klánovice-sever",
+       "to": "Jirny, Nové Jirny, hájovna",
+       "at": [
+        10
+       ]
+      },
+      {
+       "fr": "Jirny, Nové Jirny, hájovna",
+       "to": "Praha, Nádraží Klánovice-sever",
+       "at": [
+        36
+       ]
+      }
+     ],
+     "why": "Klánovice-sever :10 → Šestajovice, Jirny, zámek, Jirny, Luční → Nové Jirny, hájovna, 14 min; hájovna :36 back, 14 min. 1 bus."
+    },
+    {
+     "name": "343 Zeleneč",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Praha, Nádraží Klánovice-sever",
+       "to": "Svémyslice",
+       "at": [
+        "13:05"
+       ]
+      },
+      {
+       "fr": "Svémyslice",
+       "to": "Praha, Nádraží Klánovice-sever",
+       "at": [
+        "13:29"
+       ]
+      }
+     ],
+     "why": "The only service of Zeleneč, železniční zastávka: Klánovice-sever 13:05 → Šestajovice, Za Stodolami, Zeleneč, železniční zastávka, Zeleneč → Svémyslice, 14 min; Svémyslice 13:29 back, 16 min (the real 13:05 / 13:29 round). 1 bus."
+    }
+   ]
+  },
+  "344": {
+   "core": [
+    "Praha, Černý Most",
+    "Šestajovice, u školy",
+    "Jirny",
+    "Horoušany, u rybníka",
+    "Nehvizdy, škola"
+   ],
+   "note": "Praha, Černý Most – Horní Počernice – Šestajovice – Jirny – Horoušánky – Horoušany, u rybníka, every 30 all afternoon: Černý Most :18 / :48 (13:18–18:48), Horoušany :07 / :37 (13:37–19:07). Every second bus goes on as 343 to Nehvizdy, škola and back (the 0-minute chain test: 9 of 9 343 trips there leave on a 344 arrival, 8 of 9 come back to a 344 departure): the :18 from Černý Most reaches Horoušany :50, runs 343 to Nehvizdy (:57, back :00) and leaves Horoušany :07 as 344. Modelled as one circuit with Černý Most twice: the Nehvizdy round fills the bus's wait at Horoušany, so 344 and the Nehvizdy trips need 3 buses together (344 alone needs 3, a separate Nehvizdy shuttle 1 more). The 343 extras at :20 / :30 (until 15:30) are listed.",
+   "sim": [
+    {
+     "name": "344",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Horoušany, u rybníka",
+       "at": [
+        18
+       ]
+      },
+      {
+       "fr": "Horoušany, u rybníka",
+       "to": "Nehvizdy, škola",
+       "at": [
+        50
+       ],
+       "lines": [
+        "343"
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Nehvizdy, škola",
+       "to": "Horoušany, u rybníka",
+       "at": [
+        0
+       ],
+       "lines": [
+        "343"
+       ]
+      },
+      {
+       "fr": "Horoušany, u rybníka",
+       "to": "Praha, Černý Most",
+       "at": [
+        7
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Horoušany, u rybníka",
+       "at": [
+        48
+       ]
+      },
+      {
+       "fr": "Horoušany, u rybníka",
+       "to": "Praha, Černý Most",
+       "at": [
+        37
+       ]
+      }
+     ],
+     "why": "A circuit: Černý Most :18 → Horní Počernice, Šestajovice, Jirny, Horoušánky → Horoušany, u rybníka (:50), on at once as 343 to Nehvizdy, škola (:57); Nehvizdy :00 back via Nehvizdy, na kopci to Horoušany (:07) and on at once as 344 to Černý Most; then Černý Most :48 → Horoušany, Horoušany :37 → Černý Most. The two 0-minute turns at Horoušany are the real through-running. 3 buses."
+    }
+   ]
+  },
+  "354": {
+   "core": [
+    "Praha, Černý Most",
+    "Jirny, Logistický park",
+    "Nehvizdy",
+    "Nehvizdy, Mochovská",
+    "Mochov"
+   ],
+   "anchor": "15:30",
+   "note": "Praha, Černý Most – Horní Počernice – Jirny, Logistický park – Nehvizdy – Mochov. Hourly to Mochov (Černý Most :00, 14:00–17:00; Mochov :31) and hourly to Nehvizdy, Mochovská in between (Černý Most :30, 14:30–17:35; Mochovská :06, 15:06–17:01). Modelled at 15:30 (window 15:00–17:00) by hand: the busiest stretch, 13:10–15:10, is extra trips on the line's own stops (Mochov 13:11, 13:41, 14:41, 14:51; the Jirny, LE&CO trips); the pattern runs from 14:00. At Mochov most buses meet line 662 within 0–5 minutes (12 of 17 both ways): through-running into the Mochov area, for the live map. Two trips a day serve Jirny, LE&CO (17:10 out, 17:35 back; also 13:30 / 14:20): 354 LE&CO.",
+   "sim": [
+    {
+     "name": "354",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Mochov",
+       "at": [
+        0
+       ]
+      },
+      {
+       "fr": "Mochov",
+       "to": "Praha, Černý Most",
+       "at": [
+        31
+       ]
+      }
+     ],
+     "why": "Černý Most :00 → Horní Počernice, Sychrov, Jirny, Logistický park, Nehvizdy → Mochov, 27 min; Mochov :31 back, 30 min. 2 buses."
+    },
+    {
+     "name": "354 Mochovská",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Nehvizdy, Mochovská",
+       "at": [
+        30
+       ],
+       "notvia": [
+        "Mochov"
+       ]
+      },
+      {
+       "fr": "Nehvizdy, Mochovská",
+       "to": "Praha, Černý Most",
+       "at": [
+        6
+       ],
+       "notvia": [
+        "Mochov"
+       ]
+      }
+     ],
+     "why": "Černý Most :30 → Jirny, Nehvizdy → Nehvizdy, Mochovská, 23 min; Mochovská :06 back, 25 min. 1 bus."
+    },
+    {
+     "name": "354 LE&CO",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Jirny, LE&CO",
+       "at": [
+        "17:10"
+       ]
+      },
+      {
+       "fr": "Jirny, LE&CO",
+       "to": "Praha, Černý Most",
+       "at": [
+        "17:35"
+       ]
+      }
+     ],
+     "why": "The only service of Jirny, LE&CO (besides the 17:00 / 17:45 Mochov trips that pass it): Černý Most 17:10 → Jirny, Logistický park → LE&CO, 18 min; LE&CO 17:35 back, 19 min (the real round). 1 bus."
+    }
+   ]
+  },
+  "391": {
+   "core": [
+    "Praha, Nádraží Klánovice",
+    "Květnice, náves",
+    "Škvorec, náměstí",
+    "Úvaly, železniční stanice",
+    "Úvaly, OC Pražská"
+   ],
+   "note": "Praha, Nádraží Klánovice – Květnice – Dobročovice – Škvorec – Úvaly, železniční stanice, hourly: Klánovice :07 (14:07–19:07), Úvaly :54 (12:54–19:54). Some trips start or end at Úvaly, OC Pražská, a loop past Elektromechanika and MŠ Pražská (out 12:37, 13:07 to OC; back 12:50, 13:50, 16:20 from OC): the Simutrans line runs every trip on round that loop, as its own trips there do (X391 serves the loop too). The back leg is read at Úvaly, železniční stanice (:54) whichever end the trip starts from.",
+   "sim": [
+    {
+     "name": "391",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Nádraží Klánovice",
+       "to": "Úvaly, OC Pražská",
+       "at": [
+        7
+       ],
+       "core_to": "Úvaly, železniční stanice"
+      },
+      {
+       "fr": "Úvaly, OC Pražská",
+       "to": "Praha, Nádraží Klánovice",
+       "knot": "Úvaly, železniční stanice",
+       "knot_at": [
+        54
+       ]
+      }
+     ],
+     "why": "Klánovice :07 → Květnice, Dobročovice, Škvorec, Úvaly, železniční stanice (:39) → Elektromechanika → OC Pražská; OC Pražská :50 → MŠ Pražská → Úvaly, železniční stanice (:54) → Klánovice. Most real trips turn at the station; the game bus takes the OC Pražská loop every time (6 + 4 min). 2 buses."
+    }
+   ]
+  },
+  "287391": {
+   "core": [
+    "Úvaly, Radlická čtvrť",
+    "Úvaly, náměstí Arnošta z Pardubic",
+    "Úvaly, železniční stanice",
+    "Úvaly, OC Pražská"
+   ],
+   "note": "Replacement line X391 (licence 287391), in the PID data since at least 29 Sep 2026 (in both the 29 Sep and the 1 Nov feeds): long works, so modelled as it runs. Úvaly, Radlická čtvrť – U Přeložky – pivovar – náměstí – železniční stanice, each trip also round the station loop past Elektromechanika, OC Pražská and MŠ Pražská. Hourly all afternoon and evening: Radlická čtvrť :23 (12:23–21:23; :38 before noon), station :03 (12:03–23:03; :18 before noon), one bus turning at once at Radlická čtvrť (17 of 20). The only service of Úvaly, Radlická čtvrť.",
+   "sim": [
+    {
+     "name": "X391",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Úvaly, Radlická čtvrť",
+       "to": "Úvaly, železniční stanice",
+       "at": [
+        23
+       ],
+       "stops": [
+        "Úvaly, Radlická čtvrť",
+        "Úvaly, U Přeložky",
+        "Úvaly, pivovar",
+        "Úvaly, náměstí Arnošta z Pardubic",
+        "Úvaly, Husova",
+        "Úvaly, železniční stanice",
+        "Úvaly, Elektromechanika",
+        "Úvaly, OC Pražská",
+        "Úvaly, MŠ Pražská",
+        "Úvaly, železniční stanice"
+       ],
+       "rt": 13
+      },
+      {
+       "fr": "Úvaly, železniční stanice",
+       "to": "Úvaly, Radlická čtvrť",
+       "at": [
+        3
+       ]
+      }
+     ],
+     "why": "Radlická čtvrť :23 → U Přeložky, pivovar, náměstí, Husova → Úvaly, železniční stanice, then round Elektromechanika, OC Pražská, MŠ Pražská back to the station, 13 min (`rt` set to the whole trip; the leg's first station passing is 4 min out); station :03 → the same loop → u mlýna, náměstí, pivovar, U Přeložky → Radlická čtvrť, 16 min. 1 bus (on 2 Nov the live map shows bus 7981 on every trip 11:38–17:23)."
+    }
+   ]
+  },
+  "484": {
+   "core": [
+    "Úvaly, železniční stanice",
+    "Horoušany",
+    "Tuklaty, Tlustovousy"
+   ],
+   "note": "A one-way loop Úvaly, železniční stanice – Hodov – Zálesí – Horoušánky – Horoušany – Tuklaty – Tlustovousy – Úvaly, hřbitov – náměstí – station, 30 min round: hourly at :44 (12:56, 14:04, 14:44, then 18:44–20:44), every 30 from 15:44 to 17:44 (:14 / :44), one bus turning at once. The Úvaly – Horoušany shorts (15:14 out, 15:24 back; hourly 18:14 / 18:24 in the evening) are listed (their stops are on the loop).",
+   "sim": [
+    {
+     "name": "484",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Úvaly, železniční stanice",
+       "to": "Úvaly, železniční stanice",
+       "at": [
+        14
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Úvaly, železniční stanice :14 / :44 round the loop (Hodov, Zálesí, Horoušánky, Horoušany, Tuklaty, Tlustovousy, Úvaly, hřbitov, náměstí, Husova) back to the station, 30 min; 0-minute turn as in the timetable. 1 bus."
+    }
+   ]
+  },
+  "686": {
+   "core": [
+    "Říčany, Wolkerova",
+    "Říčany, Masarykovo náměstí",
+    "Křenice",
+    "Škvorec, Třebohostice",
+    "Úvaly, železniční stanice"
+   ],
+   "note": "Říčany, Wolkerova – Masarykovo náměstí – nádraží – Pacov – Křenice – Březí – Sluštice – Zlatá – Škvorec, Třebohostice – Škvorec – Úvaly, železniční stanice. Hourly: Říčany :00 (13:00–20:00), Úvaly :11 (13:11–19:11). The Úvaly – Škvorec, Třebohostice shorts (9:13, 11:33, 21:13) are outside the afternoon.",
+   "sim": [
+    {
+     "name": "686",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Říčany, Wolkerova",
+       "to": "Úvaly, železniční stanice",
+       "at": [
+        0
+       ]
+      },
+      {
+       "fr": "Úvaly, železniční stanice",
+       "to": "Říčany, Wolkerova",
+       "at": [
+        11
+       ]
+      }
+     ],
+     "why": "Říčany, Wolkerova :00 → Masarykovo náměstí, nádraží, Pacov, Křenice, Březí, Sluštice, Zlatá, Škvorec → Úvaly, 47 min; Úvaly :11 back (via Říčany, U Milána), 46 min. 2 buses."
+    }
+   ]
+  },
+  "823": {
+   "core": [
+    "Úvaly, železniční stanice",
+    "Škvorec, náměstí",
+    "Přišimasy",
+    "Doubravčice"
+   ],
+   "note": "Úvaly, železniční stanice – Škvorec, náměstí every 30 (Úvaly :03 / :33 from 14:03, Škvorec :17 / :47 from 14:17), and hourly on through Škvorec, rozcestí – Přišimasy – Hradešín – Masojedy to Doubravčice (Úvaly :43, Doubravčice :52, from 13:43 / 14:52). Two Simutrans lines. The Jirny – Doubravčice trip (12:53) is listed.",
+   "sim": [
+    {
+     "name": "823",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Úvaly, železniční stanice",
+       "to": "Doubravčice",
+       "at": [
+        43
+       ]
+      },
+      {
+       "fr": "Doubravčice",
+       "to": "Úvaly, železniční stanice",
+       "at": [
+        52
+       ]
+      }
+     ],
+     "why": "Úvaly :43 → Škvorec, Přišimasy, Hradešín, Masojedy → Doubravčice, 23 min; Doubravčice :52 back, 23 min. 2 buses (the real bus waits 46 min at Doubravčice)."
+    },
+    {
+     "name": "823 Škvorec",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Úvaly, železniční stanice",
+       "to": "Škvorec, náměstí",
+       "at": [
+        3
+       ],
+       "notvia": [
+        "Doubravčice"
+       ]
+      },
+      {
+       "fr": "Škvorec, náměstí",
+       "to": "Úvaly, železniční stanice",
+       "at": [
+        17
+       ],
+       "notvia": [
+        "Doubravčice"
+       ]
+      }
+     ],
+     "why": "Úvaly, železniční stanice :03 / :33 → Úvaly, náměstí, Slovany → Škvorec, náměstí, 8 min; Škvorec :17 / :47 back, 8 min. 1 bus."
+    }
+   ]
+  },
+  "328": {
+   "core": [
+    "Praha, Opatov",
+    "Čestlice",
+    "Dobřejovice, Na Návsi",
+    "Modletice",
+    "Modletice, Doubravice"
+   ],
+   "note": "Praha, Opatov – Čestlice – Dobřejovice – Herink – Modletice – Modletice, Doubravice, hourly: Opatov :25 (14:25–18:25; :19 before 14:00), Doubravice :03 (11:03–19:03). Out of Opatov the buses run through Čestlice village (Polní, Čestlice, Lipová), back past the shopping zone (aquapark, zábavní park, Rehau). Between them hourly Opatov – Čestlice short trips: Opatov :55 (14:55–17:55), Čestlice :59 (15:59, 16:59; also 14:01, 14:51, 18:51): 328 Čestlice. The real buses could share the two at Opatov (3 buses instead of 4): an owner pooling option.",
+   "sim": [
+    {
+     "name": "328",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Opatov",
+       "to": "Modletice, Doubravice",
+       "at": [
+        25
+       ]
+      },
+      {
+       "fr": "Modletice, Doubravice",
+       "to": "Praha, Opatov",
+       "at": [
+        3
+       ]
+      }
+     ],
+     "why": "Opatov :25 → Čestlice, Polní, Čestlice, Lipová, Dobřejovice, Herink, Modletice → Doubravice, 29 min; Doubravice :03 back via Kaufland, Modletice, Dobřejovice, Čestlice, Rehau, zábavní park, nákupní zóna, aquapark, 31 min. 2 buses."
+    },
+    {
+     "name": "328 Čestlice",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Opatov",
+       "to": "Čestlice",
+       "at": [
+        55
+       ],
+       "notvia": [
+        "Modletice, Doubravice"
+       ]
+      },
+      {
+       "fr": "Čestlice",
+       "to": "Praha, Opatov",
+       "at": [
+        59
+       ],
+       "notvia": [
+        "Modletice, Doubravice"
+       ]
+      }
+     ],
+     "why": "Opatov :55 → Čestlice, aquapark, nákupní zóna, Polní → Čestlice, 11 min; Čestlice :59 back, 13 min. The real buses wait about 50 min at Čestlice, so 2 buses."
+    }
+   ]
+  },
+  "335": {
+   "core": [
+    "Praha, Budějovická",
+    "Vestec, Šátalka",
+    "Jesenice [PZ]",
+    "Sulice, Hlubočinka, obchodní centrum",
+    "Sulice, Želivec",
+    "Kamenice, kulturní dům"
+   ],
+   "note": "Praha, Budějovická – Vestec – Jesenice – Hlubočinka – Sulice / Radějovice – Křížkový Újezdec – Želivec – Kostelec u Křížků – Kamenice, kulturní dům. Out of Prague every 30 to 35 min in two alternating routes: via Hlubočinka and Sulice (14:05, 15:05, 16:06, 17:20, 18:20, 53 min) and via Radějovice and Křížkový Újezdec (13:34, 14:40, 15:31, 16:33, 17:52, 49 min). Back from Kamenice only about hourly (13:16, 14:23, 15:10, 16:24, 17:09, 18:38), each the long way through Štiřín, Všedobrovice, Petříkov, Křížkový Újezdec, Sulice and Radějovice (71 min). An outstation line: the buses sleep at Kamenice (first trips 4:42–5:46 start there) and many go on there as 444 (the chain test: 10 of 21 arrivals). Timed at the inbound rate, every 120 with two slots each way: out the two Hlubočinka trips 16:06 and 17:20 (the only route through Sulice, Hlubočinka), back 16:24 and 17:09 (also 14:23, 15:10 within a minute). The Radějovice trips 15:31 and 16:33 out are buses going home (off the pattern). The Kamenice – Sulice, Želivec shorts (13:46, 16:06, 19:32) go on as 339 and are listed.",
+   "sim": [
+    {
+     "name": "335",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Praha, Budějovická",
+       "to": "Kamenice, kulturní dům",
+       "at": [
+        "16:06",
+        "17:20"
+       ],
+       "stops_via": [
+        "Sulice, Hlubočinka"
+       ]
+      },
+      {
+       "fr": "Kamenice, kulturní dům",
+       "to": "Praha, Budějovická",
+       "at": [
+        "16:24",
+        "17:09"
+       ]
+      }
+     ],
+     "why": "Budějovická 16:06 and 17:20 → Vestec, Jesenice, Hlubočinka, Sulice, Želivec, Mandava, Kostelec u Křížků → Kamenice, kulturní dům, 53 min; Kamenice 16:24 and 17:09 back the long way (Štiřín, Všedobrovice, Petříkov, Křížkový Újezdec, Sulice, Nechánice, Čenětice, Olešky, Radějovice, Hlubočinka, obchodní centrum), 71 min. 3 buses."
+    }
+   ]
+  },
+  "357": {
+   "core": [
+    "Praha, Opatov",
+    "Praha, Šeberov",
+    "Průhonice",
+    "Čestlice"
+   ],
+   "anchor": "15:30",
+   "note": "Praha, Opatov – Šeberov – Průhonice – Čestlice, hourly all day: Opatov :45, Čestlice :11 (9:11–16:11, then 16:56, 17:57, 19:12). In the afternoon peak short trips Opatov :15 → Průhonice (15:15, 16:15, 17:15), Průhonice :33 → Opatov (15:33, 16:33, 17:33): 357 Průhonice. Modelled at 15:30 by hand (window 15:00–17:00): the shorts start at 15:15 and the Čestlice departures move 15 min earlier from 16:56, so this window holds both patterns. The Nupaky, školka trip (7:27) is listed.",
+   "sim": [
+    {
+     "name": "357",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Opatov",
+       "to": "Čestlice",
+       "at": [
+        45
+       ]
+      },
+      {
+       "fr": "Čestlice",
+       "to": "Praha, Opatov",
+       "at": [
+        11
+       ]
+      }
+     ],
+     "why": "Opatov :45 → Šeberov, Průhonice, Rozkoš, hájovna, Tovární, Hole, Průhonice → Čestlice, 21 min; Čestlice :11 back, 24 min. 1 bus."
+    },
+    {
+     "name": "357 Průhonice",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Opatov",
+       "to": "Průhonice",
+       "at": [
+        15
+       ],
+       "notvia": [
+        "Čestlice"
+       ]
+      },
+      {
+       "fr": "Průhonice",
+       "to": "Praha, Opatov",
+       "at": [
+        33
+       ],
+       "notvia": [
+        "Čestlice"
+       ]
+      }
+     ],
+     "why": "Opatov :15 → Šeberov → Průhonice, 15 min; Průhonice :33 back, 17 min (the real 15:15–17:33 peak shorts). 1 bus."
+    }
+   ]
+  },
+  "385": {
+   "core": [
+    "Praha, Opatov",
+    "Nupaky, hotel",
+    "Říčany, Masarykovo náměstí",
+    "Říčany, Olivovna",
+    "Mukařov [PH]",
+    "Zvánovice"
+   ],
+   "note": "Praha, Opatov – Průhonice – Čestlice – Nupaky, then on through Kuří to Říčany and beyond Říčany, Olivovna through Tehovec, Mukařov, Svojetice and Struhařov to Zvánovice. Three ends, each with its own Simutrans line, together every 15 out of Opatov (:02 Zvánovice, :17 Nupaky, :32 Říčany, :47 Nupaky): Nupaky, hotel every 30 (Opatov :17 / :47 from 14:47, Nupaky :18 / :48 from 15:48), Říčany, Olivovna hourly (Opatov :32 from 14:32, Olivovna :42 from 15:42) and Zvánovice hourly (Opatov :02 from 14:02, Zvánovice :45 from 14:45). The Mukařov trips (out until 13:34, back until 12:05) end before the afternoon; their stops are on 385 Zvánovice.",
+   "sim": [
+    {
+     "name": "385",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Opatov",
+       "to": "Zvánovice",
+       "at": [
+        2
+       ]
+      },
+      {
+       "fr": "Zvánovice",
+       "to": "Praha, Opatov",
+       "at": [
+        45
+       ]
+      }
+     ],
+     "why": "Opatov :02 → Průhonice, Čestlice, Nupaky, Kuří, Říčany (Masarykovo náměstí, Park A.Švehly, nádraží, Olivovna), Tehovec, Mukařov, Svojetice, Struhařov, Ondřejov, Třemblat → Zvánovice, 64 min; Zvánovice :45 back (via Svojetice, Na Moklině and Říčany, U Milána), 66 min. 3 buses."
+    },
+    {
+     "name": "385 Nupaky",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Praha, Opatov",
+       "to": "Nupaky, hotel",
+       "at": [
+        17
+       ],
+       "notvia": [
+        "Říčany, Masarykovo náměstí"
+       ]
+      },
+      {
+       "fr": "Nupaky, hotel",
+       "to": "Praha, Opatov",
+       "at": [
+        18
+       ],
+       "notvia": [
+        "Říčany, Masarykovo náměstí"
+       ]
+      }
+     ],
+     "why": "Opatov :17 / :47 → Průhonice, Čestlice → Nupaky, hotel, 18 min; Nupaky :18 / :48 back, 18 min. 2 buses."
+    },
+    {
+     "name": "385 Říčany",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Opatov",
+       "to": "Říčany, Olivovna",
+       "at": [
+        32
+       ],
+       "notvia": [
+        "Zvánovice"
+       ]
+      },
+      {
+       "fr": "Říčany, Olivovna",
+       "to": "Praha, Opatov",
+       "at": [
+        42
+       ],
+       "notvia": [
+        "Zvánovice"
+       ]
+      }
+     ],
+     "why": "Opatov :32 → Čestlice, Nupaky, Kuří → Říčany, Masarykovo náměstí, nádraží → Olivovna, 39 min; Olivovna :42 back, 39 min. 2 buses."
+    }
+   ]
+  },
+  "461": {
+   "core": [
+    "Strančice, železniční stanice",
+    "Kunice",
+    "Velké Popovice, Todice",
+    "Velké Popovice, pivovar",
+    "Kamenice, Všedobrovice",
+    "Kamenice, kulturní dům"
+   ],
+   "anchor": "16:00",
+   "note": "Strančice, železniční stanice – Kunice – Vidovice – Velké Popovice – Petříkov – Všedobrovice – Štiřín – Kamenice. Two hourly services, together every 30 between Strančice and Velké Popovice: to Kamenice (Strančice :07 from 14:07, Kamenice :50 from 13:50) and to Velké Popovice, pivovar (Strančice :37 from 13:37, mostly via Kunice, Dolní Lomnice; pivovar :32, the 14:17 and 16:26 via Dolní Lomnice, all passing Kunice at :44). Two Simutrans lines; the way back from pivovar is read at Kunice. At Strančice the Kamenice buses arrive :18 and the Popovice buses :48, so the real buses could swap there (3 buses instead of 4, for the live map). The Lojovice trips (9:37, 19:37; back 10:18, 20:24) are listed: their stops are on 761. Modelled at 16:00 by hand: the busiest stretch (13:00–15:00) holds extra trips (pivovar 13:02, 14:17; Strančice 13:07) and both patterns run cleanly from 14:07.",
+   "sim": [
+    {
+     "name": "461",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Strančice, železniční stanice",
+       "to": "Kamenice, kulturní dům",
+       "at": [
+        7
+       ]
+      },
+      {
+       "fr": "Kamenice, kulturní dům",
+       "to": "Strančice, železniční stanice",
+       "at": [
+        50
+       ]
+      }
+     ],
+     "why": "Strančice :07 → Kunice, Vidovice, Velké Popovice, Petříkov, Všedobrovice, Štiřín, Želivec → Kamenice, kulturní dům, 26 min; Kamenice :50 back, 28 min. 2 buses."
+    },
+    {
+     "name": "461 Velké Popovice",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Strančice, železniční stanice",
+       "to": "Velké Popovice, pivovar",
+       "at": [
+        37
+       ],
+       "notvia": [
+        "Kamenice, kulturní dům",
+        "Velké Popovice, Lojovice"
+       ]
+      },
+      {
+       "fr": "Velké Popovice, pivovar",
+       "to": "Strančice, železniční stanice",
+       "knot": "Kunice",
+       "knot_at": [
+        44
+       ],
+       "notvia": [
+        "Kamenice, kulturní dům",
+        "Velké Popovice, Lojovice"
+       ]
+      }
+     ],
+     "why": "Strančice :37 → Kunice, Vidovice, Dolní Lomnice (as most afternoon trips; the 15:37 runs direct), Todice → Velké Popovice, pivovar, about 19 min; pivovar :32 back direct, passing Kunice :44, 16 min. 2 buses."
+    }
+   ]
+  },
+  "462": {
+   "core": [
+    "Strančice, železniční stanice",
+    "Kunice, Všešímy, Pardálov",
+    "Kunice, Všešímy",
+    "Kunice, Všešímy, SŠŘ"
+   ],
+   "note": "Strančice – Kunice – Všešímy, Pardálov, then to Kunice, Všešímy or to the school Kunice, Všešímy, SŠŘ. A few trips: Strančice 14:55 (SŠŘ), 15:37, 17:07 (Všešímy), 18:37 (SŠŘ); back SŠŘ 15:08, 18:50 and Všešímy 16:04, 17:17, each a quick turn of one bus. Modelled as that bus's afternoon round, a circuit every 240 visiting Strančice twice: 14:55 to SŠŘ, 15:08 back, 15:37 to Všešímy, 16:04 back. The 17:07 / 17:17 and 18:37 / 18:50 rounds are off the pattern.",
+   "sim": [
+    {
+     "name": "462",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Strančice, železniční stanice",
+       "to": "Kunice, Všešímy, SŠŘ",
+       "at": [
+        "14:55"
+       ]
+      },
+      {
+       "fr": "Kunice, Všešímy, SŠŘ",
+       "to": "Strančice, železniční stanice",
+       "at": [
+        "15:08"
+       ]
+      },
+      {
+       "fr": "Strančice, železniční stanice",
+       "to": "Kunice, Všešímy",
+       "at": [
+        "15:37"
+       ]
+      },
+      {
+       "fr": "Kunice, Všešímy",
+       "to": "Strančice, železniční stanice",
+       "at": [
+        "16:04"
+       ]
+      }
+     ],
+     "why": "One bus: Strančice 14:55 → Kunice, Pardálov → Všešímy, SŠŘ (12 min), back 15:08; Strančice 15:37 → Pardálov → Všešímy (10 min), back 16:04. The only service of Všešímy, Pardálov, SŠŘ and Kunice, u hřbitova. 1 bus."
+    }
+   ]
+  },
+  "469": {
+   "core": [
+    "Strančice, železniční stanice",
+    "Strančice, Předboř",
+    "Strančice, Všechromy, náves",
+    "Říčany, Olivovna"
+   ],
+   "note": "Strančice – Předboř – Svojšovice – Kašovice – Otice – Všechromy – Říčany, Olivovna, every 2 h in the afternoon: Strančice 14:07, 16:04, 18:07 (also 13:37), Olivovna 15:02, 17:02, 19:02 (also 12:39). Every 120 at Strančice :07 even hours and Olivovna :02 odd hours. The 16:36 Strančice loop round Předboř is listed (its stops are on the line).",
+   "sim": [
+    {
+     "name": "469",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Strančice, železniční stanice",
+       "to": "Říčany, Olivovna",
+       "at": [
+        "14:07"
+       ]
+      },
+      {
+       "fr": "Říčany, Olivovna",
+       "to": "Strančice, železniční stanice",
+       "at": [
+        "15:02"
+       ]
+      }
+     ],
+     "why": "Strančice 14:07, 16:07, 18:07 (real 16:04) → Předboř, Svojšovice, Kašovice, Otice, Všechromy → Říčany, Olivovna, 42 min; Olivovna 15:02, 17:02, 19:02 back, 41 min. 1 bus."
+    }
+   ]
+  },
+  "489": {
+   "core": [
+    "Strančice, železniční stanice",
+    "Mnichovice, náměstí",
+    "Struhařov [PH]",
+    "Klokočná, náves",
+    "Mukařov [PH]",
+    "Louňovice"
+   ],
+   "note": "Strančice – Všestary – Mnichovice – Struhařov – Svojetice – Klokočná – Svojetice – Mukařov – Louňovice, hourly: Strančice :34 (13:34–17:34, then 19:34), Louňovice :29 (13:29–18:29; 14:26). The trips alternate between two roads through Všestary (via Vávrov or via Menčice and Všestary) and some run via Svojetice, Na Moklině or Mnichovice, požární dům: out the line takes the Vávrov road, back the Menčice road, so both are on it. The Louňovice – Mukařov shuttles (13:04, 15:14; back 13:15, 15:21) and the 18:34 to Klokočná are listed (their stops are on the line).",
+   "sim": [
+    {
+     "name": "489",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Strančice, železniční stanice",
+       "to": "Louňovice",
+       "at": [
+        34
+       ]
+      },
+      {
+       "fr": "Louňovice",
+       "to": "Strančice, železniční stanice",
+       "at": [
+        29
+       ],
+       "stops_via": [
+        "Všestary, Menčice"
+       ]
+      }
+     ],
+     "why": "Strančice :34 → Všestary, Vávrov, Mnichovice, Struhařov, Svojetice, Klokočná, Mukařov, Srbín, Mukařov → Louňovice, about 45 min; Louňovice :29 back the same way but through Všestary, Menčice, Všestary and Strančická (as the 13:29, 15:29, 18:29), 54 min. The real trips take either road in either direction (the 15:34 out runs via Menčice, the 14:26 and 16:29 back via Vávrov); both roads are on the line. 2 buses."
+    }
+   ]
+  },
+  "490": {
+   "core": [
+    "Strančice, železniční stanice",
+    "Mnichovice, náměstí",
+    "Hrusice",
+    "Ondřejov, náměstí",
+    "Stříbrná Skalice, náměstí"
+   ],
+   "note": "Strančice – Mnichovice – Hrusice – Ondřejov – Stříbrná Skalice. Out of Strančice about every 30 to 60 min in the afternoon, ending at Ondřejov or running on to Stříbrná Skalice (15:04 S, 15:34 O, 16:04 S, 17:02 O, 17:34 S, 18:04 O, 18:34 S); back read at Ondřejov 15:28, 16:28, 16:58, 17:30, 17:58, 18:58 (Stříbrná Skalice trips pass Ondřejov 15 min after leaving). The Ondřejov trips are short turns on the line's path, so the line is one Simutrans line to Stříbrná Skalice, read at Ondřejov: every 120 with three slots each way, exact in the window. Some Ondřejov arrivals meet 653 (3 of 8 departures follow a 653 arrival).",
+   "sim": [
+    {
+     "name": "490",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Strančice, železniční stanice",
+       "to": "Stříbrná Skalice, náměstí",
+       "at": [
+        "15:34",
+        "16:04",
+        "17:02"
+       ],
+       "core_to": "Ondřejov, náměstí"
+      },
+      {
+       "fr": "Stříbrná Skalice, náměstí",
+       "to": "Strančice, železniční stanice",
+       "knot": "Ondřejov, náměstí",
+       "knot_at": [
+        "15:28",
+        "16:28",
+        "16:58"
+       ]
+      }
+     ],
+     "why": "Strančice 15:34, 16:04, 17:02 → Všestary, Vávrov, Mnichovice, Hrusice, Ondřejov → Stříbrná Skalice, Kost.Střimelice → Stříbrná Skalice, náměstí, 39 min (the 15:34 and 17:02 really turn at Ondřejov, 25 min); Stříbrná Skalice back so the bus passes Ondřejov at 15:28, 16:28, 16:58 (the 16:28 really starts at Ondřejov), 40 min."
+    }
+   ]
+  },
+  "492": {
+   "core": [
+    "Kostelec nad Černými lesy, náměstí",
+    "Jevany",
+    "Černé Voděrady"
+   ],
+   "note": "Kostelec nad Černými lesy, náměstí – Jevany – Černé Voděrady, hourly: Kostelec :54 (14:54–17:54; 16:57), Černé Voděrady :52 (12:52–16:52).",
+   "sim": [
+    {
+     "name": "492",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kostelec nad Černými lesy, náměstí",
+       "to": "Černé Voděrady",
+       "at": [
+        54
+       ]
+      },
+      {
+       "fr": "Černé Voděrady",
+       "to": "Kostelec nad Černými lesy, náměstí",
+       "at": [
+        52
+       ]
+      }
+     ],
+     "why": "Kostelec :54 → Jevany, Bohumil, Smrčiny, Lesní podnik, Černokostelecká, Penčice, Chaloupky → Černé Voděrady, 22 min; Voděrady :52 back, 23 min (some trips skip Jevany, Bohumil). 2 buses."
+    }
+   ]
+  },
+  "494": {
+   "core": [
+    "Strančice, železniční stanice",
+    "Tehov",
+    "Říčany, Wolkerova"
+   ],
+   "note": "Strančice – Tehov – Tehov, Lada – Říčany, Wolkerova: a few trips (Strančice 14:34, back 14:41, 16:41). The only service of Tehov, Lada, so modelled every 240 on one bus's real trips.",
+   "sim": [
+    {
+     "name": "494",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Strančice, železniční stanice",
+       "to": "Říčany, Wolkerova",
+       "at": [
+        "14:34"
+       ]
+      },
+      {
+       "fr": "Říčany, Wolkerova",
+       "to": "Strančice, železniční stanice",
+       "at": [
+        "16:41"
+       ]
+      }
+     ],
+     "why": "Strančice 14:34 → Tehov, Lada → Říčany, Wolkerova, 42 min; Wolkerova 16:41 back, 42 min (the 14:41 is off the pattern). 1 bus."
+    }
+   ]
+  },
+  "582": {
+   "core": [
+    "Strančice, železniční stanice",
+    "Tehov, Hačálka",
+    "Světice",
+    "Všestary",
+    "Říčany, Olivovna"
+   ],
+   "note": "Strančice – Tehov – Světice – Všestary – Říčany, Olivovna: Strančice 12:34, 16:34, 17:34, 19:04; Olivovna 12:20, 15:54, 18:24, 19:54, and an Olivovna – Všestary pair (13:10, back 14:43). Every 120 at Strančice 16:34 and Olivovna 15:54, the only service of Světice.",
+   "sim": [
+    {
+     "name": "582",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Strančice, železniční stanice",
+       "to": "Říčany, Olivovna",
+       "at": [
+        "16:34"
+       ]
+      },
+      {
+       "fr": "Říčany, Olivovna",
+       "to": "Strančice, železniční stanice",
+       "at": [
+        "15:54"
+       ]
+      }
+     ],
+     "why": "Strančice 16:34 → Tehov, Hačálka, Světice, Všestary → Říčany, Olivovna, 29 min; Olivovna 15:54 back, 29 min. 1 bus."
+    }
+   ]
+  },
+  "652": {
+   "core": [
+    "Kostelec nad Černými lesy, náměstí",
+    "Oleška",
+    "Oleška, Krymlov"
+   ],
+   "note": "Kostelec nad Černými lesy, náměstí – Oleška – Brník – Krymlov: Kostelec 12:50, 14:10, 15:20, 17:20, 19:20; Krymlov 13:17, 14:47, 16:17, 18:17. Every 120: Kostelec :20 odd hours, Krymlov :17 even hours (exact 15:20–19:20 and 16:17, 18:17).",
+   "sim": [
+    {
+     "name": "652",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kostelec nad Černými lesy, náměstí",
+       "to": "Oleška, Krymlov",
+       "at": [
+        "15:20"
+       ]
+      },
+      {
+       "fr": "Oleška, Krymlov",
+       "to": "Kostelec nad Černými lesy, náměstí",
+       "at": [
+        "16:17"
+       ]
+      }
+     ],
+     "why": "Kostelec 15:20 → sanatorium, Svatbínská, Brník, Vitice, Dobré Pole, Oleška → Krymlov, 25 min; Krymlov 16:17 back, 25 min. 1 bus."
+    }
+   ]
+  },
+  "653": {
+   "core": [
+    "Ondřejov, náměstí",
+    "Kaliště",
+    "Kaliště, Poddubí"
+   ],
+   "note": "Ondřejov, náměstí – Kaliště – Poddubí: Ondřejov 14:02, 15:50, 18:52; Poddubí 14:40, 16:47 (the bus sleeps at Poddubí). Every 120 at the 15:50 / 16:47 round, the only service of the Kaliště stops.",
+   "sim": [
+    {
+     "name": "653",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Ondřejov, náměstí",
+       "to": "Kaliště, Poddubí",
+       "at": [
+        "15:50"
+       ]
+      },
+      {
+       "fr": "Kaliště, Poddubí",
+       "to": "Ondřejov, náměstí",
+       "at": [
+        "16:47"
+       ]
+      }
+     ],
+     "why": "Ondřejov 15:50 → Turkovice, Lensedly, Kaliště, v loučkách → Poddubí, 17 min; Poddubí 16:47 back, 17 min. 1 bus."
+    }
+   ]
+  },
+  "685": {
+   "core": [
+    "Strančice, železniční stanice",
+    "Mnichovice, náměstí",
+    "Ondřejov, Třemblat",
+    "Zvánovice",
+    "Černé Voděrady"
+   ],
+   "note": "Strančice – Mnichovice – Myšlín – Třemblat – Zvánovice – Kádov – Černé Voděrady, hourly in the peak: Strančice :32 (15:32, 16:32; 13:34, 17:34, 19:04), Černé Voděrady :58 (15:58, 16:58; 14:25, 18:25), the bus turning at once at Voděrady.",
+   "sim": [
+    {
+     "name": "685",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Strančice, železniční stanice",
+       "to": "Černé Voděrady",
+       "at": [
+        32
+       ]
+      },
+      {
+       "fr": "Černé Voděrady",
+       "to": "Strančice, železniční stanice",
+       "at": [
+        58
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Strančice :32 → Všestary, Vávrov, Mnichovice, Myšlín, hotel Myšlín, Třemblat, Zvánovice, Kádov → Černé Voděrady, 26 min; Voděrady :58 back, 28 min (0-minute turn as in the timetable). 1 bus."
+    }
+   ]
+  },
+  "761": {
+   "core": [
+    "Velké Popovice, Todice",
+    "Velké Popovice, pivovar",
+    "Velké Popovice, Lojovice",
+    "Kamenice, Všedobrovice"
+   ],
+   "anchor": "16:30",
+   "note": "A loop from Velké Popovice, Todice through the town, Brtnice, Lojovice, Řepčice and Kamenice, Všedobrovice back to Todice (30 min), about hourly in the afternoon: 13:21, 14:21, 14:55, 15:50, 16:55, 17:55, 18:27. Hourly at the real :55 (14:55, 16:55, 17:55 exact), modelled at 16:30 by hand (window 16:00–18:00, both slots exact); 15:50 is 5 min off the pattern, 13:21, 14:21 and 18:27 are off. At Todice 4 of 11 departures follow a 363 arrival (the Prague bus sheet's companion line).",
+   "sim": [
+    {
+     "name": "761",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Velké Popovice, Todice",
+       "to": "Velké Popovice, Todice",
+       "at": [
+        55
+       ]
+      }
+     ],
+     "why": "Todice :55 round the loop (Velké Popovice, pošta, pivovar, Brtnice, rozcestí Krámský, Lojovice, Řepčice, Kamenice, Všedobrovice, Petříkov, rozcestí, pivovar) back to Todice, 30 min. 1 bus."
+    }
+   ]
+  },
+  "765": {
+   "core": [
+    "Jesenice [PZ]",
+    "Modletice, Doubravice",
+    "Říčany, Masarykovo náměstí",
+    "Křenice",
+    "Sibřina",
+    "Sibřina, škola"
+   ],
+   "note": "Jesenice – Hlubočinka – Radějovice – Herink – Dobřejovice – Modletice – Jažlovice – Voděrádky – Říčany – Pacov – Křenice – Březí – Sluštice – Květnice – Sibřina (three licences of one line, merged). Hourly, timed at the Sibřina end: back from Sibřina :19 all afternoon (13:19–19:19; until 16:19 the trips start 2 min earlier at Sibřina, škola), out passing Křenice :46 and reaching Sibřina :04 (15:46–18:46). Until 15:45 the trips leave Jesenice at :45 and run through Říčany, Olivovna (79 min); from 16:52 they leave at :52 and run the shorter way (72 min). The Simutrans line takes the Olivovna way of the window trips (14:45, 15:45) and ends at Sibřina, škola. The evening Jesenice – Říčany, nádraží trips via Dobřejovice and the 17:47 Modletice – Říčany short are listed.",
+   "sim": [
+    {
+     "name": "765",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Jesenice [PZ]",
+       "to": "Sibřina, škola",
+       "core_to": "Sibřina",
+       "knot": "Křenice",
+       "knot_at": [
+        46
+       ],
+       "knot_rt": 61,
+       "rt": 81,
+       "stops": [
+        "Jesenice [PZ]",
+        "Jesenice, Horní Jirčany",
+        "Jesenice, Horní Jirčany, vodárna",
+        "Sulice, Hlubočinka, obchodní centrum",
+        "Radějovice",
+        "Herink",
+        "Dobřejovice, Jesenická",
+        "Dobřejovice, Na Návsi",
+        "Dobřejovice, Košumberk",
+        "Modletice, V hůrce",
+        "Modletice, Kaufland",
+        "Modletice, Doubravice",
+        "Modletice, rozcestí Doubravice",
+        "Říčany, Jažlovice, Zděbrady",
+        "Říčany, Jažlovice",
+        "Říčany, Voděrádky",
+        "Říčany, Voděradská",
+        "Říčany, u lípy",
+        "Říčany, Masarykovo náměstí",
+        "Říčany, Park A.Švehly",
+        "Říčany, nádraží",
+        "Říčany, Politických vězňů",
+        "Říčany, 5.května",
+        "Říčany, Pod Kavčí Skálou",
+        "Říčany, Pivoňková",
+        "Říčany, Sídl.Olivovna",
+        "Říčany, Olivovna",
+        "Říčany, Rychta",
+        "Říčany, Radošovice, sokolovna",
+        "Říčany, Radošovice, ZŠ Bezručova",
+        "Říčany, Radošovice, Haškova",
+        "Říčany, Pacov, u hřbitova",
+        "Křenice",
+        "Křenice, V Polníku",
+        "Březí, Na Průhoně",
+        "Březí, Podskalí",
+        "Březí, V Jezírku",
+        "Křenice, V Polníku",
+        "Sluštice",
+        "Sluštice, škola",
+        "Květnice, Lékořicová",
+        "Květnice, Ohnicová",
+        "Sibřina",
+        "Sibřina, škola"
+       ]
+      },
+      {
+       "fr": "Sibřina, škola",
+       "to": "Jesenice [PZ]",
+       "knot": "Sibřina",
+       "knot_at": [
+        19
+       ]
+      }
+     ],
+     "why": "Jesenice :45 → Hlubočinka, Radějovice, Herink, Dobřejovice, Modletice, Jažlovice, Říčany (Masarykovo náměstí, nádraží, Olivovna, Radošovice), Pacov, Křenice (:46), Březí, Sluštice, Květnice → Sibřina (:04) → Sibřina, škola, 81 min; Sibřina, škola :17 (Sibřina :19) back via Říčany, nemocnice, 75 min. From 16:52 the real trips leave Jesenice 7 min later by the shorter way and pass Křenice at the same :46. 3 buses."
+    }
+   ]
+  },
+  "289001": {
+   "core": [
+    "Říčany, Kuří",
+    "Říčany, Masarykovo náměstí",
+    "Říčany, nádraží",
+    "Říčany, Olivovna",
+    "Říčany, Strašín"
+   ],
+   "note": "MHD Říčany 1: Kuří – hřbitov – Masarykovo náměstí – nádraží – Olivovna – Strašín, every 30 from 12:33 to 17:35 (Kuří :05 / :35, Strašín :03 / :33), hourly in the morning gaps and the evening. The buses turn at once at Strašín (24 of 25).",
+   "sim": [
+    {
+     "name": "MHD Říčany 1",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Říčany, Kuří",
+       "to": "Říčany, Strašín",
+       "at": [
+        5
+       ]
+      },
+      {
+       "fr": "Říčany, Strašín",
+       "to": "Říčany, Kuří",
+       "at": [
+        3
+       ]
+      }
+     ],
+     "why": "Kuří :05 / :35 → Masarykovo náměstí, Park A.Švehly, nádraží, Domažlická, Čtyřlístek, Sídl.Olivovna, Olivovna → Strašín, 26 min; Strašín :03 / :33 back (via U Milána), 24 min. 2 buses."
+    }
+   ]
+  },
+  "289002": {
+   "core": [
+    "Říčany, Strašín, Pastelkov",
+    "Říčany, Radošovice, Haškova",
+    "Říčany, nádraží",
+    "Říčany, OÁZA"
+   ],
+   "anchor": "15:30",
+   "note": "MHD Říčany 2: Strašín, Pastelkov – Pacov – Radošovice – nemocnice – nádraží – Masarykovo náměstí – OÁZA, every 30 from 12:20 to 16:50 out of Pastelkov (:20 / :50) and 12:21 to 17:21 out of OÁZA (:21 / :51), hourly after. Modelled at 15:30 by hand (window 15:00–17:00): at 16:00 the window would end on Pastelkov's 17:20, where the hourly evening service has begun.",
+   "sim": [
+    {
+     "name": "MHD Říčany 2",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Říčany, Strašín, Pastelkov",
+       "to": "Říčany, OÁZA",
+       "at": [
+        20
+       ]
+      },
+      {
+       "fr": "Říčany, OÁZA",
+       "to": "Říčany, Strašín, Pastelkov",
+       "at": [
+        21
+       ]
+      }
+     ],
+     "why": "Pastelkov :20 / :50 → Březská rozcestí, Rokytka, vojenské velitelství, Haškova, nemocnice, nádraží, Masarykovo náměstí, Na obci, Marvánek → OÁZA, 20 min; OÁZA :21 / :51 back (via Park A.Švehly), 23 min. 2 buses."
+    }
+   ]
+  },
+  "289003": {
+   "core": [
+    "Říčany, Jažlovice",
+    "Říčany, Masarykovo náměstí",
+    "Říčany, nádraží",
+    "Říčany, Pacov"
+   ],
+   "note": "MHD Říčany 3: Jažlovice – Voděrádky – Masarykovo náměstí – nádraží – nemocnice – Radošovice – Pacov, every 30 from 12:32 to 17:02 out of Jažlovice and to 17:32 out of Pacov (both :02 / :32), hourly in the evening. Both ends turn at once (23 and 24 of 25).",
+   "sim": [
+    {
+     "name": "MHD Říčany 3",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Říčany, Jažlovice",
+       "to": "Říčany, Pacov",
+       "at": [
+        2
+       ]
+      },
+      {
+       "fr": "Říčany, Pacov",
+       "to": "Říčany, Jažlovice",
+       "at": [
+        2
+       ]
+      }
+     ],
+     "why": "Jažlovice :02 / :32 → Voděrádky, u kapličky, MŠ Zahrádka, Masarykovo náměstí, nádraží, nemocnice, Radošovice, Mozartova → Pacov, 26 min; Pacov :02 / :32 back (via U Milána), 27 min. 2 buses."
+    }
+   ]
+  },
+  "289007": {
+   "core": [
+    "Říčany, Olivovna",
+    "Říčany, Masarykovo náměstí",
+    "Říčany, nádraží",
+    "Říčany, Srnčí"
+   ],
+   "note": "MHD Říčany 7: Olivovna – Azalková – Masarykovo náměstí (Růžek, Zimní stadion) – Komenského náměstí – nádraží – Srnčí, hourly all day (Olivovna :14, Srnčí :42), one bus turning at once at both ends. At Olivovna it meets 9 and 385 (8 and 5 of 15 departures follow their arrivals).",
+   "sim": [
+    {
+     "name": "MHD Říčany 7",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Říčany, Olivovna",
+       "to": "Říčany, Srnčí",
+       "at": [
+        14
+       ]
+      },
+      {
+       "fr": "Říčany, Srnčí",
+       "to": "Říčany, Olivovna",
+       "at": [
+        42
+       ]
+      }
+     ],
+     "why": "Olivovna :14 → Sídl.Olivovna, Pivoňková, Azalková, Melantrichova, Fibichova, Masarykovo náměstí, Růžek, Zimní stadion, Sofie, Komenského náměstí, nádraží → Srnčí, 27 min; Srnčí :42 back (via Park A.Švehly, Štefánikova, U Milána), 27 min. 1 bus."
+    }
+   ]
+  },
+  "289009": {
+   "core": [
+    "Říčany, Obchodní",
+    "Říčany, Pod Lihovarem",
+    "Říčany, nádraží",
+    "Říčany, Olivovna"
+   ],
+   "anchor": "15:30",
+   "note": "MHD Říčany 9: Obchodní – Prům.areál Černokostelecká – Radošovice, Větrník – Pod Lihovarem – nádraží – Sídl.Olivovna – Olivovna, every 30 from 12:22 to 17:22 out of Obchodní (:22 / :52) and 12:23 to 16:53 out of Olivovna (:23 / :53), hourly after. Modelled at 15:30 by hand (window 15:00–17:00): at 16:00 the window would end on Olivovna's 17:23, where the hourly evening service has begun.",
+   "sim": [
+    {
+     "name": "MHD Říčany 9",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Říčany, Obchodní",
+       "to": "Říčany, Olivovna",
+       "at": [
+        22
+       ]
+      },
+      {
+       "fr": "Říčany, Olivovna",
+       "to": "Říčany, Obchodní",
+       "at": [
+        23
+       ]
+      }
+     ],
+     "why": "Obchodní :22 / :52 → Prům.areál Černokostelecká, Větrník, Pod Lihovarem, nádraží, 5.května, Pod Kavčí Skálou, Pivoňková, Sídl.Olivovna → Olivovna, 19 min; Olivovna :23 / :53 back (also Radošovice, podjezd), 19 min. 2 buses."
+    }
+   ]
+  }
+ },
+ "unmodelled": {
+  "876": "School line Brandýs nad Labem, autobusové stanoviště – Kostelec nad Labem – Neratovice, Lobkovice, škola, one trip each way (8:08 out, 14:05 back). Step 8: its stops are on 482 (Brandýs, náměstí, Pražská, nádraží, Kostelec nad Labem, u váhy), and Neratovice, Lobkovice, škola (okres Mělník) is on 480 (Mělnicko sheet).",
+  "671": "School line: in the afternoon only trips out of Přezletice, Panská pole (13:30–17:10, to Jenštejn, Hradní or Dehtáry and to Veleň – Brázdim – Polerady – Záryby), none back (its three back trips run at 7:19–7:30). Step 8: every stop it serves 13:00–19:00 is on modelled lines: Přezletice, Panská pole on 302 (its way to Veleň runs via Panská pole), Podolanka on 375, Jenštejn on 367, Jenštejn, Hradní, Dehtáry and Domov seniorů on 376, 378 and 396 (Prague bus sheet), Veleň, Brázdim and Polerady on 321, Záryby on 482, Polerady, rozcestí on 377 Brázdim (Mělnicko sheet; a coverage exception here).",
+  "677": "School line from Nehvizdy, škola: in the afternoon only one way (Nehvizdy 13:00, 14:05, 15:15, 16:20 → Mochov – Vyšehořovice – Tuklaty → Úvaly; 12:05 to Vyšehořovičky), no trip back after 7:18. Step 8: every stop it serves 13:00–19:00 is on modelled lines: Nehvizdy on 655 and 354, Mochov on 354, Tuklaty and Úvaly on 484 and 655; the three Vyšehořovice stops are served all afternoon by 662 (about every 20 min, modelled on the Kolínsko sheet; coverage exceptions here, checked in the cross-sheet pass).",
+  "397": "Shift line of the Modletice warehouses (Opatov – D1 – Modletice, Kaufland / Doubravice): in the afternoon out of Opatov 13:30, 14:20, 16:20, 17:50 and back 14:53, 15:23, 15:53 from Doubravice and 16:45, 17:20, 18:12 from Kaufland, no repeating pattern and twice as many trips back as out. Step 8: every stop it serves 13:00–19:00 (Modletice, Doubravice, rozcestí, V hůrce, Kaufland) is on modelled lines: Modletice, Doubravice, V hůrce and Kaufland on 328 and 765, Modletice, rozcestí on 363 (Prague bus sheet).",
+  "557": "School line: in the afternoon only Louňovice, I.hráz → Mukařov → Tehovec → Svojetice → Svojetice, na vyhlídce (12:34, 13:29, 14:24, 15:49, 16:44) and one Světice, škola → Mukařov trip (15:10); no trip back after 7:32. Step 8: every stop it serves 13:00–19:00 is on modelled lines: Louňovice, Mukařov and Svojetice on 489, Tehovec, Svojetice, K Tehovci and Svojetice, na vyhlídce on 385, Klokočná on 489, Všestary on 489, 494 and 582, Světice, škola on 494.",
+  "289091": "No afternoon trip: one morning trip (Obchodní 7:23 → Srnčí → Radošovice → Olivovna), a school run; its stops are on MHD Říčany 2, 3, 7 and 9 and 385.",
+  "289092": "No afternoon trip: two morning trips (7:36 Pod Lihovarem → Strašín, Pampelišková; 8:08 back), a school run; its stops are on MHD Říčany 1, 2 and 9."
+ },
+ "terminus_alias": {},
+ "terminus_alias_why": "",
+ "coverage_exceptions": {
+  "Polerady, rozcestí": "Served all afternoon by 377 (Mělnicko sheet, its Brázdim line, about 19 passings 13:00–19:00); here only by the school line 671 (not modelled).",
+  "Vyšehořovice": "Served all afternoon by 662 (Kolínsko sheet, about 25 passings 13:00–19:00); here only by the one-way school line 677 (not modelled).",
+  "Vyšehořovice, Kozovazy": "Served all afternoon by 662 (Kolínsko sheet); here only by the one-way school line 677 (not modelled).",
+  "Vyšehořovice, Vyšehořovičky": "Served all afternoon by 662 (Kolínsko sheet); here only by the one-way school line 677 (not modelled).",
+  "Strančice, Všechromy": "Only on the three 469 loop trips Strančice – Předboř – Všechromy – Strančice, škola (4:55, 16:36, 20:07); the hamlet's other stop, Strančice, Všechromy, náves, is on 469, about 2 min (under 1 km) away. On the owner checks."
+ },
+ "owner_checks": [
+  [
+   "411",
+   "411 Brnky is hourly but the real Brnky trips drift: Kobylisy 13:15, 14:15, 15:25, 16:25, 17:35 and Brnky 13:42, 14:38, 15:42, 16:44, 17:58. The row Kobylisy :25 / Brnky :42 (1 bus) has the 17:25 slot 10 min before the real 17:35, so it fails Step 4 in the 16:00 window (approximate, worst 10 min on the afternoon trips).",
+   "Every 120 at Kobylisy 16:25 / Brnky 16:42 passes Step 4 exactly, also 1 bus, but halves the line (the method's 409 / 411 mistake: a narrow window forcing a long interval on an hourly line)."
+  ],
+  [
+   "sheet",
+   "Roadside stops of the sheet left as coverage exceptions (the one sheet-wide check the design brief asks for): Strančice, Všechromy, served only by the 469 loop trips Strančice – Předboř – Všechromy – Strančice, škola (4:55, 16:36, 20:07; one in the afternoon), about 2 min (under 1 km) from Strančice, Všechromy, náves, which 469 serves. It is the only such stop on this sheet; every other stop of the okres served 13:00–19:00 is on a Simutrans line here or on a sibling sheet's line.",
+   "Serve all of them (this one stop): a 469 loop line every 480 on the real 16:36 round (Strančice → Předboř → Všechromy → Strančice, škola → Strančice, 20 min), 1 bus more (127 → 128)."
+  ]
+ ],
+ "notes": "Okres Praha-východ: the regional lines around Brandýs nad Labem, Úvaly, Říčany and Strančice, the Prague lines whose outer end is in the okres (Černý Most, Kobylisy, Letňany, Opatov, Budějovická) and the Říčany town lines (MHD Říčany). Every slot is a real departure minute read over the whole day at the core points; where a line has several ends each end is its own Simutrans line, interleaved as the timetable interleaves them. Outstation ends (the buses sleep there and the afternoon sends more out of the town than come back) are timed at the inbound rate, the extra departures listed: 335 at Kamenice, 371 at Klecany, 669 in the Sudovo Hlavno villages. One cross-line circuit: 344 with 343's Horoušany – Nehvizdy trips, which every 344 bus there runs (the 0-minute chains, 9 of 9), 3 buses instead of 4. 482 is modelled at its afternoon peak, every 30 from 14:15 to 16:52 (window 14:30–16:30, 6 buses); hourly :39 / :45 at 16:00 would be 4 buses with the six extra trips listed. Through-running seen in the timetable, for the 2 Nov live map: 354 with 662 at Mochov (12 of 17), 335 with 444 at Kamenice (10 of 21) and its Želivec shorts with 339, 482's extra trips with 353 and 655 at Brandýs, nádraží, 653 with 490 at Ondřejov. Real 0-minute turns (344 at Horoušany, 411 at Brnky, 484 at Úvaly, 685 at Černé Voděrady) are typed 1 min early by the loop rule and rely on the entry's automatic Leave up to. More 0–5 minute chains for the live map: at Brandýs, autobusové stanoviště 669 departures follow a 379 arrival (12 of 19) or a 367 arrival (10 of 19) and 666 departures a 367 (8 of 14) or 379 (6 of 14) arrival: the buses from Prague run on into the villages, which is also why 669 is an outstation line; 321 → 657 at Mratín (2 of 2, the morning Mratín shorts); at Úvaly, železniční stanice 655 → 823 (6 of 15) and 391 → 484 / 823 (7 of 11); 686 → 435 at Říčany, Wolkerova (5 of 13, another sheet). For the live map's afternoon plates (not yet in the reading files when this was designed): the outstation departures left off were chosen by the waits (the 290 rule): 335 (Budějovická 15:31, 16:33), 669 (Brandýs 16:35), 371 Astrapark (Kobylisy 15:53, 16:08, 16:23, 16:53). Pooling options seen in the timetable, not applied: 461 at Strančice, 328 with 328 Čestlice at Opatov, 302 with 302 Vinořská at Letňany, 823 with 823 Škvorec at Úvaly (each about one bus fewer). Stops served here only by unmodelled school lines and all afternoon by a sibling sheet's line: Vyšehořovice (662, Kolínsko), Polerady, rozcestí (377, Mělnicko); Postřižín and Neratovice, Lobkovice, škola are those sheets' own stops.",
+ "artifact_url": "https://claude.ai/artifact/HGUoRK7t8C3PzT9qDq77x6"
+}

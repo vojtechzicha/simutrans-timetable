@@ -184,6 +184,35 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   otherwise I agree with the way you modeled it". When a row's trips run a variant route, name it in the row's note, with the
   running time used, and say where the game line differs.
 
+## 1–2 Nov — PID regional, per oblast
+- **1 Nov:** "Do the full PID. Divide it per "oblast" (like Mladoboleslavsko), all PID lines should be in. Then use Fable and/or
+  subagents to comb line by line, look at my usual notes (there seems to be lot of them usually) and make sure it is polished."
+  → twelve okres sheets by licence prefix plus an index of every PID route; a designer subagent per oblast and an independent
+  Fable reviewer per oblast that checks every line against this file. The pilot review cut 13 owner checks to 1: the designer
+  had re-asked what the rules decide. Ask only real choices.
+- **1 Nov:** "Use more than a sample day - working day assumption holds from September to November" → seznam-autobusu.cz had
+  put every scripted request behind a JavaScript browser check that day (it fails in an automated Chrome tab too); not
+  circumvented. The PID live map (mapa.pid.cz, keyless) was polled on two working days instead: every bus on every line.
+- **1 Nov:** "I will swap them all, no issue" (the save's 795 regional PID buses) → the save is a check column, not a base.
+- **1 Nov:** "If you want me no to power down the computer, you must make sure you run caffeinate or something so it does not
+  sleep" → the poller asks Windows for the system; a second guard (`keep_awake.py`) also holds the display, as Modern Standby
+  can idle into standby with the screen off. Say which guards run whenever the owner must leave the machine on.
+- **1 Nov:** "I am sure 318 runs some articulated buses" → it does (Citaro C2 GÜ 7952 seen on Sunday, all 318 buses run 317
+  courses); passed to the Prague bus session with the evidence; the weekday mix from the 2 Nov poll.
+- **2 Nov:** asked whether a line kept only for stops outside the Středočeský kraj (571 Rakovník – Slatina – Chříč) should be
+  modelled: "Yes, serve every place" → the coverage rule has no kraj border.
+- **2 Nov:** asked whether villages whose only afternoon service is PID Haló (on-demand, no timetable: 886 Bystřicko, 887
+  Načeradecko, 888 Českobrodsko, 889 Pečecko) get a line: "Yes, model a line" → their fixed trips (often a school round)
+  become a Simutrans line, at most every 480. "Serve every place" holds even where the afternoon service is on demand.
+- **2 Nov:** fleet desk on the PID regional request: 20 of the "missing" types already existed in `VZ-Praha-bus` / `VZ-DPPraha-bus`;
+  regional PID lines use those objects as they are, `VZ-PID-bus` holds only what they lack → `rules/pak-objects.md` corrected; search
+  every pack before requesting.
+- **2 Nov evening:** three pooling checks were written "if the 2 Nov live map shows…". The poll settled them before publishing:
+  each pair ran on its own buses (534/535: 7628, 7616 / 7595, 7606; no 436–430–430–436 circuit; one 433 trip by a 434 bus), so
+  the sheets' choice stood and the checks became notes. Settle evidence-bound checks when the evidence lands, before the owner
+  reads them. Also: the live map leaves "Typ vozu" empty for some fleets (OAD Kolín, some Arriva City); a loader must let a later
+  row with a type win over an earlier empty one (the first-row-wins loader hid nothing that day, but would have on day 2).
+
 ## 2 Nov — Prague 130, lines moved to the 2 Nov network
 - **2 Nov:** "Decide based on the timetable - is it fair to do the full run or not? As always - are there some stops without
   service" → 130 runs to Filmové ateliéry only 05:10–08:05 and 12:35–16:00; from 15:38 it short-turns at Řeporyjské náměstí and

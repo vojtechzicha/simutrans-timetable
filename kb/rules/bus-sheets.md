@@ -98,3 +98,35 @@ No every 1440 / 720 — max 480 ("we can bend the reality a bit"). Shift-change 
   sheets are the target; don't fit to old convoys and don't apply "fewest moves" to them.
 - Town lines use `VZ-MHD<Town>` objects only; regional (kraj livery) buses use `VZ-ODIS-bus`. `CZ-ODIS` / `CZR-ODIS` are only for
   the old save.
+
+## PID regional sheets specifics (1–3 Nov 2026)
+Owner, 1 Nov 2026: "Do the full PID. Divide it per "oblast" (like Mladoboleslavsko), all PID lines should be in." Pipeline
+`pipeline/pid-regional` (README has every decision), one sheet per okres + "PID: all lines".
+- **Oblast = okres by licence prefix** (20 Benešov … 31 Rakovník, first two digits). Prague-licensed lines (100xxx–104xxx) go to
+  the okres of their outer end (first stop in a Středočeský municipality coming in from the far end); other kraje's lines and
+  lines with no Prague end to the okres most of their Středočeský stops lie in. The card says why.
+- **Same method as ODIS regional** (bus-schedule-method v4) for every line, the town networks (MHD Benešov, Kolín, Příbram,
+  Říčany) included. The ODIS scheduler and audits run unchanged on PID data (`odis-regional-hko/scripts` with `--base`).
+- **Every place is served, inside or outside the kraj** (owner, 2 Nov 2026, "Yes, serve every place"): a stop that no other
+  modelled line serves gets a line, at most every 480, also when it lies in another kraj. A roadside stop of a village whose
+  other stops are covered may be a coverage exception, all such stops collected in one owner check with their bus cost.
+- **PID Haló-only places get a line** (owner, 2 Nov 2026, "Yes, model a line"): a village whose only afternoon service is
+  the on-demand PID Haló gets a Simutrans line from its fixed trips, at most every 480.
+- **owner_checks only for real choices** (the pilot's 13 were cut to 1): never re-ask what a rule decides (outstation rate,
+  no empty returns, exact beats approximate, only-service lines, Step 5b, pooling as an option).
+- **0-minute real turns** keep their real slots; `lay: 0` on the departing leg lets the need count them (assumes the fork's
+  automatic "Leave up to"; to confirm with an engine session).
+- **The save's regional lines are a check, not a base** (owner, 1 Nov: "I will swap them all, no issue"): 500 lines
+  100300–100960 with 795 buses and almost no timetables; each card shows the save's line (missing/extra stops, buses).
+- **Vehicles from the PID live map** (two working days polled), one matching across all twelve sheets; the Prague bus sheet's
+  buses are excluded. Regional buses use the `VZ-Praha-bus` / `VZ-DPPraha-bus` objects as they are and `VZ-PID-bus` only for
+  what those lack; a town line's bus in its town's own paint uses `VZ-MHD<Town>`, in PID paint the PID object
+  (`rules/pak-objects.md`; `config.pak.rules` maps the live map's type text). An empty "Typ vozu" is the map's answer, not a
+  failed window: the bus shows "?" until a later poll or the register names it.
+- **A check that waits on vehicle evidence is settled by it:** when the live map confirms the sheet's choice (pooling 534+535,
+  430+436, 433+434 on 2 Nov: run apart), the check becomes a sentence in the line's note naming the buses seen; it stays an
+  owner check only if the evidence leaves a real choice, and a changed model is reported, never silent.
+- **Work split:** one designer per oblast (`DESIGN_BRIEF.md`), then an independent line-by-line reviewer on Fable
+  (`REVIEW_BRIEF.md`) against `kb/lessons.md`; designers run without `--final` in parallel, the cross-oblast coverage pass
+  runs `--final` when all are done.
+

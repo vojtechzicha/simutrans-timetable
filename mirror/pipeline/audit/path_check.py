@@ -6,6 +6,8 @@ usage: python -X utf8 audit/path_check.py [pipeline dir] (25 Oct 2026, after the
 import json, os, sys, importlib
 PIPE = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SHEETS = ['odis-regional-hko', 'odis-regional-tfj', 'odis-regional-opavsko', 'odis-regional-novojicinsko', 'odis-regional-bruntalsko']
+# AUDIT_SHEETS=a,b (folders under the pipeline dir) checks other sheets of the same scripts (PID regional, 1 Nov 2026)
+if os.environ.get('AUDIT_SHEETS'): SHEETS = os.environ['AUDIT_SHEETS'].split(',')
 def hm(t): return '%d:%02d' % (t // 60 % 24, t % 60)
 sys.path.insert(0, os.path.join(PIPE, 'odis-regional-hko', 'scripts'))
 tot = 0

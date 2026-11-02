@@ -1,0 +1,691 @@
+{
+ "gtfs": {
+  "zip": "data/raw/gtfs/2026-11-01/gtfs.zip",
+  "service_date": "20261102",
+  "why": "PID GTFS downloaded Sun 1 Nov 2026 (feed 1-14 Nov). Service day Mon 2 Nov 2026 (the first live-map poll day), a normal school weekday (28 Oct was a holiday and 29-30 Oct autumn school holidays; regional lines run many school-day-only trips)."
+ },
+ "game_regional": "praha-bus/data/raw/game/2026-10-30-regional/lines.json",
+ "game_city": "praha-bus/data/raw/game/2026-09-29/lines.json",
+ "obce": "data/raw/obce/2026-11-01",
+ "town_mhd": {
+  "205": "Benešov",
+  "235": "Kolín",
+  "289": "Říčany",
+  "305": "Příbram"
+ },
+ "oblasti": [
+  {
+   "id": "benesovsko",
+   "name": "Benešovsko",
+   "prefix": "200",
+   "okres": "Benešov"
+  },
+  {
+   "id": "berounsko",
+   "name": "Berounsko",
+   "prefix": "210",
+   "okres": "Beroun"
+  },
+  {
+   "id": "kladensko",
+   "name": "Kladensko",
+   "prefix": "220",
+   "okres": "Kladno"
+  },
+  {
+   "id": "kolinsko",
+   "name": "Kolínsko",
+   "prefix": "230",
+   "okres": "Kolín"
+  },
+  {
+   "id": "kutnohorsko",
+   "name": "Kutnohorsko",
+   "prefix": "240",
+   "okres": "Kutná Hora"
+  },
+  {
+   "id": "melnicko",
+   "name": "Mělnicko",
+   "prefix": "250",
+   "okres": "Mělník"
+  },
+  {
+   "id": "mladoboleslavsko",
+   "name": "Mladoboleslavsko",
+   "prefix": "260",
+   "okres": "Mladá Boleslav"
+  },
+  {
+   "id": "nymbursko",
+   "name": "Nymbursko",
+   "prefix": "270",
+   "okres": "Nymburk"
+  },
+  {
+   "id": "praha-vychod",
+   "name": "Praha-východ",
+   "prefix": "280",
+   "okres": "Praha-východ"
+  },
+  {
+   "id": "praha-zapad",
+   "name": "Praha-západ",
+   "prefix": "290",
+   "okres": "Praha-západ"
+  },
+  {
+   "id": "pribramsko",
+   "name": "Příbramsko",
+   "prefix": "300",
+   "okres": "Příbram"
+  },
+  {
+   "id": "rakovnicko",
+   "name": "Rakovnicko",
+   "prefix": "310",
+   "okres": "Rakovník"
+  }
+ ],
+ "vehicle_day": "2026-11-02",
+ "vehicle_day_label_en": "Monday 2 Nov 2026",
+ "network_state_label": "2 Nov 2026",
+ "praha_bus": {
+  "state": "praha-bus/states/2026-09-29.json",
+  "url": "https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF"
+ },
+ "live": {
+  "dir": "data/raw/live",
+  "days": [
+   "2026-11-02",
+   "2026-11-03"
+  ],
+  "note": "PID live map (mapa.pid.cz getData.php), polled every minute 12:00-20:00 (every 3 min 5:00-12:00 and 20:00-23:00) on Mon 2 and Tue 3 Nov 2026 by scripts/01_live_poll.py; each bus once per line through getVehicleWindow.php (operator, type, course)."
+ },
+ "index": {
+  "sheets": {
+   "Prague Bus Lines Check": {
+    "url": "https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF"
+   },
+   "Prague Tram Peak Fleet": {
+    "url": "https://claude.ai/artifact/5Dt65EJ7F8YJnMbJugLGTi"
+   },
+   "Prague Trolleybus Peak Fleet": {
+    "url": "https://claude.ai/artifact/7P7BZSczRixGop15Fd6zmX"
+   },
+   "S9 S2 R17 R49 Ex7": {
+    "url": "https://claude.ai/artifact/KRDg2WHmtB5D5SV88D8Ptp",
+    "mode": "rail",
+    "file": "S9 S2 R17 R49 Ex7.html"
+   },
+   "S75 Beroun Rakovník": {
+    "url": "https://claude.ai/artifact/8Ci1ZEfk4aNP89HntfvTbH",
+    "mode": "rail",
+    "file": "S75 Beroun Rakovník.html"
+   },
+   "Trains S4 to S3": {
+    "url": "https://claude.ai/artifact/UkDVhoRyabQp2EPeQNMKeD",
+    "mode": "rail",
+    "file": "Trains S4 to S3.html"
+   },
+   "Trains S5 to S4": {
+    "url": "https://claude.ai/artifact/9V24sqWFpnjztqobgL1CLP",
+    "mode": "rail",
+    "file": "Trains S5 to S4.html"
+   },
+   "Ex7 R17 Praha Veselí": {
+    "url": "https://claude.ai/artifact/Efb4CMZVvtNDZj7rsB5Wr5",
+    "mode": "rail",
+    "file": "Ex7 R17 Praha Veselí.html"
+   },
+   "PID Benešovsko": {
+    "url": "https://claude.ai/artifact/LHA5oGkvV95SvhwYH77ekU",
+    "file": "PID Benesovsko.html"
+   },
+   "PID Berounsko": {
+    "url": "https://claude.ai/artifact/6574bcYazwXHe3zKYKyE6h",
+    "file": "PID Berounsko.html"
+   },
+   "PID Kladensko": {
+    "url": "https://claude.ai/artifact/USfta9raPAmHs8RXHibiwi",
+    "file": "PID Kladensko.html"
+   },
+   "PID Kolínsko": {
+    "url": "https://claude.ai/artifact/DwZ6PwMMR5qwPwcsd3FrcH",
+    "file": "PID Kolinsko.html"
+   },
+   "PID Kutnohorsko": {
+    "url": "https://claude.ai/artifact/9tUWDoKxLkKS7y5wT22THk",
+    "file": "PID Kutnohorsko.html"
+   },
+   "PID Mělnicko": {
+    "url": "https://claude.ai/artifact/2PM9ugvAGcmiXr1QaT6CMR",
+    "file": "PID Melnicko.html"
+   },
+   "PID Mladoboleslavsko": {
+    "url": "https://claude.ai/artifact/XnWc4U9zu5gWhBw2UZmeyj",
+    "file": "PID Mladoboleslavsko.html"
+   },
+   "PID Nymbursko": {
+    "url": "https://claude.ai/artifact/RKJK8GTGiQz7tjVLnQpbPA",
+    "file": "PID Nymbursko.html"
+   },
+   "PID Praha-východ": {
+    "url": "https://claude.ai/artifact/HGUoRK7t8C3PzT9qDq77x6",
+    "file": "PID Praha-vychod.html"
+   },
+   "PID Praha-západ": {
+    "url": "https://claude.ai/artifact/CDDnFgXhcNaKqBa9BuLbmJ",
+    "file": "PID Praha-zapad.html"
+   },
+   "PID Příbramsko": {
+    "url": "https://claude.ai/artifact/RAWhd2p3iFLibqfRhP9LFH",
+    "file": "PID Pribramsko.html"
+   },
+   "PID Rakovnicko": {
+    "url": "https://claude.ai/artifact/3cugFHCZkHEaNjpFymVHfH",
+    "file": "PID Rakovnicko.html"
+   }
+  },
+  "other_city": {
+   "AE": "Airport Express (DPP): not on the Prague bus sheet, which holds lines 100-299",
+   "BB1": "shopping shuttle Budějovická - Delta: not modelled",
+   "BB2": "shopping shuttle Budějovická - Filadelfie: not modelled",
+   "IKEA": "shopping shuttle Černý Most - IKEA: not modelled"
+  },
+  "url": "https://claude.ai/artifact/KSHcamNtjkpPVahiQvbfVU"
+ },
+ "pak": {
+  "repo": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
+  "packages": [
+   "VZ-PID-bus",
+   "VZ-Praha-bus",
+   "VZ-DPPraha-bus",
+   "VZ-MHDBenesov-bus",
+   "VZ-MHDKolin-bus",
+   "VZ-MHDPribram-bus",
+   "VZ-IREDO-bus",
+   "VZ-IDOL-bus",
+   "VZ-DUK-bus",
+   "VZ-JIKORD-bus",
+   "VZ-MHDRicany-bus"
+  ],
+  "paints": [
+   [
+    "šedá",
+    "pidsedocervena"
+   ],
+   [
+    "šedo",
+    "pidsedocervena"
+   ],
+   [
+    "červeno-bílo-modr",
+    "pidcervenomodrobila"
+   ],
+   [
+    "modro",
+    "pidcervenomodrobila"
+   ]
+  ],
+  "default_livery": "pidsedocervena",
+  "towns": {
+   "Benešov": "Benesov",
+   "Kolín": "Kolin",
+   "Příbram": "Pribram",
+   "Říčany": "Ricany"
+  },
+  "rules": [
+   [
+    "Crossway LE LINE 14,5M",
+    "Crossway_LE_Line_14_5M"
+   ],
+   [
+    "Crossway LE LINE 12M NP",
+    "Crossway_LE_Line_12M_NP"
+   ],
+   [
+    "Crossway LE LINE 12M Hybrid",
+    "Crossway_LE_Line_12M_Hybrid"
+   ],
+   [
+    "Crossway LE LINE 12M",
+    "Crossway_LE_Line_12M"
+   ],
+   [
+    "Crossway LE LINE 10,8M",
+    "Crossway_LE_Line_10_8M"
+   ],
+   [
+    "Crossway LE LINE 13M",
+    "Crossway_LE_Line_13M"
+   ],
+   [
+    "Crossway LE CITY 12M NP",
+    "Crossway_LE_City_12M_NP"
+   ],
+   [
+    "Crossway LE CITY 14,5M",
+    "Crossway_LE_City_14_5M"
+   ],
+   [
+    "Crossway LE CITY 12M",
+    "Crossway_LE_City_12M"
+   ],
+   [
+    "Irisbus Crossway LE 12,8M",
+    "Irisbus_Crossway_LE_12_8M"
+   ],
+   [
+    "Irisbus Crossway LE 10,8M",
+    "Irisbus_Crossway_LE_10_8M"
+   ],
+   [
+    "Irisbus Crossway LE 12M",
+    "Irisbus_Crossway_LE_12M"
+   ],
+   [
+    "Irisbus Crossway 12,8M",
+    "Irisbus_Crossway_12_8M"
+   ],
+   [
+    "Irisbus Crossway 12M",
+    "Irisbus_Crossway_12M"
+   ],
+   [
+    "Crossway LINE 12M",
+    "Crossway_Line_12M"
+   ],
+   [
+    "Crossway LINE 13M",
+    "Crossway_Line_13M"
+   ],
+   [
+    "Crossway PRO 13M",
+    "Crossway_Pro_13M"
+   ],
+   [
+    "Lion’s City 18C",
+    "Lions_City_18C"
+   ],
+   [
+    "Lion’s City 10E",
+    "Lions_City_10E"
+   ],
+   [
+    "Lion’s City G",
+    "Lions_City_G"
+   ],
+   [
+    "Lion’s Intercity LE 14",
+    "Lions_Intercity_LE_14"
+   ],
+   [
+    "Lion’s Intercity LE 12",
+    "Lions_Intercity_LE_12"
+   ],
+   [
+    "Setra S 415 LE business",
+    "Setra_S_415_LE_business"
+   ],
+   [
+    "Setra S 418 LE business",
+    "Setra_S_418_LE_business"
+   ],
+   [
+    "Setra S 419 UL",
+    "Setra_S_419_UL"
+   ],
+   [
+    "Setra S 515 LE",
+    "Setra_S_515_LE"
+   ],
+   [
+    "Setra S 510 LE",
+    "Setra_S_510_LE"
+   ],
+   [
+    "SOR NBG 18",
+    "SOR_NBG_18"
+   ],
+   [
+    "SOR NBG 12",
+    "SOR_NBG_12"
+   ],
+   [
+    "SOR NB 18",
+    "SOR_NB_18"
+   ],
+   [
+    "SOR NB 12",
+    "SOR_NB_12"
+   ],
+   [
+    "SOR NS 18",
+    "SOR_NS_18"
+   ],
+   [
+    "SOR NS 12",
+    "SOR_NS_12"
+   ],
+   [
+    "SOR ICN 12",
+    "SOR_ICN_12"
+   ],
+   [
+    "SOR ICN 10,5",
+    "SOR_ICN_10_5"
+   ],
+   [
+    "SOR ICN 9,5",
+    "SOR_ICN_9_5"
+   ],
+   [
+    "SOR CNG 12,3",
+    "SOR_CNG_12_3"
+   ],
+   [
+    "SOR CNG 12",
+    "SOR_CNG_12"
+   ],
+   [
+    "SOR CN 12,3",
+    "SOR_CN_12_3"
+   ],
+   [
+    "SOR CN 12",
+    "SOR_CN_12"
+   ],
+   [
+    "SOR CN 10,5",
+    "SOR_CN_10_5"
+   ],
+   [
+    "SOR CN 9,5",
+    "SOR_CN_9_5"
+   ],
+   [
+    "SOR C 10,5",
+    "SOR_C_10_5"
+   ],
+   [
+    "SOR C 9,5",
+    "SOR_C_9_5"
+   ],
+   [
+    "SOR BN 12",
+    "SOR_BN_12"
+   ],
+   [
+    "SOR BN 10,5",
+    "SOR_BN_10_5"
+   ],
+   [
+    "SOR BN 9,5",
+    "SOR_BN_9_5"
+   ],
+   [
+    "Citaro C2 GÜ",
+    "Citaro_C2_GU"
+   ],
+   [
+    "Citaro C2 K",
+    "Citaro_C2_K"
+   ],
+   [
+    "Conecto LF",
+    "Conecto_LF"
+   ],
+   [
+    "Intouro III L",
+    "Intouro_III_L"
+   ],
+   [
+    "Intouro II",
+    "Intouro_II"
+   ],
+   [
+    "Integro II L",
+    "Integro_II_L"
+   ],
+   [
+    "Urbino 18 III",
+    "Urbino_18_III"
+   ],
+   [
+    "Urbino 18 IV",
+    "Urbino_18_IV"
+   ],
+   [
+    "Urbino 15 III LE",
+    "Urbino_15_III_LE"
+   ],
+   [
+    "Urbino 8,9 LE",
+    "Urbino_8_9_LE"
+   ],
+   [
+    "Urbino 12",
+    "Urbino_12"
+   ],
+   [
+    "Citywide Suburban LE 15M CNG",
+    "Citywide_Suburban_LE_15M_CNG"
+   ],
+   [
+    "Citywide II LE 12,1M",
+    "Citywide_II_LE_12_1M"
+   ],
+   [
+    "Citywide LE 15M",
+    "Citywide_LE_15M"
+   ],
+   [
+    "Citywide LE 12M",
+    "Citywide_LE_12M"
+   ],
+   [
+    "Streetway 12M",
+    "Streetway_12M"
+   ],
+   [
+    "Irizar i4 14M",
+    "Irizar_i4_14M"
+   ],
+   [
+    "First FCLLI",
+    "Rosero_First_XL"
+   ],
+   [
+    "Stratos LE 37",
+    "Stratos_LE_37"
+   ],
+   [
+    "Dekstra LE 37 CNG",
+    "Dekstra_LE_37_CNG"
+   ],
+   [
+    "Dekstra LE 37",
+    "Dekstra_LE_37"
+   ],
+   [
+    "Urbanway 12M CNG",
+    "Urbanway_12M_CNG"
+   ],
+   [
+    "NOVO Citi Life",
+    "NovoCiti_Life"
+   ]
+  ],
+  "why": "Fleet desk (simutrans-custom-czech-pak128-80), 2 Nov 2026: regional PID lines use the VZ-Praha-bus and VZ-DPPraha-bus objects as they are; VZ-PID-bus holds only the type x livery combinations those lack. A type is looked up in all three before it is called missing; name= is <basename>-<vehicle id>, articulated -A + -B. Town lines use VZ-MHD<Town>-bus.",
+  "objects": [
+   [
+    "Lion’s Intercity LE 12",
+    "",
+    "VZ-Praha-Lions_Intercity_LE_12-pidsedocervena"
+   ],
+   [
+    "SOR ICN 9,5",
+    "Dopravní podnik",
+    "VZ-DPPraha-ICN_9_5-pidsedocervena"
+   ],
+   [
+    "SOR ICN 9,5",
+    "",
+    "VZ-Praha-ICN_9_5-pidsedocervena"
+   ],
+   [
+    "Streetway 18M",
+    "",
+    "VZ-DPPraha-Streetway_18M-pidsedocervena"
+   ],
+   [
+    "Streetway 12M",
+    "",
+    "VZ-DPPraha-Streetway_12M-pidsedocervena"
+   ],
+   [
+    "SOR BN 12",
+    "Dopravní podnik",
+    "VZ-DPPraha-SOR_BN_12-pidcervenomodrobila"
+   ],
+   [
+    "SOR NS 18",
+    "",
+    "VZ-Praha-SOR_NS_18-pidsedocervena"
+   ],
+   [
+    "Urbanway 12M CNG",
+    "",
+    "VZ-PID-Urbanway_12M_CNG-pidsedocervena"
+   ],
+   [
+    "Urbanway 12M",
+    "",
+    "VZ-Praha-Urbanway_12M-pidsedocervena"
+   ],
+   [
+    "NOVO Citi Life",
+    "Okresní autobusová doprava Kolín",
+    "VZ-MHDKolin-NovoCiti_Life-bila"
+   ],
+   [
+    "NOVO Citi Life",
+    "Lamer",
+    "VZ-Praha-NovoCiti_Life-pidsedocervena"
+   ],
+   [
+    "SOR BN 9,5",
+    "ARRIVA STŘEDNÍ ČECHY",
+    "VZ-Praha-SOR_BN_9_5-pidsedocervena"
+   ],
+   [
+    "Stratos LE 37",
+    "UHER",
+    "VZ-Praha-Stratos_LE_37-pidcervenomodrobila"
+   ],
+   [
+    "SOR NS 12",
+    "",
+    "VZ-Praha-SOR_NS_12-pidsedocervena"
+   ],
+   [
+    "Lion’s City 12C EfficientHybrid",
+    "",
+    "VZ-Praha-Lions_City_12C_Hybrid-pidsedocervena"
+   ],
+   [
+    "First FCLLI XL",
+    "",
+    "VZ-PID-Rosero_First_XL-pidsedocervena"
+   ],
+   [
+    "First FCLLI",
+    "",
+    "VZ-PID-Rosero_First_XL-pidsedocervena"
+   ],
+   [
+    "Conecto LF",
+    "Okresní autobusová doprava Kolín",
+    "VZ-MHDKolin-Conecto_LF-bila"
+   ]
+  ],
+  "if_white": [
+   [
+    "Irizar i4 14M",
+    "VZ-IREDO-Irizar_i4_14M-bila"
+   ],
+   [
+    "Crossway LINE 13M",
+    "VZ-IREDO-Crossway_Line_13M-bila"
+   ],
+   [
+    "Crossway PRO 12M",
+    "VZ-DPPraha-Crossway_Pro_12M-bila"
+   ],
+   [
+    "Irisbus Crossway 12,8M",
+    "VZ-IREDO-Irisbus_Crossway_12_8M-bila"
+   ],
+   [
+    "Erduman",
+    "VZ-Praha-Sprinter_519_Erduman-pidsedocervena"
+   ]
+  ],
+  "untyped": {
+   "Okresní autobusová doprava Kolín": "Mercedes-Benz Conecto LF II"
+  },
+  "regions_why": "Owner via the fleet desk, 2 Nov 2026: buses in a neighbouring region's or operator's own paint go to that region's pak: VZ-DUK-bus (Ústecký kraj), VZ-IDOL-bus (Liberecký), VZ-JIKORD-bus (Jihočeský), as VZ-ODIS / VZ-IREDO; a plain white bus uses the existing white object (IREDO / DPPraha). The fleet desk draws them and sends the final name= list; until then those rows stay requested.",
+  "by_vehicle": {
+   "1082": "VZ-PID-Irizar_i4_14M-pidsedocervena",
+   "1083": "VZ-PID-Irizar_i4_14M-pidsedocervena",
+   "1089": "VZ-PID-Irizar_i4_14M-pidsedocervena",
+   "1090": "VZ-PID-Irizar_i4_14M-pidsedocervena",
+   "1091": "VZ-PID-Irizar_i4_14M-pidsedocervena",
+   "1422": "VZ-PID-Crossway_Line_13M-pidsedocervena",
+   "1463": "VZ-PID-Crossway_LE_Line_12M_Hybrid-pidsedocervena",
+   "7631": "VZ-PID-SOR_EBN_11_1-pidsedocervena",
+   "7633": "VZ-PID-SOR_EBN_11_1-pidsedocervena",
+   "1358": "VZ-PID-Sprinter_519_KHMC_City-pidsedocervena",
+   "1359": "VZ-PID-Sprinter_519_KHMC_City-pidsedocervena",
+   "1817": "VZ-PID-Sprinter_519_KHMC-pidsedocervena",
+   "1110": "VZ-PID-Sprinter_519_CMS-pidsedocervena",
+   "1105": "VZ-PID-Sprinter_City_35-pidsedocervena",
+   "1107": "VZ-PID-Vehixel_Cytios_4-pidsedocervena",
+   "10270": "VZ-IDOL-Crossway_Line_13M-idol",
+   "11695": "VZ-IDOL-Crossway_Line_13M-idol",
+   "10305": "VZ-IDOL-Crossway_Pro_12M-idol",
+   "10643": "VZ-IDOL-Crossway_Pro_12M-idol",
+   "10258": "VZ-IDOL-Intouro_III_L-idol",
+   "10271": "VZ-IDOL-Intouro_III_L-idol",
+   "10272": "VZ-IDOL-Intouro_III_L-idol",
+   "10777": "VZ-IDOL-Irisbus_Crossway_12_8M-idol",
+   "17271": "VZ-JIKORD-Evadys_13M-ideska",
+   "17272": "VZ-JIKORD-Evadys_13M-ideska",
+   "17231": "VZ-JIKORD-Crossway_Line_10_8M-busem",
+   "17233": "VZ-JIKORD-Crossway_Line_10_8M-busem",
+   "17212": "VZ-JIKORD-Sprinter_519_Erduman-bila",
+   "12908": "VZ-DUK-Vectio_U_LE-dukzelena",
+   "12940": "VZ-DUK-Vectio_U_LE-dukzelena",
+   "12942": "VZ-DUK-Vectio_U_LE-dukzelena",
+   "12943": "VZ-DUK-Vectio_U_LE-dukzelena",
+   "30001": "VZ-MHDRicany-NovoCiti_Life-ricanyzelena",
+   "30002": "VZ-MHDRicany-NovoCiti_Life-ricanyzelena",
+   "30003": "VZ-MHDRicany-NovoCiti_Life-ricanyzelena",
+   "30004": "VZ-MHDRicany-NovoCiti_Life-ricanyzelena",
+   "30005": "VZ-MHDRicany-NovoCiti_Life-ricanyzelena",
+   "30006": "VZ-MHDRicany-NovoCiti_Life-ricanyzelena",
+   "30007": "VZ-MHDRicany-NovoCiti_Life-ricanyzelena",
+   "30008": "VZ-MHDRicany-NovoCiti_Life-ricanyzelena",
+   "30009": "VZ-MHDRicany-NovoCiti_Life-ricanyzelena",
+   "1418": "VZ-IREDO-Irizar_i4_14M-bila",
+   "1420": "VZ-IREDO-Irizar_i4_14M-bila",
+   "1431": "VZ-IREDO-Irizar_i4_14M-bila",
+   "1415": "VZ-DPPraha-Crossway_Pro_12M-bila",
+   "9034": "OUT: an operator's own plain red scheme (ARRIVA CITY reserve bus), outside the VZ-PID scope (fleet desk, 2 Nov 2026); the owner can overrule",
+   "8505": "VZ-Praha-SOR_BN_9_5-pidcervenomodrobila",
+   "8584": "VZ-PID-Crossway_LE_Line_12M-pidsedocervena"
+  },
+  "by_vehicle_why": "Fleet desk (simutrans-custom-czech-pak128-80), 2 Nov 2026, pak main a21aff5: the objects drawn or settled per fleet number, each paint checked on photos. 1420 / 1431 are probably the plain white KAD i4 (VZ-IREDO); KAD also has two grey-red i4s."
+ }
+}

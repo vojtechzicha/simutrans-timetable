@@ -1,0 +1,1251 @@
+{
+ "lines": {
+  "398": {
+   "core": [
+    "Praha, Černý Most",
+    "Sadská",
+    "Poděbrady, železniční stanice"
+   ],
+   "anchor": "15:30",
+   "note": "Poděbrady – Kostelní Lhota – Sadská – Mochov – Nehvizdy – Praha, Černý Most. Every 30 min all afternoon, exact: Poděbrady, železniční stanice :08 / :38 (14:38–16:38) and Praha, Černý Most :15 / :45 (13:45–17:45). Modelled at 15:30 (window 15:00–17:00), set by hand: the default 16:00 window ends with Poděbrady 17:18, 10 min off the :08 slot. Off the pattern: Poděbrady 12:53, 17:18 and the morning run towards Prague (every 15 min), Praha 19:25, 20:35; the Sadská short trips (Praha 17:15 and 18:45 → Sadská, Sadská 4:50 and 5:29 → Poděbrady) are listed, their stops are on the line.",
+   "sim": [
+    {
+     "name": "398",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Poděbrady, železniční stanice",
+       "to": "Praha, Černý Most",
+       "at": [
+        8
+       ]
+      },
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Poděbrady, železniční stanice",
+       "at": [
+        15
+       ]
+      }
+     ],
+     "why": "Poděbrady :08 / :38 → Praha, Černý Most via Poděbrady, Oáza, 63 min; Černý Most :15 / :45 → Poděbrady by the same road without Oáza, 63 min. 5 buses (waits 4 at Černý Most, 20 at Poděbrady)."
+    }
+   ]
+  },
+  "425": {
+   "core": [
+    "Praha, Černý Most",
+    "Městec Králové, náměstí",
+    "Hořice, autobusové stanoviště",
+    "Trutnov, autobusové stanoviště"
+   ],
+   "note": "Praha, Černý Most – Městec Králové – Nový Bydžov – Hořice – Miletín – Dvůr Králové n.L. – Trutnov, with no stop between Praha and Městec Králové (licences 106425 and 100425 merged). Every 2 h: Praha :10 (7:10–17:10), Trutnov 14:27 and 16:27 (via Dvůr Králové n.L., ZOO; 8:32, 10:32, 18:32 leave at :32), exact. Off the pattern: Trutnov 5:02, 6:02, 8:32, 10:32, 18:32, Praha 20:10; the short trips Praha 11:10 → Hořice, Hořice 13:22 → Praha and Praha 19:10 → Městec Králové are listed (stops on the line). Every stop past Městec Králové is in Královéhradecký kraj with no other line on these sheets.",
+   "sim": [
+    {
+     "name": "425",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Trutnov, autobusové stanoviště",
+       "at": [
+        "15:10"
+       ]
+      },
+      {
+       "fr": "Trutnov, autobusové stanoviště",
+       "to": "Praha, Černý Most",
+       "at": [
+        "16:27"
+       ]
+      }
+     ],
+     "why": "Praha, Černý Most :10 → Trutnov, 138 min; Trutnov :27 → Praha via Dvůr Králové n.L., ZOO (the 14:27 and 16:27 path), 143 min. 3 buses (waits 59 at Trutnov, 20 at Praha)."
+    }
+   ]
+  },
+  "430": {
+   "core": [
+    "Lysá nad Labem, železniční stanice",
+    "Milovice, Park Mirakulum",
+    "Milovice, Balonka",
+    "Lipník"
+   ],
+   "note": "Lysá nad Labem, železniční stanice – Milovice – Lipník. Hourly, exact: Lysá :36 → Lipník by the direct road through Milovice (14:36–19:36) and Lipník :07 → Lysá via Milovice, Park Mirakulum (16:07–19:07). Off the pattern: Lysá 12:16, 13:16, 15:01 (via Park Mirakulum), Lipník 12:52, 13:52, 20:52; the Lysá – Milovice short trips (Lysá 14:01, 17:01, 19:01, 20:36; Milovice 14:30, 15:55, 17:51, 19:51) are listed, every stop of theirs is on the line. Milovice, Boží Dar has no other line. Modelled apart from 436 (gaps of 8 and 13 min at Lipník are outside the 0–5 min chain test); the 2 Nov live map agrees: no bus ran the 436 – 430 – 430 – 436 circuit in the afternoon; OAD Kolín swaps buses between 430, 432, 434, 436 and 497 at no fixed pattern (8558: 430 three times, then 436; 8566: 430, then 436).",
+   "sim": [
+    {
+     "name": "430",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Lysá nad Labem, železniční stanice",
+       "to": "Lipník",
+       "at": [
+        36
+       ]
+      },
+      {
+       "fr": "Lipník",
+       "to": "Lysá nad Labem, železniční stanice",
+       "at": [
+        7
+       ]
+      }
+     ],
+     "why": "Lysá :36 → Lipník via Milovice, Letecká and Balonka, skipping Tyršova, Sportovní and Park Mirakulum (the :36 trips' path), 37 min; Lipník :07 → Lysá via Park Mirakulum, 41 min. 3 buses (waits 54 at Lipník, 48 at Lysá)."
+    }
+   ]
+  },
+  "432": {
+   "core": [
+    "Lysá nad Labem, železniční stanice",
+    "Milovice, Park Mirakulum",
+    "Vlkava, náves",
+    "Mladá Boleslav, autobusové stanoviště"
+   ],
+   "note": "Lysá nad Labem – Milovice – Kostomlaty nad Labem, rozcestí Vápensko – Vlkava – Luštěnice – Mladá Boleslav. Every 2 h in the afternoon, exact: Lysá :01 (16:01, 18:01, 20:01) and Mladá Boleslav :03 (14:03, 16:03, 18:03); hourly at :46 / :48 until 13:46. Off the pattern: Lysá 11:46, 12:46, 13:46, Mladá Boleslav 11:48, 12:48, 14:33, 19:33 (to Milovice, Park Mirakulum) and the morning.",
+   "sim": [
+    {
+     "name": "432",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Lysá nad Labem, železniční stanice",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "16:01"
+       ]
+      },
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Lysá nad Labem, železniční stanice",
+       "at": [
+        "16:03"
+       ]
+      }
+     ],
+     "why": "Lysá 16:01 → Mladá Boleslav (in the town via Viničná and náměstí Republiky), 76 min; Mladá Boleslav 16:03 → Lysá (via Jaselská VZP and Česana), 75 min. 2 buses: the two cross (waits 46 at Mladá Boleslav, 43 at Lysá)."
+    }
+   ]
+  },
+  "433": {
+   "core": [
+    "Nymburk, hl.nádraží",
+    "Nymburk, náměstí",
+    "Nymburk, Zálabí",
+    "Pečky, železniční stanice"
+   ],
+   "note": "Nymburk, hl.nádraží – náměstí – Zálabí – Hořátev – Kostelní Lhota – Pečky. Hourly all day, exact (12 of 12 each way): Nymburk :04 and Pečky :15. The Nymburk town short trips hl.nádraží :34 → Zálabí (15:34–19:34) and Zálabí :00 → hl.nádraží (14:00, 16:00–18:00) are an hourly short working, so they are their own Simutrans line, 433 Zálabí. Off the pattern: hl.nádraží 20:04, 21:04, 22:04 and Zálabí 20:32, 22:29 (evening town trips at other minutes).",
+   "sim": [
+    {
+     "name": "433",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Pečky, železniční stanice",
+       "at": [
+        4
+       ]
+      },
+      {
+       "fr": "Pečky, železniční stanice",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        15
+       ]
+      }
+     ],
+     "why": "Nymburk :04 → Pečky, 37 min; Pečky :15 → Nymburk, 36 min; one path. 2 buses (waits 34 at Pečky, 13 at Nymburk)."
+    },
+    {
+     "name": "433 Zálabí",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Nymburk, Zálabí",
+       "at": [
+        34
+       ],
+       "notvia": [
+        "Pečky, železniční stanice"
+       ]
+      },
+      {
+       "fr": "Nymburk, Zálabí",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        0
+       ],
+       "notvia": [
+        "Pečky, železniční stanice"
+       ]
+      }
+     ],
+     "why": "Nymburk, hl.nádraží :34 → Zálabí and Zálabí :00 → hl.nádraží on 433's town path (V Kolonii, Letců R.A.F., poliklinika, zimní stadion, nemocnice, náměstí), 19 min each way, not via Pečky. 1 bus (waits 7 at Zálabí, 15 at hl.nádraží)."
+    }
+   ]
+  },
+  "434": {
+   "core": [
+    "Nymburk, hl.nádraží",
+    "Straky",
+    "Milovice, železniční stanice",
+    "Benátky nad Jizerou, autobusové stanoviště"
+   ],
+   "note": "Nymburk, hl.nádraží – Straky – Milovice – Benátky nad Jizerou. Hourly, exact: Nymburk :24 (14:24–18:24) and Benátky :34 (14:34–18:34; the 16:34 runs only to Milovice, železniční stanice, and counts in the row). The bus waits 56 min at Nymburk (arrives :28, leaves :24); it does not run 433's town trips in that gap: of the six buses on 434 on the 2 Nov live map afternoon, only 8570 ran a 433 trip, once (Zálabí 14:00 → hl.nádraží, then 434 at 14:24), so 434 and 433 Zálabí stay apart. Off the pattern: Nymburk 12:09, 13:09, Benátky 12:49, 13:44 (to Milovice) and the morning.",
+   "sim": [
+    {
+     "name": "434",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Benátky nad Jizerou, autobusové stanoviště",
+       "at": [
+        24
+       ]
+      },
+      {
+       "fr": "Benátky nad Jizerou, autobusové stanoviště",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        34
+       ],
+       "core_to": "Milovice, železniční stanice"
+      }
+     ],
+     "why": "Nymburk :24 → Benátky, 51 min; Benátky :34 → Nymburk, 54 min (the 16:34 slot is the short trip to Milovice, run on to Nymburk in the game). 3 buses (waits 19 at Benátky, 56 at Nymburk)."
+    }
+   ]
+  },
+  "436": {
+   "core": [
+    "Nymburk, hl.nádraží",
+    "Vlkava, náves",
+    "Lipník"
+   ],
+   "note": "Nymburk – Všechlapy – Krchleby – Jizbice – Vlkava – Čachovice – Lipník. Hourly, exact: Nymburk :20 (15:20–20:20; the 17:20 and 19:20 run only to Vlkava, náves) and Lipník :21 (14:21–18:21). Off the pattern: Nymburk 12:10, 13:10, 14:10 (at :10 before 15:00), Lipník 13:15, 14:42 (via Všejany, whose stops are on 432), 15:16 and the morning.",
+   "sim": [
+    {
+     "name": "436",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Lipník",
+       "at": [
+        20
+       ],
+       "core_to": "Vlkava, náves"
+      },
+      {
+       "fr": "Lipník",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        21
+       ]
+      }
+     ],
+     "why": "Nymburk :20 → Lipník, 34 min (the 17:20 slot is the short trip to Vlkava, run on to Lipník in the game); Lipník :21 → Nymburk, 35 min. 2 buses (waits 27 at Lipník, 24 at Nymburk)."
+    }
+   ]
+  },
+  "443": {
+   "core": [
+    "Nymburk, hl.nádraží",
+    "Sadská",
+    "Přerov nad Labem, u skanzenu",
+    "Čelákovice, železniční stanice",
+    "Čelákovice, Toušeňská"
+   ],
+   "note": "Nymburk – Písty – Sadská – Hradištko – Semice – Přerov nad Labem – Čelákovice, Toušeňská. Hourly all day, exact (9 of 9 each way 8:00–19:00): Nymburk :02 and Toušeňská :55. Off the pattern: the morning (Nymburk 5:28, 6:28, Toušeňská 5:46, 6:27); the evening short trips to Sadská and Přerov nad Labem are listed.",
+   "sim": [
+    {
+     "name": "443",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Čelákovice, Toušeňská",
+       "at": [
+        2
+       ]
+      },
+      {
+       "fr": "Čelákovice, Toušeňská",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        55
+       ]
+      }
+     ],
+     "why": "Nymburk :02 → Čelákovice, Toušeňská, 59 min; Toušeňská :55 → Nymburk, 60 min; one path. 3 buses (waits 54 at Toušeňská, 7 at Nymburk)."
+    }
+   ]
+  },
+  "463": {
+   "core": [
+    "Městec Králové, náměstí",
+    "Rožďalovice, náměstí",
+    "Mladá Boleslav, autobusové stanoviště",
+    "Rožďalovice, Hasina"
+   ],
+   "anchor": "16:00",
+   "note": "Městec Králové – Záhornice – Chotěšice – Rožďalovice – Seletice – Dobrovice – Mladá Boleslav. Every 2 h in the afternoon: Městec :45 (13:45, 15:45, 19:45; 17:15) and Mladá Boleslav 16:05 (to Rožďalovice only) and 18:05 (13:05 and 14:30 before). Modelled at 16:00, set by hand: the busiest stretch (13:00–15:00) is the Rožďalovice → Městec short trip, the Hasina trip and the 14:30 extra, and the line's own two-hourly pattern runs later. Off the pattern: Městec 17:15, Mladá Boleslav 13:05, 14:30 and the morning; the Rožďalovice – Hasina spur (Hasina, Stará Hasina and ústav have no other line) is its own line every 480.",
+   "sim": [
+    {
+     "name": "463",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Městec Králové, náměstí",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "15:45"
+       ]
+      },
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Městec Králové, náměstí",
+       "at": [
+        "16:05"
+       ],
+       "core_to": "Rožďalovice, náměstí"
+      }
+     ],
+     "why": "Městec :45 odd hours → Mladá Boleslav (Rožďalovice :11), 90 min; Mladá Boleslav :05 even hours → Městec, 90 min (the 16:05 runs only to Rožďalovice, náměstí; the game bus goes on to Městec). 2 buses (waits 50 at Mladá Boleslav, 10 at Městec)."
+    },
+    {
+     "name": "463 Hasina",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Rožďalovice, náměstí",
+       "to": "Rožďalovice, Hasina",
+       "at": [
+        "14:31"
+       ]
+      },
+      {
+       "fr": "Rožďalovice, Hasina",
+       "to": "Rožďalovice, náměstí",
+       "at": [
+        "14:40"
+       ]
+      }
+     ],
+     "why": "Rožďalovice, náměstí 14:31 → ústav → Stará Hasina → Hasina, 5 min (the real 14:31); Hasina 14:40 → Rožďalovice, náměstí, 7 min (the real 6:40 Hasina → Městec, 8 h later on the every-480 pattern). 1 bus."
+    }
+   ]
+  },
+  "493": {
+   "core": [
+    "Nymburk, hl.nádraží",
+    "Poděbrady, železniční stanice"
+   ],
+   "note": "Nymburk – Kovanice – Poděbrady. Hourly all day, exact: Nymburk :04 and Poděbrady :30; the bus turns at Poděbrady in 1 min (arrives :29), as the timetable does. Off the pattern: the morning extras 6:34 and 7:00.",
+   "sim": [
+    {
+     "name": "493",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Poděbrady, železniční stanice",
+       "at": [
+        4
+       ]
+      },
+      {
+       "fr": "Poděbrady, železniční stanice",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        30
+       ]
+      }
+     ],
+     "why": "Nymburk :04 → Poděbrady, 25 min (not via Poděbrady, Tesco); Poděbrady :30 → Nymburk via Tesco, 25 min. 1 bus (1-min turn at Poděbrady as in the timetable, 9 min at Nymburk)."
+    }
+   ]
+  },
+  "497": {
+   "core": [
+    "Nymburk, hl.nádraží",
+    "Kostomlaty nad Labem, železniční stanice",
+    "Milovice, železniční stanice",
+    "Kamenné Zboží"
+   ],
+   "anchor": "15:00",
+   "note": "Nymburk – Drahelice – Kostomlátky – Kostomlaty nad Labem – Milovice, železniční stanice. Hourly 12:40–16:40 from Nymburk (:40) and 13:25–16:25 from Milovice (:25, the arriving bus leaves at once), then the line ends; modelled at 15:00, set by hand, because the default 16:00 window takes in the 17:25 that does not run. Off the pattern: Nymburk 13:44 and the morning; the short trips Nymburk → Kostomlaty nad Labem, železniční stanice (15:14, 17:44) and Nymburk 16:00 → Kostomlátky, u kapličky → 16:25 back are listed (stops on the line). Kamenné Zboží (only 14:19 out, 14:33 back in the afternoon) has no other line and is its own line every 480.",
+   "sim": [
+    {
+     "name": "497",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Milovice, železniční stanice",
+       "at": [
+        40
+       ]
+      },
+      {
+       "fr": "Milovice, železniční stanice",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        25
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Nymburk :40 → Milovice, železniční stanice, 45 min; Milovice :25 → Nymburk, 48 min, leaving the minute the bus arrives (0-minute turn as in the timetable). 2 buses (wait 27 at Nymburk)."
+    },
+    {
+     "name": "497 Kamenné Zboží",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Kamenné Zboží",
+       "at": [
+        "14:19"
+       ]
+      },
+      {
+       "fr": "Kamenné Zboží",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        "14:33"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Nymburk 14:19 → Kamenné Zboží, 14 min; Kamenné Zboží 14:33 → Nymburk, 15 min (0-minute turn as in the timetable): the real afternoon round, repeated every 480. 1 bus."
+    }
+   ]
+  },
+  "498": {
+   "core": [
+    "Poděbrady, železniční stanice",
+    "Poděbrady, Přední Lhota, u Kopečků",
+    "Ratenice",
+    "Pečky, železniční stanice"
+   ],
+   "note": "Poděbrady – Přední Lhota – Vrbová Lhota – Ratenice – Pečky. Hourly all day, exact (12 and 13 of 14): Poděbrady :20 and Pečky :15. Off the pattern: Poděbrady 7:05, 8:50, Pečky 5:45.",
+   "sim": [
+    {
+     "name": "498",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Poděbrady, železniční stanice",
+       "to": "Pečky, železniční stanice",
+       "at": [
+        20
+       ]
+      },
+      {
+       "fr": "Pečky, železniční stanice",
+       "to": "Poděbrady, železniční stanice",
+       "at": [
+        15
+       ]
+      }
+     ],
+     "why": "Poděbrady :20 → Pečky, 25 min; Pečky :15 → Poděbrady, 25 min; one path. 2 buses: the two cross (waits 30 at Pečky, 40 at Poděbrady)."
+    }
+   ]
+  },
+  "499": {
+   "core": [
+    "Nymburk, hl.nádraží",
+    "Loučeň",
+    "Mladá Boleslav, autobusové stanoviště"
+   ],
+   "note": "Nymburk – Krchleby – Loučeň – Jabkenice – Semčice – Dobrovice – Mladá Boleslav. Hourly, exact: Nymburk :05 (the 16:05 and 18:05 run only to Loučeň) and Mladá Boleslav :45 (no 17:45). The Loučeň short trips count in the Nymburk row (core point Loučeň); the game bus runs them on to Mladá Boleslav. Off the pattern: Mladá Boleslav 13:40 (via Charvatce, 5 min off), 22:25 and the morning.",
+   "sim": [
+    {
+     "name": "499",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        5
+       ],
+       "core_to": "Loučeň"
+      },
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        45
+       ]
+      }
+     ],
+     "why": "Nymburk :05 → Mladá Boleslav, 62 min (the 16:05 slot is the Loučeň short trip, run on in the game); Mladá Boleslav :45 → Nymburk, 65 min; via Charvatce, Květník. 3 buses (waits 38 at Mladá Boleslav, 15 at Nymburk)."
+    }
+   ]
+  },
+  "538": {
+   "core": [
+    "Městec Králové, náměstí",
+    "Křinec, náměstí"
+   ],
+   "note": "Městec Králové – Podmoky – Velenice – Činěves – Dymokury – Křinec. Every 2 h all day, exact: Městec :49 (9:49–19:49) and Křinec :33 (8:33–18:33). Off the pattern: the morning (Městec 5:29, 6:29, 7:54; Křinec 5:58, 7:08) and Křinec 21:33.",
+   "sim": [
+    {
+     "name": "538",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Městec Králové, náměstí",
+       "to": "Křinec, náměstí",
+       "at": [
+        "15:49"
+       ]
+      },
+      {
+       "fr": "Křinec, náměstí",
+       "to": "Městec Králové, náměstí",
+       "at": [
+        "16:33"
+       ]
+      }
+     ],
+     "why": "Městec :49 odd hours → Křinec, náměstí, 28 min; Křinec :33 even hours → Městec, 28 min. 1 bus (waits 16 at Křinec, 48 at Městec)."
+    }
+   ]
+  },
+  "539": {
+   "core": [
+    "Poděbrady, železniční stanice",
+    "Křečkov"
+   ],
+   "anchor": "15:00",
+   "note": "Poděbrady – Velké Zboží – Křečkov. Hourly 13:12–16:12 from Poděbrady (:12) and 13:31–16:31 from Křečkov (:31), the bus turning at Křečkov in 2 min; modelled at 15:00, set by hand, because the default 16:00 window takes in the 17:12 that does not run. Off the pattern: Poděbrady 18:12 and the morning.",
+   "sim": [
+    {
+     "name": "539",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Poděbrady, železniční stanice",
+       "to": "Křečkov",
+       "at": [
+        12
+       ]
+      },
+      {
+       "fr": "Křečkov",
+       "to": "Poděbrady, železniční stanice",
+       "at": [
+        31
+       ]
+      }
+     ],
+     "why": "Poděbrady :12 → Křečkov, 17 min; Křečkov :31 → Poděbrady, 16 min. 1 bus (2-min turn at Křečkov as in the timetable, 25 min at Poděbrady)."
+    }
+   ]
+  },
+  "540": {
+   "core": [
+    "Poděbrady, železniční stanice",
+    "Pátek, u váhy",
+    "Dymokury",
+    "Záhornice, u Tylů"
+   ],
+   "note": "Poděbrady – Pátek – Úmyslovice – Dymokury – Chotěšice – Záhornice. Hourly and exact at Dymokury both ways (from Poděbrady :42, towards Poděbrady :22, 12:22–18:42); the end minutes vary with the path: Poděbrady :08, or :05 via Křečkov (12:05, 14:05); Záhornice :07, or :02 via Chotěšice, Nová Ves (13:02, 15:02). The row leaves Poděbrady :08 and Záhornice :07 and is read at Dymokury, so the :02 trips count; the 12:05 and 14:05 via Křečkov are listed (Křečkov is on 539). The 17:08 and 18:22 run only to and from Dymokury.",
+   "sim": [
+    {
+     "name": "540",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Poděbrady, železniční stanice",
+       "to": "Záhornice, u Tylů",
+       "at": [
+        8
+       ],
+       "core_to": "Dymokury",
+       "notvia": [
+        "Křečkov"
+       ],
+       "stops_via": [
+        "Chotěšice, Nová Ves"
+       ]
+      },
+      {
+       "fr": "Záhornice, u Tylů",
+       "to": "Poděbrady, železniční stanice",
+       "knot": "Dymokury",
+       "knot_at": [
+        22
+       ],
+       "knot_rt": 15
+      }
+     ],
+     "why": "Poděbrady :08 → Záhornice via Poděbrady, Jeronýmova and Chotěšice, Nová Ves (the 16:08 path), 54 min; Záhornice :07 → Poděbrady by the direct road past Nová Ves (the 14:07–17:07 path), 49 min, 15 to Dymokury. 2 buses (waits 5 at Záhornice, 12 at Poděbrady)."
+    }
+   ]
+  },
+  "541": {
+   "core": [
+    "Nymburk, hl.nádraží",
+    "Městec Králové, náměstí",
+    "Dlouhopolsko"
+   ],
+   "note": "Nymburk – Budiměřice – Úmyslovice – Okřínek – Městec Králové – Běrunice – Kněžičky – Dlouhopolsko. Hourly at Nymburk (:09) and at Městec towards Nymburk (:05), every other trip running on to Dlouhopolsko: Nymburk even hours → Dlouhopolsko, odd hours → Městec; Dlouhopolsko :46 and Městec :05 at odd hours. The buses alternate the two ends, so it is one circuit, and they spend the Městec wait on the 16:15 town loop via Sloveč, Kamilov (no other line). Off the pattern: Městec 8:05, 10:05, Nymburk 8:09, 20:09 and the morning.",
+   "sim": [
+    {
+     "name": "541",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Dlouhopolsko",
+       "at": [
+        "16:09"
+       ]
+      },
+      {
+       "fr": "Dlouhopolsko",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        "15:46"
+       ]
+      },
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Městec Králové, náměstí",
+       "at": [
+        "15:09"
+       ],
+       "notvia": [
+        "Dlouhopolsko"
+       ]
+      },
+      {
+       "fr": "Městec Králové, náměstí",
+       "to": "Městec Králové, náměstí",
+       "at": [
+        "16:15"
+       ]
+      },
+      {
+       "fr": "Městec Králové, náměstí",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        "17:05"
+       ],
+       "notvia": [
+        "Dlouhopolsko"
+       ]
+      }
+     ],
+     "why": "Nymburk :09 even hours → Dlouhopolsko, 69 min; Dlouhopolsko :46 odd hours → Nymburk, 70 min; Nymburk :09 odd hours → Městec, 50 min; Městec 16:15 town loop via Sloveč, Sloveč, Kamilov, Sloveč, Střihov and Městec Králové, Nový, 20 min (the real 16:15); Městec :05 odd hours → Nymburk, 51 min. 3 buses, round 360 min (waits 28 at Dlouhopolsko, 13 twice at Nymburk, 16 and 30 at Městec)."
+    }
+   ]
+  },
+  "542": {
+   "core": [
+    "Poděbrady, železniční stanice",
+    "Podmoky, ObÚ",
+    "Dymokury",
+    "Rožďalovice, náměstí"
+   ],
+   "note": "Poděbrady – Choťánky – Okřínek – Vrbice – Podmoky – Činěves – Dymokury – Viničná Lhota – Rožďalovice. Every 2 h, exact: Poděbrady :15 at even hours (10:15–18:15) and Rožďalovice :44 at even hours (12:44–16:44; 8:44). Off the pattern: the morning; the Dymokury → Podmoky, ObÚ short trips (14:15, 16:15) are listed (stops on the line).",
+   "sim": [
+    {
+     "name": "542",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Poděbrady, železniční stanice",
+       "to": "Rožďalovice, náměstí",
+       "at": [
+        "16:15"
+       ]
+      },
+      {
+       "fr": "Rožďalovice, náměstí",
+       "to": "Poděbrady, železniční stanice",
+       "at": [
+        "16:44"
+       ]
+      }
+     ],
+     "why": "Poděbrady :15 even hours → Rožďalovice, náměstí, 57 min; Rožďalovice :44 even hours → Poděbrady, 58 min. 2 buses: the two cross (waits 92 at Rožďalovice, 33 at Poděbrady)."
+    }
+   ]
+  },
+  "543": {
+   "core": [
+    "Poděbrady, železniční stanice",
+    "Žehuň",
+    "Žehuň, u rybníka",
+    "Hradčany, ObÚ"
+   ],
+   "note": "Poděbrady – Libice nad Cidlinou – Opolany – Dobšice – Žehuň – Hradčany. Every 2 h, one bus: Poděbrady :55 at even hours (12:55 and 14:55 to Hradčany, 16:55 to Žehuň, u rybníka), Hradčany 14:07 and 16:13, the bus leaving Poděbrady the minute it arrives. Off the pattern: Žehuň, u rybníka 18:20, Poděbrady 19:05 and the morning; Hradčany 14:07 runs via Sány and Opolany, Opolánky, k železniční zastávka (6 min longer than the 16:13) and is listed, those stops are on the way out. Opolany, Opolánky, Badra has no other line.",
+   "sim": [
+    {
+     "name": "543",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Poděbrady, železniční stanice",
+       "to": "Hradčany, ObÚ",
+       "at": [
+        "16:55"
+       ],
+       "core_to": "Žehuň, u rybníka",
+       "lay": 0
+      },
+      {
+       "fr": "Hradčany, ObÚ",
+       "to": "Poděbrady, železniční stanice",
+       "at": [
+        "16:13"
+       ],
+       "notvia": [
+        "Sány"
+       ]
+      }
+     ],
+     "why": "Poděbrady :55 even hours → Hradčany via Opolany, Opolánky, k železniční zastávka and Sány, 46 min (the 16:55 slot is the trip to Žehuň, u rybníka, run on to Hradčany in the game); Hradčany 16:13 → Poděbrady by that trip's own path past Sány, 42 min, the bus leaving Poděbrady again on arrival (0-minute turn as in the timetable). 1 bus (wait 32 at Hradčany)."
+    }
+   ]
+  },
+  "585": {
+   "core": [
+    "Poděbrady, železniční stanice",
+    "Kopidlno, náměstí",
+    "Jičín, autobusové stanoviště",
+    "Chroustov"
+   ],
+   "note": "Poděbrady – Dymokury – Budčeves – Kopidlno – Vršce – Jičíněves – Jičín (Královéhradecký kraj; licences 632585 and 631585 merged). Every 3 h, exact: Poděbrady :24 (10:24, 13:24, 16:24) and Jičín :35 (13:35, 16:35); between them the bus runs Jičín 14:35 → Chroustov and Chroustov 15:16 → Jičín (Židovice and Běchary have no other line), so one circuit holds both at no extra bus. Off the pattern: Poděbrady 6:09, Jičín 6:35, 9:35; the Jičín – Kopidlno short trips (12:35, 13:02, 15:35) are listed (stops on the line) and Jičín, železniční stanice 18:30 → Chroustov is a coverage exception.",
+   "sim": [
+    {
+     "name": "585",
+     "every": 180,
+     "legs": [
+      {
+       "fr": "Poděbrady, železniční stanice",
+       "to": "Jičín, autobusové stanoviště",
+       "at": [
+        "16:24"
+       ]
+      },
+      {
+       "fr": "Jičín, autobusové stanoviště",
+       "to": "Chroustov",
+       "at": [
+        "14:35"
+       ]
+      },
+      {
+       "fr": "Chroustov",
+       "to": "Jičín, autobusové stanoviště",
+       "at": [
+        "15:16"
+       ]
+      },
+      {
+       "fr": "Jičín, autobusové stanoviště",
+       "to": "Poděbrady, železniční stanice",
+       "at": [
+        "16:35"
+       ],
+       "stops_via": [
+        "Jičíněves, Keteň"
+       ]
+      }
+     ],
+     "why": "Poděbrady :24 → Jičín via Vršce, 64 min; Jičín 14:35 → Kopidlno → Chroustov, 39 min (the real 14:35); Chroustov 15:16 → Jičín, 42 min (the real 15:16); Jičín :35 → Poděbrady via Jičíněves, Keteň, Kopidlno, Pševes and Kopidlno, žel.přejezd (the 13:35 path, 60 min; the 16:35 runs via Vršce in 58 min and those stops are on the way out). 2 buses, round 360 min (waits 7 and 37 at Jičín, 2 at Chroustov, 109 at Poděbrady)."
+    }
+   ]
+  },
+  "598": {
+   "core": [
+    "Poděbrady, železniční stanice",
+    "Městec Králové, náměstí",
+    "Kněžice, Dubečno",
+    "Chotěšice, Nová Ves"
+   ],
+   "note": "Poděbrady – Opočnice – Hradčany – Městec Králové – Kněžice – Chroustov – Kněžice, Dubečno – Chotěšice, Nová Ves. Hourly from Poděbrady :15: even hours to Chotěšice, Nová Ves (12:15–16:15), odd hours to Kněžice, Dubečno (13:15, 15:15; the 17:15 runs only to Městec Králové); back from Nová Ves :39 at odd hours and from Dubečno :47 at even hours. The buses alternate the two ends, so it is one circuit. Off the pattern: the Městec short trips 13:08 and 19:13, the Dubečno trips at even hours after 18:00 (18:15, 20:15) and the morning.",
+   "sim": [
+    {
+     "name": "598",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Poděbrady, železniční stanice",
+       "to": "Chotěšice, Nová Ves",
+       "at": [
+        "16:15"
+       ]
+      },
+      {
+       "fr": "Chotěšice, Nová Ves",
+       "to": "Poděbrady, železniční stanice",
+       "at": [
+        "15:39"
+       ]
+      },
+      {
+       "fr": "Poděbrady, železniční stanice",
+       "to": "Kněžice, Dubečno",
+       "at": [
+        "17:15"
+       ],
+       "core_to": "Městec Králové, náměstí",
+       "notvia": [
+        "Chotěšice, Nová Ves"
+       ]
+      },
+      {
+       "fr": "Kněžice, Dubečno",
+       "to": "Poděbrady, železniční stanice",
+       "at": [
+        "16:47"
+       ],
+       "notvia": [
+        "Chotěšice, Nová Ves"
+       ]
+      }
+     ],
+     "why": "Poděbrady :15 even hours → Chotěšice, Nová Ves, 63 min; Nová Ves :39 odd hours → Poděbrady, 63 min; Poděbrady :15 odd hours → Kněžice, Dubečno, 60 min (the 17:15 slot is the Městec short trip, run on in the game); Dubečno :47 even hours → Poděbrady (not via Hradčany), 55 min. 3 buses, round 360 min (waits 21 at Nová Ves, 32 at Dubečno, 33 twice at Poděbrady)."
+    }
+   ]
+  },
+  "599": {
+   "core": [
+    "Městec Králové, náměstí",
+    "Opočnice",
+    "Dobšice, Libněves"
+   ],
+   "note": "Městec Králové – Podmoky – Vrbice – Opočnice – Hradčany – Žehuň – Dobšice, Libněves. Every 2 h all day, exact (5 of 6 and 5 of 7): Městec :10 at even hours and Libněves :12 at odd hours. Its stops are all on 541, 542, 543 and 598, but it is a regular two-hourly line, not a sparse one, so it keeps its own Simutrans line.",
+   "sim": [
+    {
+     "name": "599",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Městec Králové, náměstí",
+       "to": "Dobšice, Libněves",
+       "at": [
+        "16:10"
+       ]
+      },
+      {
+       "fr": "Dobšice, Libněves",
+       "to": "Městec Králové, náměstí",
+       "at": [
+        "17:12"
+       ]
+      }
+     ],
+     "why": "Městec :10 even hours → Dobšice, Libněves, 27 min; Libněves :12 odd hours → Městec, 27 min. 1 bus (waits 35 at Libněves, 31 at Městec)."
+    }
+   ]
+  },
+  "673": {
+   "core": [
+    "Nymburk, hl.nádraží",
+    "Křinec, Sovenice",
+    "Křinec, náměstí",
+    "Křinec, škola"
+   ],
+   "note": "Nymburk – Budiměřice – Chleby – Oskořínek – Hrubý Jeseník – Křinec. Every 2 h: Nymburk :05 at odd hours (5:05–19:05, all exact), to Křinec, škola (13:05, 15:05) or only to Křinec, Sovenice (17:05, 19:05); towards Nymburk read at Křinec, Sovenice :15 at even hours (16:15 from škola 16:09, 18:15 from Sovenice). Off the pattern: škola 14:00 (via Nový Dvůr, 9 min off), Sovenice 13:15 and the morning.",
+   "sim": [
+    {
+     "name": "673",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Křinec, škola",
+       "at": [
+        "17:05"
+       ],
+       "core_to": "Křinec, Sovenice",
+       "stops_via": [
+        "Nový Dvůr"
+       ]
+      },
+      {
+       "fr": "Křinec, škola",
+       "to": "Nymburk, hl.nádraží",
+       "knot": "Křinec, Sovenice",
+       "knot_at": [
+        "16:15"
+       ]
+      }
+     ],
+     "why": "Nymburk :05 odd hours → Křinec, škola via Nový Dvůr (the 15:05 path), 50 min (the 17:05 slot ends at Křinec, Sovenice in reality, run on in the game); škola :09 even hours → Nymburk (Sovenice :15), 41 min. 1 bus (waits 14 at škola, 15 at Nymburk)."
+    }
+   ]
+  },
+  "674": {
+   "core": [
+    "Nymburk, hl.nádraží",
+    "Křinec, náměstí",
+    "Rožďalovice, náměstí",
+    "Rožďalovice, železniční stanice"
+   ],
+   "note": "Nymburk – Budiměřice – Vestec – Křinec – Žitovlice – Košík – Rožďalovice. Every 2 h from Nymburk :05 at even hours (8:05–20:05; the 16:05 runs only to Košík, Tuchom, the 20:05 only to Křinec), back from Rožďalovice, železniční stanice 13:48 and 15:48 (Rožďalovice, náměstí :49). The row is read at Rožďalovice, náměstí, where the buses arrive; Rožďalovice, železniční stanice is on 463. Off the pattern: Košík, Tuchom 16:59, Křinec 12:47 and the morning.",
+   "sim": [
+    {
+     "name": "674",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Rožďalovice, náměstí",
+       "at": [
+        "16:05"
+       ],
+       "core_to": "Křinec, náměstí"
+      },
+      {
+       "fr": "Rožďalovice, náměstí",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        "15:49"
+       ]
+      }
+     ],
+     "why": "Nymburk :05 even hours → Rožďalovice, náměstí, 60 min (the 16:05 slot is the Košík, Tuchom trip, run on in the game); Rožďalovice, náměstí :49 odd hours → Nymburk, 64 min. 2 buses: the two cross (waits 44 at Rožďalovice, 72 at Nymburk)."
+    }
+   ]
+  },
+  "676": {
+   "core": [
+    "Nymburk, hl.nádraží",
+    "Jíkev",
+    "Loučeň",
+    "Seletice"
+   ],
+   "note": "Nymburk – Bobnice – Jíkev – Loučeň (– Mcely – Seletice). Hourly from Nymburk :00, alternating Seletice (odd hours: 15:00, 17:00, 19:00) and Loučeň (even hours: 14:00, 16:00; the 18:00 only to Jíkev); towards Nymburk every hour at Loučeň :19 (from Seletice :06 at even hours). Each end is its own Simutrans line every 120, offset so they alternate as the timetable does. Off the pattern: Nymburk 12:00, 13:00, Loučeň 12:19, 14:19 (the other end's hour) and the Jíkev short trips.",
+   "sim": [
+    {
+     "name": "676",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Loučeň",
+       "at": [
+        "16:00"
+       ],
+       "notvia": [
+        "Seletice"
+       ]
+      },
+      {
+       "fr": "Loučeň",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        "17:19"
+       ],
+       "notvia": [
+        "Seletice"
+       ]
+      }
+     ],
+     "why": "Nymburk :00 even hours → Loučeň, 31 min; Loučeň :19 odd hours → Nymburk, 31 min. 1 bus (waits 48 at Loučeň, 10 at Nymburk)."
+    },
+    {
+     "name": "676 Seletice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Seletice",
+       "at": [
+        "17:00"
+       ]
+      },
+      {
+       "fr": "Seletice",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        "16:06"
+       ]
+      }
+     ],
+     "why": "Nymburk :00 odd hours → Loučeň → Mcely → Seletice, 44 min; Seletice :06 even hours → Nymburk (Loučeň :19), 44 min. 1 bus (waits 22 at Seletice, 10 at Nymburk)."
+    }
+   ]
+  },
+  "678": {
+   "core": [
+    "Poděbrady, železniční stanice",
+    "Oseček",
+    "Cerhenice, Náměstí Míru",
+    "Pečky, železniční stanice"
+   ],
+   "note": "Poděbrady – Kluk – Oseček – Sokoleč – Cerhenice – Dobřichov – Pečky. Every 2 h in the afternoon, exact: Poděbrady :05 at even hours (8:05–18:05) and Pečky :14 at odd hours (9:14–17:14); more often in the morning. Off the pattern: Pečky 18:14 and the morning extras; Pečky 20:14 → Cerhenice is listed.",
+   "sim": [
+    {
+     "name": "678",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Poděbrady, železniční stanice",
+       "to": "Pečky, železniční stanice",
+       "at": [
+        "16:05"
+       ]
+      },
+      {
+       "fr": "Pečky, železniční stanice",
+       "to": "Poděbrady, železniční stanice",
+       "at": [
+        "17:14"
+       ]
+      }
+     ],
+     "why": "Poděbrady :05 even hours → Pečky via Poděbrady, Kluk, Hájenka, 40 min; Pečky :14 odd hours → Poděbrady, 40 min. 1 bus (waits 29 at Pečky, 11 at Poděbrady)."
+    }
+   ]
+  },
+  "679": {
+   "core": [
+    "Poděbrady, železniční stanice",
+    "Oseček",
+    "Velim, škola",
+    "Kolín, nádraží"
+   ],
+   "note": "Kolín, nádraží – Křečhoř – Velim – Pňov-Předhradí – Oseček – Sokoleč – Poděbrady. Every 2 h, one bus turning at Kolín in 2 min: Kolín :00 at even hours (10:00–18:00) and Poděbrady :10 at odd hours (11:10–19:10), exact. Off the pattern: Poděbrady 15:15 (5 min late) and the morning; the Velim, škola → Oseček short trips (13:43, 15:13) and Kolín 19:00 → Oseček are listed (stops on the line).",
+   "sim": [
+    {
+     "name": "679",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Poděbrady, železniční stanice",
+       "at": [
+        "16:00"
+       ]
+      },
+      {
+       "fr": "Poděbrady, železniční stanice",
+       "to": "Kolín, nádraží",
+       "at": [
+        "17:10"
+       ]
+      }
+     ],
+     "why": "Kolín :00 even hours → Poděbrady, 48 min; Poděbrady :10 odd hours → Kolín, 48 min. 1 bus (2-min turn at Kolín as in the timetable, 22 min at Poděbrady)."
+    }
+   ]
+  },
+  "705": {
+   "core": [
+    "Poděbrady, železniční stanice",
+    "Kolín, nádraží",
+    "Kutná Hora, Karlov, Na Rovinách",
+    "Čáslav, obchodní centrum"
+   ],
+   "note": "Poděbrady – Opolany – Velký Osek – Kolín – Červené Pečky – Kutná Hora – Čáslav (licences 271705 and 270705 merged). Kolín – Čáslav is hourly both ways (Kolín :50, Čáslav, obchodní centrum :56, back at Kolín :10), and every second trip runs through to or from Poděbrady (Poděbrady 15:42, 17:41; Čáslav 14:59 to Libice, 16:56). Two Simutrans lines every 120 give the hourly Kolín – Čáslav run: 705 through Poděbrady (even hours at Kolín) and 705 Kolín (odd hours). Off the pattern and listed (stops on these lines): Poděbrady 12:52 via Kolín, PZKO-TOYOTA, Poděbrady 16:36 → Kolín, Kolín 12:40 → Poděbrady, the Kolín – Kutná Hora short trips, Čáslav 18:01 → Volárna and the Toyota trips (those stops are on the Kolín town lines).",
+   "sim": [
+    {
+     "name": "705",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Poděbrady, železniční stanice",
+       "to": "Čáslav, obchodní centrum",
+       "at": [
+        "15:42"
+       ],
+       "stops_via": [
+        "Velký Osek, nádraží"
+       ],
+       "rt": 139
+      },
+      {
+       "fr": "Čáslav, obchodní centrum",
+       "to": "Poděbrady, železniční stanice",
+       "knot": "Kolín, nádraží",
+       "knot_at": [
+        "16:10"
+       ],
+       "core_to": "Libice nad Cidlinou, u kostela",
+       "rt": 141
+      }
+     ],
+     "why": "Poděbrady :42 odd hours → Kolín (:50) → Kutná Hora → Čáslav, obchodní centrum via Velký Osek, 139 min (the 15:42); Čáslav :56 even hours → Kolín (:10) → Poděbrady via Kutná Hora, Karlov, Na Rovinách, 141 min (the 16:56; read at Kolín, so the 14:59 to Libice nad Cidlinou and the 12:55 from Čáslav, zem.škola count). 3 buses (waits 55 at Čáslav, 25 at Poděbrady)."
+    },
+    {
+     "name": "705 Kolín",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Čáslav, obchodní centrum",
+       "at": [
+        "15:50"
+       ],
+       "notvia": [
+        "Libice nad Cidlinou, u kostela"
+       ]
+      },
+      {
+       "fr": "Čáslav, obchodní centrum",
+       "to": "Kolín, nádraží",
+       "at": [
+        "15:56"
+       ],
+       "notvia": [
+        "Libice nad Cidlinou, u kostela"
+       ]
+      }
+     ],
+     "why": "Kolín :50 odd hours → Čáslav, obchodní centrum, 74 min; Čáslav :56 odd hours → Kolín, 74 min; both rows leave out the trips to and from Poděbrady (not via Libice nad Cidlinou, u kostela). 2 buses (waits 52 at Čáslav, 40 at Kolín)."
+    }
+   ]
+  },
+  "833": {
+   "core": [
+    "Sadská",
+    "Pečky, železniční stanice",
+    "Nymburk, hl.nádraží"
+   ],
+   "anchor": "16:00",
+   "note": "Mostly a Sadská – Milčice – Pečky shuttle, hourly: Sadská :33 (12:33–18:33) and Pečky :12 at even hours, :15 at odd hours (13:15–18:12); a few trips run through to Nymburk via Hořátev (Nymburk 13:34, 14:34; Sadská 14:39 via Písty). Modelled at 16:00, set by hand: the default anchor (13:40, window 13:10–15:10) holds the Nymburk trips and the 14:48 extra, not the shuttle's own pattern. The Nymburk trips are their own line every 480 (Hořátev, prodejna, Hořátev, Technologický park, Zvěřínek, rozcestí Hořátev and Písty have no other line). Off the pattern: Pečky 14:48, Nymburk 14:34 and the through trips Pečky → Nymburk (10:06, 12:06) and Nymburk → Pečky (6:34, 9:04).",
+   "sim": [
+    {
+     "name": "833",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pečky, železniční stanice",
+       "to": "Sadská",
+       "at": [
+        "16:12",
+        "17:15"
+       ]
+      },
+      {
+       "fr": "Sadská",
+       "to": "Pečky, železniční stanice",
+       "at": [
+        "15:33",
+        "16:33"
+       ]
+      }
+     ],
+     "why": "Pečky 16:12 and 17:15 (every 120: :12 at even hours, :15 at odd hours) → Sadská, 12 min; Sadská :33 → Pečky, 12 min. 1 bus (waits 9 and 6 at Sadská, 30 and 27 at Pečky)."
+    },
+    {
+     "name": "833 Nymburk",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Nymburk, hl.nádraží",
+       "to": "Sadská",
+       "at": [
+        "13:34"
+       ]
+      },
+      {
+       "fr": "Sadská",
+       "to": "Nymburk, hl.nádraží",
+       "at": [
+        "14:39"
+       ]
+      }
+     ],
+     "why": "Nymburk 13:34 → Hořátev → Sadská, 33 min (the real 13:34); Sadská 14:39 → Písty → Nymburk, 40 min (the real 14:39): the afternoon round, repeated every 480. 1 bus."
+    }
+   ]
+  },
+  "853": {
+   "core": [
+    "Městec Králové, náměstí",
+    "Hlušice, kulturní dům",
+    "Nový Bydžov, Terminál HD"
+   ],
+   "note": "Městec Králové – Sloveč – Hlušice – Lužec n.Cidl. – Starý Bydžov – Nový Bydžov (Královéhradecký kraj, BusLine KHK). One bus in the afternoon: Městec 13:00 and 15:05 (round the Hlušice spur), Nový Bydžov 14:25 (direct) and 17:02 (via Hlušice). Every 240 holds the 15:05 / 17:02 round exactly; 13:00 and 14:25 are off the pattern. A four-leg circuit every 480 (13:00, 14:25, 15:05, 17:02, all exact) would hold all four afternoon trips for the same 1 bus, at four typed entries instead of two. Every stop past Sloveč, Střihov is in Královéhradecký kraj with no other line on these sheets.",
+   "sim": [
+    {
+     "name": "853",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Městec Králové, náměstí",
+       "to": "Nový Bydžov, Terminál HD",
+       "at": [
+        "15:05"
+       ]
+      },
+      {
+       "fr": "Nový Bydžov, Terminál HD",
+       "to": "Městec Králové, náměstí",
+       "at": [
+        "17:02"
+       ],
+       "stops_via": [
+        "Hlušice, kulturní dům"
+       ]
+      }
+     ],
+     "why": "Městec 15:05 → round the Hlušice spur → Nový Bydžov, Terminál HD, 49 min (the real 15:05); Nový Bydžov 17:02 → Hlušice → Městec, 43 min. 1 bus (waits 68 at Nový Bydžov, 80 at Městec)."
+    }
+   ]
+  },
+  "897": {
+   "core": [
+    "Lysá nad Labem, železniční stanice",
+    "Lysá nad Labem, Litol, Palackého",
+    "Stratov",
+    "Kostomlaty nad Labem, železniční stanice"
+   ],
+   "note": "Lysá nad Labem – Litol – Ostrá – Stratov – Kostomlaty nad Labem, železniční stanice. Every 2 h in the afternoon, exact: Lysá 13:47 and 15:47 (via Lysá nad Labem, škola, Ostrá, náves and Ostrá, Šnepov) and Kostomlaty 12:50, 14:50, 16:50; the line ends with the 16:50. Off the pattern: Kostomlaty 15:50 and the morning.",
+   "sim": [
+    {
+     "name": "897",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Lysá nad Labem, železniční stanice",
+       "to": "Kostomlaty nad Labem, železniční stanice",
+       "at": [
+        "15:47"
+       ]
+      },
+      {
+       "fr": "Kostomlaty nad Labem, železniční stanice",
+       "to": "Lysá nad Labem, železniční stanice",
+       "at": [
+        "16:50"
+       ]
+      }
+     ],
+     "why": "Lysá :47 odd hours → Kostomlaty via Lysá nad Labem, škola, Ostrá, náves and Ostrá, Šnepov, 31 min; Kostomlaty :50 even hours → Lysá by the direct road, 25 min. 1 bus (waits 32 at each end)."
+    }
+   ]
+  }
+ },
+ "unmodelled": {},
+ "terminus_alias": {},
+ "terminus_alias_why": "",
+ "coverage_exceptions": {
+  "Jičín, železniční stanice": "585 (Královéhradecký kraj): 493 m from Jičín, autobusové stanoviště (on 585); one afternoon trip, the 18:30 that starts there for Chroustov and passes the bus station 5 min later. Exception recommended; on the coverage owner check."
+ },
+ "owner_checks": [
+  [
+   "585, 833",
+   "Coverage near stops of the same place. Jičín, železniční stanice (Královéhradecký kraj) is 493 m from Jičín, autobusové stanoviště (on 585) and has one afternoon trip (18:30 → Chroustov): left as a coverage exception (recommended). 833 Nymburk (every 480, 1 bus) is kept by the rule for Hořátev, prodejna (90 m from Hořátev, ZD on 433), Zvěřínek, rozcestí Hořátev (396 m from Zvěřínek on 443), Písty (717 m from Písty, Temac on 443) and Hořátev, Technologický park (1.3 km from Hořátev, ZD), three afternoon trips.",
+   "Jičín, železniční stanice: start 585's Chroustov leg there with a hop no real trip makes (0 buses, invented minutes), or its own line every 480 (+1 bus). 833 Nymburk: keep (rule), or coverage exceptions for the four stops, −1 bus."
+  ]
+ ],
+ "notes": "PID Nymbursko: okres Nymburk (licences 270 and 271), with the Prague lines whose outer end is here (398 Poděbrady, 425 Městec Králové – Trutnov) and the Královéhradecký lines 585 (Jičín) and 853 (Nový Bydžov). Timetable: PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026, a school day. Every terminus is a loop: typed = real − 61, mod every. Real 0-minute turns (497 at Milovice, 497 Kamenné Zboží, 543 at Poděbrady) keep the real minutes, and the bus count takes the real turn: the departure is typed 1 min before the minute the bus arrives, so the entry's automatic Leave up to must let it go (the same engine question as on the Rakovnicko sheet). Through-running in the timetable's 0–5 min chains: 433's Nymburk town trips → 434 at Nymburk (:19 → :24, 4 of 11; modelled apart, the ring is an owner check), with 497 as the other candidate for 434's Nymburk gap (497 arrives :13 → 434 :24, 434 arrives :28 → 497 :40; the morning plates 8616 and 8569 run both); 497 ↔ 897 at Kostomlaty nad Labem, železniční stanice (morning 7:17, 8:50, 10:45); 538 → 541 at Městec Králové (17:01 → 17:05, 3 of 8); 432 and 897 → 442 at Lysá nad Labem (4 of 11, 4 of 7; 442 is on another sheet); 679 ↔ 821 at Kolín, nádraží (6 of 9 arrivals, 5 of 9 departures; 821 is on the Kolínsko sheet); 434 → 768 at Benátky nad Jizerou (6 of 14; 768 is on the Mladoboleslavsko sheet). Nymburk, hl.nádraží is a timed hub (443, 493, 541 and 436 arrive :50–:56, 676, 433, 493, 499 and others leave :00–:09), so its many chains are a pulse, not proof of shared buses. The 2 Nov live map will confirm or correct these. Lines every 480 (one real afternoon round kept for stops no other line serves): 463 Hasina, 497 Kamenné Zboží, 833 Nymburk. 705 runs on through okres Kolín and Kutná Hora to Čáslav; its stops there (Velký Osek, Červené Pečky, Miskovice, Kutná Hora, Neškaredice, Třebešice) have no other line on these sheets.",
+ "artifact_url": "https://claude.ai/artifact/RKJK8GTGiQz7tjVLnQpbPA"
+}

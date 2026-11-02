@@ -1,0 +1,1561 @@
+{
+ "title": "PID Berounsko",
+ "oblast": "berounsko",
+ "oblast_name": "Berounsko",
+ "okres": "Beroun",
+ "prefix": "210",
+ "output_html": "PID Berounsko.html",
+ "artifact_url": "https://claude.ai/artifact/6574bcYazwXHe3zKYKyE6h",
+ "snapshot": "2026-11-02",
+ "vehicle_day": "2026-11-02",
+ "vehicle_day_label_en": "Monday 2 Nov 2026",
+ "network_state_label": "2 Nov 2026",
+ "gtfs": {
+  "zip": "data/raw/gtfs/2026-11-01/gtfs.zip",
+  "service_date": "20261102",
+  "why": "PID GTFS downloaded Sun 1 Nov 2026 (feed 1-14 Nov). Service day Mon 2 Nov 2026 (the first live-map poll day), a normal school weekday (28 Oct was a holiday and 29-30 Oct autumn school holidays; regional lines run many school-day-only trips)."
+ },
+ "areas": [
+  {
+   "id": "berounsko",
+   "name": "Berounsko",
+   "prefix": "210",
+   "kind": "regional"
+  }
+ ],
+ "fitwin": [
+  300,
+  1380
+ ],
+ "cycle_lay": 3,
+ "all_termini_are_loops": true,
+ "stop_name_expansions": [],
+ "stop_name_fixed": {},
+ "terminus_alias": {
+  "Praha, Vypich": "Praha, Kukulova",
+  "Příbram, autobusové nádraží (ul. Čs.armády)": "Příbram, autobusové nádraží"
+ },
+ "terminus_alias_why": "380: buses towards Prague end at Praha, Vypich and leave for Králův Dvůr from Praha, Kukulova, the next stop of the turn (one terminus, timed at Kukulova). 531: buses from Hořovice end at Příbram, autobusové nádraží (ul. Čs.armády) and leave for Hořovice from Příbram, autobusové nádraží (one terminus).",
+ "coverage_exceptions": {
+  "Zaječov, u hřbitova": "545: served 13:00-19:00 only by the Olešná trips (Hořovice 13:30 → Olešná, Olešná 13:59 and 14:54 → Hořovice); 0.65 km from Zaječov, which 545 serves hourly. On the owner check (serving it: 545 Olešná every 240, +1 bus).",
+  "Chyňava, Libečov, u mostu": "on Kladensko 630 (every 60 both ways, modelled); here only on the 636 Hýskov round 12:35 / 13:10 and the Hýskov – Chyňava shorts (listed on 636).",
+  "Chyňava, u Nováků": "on Kladensko 630 (every 60 both ways, modelled); here only on the 636 Hýskov round 12:35 / 13:10 and the Hýskov – Chyňava shorts (listed on 636).",
+  "Chyňava, u Jonášů": "on Kladensko 630 (every 60 both ways, modelled); here only on the 636 Hýskov round 12:35 / 13:10 and the Hýskov – Chyňava shorts (listed on 636).",
+  "Chyňava, škola": "on Kladensko 630 (every 60 both ways, modelled); here only on the 636 Hýskov round 12:35 / 13:10 and the Hýskov – Chyňava shorts (listed on 636).",
+  "Mořinka": "on Praha-západ 311 (hourly, modelled); here only on the 825 Popovice 13:07 → Mořinka (listed).",
+  "Vysoký Újezd, sokolovna": "on Praha-západ 311 (hourly, modelled); here only on the 825 Loděnice 13:54 → Mezouň, Letník.",
+  "Mezouň, Letník": "one afternoon trip (825, Loděnice 13:54 → Letník 14:14); 0.35 km from Mezouň, which Praha-západ 311 serves. On the owner check (serving it: +27 min on every 825 Mořina return, or its own line, +1 bus)."
+ },
+ "lines": {
+  "380": {
+   "core": [
+    "Praha, Kukulova",
+    "Praha, Zličín",
+    "Beroun, Lidl",
+    "Králův Dvůr, Počaply, Obchodní centrum"
+   ],
+   "note": "Praha, Kukulova – Motol – Zličín – Chrášťany – Rudná – Loděnice – Beroun – Králův Dvůr, Počaply, Obchodní centrum. Every 30 all afternoon, exact: Kukulova :12 / :42 (13:12–18:42), Obchodní centrum :02 / :32 (14:02–18:32; hourly :27 before 14:00). Buses arrive at Praha, Vypich and leave from Praha, Kukulova (one terminus, timed at Kukulova). Off the pattern: Kukulova 12:17, Obchodní centrum 12:27, 13:27, 19:41; the Rudná, Vypich – Zličín / Vypich shorts (14:30, 15:05, 16:05) are listed, their stops are on 380.",
+   "sim": [
+    {
+     "name": "380",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Praha, Kukulova",
+       "to": "Králův Dvůr, Počaply, Obchodní centrum",
+       "core_to": "Králův Dvůr, U Tří zvonků",
+       "at": [
+        12
+       ]
+      },
+      {
+       "fr": "Králův Dvůr, Počaply, Obchodní centrum",
+       "to": "Praha, Kukulova",
+       "at": [
+        2
+       ]
+      }
+     ],
+     "why": "Kukulova :12 / :42 → Obchodní centrum, 73 min; Obchodní centrum :02 / :32 → Vypich, 77 min. The 17:42 ends at Králův Dvůr, Počaply via Počaply, škola (counted at U Tří zvonků; the game bus ends at Obchodní centrum). 6 buses (waits 23 at Kukulova, 7 at Obchodní centrum)."
+    }
+   ]
+  },
+  "384": {
+   "core": [
+    "Praha, Zličín",
+    "Králův Dvůr, u zámku",
+    "Zdice, náměstí",
+    "Hořovice, náměstí B.Němcové"
+   ],
+   "note": "Praha, Zličín – Loděnice – Beroun – Králův Dvůr – Zdice (– Žebrák – Tlustice – Hořovice). Out of Zličín every 30: :50 to Zdice (13:50–18:50) and :20 to Hořovice (13:20, 14:20, 16:20, 18:20, 19:20; 15:20 and 17:20 end at Králův Dvůr, Počaply; 17:50 extra); into Prague every 30 at Zdice: :48 from Zdice (13:48–17:48, also 14:18) and :18 from Hořovice (Hořovice :52, 14:52–18:52). Two Simutrans lines, one per destination, each hourly and exact. Listed: Zdice → Hořovice 15:55 and 18:00 (they bring the buses for Hořovice 16:52 and 18:52), Hořovice → Zdice 13:34, Zličín 12:00, 13:00; their stops are on the two 384 lines.",
+   "sim": [
+    {
+     "name": "384",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Zličín",
+       "to": "Zdice, náměstí",
+       "core_to": "Králův Dvůr, U Tří zvonků",
+       "at": [
+        50
+       ]
+      },
+      {
+       "fr": "Zdice, náměstí",
+       "to": "Praha, Zličín",
+       "at": [
+        48
+       ]
+      }
+     ],
+     "why": "Zličín :50 → Zdice, náměstí by the motorway (Loděnice, Beroun, Králův Dvůr, Počaply, Plzeňská), 45 min; Zdice :48 back via Zdice, škola – Černín – Levín, 49 min. The 17:50 is a Hořovice trip falling in this :50 slot (in the game it ends at Zdice). 2 buses (waits 13 at each end)."
+    },
+    {
+     "name": "384 Hořovice",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Zličín",
+       "to": "Hořovice, náměstí B.Němcové",
+       "core_to": "Králův Dvůr, U Tří zvonků",
+       "at": [
+        20
+       ]
+      },
+      {
+       "fr": "Hořovice, náměstí B.Němcové",
+       "to": "Praha, Zličín",
+       "knot": "Zdice, náměstí",
+       "knot_at": [
+        18
+       ]
+      }
+     ],
+     "why": "Zličín :20 → Hořovice, náměstí B.Němcové via Zdice, Žebrák and Tlustice, 68 min; Hořovice :52 back via Zdice, škola and Levín (timed at Zdice :18), 75 min. The 15:20 and 17:20 slots are the Zličín → Králův Dvůr, Počaply shorts (via Počaply, škola); in the game the bus runs on to Hořovice; the 17:20 game trip has no real Hořovice counterpart (it stands for the 17:20 Počaply short and the 18:00 Zdice → Hořovice short together). The only every-60 row that passes Step 4 uses that 17:20 trip: the real Hořovice departure after 16:20 is 17:50, 30 min later, and every 120 out against the hourly :52 back would break the same rate at both ends. 3 buses (waits 24 at Hořovice, 13 at Zličín)."
+    }
+   ]
+  },
+  "394": {
+   "core": [
+    "Praha, Nové Butovice",
+    "Králův Dvůr, u zámku",
+    "Zdice, náměstí"
+   ],
+   "note": "Praha, Nové Butovice – motorway – Beroun – Králův Dvůr – Zdice. An outstation line: the buses sleep at Zdice and Králův Dvůr (every 10 min into Prague 6:04–7:34). In the afternoon into Prague every 30 at Zdice :03 / :33 (14:33–17:33); out of Nové Butovice every 15: :00 / :30 to Zdice, :15 / :45 to Králův Dvůr, Počaply (buses going home). Timed both ways at the inbound rate, every 30, exact (window 15:30–17:30: 4 slots for 5 departures). Off the pattern: Nové Butovice 13:40, 14:15, 15:15, 17:20, 17:45, 18:50, 19:10, 19:50 and the Počaply shorts 14:40, 15:45, 16:15, 16:45, 17:10, 18:15, 19:30; Zdice 13:28, 18:38, 18:58 (14:00 is 3 min early, on the pattern); Králův Dvůr, u zámku 15:30 → Nové Butovice.",
+   "sim": [
+    {
+     "name": "394",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Praha, Nové Butovice",
+       "to": "Zdice, náměstí",
+       "at": [
+        0
+       ]
+      },
+      {
+       "fr": "Zdice, náměstí",
+       "to": "Praha, Nové Butovice",
+       "at": [
+        3
+       ]
+      }
+     ],
+     "why": "Nové Butovice :00 / :30 → Zdice, náměstí by the motorway, 40 min; Zdice :03 / :33 back via Zdice, škola – Černín – Levín, 47 min. 4 buses (waits 23 at Zdice, 10 at Nové Butovice)."
+    }
+   ]
+  },
+  "526": {
+   "core": [
+    "Zdice, náměstí",
+    "Žebrák, náměstí",
+    "Bzová",
+    "Zdice, Knížkovice"
+   ],
+   "anchor": "15:00",
+   "note": "Zdice – Hředle – Chlustina – Žebrák or Bzová (via Žebrák, Sedlec, Točník), and Zdice – Knížkovice. One bus runs the afternoon in a fixed 120-min sequence: Zdice 14:30 → Žebrák, 14:56 → Zdice 15:10, at once → Bzová 15:38, 15:42 → Zdice 16:10, 16:15 → Knížkovice → Zdice 16:25, then 16:30 → Žebrák again. Modelled as that circuit every 120 (the 418 rule), anchor set to 15:00 so the window holds the whole round. Off the pattern: Zdice 13:25 → Žebrák, Žebrák 13:46, Bzová 12:50, Knížkovice 12:30, 14:10, 19:15; the Hředle shorts 17:15, 18:47 are listed (Hředle is on the circuit).",
+   "sim": [
+    {
+     "name": "526",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Zdice, náměstí",
+       "to": "Žebrák, náměstí",
+       "at": [
+        "14:30"
+       ]
+      },
+      {
+       "fr": "Žebrák, náměstí",
+       "to": "Zdice, náměstí",
+       "at": [
+        "14:56"
+       ],
+       "stops_via": [
+        "Hředle [BE 2]"
+       ]
+      },
+      {
+       "fr": "Zdice, náměstí",
+       "to": "Bzová",
+       "at": [
+        "15:10"
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Bzová",
+       "to": "Zdice, náměstí",
+       "at": [
+        "15:42"
+       ]
+      },
+      {
+       "fr": "Zdice, náměstí",
+       "to": "Zdice, Knížkovice",
+       "at": [
+        "16:15"
+       ]
+      },
+      {
+       "fr": "Zdice, Knížkovice",
+       "to": "Zdice, náměstí",
+       "at": [
+        "16:20"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Circuit every 120: Zdice 14:30 → Žebrák, náměstí (15 min), Žebrák 14:56 → Zdice via Hředle (14), Zdice 15:10 → Bzová (28; 0-minute turn as in the timetable), Bzová 15:42 → Zdice (28), Zdice 16:15 → Knížkovice (5), Knížkovice 16:20 → Zdice (5; 0-minute turn). 1 bus."
+    }
+   ]
+  },
+  "527": {
+   "core": [
+    "Žebrák, náměstí",
+    "Cerhovice, náměstí",
+    "Komárov, Buzuluk"
+   ],
+   "anchor": "15:30",
+   "note": "Komárov, Buzuluk – Újezd – Cerhovice – Drozdov – Žebrák. One bus shuttles 12:31–16:34 (Žebrák 13:03 → Cerhovice, Cerhovice 13:44 → Buzuluk, Buzuluk 14:34 → Žebrák, Žebrák 15:23 → Buzuluk, Buzuluk 15:59 → Žebrák, Žebrák 16:23 → Cerhovice) and the line ends at 16:34. Modelled on its last full round, every 120, anchor 15:30 (window 15:00–17:00). Komárov, Lidový dům and Sokolovice have no other line.",
+   "sim": [
+    {
+     "name": "527",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Žebrák, náměstí",
+       "to": "Komárov, Buzuluk",
+       "at": [
+        "15:23"
+       ]
+      },
+      {
+       "fr": "Komárov, Buzuluk",
+       "to": "Žebrák, náměstí",
+       "at": [
+        "15:59"
+       ]
+      }
+     ],
+     "why": "Žebrák 15:23 → Komárov, Buzuluk via Cerhovice and Újezd, 22 min; Buzuluk 15:59 → Žebrák, 22 min. Off: Buzuluk 14:34; the Cerhovice shorts are listed. 1 bus."
+    }
+   ]
+  },
+  "528": {
+   "core": [
+    "Hořovice, náměstí B.Němcové",
+    "Březová",
+    "Broumy, radnice"
+   ],
+   "note": "Hořovice – Tlustice – Žebrák – Točník – Březová – Kublov – Broumy. Hourly, exact: Hořovice :15 (14:15–18:15; 13:15 only to Březová), Broumy :02 (13:02, 15:02, 16:02, 17:02; no 14:02). Březová (3 stops) and Kublov, U Křížku have no other line.",
+   "sim": [
+    {
+     "name": "528",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Hořovice, náměstí B.Němcové",
+       "to": "Broumy, radnice",
+       "at": [
+        15
+       ]
+      },
+      {
+       "fr": "Broumy, radnice",
+       "to": "Hořovice, náměstí B.Němcové",
+       "at": [
+        2
+       ]
+      }
+     ],
+     "why": "Hořovice :15 → Broumy, radnice, 40 min; Broumy :02 back, 43 min. 2 buses (waits 7 at Broumy, 30 at Hořovice)."
+    }
+   ]
+  },
+  "529": {
+   "core": [
+    "Hořovice, náměstí B.Němcové",
+    "Hvozdec"
+   ],
+   "note": "Hořovice – Hořovice, cihelna – Hvozdec, a 6-min shuttle that turns at once at Hvozdec, about every 110 min in the afternoon (13:15, 15:05, 17:00, 18:50). Every 120 on the anchor's trip (17:00 exact; the repeats 15:00 and 19:00 are 5 and 10 min from the real 15:05 and 18:50); no allowed interval fits 110 better. Hvozdec and Hvozdec, myslivna have no other line.",
+   "sim": [
+    {
+     "name": "529",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Hořovice, náměstí B.Němcové",
+       "to": "Hvozdec",
+       "at": [
+        "17:00"
+       ]
+      },
+      {
+       "fr": "Hvozdec",
+       "to": "Hořovice, náměstí B.Němcové",
+       "at": [
+        "17:07"
+       ]
+      }
+     ],
+     "why": "Hořovice 17:00 → Hvozdec, 6 min; Hvozdec 17:07 → Hořovice (1-minute turn as in the timetable). 1 bus."
+    }
+   ]
+  },
+  "531": {
+   "core": [
+    "Hořovice, železniční stanice",
+    "Hořovice, náměstí B.Němcové",
+    "Jince, sokolovna",
+    "Příbram, autobusové nádraží"
+   ],
+   "anchor": "16:00",
+   "note": "Hořovice, železniční stanice – náměstí – Rpety – Jince – Čenkov – Hluboš – Příbram. Hourly, exact: Hořovice, železniční stanice :57 (13:57–18:57; Hořovice, náměstí :05) and towards Hořovice Příbram, autobusové nádraží :57 (13:51–16:51 start at Příbram, Archiv and pass the bus station at :57; 17:57, 18:57 start there). 13:00–15:00 adds school extras from Hořovice, náměstí (13:25, 14:35 → Archiv; Archiv 14:21 and Zdaboř 13:11 → náměstí), so the anchor is set to 16:00 where the hourly pattern runs (the 451 rule). Buses arrive at Příbram, autobusové nádraží (ul. Čs.armády) and leave from Příbram, autobusové nádraží (one terminus). Off: 12:47, 12:51, the extras above, Archiv 15:21 → Jince.",
+   "sim": [
+    {
+     "name": "531",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Hořovice, železniční stanice",
+       "to": "Příbram, autobusové nádraží",
+       "stops_via": [
+        "Křešín [PB]"
+       ],
+       "at": [
+        57
+       ]
+      },
+      {
+       "fr": "Příbram, autobusové nádraží",
+       "to": "Hořovice, železniční stanice",
+       "at": [
+        57
+       ]
+      }
+     ],
+     "why": "Hořovice, železniční stanice :57 → Příbram via Felbabka, rozcestí and Křešín (the path of the 15:57 and 17:57; 16:57 and 18:57 go direct), 65 min; Příbram :57 → Hořovice direct, 58 min (2-minute turn at Hořovice as in the timetable; 15:51 from Archiv runs via Křešín too). 3 buses (55-min wait at Příbram)."
+    }
+   ]
+  },
+  "544": {
+   "core": [
+    "Hořovice, náměstí B.Němcové",
+    "Komárov, Buzuluk",
+    "Komárov",
+    "Malá Víska",
+    "Zaječov"
+   ],
+   "anchor": "16:30",
+   "note": "Hořovice – Osek – Komárov – Chaloupky – Malá Víska – Zaječov, Kvaň – Zaječov. In the afternoon an hourly shuttle Zaječov :08 → Komárov, Komárov :34 → Zaječov (16:08–17:48, exact), and single through trips: Hořovice 13:52 → Hvozdec, Mrtník (back 14:09 to Komárov, Buzuluk), Hořovice 14:52 → Zaječov via Chaloupky, Neřežín, Zaječov 13:38 → Hořovice. Two Simutrans lines: the shuttle (anchor 16:30, window 16:00–18:00, where it runs) and 544 Hořovice every 240 for Chaloupky, Neřežín, Hvozdec, Mrtník and Komárov, Na Kocábce, which have no other line. Off: Zaječov 13:38 → Hořovice (its stops are on both lines), Komárov, Buzuluk 13:32 → Zaječov.",
+   "sim": [
+    {
+     "name": "544",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Zaječov",
+       "to": "Komárov",
+       "at": [
+        8
+       ]
+      },
+      {
+       "fr": "Komárov",
+       "to": "Zaječov",
+       "at": [
+        34
+       ]
+      }
+     ],
+     "why": "Zaječov :08 → Komárov via Kvaň, Malá Víska and Chaloupky, 14 min; Komárov :34 → Zaječov, 14 min. 1 bus (waits 12 at Komárov, 20 at Zaječov)."
+    },
+    {
+     "name": "544 Hořovice",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Hořovice, náměstí B.Němcové",
+       "to": "Hvozdec, Mrtník",
+       "at": [
+        "13:52"
+       ]
+      },
+      {
+       "fr": "Hvozdec, Mrtník",
+       "to": "Hořovice, náměstí B.Němcové",
+       "core_to": "Komárov, Buzuluk",
+       "at": [
+        "14:09"
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Hořovice, náměstí B.Němcové",
+       "to": "Zaječov",
+       "at": [
+        "14:52"
+       ]
+      },
+      {
+       "fr": "Zaječov",
+       "to": "Hořovice, náměstí B.Němcové",
+       "untimed": true
+      }
+     ],
+     "why": "Every 240 on one bus's real sequence (window 13:30–15:30): Hořovice 13:52 → Osek, Komárov, Na Kocábce → Hvozdec, Mrtník (16 min), Mrtník 14:09 → Hořovice (the real trip ends at Komárov, Buzuluk 14:15; the game bus runs on), Hořovice 14:52 → Zaječov via Chaloupky, Neřežín (32 min), back to Hořovice untimed (no afternoon trip: Zaječov 13:38 leaves before the 13:52 bus is free). 1 bus.",
+     "window": [
+      "13:30",
+      "15:30"
+     ]
+    }
+   ]
+  },
+  "545": {
+   "core": [
+    "Hořovice, náměstí B.Němcové",
+    "Komárov, Buzuluk",
+    "Zaječov",
+    "Strašice, ObÚ"
+   ],
+   "anchor": "16:00",
+   "note": "Hořovice – Osek – Komárov – Zaječov – Těně – Strašice (Plzeňský kraj). Hourly at Zaječov, exact: out :59 (14:59–18:59), back :00 (16:00–19:00), with the ends alternating: Strašice trips out of Hořovice 14:35, 15:40, 17:40, back from Strašice 15:45, 16:45; Zaječov trips out 16:35, 18:35, back from Zaječov 14:20, 18:00, 19:00. One Simutrans line per end, every 120 each, so nothing runs past its real terminus; together Zaječov keeps :59 out and :00 back every hour with no shared minute. Off: Hořovice 14:35 and Strašice 15:45 (545 Strašice), Zaječov 14:20 and 19:00 (545 Zaječov). The Olešná trips (Hořovice 13:30 → Olešná, Olešná 13:59 and 14:54 → Hořovice, Buzuluk 14:20 → Olešná) are kept out (notvia Olešná) and listed: Olešná is on 546, Zaječov, u hřbitova is on the owner check.",
+   "sim": [
+    {
+     "name": "545 Strašice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Hořovice, náměstí B.Němcové",
+       "to": "Strašice, ObÚ",
+       "notvia": [
+        "Olešná [BE]"
+       ],
+       "at": [
+        "15:40"
+       ]
+      },
+      {
+       "fr": "Strašice, ObÚ",
+       "to": "Hořovice, náměstí B.Němcové",
+       "at": [
+        "16:45"
+       ]
+      }
+     ],
+     "why": "Hořovice 15:40 → Strašice, ObÚ by the direct road (without Hořovice, železniční stanice and Letná) via Komárov, Zaječov and Těně, 35 min; Strašice 16:45 → Hořovice via the station, 40 min; every 120 (17:40 / 18:45 next). 1 bus."
+    },
+    {
+     "name": "545 Zaječov",
+     "every": 120,
+     "window": [
+      "16:30",
+      "18:30"
+     ],
+     "legs": [
+      {
+       "fr": "Hořovice, náměstí B.Němcové",
+       "to": "Zaječov",
+       "notvia": [
+        "Strašice, ObÚ",
+        "Olešná [BE]"
+       ],
+       "at": [
+        "16:35"
+       ]
+      },
+      {
+       "fr": "Zaječov",
+       "to": "Hořovice, náměstí B.Němcové",
+       "notvia": [
+        "Strašice, ObÚ",
+        "Olešná [BE]"
+       ],
+       "at": [
+        "18:00"
+       ]
+      }
+     ],
+     "why": "Hořovice 16:35 → Zaječov via Hořovice, železniční stanice and Letná, 24 min; Zaječov 18:00 → Hořovice, 25 min (the real bus waits there 61 min too); every 120, window 16:30–18:30, where the Zaječov trips run. 1 bus."
+    }
+   ]
+  },
+  "546": {
+   "core": [
+    "Hořovice, náměstí B.Němcové",
+    "Komárov",
+    "Strašice, ObÚ",
+    "Rokycany, autobusové nádraží"
+   ],
+   "note": "Hořovice – Osek – Komárov – Jivina – Olešná – Cheznovice – Těně – Strašice – Dobřív – Rokycany (Plzeňský kraj). Hourly all afternoon, exact: Hořovice :09 (13:09–17:09), Rokycany :40 (13:40–17:40), 66 min each way. Listed: the Cheznovice, Olešná and Strašice shorts (12:09, 13:17, 18:40, 19:09, 20:00), all on 546's path. Jivina and the Dobřív, Hrádek, Kamenný Újezd and Rokycany stops have no other line.",
+   "sim": [
+    {
+     "name": "546",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Hořovice, náměstí B.Němcové",
+       "to": "Rokycany, autobusové nádraží",
+       "at": [
+        9
+       ]
+      },
+      {
+       "fr": "Rokycany, autobusové nádraží",
+       "to": "Hořovice, náměstí B.Němcové",
+       "at": [
+        40
+       ]
+      }
+     ],
+     "why": "Hořovice :09 → Rokycany, autobusové nádraží, 66 min; Rokycany :40 back, 66 min. 3 buses (waits 25 at Rokycany, 23 at Hořovice)."
+    }
+   ]
+  },
+  "547": {
+   "core": [
+    "Hořovice, náměstí B.Němcové",
+    "Cerhovice, náměstí"
+   ],
+   "note": "Hořovice – Osek, u Anýže – Kařízek – Kařez (Plzeňský kraj) – Cerhovice, five trips a day, one in the afternoon (Hořovice 14:40 → Cerhovice 15:14). Kařez, Kařez, u Jednoty, Kařízek and Osek, u Anýže have no other line, so it is kept every 480 on one bus's round. The Komárov trips (7:11, 9:50, 10:11) are listed.",
+   "sim": [
+    {
+     "name": "547",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Hořovice, náměstí B.Němcové",
+       "to": "Cerhovice, náměstí",
+       "at": [
+        "14:40"
+       ]
+      },
+      {
+       "fr": "Cerhovice, náměstí",
+       "to": "Hořovice, náměstí B.Němcové",
+       "at": [
+        "7:15"
+       ]
+      }
+     ],
+     "why": "Every 480: Hořovice 14:40 → Cerhovice, náměstí via Kařez, 34 min (the real 14:40); Cerhovice 15:15 → Hořovice the same way, 35 min (stands for the real 7:15 Cerhovice → Hořovice; 1-minute turn). 1 bus."
+    }
+   ]
+  },
+  "548": {
+   "core": [
+    "Hořovice, nemocnice",
+    "Hořovice, železniční stanice",
+    "Cerhovice, náměstí",
+    "Zbiroh, náměstí",
+    "Praskolesy"
+   ],
+   "anchor": "16:00",
+   "note": "Hořovice, nemocnice – náměstí – železniční stanice – Tlustice – Cerhovice – Drozdov – Týček – Zbiroh (Plzeňský kraj); some trips start or end at Praskolesy via Kotopeky. Hourly from 15:07, exact: nemocnice :07 (15:07–18:07) and Zbiroh :55 (15:55–17:55, also 12:55); 14:00–15:30 has extras (14:07 → Cerhovice, 14:37; Zbiroh 14:12, 15:25), so the anchor is set to 16:00. The Praskolesy trips are through trips of the same pattern (Praskolesy 13:00, 15:00 → Zbiroh pass nemocnice at 13:07, 15:07; Zbiroh 17:55 → Praskolesy), so two Simutrans lines every 120 share the hourly :07 / :55 (the 501 / 501B shape): 548 on the even hours, 548 Praskolesy on the odd, the only service of Kotopeky, Tihava and Kotopeky, u bytovky. Listed: Zbiroh 14:12 → Praskolesy, 14:37, 15:25, and the Hořovice, železniční stanice → nemocnice town trips (14:18, 15:18).",
+   "sim": [
+    {
+     "name": "548",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Hořovice, nemocnice",
+       "to": "Zbiroh, náměstí",
+       "at": [
+        "16:07"
+       ]
+      },
+      {
+       "fr": "Zbiroh, náměstí",
+       "to": "Hořovice, nemocnice",
+       "at": [
+        "16:55"
+       ]
+      }
+     ],
+     "why": "Hořovice, nemocnice 16:07 → Zbiroh, náměstí, 40 min; Zbiroh 16:55 → nemocnice, 36 min; every 120, the other hour of the :07 / :55 pattern being 548 Praskolesy. 1 bus."
+    },
+    {
+     "name": "548 Praskolesy",
+     "every": 120,
+     "window": [
+      "14:30",
+      "16:30"
+     ],
+     "legs": [
+      {
+       "fr": "Praskolesy",
+       "to": "Zbiroh, náměstí",
+       "knot": "Hořovice, nemocnice",
+       "knot_at": [
+        "15:07"
+       ]
+      },
+      {
+       "fr": "Zbiroh, náměstí",
+       "to": "Praskolesy",
+       "core_to": "Hořovice, nemocnice",
+       "at": [
+        "15:55"
+       ],
+       "rt": 43,
+       "stops": [
+        "Zbiroh, náměstí",
+        "Zbiroh, u vodojemu",
+        "Týček",
+        "Drozdov",
+        "Drozdov, škola",
+        "Cerhovice, náměstí",
+        "Záluží, u kovárny",
+        "Záluží, v Brance",
+        "Tlustice, Cintlovka",
+        "Hořovice, Sklenářka",
+        "Hořovice, železniční stanice",
+        "Hořovice, Letná",
+        "Hořovice, Valdek",
+        "Hořovice, Palackého náměstí",
+        "Hořovice, náměstí B.Němcové",
+        "Hořovice, Vrchlického",
+        "Hořovice, u hřbitova",
+        "Hořovice, u zámku",
+        "Hořovice, nemocnice",
+        "Kotopeky, Tihava",
+        "Kotopeky, u bytovky",
+        "Praskolesy"
+       ]
+      }
+     ],
+     "why": "Praskolesy 15:00 → Kotopeky → Hořovice, nemocnice 15:07 (the timed knot) → Zbiroh, náměstí, 47 min (the real through trip); Zbiroh 15:55 → nemocnice and on to Praskolesy by the 17:55 trip's road (stops set by hand: the 14:12 detours via Cerhovice, škola), 43 min (the real 15:55 ends at nemocnice, the game bus runs 7 min on, as the real 17:55 does); every 120, window 14:30–16:30; the 17:07 repeat at nemocnice is a nemocnice start in reality (the game bus starts 7 min earlier at Praskolesy). 1 bus."
+    }
+   ]
+  },
+  "631": {
+   "core": [
+    "Nižbor, Šnárová",
+    "Beroun, autobusové nádraží",
+    "Králův Dvůr, u zámku",
+    "Suchomasty",
+    "Všeradice"
+   ],
+   "anchor": "15:00",
+   "note": "Nižbor, Šnárová – Hýskov – Beroun – Králův Dvůr – Tmaň – Suchomasty – Všeradice, a through line: from 14:32 the buses run Šnárová :32 → Beroun :00 → Všeradice :56 (via Vinařice, Nesvačily, Podbrdy), at once :57 back via Bykoš and Libomyšl, Želkovice → Beroun :39, then Beroun :02 → Šnárová :30, three buses round each hour. Modelled as that circuit every 60, anchor 15:00 where it runs (the knot reading at Beroun :00 also takes the Beroun-start 13:00 and 14:00). Off: Všeradice 13:50, 16:51, 18:13. Listed: Šnárová 13:32 → Beroun, Králův Dvůr, u zámku 13:56 → Šnárová, Šnárová 17:36 → Tmaň, and the Beroun / Králův Dvůr – Nižbor, u lípy trips (they run through with 649).",
+   "sim": [
+    {
+     "name": "631",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Nižbor, Šnárová",
+       "to": "Všeradice",
+       "knot": "Beroun, autobusové nádraží",
+       "knot_at": [
+        0
+       ],
+       "stops_via": [
+        "Málkov, Jednota"
+       ]
+      },
+      {
+       "fr": "Všeradice",
+       "to": "Beroun, autobusové nádraží",
+       "at": [
+        57
+       ]
+      },
+      {
+       "fr": "Beroun, autobusové nádraží",
+       "to": "Nižbor, Šnárová",
+       "at": [
+        2
+       ]
+      }
+     ],
+     "why": "Šnárová :32 → Všeradice through Beroun (:00, the knot) and the Vinařice road with the Málkov, Jednota spur, 84 min; Všeradice :57 → Beroun via Bykoš, 42 min (1-minute turn as in the timetable; 15:57 also via Málkov); Beroun :02 → Šnárová, 28 min. 3 buses (waits 2, 1, 23)."
+    }
+   ]
+  },
+  "633": {
+   "core": [
+    "Beroun, Zdejcina",
+    "Beroun, autobusové nádraží",
+    "Tetín, křižovatka",
+    "Liteň, náměstí"
+   ],
+   "note": "Beroun, Zdejcina – town – Beroun, autobusové nádraží – Tetín – Koněprusy, rozcestí – Měňany – Korno – Liteň. Two buses: one runs Zdejcina – Liteň (Zdejcina 14:03, 16:16; Liteň 15:20, 17:19), the other the earlier Liteň trips (13:03 / 13:13 – 14:13) and then Zdejcina – Tetín, křižovatka shorts (15:28 / 16:29, 17:03, 18:03, 19:03 / 18:35). Two Simutrans lines, one per end, each every 120 on one bus's real round at the anchor 15:50. Off: Zdejcina 13:03, 14:03, Liteň 13:13, 14:13, Zdejcina 17:03, 18:03, 19:03 → Tetín, Tetín 18:35.",
+   "sim": [
+    {
+     "name": "633",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Beroun, Zdejcina",
+       "to": "Liteň, náměstí",
+       "at": [
+        "16:16"
+       ]
+      },
+      {
+       "fr": "Liteň, náměstí",
+       "to": "Beroun, Zdejcina",
+       "at": [
+        "17:19"
+       ]
+      }
+     ],
+     "why": "Zdejcina 16:16 → Liteň, náměstí via the Beroun town stops, Tetín and Měňany, 41 min; Liteň 17:19 → Zdejcina, 42 min (15:20 one minute off the slot). 1 bus."
+    },
+    {
+     "name": "633 Tetín",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Beroun, Zdejcina",
+       "to": "Tetín, křižovatka",
+       "notvia": [
+        "Liteň, náměstí"
+       ],
+       "at": [
+        "15:28"
+       ]
+      },
+      {
+       "fr": "Tetín, křižovatka",
+       "to": "Beroun, Zdejcina",
+       "notvia": [
+        "Liteň, náměstí"
+       ],
+       "at": [
+        "16:29"
+       ]
+      }
+     ],
+     "why": "Zdejcina 15:28 → Tetín, křižovatka, 25 min; Tetín 16:29 → Zdejcina, 29 min; the Liteň trips are kept out (notvia). 1 bus."
+    }
+   ]
+  },
+  "634": {
+   "core": [
+    "Hostomice, náměstí",
+    "Osov, škola",
+    "Všeradice, železniční zastávka"
+   ],
+   "anchor": "16:30",
+   "note": "Hostomice – Neumětely – Lážovice – Všeradice, železniční zastávka, a one-way loop: out direct via Lážovice, Nové Dvory (13 min), back via Podbrdy, Vižina and Osov (18 min). Hourly Hostomice :25 / Všeradice :41 (14:25–17:41 with no trip at 15:25 / 15:41; 13:20 / 13:41 before), exact; the anchor is set to 16:30 (window 16:00–18:00), where the hourly pattern runs without the 15:25 gap. Lážovice and Lážovice, Nové Dvory have no other line; the Hostomice – Osov, škola short (13:00 / 13:09) is listed.",
+   "sim": [
+    {
+     "name": "634",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Hostomice, náměstí",
+       "to": "Všeradice, železniční zastávka",
+       "at": [
+        25
+       ]
+      },
+      {
+       "fr": "Všeradice, železniční zastávka",
+       "to": "Hostomice, náměstí",
+       "at": [
+        41
+       ]
+      }
+     ],
+     "why": "Hostomice :25 → Všeradice, železniční zastávka direct, 13 min; Všeradice :41 → Hostomice via Podbrdy, Vižina and Osov, 18 min. 1 bus (waits 3 at Všeradice, 26 at Hostomice)."
+    }
+   ]
+  },
+  "636": {
+   "core": [
+    "Loděnice",
+    "Železná",
+    "Chyňava, škola",
+    "Hýskov, Náměstí 5.května"
+   ],
+   "note": "Loděnice – Chrustenice – Nenačovice – Chyňava, Malé Přílepy – Železná (– Chyňava – Hýskov). Hourly shuttle Loděnice :45 / Železná :22 (13:45–16:45), exact. Listed, stops on Kladensko 630 (hourly, modelled): the through round Loděnice 12:35 → Hýskov, Hýskov 13:10 → Loděnice (via Chyňava, Libečov, u mostu, u Nováků, u Jonášů and škola) and the Hýskov – Chyňava, škola shorts (14:25, 15:20; u Jonášů 14:45, 15:45).",
+   "sim": [
+    {
+     "name": "636",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Loděnice",
+       "to": "Železná",
+       "at": [
+        45
+       ]
+      },
+      {
+       "fr": "Železná",
+       "to": "Loděnice",
+       "at": [
+        22
+       ]
+      }
+     ],
+     "why": "Loděnice :45 → Železná, 18 min; Železná :22 → Loděnice, 18 min. 1 bus."
+    }
+   ]
+  },
+  "637": {
+   "core": [
+    "Beroun, autobusové nádraží",
+    "Nový Jáchymov",
+    "Kublov, Slovanka",
+    "Liteň, náměstí",
+    "Řevnice, nádraží"
+   ],
+   "anchor": "14:00",
+   "note": "Two branches from Beroun. West: Beroun – Králův Dvůr – Zahořany – Hudlice – Otročiněves – Nový Jáchymov – Roztoky – Broumy – Kublov; Beroun :00 hourly (13:00–15:00 to Kublov, 16:00–18:00 to Nový Jáchymov: buses going home, they sleep there), Kublov :08 hourly (13:08–16:08), exact; the anchor is set to 14:00, where the Kublov pattern runs both ways (the automatic 16:00 holds the home runs). East: Beroun – Tetín – Koněprusy – Liteň – Skuhrov – Svinaře – Řevnice, one bus's round Beroun 14:05 → Řevnice 14:53, Řevnice 15:14 → Beroun 15:59, every 120 (Beroun → Liteň 16:03 counts as a short working). Listed: Liteň – Svinaře, Halouny shorts (13:00, 14:57; Halouny 13:20 → Beroun), Beroun → Liteň 18:00, Řevnice → Liteň 16:38, Roztoky, Placanda 17:36 → Beroun (a 638 bus running on), Nový Jáchymov 19:00 → Králův Dvůr.",
+   "sim": [
+    {
+     "name": "637",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Beroun, autobusové nádraží",
+       "to": "Kublov, Slovanka",
+       "core_to": "Nový Jáchymov",
+       "at": [
+        0
+       ],
+       "stops_via": [
+        "Trubská"
+       ]
+      },
+      {
+       "fr": "Kublov, Slovanka",
+       "to": "Beroun, autobusové nádraží",
+       "at": [
+        8
+       ],
+       "stops_via": [
+        "Trubská"
+       ]
+      }
+     ],
+     "why": "Beroun :00 → Kublov, Slovanka via Hudlice, Nový Jáchymov and Broumy, through Trubská (the 15:00 / 15:08 trips' detour, the only service of Trubská), 53 min; Kublov :08 back the same way, 50 min; the 16:00–18:00 Nový Jáchymov trips count as short workings. 2 buses (waits 15 at Kublov, 2 at Beroun)."
+    },
+    {
+     "name": "637 Řevnice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Beroun, autobusové nádraží",
+       "to": "Řevnice, nádraží",
+       "core_to": "Liteň, náměstí",
+       "at": [
+        "14:05"
+       ]
+      },
+      {
+       "fr": "Řevnice, nádraží",
+       "to": "Beroun, autobusové nádraží",
+       "at": [
+        "15:14"
+       ]
+      }
+     ],
+     "why": "Beroun 14:05 → Řevnice, nádraží via Tetín, Koněprusy, Liteň, Skuhrov and Svinaře (with Svinaře, Halouny), 48 min; Řevnice 15:14 → Beroun, 45 min; every 120. 1 bus."
+    }
+   ]
+  },
+  "638": {
+   "core": [
+    "Beroun, autobusové nádraží",
+    "Králův Dvůr, u zámku",
+    "Broumy, radnice",
+    "Branov",
+    "Skryje",
+    "Liteň, náměstí"
+   ],
+   "note": "Beroun – Králův Dvůr – Počaply – Trubín – Svatá – Kublov – Broumy, then on to Branov (via Karlova Ves) or Skryje (via Broumy, U dvora and Bušohrad); and Beroun – Koněprusy, jeskyně – Vinařice – Nesvačily – Liteň. Out of Beroun hourly at :30 with the end rotating: 13:30 Branov, 14:30 Broumy, 15:25 Skryje, 16:30 Branov, 17:30 Broumy (18:40 Broumy); back Branov 14:24, Broumy 15:53, Skryje 12:36, 16:26. Three Simutrans lines every 180, one per end, offset so Beroun keeps the :25 / :30 rotation; all slots exact. Liteň branch: Beroun 13:59, 14:57, 17:01 / Liteň 14:30, 15:42, 17:34 at no repeating minute; 638 Liteň every 120 on the 17:01 / 17:34 round (Koněprusy, jeskyně and Bykoš, odbočka Vinařice have no other line). Listed: Branov 17:25 → Roztoky, Placanda (runs on as 637).",
+   "sim": [
+    {
+     "name": "638",
+     "every": 180,
+     "legs": [
+      {
+       "fr": "Beroun, autobusové nádraží",
+       "to": "Broumy, radnice",
+       "notvia": [
+        "Branov",
+        "Skryje"
+       ],
+       "at": [
+        "14:30"
+       ]
+      },
+      {
+       "fr": "Broumy, radnice",
+       "to": "Beroun, autobusové nádraží",
+       "notvia": [
+        "Branov",
+        "Skryje"
+       ],
+       "at": [
+        "15:53"
+       ]
+      }
+     ],
+     "why": "Beroun 14:30 (and 17:30) → Broumy, radnice via Trubín, Svatá and Kublov, 32 min; Broumy 15:53 → Beroun, 35 min; every 180, the Branov and Skryje trips kept out (notvia). 1 bus."
+    },
+    {
+     "name": "638 Branov",
+     "every": 180,
+     "window": [
+      "13:00",
+      "15:00"
+     ],
+     "legs": [
+      {
+       "fr": "Beroun, autobusové nádraží",
+       "to": "Branov",
+       "at": [
+        "13:30"
+       ]
+      },
+      {
+       "fr": "Branov",
+       "to": "Beroun, autobusové nádraží",
+       "at": [
+        "14:24"
+       ]
+      }
+     ],
+     "why": "Beroun 13:30 (and 16:30) → Branov via Broumy, Luh rozcestí and Karlova Ves, 47 min; Branov 14:24 → Beroun, 50 min; every 180, window 13:00–15:00. 1 bus."
+    },
+    {
+     "name": "638 Skryje",
+     "every": 180,
+     "window": [
+      "15:00",
+      "17:00"
+     ],
+     "legs": [
+      {
+       "fr": "Beroun, autobusové nádraží",
+       "to": "Skryje",
+       "at": [
+        "15:25"
+       ]
+      },
+      {
+       "fr": "Skryje",
+       "to": "Beroun, autobusové nádraží",
+       "at": [
+        "16:26"
+       ]
+      }
+     ],
+     "why": "Beroun 15:25 → Skryje via Broumy, U dvora and Bušohrad, 50 min; Skryje 16:26 → Beroun, 53 min; every 180, window 15:00–17:00. 1 bus."
+    },
+    {
+     "name": "638 Liteň",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Beroun, autobusové nádraží",
+       "to": "Liteň, náměstí",
+       "at": [
+        "17:01"
+       ]
+      },
+      {
+       "fr": "Liteň, náměstí",
+       "to": "Beroun, autobusové nádraží",
+       "at": [
+        "17:34"
+       ]
+      }
+     ],
+     "why": "Beroun 17:01 → Liteň, náměstí via Koněprusy, jeskyně and Vinařice, 29 min; Liteň 17:34 → Beroun, 29 min; every 120 (13:59 / 14:30 and 14:57 / 15:42 off the pattern). 1 bus."
+    }
+   ]
+  },
+  "639": {
+   "core": [
+    "Hořovice, náměstí B.Němcové",
+    "Lochovice, náměstí",
+    "Hostomice, náměstí",
+    "Velký Chlumec, Malý Chlumec",
+    "Dobříš, náměstí"
+   ],
+   "anchor": "16:00",
+   "note": "Hořovice – Rpety – Lochovice – Neumětely – Hostomice (– Osov – Velký Chlumec – Dobříš). Hořovice :00 every hour 13:00–17:00 with the ends alternating: Dobříš 13:00, 15:00 (17:00 to Velký Chlumec, Malý Chlumec), Hostomice 14:00, 16:00; towards Hořovice at Hostomice :25 / :35 (Dobříš 12:55, 14:35, 16:55 pass Hostomice 13:25, 15:25, 17:25; Hostomice starts 14:35, 16:25). One Simutrans line per end, every 120 each (639 Dobříš window 14:30–16:30, 639 Hostomice window 13:30–15:30, both on a real round); together Hořovice :00 hourly with no shared minute. Off: Hostomice 16:25 and 12:25. 639 Lštěň every 480 for Hostomice, Lštěň (1.9 km out; the 13:10 / 13:14 shuttle is its only afternoon service).",
+   "sim": [
+    {
+     "name": "639 Dobříš",
+     "every": 120,
+     "window": [
+      "14:30",
+      "16:30"
+     ],
+     "legs": [
+      {
+       "fr": "Hořovice, náměstí B.Němcové",
+       "to": "Dobříš, náměstí",
+       "core_to": "Velký Chlumec, Malý Chlumec",
+       "via": [
+        "Velký Chlumec, Malý Chlumec"
+       ],
+       "at": [
+        "15:00"
+       ]
+      },
+      {
+       "fr": "Dobříš, náměstí",
+       "to": "Hořovice, náměstí B.Němcové",
+       "knot": "Hostomice, náměstí",
+       "knot_at": [
+        "15:25"
+       ],
+       "knot_rt": 30,
+       "via": [
+        "Velký Chlumec, Malý Chlumec"
+       ]
+      }
+     ],
+     "why": "Hořovice 15:00 → Dobříš, náměstí via Lochovice, Hostomice, Osov and Velký Chlumec, 66 min (the 17:00 repeat is the real 17:00 to Velký Chlumec, Malý Chlumec; the game bus runs 12 min on to Dobříš); Dobříš 14:55 → Hořovice, timed so the bus passes Hostomice at the real 15:25 (the real 14:35 bus waits about 20 min on the way), 59 min; every 120. 2 buses."
+    },
+    {
+     "name": "639 Hostomice",
+     "every": 120,
+     "window": [
+      "13:30",
+      "15:30"
+     ],
+     "legs": [
+      {
+       "fr": "Hořovice, náměstí B.Němcové",
+       "to": "Hostomice, náměstí",
+       "notvia": [
+        "Dobříš, náměstí",
+        "Velký Chlumec, Malý Chlumec"
+       ],
+       "at": [
+        "14:00"
+       ]
+      },
+      {
+       "fr": "Hostomice, náměstí",
+       "to": "Hořovice, náměstí B.Němcové",
+       "notvia": [
+        "Dobříš, náměstí",
+        "Velký Chlumec, Malý Chlumec"
+       ],
+       "at": [
+        "14:35"
+       ]
+      }
+     ],
+     "why": "Hořovice 14:00 → Hostomice, náměstí via Rpety, Lochovice and Neumětely, 30 min; Hostomice 14:35 → Hořovice, 29 min (the real 5-min turn); every 120 (16:00 next; the real 16:25 back is 10 min before the 16:35 repeat, off). 1 bus."
+    },
+    {
+     "name": "639 Lštěň",
+     "every": 480,
+     "window": [
+      "13:00",
+      "15:00"
+     ],
+     "legs": [
+      {
+       "fr": "Hostomice, náměstí",
+       "to": "Hostomice, Lštěň",
+       "at": [
+        "13:10"
+       ]
+      },
+      {
+       "fr": "Hostomice, Lštěň",
+       "to": "Hostomice, náměstí",
+       "at": [
+        "13:14"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Hostomice, náměstí 13:10 → Hostomice, Lštěň, 4 min; Lštěň 13:14 → Hostomice (0-minute turn as in the timetable); every 480, window 13:00–15:00. 1 bus."
+    }
+   ]
+  },
+  "640": {
+   "core": [
+    "Zdice, náměstí",
+    "Lochovice, náměstí",
+    "Hostomice, náměstí",
+    "Jince, sokolovna"
+   ],
+   "anchor": "16:00",
+   "note": "Zdice – Chodouň – Libomyšl – Lochovice – Hostomice – Běštín – Jince (okres Příbram). Hourly, exact: Zdice :30 (15:30, 16:30, 18:30; 14:45 off) and Jince :31 (14:31 from Čenkov, 15:31, 17:31 to Zdice; 13:31, 16:31, 18:31 only to Hostomice, counted as short workings). Anchor set to 16:00 (the automatic 13:30 window holds only the Lochovice shorts). The Zdice departures 14:43, 16:28 and 18:28 start at Zdice, škola from the 641 Beroun – Trubín trips (through running). Listed: Zdice 13:10 → Lochovice, Lochovice 13:00, 13:43, Hostomice 13:23, 14:07 → Čenkov, 18:10 → Jince.",
+   "sim": [
+    {
+     "name": "640",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Zdice, náměstí",
+       "to": "Jince, sokolovna",
+       "core_to": "Hostomice, náměstí",
+       "at": [
+        30
+       ]
+      },
+      {
+       "fr": "Jince, sokolovna",
+       "to": "Zdice, náměstí",
+       "core_to": "Hostomice, náměstí",
+       "at": [
+        31
+       ]
+      }
+     ],
+     "why": "Zdice :30 → Jince, sokolovna via Lochovice and Hostomice, 52 min; Jince :31 → Zdice, 41 min; the 16:31 (and 13:31, 18:31) end at Hostomice, in the game the bus runs on to Zdice. 2 buses."
+    }
+   ]
+  },
+  "641": {
+   "core": [
+    "Beroun, autobusové nádraží",
+    "Králův Dvůr, u zámku",
+    "Zdice, náměstí",
+    "Praskolesy",
+    "Hořovice, nemocnice"
+   ],
+   "note": "Beroun – Králův Dvůr – Zdice – Bavoryně – Stašov – Otmíče – Praskolesy – Kotopeky – Hořovice, nemocnice. Hořovice :20 hourly (14:20, 15:20, 16:20), exact; Beroun → Hořovice 13:00, 14:02 (via Trubín, Svatá and Zdice, škola), 15:07, 17:07 (direct), read at the knot Zdice :28 (they pass 13:28, 14:30, 15:26, 17:26). Every 60: the hourly row stays hourly rather than halved by an every 120 that would also pass. Listed: the Zdice shorts (13:57, 14:32, 17:52 → Beroun; Beroun 15:37 → Zdice; Hořovice 13:59, 18:15 → Zdice) and Beroun → Zdice, škola via Trubín 14:07, 16:00, 18:00 (they run on as 640). Bavoryně, Stašov and Otmíče have no other line.",
+   "sim": [
+    {
+     "name": "641",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Beroun, autobusové nádraží",
+       "to": "Hořovice, nemocnice",
+       "knot": "Zdice, náměstí",
+       "knot_at": [
+        28
+       ],
+       "knot_rt": 19,
+       "rt": 47,
+       "stops": [
+        "Beroun, autobusové nádraží",
+        "Beroun, pod dálnicí",
+        "Beroun, Delvita",
+        "Beroun, sídliště",
+        "Beroun, Lidl",
+        "Králův Dvůr, u zámku",
+        "Králův Dvůr, Na knížecí",
+        "Králův Dvůr, U Tří zvonků",
+        "Králův Dvůr, Počaply, Plzeňská",
+        "Zdice, náměstí",
+        "Bavoryně, rozcestí",
+        "Bavoryně",
+        "Stašov",
+        "Otmíče",
+        "Praskolesy",
+        "Kotopeky",
+        "Kotopeky, Tihava, u mostu",
+        "Hořovice, Letná",
+        "Hořovice, Valdek",
+        "Hořovice, Palackého náměstí",
+        "Hořovice, náměstí B.Němcové",
+        "Hořovice, u zámku",
+        "Hořovice, nemocnice"
+       ]
+      },
+      {
+       "fr": "Hořovice, nemocnice",
+       "to": "Beroun, autobusové nádraží",
+       "at": [
+        20
+       ],
+       "rt": 51
+      }
+     ],
+     "why": "Beroun :09 → Hořovice, nemocnice by the direct road (Počaply, Plzeňská – Zdice), 47 min, timed so the bus passes Zdice at :28; Hořovice :20 → Beroun via Levínský vršek, 51 min (15:20 runs via Zdice, škola and Levín in 60). 3 buses."
+    }
+   ]
+  },
+  "642": {
+   "core": [
+    "Hořovice, náměstí B.Němcové",
+    "Praskolesy",
+    "Lochovice, náměstí",
+    "Jince, náměstí"
+   ],
+   "note": "Hořovice – Kotopeky – Praskolesy – Lochovice (– Jince), three afternoon trips: Lochovice 13:38 → Hořovice, Hořovice 15:38 → Jince, náměstí via Lochovice, železniční stanice, Obora and papírna, Praskolesy 18:38 → Lochovice (a 548 bus running on). Lochovice, Netolice, ústav, železniční stanice, Obora, papírna I and Jince, Rejkovice, lopatárna have no other line: 642 every 240 on one bus's round.",
+   "sim": [
+    {
+     "name": "642",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Hořovice, náměstí B.Němcové",
+       "to": "Jince, náměstí",
+       "at": [
+        "15:38"
+       ]
+      },
+      {
+       "fr": "Jince, náměstí",
+       "to": "Lochovice, náměstí",
+       "untimed": true
+      },
+      {
+       "fr": "Lochovice, náměstí",
+       "to": "Hořovice, náměstí B.Němcové",
+       "at": [
+        "13:38"
+       ]
+      }
+     ],
+     "why": "Every 240: Hořovice 15:38 → Jince, náměstí, 36 min (real); back to Lochovice untimed (no afternoon trip); Lochovice 17:38 → Hořovice, 19 min (stands for the real 13:38). 1 bus."
+    }
+   ]
+  },
+  "643": {
+   "core": [
+    "Podluhy, Na drahách",
+    "Hořovice, náměstí B.Němcové",
+    "Cerhovice, náměstí",
+    "Cerhovice, Třenice"
+   ],
+   "anchor": "16:00",
+   "note": "Podluhy, Na drahách – Hořovice – Tlustice – Záluží – Újezd – Cerhovice, Třenice, with 0-minute turns at both ends. Through trips Podluhy → Třenice 13:05, 16:40 (14:50 starts at Hořovice) and Třenice → Podluhy 15:14, 17:14, about every 2 h; also Hořovice – Podluhy shorts and one Křešín round (14:10–15:10). Every 120, timed through Hořovice :50, anchor 16:00 (the automatic 13:30 window holds the Podluhy and Křešín shorts). Listed: the Podluhy shorts, the Cerhovice, náměstí – Třenice shorts and Podluhy 14:10 → Tlustice, Cintlovka → Křešín → Hořovice (Felbabka, rozcestí and Křešín are on 531).",
+   "sim": [
+    {
+     "name": "643",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Podluhy, Na drahách",
+       "to": "Cerhovice, Třenice",
+       "knot": "Hořovice, náměstí B.Němcové",
+       "knot_at": [
+        "16:50"
+       ]
+      },
+      {
+       "fr": "Cerhovice, Třenice",
+       "to": "Podluhy, Na drahách",
+       "at": [
+        "17:14"
+       ]
+      }
+     ],
+     "why": "Podluhy 16:40 → Cerhovice, Třenice, timed so the bus passes Hořovice, náměstí B.Němcové at 16:50 (also the real 14:50 start there), 33 min; Třenice 17:14 → Podluhy, 31 min (1-minute turn as in the timetable). 1 bus."
+    }
+   ]
+  },
+  "649": {
+   "core": [
+    "Nižbor, u lípy",
+    "Nižbor, Žloukovice"
+   ],
+   "note": "Nižbor, u lípy – Nižbor, Žloukovice, a 7-min shuttle, hourly u lípy :51 / Žloukovice :02 (14:51–17:02; 12:55, 13:55 and 13:07, 14:07 a few minutes earlier), exact. Every trip runs through with the 631 trips Beroun / Králův Dvůr – Nižbor, u lípy (6 of 6 departures follow one); kept as its own line, because a circuit with them would add a bus, not save one.",
+   "sim": [
+    {
+     "name": "649",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Nižbor, u lípy",
+       "to": "Nižbor, Žloukovice",
+       "at": [
+        51
+       ]
+      },
+      {
+       "fr": "Nižbor, Žloukovice",
+       "to": "Nižbor, u lípy",
+       "at": [
+        2
+       ]
+      }
+     ],
+     "why": "Nižbor, u lípy :51 → Žloukovice, 7 min; Žloukovice :02 → u lípy, 7 min. 1 bus."
+    }
+   ]
+  },
+  "825": {
+   "core": [
+    "Králův Dvůr, Popovice",
+    "Beroun, nemocnice",
+    "Beroun, Prof.Veselého",
+    "Mořina"
+   ],
+   "note": "Králův Dvůr, Popovice – Králův Dvůr – Beroun – Beroun, nemocnice (town line), with a branch Beroun – Svatý Jan pod Skalou – Loděnice – Bubovice – Vysoký Újezd – Mořina. Out of Popovice every 30 (:10 / :40, 13:40–17:10), every second :40 being a Mořina trip (14:39, 16:39); towards Popovice every 30 at Beroun, Prof.Veselého (:11 / :41) with the Mořina trips (13:14, 16:28) and the Loděnice 14:49 in the gaps. 825 every 120 with three slots each way and 825 Mořina every 120 on the fourth (the 501 / 501B rule), all exact; the buses turn at once at both town ends (0–4 min). Listed: Popovice 13:07 → Mořinka, Mořina 13:14 (via Lužce, 83 min) and 18:49, Popovice 18:14 → Mořina, Loděnice 13:54 → Mezouň, Letník (owner check) and 14:49 → Popovice; Mořinka and Vysoký Újezd, sokolovna are on Praha-západ 311.",
+   "sim": [
+    {
+     "name": "825",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Králův Dvůr, Popovice",
+       "to": "Beroun, nemocnice",
+       "core_to": "Beroun, Hostímská",
+       "at": [
+        "15:10",
+        "15:40",
+        "16:10"
+       ]
+      },
+      {
+       "fr": "Beroun, nemocnice",
+       "to": "Králův Dvůr, Popovice",
+       "knot": "Beroun, Prof.Veselého",
+       "knot_at": [
+        "15:41",
+        "16:11",
+        "16:41"
+       ]
+      }
+     ],
+     "why": "Popovice 15:10, 15:40, 16:10 → Beroun, nemocnice, 26 min (17:10 ends at Prof.Veselého, one stop on); nemocnice 15:40, 16:10, 16:40 → Popovice via Školní náměstí, timed at Prof.Veselého, 27 min. 2 buses."
+    },
+    {
+     "name": "825 Mořina",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Králův Dvůr, Popovice",
+       "to": "Mořina",
+       "at": [
+        "16:39"
+       ]
+      },
+      {
+       "fr": "Mořina",
+       "to": "Králův Dvůr, Popovice",
+       "at": [
+        "16:28"
+       ],
+       "rt": 67,
+       "stops": [
+        "Mořina",
+        "Mořina, obecní úřad",
+        "Mořina, u Pěchotů",
+        "Mořina, odbočka lom",
+        "Vysoký Újezd, Kozolupy",
+        "Bubovice",
+        "Bubovice, Višňovka",
+        "Loděnice",
+        "Loděnice, Jánská, I",
+        "Svatý Jan pod Skalou, Sedlec",
+        "Svatý Jan pod Skalou, Svatý Jánek",
+        "Svatý Jan pod Skalou",
+        "Beroun, Hostim",
+        "Beroun, Lištice",
+        "Beroun, nemocnice",
+        "Beroun, Prof.Veselého",
+        "Beroun, Hostímská",
+        "Beroun, Školní náměstí",
+        "Beroun, U Slavaše",
+        "Beroun, U černého koně",
+        "Beroun, Wagnerovo náměstí",
+        "Beroun, Hlinky",
+        "Beroun, U Zelených",
+        "Beroun, Jungmannova",
+        "Beroun, Velké sídliště",
+        "Beroun, třída Míru",
+        "Beroun, Lidl",
+        "Králův Dvůr, u zámku",
+        "Králův Dvůr, Na knížecí",
+        "Králův Dvůr, náměstí Míru - poliklinika",
+        "Králův Dvůr, nádraží",
+        "Králův Dvůr, U Karla IV.",
+        "Králův Dvůr, Popovice, odbočka",
+        "Králův Dvůr, Popovice"
+       ]
+      }
+     ],
+     "why": "Popovice 16:39 → Beroun, Svatý Jan pod Skalou, Loděnice, Bubovice, Lužce, Vysoký Újezd and Kuchař → Mořina 18:00, 81 min; Mořina 16:28 → Popovice by that trip's direct road (Kozolupy, Bubovice, Loděnice, Svatý Jan pod Skalou, nemocnice), 67 min, stops set by hand (the afternoon Mořina trips run three different roads); every 120. 2 buses."
+    }
+   ]
+  },
+  "861": {
+   "core": [
+    "Beroun, autobusové nádraží",
+    "Beroun, Karla Čapka"
+   ],
+   "note": "Beroun town line, a 22-min one-way loop from Beroun, autobusové nádraží (Plzeňská brána – Hlinky – Pod Hřbitovem – Zahořanská – Pod Homolkou – K Dubu – Karla Čapka – sídliště – Delvita). Afternoon 13:14, 14:04, 14:54 (every 50) and 16:00 (to Karla Čapka only). Every 48, the allowed interval nearest the real 50 (worst 2 min; every 60 leaves 14:14 / 15:14 without a trip). Its eight stops from Obchodní to Karla Čapka have no other line.",
+   "sim": [
+    {
+     "name": "861",
+     "every": 48,
+     "legs": [
+      {
+       "fr": "Beroun, autobusové nádraží",
+       "to": "Beroun, autobusové nádraží",
+       "at": [
+        "14:04"
+       ]
+      }
+     ],
+     "why": "Loop from Beroun, autobusové nádraží at 14:04 (13:16 and 14:52 stand for 13:14 and 14:54), 22 min, every 48. 1 bus."
+    }
+   ]
+  },
+  "210384": {
+   "core": [
+    "Králův Dvůr, škola",
+    "Králův Dvůr, Na knížecí",
+    "Králův Dvůr, Levín"
+   ],
+   "note": "X384 Králův Dvůr, škola – Na knížecí – Počaply – Levín (– Zdice), a replacement line for engineering works, running since at least 29 Sep 2026 (it is in the 29 Sep and the 1 Nov feeds), so modelled as it runs (the long-works rule). Every 30 all day: škola :00 / :30 → Levín :08 / :38, back at once :08 / :38 → škola :17 / :47 (24 of 24 Levín arrivals leave again within 0–5 min), exact; 16:38 and 18:37 end at Na knížecí, counted as short workings. It is the only service of Králův Dvůr, škola and Králův Dvůr, Levín. Listed: Na knížecí 6:03 → Levín, škola 7:10 → Zdice.",
+   "sim": [
+    {
+     "name": "X384",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Králův Dvůr, škola",
+       "to": "Králův Dvůr, Levín",
+       "at": [
+        0
+       ]
+      },
+      {
+       "fr": "Králův Dvůr, Levín",
+       "to": "Králův Dvůr, škola",
+       "core_to": "Králův Dvůr, Na knížecí",
+       "at": [
+        8
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Králův Dvůr, škola :00 / :30 → Počaply → Levín, 8 min; Levín :08 / :38 → škola via Počaply, Plzeňská, Jungmannova and Zahořany, Pod Hájem, 9 min (0-minute turn as in the timetable). 1 bus."
+    }
+   ]
+  }
+ },
+ "unmodelled": {
+  "952": "Night line: the sheets model the weekday afternoon (owner, 25 Sep 2026: no night lines)."
+ },
+ "owner_checks": [
+  [
+   "545, 825",
+   "Two stops are left out as near-stop exceptions: Zaječov, u hřbitova (0.65 km from Zaječov, which 545 serves hourly; only the 545 Olešná trips pass it in the afternoon: Hořovice 13:30 → Olešná, Olešná 13:59 and 14:54 → Hořovice) and Mezouň, Letník (0.35 km from Mezouň, which Praha-západ 311 serves; only the 825 Loděnice 13:54 → Letník 14:14).",
+   "Serve them: Zaječov, u hřbitova with 545 Olešná every 240 (Hořovice 13:30 → Olešná, Olešná 13:59 → Hořovice, both exact), +1 bus; Mezouň, Letník either on every 825 Mořina return by the road of the 8:33 Mořinka trip (0 buses, +27 min on each return) or as 825 Letník every 480 on the 13:54, +1 bus."
+  ]
+ ],
+ "notes": "Okres Beroun (licence 210, Arriva Střední Čechy on every line) and the Prague lines whose outer end is here (380, 384, 394; 952 is a night line). X384 is a replacement line for works, running since at least 29 Sep, modelled as it runs. Every terminus is a loop: typed values are the real minute − 1. Real 0–2-minute turns (526 at Zdice and Knížkovice, 529 Hvozdec, 531 Hořovice, železniční stanice, 544 Hořovice at Mrtník, 547 Cerhovice, 631 Všeradice, 639 Lštěň, 643 Třenice, X384 Levín) keep the real slots; the fork's automatic Leave up to lets the bus that arrives on the real minute leave (an engine question to confirm once). Through running seen in the timetable (0–5-min chains, to be confirmed by the 2 Nov live map): 649 with the 631 Nižbor, u lípy trips (6 of 6); 641 Beroun – Trubín – Zdice, škola running on as 640 (3 of 4); 526 arrivals at Zdice followed by 641 departures (7 of 13); 631 and 637 at Beroun, autobusové nádraží (7 of 19); 633 → 638 at Beroun (3 of 6); 638 → 637 at Roztoky, Placanda (2 of 2); 544 → 545 at Komárov, Buzuluk and 546 → 545 at Olešná (2 of 2 each); 642 → 639 at Lochovice (4 of 5); 548 → 642 at Praskolesy (2 of 2); 825 → 380, 384 and 636 at Loděnice (2 of 2); 394 with Prague 142 at Nové Butovice (21 of 37) and 384 with Prague 100 and 306 at Zličín. The 544 Hořovice 14:52 bus becomes the 544 shuttle at Zaječov (15:24 arrival, 16:08 departure; a chain the 0–5-min test misses). The three 638 ends chain on two buses in the timetable (Branov 14:24 → Beroun 15:14 → Skryje 15:25; Skryje 16:26 → Beroun 17:19 → Broumy 17:30; Broumy 15:53 → Beroun 16:28 → Branov 16:30); they are modelled as three exact lines (3 buses), and pooling them is an owner option (−1 bus, Branov and Skryje every 4 h). Each real line is its own Simutrans line here, so the per-line totals (65 buses) are higher than the operator's own; pooling at Beroun, Hořovice and Zdice is an owner option, not applied. Prague stops are covered by the Prague bus sheet. The Příbram stops 531 serves only on its Archiv and Zdaboř variants (Příbram, Archiv, II. and III. poliklinika, Na Cihelně, Československé armády, Seifertova, Zdaboř) are left to the Příbramsko sheet.",
+ "other_sheets": {
+  "praha_bus": {
+   "lines": [],
+   "label": "Prague Bus Lines Check",
+   "short": "Prague bus sheet",
+   "url": "https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF",
+   "why": "regional companions of the city lines (through, pooled or interleaved), modelled on the Prague bus sheet with their buses (owner, 30 Oct 2026)"
+  },
+  "praha_city": {
+   "lines": [],
+   "label": "Prague Bus Lines Check (city lines 100-299)",
+   "short": "Prague bus sheet",
+   "url": "https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF",
+   "schedule": "../../data/derived/praha_city_schedule.json"
+  },
+  "benesovsko": {
+   "lines": [],
+   "label": "PID Benešovsko",
+   "short": "Benešovsko sheet",
+   "url": null,
+   "schedule": "../benesovsko/data/derived/schedule.json"
+  },
+  "kladensko": {
+   "lines": [],
+   "label": "PID Kladensko",
+   "short": "Kladensko sheet",
+   "url": null,
+   "schedule": "../kladensko/data/derived/schedule.json"
+  },
+  "kolinsko": {
+   "lines": [],
+   "label": "PID Kolínsko",
+   "short": "Kolínsko sheet",
+   "url": null,
+   "schedule": "../kolinsko/data/derived/schedule.json"
+  },
+  "kutnohorsko": {
+   "lines": [],
+   "label": "PID Kutnohorsko",
+   "short": "Kutnohorsko sheet",
+   "url": null,
+   "schedule": "../kutnohorsko/data/derived/schedule.json"
+  },
+  "melnicko": {
+   "lines": [],
+   "label": "PID Mělnicko",
+   "short": "Mělnicko sheet",
+   "url": null,
+   "schedule": "../melnicko/data/derived/schedule.json"
+  },
+  "mladoboleslavsko": {
+   "lines": [],
+   "label": "PID Mladoboleslavsko",
+   "short": "Mladoboleslavsko sheet",
+   "url": null,
+   "schedule": "../mladoboleslavsko/data/derived/schedule.json"
+  },
+  "nymbursko": {
+   "lines": [],
+   "label": "PID Nymbursko",
+   "short": "Nymbursko sheet",
+   "url": null,
+   "schedule": "../nymbursko/data/derived/schedule.json"
+  },
+  "praha-vychod": {
+   "lines": [],
+   "label": "PID Praha-východ",
+   "short": "Praha-východ sheet",
+   "url": null,
+   "schedule": "../praha-vychod/data/derived/schedule.json"
+  },
+  "praha-zapad": {
+   "lines": [],
+   "label": "PID Praha-západ",
+   "short": "Praha-západ sheet",
+   "url": null,
+   "schedule": "../praha-zapad/data/derived/schedule.json"
+  },
+  "pribramsko": {
+   "lines": [],
+   "label": "PID Příbramsko",
+   "short": "Příbramsko sheet",
+   "url": null,
+   "schedule": "../pribramsko/data/derived/schedule.json"
+  },
+  "rakovnicko": {
+   "lines": [],
+   "label": "PID Rakovnicko",
+   "short": "Rakovnicko sheet",
+   "url": null,
+   "schedule": "../rakovnicko/data/derived/schedule.json"
+  }
+ },
+ "hubs": []
+}

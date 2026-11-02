@@ -34,6 +34,7 @@ Full method documents (verbatim, synced from the working folder):
 | City trolleybus / bus | Praha (trolleybus + bus lines check), Brno, Plzeň, Ostrava, Olomouc bus, Most bus, Pardubice (both modes) | `pipeline/<city>-<mode>` |
 | Small towns | Havířov / Karviná / Orlová (Transdev MHD) | `pipeline/havirov-karvina-orlova` |
 | ODIS regional | Havířovsko-Karvinsko-Orlovsko, Těšínsko-Třinecko-Frýdecko, Opavsko (+ Opava trolleybuses), Novojičínsko, Bruntálsko | `pipeline/odis-regional-*` (shared scripts in `-hko`) |
+| PID regional | Benešovsko, Berounsko, Kladensko, Kolínsko, Kutnohorsko, Mělnicko, Mladoboleslavsko, Nymbursko, Praha-východ, Praha-západ, Příbramsko, Rakovnicko (+ "PID: all lines" index) | `pipeline/pid-regional` (ODIS scheduler via `--base`) |
 | Rail (active) | S9/S2/R17/R49/Ex7, S75, S5→S4, S4→S3, Ex7+R17 Veselí | `pipeline/local-rail/build_*.py` |
 | Rail (archived) | MD-CR long distance, RegioJet, Leo Express, local trains 010/062/064/260, 012/014/210/212/235, R49 Benešov, R18, S49, west of Praha | md-cr / local-rail / hand-written |
 | Termini (reference, 12 Sep) | Praha, Brno, Ostrava, Olomouc, Most–Litvínov tram termini | engine session, no pipeline (inputs to the tram pipelines) |

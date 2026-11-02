@@ -1,0 +1,1024 @@
+{
+ "lines": {
+  "304": {
+   "core": [
+    "Rakovník, autobusové stanoviště",
+    "Nové Strašecí, Palackého",
+    "Stochov, Slovanka II",
+    "Praha, Zličín",
+    "Praha, Kukulova"
+   ],
+   "note": "Rakovník – Lužná – Ruda – Nové Strašecí – Stochov – Praha, Zličín – Praha, Vypich, where the buses arrive, and Praha, Kukulova, where they leave (one terminus). The buses sleep in Rakovník, so the afternoon is an outflow from Prague: from 15:30 to 17:30 Rakovník sends 15:30 (to Zličín only), 16:00, 16:40 and Kukulova 15:58, 16:28, 16:53, 17:23. Timed at the rate towards Prague, every 120 with three slots each way; Kukulova 16:28 and the Rakovník departures 13:00–15:00 (buses going to Prague for the peak) are off the pattern, and the Prague-only trips (Kukulova → Zličín 13:39, 15:45; Zličín → Stochov 16:30) are listed.",
+   "sim": [
+    {
+     "name": "304",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Praha, Kukulova",
+       "core_to": "Praha, Zličín",
+       "at": [
+        "15:30",
+        "16:00",
+        "16:40"
+       ]
+      },
+      {
+       "fr": "Praha, Kukulova",
+       "to": "Rakovník, autobusové stanoviště",
+       "at": [
+        "15:58",
+        "16:53",
+        "17:23"
+       ]
+      }
+     ],
+     "why": "Rakovník 15:30, 16:00, 16:40 and Kukulova 15:58, 16:53, 17:23 via Lužná, Ruda, Nové Strašecí and Stochov, Slovanka II: 69 min to Vypich, 78 min back. The 15:30 is a Rakovník – Zličín trip that the game bus runs on to Kukulova."
+    }
+   ]
+  },
+  "305": {
+   "core": [
+    "Praha, Zličín",
+    "Stochov, Slovanka II",
+    "Nové Strašecí, Palackého",
+    "Krupá, Šustna",
+    "Hořovičky",
+    "Karlovy Vary, terminál"
+   ],
+   "anchor": "15:00",
+   "note": "Praha, Zličín – Stochov – Nové Strašecí – Krupá – Hořovičky – Lubenec – Bochov – Karlovy Vary, hourly all afternoon: Zličín :05 (no 17:05) and Karlovy Vary :30 (no 13:30), exact. Modelled at 15:00, because the 16:00 window holds Zličín's missing 17:05. Off the pattern: Zličín 5:10, 20:45; Karlovy Vary 4:40, 5:35, 7:15 and 22:00 (to Hořovičky).",
+   "sim": [
+    {
+     "name": "305",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Zličín",
+       "to": "Karlovy Vary, terminál",
+       "at": [
+        5
+       ]
+      },
+      {
+       "fr": "Karlovy Vary, terminál",
+       "to": "Praha, Zličín",
+       "at": [
+        30
+       ]
+      }
+     ],
+     "why": "Zličín :05 / Karlovy Vary :30 on one path via Řevničov, Krušovice, Krupá, Šustna and Hořesedly: 137 min out, 139 min back."
+    }
+   ]
+  },
+  "404": {
+   "core": [
+    "Praha, Zličín",
+    "Ruda, u rybníka",
+    "Rakovník, autobusové stanoviště",
+    "Čistá",
+    "Břežany",
+    "Kralovice"
+   ],
+   "anchor": "15:00",
+   "note": "Praha, Zličín – Ruda, u rybníka – Rakovník – Lubná – Petrovice – Čistá – Břežany – Kralovice. Out of Zličín every 30 from 14:10 to 18:10 (:40 to Kralovice, :10 to Rakovník only), into Prague hourly only until 15:45 (Rakovník 13:30, 14:35; Kralovice 14:40, 15:45): the buses sleep in Rakovník. Timed at the rate towards Prague: Zličín every 60 at :40 (14:40 is a Rakovník trip, run on to Kralovice) and Kralovice 14:40, 15:45; the :10 departures from Zličín are buses going home, off the pattern (the Step 4 audit's FEWER row).",
+   "sim": [
+    {
+     "name": "404",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Praha, Zličín",
+       "to": "Kralovice",
+       "core_to": "Rakovník, autobusové stanoviště",
+       "at": [
+        "14:40",
+        "15:40"
+       ]
+      },
+      {
+       "fr": "Kralovice",
+       "to": "Praha, Zličín",
+       "at": [
+        "14:40",
+        "15:45"
+       ]
+      }
+     ],
+     "why": "Zličín :40 and Kralovice 14:40 / 15:45 by the motorway via Ruda, u rybníka, then Rakovník, Plzeňská, Lubná, Petrovice, Všesulov, Čistá, Břežany and Kožlany: 95 min out, 93 min back."
+    }
+   ]
+  },
+  "415": {
+   "core": [
+    "Praha, Zličín",
+    "Krupá, Šustna",
+    "Mutějovice",
+    "Svojetín, ObÚ",
+    "Žatec, autobusové nádraží",
+    "Kadaň, autobusové nádraží"
+   ],
+   "anchor": "16:00",
+   "note": "Praha, Zličín – Krupá, Šustna – Mutějovice – Svojetín – Měcholupy – Žatec – Kadaň. Kadaň → Prague every 2 hours at :50 all day; Zličín → Kadaň about two per 2 hours at no fixed minute (13:05, 14:15, 16:10, 17:00, 18:10). Modelled at 16:00: the 13:00–15:00 window is the variant via Nové Strašecí, Rynholec and Lány (Zličín 14:40, 18:40; Kadaň 13:47; listed, its stops are on 417, 304 and 581); Zličín 13:05, 14:15 and 17:00 are off the pattern. The Chbany and Deštnice villages (Ústecký kraj) have no other line, so each direction is shown by the path that serves them.",
+   "sim": [
+    {
+     "name": "415",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Praha, Zličín",
+       "to": "Kadaň, autobusové nádraží",
+       "notvia": [
+        "Nové Strašecí, Palackého"
+       ],
+       "at": [
+        "16:10"
+       ],
+       "stops_via": [
+        "Chbany, Vikletice"
+       ],
+       "rt": 118
+      },
+      {
+       "fr": "Kadaň, autobusové nádraží",
+       "to": "Praha, Zličín",
+       "notvia": [
+        "Nové Strašecí, Palackého"
+       ],
+       "at": [
+        "16:50"
+       ],
+       "stops_via": [
+        "Deštnice"
+       ]
+      }
+     ],
+     "why": "Zličín 16:10 and Kadaň 16:50 every 120; out shown by the 14:15 trip's path via the Chbany villages (Vikletice, Vadkovice, Malé Krhovice, 118 min; the 16:10 itself takes the main road, 115 min), back via Měcholupy, Želeč, Deštnice and Svojetín, ObÚ (140 min; the 16:50 skips Deštnice, 134 min), so every stop of 415 is on the line."
+    }
+   ]
+  },
+  "417": {
+   "core": [
+    "Praha, Zličín",
+    "Stochov, Slovanka",
+    "Lány, náměstí",
+    "Nové Strašecí, Palackého",
+    "Mšec"
+   ],
+   "anchor": "14:00",
+   "note": "Praha, Zličín – Velká Dobrá – Stochov – Lány – Rynholec – Nové Strašecí – Mšecké Žehrovice – Mšec, hourly: Zličín :50, Mšec :20 (no 16:20), exact. Modelled at 14:00, where both directions run; the Nové Strašecí – Zličín trips (13:35 and 18:50 in, 17:50 and 22:25 out) and the morning Lány and Stochov trips are listed.",
+   "sim": [
+    {
+     "name": "417",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Zličín",
+       "to": "Mšec",
+       "at": [
+        50
+       ]
+      },
+      {
+       "fr": "Mšec",
+       "to": "Praha, Zličín",
+       "at": [
+        20
+       ]
+      }
+     ],
+     "why": "Zličín :50 / Mšec :20 via Stochov, Slovanka, Lány and Rynholec: 68 min out, 71 min back."
+    }
+   ]
+  },
+  "560": {
+   "core": [
+    "Rakovník, autobusové stanoviště",
+    "Kolešovice",
+    "Hořovičky",
+    "Kryry, Strojetice, křižovatka"
+   ],
+   "note": "Rakovník – Olešná – Kněževes – Kolešovice – Hořovičky – Kryry, Strojetice, křižovatka: Rakovník :00 hourly 13:00–17:00, alternating Kolešovice and Hořovičky or Kryry (plus 14:45 to Kryry); towards Rakovník Kolešovice :30 hourly 14:30–17:30. Two Simutrans lines give that trunk: 560 (odd hours, out round the Hořesedly – Děkov loop, back via Hokov and Heřmanov) and 560 Kolešovice (even hours). Off the pattern: Rakovník 14:45; Hořovičky 12:34, 14:02, 18:00; Kryry 17:14; Kolešovice 14:30.",
+   "sim": [
+    {
+     "name": "560",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Kryry, Strojetice, křižovatka",
+       "core_to": "Hořovičky",
+       "stops_via": [
+        "Děkov"
+       ],
+       "at": [
+        "13:00"
+       ]
+      },
+      {
+       "fr": "Kryry, Strojetice, křižovatka",
+       "to": "Rakovník, autobusové stanoviště",
+       "knot": "Hořovičky",
+       "knot_at": [
+        "16:22"
+       ]
+      }
+     ],
+     "why": "Rakovník :00 odd hours to Kryry by the 15:00 trip's path via Hořesedly, Děkov and Bukov (56 min); back from Kryry :14 even hours (Hořovičky :22) via Hokov and Heřmanov (40 min); the Hořovičky trips count in both rows."
+    },
+    {
+     "name": "560 Kolešovice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Kolešovice",
+       "notvia": [
+        "Hořovičky"
+       ],
+       "at": [
+        "14:00"
+       ]
+      },
+      {
+       "fr": "Kolešovice",
+       "to": "Rakovník, autobusové stanoviště",
+       "notvia": [
+        "Hořovičky"
+       ],
+       "at": [
+        "15:30"
+       ]
+      }
+     ],
+     "why": "Rakovník :00 even hours via Přílepy (28 min), Kolešovice :30 odd hours back (24 min); the even-hour :30 would meet 560 at Kolešovice."
+    }
+   ]
+  },
+  "577": {
+   "core": [
+    "Rakovník, autobusové stanoviště",
+    "Nový Dům",
+    "Lány, náměstí",
+    "Stochov, Slovanka II"
+   ],
+   "note": "Rakovník – Nový Dům – Ruda – Lány – Stochov, Slovanka II: Rakovník 12:50, 14:50, 16:35 out, Stochov 14:40 (from Stochov, náměstí) and 16:56 back. It runs through as 304 at Stochov (577 14:50 → 304 15:24 to Prague; 304 16:30 from Zličín → 577 16:56), so it is timed on its own pair, every 240: Rakovník 16:35, Stochov 14:46. Off the pattern: Rakovník 12:50, 14:50; Stochov 16:56.",
+   "sim": [
+    {
+     "name": "577",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Stochov, Slovanka II",
+       "at": [
+        "16:35"
+       ]
+      },
+      {
+       "fr": "Stochov, Slovanka II",
+       "to": "Rakovník, autobusové stanoviště",
+       "at": [
+        "14:46"
+       ]
+      }
+     ],
+     "why": "Rakovník 16:35 → Stochov, Slovanka II via Nový Dům, Ruda, osada Brejl and Lány (32 min; the real trip goes on to Stochov, náměstí); Stochov, Slovanka II 14:46 back (33 min)."
+    }
+   ]
+  },
+  "760": {
+   "core": [
+    "Rakovník, autobusové stanoviště",
+    "Kolešovice",
+    "Hořovičky",
+    "Podbořany, autobusové nádraží"
+   ],
+   "note": "Rakovník – Olešná – Kněževes – Kolešovice – Hořovičky – Kryry – Vroutek – Podbořany, hourly: Rakovník :30, and towards Rakovník Hořovičky :44 from 11:44 to 18:44, exact. Podbořany's minutes vary with the path inside the town (:04, :07, :15), so the way back is read at Hořovičky; the way back is shown by the 16:15 trip's path via Podbořany, nemocnice, which no other line serves. 560 runs the same road at the other half hour.",
+   "sim": [
+    {
+     "name": "760",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Podbořany, autobusové nádraží",
+       "at": [
+        30
+       ]
+      },
+      {
+       "fr": "Podbořany, autobusové nádraží",
+       "to": "Rakovník, autobusové stanoviště",
+       "knot": "Hořovičky",
+       "knot_at": [
+        44
+       ],
+       "knot_rt": 29,
+       "stops_via": [
+        "Podbořany, nemocnice"
+       ]
+      }
+     ],
+     "why": "Rakovník :30 → Podbořany via Kolešovice, Hořovičky, Kryry and Vroutek (75 min); back from Podbořany :15 via Podbořany, nemocnice (the real 16:15, 29 min to Hořovičky :44, 64 min in all), so the bus passes Hořovičky at :44 as all the real trips do (most leave Podbořany at :04 via Vroutek and Kryry, 40 min to Hořovičky)."
+    }
+   ]
+  },
+  "561": {
+   "core": [
+    "Rakovník, Šamotka",
+    "Rakovník, autobusové stanoviště",
+    "Senomaty",
+    "Řeřichy",
+    "Kolešovice"
+   ],
+   "note": "Rakovník, Šamotka – Rakovník, autobusové stanoviště – nemocnice – Senomaty (Nouzov loop) – Šanov – Petrovice – Zavidov – Řeřichy – Oráčov – Kolešovice, a school-day line of single trips. One Simutrans line every 240 on its longest trip, Šamotka 14:10 → Kolešovice 15:26, back on the Kolešovice 20:30 a period later; it holds every stop of the line. Listed (stops on 561, 562 or 581 Senomaty): Šamotka 12:45 → Senomaty, střelnice 13:00 → hasičský záchranný sbor, 14:00 → Nouzov, Nouzov 14:40 → Šamotka, Šamotka 15:10 → Petrovice, Senomaty 15:13 → Rakovník, střelnice 15:16 → Rakovník, 16:30 → Řeřichy, Řeřichy 17:10 → Petrovice, 18:30 → Řeřichy, Řeřichy 19:05 → Rakovník; Senomaty 17:33 → Rakovník runs on 581 Senomaty.",
+   "sim": [
+    {
+     "name": "561",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Rakovník, Šamotka",
+       "to": "Kolešovice",
+       "core_to": "Řeřichy",
+       "at": [
+        "14:10"
+       ]
+      },
+      {
+       "fr": "Kolešovice",
+       "to": "Rakovník, autobusové stanoviště",
+       "at": [
+        "16:30"
+       ]
+      },
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Rakovník, Šamotka",
+       "untimed": true
+      }
+     ],
+     "why": "Šamotka 14:10 → Kolešovice via the town loop (Autostop, Tesco), Senomaty with the Nouzov loop, Šanov, Petrovice, Zavidov, Řeřichy and Oráčov (76 min); Kolešovice 16:30 (the real 20:30, a period later) back to the autobusové stanoviště (60 min), then untimed to Šamotka."
+    }
+   ]
+  },
+  "562": {
+   "core": [
+    "Lubná, závod",
+    "Rakovník, garáže Transdev Stř.Č.",
+    "Rakovník, autobusové stanoviště",
+    "Rakovník, hasičský záchr.sbor"
+   ],
+   "note": "Rakovník's town service: Rakovník, garáže Transdev (a public stop with a timetable, not a depot run) – Komenského náměstí – autobusové stanoviště – nemocnice – hasičský záchranný sbor, from garáže at :35 in the morning and 13:35, 15:35 in the afternoon, with trips on to Lubná, Senec and Olešná. Two Simutrans lines: 562 (garáže ↔ hasičský záchranný sbor) and 562 Lubná (autobusové stanoviště ↔ Lubná, závod, the only service of Průhon). Listed (stops on 562, 562 Lubná, 560, 760 and 572): garáže 13:35, hasičský záchranný sbor 13:48 → Lubná, Lubná 14:24 → autobusové stanoviště, garáže 14:50 → střelnice, 15:00 → garáže, hasičský záchranný sbor 15:52 → autobusové stanoviště, Olešná 16:31 → garáže, 17:45 → garáže.",
+   "sim": [
+    {
+     "name": "562",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Rakovník, garáže Transdev Stř.Č.",
+       "to": "Rakovník, hasičský záchr.sbor",
+       "at": [
+        "15:35"
+       ]
+      },
+      {
+       "fr": "Rakovník, hasičský záchr.sbor",
+       "to": "Rakovník, garáže Transdev Stř.Č.",
+       "at": [
+        "14:18"
+       ]
+      }
+     ],
+     "why": "Garáže 15:35 → hasičský záchranný sbor via Komenského náměstí, the autobusové stanoviště and nemocnice (16 min), hasičský záchranný sbor 14:18 back (17 min); every 60 would leave the garáže 14:35 slot without a trip."
+    },
+    {
+     "name": "562 Lubná",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Lubná, závod",
+       "notvia": [
+        "Lubná, Filipka"
+       ],
+       "at": [
+        "15:30"
+       ]
+      },
+      {
+       "fr": "Lubná, závod",
+       "to": "Rakovník, autobusové stanoviště",
+       "at": [
+        "15:54"
+       ]
+      }
+     ],
+     "why": "Autobusové stanoviště 15:30 → garáže, Průhon → Lubná, závod direct (21 min); Lubná, závod 15:54 → autobusové stanoviště, the same bus after a 3-min turn (the real trip runs on to Olešná)."
+    }
+   ]
+  },
+  "563": {
+   "core": [
+    "Rakovník, autobusové stanoviště",
+    "Milostín",
+    "Svojetín",
+    "Kounov, rozcestí",
+    "Mutějovice"
+   ],
+   "note": "Rakovník – Olešná – Nesuchyně – Milostín – Svojetín, Veclov – Janov – Kounov – Mutějovice: Rakovník 14:35 and 17:30 out, Mutějovice 15:54 (to Milostín) and 12:24 (to Rakovník) back; the bus sleeps at Mutějovice. Every 180 on one bus; Rakovník 14:35 (5 min off) and Mutějovice 12:24 are off the pattern.",
+   "sim": [
+    {
+     "name": "563",
+     "every": 180,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Mutějovice",
+       "at": [
+        "17:30"
+       ]
+      },
+      {
+       "fr": "Mutějovice",
+       "to": "Rakovník, autobusové stanoviště",
+       "core_to": "Milostín",
+       "at": [
+        "15:54"
+       ],
+       "stops_via": [
+        "Svojetín, Veclov"
+       ]
+      }
+     ],
+     "why": "Rakovník :30 every 3 hours (the real 17:30) via Svojetín, Veclov and Kounov (54 min); Mutějovice 15:54 back by the 12:24 trip's path (61 min), whereas the real 15:54 ends at Milostín."
+    }
+   ]
+  },
+  "571": {
+   "core": [
+    "Rakovník, autobusové stanoviště",
+    "Všesulov",
+    "Chříč"
+   ],
+   "note": "Rakovník – Lubná – Petrovice – Zavidov – Všesulov – Šípy – Slatina – Chříč (Plzeňský kraj), with Kůzová and Břežany trips. Kept for Slatina and Chříč, which no other line serves (owner, 2 Nov 2026: \"Yes, serve every place\"): the real round Rakovník 14:50 → Chříč 15:27, Chříč 15:30 → Rakovník, every 480. Listed: Kůzová 12:52 → Rakovník and Rakovník 15:30 → Šípy → Břežany (stops on 404, 573 and 573 Šípy).",
+   "sim": [
+    {
+     "name": "571",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Chříč",
+       "at": [
+        "14:50"
+       ]
+      },
+      {
+       "fr": "Chříč",
+       "to": "Rakovník, autobusové stanoviště",
+       "at": [
+        "15:30"
+       ]
+      }
+     ],
+     "why": "Rakovník 14:50 → Chříč via Lubná, Příčina, Petrovice, Zavidov, Všesulov and Šípy (37 min); Chříč 15:30 back after the real 3-min turn (40 min)."
+    }
+   ]
+  },
+  "572": {
+   "core": [
+    "Rakovník, autobusové stanoviště",
+    "Krakovec",
+    "Slabce, pošta",
+    "Zvíkovec"
+   ],
+   "anchor": "15:00",
+   "note": "Rakovník – Lubná – Senec – Hvozd – Malinová – Krakov – Krakovec (– Zhoř – Slabce, pošta – Zvíkovec). The Krakovec trips turn at once (Rakovník 15:00 → Krakovec 15:27 → 15:30 → Rakovník), modelled at 15:00; the Slabce trips (Slabce 16:44 → Rakovník, Rakovník 18:30 → Slabce → Zvíkovec) are 572 Slabce, every 480, the only service of Krakovec, Zhoř, rozcestí. Off the pattern: Rakovník 16:45, Krakovec 13:00.",
+   "sim": [
+    {
+     "name": "572",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Krakovec",
+       "notvia": [
+        "Slabce, pošta"
+       ],
+       "at": [
+        "15:00"
+       ]
+      },
+      {
+       "fr": "Krakovec",
+       "to": "Rakovník, autobusové stanoviště",
+       "notvia": [
+        "Slabce, pošta"
+       ],
+       "at": [
+        "15:30"
+       ]
+      }
+     ],
+     "why": "Rakovník :00 odd hours → Krakovec via Lubná, Senec and Hvozd (25 min), Krakovec :30 odd hours back (25 min)."
+    },
+    {
+     "name": "572 Slabce",
+     "every": 480,
+     "window": [
+      "15:30",
+      "17:30"
+     ],
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Slabce, pošta",
+       "at": [
+        "18:30"
+       ]
+      },
+      {
+       "fr": "Slabce, pošta",
+       "to": "Rakovník, autobusové stanoviště",
+       "at": [
+        "16:44"
+       ]
+      }
+     ],
+     "why": "Rakovník 18:30 → Krakovec, Zhoř, rozcestí → Slabce, pošta (38 min; the real trip goes on to Zvíkovec); Slabce, pošta 16:44 back (41 min)."
+    }
+   ]
+  },
+  "573": {
+   "core": [
+    "Čistá",
+    "Čistá, Kůzová",
+    "Hořovičky",
+    "Břežany"
+   ],
+   "anchor": "14:30",
+   "note": "Čistá – Kůzová – Lhota – Žďár – Jesenice – Hořovičky (LEXTRANS), every 2 hours on one bus: Čistá :15 (12:15, 14:15, 16:15), Hořovičky :08 (13:08, 15:08), modelled at 14:30 (the 16:00 window holds only the 17:15 by the shorter path, 7 min off). The Čistá – Šípy – Břežany loop (15:30 / 15:57) is 573 Šípy, every 480, the only service of Všesulov, obchod and of Šípy's own stops. Listed: Čistá 18:00 → Kůzová → Čistá, Čistá 8:47 → Břežany, Břežany 7:32 → Čistá.",
+   "sim": [
+    {
+     "name": "573",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Čistá",
+       "to": "Hořovičky",
+       "at": [
+        "14:15"
+       ]
+      },
+      {
+       "fr": "Hořovičky",
+       "to": "Čistá",
+       "at": [
+        "15:08"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Čistá :15 even hours → Hořovičky via Kůzová, Žďár and Jesenice (53 min); Hořovičky :08 odd hours back via Jesenice, Chotěšov (52 min), a 0-minute turn as in the timetable."
+    },
+    {
+     "name": "573 Šípy",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Čistá",
+       "to": "Břežany",
+       "via": [
+        "Šípy"
+       ],
+       "at": [
+        "15:30"
+       ]
+      },
+      {
+       "fr": "Břežany",
+       "to": "Čistá",
+       "at": [
+        "15:57"
+       ]
+      }
+     ],
+     "why": "Čistá 15:30 → Všesulov, obchod, Šípy, Bělbožice → Břežany (24 min); Břežany 15:57 → Čistá direct (5 min)."
+    }
+   ]
+  },
+  "574": {
+   "core": [
+    "Skryje",
+    "Nezabudice",
+    "Křivoklát, železniční zastávka"
+   ],
+   "note": "Skryje – Hřebečníky, Týřovice – Nezabudice, U Rozvědčíka – Nezabudice – Křivoklát, one trip a day (Skryje 17:20 → Křivoklát, železniční zastávka 17:53; Plzeňský licence 471574). Kept for Nezabudice, U Rozvědčíka, which no other line serves (owner, 2 Nov 2026: \"Yes, serve every place\"): every 480 at the real 17:20, with an untimed return.",
+   "sim": [
+    {
+     "name": "574",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Skryje",
+       "to": "Křivoklát, železniční zastávka",
+       "at": [
+        "17:20"
+       ]
+      },
+      {
+       "fr": "Křivoklát, železniční zastávka",
+       "to": "Skryje",
+       "untimed": true
+      }
+     ],
+     "why": "Skryje 17:20 → Nezabudice, U Rozvědčíka → Křivoklát, železniční zastávka (33 min); back untimed, as no trip runs back (33 min assumed)."
+    }
+   ]
+  },
+  "575": {
+   "core": [
+    "Rakovník, autobusové stanoviště",
+    "Pavlíkov, pošta",
+    "Slabce, pošta",
+    "Slabce, Kostelík",
+    "Zvíkovec"
+   ],
+   "note": "Rakovník – Pavlíkov – Panoší Újezd – Slabce – Kostelík – Zvíkovec: Rakovník 14:35 → Zvíkovec → 15:35 → Rakovník on one bus, Rakovník 17:00 → Slabce, Kostelík → 17:50 back, and Pavlíkov trips 15:00 → Tytry, 15:36 → Rakovník. Every 144 holds both afternoon trips out (14:35, 17:00) on one bus; the way back is shown via Pavlíkov, Tytry, Skřivaň and Chlum, which no other line serves. Off the pattern: Zvíkovec 12:26, Kostelík 17:50; listed: the Pavlíkov trips and Slabce, pošta 13:53 and 16:00.",
+   "sim": [
+    {
+     "name": "575",
+     "every": 144,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Zvíkovec",
+       "core_to": "Slabce, Kostelík",
+       "at": [
+        "14:35"
+       ]
+      },
+      {
+       "fr": "Zvíkovec",
+       "to": "Rakovník, autobusové stanoviště",
+       "knot": "Slabce, Kostelík",
+       "knot_at": [
+        "15:45"
+       ],
+       "stops_via": [
+        "Pavlíkov, Tytry",
+        "Pavlíkov, Skřivaň",
+        "Pavlíkov, Chlum"
+       ],
+       "rt": 69
+      }
+     ],
+     "why": "Rakovník 14:35 (16:59 a period later stands for the real 17:00) → Zvíkovec via Pavlíkov and Slabce (52 min); Zvíkovec 15:35 back via Tytry, Skřivaň and Chlum, the 12:26 trip's path (69 min; the 15:35 itself runs direct in 49 min)."
+    }
+   ]
+  },
+  "576": {
+   "core": [
+    "Rakovník, autobusové stanoviště",
+    "Slabce, pošta",
+    "Skryje"
+   ],
+   "note": "Rakovník – Pavlíkov – Panoší Újezd – Slabce – Hracholusky – Hřebečníky – Skryje. The buses sleep at Skryje, so the afternoon sends more out (13:30 and 15:30 to Slabce; 14:40, 16:30, 18:30 to Skryje) than come back (16:04): timed at the rate towards Rakovník, every 240 on the real round Rakovník 14:40 → Skryje 15:24, Skryje 16:04 → Rakovník. Rakovník 16:30 and 18:30 (buses going home) and Skryje 12:34 are off the pattern.",
+   "sim": [
+    {
+     "name": "576",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Skryje",
+       "at": [
+        "14:40"
+       ]
+      },
+      {
+       "fr": "Skryje",
+       "to": "Rakovník, autobusové stanoviště",
+       "at": [
+        "16:04"
+       ]
+      }
+     ],
+     "why": "Rakovník 14:40 → Skryje via Pavlíkov, Slabce and Hracholusky (46 min); Skryje 16:04 back (50 min)."
+    }
+   ]
+  },
+  "578": {
+   "core": [
+    "Rakovník, autobusové stanoviště",
+    "Pavlíkov, pošta",
+    "Nezabudice",
+    "Křivoklát, železniční zastávka",
+    "Nový Dům"
+   ],
+   "anchor": "15:00",
+   "note": "A circular line Rakovník – Pavlíkov – Všetaty – Velká Buková – Nezabudice – Křivoklát – Městečko – Ruda – Nový Dům – Rakovník, run both ways round (6:10 and 12:00 via Nový Dům first, 12:15 and 14:45 via Pavlíkov first, 77 min), plus a Nezabudice trip 17:20 / 17:50. One circuit every 240 at the real 14:45, modelled at 15:00 (the 16:30 window holds only the Nezabudice trip, whose stops are on the circuit); 12:00 and 12:15 are off the pattern.",
+   "sim": [
+    {
+     "name": "578",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Rakovník, autobusové stanoviště",
+       "at": [
+        "14:45"
+       ]
+      }
+     ],
+     "why": "Rakovník 14:45 round via Pavlíkov, Všetaty, Nezabudice, Křivoklát, Městečko and Nový Dům back to Rakovník (77 min)."
+    }
+   ]
+  },
+  "579": {
+   "core": [
+    "Branov",
+    "Roztoky, Chaloupky",
+    "Křivoklát, železniční zastávka",
+    "Nezabudice",
+    "Roztoky, Leontýn"
+   ],
+   "anchor": "14:30",
+   "note": "Branov – Karlova Ves – Roztoky – Křivoklát – Velká Buková – Nezabudice and Branov – Placanda – Karlov – Leontýn, one bus in a fixed sequence from 12:03 to 17:12. Modelled as that bus's circuit every 240, at 14:30: Branov 14:35 → Nezabudice, Nezabudice 15:23 → Branov, Branov 17:30 → Leontýn, Leontýn 18:17 → Branov (the real 13:30 and 14:17 a period earlier). Off the pattern: Branov 12:03, Nezabudice 12:50; listed: the Amalín loop 16:05 / 16:28 and Branov 16:55 → Roztoky, škola.",
+   "sim": [
+    {
+     "name": "579",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Branov",
+       "to": "Nezabudice",
+       "at": [
+        "14:35"
+       ]
+      },
+      {
+       "fr": "Nezabudice",
+       "to": "Branov",
+       "at": [
+        "15:23"
+       ]
+      },
+      {
+       "fr": "Branov",
+       "to": "Roztoky, Leontýn",
+       "at": [
+        "13:30"
+       ]
+      },
+      {
+       "fr": "Roztoky, Leontýn",
+       "to": "Branov",
+       "at": [
+        "14:17"
+       ]
+      }
+     ],
+     "why": "Branov → Nezabudice via Roztoky and Křivoklát (46 min), Nezabudice → Branov via Roztoky, Višňová (39 min), Branov → Roztoky, Leontýn via Placanda and Karlov and back (17 min each)."
+    }
+   ]
+  },
+  "581": {
+   "core": [
+    "Senomaty",
+    "Lubná",
+    "Rakovník, autobusové stanoviště",
+    "Lužná, železniční stanice",
+    "Lišany, u rybníka",
+    "Rynholec",
+    "Nové Strašecí, Pecínov"
+   ],
+   "anchor": "16:00",
+   "note": "Senomaty – Lubná – Rakovník – Lužná – Lišany – Ruda – Nové Strašecí, Pecínov: east of Rakovník the Lišany trips leave hourly at :30 from 15:30 and the Nové Strašecí trips at 13:15 and 16:30; west of Rakovník single trips to Senomaty. Three Simutrans lines, one per end: 581 (Lišany), 581 Nové Strašecí, and 581 Senomaty, a ring out on 581 and back on 561 (581 17:10 reaches Senomaty 17:32 and goes on as 561 17:33; 561 12:45 comes back as 581 13:18). Off the pattern or listed: Lubná 14:10 → Lišany, Lišany 14:55, Rakovník 12:00 and 13:15 to Nové Strašecí, Rynholec 12:54 → Lubná, Rakovník 14:50 → Senomaty, Senomaty 13:18.",
+   "sim": [
+    {
+     "name": "581",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Lišany, u rybníka",
+       "notvia": [
+        "Rynholec"
+       ],
+       "at": [
+        "15:30"
+       ]
+      },
+      {
+       "fr": "Lišany, u rybníka",
+       "to": "Rakovník, autobusové stanoviště",
+       "notvia": [
+        "Rynholec"
+       ],
+       "at": [
+        "16:25"
+       ]
+      }
+     ],
+     "why": "Rakovník :30 odd hours → Lišany, u rybníka via Lužná (20 min), Lišany :25 even hours back (20 min)."
+    },
+    {
+     "name": "581 Nové Strašecí",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Nové Strašecí, Pecínov",
+       "core_to": "Rynholec",
+       "at": [
+        "16:30"
+       ]
+      },
+      {
+       "fr": "Nové Strašecí, Pecínov",
+       "to": "Rakovník, autobusové stanoviště",
+       "at": [
+        "14:07"
+       ]
+      }
+     ],
+     "why": "Rakovník 16:30 → Lužná, Lišany, Ruda, Nové Strašecí → Pecínov (41 min; the real trip ends at Rynholec); Pecínov 14:07 → Nové Strašecí, Lužná → Rakovník, not via Lišany (43 min)."
+    },
+    {
+     "name": "581 Senomaty",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Senomaty",
+       "at": [
+        "17:10"
+       ]
+      },
+      {
+       "fr": "Senomaty",
+       "to": "Rakovník, autobusové stanoviště",
+       "lines": [
+        "581",
+        "561"
+       ],
+       "notvia": [
+        "Senomaty, Nouzov"
+       ],
+       "at": [
+        "17:33"
+       ]
+      }
+     ],
+     "why": "Rakovník 17:10 → Lubná, Hostokryje, Brant → Senomaty on 581 (21 min); Senomaty 17:33 → Zákonův mlýn, nemocnice → Rakovník on 561's trip (12 min)."
+    }
+   ]
+  },
+  "584": {
+   "core": [
+    "Rakovník, autobusové stanoviště",
+    "Krupá, Šustna",
+    "Mutějovice",
+    "Mutějovice, Lhota p.Džbánem",
+    "Vinařice [pásmo 7 2]"
+   ],
+   "anchor": "13:30",
+   "note": "Rakovník – Lišany – Krupá – Mutějovice – Lhota pod Džbánem, and from Mutějovice via Třeboc, Džbán, Kroučová and Pochvalov to Vinařice. Rakovník 12:15 and 13:15 run to Lhota and turn at once as 13:00 and 14:00; Rakovník 14:30 runs to Vinařice and turns at once as 15:25. Two Simutrans lines: 584 (Lhota, every 120, modelled at 13:30 where the Lhota trips run) and 584 Vinařice (every 480); off the pattern or listed: Rakovník 12:15, 15:30 and 16:30 to Lhota or Mutějovice, Lhota 13:00, Krupá, Šustna 16:51 and 18:51 → Rakovník.",
+   "sim": [
+    {
+     "name": "584",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Mutějovice, Lhota p.Džbánem",
+       "at": [
+        "13:15"
+       ]
+      },
+      {
+       "fr": "Mutějovice, Lhota p.Džbánem",
+       "to": "Rakovník, autobusové stanoviště",
+       "at": [
+        "14:00"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Rakovník 13:15 → Lhota via Krupá, Mutějovice and Nesuchyně (45 min); Lhota 14:00 back (35 min), a 0-minute turn as in the timetable."
+    },
+    {
+     "name": "584 Vinařice",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Rakovník, autobusové stanoviště",
+       "to": "Vinařice [pásmo 7 2]",
+       "at": [
+        "14:30"
+       ]
+      },
+      {
+       "fr": "Vinařice [pásmo 7 2]",
+       "to": "Rakovník, autobusové stanoviště",
+       "at": [
+        "15:25"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Rakovník 14:30 → Vinařice via Mutějovice, Kroučová and Pochvalov (55 min); Vinařice 15:25 back (55 min), a 0-minute turn as in the timetable."
+    }
+   ]
+  },
+  "711": {
+   "core": [
+    "Louny, Luna",
+    "Louny, autobusové nádraží",
+    "Třeboc",
+    "Rakovník, autobusové stanoviště",
+    "Rakovník, železniční zastávka západ"
+   ],
+   "note": "Louny, Luna – Louny – Cítoliby – Ročov – Třeboc – Hředle – Krupá – Lišany – Rakovník, run by the Ústecký kraj: through trips Rakovník 13:00, 14:20 (from železniční zastávka západ, to Louny, Luna), 17:30 and Louny 12:25 (from Luna), 16:00, plus Louny – Třeboc and Louny – Domoušice, Solopysky trips. 711 runs every 240 on one bus's real round (Rakovník, železniční zastávka západ 14:20 → Louny, Luna; Louny 16:00 → Rakovník), so Třeboc, Louny, sokolovna and Luna, Prokopova and sídliště gen.Kholla are on a line; 711 Domoušice, every 480, is the Louny 14:00 → Solopysky → 14:30 → Louny round, the only service of Solopysky. Off the pattern: Rakovník 13:00, 17:30, Louny 12:30; the Louny – Třeboc trips are listed.",
+   "sim": [
+    {
+     "name": "711",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Rakovník, železniční zastávka západ",
+       "to": "Louny, Luna",
+       "core_to": "Louny, autobusové nádraží",
+       "knot": "Rakovník, autobusové stanoviště",
+       "knot_at": [
+        "14:35"
+       ],
+       "knot_rt": 15
+      },
+      {
+       "fr": "Louny, Luna",
+       "to": "Rakovník, železniční zastávka západ",
+       "knot": "Louny, autobusové nádraží",
+       "knot_at": [
+        "16:00"
+       ],
+       "core_to": "Rakovník, autobusové stanoviště"
+      }
+     ],
+     "why": "Rakovník, železniční zastávka západ 14:20 (autobusové stanoviště 14:35) → Louny, autobusové nádraží → Louny, Luna via Třeboc and Ročov (78 min); Louny, Luna 15:55 → Louny, autobusové nádraží 16:00 → Rakovník (the real 16:00 starts at the autobusové nádraží and ends at the autobusové stanoviště)."
+    },
+    {
+     "name": "711 Domoušice",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Louny, autobusové nádraží",
+       "to": "Domoušice, Solopysky",
+       "at": [
+        "14:00"
+       ]
+      },
+      {
+       "fr": "Domoušice, Solopysky",
+       "to": "Louny, autobusové nádraží",
+       "at": [
+        "14:30"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Louny, autobusové nádraží 14:00 → Ročov → Domoušice, Solopysky (30 min) and back at 14:30 (30 min), a 0-minute turn as in the timetable; the 6:00 / 6:30 round is exact too."
+    }
+   ]
+  }
+ },
+ "unmodelled": {
+  "570": "Step 8: three afternoon trips (Kralovice 12:40 → Rakovník, Rakovník 14:15 → Kralovice, Kralovice 15:10 → Čistá, Čistá 18:27 → Rakovník) on 404's corridor; every stop it serves 13:00–19:00 is on modelled lines: Kralovice, Kožlany, Břežany, Čistá, Všesulov, Zavidov, Petrovice, Příčina and Senomaty, Hostokryje, rozcestí on 404; Lubná, Lubná, pod vrškem and Lubná, závod on 562 Lubná and 581 Senomaty; Rakovník, zem.závod and sídliště gen.Kholla on 581 Senomaty; Rakovník, Prokopova and železniční zastávka západ on 711. Its 12:40 from Kralovice fills 404's midday gap (404 leaves Kralovice 11:40 and 14:40)."
+ },
+ "terminus_alias": {
+  "Praha, Vypich": "Praha, Kukulova"
+ },
+ "terminus_alias_why": "304: buses towards Prague end at Praha, Vypich and leave for Rakovník from Praha, Kukulova, the next stop of the turn (both trips pass Šafránecká); one terminus, timetabled at Kukulova.",
+ "coverage_exceptions": {
+  "Kněževes, železniční zastávka": "Served 13:00–19:00 only by 560's Hořovičky 18:00 → Rakovník, whose way back via the railway halt and Rakovník, nemocnice skips Hokov and Heřmanov (560's own stops); 380 m from Kněževes, u mlýna, which 560, 560 Kolešovice and 760 serve.",
+  "Pustověty": "Served only by the rail replacement bus XS75 (992075) for the works on the Beroun – Rakovník railway; in the regular network the train serves it.",
+  "Roztoky, nádraží [RA]": "Served only by the rail replacement bus XS75 (992075); a railway station, served by the train in the regular network.",
+  "Rakovník": "Rakovník railway station: served only by the rail replacement bus XS75 (992075); the train serves it in the regular network.",
+  "Chbany, Poláky, točna": "Turning loop of Chbany, Poláky, 110 m from Chbany, Poláky, which 415 serves on the way back; served 13:00–19:00 only by 415 Kadaň 14:47 → Praha, Zličín.",
+  "Chlum u Rakovníka": "Served only by the rail replacement bus XS75 (992075); a railway station, served by the train in the regular network."
+ },
+ "owner_checks": [
+  [
+   "560, 415",
+   "Roadside stops left as coverage exceptions: Kněževes, železniční zastávka (380 m from Kněževes, u mlýna, on 560, 560 Kolešovice and 760; served 13:00–19:00 only by Hořovičky 18:00 → Rakovník) and Chbany, Poláky, točna (110 m from Chbany, Poláky, on 415; served only by Kadaň 14:47 → Praha, Zličín).",
+   "Serve both with their own lines, every 480 on the real trip with an untimed return (Hořovičky 18:00 → Kněževes, železniční zastávka → Rakovník; Kadaň 14:47 → Chbany, Poláky, točna → Praha, Zličín): +2 buses."
+  ]
+ ],
+ "notes": "PID Rakovnicko: okres Rakovník (licences 310xxx) and the PID lines whose first stop inwards from the outer end lies in it; PID GTFS of 1 Nov 2026, Monday 2 Nov 2026 (a school day). Every terminus is treated as a loop (typed = real − 1). The Prague-end lines 304, 305, 404, 415 and 417 are timed at both terminals; their Prague stops are on the Prague bus sheet. Most district lines are school-day lines of single trips, each bent onto one real afternoon round on one bus (every 120 to 480); six run every 480 (571, 572 Slabce, 573 Šípy, 574, 584 Vinařice, 711 Domoušice), each kept for stops no other line serves, inside or outside the kraj (owner, 2 Nov 2026: \"Yes, serve every place\"). The 0-minute turns at Hořovičky (573), Lhota pod Džbánem and Vinařice (584) and Domoušice, Solopysky (711 Domoušice) are modelled as in the timetable; this assumes the fork's automatic \"Leave up to\" lets a bus that arrives on the real minute leave although the loop rule types the departure 1 min early. Through-running seen in the timetable: 304 and 577 at Stochov, Slovanka II; 581 and 561 at Senomaty (modelled as 581 Senomaty). Open for the 2 Nov live map: where the 304 Rakovník – Zličín trips (13:20, 14:00, 15:30) go on, and the 304 ↔ 404 and 304 → 306 chains at Praha, Zličín; whether 561 Šamotka 14:10 → Kolešovice 15:26 goes on as 560 Kolešovice 15:30 (one circuit would save a bus); 562 → 561 at Rakovník, střelnice and 562 → 560 at the autobusové stanoviště. Lines 580 and 625 (Kladensko sheet) also serve Rakovník. The save holds one-convoy lines 100304 … 100760 for these numbers, without timetables.",
+ "artifact_url": "https://claude.ai/artifact/3cugFHCZkHEaNjpFymVHfH"
+}

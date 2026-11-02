@@ -1,0 +1,1958 @@
+{
+ "title": "PID Mladoboleslavsko",
+ "oblast": "mladoboleslavsko",
+ "oblast_name": "Mladoboleslavsko",
+ "okres": "Mladá Boleslav",
+ "prefix": "260",
+ "output_html": "PID Mladoboleslavsko.html",
+ "artifact_url": "https://claude.ai/artifact/XnWc4U9zu5gWhBw2UZmeyj",
+ "snapshot": "2026-11-02",
+ "vehicle_day": "2026-11-02",
+ "vehicle_day_label_en": "Monday 2 Nov 2026",
+ "network_state_label": "2 Nov 2026",
+ "gtfs": {
+  "zip": "data/raw/gtfs/2026-11-01/gtfs.zip",
+  "service_date": "20261102",
+  "why": "PID GTFS downloaded Sun 1 Nov 2026 (feed 1-14 Nov). Service day Mon 2 Nov 2026 (the first live-map poll day), a normal school weekday (28 Oct was a holiday and 29-30 Oct autumn school holidays; regional lines run many school-day-only trips)."
+ },
+ "areas": [
+  {
+   "id": "mladoboleslavsko",
+   "name": "Mladoboleslavsko",
+   "prefix": "260",
+   "kind": "regional"
+  }
+ ],
+ "fitwin": [
+  300,
+  1380
+ ],
+ "cycle_lay": 3,
+ "all_termini_are_loops": true,
+ "stop_name_expansions": [],
+ "stop_name_fixed": {},
+ "terminus_alias": {
+  "Roudnice nad Labem, ČSAD": "Roudnice nad Labem, u hřbitova"
+ },
+ "terminus_alias_why": "467: buses towards Roudnice pass Roudnice nad Labem, u hřbitova and end one stop further at Roudnice nad Labem, ČSAD; they leave from u hřbitova. One terminus, timetabled at u hřbitova.",
+ "coverage_exceptions": {
+  "Kosmonosy, Průmyslová": "Factory stop by the Škoda works, 378 m from Kosmonosy, Transcentrum (315, 714, 736); served 13:00–19:00 only by four shift trips (427 13:13, 14:36; 763 13:28; 775 14:17). On the owner checks.",
+  "Horní Bukovina, odbočka": "Roadside stop 795 m from Horní Bukovina, Dolní Bukovina (738); served 13:00–19:00 only by the 738 short trip Dolní Bukovina 14:25 → Mnichovo Hradiště. On the owner checks.",
+  "Klášter Hradiště nad Jizerou, pod pivovarem": "56 m from Klášter Hradiště nad Jizerou (427, 715, 738); served 13:00–19:00 only by the 738 short trip Dolní Bukovina 14:25 → Mnichovo Hradiště. On the owner checks."
+ },
+ "lines": {
+  "315": {
+   "core": [
+    "Mnichovo Hradiště, dopravní terminál",
+    "Mladá Boleslav, autobusové stanoviště",
+    "Benátky nad Jizerou, autobusové stanoviště",
+    "Praha, Černý Most"
+   ],
+   "note": "Praha, Černý Most – Benátky nad Jizerou – Mladá Boleslav – Kosmonosy – Bakov nad Jizerou – Mnichovo Hradiště, every 30 all afternoon: Praha, Černý Most :10 / :40 and Mnichovo Hradiště, dopravní terminál :03 / :33 (from 15:03; before that :28 / :55). Modelled at 16:00 by hand: the busier 13:20–15:20 holds the Mladá Boleslav – Mnichovo Hradiště and Mladá Boleslav – Praha short trips (13:35, 13:55, 14:05, 14:25, 14:35), whose stops are all on the line; they are listed.",
+   "anchor": "16:00",
+   "sim": [
+    {
+     "name": "315",
+     "every": 30,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Mnichovo Hradiště, dopravní terminál",
+       "at": [
+        10
+       ]
+      },
+      {
+       "fr": "Mnichovo Hradiště, dopravní terminál",
+       "to": "Praha, Černý Most",
+       "at": [
+        3
+       ],
+       "core_to": "Tuřice"
+      }
+     ],
+     "why": "Praha, Černý Most :10 / :40 → Mnichovo Hradiště, dopravní terminál (95 min); dopravní terminál :03 / :33 → Praha (97 min), the 17:03 to Tuřice run on to Černý Most."
+    }
+   ]
+  },
+  "345": {
+   "core": [
+    "Praha, Černý Most",
+    "Mladá Boleslav, autobusové stanoviště",
+    "Mnichovo Hradiště, náměstí",
+    "Liberec, autobusové nádraží"
+   ],
+   "note": "Praha, Černý Most – Mladá Boleslav – Mnichovo Hradiště – Hodkovice nad Mohelkou – Liberec, hourly: Praha :30 (no 13:30) and Liberec, autobusové nádraží :40 (no 12:40; Mnichovo Hradiště, náměstí 13:23 fills it). Modelled at 16:00 by hand: 13:40–15:40 is busier only by the Mladá Boleslav – Mnichovo Hradiště short trips (13:43, 13:53, 14:30) and Praha 13:45 → Mladá Boleslav, all listed.",
+   "anchor": "16:00",
+   "sim": [
+    {
+     "name": "345",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Liberec, autobusové nádraží",
+       "at": [
+        30
+       ]
+      },
+      {
+       "fr": "Liberec, autobusové nádraží",
+       "to": "Praha, Černý Most",
+       "at": [
+        40
+       ]
+      }
+     ],
+     "why": "Praha :30 → Liberec via Paceřice, Rohanka and Žďárek, Hvězda (115 min); Liberec :40 → Praha via Paceřice, Husa, hlavní silnice (110 min), each direction by its own real path."
+    }
+   ]
+  },
+  "405": {
+   "core": [
+    "Praha, Černý Most",
+    "Mladá Boleslav, autobusové stanoviště",
+    "Sobotka, náměstí",
+    "Horka u St.Paky, autobusové stanoviště",
+    "Vrchlabí, autobusové stanoviště",
+    "Špindlerův Mlýn, autobusové stanoviště"
+   ],
+   "note": "Praha, Černý Most – Mladá Boleslav – Sobotka – Jičín – Nová Paka – Horka u Staré Paky – Vrchlabí – Špindlerův Mlýn (KAD BUS), every 2 hours: Praha :00 odd hours, Špindlerův Mlýn :00 even hours (13:55 is 5 min off). 405 Vrchlabí carries the Praha 14:35 → Vrchlabí via Dolní Branná, the only service of Dolní Branná, pošta and Studenec, Zálesní Lhota, křižovatka. Listed: Praha 19:00 → Vrchlabí, the Vrchlabí – Špindlerův Mlýn and Vrchlabí – Horka – Nová Paka short trips.",
+   "sim": [
+    {
+     "name": "405",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Špindlerův Mlýn, autobusové stanoviště",
+       "at": [
+        "15:00"
+       ],
+       "stops_via": [
+        "Vrchlabí, pivovar"
+       ]
+      },
+      {
+       "fr": "Špindlerův Mlýn, autobusové stanoviště",
+       "to": "Praha, Černý Most",
+       "at": [
+        "16:00"
+       ],
+       "stops_via": [
+        "Jilemnice, Vejrychovsko",
+        "Studenec, Rovnáčov"
+       ]
+      }
+     ],
+     "why": "Praha :00 odd hours → Špindlerův Mlýn by the 11:00 trip’s path through Vrchlabí, pivovar and nemocnice (177 min); Špindlerův Mlýn :00 even hours → Praha by the 18:00 trip’s path through Jilemnice, Vejrychovsko and Studenec, Rovnáčov (180 min). Both detours are the only afternoon service of those four stops."
+    },
+    {
+     "name": "405 Vrchlabí",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Vrchlabí, autobusové stanoviště",
+       "at": [
+        "14:35"
+       ],
+       "via": [
+        "Dolní Branná, pošta"
+       ]
+      },
+      {
+       "fr": "Vrchlabí, autobusové stanoviště",
+       "to": "Praha, Černý Most",
+       "untimed": true,
+       "notvia": [
+        "Špindlerův Mlýn, autobusové stanoviště"
+       ]
+      }
+     ],
+     "why": "Praha 14:35 → Vrchlabí, autobusové stanoviště via Horka, Studenec, Zálesní Lhota and Dolní Branná (136 min), the real trip; empty return to Praha."
+    }
+   ]
+  },
+  "412": {
+   "core": [
+    "Praha, Černý Most",
+    "Mladá Boleslav, autobusové stanoviště",
+    "Sobotka, náměstí",
+    "Jičín, autobusové stanoviště"
+   ],
+   "note": "Praha, Černý Most – Mladá Boleslav – Sobotka – Jičín, every 2 hours: Praha → Jičín :55 odd hours until 13:55, then 16:00, 18:00, 20:00; Jičín → Praha :35 even hours (10:35 – 16:35). Modelled at 16:00 by hand: 13:30–15:30 is busier only by the Praha – Mladá Boleslav short trips (13:30, 14:30, 14:45, 15:45, 16:30), whose stops are on the line; they are listed. The buses sleep in Jičín and Mladá Boleslav, so Praha sends more out in the afternoon than come back.",
+   "anchor": "16:00",
+   "sim": [
+    {
+     "name": "412",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Jičín, autobusové stanoviště",
+       "at": [
+        "16:00"
+       ]
+      },
+      {
+       "fr": "Jičín, autobusové stanoviště",
+       "to": "Praha, Černý Most",
+       "at": [
+        "16:35"
+       ]
+      }
+     ],
+     "why": "Praha :00 even hours → Jičín (85 min); Jičín :35 even hours → Praha (90 min), 18:35 runs only to Sobotka in reality."
+    }
+   ]
+  },
+  "403": {
+   "core": [
+    "Praha, Černý Most",
+    "Benátky nad Jizerou, autobusové stanoviště",
+    "Dobrovice, autobusové stanoviště",
+    "Rabakov",
+    "Dolní Bousov, náměstí"
+   ],
+   "note": "Praha, Černý Most – Benátky nad Jizerou – Luštěnice – Dobrovice (– Semčice – Žerčice – Ujkovice – Rabakov – Dolní Bousov). The afternoon is Praha 14:30 → Dobrovice / 15:30 → Praha (one bus), 16:30 → Dolní Bousov and 18:30 → Žerčice. Of this sheet’s lines only the Dolní Bousov trips serve Semčice, Žerčice, pod Kobylnicí, Ledce, Ujkovice (2), Prodašice (also on 463) and Dobrovice, Úherce, so 403 is modelled on the real 16:30 / 5:10 pair every 480; the Dobrovice round and the 18:30 run over stops of 315 and 775 and are listed.",
+   "sim": [
+    {
+     "name": "403",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Dolní Bousov, náměstí",
+       "at": [
+        "16:30"
+       ]
+      },
+      {
+       "fr": "Dolní Bousov, náměstí",
+       "to": "Praha, Černý Most",
+       "at": [
+        "5:10"
+       ]
+      }
+     ],
+     "why": "Praha 16:30 → Dolní Bousov via Benátky, Luštěnice, Dobrovice, Semčice and Rabakov (105 min); Dolní Bousov 5:10 → Praha (106 min), the real morning trip, which repeats at 13:10 and 21:10."
+    }
+   ]
+  },
+  "427": {
+   "core": [
+    "Mnichovo Hradiště, dopravní terminál",
+    "Ralsko, Kuřívody",
+    "Mimoň, autobusové stanoviště",
+    "Mimoň, Žitavská"
+   ],
+   "note": "Mnichovo Hradiště – Klášter Hradiště nad Jizerou – Dolní Krupá – Ralsko, Kuřívody – Mimoň, about every 2 hours from Mnichovo Hradiště (13:40, 15:25, 17:45, 18:40 to Mimoň, autobusové stanoviště) and hourly from Mimoň in the late afternoon (14:32 from the autobusové stanoviště, 15:35, 16:35, 17:50). Modelled on the one-bus round Mnichovo Hradiště 15:25 → Mimoň 16:30 / 16:35 → Mnichovo Hradiště, window 15:00–17:00 by hand. Off the pattern and listed: the other trips above, Mladá Boleslav 14:30 → Mimoň and Mimoň 12:15 → Mladá Boleslav, the Kuřívody short trips (16:20 / 17:41).",
+   "anchor": "15:30",
+   "sim": [
+    {
+     "name": "427",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mnichovo Hradiště, dopravní terminál",
+       "to": "Mimoň, Žitavská",
+       "at": [
+        "15:25"
+       ],
+       "core_to": "Mimoň, autobusové stanoviště",
+       "stops_via": [
+        "Rokytá, Horní Rokytá, otočka",
+        "Ralsko, Hvězdov, 1"
+       ]
+      },
+      {
+       "fr": "Mimoň, Žitavská",
+       "to": "Mnichovo Hradiště, dopravní terminál",
+       "at": [
+        "16:35"
+       ],
+       "stops_via": [
+        "Mimoň, železniční stanice"
+       ]
+      }
+     ],
+     "why": "Mnichovo Hradiště 15:25 → Mimoň, Žitavská by its real path round Horní Rokytá and Ralsko, Ploužnice, školka and Hvězdov (65 min); Mimoň, Žitavská 16:35 → Mnichovo Hradiště via Mimoň, železniční stanice, the 17:50 trip’s path (47 min). Those detours are the only afternoon service of Horní Rokytá, otočka, Hvězdov and the station."
+    }
+   ]
+  },
+  "431": {
+   "core": [
+    "Lysá nad Labem, železniční stanice",
+    "Předměřice nad Jizerou, u kostela",
+    "Benátky nad Jizerou, Husovo náměstí",
+    "Boreč, Žebice",
+    "Skalsko, náves"
+   ],
+   "note": "Lysá nad Labem – Stará Lysá – Předměřice nad Jizerou – Benátky nad Jizerou – Boreč – Skalsko (Lutan), a school line: through trips Lysá 14:02 → Skalsko, 16:07 and 18:02 → Boreč, Žebice, Skalsko 13:29 and 15:35 → Lysá, plus short trips. Modelled every 2 hours on the round Lysá 14:02 → Skalsko 15:24 / 15:35 → Lysá (window 14:00–16:00 by hand). 431 Stará Lysá is the one bus of the Lysá school trips (13:34 Byšičky loop, 15:11 → Stará Lysá via Sojovice, 15:50 back), the only service of Sojovice, Lysá nad Labem, Byšičky and Ke Karlovu. Listed: Předměřice – Benátky – Kochánky shorts, Boreč 17:35 → Předměřice, Lysá 17:17 → Kochánky and back.",
+   "anchor": "14:30",
+   "sim": [
+    {
+     "name": "431",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Lysá nad Labem, železniční stanice",
+       "to": "Skalsko, náves",
+       "at": [
+        "14:02"
+       ],
+       "core_to": "Boreč, Žebice"
+      },
+      {
+       "fr": "Skalsko, náves",
+       "to": "Lysá nad Labem, železniční stanice",
+       "at": [
+        "15:35"
+       ]
+      }
+     ],
+     "why": "Lysá nad Labem, železniční stanice :02 even hours → Skalsko (82 min; 16:07 and 18:02 end at Boreč, Žebice); Skalsko :35 odd hours → Lysá (83 min)."
+    },
+    {
+     "name": "431 Stará Lysá",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Lysá nad Labem, železniční stanice",
+       "to": "Lysá nad Labem, Byšičky",
+       "at": [
+        "13:34"
+       ]
+      },
+      {
+       "fr": "Lysá nad Labem, Byšičky",
+       "to": "Lysá nad Labem, železniční stanice",
+       "at": [
+        "13:46"
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Lysá nad Labem, železniční stanice",
+       "to": "Stará Lysá, Čihadla",
+       "at": [
+        "15:11"
+       ],
+       "via": [
+        "Sojovice"
+       ]
+      },
+      {
+       "fr": "Stará Lysá, Čihadla",
+       "to": "Lysá nad Labem, železniční stanice",
+       "at": [
+        "15:50"
+       ],
+       "starts": true,
+       "lay": 0
+      }
+     ],
+     "why": "One bus as in reality, every 480: Lysá 13:34 → Byšičky → 13:46 → Lysá (0-minute turn as in the timetable), Lysá 15:11 → Sojovice → Stará Lysá, Čihadla (39 min) → 15:50 → Lysá (0-minute turn)."
+    }
+   ]
+  },
+  "442": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Benátky nad Jizerou, autobusové stanoviště",
+    "Lysá nad Labem, železniční stanice",
+    "Benátky nad Jizerou, Dražice, dvůr"
+   ],
+   "note": "Mladá Boleslav – Benátky nad Jizerou – Milovice – Lysá nad Labem, hourly: Lysá :18 (14:18 – 19:18; 16:18 and 18:18 end at Benátky), Mladá Boleslav :31 (14:31, 15:31; 16:36, 18:38 later), modelled at its anchor 14:50. 442 Dražice is the Benátky – Dražice, dvůr shuttle, one bus all day with 1–5 min turns. Off the pattern: Mladá Boleslav 12:23, 13:23, 16:36, 18:38; Lysá 12:06, 13:01; Benátky 18:37 → Lysá.",
+   "sim": [
+    {
+     "name": "442",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Lysá nad Labem, železniční stanice",
+       "at": [
+        31
+       ]
+      },
+      {
+       "fr": "Lysá nad Labem, železniční stanice",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        18
+       ],
+       "core_to": "Benátky nad Jizerou, autobusové stanoviště",
+       "stops_via": [
+        "Benátky nad Jizerou, Dražice, závod"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :31 → Lysá direct (58 min; 14:31 runs via Husovo náměstí, which 431 serves); Lysá :18 → Mladá Boleslav round Dražice, dvůr, Na Štěpničce and závod, the 17:18 trip’s path (59 min), závod’s only afternoon service; the 16:18 Benátky trip is run on to Mladá Boleslav."
+    },
+    {
+     "name": "442 Dražice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benátky nad Jizerou, autobusové stanoviště",
+       "to": "Benátky nad Jizerou, Dražice, dvůr",
+       "at": [
+        "14:38",
+        "14:58",
+        "15:15",
+        "15:38",
+        "16:08"
+       ],
+       "rt": 6,
+       "stops": [
+        "Benátky nad Jizerou, autobusové stanoviště",
+        "Benátky nad Jizerou, Dražická",
+        "Benátky nad Jizerou, u hřbitova",
+        "Benátky nad Jizerou, Dražice, Na Štěpničce",
+        "Benátky nad Jizerou, Dražice, dvůr"
+       ]
+      },
+      {
+       "fr": "Benátky nad Jizerou, Dražice, dvůr",
+       "to": "Benátky nad Jizerou, autobusové stanoviště",
+       "at": [
+        "14:26",
+        "14:48",
+        "15:05",
+        "15:26",
+        "15:55"
+       ],
+       "rt": 8,
+       "stops": [
+        "Benátky nad Jizerou, Dražice, dvůr",
+        "Benátky nad Jizerou, Dražice, Na Štěpničce",
+        "Benátky nad Jizerou, u hřbitova",
+        "Benátky nad Jizerou, Dražická",
+        "Benátky nad Jizerou, autobusové stanoviště"
+       ]
+      }
+     ],
+     "why": "Benátky nad Jizerou, autobusové stanoviště 14:38, 14:58, 15:15, 15:38, 16:08 → Dražice, dvůr (6 min, by Dražická); back 14:26, 14:48, 15:05, 15:26, 15:55 (8 min), every 120, one bus. The trips via Husovo náměstí and Vaněčkova (on 431 and 768) run the short way in the game."
+    }
+   ]
+  },
+  "467": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Mělník, autobusové nádraží",
+    "Roudnice nad Labem, u hřbitova"
+   ],
+   "note": "Mladá Boleslav – Mělník – Roudnice nad Labem, hourly: Mladá Boleslav :30 (17:35 is 5 min off), Roudnice nad Labem, u hřbitova :45 (13:30 and 14:30 are 15 min off). Buses arrive at Roudnice nad Labem, ČSAD and leave from u hřbitova (one terminus). Listed: the Mělník – Roudnice and Mladá Boleslav – Mělník short trips.",
+   "sim": [
+    {
+     "name": "467",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Roudnice nad Labem, u hřbitova",
+       "at": [
+        30
+       ]
+      },
+      {
+       "fr": "Roudnice nad Labem, u hřbitova",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        45
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :30 → Roudnice nad Labem, u hřbitova (96 min, on to ČSAD); u hřbitova :45 → Mladá Boleslav (100 min)."
+    }
+   ]
+  },
+  "699": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Chotětov",
+    "Bezno",
+    "Kadlín"
+   ],
+   "note": "Mladá Boleslav – Chotětov – Bezno – Kadlín. Mladá Boleslav → Chotětov every 2 hours at :30 (12:30 – 18:30); the buses come back from Chotětov as 769 (13:10, 15:10, via Doubravička) or 699 (17:10): 0–3 min turns, so 699 and 769 are one Simutrans line, as the buses run. 699 Kadlín is the Bezno – Kadlín shuttle (15:00 / 15:38, 17:00 / 17:38), the only service of Kadlín, Velké Všelisy (2) and Nemyslovice. Off the pattern: Chotětov 12:40 and 14:45 → Mladá Boleslav; Bezno – Velké Všelisy, Zamachy trips listed.",
+   "sim": [
+    {
+     "name": "699",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Chotětov",
+       "at": [
+        "16:30"
+       ]
+      },
+      {
+       "fr": "Chotětov",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "17:10"
+       ],
+       "lines": [
+        "699",
+        "769"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :30 even hours → Chotětov (37 min); Chotětov :10 odd hours → Mladá Boleslav by 769’s path through Doubravička and Strenice, Horecká (55 min; the 17:10 is a 699 trip by the direct road)."
+    },
+    {
+     "name": "699 Kadlín",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Bezno",
+       "to": "Kadlín",
+       "at": [
+        "17:00"
+       ]
+      },
+      {
+       "fr": "Kadlín",
+       "to": "Bezno",
+       "at": [
+        "15:38"
+       ]
+      }
+     ],
+     "why": "Bezno :00 odd hours → Kadlín (19 min); Kadlín :38 odd hours → Bezno (19 min), one bus."
+    }
+   ]
+  },
+  "700": {
+   "core": [
+    "Praha, Černý Most",
+    "Mladá Boleslav, autobusové stanoviště",
+    "Tanvald, Terminál u železniční stanice",
+    "Harrachov, autobusové nádraží"
+   ],
+   "note": "Praha, Černý Most – Mladá Boleslav – Turnov – Železný Brod – Tanvald – Harrachov (BusLine LK, KAD BUS): Praha 15:15 → Harrachov and 17:45 → Tanvald, Tanvald 6:00 and 9:35 → Praha. Modelled every 480 on the 15:15, the only afternoon service of Tanvald, Desná, Kořenov and Harrachov; together with 720 and 730 it fills the hourly :15 departures from Praha towards Turnov.",
+   "sim": [
+    {
+     "name": "700",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Harrachov, autobusové nádraží",
+       "at": [
+        "15:15"
+       ]
+      },
+      {
+       "fr": "Harrachov, autobusové nádraží",
+       "to": "Praha, Černý Most",
+       "untimed": true
+      }
+     ],
+     "why": "Praha 15:15 → Harrachov (150 min), the real trip; empty return to Praha."
+    }
+   ]
+  },
+  "712": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Katusice",
+    "Březovice",
+    "Bělá pod Bezdězem, Atmos"
+   ],
+   "note": "Mladá Boleslav – Katusice – Březovice – Bělá pod Bezdězem, Atmos, every 2 hours: Mladá Boleslav :35 even hours (14:35 → Bezdědice, 16:35 → Březovice), Bělá :15 even hours (14:15, 16:15, 20:15). Off the pattern: Mladá Boleslav 12:00 → Březovice; the Mladá Boleslav – Katusice shorts (13:10, 15:15, back 15:48) and Katusice 13:40 → Bělá are listed.",
+   "sim": [
+    {
+     "name": "712",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Bělá pod Bezdězem, Atmos",
+       "at": [
+        "16:35"
+       ],
+       "core_to": "Březovice"
+      },
+      {
+       "fr": "Bělá pod Bezdězem, Atmos",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "16:15"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :35 even hours → Bělá pod Bezdězem, Atmos (59 min; 16:35 ends at Březovice and 14:35 goes on to Bezdědice in reality); Bělá :15 even hours → Mladá Boleslav (61 min)."
+    }
+   ]
+  },
+  "713": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Dolní Bousov, Horní Bousov",
+    "Sobotka, náměstí"
+   ],
+   "note": "Mladá Boleslav – Obruby – Dolní Bousov – Sobotka, every 2 hours: Mladá Boleslav 14:25, 16:20, 18:20, Sobotka 15:10, 17:00, 19:00, one bus with 2-min turns at Sobotka. Off the pattern: Mladá Boleslav 14:25 (5 min), Sobotka 12:35 and 15:10.",
+   "sim": [
+    {
+     "name": "713",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Sobotka, náměstí",
+       "at": [
+        "16:20"
+       ]
+      },
+      {
+       "fr": "Sobotka, náměstí",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "17:00"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :20 even hours → Sobotka (38 min); Sobotka :00 odd hours → Mladá Boleslav (38 min), a 2-minute turn as in the timetable."
+    }
+   ]
+  },
+  "714": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Kněžmost, náměstí",
+    "Kněžmost, Srbsko",
+    "Dobšín",
+    "Sobotka, škola"
+   ],
+   "note": "Mladá Boleslav – Kosmonosy – Kněžmost – Branžež – Srbsko (– Dobšín), plus one Sobotka round. The buses sleep at Srbsko and Dobšín: out 14:30, 17:05, 19:05, back only 12:37 and 17:17 (from Dobšín 17:10), so 714 runs at the inbound rate, every 240. 714 Sobotka is the one-bus round Mladá Boleslav 13:05 → Sobotka, škola / 14:10 → Kněžmost via Podkost / Kněžmost 15:40 → Mladá Boleslav, the only service of Libošovice. Listed: the Mladá Boleslav – Kněžmost, náměstí shorts (14:00, 15:10; back 13:35, 14:05, 14:40) and Mladá Boleslav 17:05 (bus going home).",
+   "anchor": "16:00",
+   "sim": [
+    {
+     "name": "714",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Kněžmost, Srbsko",
+       "at": [
+        "14:30"
+       ],
+       "notvia": [
+        "Sobotka, škola"
+       ]
+      },
+      {
+       "fr": "Kněžmost, Srbsko",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "17:17"
+       ],
+       "notvia": [
+        "Sobotka, škola"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav 14:30 → Kněžmost, Srbsko (40 min); Srbsko 17:17 → Mladá Boleslav (40 min; the trip starts at Dobšín 17:10). Both real, every 240."
+    },
+    {
+     "name": "714 Sobotka",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Sobotka, škola",
+       "at": [
+        "13:05"
+       ],
+       "rt": 61
+      },
+      {
+       "fr": "Sobotka, škola",
+       "to": "Kněžmost, náměstí",
+       "at": [
+        "14:10"
+       ],
+       "rt": 48
+      },
+      {
+       "fr": "Kněžmost, náměstí",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "15:40"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav 13:05 → Sobotka, škola via Branžež and Libošovice (61 min); Sobotka, škola 14:10 → Kněžmost, náměstí via Podkost, hrad Kost and Dobšín (48 min); Kněžmost 15:40 → Mladá Boleslav (22 min). All real, every 480, one bus."
+    }
+   ]
+  },
+  "715": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Bakov nad Jizerou, železniční zastávka",
+    "Mnichovo Hradiště, dopravní terminál",
+    "Žďár, Žehrov"
+   ],
+   "note": "Mladá Boleslav – Bakov nad Jizerou – Ptýrov – Mnichovo Hradiště – Žďár, Žehrov, a school line in pieces: Bakov, železniční zastávka ↔ Žďár, Žehrov every 2 hours (Bakov 15:40, 17:35; Žehrov 16:28, 18:28) and Mnichovo Hradiště ↔ Žehrov (Žehrov 15:38 → Mnichovo Hradiště, 16:45 back). Two Simutrans lines, one bus each. Listed: Mladá Boleslav 13:00 → Mnichovo Hradiště, 14:35 → Žehrov, Žehrov 12:18 → Mladá Boleslav, the Mnichovo Hradiště – Bakov trips (13:39, 15:09; 14:15 back) and Žehrov 13:18.",
+   "sim": [
+    {
+     "name": "715",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Bakov nad Jizerou, železniční zastávka",
+       "to": "Žďár, Žehrov",
+       "at": [
+        "15:40"
+       ]
+      },
+      {
+       "fr": "Žďár, Žehrov",
+       "to": "Bakov nad Jizerou, železniční zastávka",
+       "at": [
+        "16:28"
+       ]
+      }
+     ],
+     "why": "Bakov nad Jizerou, železniční zastávka :40 odd hours → Žďár, Žehrov (45 min; 17:35 is 5 min off); Žehrov :28 even hours → Bakov (46 min), a 3-minute turn as in the timetable."
+    },
+    {
+     "name": "715 Mnichovo Hradiště",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mnichovo Hradiště, dopravní terminál",
+       "to": "Žďár, Žehrov",
+       "at": [
+        "16:45"
+       ]
+      },
+      {
+       "fr": "Žďár, Žehrov",
+       "to": "Mnichovo Hradiště, dopravní terminál",
+       "at": [
+        "15:38"
+       ]
+      }
+     ],
+     "why": "Mnichovo Hradiště, dopravní terminál :45 even hours → Žďár, Žehrov (30 min); Žehrov :38 odd hours → Mnichovo Hradiště (28 min)."
+    }
+   ]
+  },
+  "716": {
+   "core": [
+    "Mnichovo Hradiště, dopravní terminál",
+    "Mnichovo Hradiště, Sychrov",
+    "Boseň, Mužský"
+   ],
+   "note": "Mnichovo Hradiště – Sychrov loop – Boseň, Mužský. One bus: Mnichovo Hradiště 15:05 → round Sychrov → Mužský 15:59 / 16:22 → Mnichovo Hradiště, plus Sychrov loops 13:47, 15:50, 17:45 and Mužský 13:42 → Mnichovo Hradiště direct. Modelled every 2 hours on the Mužský round (window 15:00–17:00 by hand); the loops run over stops of that line and are listed.",
+   "anchor": "15:30",
+   "sim": [
+    {
+     "name": "716",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mnichovo Hradiště, dopravní terminál",
+       "to": "Boseň, Mužský",
+       "at": [
+        "15:05"
+       ]
+      },
+      {
+       "fr": "Boseň, Mužský",
+       "to": "Mnichovo Hradiště, dopravní terminál",
+       "at": [
+        "16:22"
+       ]
+      }
+     ],
+     "why": "Mnichovo Hradiště 15:05 → Mužský round the Sychrov loop (Podolí, Kruhy, Sychrov) and Lhotice (54 min); Mužský 16:22 → Mnichovo Hradiště (23 min)."
+    }
+   ]
+  },
+  "717": {
+   "core": [
+    "Mnichovo Hradiště, dopravní terminál",
+    "Turnov, Na Lukách"
+   ],
+   "note": "Mnichovo Hradiště – Svijany – Příšovice – Turnov, exactly every 2 hours: Turnov, Na Lukách :32 even hours, Mnichovo Hradiště :50 even hours. Two buses as in reality (each waits about an hour at Turnov); its departures follow 315 arrivals at Mnichovo Hradiště (6 of 7).",
+   "sim": [
+    {
+     "name": "717",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mnichovo Hradiště, dopravní terminál",
+       "to": "Turnov, Na Lukách",
+       "at": [
+        "16:50"
+       ]
+      },
+      {
+       "fr": "Turnov, Na Lukách",
+       "to": "Mnichovo Hradiště, dopravní terminál",
+       "at": [
+        "16:32"
+       ]
+      }
+     ],
+     "why": "Mnichovo Hradiště :50 even hours → Turnov, Na Lukách (37 min); Turnov :32 even hours → Mnichovo Hradiště (33 min)."
+    }
+   ]
+  },
+  "718": {
+   "core": [
+    "Mnichovo Hradiště, dopravní terminál",
+    "Kněžmost, náměstí",
+    "Dolní Bousov, náměstí",
+    "Sobotka, náměstí"
+   ],
+   "note": "Mnichovo Hradiště – Kněžmost – Dolní Bousov – Sobotka, hourly: Mnichovo Hradiště :15 (14:20 is 5 min off; 17:15 runs only to Kněžmost, Malobratřice), Sobotka :03 (14:08 and 17:05 later), 2-min turns at Sobotka. Listed: Mnichovo Hradiště 18:18 → Kněžmost and back 18:35.",
+   "sim": [
+    {
+     "name": "718",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Mnichovo Hradiště, dopravní terminál",
+       "to": "Sobotka, náměstí",
+       "at": [
+        15
+       ],
+       "core_to": "Kněžmost, náměstí"
+      },
+      {
+       "fr": "Sobotka, náměstí",
+       "to": "Mnichovo Hradiště, dopravní terminál",
+       "at": [
+        3
+       ]
+      }
+     ],
+     "why": "Mnichovo Hradiště :15 → Sobotka (46 min; the 17:15 to Kněžmost, Malobratřice, otočka is run on to Sobotka); Sobotka :03 → Mnichovo Hradiště (42 min), a 2-minute turn as in the timetable."
+    }
+   ]
+  },
+  "719": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Bakov nad Jizerou, Zvířetice"
+   ],
+   "note": "Mladá Boleslav – Bítouchov – Bakov nad Jizerou, Zvířetice, one bus with 1-min turns at Zvířetice: Mladá Boleslav 12:15, 14:45, 16:45, Zvířetice 12:55, 15:25. Modelled every 2 hours (window 15:00–17:00 by hand; Zvířetice has no departure after 15:25). Off the pattern: 12:15 and 12:55.",
+   "anchor": "15:30",
+   "sim": [
+    {
+     "name": "719",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Bakov nad Jizerou, Zvířetice",
+       "at": [
+        "16:45"
+       ]
+      },
+      {
+       "fr": "Bakov nad Jizerou, Zvířetice",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "15:25"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :45 even hours → Zvířetice (39 min); Zvířetice :25 odd hours → Mladá Boleslav (39 min), a 1-minute turn as in the timetable."
+    }
+   ]
+  },
+  "720": {
+   "core": [
+    "Praha, Černý Most",
+    "Mladá Boleslav, autobusové stanoviště",
+    "Turnov, Na Lukách",
+    "Semily, Terminál",
+    "Mladá Boleslav, hl.nádraží"
+   ],
+   "note": "Praha, Černý Most – Mladá Boleslav – Turnov – Železný Brod – Semily (BusLine LK, KAD BUS). Express trips Praha → Semily 13:15, 14:15, 17:15 (on to Rokytnice), 18:15 and Semily → Praha 13:50, 15:50 make 720 every 240 with two slots each way; with 700 (15:15) and 730 (16:15) Praha has a departure towards Turnov every hour at :15. 720 Semily is the stopping trip Mladá Boleslav, hlavní nádraží 14:10 → Semily, 20:12 back, exactly every 480, the only service of the old road: Mladá Boleslav, hlavní nádraží and Václava Klementa, Turnov, Dolánky, Vápeník, Přepeře, u hřiště, Malá Skála (Křížky, na Labi), Železný Brod (Terminál u železniční stanice, nová škola, Dvírka, Splzov) and Semily (Luční, Letná, Podmoklice). Listed: the Praha – Turnov, Na Lukách trips (12:15, 16:45; back 12:25, 13:25, 15:25), whose stops are on 720.",
+   "sim": [
+    {
+     "name": "720",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Semily, Terminál",
+       "at": [
+        "13:15",
+        "14:15"
+       ]
+      },
+      {
+       "fr": "Semily, Terminál",
+       "to": "Praha, Černý Most",
+       "at": [
+        "13:50",
+        "15:50"
+       ]
+      }
+     ],
+     "why": "Praha :15 at 13:15, 14:15, 17:15, 18:15 → Semily, Terminál (115 min); Semily :50 at 13:50, 15:50 → Praha (115 min); every 240. The Semily repeats 17:50 and 19:50 have no real trip (the buses sleep in Semily and Rokytnice)."
+    },
+    {
+     "name": "720 Semily",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, hl.nádraží",
+       "to": "Semily, Terminál",
+       "at": [
+        "14:10"
+       ]
+      },
+      {
+       "fr": "Semily, Terminál",
+       "to": "Mladá Boleslav, hl.nádraží",
+       "at": [
+        "20:12"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav, hlavní nádraží 14:10 → Semily by the old road through Turnov and Železný Brod (105 min); Semily 20:12 → Mladá Boleslav, hlavní nádraží (88 min); both real, every 480 (also 6:10, 4:12)."
+    }
+   ]
+  },
+  "721": {
+   "core": [
+    "Mnichovo Hradiště, dopravní terminál",
+    "Všelibice, Vrtky",
+    "Český Dub, náměstí"
+   ],
+   "note": "Český Dub – Všelibice – Chocnějovice – Mohelnice nad Jizerou – Mnichovo Hradiště (ČSAD Liberec): Český Dub 13:35, 17:40 → Mnichovo Hradiště, 15:35 → Vrtky; Mnichovo Hradiště 15:08, 17:43 → Český Dub; Vrtky 16:11 → Český Dub. Modelled every 240 on the one-bus round Český Dub 13:35 → Mnichovo Hradiště / 15:08 → Český Dub. Listed: 17:40, 17:43 and the Vrtky trips.",
+   "sim": [
+    {
+     "name": "721",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Český Dub, náměstí",
+       "to": "Mnichovo Hradiště, dopravní terminál",
+       "at": [
+        "13:35"
+       ],
+       "stops_via": [
+        "Český Dub, Severka"
+       ]
+      },
+      {
+       "fr": "Mnichovo Hradiště, dopravní terminál",
+       "to": "Český Dub, náměstí",
+       "at": [
+        "15:08"
+       ]
+      }
+     ],
+     "why": "Český Dub 13:35 → Mnichovo Hradiště via Severka, Loukovičky, Bohumileč, Libíč, Březová and Borek (42 min); Mnichovo Hradiště 15:08 → Český Dub (44 min); the real round, every 240."
+    }
+   ]
+  },
+  "722": {
+   "core": [
+    "Mnichovo Hradiště, dopravní terminál",
+    "Hlavice, Vápno, Na Písku",
+    "Český Dub, náměstí"
+   ],
+   "note": "Mnichovo Hradiště – Klášter Hradiště nad Jizerou – Strážiště – Hlavice – Český Dub, hourly: Mnichovo Hradiště :33 (15:23 instead of 15:33, no 17:33), Český Dub :42 (14:32 instead of 14:42, no 17:42). Approximate (on the owner checks): the hourly row leaves the 15:33 slot 10 min from the real 15:23.",
+   "sim": [
+    {
+     "name": "722",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Mnichovo Hradiště, dopravní terminál",
+       "to": "Český Dub, náměstí",
+       "at": [
+        33
+       ]
+      },
+      {
+       "fr": "Český Dub, náměstí",
+       "to": "Mnichovo Hradiště, dopravní terminál",
+       "at": [
+        42
+       ]
+      }
+     ],
+     "why": "Mnichovo Hradiště :33 → Český Dub (50 min); Český Dub :42 → Mnichovo Hradiště (48 min)."
+    }
+   ]
+  },
+  "723": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Libáň, autobusové stanoviště",
+    "Kopidlno, náměstí"
+   ],
+   "note": "Mladá Boleslav – Březno – Dětenice – Libáň – Kopidlno (BusLine KHK), every 2 hours: Kopidlno :15 odd hours (13:15, 15:15, 17:15; 12:15 and 20:15 even), Mladá Boleslav :40 even hours (10:40, 16:40, 18:40; 13:40 odd and 14:35). Off the pattern: Kopidlno 12:15, 20:15; Mladá Boleslav 13:40, 14:35 (5 min).",
+   "sim": [
+    {
+     "name": "723",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kopidlno, náměstí",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "17:15"
+       ]
+      },
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Kopidlno, náměstí",
+       "at": [
+        "16:40"
+       ]
+      }
+     ],
+     "why": "Kopidlno :15 odd hours → Mladá Boleslav (60 min); Mladá Boleslav :40 even hours → Kopidlno (62 min)."
+    }
+   ]
+  },
+  "724": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Veselice, dvůr",
+    "Libáň, autobusové stanoviště"
+   ],
+   "note": "Mladá Boleslav – Dlouhá Lhota – Veselice – Libáň, one bus every 2 hours: Mladá Boleslav :30 odd hours, Libáň :30 even hours (12:25 is 5 min off). Off the pattern: Mladá Boleslav 12:30, 14:40, 13:30 → Veselice, dvůr; the Březno – Řitonice trip is listed.",
+   "sim": [
+    {
+     "name": "724",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Libáň, autobusové stanoviště",
+       "at": [
+        "15:30"
+       ]
+      },
+      {
+       "fr": "Libáň, autobusové stanoviště",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "16:30"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :30 odd hours → Libáň (47 min); Libáň :30 even hours → Mladá Boleslav (51 min)."
+    }
+   ]
+  },
+  "725": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Zelenecká Lhota, Záhuby",
+    "Sobotka, náměstí",
+    "Dolní Bousov, Vlčí Pole"
+   ],
+   "note": "Mladá Boleslav – Zelenecká Lhota – Markvartice – Sobotka, a school line: Mladá Boleslav 14:30 → Sobotka, Sobotka 14:03 and 16:03 → Mladá Boleslav, Mladá Boleslav 12:30 and 15:30 → Dolní Bousov, Vlčí Pole, 17:30 → Záhuby. 725 runs every 240 on the round 14:30 / 16:03; 725 Vlčí Pole every 480 on the 15:30, the only service of Vlčí Pole and Zelenecká Lhota, odbočka Záhuby. Listed: Sobotka 14:03, Mladá Boleslav 17:30, the Záhuby trips (12:23, 13:37 → Sobotka, 16:23 → Markvartice).",
+   "sim": [
+    {
+     "name": "725",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Sobotka, náměstí",
+       "at": [
+        "14:30"
+       ]
+      },
+      {
+       "fr": "Sobotka, náměstí",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "16:03"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav 14:30 → Sobotka via Zelenecká Lhota, Záhuby and Markvartice (75 min); Sobotka 16:03 → Mladá Boleslav (72 min); both real, every 240."
+    },
+    {
+     "name": "725 Vlčí Pole",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Dolní Bousov, Vlčí Pole",
+       "at": [
+        "15:30"
+       ]
+      },
+      {
+       "fr": "Dolní Bousov, Vlčí Pole",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "untimed": true
+      }
+     ],
+     "why": "Mladá Boleslav 15:30 → Dolní Bousov, Vlčí Pole (52 min), the real trip; empty return."
+    }
+   ]
+  },
+  "726": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Březno",
+    "Žerčice"
+   ],
+   "note": "Mladá Boleslav – Nová Telib – Březno – Žerčice, one bus: Mladá Boleslav 14:45 → Žerčice / 15:25 → Mladá Boleslav / 16:45 → Žerčice (12:10, 12:45 earlier; Březno shorts 12:25 / 13:02). Modelled every 2 hours (window 15:00–17:00 by hand; Žerčice has no departure after 15:25).",
+   "anchor": "15:30",
+   "sim": [
+    {
+     "name": "726",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Žerčice",
+       "at": [
+        "16:45"
+       ]
+      },
+      {
+       "fr": "Žerčice",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "15:25"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :45 even hours → Žerčice (30 min); Žerčice :25 odd hours → Mladá Boleslav (28 min)."
+    }
+   ]
+  },
+  "728": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Mšeno",
+    "Mšeno, škola"
+   ],
+   "note": "Mladá Boleslav – Krnsko – Strenice – Skalsko – Mšeno, every 2 hours from Mšeno at :08 even hours (exact all day), from Mladá Boleslav 12:45, 13:45, 14:40, 17:45. Modelled at its anchor 14:10. The way back runs the 6:06 trip’s loop through Mšeno, škola and Stránka (Tajná, Ostrý, rozcestí); Stránka, Ostrý, rozcestí has no other line (the 14:40 runs the same loop at the end of its trip). Off the pattern: Mladá Boleslav 12:45, 14:40.",
+   "sim": [
+    {
+     "name": "728",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Mšeno",
+       "at": [
+        "13:45"
+       ]
+      },
+      {
+       "fr": "Mšeno",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "14:08"
+       ],
+       "stops_via": [
+        "Stránka, Tajná"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :45 odd hours → Mšeno (62 min); Mšeno :08 even hours → Mladá Boleslav through Mšeno, škola and Stránka, the 6:06 trip’s path (81 min; the afternoon trips run direct in 66 min)."
+    }
+   ]
+  },
+  "729": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Doubravička",
+    "Boreč, Žebice"
+   ],
+   "note": "Mladá Boleslav – Krnsko – Doubravička (– Boreč, Žebice), about every 2½ hours: Mladá Boleslav 11:45 and 14:30 → Doubravička, 16:45 and 19:15 → Boreč; Doubravička 12:35, 15:35 and Boreč 17:43, 20:18 → Mladá Boleslav. Modelled every 240 on the real round Mladá Boleslav 16:45 → Boreč / 17:43 → Mladá Boleslav. Listed: the Doubravička trips and 19:15 / 20:18.",
+   "sim": [
+    {
+     "name": "729",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Boreč, Žebice",
+       "at": [
+        "16:45"
+       ],
+       "core_to": "Doubravička"
+      },
+      {
+       "fr": "Boreč, Žebice",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "17:43"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav 16:45 → Boreč, Žebice (56 min); Boreč 17:43 → Mladá Boleslav (57 min), a 2-minute turn as in the timetable; every 240."
+    }
+   ]
+  },
+  "730": {
+   "core": [
+    "Praha, Černý Most",
+    "Mladá Boleslav, autobusové stanoviště",
+    "Vítkovice, hotel Praha",
+    "Vítkovice, Horní Mísečky"
+   ],
+   "note": "Praha, Černý Most – Mladá Boleslav – Turnov – Semily – Jilemnice – Vítkovice, Horní Mísečky (BusLine LK): one trip each way, Praha 16:15 → Horní Mísečky and Vítkovice 5:49 → Praha. Modelled every 480 on the 16:15, the only service of Vítkovice, Jestřabí, Košťálov and the other stops beyond Semily; it is the :15 slot from Praha at 16:15 between 700 and 720.",
+   "sim": [
+    {
+     "name": "730",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Praha, Černý Most",
+       "to": "Vítkovice, Horní Mísečky",
+       "at": [
+        "16:15"
+       ]
+      },
+      {
+       "fr": "Vítkovice, Horní Mísečky",
+       "to": "Praha, Černý Most",
+       "untimed": true
+      }
+     ],
+     "why": "Praha 16:15 → Vítkovice, Horní Mísečky (175 min), the real trip; empty return to Praha."
+    }
+   ]
+  },
+  "731": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Katusice",
+    "Březovice"
+   ],
+   "note": "Mladá Boleslav – Katusice – Březovice (– Bělá pod Bezdězem, Bezdědice), every 2 hours: Mladá Boleslav :45 odd hours (15:45, 17:45, 19:45, 9:45), Březovice :33 odd hours (Katusice :40; the 12:40 and 13:40 start at Katusice). Off the pattern: Mladá Boleslav 14:30, 11:35; Katusice 12:40.",
+   "sim": [
+    {
+     "name": "731",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Březovice",
+       "at": [
+        "15:45"
+       ]
+      },
+      {
+       "fr": "Březovice",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "knot": "Katusice",
+       "knot_at": [
+        "15:40"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :45 odd hours → Březovice (42 min); Březovice :33 odd hours → Mladá Boleslav (42 min; timed at Katusice :40)."
+    }
+   ]
+  },
+  "732": {
+   "core": [
+    "Bělá pod Bezdězem, Bezdědice",
+    "Březovice",
+    "Čistá, hřiště",
+    "Čistá, škola"
+   ],
+   "note": "Bělá pod Bezdězem, Bezdědice – Březovice – Čistá, a shuttle: Bezdědice 15:24, 17:19, 18:19 (12:32 earlier), Čistá, škola 15:48, 17:43, 18:43 (Čistá, hřiště 14:44). Modelled every 2 hours on Bezdědice 17:19 / Čistá 15:48. Its trips from Čistá, hřiště meet 737 (3 of 3 within 5 min), the same buses. Off the pattern: 15:24, 18:19, 17:43, 18:43, 14:44.",
+   "sim": [
+    {
+     "name": "732",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Bělá pod Bezdězem, Bezdědice",
+       "to": "Čistá, škola",
+       "at": [
+        "17:19"
+       ]
+      },
+      {
+       "fr": "Čistá, škola",
+       "to": "Bělá pod Bezdězem, Bezdědice",
+       "at": [
+        "15:48"
+       ]
+      }
+     ],
+     "why": "Bezdědice :19 odd hours → Čistá, škola (19 min); Čistá, škola :48 odd hours → Bezdědice (19 min)."
+    }
+   ]
+  },
+  "733": {
+   "core": [
+    "Mnichovo Hradiště, dopravní terminál",
+    "Sezemice",
+    "Turnov, Na Lukách",
+    "Vlastibořice, obec"
+   ],
+   "note": "Mnichovo Hradiště – Sezemice – Loukovec – Vlastibořice – Turnov, every 2 hours, with the Turnov – Vlastibořice round on the same bus: Mnichovo Hradiště :22 even hours → Turnov :35, Turnov :35 odd → Vlastibořice, obec → :04 even → Turnov, Turnov :35 even → Mnichovo Hradiště (0–4 min turns, 5 of 10 at Turnov). Modelled as that circuit, two buses. The Sezemice → Mnichovo Hradiště trips (13:08, 15:36, 18:08) are the way back of 734. Listed: Turnov 12:30 → Mnichovo Hradiště, náměstí, Kobyly 19:02 → Turnov.",
+   "sim": [
+    {
+     "name": "733",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mnichovo Hradiště, dopravní terminál",
+       "to": "Turnov, Na Lukách",
+       "at": [
+        "16:22"
+       ]
+      },
+      {
+       "fr": "Turnov, Na Lukách",
+       "to": "Vlastibořice, obec",
+       "at": [
+        "15:35"
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Vlastibořice, obec",
+       "to": "Turnov, Na Lukách",
+       "at": [
+        "16:04"
+       ]
+      },
+      {
+       "fr": "Turnov, Na Lukách",
+       "to": "Mnichovo Hradiště, dopravní terminál",
+       "at": [
+        "16:35"
+       ]
+      }
+     ],
+     "why": "Circuit every 120: Mnichovo Hradiště :22 even → Turnov (73 min), Turnov :35 odd → Vlastibořice, obec (27 min, 0-minute turn as in the timetable), Vlastibořice :04 even → Turnov (27 min), Turnov :35 even → Mnichovo Hradiště (70 min)."
+    }
+   ]
+  },
+  "734": {
+   "core": [
+    "Mnichovo Hradiště, dopravní terminál",
+    "Sezemice"
+   ],
+   "note": "Mnichovo Hradiště – Mohelnice nad Jizerou – Chocnějovice – Sezemice: Mnichovo Hradiště 12:45, 15:10, 17:45 → Sezemice; each bus comes back at once as 733 (13:08, 15:36, 18:08 via Loukovec), 3 of 3. Modelled as that circuit every 240 on the 15:10 / 15:36. Listed: 12:45 / 13:08, 17:45 / 18:08.",
+   "sim": [
+    {
+     "name": "734",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Mnichovo Hradiště, dopravní terminál",
+       "to": "Sezemice",
+       "at": [
+        "15:10"
+       ]
+      },
+      {
+       "fr": "Sezemice",
+       "to": "Mnichovo Hradiště, dopravní terminál",
+       "at": [
+        "15:36"
+       ],
+       "lines": [
+        "733"
+       ],
+       "starts": true
+      }
+     ],
+     "why": "Mnichovo Hradiště 15:10 → Sezemice via Mohelnice and Chocnějovice (22 min); Sezemice 15:36 → Mnichovo Hradiště as 733 via Loukovec (29 min); every 240."
+    }
+   ]
+  },
+  "735": {
+   "core": [
+    "Kopidlno, náměstí",
+    "Libáň, autobusové stanoviště",
+    "Dolní Bousov, náměstí",
+    "Dětenice, Brodek"
+   ],
+   "note": "Kopidlno – Libáň – Dětenice – Dolní Bousov (BusLine KHK): Kopidlno 14:05 → Dolní Bousov 15:00 / 15:04 → Kopidlno (one bus), Dolní Bousov 13:10 → Kopidlno, Kopidlno 16:10 → Dětenice, Brodek. One bus runs all three afternoon trips (Dolní Bousov 15:00 → 15:04 and Kopidlno 15:56 → 16:10 are real turns), so 735 is one circuit every 240 on that bus’s round (window 14:00–16:00 by hand); its last leg keeps Dětenice, Brodek on a line. Off the pattern: Dolní Bousov 13:10, the Libáň short 12:05 / 12:30.",
+   "anchor": "14:30",
+   "sim": [
+    {
+     "name": "735",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Kopidlno, náměstí",
+       "to": "Dolní Bousov, náměstí",
+       "at": [
+        "14:05"
+       ]
+      },
+      {
+       "fr": "Dolní Bousov, náměstí",
+       "to": "Kopidlno, náměstí",
+       "at": [
+        "15:04"
+       ]
+      },
+      {
+       "fr": "Kopidlno, náměstí",
+       "to": "Dětenice, Brodek",
+       "at": [
+        "16:10"
+       ]
+      },
+      {
+       "fr": "Dětenice, Brodek",
+       "to": "Kopidlno, náměstí",
+       "untimed": true
+      }
+     ],
+     "why": "Circuit every 240, one bus: Kopidlno 14:05 → Dolní Bousov (55 min); Dolní Bousov 15:04 → Kopidlno (50 min); Kopidlno 16:10 → Libáň → Dětenice, Brodek (30 min); empty return from Brodek to Kopidlno via Libáň (34 min). All three timed trips are real."
+    }
+   ]
+  },
+  "736": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Kněžmost, náměstí",
+    "Dobšín",
+    "Dolní Bousov, náměstí"
+   ],
+   "note": "Mladá Boleslav – Kosmonosy – Kněžmost – Dobšín – Dolní Bousov, every 2 hours: Mladá Boleslav :50 odd hours (15:50 to Dobšín, 17:50, 19:50 to Kněžmost), back at Kněžmost :35 even hours (16:35 from Dolní Bousov 16:05, 18:35). The trips ending or starting at Kněžmost and Dobšín are run to Dolní Bousov in the game. Off the pattern: Mladá Boleslav 12:00, 13:25, 14:35; Dolní Bousov 12:15; Kněžmost 15:00; Dolní Bousov 14:05 → Kněžmost.",
+   "sim": [
+    {
+     "name": "736",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Dolní Bousov, náměstí",
+       "at": [
+        "15:50"
+       ],
+       "core_to": "Kněžmost, náměstí"
+      },
+      {
+       "fr": "Dolní Bousov, náměstí",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "knot": "Kněžmost, náměstí",
+       "knot_at": [
+        "16:35"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :50 odd hours → Dolní Bousov (65 min); Dolní Bousov :07 even hours → Mladá Boleslav, timed at Kněžmost :35 (66 min)."
+    }
+   ]
+  },
+  "737": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Čistá, hřiště",
+    "Bělá pod Bezdězem, Atmos"
+   ],
+   "note": "Mladá Boleslav – Čistá – Bělá pod Bezdězem, Atmos, about every 30 min in the afternoon on two paths: via Čistá, hřiště (Mladá Boleslav 13:45, 14:35, 15:30, 16:30, 17:20; Bělá 13:50, 14:30, 15:30, 17:25) and direct (Mladá Boleslav 14:15, 15:00, 16:00, 16:55, 17:50; Bělá 14:10, 15:00, 16:30). Two Simutrans lines, each hourly, interleaved at :00 / :30. Approximate (on the owner checks): the real minutes drift by 5–30 min (13:50 and 13:20 are 20 min off, the 16:30 direct trip 30).",
+   "sim": [
+    {
+     "name": "737",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Bělá pod Bezdězem, Atmos",
+       "at": [
+        30
+       ],
+       "via": [
+        "Čistá, hřiště"
+       ]
+      },
+      {
+       "fr": "Bělá pod Bezdězem, Atmos",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        30
+       ],
+       "via": [
+        "Čistá, hřiště"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :30 → Bělá via Čistá, hřiště (32 min); Bělá :30 → Mladá Boleslav via Čistá (35 min)."
+    },
+    {
+     "name": "737 direct",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Bělá pod Bezdězem, Atmos",
+       "at": [
+        0
+       ],
+       "notvia": [
+        "Čistá, hřiště"
+       ]
+      },
+      {
+       "fr": "Bělá pod Bezdězem, Atmos",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        0
+       ],
+       "notvia": [
+        "Čistá, hřiště"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :00 → Bělá by the direct road, not through Čistá (27 min); Bělá :00 → Mladá Boleslav direct (30 min)."
+    }
+   ]
+  },
+  "738": {
+   "core": [
+    "Mnichovo Hradiště, dopravní terminál",
+    "Horní Bukovina, Dolní Bukovina",
+    "Mukařov, Vicmanov"
+   ],
+   "note": "Mnichovo Hradiště – Klášter Hradiště nad Jizerou – Horní Bukovina – Mukařov, Vicmanov: Mnichovo Hradiště 13:15, 15:25, 17:15 → Vicmanov, Vicmanov 13:50, 16:05 → Mnichovo Hradiště, and the Dolní Bukovina short 14:05 / 14:25. Modelled every 2 hours at 16:00 by hand (the busier 13:50–15:50 holds the short). Off the pattern: Mnichovo Hradiště 15:25, Vicmanov 13:50.",
+   "anchor": "16:00",
+   "sim": [
+    {
+     "name": "738",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mnichovo Hradiště, dopravní terminál",
+       "to": "Mukařov, Vicmanov",
+       "at": [
+        "17:15"
+       ]
+      },
+      {
+       "fr": "Mukařov, Vicmanov",
+       "to": "Mnichovo Hradiště, dopravní terminál",
+       "at": [
+        "16:05"
+       ]
+      }
+     ],
+     "why": "Mnichovo Hradiště :15 odd hours → Mukařov, Vicmanov (30 min); Vicmanov :05 even hours → Mnichovo Hradiště (27 min)."
+    }
+   ]
+  },
+  "739": {
+   "core": [
+    "Kněžmost, náměstí",
+    "Bakov nad Jizerou, železniční zastávka",
+    "Bělá pod Bezdězem, náměstí",
+    "Bělá pod Bezdězem, Atmos",
+    "Bělá pod Bezdězem, Dřevařská"
+   ],
+   "note": "Kněžmost – Bakov nad Jizerou – Malá Bělá – Bělá pod Bezdězem (Atmos, Dřevařská), every 2 hours: Kněžmost :35 even hours (14:43 and 12:40 later/earlier), Bělá towards Kněžmost at Bělá, náměstí :36 even hours (from Dřevařská 14:23, 16:28; Atmos 12:31). The trips to Atmos are run on to Dřevařská. Listed: the Bělá – Bakov trips (15:26, 15:57), Bělá, Atmos 17:31 → Kněžmost.",
+   "sim": [
+    {
+     "name": "739",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kněžmost, náměstí",
+       "to": "Bělá pod Bezdězem, Dřevařská",
+       "at": [
+        "16:35"
+       ],
+       "core_to": "Bělá pod Bezdězem, náměstí"
+      },
+      {
+       "fr": "Bělá pod Bezdězem, Dřevařská",
+       "to": "Kněžmost, náměstí",
+       "knot": "Bělá pod Bezdězem, náměstí",
+       "knot_at": [
+        "16:36"
+       ]
+      }
+     ],
+     "why": "Kněžmost :35 even hours → Bělá pod Bezdězem, Dřevařská (47 min, the real trips end at Atmos); Dřevařská :26 even hours → Kněžmost, timed at Bělá, náměstí :36 (51 min)."
+    }
+   ]
+  },
+  "763": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Dobrovice, autobusové stanoviště",
+    "Dobrovice, Chloumek"
+   ],
+   "note": "Mladá Boleslav – Dobrovice – Vinařice – Dobrovice, Chloumek: Mladá Boleslav 12:05, 14:35, 17:05 → Chloumek, 13:30 → Dobrovice; Chloumek 12:43, 15:43 → Mladá Boleslav. Modelled every 2 hours on the one-bus round 14:35 / 15:43 (anchor 14:20). Off the pattern: 12:05, 17:05, 12:43; the Dobrovice shorts are listed.",
+   "sim": [
+    {
+     "name": "763",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Dobrovice, Chloumek",
+       "at": [
+        "14:35"
+       ]
+      },
+      {
+       "fr": "Dobrovice, Chloumek",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "15:43"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :35 even hours → Dobrovice, Chloumek (34 min); Chloumek :43 odd hours → Mladá Boleslav (35 min)."
+    }
+   ]
+  },
+  "764": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Dobrovice, autobusové stanoviště",
+    "Mcely"
+   ],
+   "note": "Mladá Boleslav – Dobrovice – Smilovice – Mcely, one bus all afternoon: Mladá Boleslav 13:00, 14:35, 17:45, 19:35, Mcely 12:20, 16:25, 18:35, 20:25. Modelled every 240 on the round 14:35 → Mcely / 16:25 → Mladá Boleslav (20:25 is the same slot again). Off the pattern: 13:00, 17:45, 19:35, 18:35.",
+   "sim": [
+    {
+     "name": "764",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Mcely",
+       "at": [
+        "14:35"
+       ]
+      },
+      {
+       "fr": "Mcely",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "16:25"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav 14:35 → Mcely (48 min); Mcely 16:25 → Mladá Boleslav (44 min); both real, every 240."
+    }
+   ]
+  },
+  "766": {
+   "core": [
+    "Březno",
+    "Lhotky",
+    "Rabakov"
+   ],
+   "note": "Rabakov – Lhotky – Březno, exactly every 2 hours: Rabakov 14:40, 16:40, Březno 15:02, 17:02 (one bus, 4-min turns at Březno). Its Březno departures follow 726 arrivals (2 of 4). Listed: Březno 12:43 → Lhotky and back.",
+   "sim": [
+    {
+     "name": "766",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Rabakov",
+       "to": "Březno",
+       "at": [
+        "16:40"
+       ]
+      },
+      {
+       "fr": "Březno",
+       "to": "Rabakov",
+       "at": [
+        "17:02"
+       ]
+      }
+     ],
+     "why": "Rabakov :40 even hours → Březno (18 min); Březno :02 odd hours → Rabakov (16 min)."
+    }
+   ]
+  },
+  "767": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Bezno",
+    "Kropáčova Vrutice, Krpy",
+    "Dolní Slivno"
+   ],
+   "note": "Mladá Boleslav – Bezno – Kropáčova Vrutice – Dolní Slivno: Mladá Boleslav 14:30 → Dolní Slivno, Dolní Slivno 13:29 and 15:29 → Bezno, and the Bezno – Krpy shuttle. 767 runs every 240 on the real round 14:30 / 15:29 (the Bezno trips run on to Mladá Boleslav in the game), modelled at 14:30 by hand where that round runs. The shuttle (Bezno 15:58, 16:58, 18:03 → Kropáčova Vrutice, Krpy; Krpy 16:37, 17:37, 18:37 → Bezno) runs only over stops of 767 and is listed. Its Bezno arrivals meet 699 departures (4 of 8).",
+   "anchor": "14:30",
+   "sim": [
+    {
+     "name": "767",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Dolní Slivno",
+       "at": [
+        "14:30"
+       ]
+      },
+      {
+       "fr": "Dolní Slivno",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "15:29"
+       ],
+       "core_to": "Bezno"
+      }
+     ],
+     "why": "Mladá Boleslav 14:30 → Dolní Slivno (56 min); Dolní Slivno 15:29 → Bezno, run on to Mladá Boleslav (56 min); every 240."
+    }
+   ]
+  },
+  "768": {
+   "core": [
+    "Benátky nad Jizerou, autobusové stanoviště",
+    "Horní Slivno",
+    "Kropáčova Vrutice, Kojovice",
+    "Byšice"
+   ],
+   "note": "Benátky nad Jizerou – Horní Slivno – Kropáčova Vrutice, Kojovice / Byšice, hourly from Benátky, alternating: Kojovice 14:15, 16:15, 17:20, 18:15; Byšice 13:12, 15:20; back from Kojovice 13:14, 15:14, 17:19 and from Byšice 14:14, 16:19. One Simutrans line per end, each every 2 hours, offset so Benátky has one departure an hour (window 14:30–16:30 by hand). Off the pattern: Benátky 17:20 (a Kojovice trip, in the Byšice slot), 13:12.",
+   "anchor": "15:00",
+   "sim": [
+    {
+     "name": "768",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benátky nad Jizerou, autobusové stanoviště",
+       "to": "Kropáčova Vrutice, Kojovice",
+       "at": [
+        "16:15"
+       ],
+       "notvia": [
+        "Byšice"
+       ]
+      },
+      {
+       "fr": "Kropáčova Vrutice, Kojovice",
+       "to": "Benátky nad Jizerou, autobusové stanoviště",
+       "at": [
+        "15:14"
+       ],
+       "notvia": [
+        "Byšice"
+       ]
+      }
+     ],
+     "why": "Benátky :15 even hours → Kropáčova Vrutice, Kojovice (52 min); Kojovice :14 odd hours → Benátky (48 min)."
+    },
+    {
+     "name": "768 Byšice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benátky nad Jizerou, autobusové stanoviště",
+       "to": "Byšice",
+       "at": [
+        "15:20"
+       ]
+      },
+      {
+       "fr": "Byšice",
+       "to": "Benátky nad Jizerou, autobusové stanoviště",
+       "at": [
+        "16:19"
+       ]
+      }
+     ],
+     "why": "Benátky :20 odd hours → Byšice via Kojovice (58 min); Byšice :19 even hours → Benátky (56 min), a 1-minute turn as in the timetable."
+    }
+   ]
+  },
+  "775": {
+   "core": [
+    "Mladá Boleslav, autobusové stanoviště",
+    "Dobrovice, autobusové stanoviště",
+    "Luštěnice, Sluneční",
+    "Horky nad Jizerou"
+   ],
+   "note": "Mladá Boleslav – Dobrovice – Luštěnice (– Horky nad Jizerou – Benátky nad Jizerou): Mladá Boleslav :35 hourly from 15:35 (13:35, 13:40 and 14:30 to Horky); back to Mladá Boleslav at Luštěnice, Sluneční 12:29, 13:29, 14:29, 15:54, 16:39. Modelled every 120 with two slots each way, all real and exact in the 16:00 window: Mladá Boleslav :35 every hour, Sluneční 15:54 (the Horky 15:45 trip) and 16:39 (the Benátky 16:20 trip). Off the pattern: Sluneční 12:29, 13:29, 14:29 (10 min off), Mladá Boleslav 12:25, 13:40, 14:30; Luštěnice local trips listed.",
+   "sim": [
+    {
+     "name": "775",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Luštěnice, Sluneční",
+       "at": [
+        "15:35",
+        "16:35"
+       ]
+      },
+      {
+       "fr": "Luštěnice, Sluneční",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "15:54",
+        "16:39"
+       ]
+      }
+     ],
+     "why": "Mladá Boleslav :35 every hour → Luštěnice, Sluneční (58 min); Sluneční :54 odd hours and :39 even hours → Mladá Boleslav (50 min), the Horky and Benátky trips run from Sluneční in the game."
+    }
+   ]
+  },
+  "540345": {
+   "core": [
+    "Liberec, autobusové nádraží",
+    "Mladá Boleslav, autobusové stanoviště"
+   ],
+   "note": "Liberec – Hodkovice nad Mohelkou – Příšovice – Mladá Boleslav (ČSAD Liberec), three trips each way, exactly 480 min apart: Liberec 4:18, 12:25, 20:25, Mladá Boleslav 6:20, 14:20, 22:15. Modelled every 480 on the 12:25 / 14:20 round, the only service of Liberec, Košická and Příšovice, hlavní silnice.",
+   "sim": [
+    {
+     "name": "540345",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Liberec, autobusové nádraží",
+       "to": "Mladá Boleslav, autobusové stanoviště",
+       "at": [
+        "12:25"
+       ]
+      },
+      {
+       "fr": "Mladá Boleslav, autobusové stanoviště",
+       "to": "Liberec, autobusové nádraží",
+       "at": [
+        "14:20"
+       ]
+      }
+     ],
+     "why": "Liberec, autobusové nádraží 12:25 (and 20:25) → Mladá Boleslav (65 min); Mladá Boleslav 14:20 (and 6:20) → Liberec (60 min); every 480, one bus."
+    }
+   ]
+  }
+ },
+ "unmodelled": {
+  "992035": "Rail replacement bus (NAD) for engineering works on the railway: the rail sheets model the trains.",
+  "727": "Step 8: one afternoon trip (Rokytá, Horní Rokytá, otočka 13:25 → Mnichovo Hradiště 13:47) and no stop of its own: Rokytá (Horní Rokytá, otočka, has.zbroj., Dolní Rokytá, ObÚ, ranč, rozcestí), Dolní Krupá (3), Bílá Hlína, Klášter Hradiště nad Jizerou, Habr and Mnichovo Hradiště, Klášterská are on 427 (the 15:25 trip’s path round Horní Rokytá) and 738.",
+  "769": "Carried by the Simutrans line 699: its afternoon trips Chotětov 13:10 and 15:10 → Doubravička → Mladá Boleslav are how the 699 buses (Mladá Boleslav 12:30 and 14:30 → Chotětov 13:07, 15:07) come back, 0–3 min later (2 of 3). The way back of 699 runs 769’s path, so Rokytovec, Malé Horky and Strenice, Horecká are on it."
+ },
+ "owner_checks": [
+  [
+   "427, 738, 763, 775",
+   "Three stops left as coverage exceptions, each within 1 km of a stop the sheet serves: Kosmonosy, Průmyslová (378 m from Kosmonosy, Transcentrum; shift trips 427 13:13 and 14:36, 763 13:28, 775 14:17), Horní Bukovina, odbočka (795 m from Horní Bukovina, Dolní Bukovina) and Klášter Hradiště nad Jizerou, pod pivovarem (56 m from Klášter Hradiště nad Jizerou), the last two served only by 738 Dolní Bukovina 14:25 → Mnichovo Hradiště.",
+   "Serve them: 738 Dolní Bukovina every 480 on the real Mnichovo Hradiště 14:05 → Dolní Bukovina 14:25 → Mnichovo Hradiště 14:35 (+1 bus), and 427 Mladá Boleslav every 480 on the real Mladá Boleslav 14:30 → Kosmonosy, Průmyslová → Mimoň, autobusové stanoviště with an empty return (+1 bus): +2 buses."
+  ],
+  [
+   "722",
+   "Approximate: hourly Mnichovo Hradiště :33 / Český Dub :42 (2 buses); the real 15:23 and 14:32 are 10 min off their slots and there is no 17:33 or 17:42, so the 15:33 window slot has no trip.",
+   "Every 120, Mnichovo Hradiště :33 even hours (12:33, 14:33, 16:33, 18:33 all exact) and Český Dub :42 odd hours (13:42, 15:42), exact in the window but half the real service: 1 bus (one fewer)."
+  ],
+  [
+   "737",
+   "Approximate: two hourly lines, 737 via Čistá (Mladá Boleslav :30, Bělá :30) and 737 direct (:00 / :00), 4 buses; the real minutes drift by 5–30 min (Mladá Boleslav 13:45, 14:15, 16:55, 17:20, 17:50; Bělá 14:10, 17:25; 13:50 and 13:20 are 20 min off, the 16:30 direct trip 30).",
+   "Only 737 via Čistá hourly (2 buses, two fewer); the direct trips (Mladá Boleslav 14:15, 15:00, 16:00, 16:55, 17:50; Bělá 13:20, 14:10, 15:00, 16:30) listed, their stops are all on 737."
+  ]
+ ],
+ "notes": "PID Mladoboleslavsko: okres Mladá Boleslav (licences 260xxx), the Prague lines whose outer end is here (315, 345, 403, 412) and the long lines of the Liberecký and Královéhradecký kraj placed here (405, 427, 700, 720, 721, 722, 723, 730, 733, 735, 540345); PID GTFS of 1 Nov 2026, Monday 2 Nov 2026 (a school day). Every terminus is treated as a loop (typed = real − 1); the 0-minute turns of 431 Stará Lysá and 733 are modelled as in the timetable. Most district lines are school-day lines of single trips, each bent onto one real afternoon round on one bus (every 120 to 480); nine lines run every 480 for stops no other line serves, inside or outside the kraj (403, 405 Vrchlabí, 431 Stará Lysá, 540345, 700, 714 Sobotka, 720 Semily, 725 Vlčí Pole, 730); Dětenice, Brodek is the last leg of the 735 circuit. Hand-set model hours (anchor): 315, 345, 412 and 714 at 16:00 (their busier hours are short trips over their own stops), 738 at 16:00 (its busier hours are the Dolní Bukovina short and the 13:15 / 13:50 pair, whose minutes miss its two-hourly pattern); 427, 716, 719 and 726 at 15:30, 768 at 15:00 and 431, 735 and 767 at 14:30, where their one-bus rounds run. Praha, Černý Most towards Turnov has a departure every hour at :15 from 720 (13:15, 14:15, 17:15, 18:15), 700 (15:15) and 730 (16:15). Through-running in the timetable: 699 → 769 at Chotětov and 734 → 733 at Sezemice (both modelled as one Simutrans line), 733 Turnov – Vlastibořice (modelled as a circuit), 732 → 737 at Čistá, hřiště (3 of 3), 726 → 766 at Březno, 767 → 699 at Bezno (4 of 8), 345 ↔ 540345 at Liberec and Mladá Boleslav (2 of 3); at Mnichovo Hradiště most regional departures (716, 717, 738) leave right after a 315 arrival. Open for the 2 Nov live map: whether the buses of 315, 345 and 405 turn at Praha, Černý Most in 0 minutes (the arrival minute is the departure minute; the sheet keeps at least 3 min, which costs 315 one bus, 345 one and 405 one), and the pairings 732 ↔ 737 at Čistá, hřiště (3 of 3), 767 → 699 at Bezno (4 of 8), 737 → 775 at Mladá Boleslav (5 of 15 departures), 467 → 699 (7 of 9) and 467 → 724 (5 of 10) at Mladá Boleslav, 713 ↔ 718 at Sobotka (2 of 6).",
+ "other_sheets": {
+  "praha_bus": {
+   "lines": [],
+   "label": "Prague Bus Lines Check",
+   "short": "Prague bus sheet",
+   "url": "https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF",
+   "why": "regional companions of the city lines (through, pooled or interleaved), modelled on the Prague bus sheet with their buses (owner, 30 Oct 2026)"
+  },
+  "praha_city": {
+   "lines": [],
+   "label": "Prague Bus Lines Check (city lines 100-299)",
+   "short": "Prague bus sheet",
+   "url": "https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF",
+   "schedule": "../../data/derived/praha_city_schedule.json"
+  },
+  "benesovsko": {
+   "lines": [],
+   "label": "PID Benešovsko",
+   "short": "Benešovsko sheet",
+   "url": null,
+   "schedule": "../benesovsko/data/derived/schedule.json"
+  },
+  "berounsko": {
+   "lines": [],
+   "label": "PID Berounsko",
+   "short": "Berounsko sheet",
+   "url": null,
+   "schedule": "../berounsko/data/derived/schedule.json"
+  },
+  "kladensko": {
+   "lines": [],
+   "label": "PID Kladensko",
+   "short": "Kladensko sheet",
+   "url": null,
+   "schedule": "../kladensko/data/derived/schedule.json"
+  },
+  "kolinsko": {
+   "lines": [],
+   "label": "PID Kolínsko",
+   "short": "Kolínsko sheet",
+   "url": null,
+   "schedule": "../kolinsko/data/derived/schedule.json"
+  },
+  "kutnohorsko": {
+   "lines": [],
+   "label": "PID Kutnohorsko",
+   "short": "Kutnohorsko sheet",
+   "url": null,
+   "schedule": "../kutnohorsko/data/derived/schedule.json"
+  },
+  "melnicko": {
+   "lines": [],
+   "label": "PID Mělnicko",
+   "short": "Mělnicko sheet",
+   "url": null,
+   "schedule": "../melnicko/data/derived/schedule.json"
+  },
+  "nymbursko": {
+   "lines": [],
+   "label": "PID Nymbursko",
+   "short": "Nymbursko sheet",
+   "url": null,
+   "schedule": "../nymbursko/data/derived/schedule.json"
+  },
+  "praha-vychod": {
+   "lines": [],
+   "label": "PID Praha-východ",
+   "short": "Praha-východ sheet",
+   "url": null,
+   "schedule": "../praha-vychod/data/derived/schedule.json"
+  },
+  "praha-zapad": {
+   "lines": [],
+   "label": "PID Praha-západ",
+   "short": "Praha-západ sheet",
+   "url": null,
+   "schedule": "../praha-zapad/data/derived/schedule.json"
+  },
+  "pribramsko": {
+   "lines": [],
+   "label": "PID Příbramsko",
+   "short": "Příbramsko sheet",
+   "url": null,
+   "schedule": "../pribramsko/data/derived/schedule.json"
+  },
+  "rakovnicko": {
+   "lines": [],
+   "label": "PID Rakovnicko",
+   "short": "Rakovnicko sheet",
+   "url": null,
+   "schedule": "../rakovnicko/data/derived/schedule.json"
+  }
+ },
+ "hubs": []
+}

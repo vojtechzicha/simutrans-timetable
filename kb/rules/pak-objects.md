@@ -12,11 +12,16 @@ city and show me clearly which."
 - Stand-ins (nearest or other-city object) are written `≈ core`, with the reason once in the pak table.
 - Prague: DPP cars `VZ-DPPraha-…`; every other operator shares `VZ-Praha-…` (no operator in the name); ferries `VZ-Praha-water`.
   PID suburban/regional contracts (lines 300+ run by other operators) are `VZ-PID-…` in `VZ-PID-bus` (66 objects on 30 Oct;
-  tokens differ: `Setra_S_515_LE`, `SOR_ICN_10_5`). `VZ-Praha-bus` is only for city lines (100–299, 900s); check `build/VZ-PID-bus/*.dat`
-  before requesting a regional bus (fleet desk, 30 Oct: all five "missing" objects already existed there).
+  tokens differ: `Setra_S_515_LE`, `SOR_ICN_10_5`). Regional PID lines use the `VZ-Praha-bus` and `VZ-DPPraha-bus` objects as they are; `VZ-PID-bus` holds only the type ×
+  livery combinations those two lack (fleet desk, 2 Nov 2026, after the PID regional sheets asked for 20 types that already existed
+  there). Look a type up in all three packs (DPP's own buses in `VZ-DPPraha` first) before requesting it (fleet desk, 30 Oct: all
+  five "missing" objects already existed in `VZ-PID-bus`). `name=` is `<basename>-<vehicle id>`, articulated `-A` + `-B`.
   Non-DPP lines must be exactly as good as DPP ones — never DPP or other-city stand-ins. Advert wraps → the type's normal livery.
+- Neighbouring regions' own paints (owner via the fleet desk, 2 Nov 2026): `VZ-DUK-bus` (Ústecký kraj: DSÚK, Platil…), `VZ-IDOL-bus`
+  (Liberecký: ČSAD Liberec, BusLine LK, ČSAD Česká Lípa…), `VZ-JIKORD-bus` (Jihočeský: ČSAD AUTOBUSY České Budějovice…), as
+  `VZ-ODIS` / `VZ-IREDO`; `VZ-<agency>-<Type>-<livery>`. A plain white bus uses the existing white object (IREDO / DPPraha).
 - ODIS: regional buses `VZ-ODIS-bus` (livery by real paint: 3ČSAD → `3csadbilozelena`, white → `bilazelenykruh`, Transdev
-  `transdev`, Z-Group `bila`…); town lines `VZ-MHD<Town>` only (Havířov, Karviná, Orlová, Krnov, Nový Jičín, Třinec…).
+  `transdev`, Z-Group `bila`…); town lines `VZ-MHD<Town>` for the town's own paint (a town-line bus in PID paint uses the PID object; fleet desk, 2 Nov 2026) (Havířov, Karviná, Orlová, Krnov, Nový Jičín, Třinec…).
 - Trolleybuses `VZ-<City>-trolleybus` (waytype road, electric engine — wire is information only). Battery/diesel-generator variants
   exist where the real car has auxiliary drive (Opava 32Tr_battery 314–323, 26TrDG 305–306).
 - Trams: Praha/Brno/Ostrava trams are VZ objects only (native pak trams uninstalled 28 Sep).

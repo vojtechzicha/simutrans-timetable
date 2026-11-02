@@ -1,0 +1,1295 @@
+{
+ "lines": {
+  "435": {
+   "core": [
+    "Klučov, Skramníky",
+    "Český Brod, železniční stanice",
+    "Doubek",
+    "Říčany, Wolkerova"
+   ],
+   "note": "Klučov, Skramníky – Chrášťany – Český Brod – Vrátkov – Tismice – Přišimasy – Doubek – Babice – Říčany, Wolkerova. Hourly all afternoon: Klučov :37 from 15:37 (13:32 and 14:32 leave at :32, off), Říčany :00 (13:05 off); every trip exact at Český Brod and Doubek. The Český Brod – Vrátkov and Říčany – Doubek short trips (morning and evening) run over 435's own stops and are listed.",
+   "sim": [
+    {
+     "name": "435",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Klučov, Skramníky",
+       "to": "Říčany, Wolkerova",
+       "at": [
+        37
+       ]
+      },
+      {
+       "fr": "Říčany, Wolkerova",
+       "to": "Klučov, Skramníky",
+       "at": [
+        0
+       ]
+      }
+     ],
+     "why": "Klučov :37 → Český Brod (:00) → Doubek (:30) → Říčany, Wolkerova :54, 77 min; Říčany :00 → Doubek → Český Brod (:57, via muzeum and Jana Kouly) → Klučov :20, 80 min. 3 buses (waits 17 at Klučov, 6 at Říčany)."
+    }
+   ]
+  },
+  "460": {
+   "core": [
+    "Bečváry, Červený Hrádek",
+    "Zásmuky, náměstí",
+    "Plaňany, náměstí",
+    "Třebovle, Miškovice"
+   ],
+   "note": "Bečváry, Červený Hrádek – Drahobudice – Zásmuky – Dolní Chvatliny – Polní Voděrady – Krychnov – Svojšice – Plaňany – Třebovle, Miškovice: a school-day line of single trips. Two afternoon rounds run the whole route: Bečváry 12:02 → Třebovle 13:30 (the only trip through Radim, ObÚ) → 13:32 → Zásmuky 14:22, and Bečváry 14:02 → Třebovle 15:24 → 15:25 → Bečváry 16:53. So two Simutrans lines: 460 every 240 on the 14:02 round, 460 Radim every 480 on the 12:02 trip. Listed (stops on these lines and 824): Zásmuky 14:45 → Dolní Chvatliny, Mančice; Zásmuky 15:10 → Bečváry; Bečváry 16:02 → Polní Voděrady, ObÚ; Plaňany 17:30 → Třebovle 17:38 → 17:39 → Plaňany; Bečváry 17:52 → Zásmuky.",
+   "sim": [
+    {
+     "name": "460",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Bečváry, Červený Hrádek",
+       "to": "Třebovle, Miškovice",
+       "at": [
+        "14:02"
+       ]
+      },
+      {
+       "fr": "Třebovle, Miškovice",
+       "to": "Bečváry, Červený Hrádek",
+       "at": [
+        "15:25"
+       ]
+      }
+     ],
+     "why": "Bečváry, Červený Hrádek 14:02 → Zásmuky (14:30) → Plaňany (15:16) → Třebovle, Miškovice 15:24, 82 min, not via Radim; Třebovle 15:25 → Bečváry 16:53, 88 min, 1-minute turn as in the timetable. 1 bus."
+    },
+    {
+     "name": "460 Radim",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Bečváry, Červený Hrádek",
+       "to": "Třebovle, Miškovice",
+       "via": [
+        "Radim, ObÚ"
+       ],
+       "at": [
+        "12:02"
+       ]
+      },
+      {
+       "fr": "Třebovle, Miškovice",
+       "to": "Bečváry, Červený Hrádek",
+       "core_to": "Zásmuky, náměstí",
+       "at": [
+        "13:32"
+       ]
+      }
+     ],
+     "why": "Bečváry 12:02 → Třebovle 13:30 by the 12:02 trip's path through Radim, ObÚ (Plaňany, náměstí 13:16 → Radim → Plaňany, železniční stanice), 88 min; Třebovle 13:32 → Bečváry: the real 13:32 ends at Zásmuky 14:22 and the game bus runs on to Bečváry. Every 480, 1 bus: the only service of Radim, ObÚ."
+    }
+   ]
+  },
+  "487": {
+   "core": [
+    "Kolín, nádraží",
+    "Uhlířské Janovice, náměstí",
+    "Kácov, náměstí",
+    "Vlašim, Terminál"
+   ],
+   "note": "Kolín – Kořenice – Bečváry – Uhlířské Janovice – Zbizuby – Kácov – Tehov – Kladruby – Vlašim, Terminál. Every 2 h and exact: Kolín :33 odd hours (11:33, 13:33, 15:33; then 17:23 and 19:23, 10 min early, off), Vlašim :55 even hours (10:55, 12:55, 14:55, 16:55). Listed (stops on 487): Kolín 14:18 → Uhlířské Janovice, Uhlířské Janovice 15:05 → Kolín, Vlašim 18:57 → Uhlířské Janovice and the morning Kácov / Kladruby trips.",
+   "sim": [
+    {
+     "name": "487",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Vlašim, Terminál",
+       "at": [
+        "15:33"
+       ]
+      },
+      {
+       "fr": "Vlašim, Terminál",
+       "to": "Kolín, nádraží",
+       "at": [
+        "16:55"
+       ]
+      }
+     ],
+     "why": "Kolín 15:33 → Uhlířské Janovice (16:10) → Kácov (16:33) → Vlašim, Terminál 17:05, 92 min; Vlašim 16:55 → Kácov (17:27) → Uhlířské Janovice (17:50) → Kolín 18:27, 92 min. 3 buses: the 2-hourly slots leave 110 min at Vlašim and 66 at Kolín."
+    }
+   ]
+  },
+  "491": {
+   "core": [
+    "Český Brod, železniční stanice",
+    "Doubravčice",
+    "Mukařov [PH]"
+   ],
+   "note": "Český Brod – Tismice – Mrzky – Doubravčice – Štíhlice, Doubravčická – Mukařov (– Louňovice, I.hráz). Hourly: Český Brod :30 (13:25 off), back past Mukařov :32. Until 16:32 these trips start 3 min earlier at Louňovice, I.hráz, which 381, 382 and 387 also serve (other sheets), so the far end is modelled at Mukařov. Through-running with 660 at Český Brod is in the notes, open for the live map.",
+   "sim": [
+    {
+     "name": "491",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Český Brod, železniční stanice",
+       "to": "Mukařov [PH]",
+       "at": [
+        30
+       ]
+      },
+      {
+       "fr": "Mukařov [PH]",
+       "to": "Český Brod, železniční stanice",
+       "at": [
+        32
+       ]
+      }
+     ],
+     "why": "Český Brod :30 → Kollárova → Tismice → Doubravčice (:46) → Mukařov [PH] :56, 26 min; Mukařov :32 → Doubravčice, rozcestí Vrátkov → Tismice → Jana Kouly → Český Brod :58, 26 min. 2 buses (waits 36 at Mukařov, 32 at Český Brod)."
+    }
+   ]
+  },
+  "534": {
+   "core": [
+    "Kolín, nádraží",
+    "Týnec nad Labem, náměstí",
+    "Labské Chrčice"
+   ],
+   "note": "Kolín – Tři Dvory – Konárovice, Labuť – Veletov – Týnec nad Labem – Labské Chrčice (Pardubický kraj). Every 2 h and exact: Kolín :06 odd hours (13:06, 15:06, 19:06; 17:26 off), Labské Chrčice :13 odd hours (13:13, 15:13, 17:13, 19:13). Anchor set to 15:30 by hand: the automatic 16:00 window holds only the 17:26, the one departure off the line's own :06. 534 is the only line to Labské Chrčice and Labské Chrčice, ObÚ. Not pooled with 535: on the 2 Nov live map the afternoon 534 trips ran on their own buses (7628, 7616).",
+   "sim": [
+    {
+     "name": "534",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Labské Chrčice",
+       "at": [
+        "15:06"
+       ]
+      },
+      {
+       "fr": "Labské Chrčice",
+       "to": "Kolín, nádraží",
+       "at": [
+        "15:13"
+       ]
+      }
+     ],
+     "why": "Kolín 15:06 → Konárovice, Labuť → Týnec nad Labem (15:37) → Labské Chrčice 15:47, 41 min; Labské Chrčice 15:13 → Kolín 15:54, 41 min. 2 buses (waits 86 at Labské Chrčice, 72 at Kolín)."
+    }
+   ],
+   "anchor": "15:30"
+  },
+  "535": {
+   "core": [
+    "Kolín, nádraží",
+    "Týnec nad Labem, náměstí",
+    "Uhlířská Lhota, Rasochy",
+    "Hlavečník"
+   ],
+   "note": "Kolín – Konárovice – Bělušice – Týnec nad Labem – Uhlířská Lhota – Hlavečník (Pardubický kraj). Every 2 h: Kolín :15 even hours (12:15, 16:15, 18:15; 14:20 is 5 min late), Hlavečník :09 even hours (12:09, 14:09, 16:09); Kolín 15:35 → Konárovice, ObÚ is listed. The only line to Hlavečník, Bělušice and Uhlířská Lhota; Kept apart from 534 (2 + 2 buses), as the 2 Nov live map shows them: 535 ran on buses 7595 and 7606, 534 on 7628 and 7616 (from 533); a 535 bus took one 534 trip (Labské Chrčice 13:13 → Kolín 13:54 → 14:20 → Hlavečník), then stayed on 535.",
+   "sim": [
+    {
+     "name": "535",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Hlavečník",
+       "at": [
+        "16:15"
+       ]
+      },
+      {
+       "fr": "Hlavečník",
+       "to": "Kolín, nádraží",
+       "at": [
+        "16:09"
+       ]
+      }
+     ],
+     "why": "Kolín 16:15 → Konárovice → Týnec nad Labem (16:53) → Uhlířská Lhota → Hlavečník 17:11, 56 min; Hlavečník 16:09 → Kolín 17:05, 56 min. 2 buses (waits 58 at Hlavečník, 70 at Kolín)."
+    }
+   ]
+  },
+  "536": {
+   "core": [
+    "Kolín, nádraží",
+    "Býchory",
+    "Žiželice, Loukonosy",
+    "Žiželice, náměstí"
+   ],
+   "note": "Kolín – Strojírny – Ovčáry – Býchory – Ohaře – Polní Chrčice – Dománovice – Radovesnice II – Žiželice. Hourly at Kolín :57 from 15:57 and back past Býchory at :57 (16:57, 17:57, 18:57), on two paths in turn: via the Žiželice loop (Rozehnaly, Hradišťko II, škola, Pod Vinicí, Loukonosy: Kolín 15:57, 17:57; Žiželice 15:26, 17:19) and direct via Končice (Kolín 16:57, 18:47; Žiželice 16:29, 18:29). One Simutrans line, out by the loop and back direct, as 329 Květnice (two lines every 120, one per path, would need 4 buses); off: Kolín 14:40, 18:47, Žiželice 15:26; listed: Býchory 13:32 and Žiželice, Loukonosy 13:55 → Kolín.",
+   "sim": [
+    {
+     "name": "536",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Žiželice, náměstí",
+       "stops_via": [
+        "Žiželice, Loukonosy"
+       ],
+       "at": [
+        57
+       ]
+      },
+      {
+       "fr": "Žiželice, náměstí",
+       "to": "Kolín, nádraží",
+       "knot": "Býchory",
+       "knot_at": [
+        57
+       ],
+       "knot_rt": 28,
+       "stops_via": [
+        "Žiželice, Končice"
+       ]
+      }
+     ],
+     "why": "Kolín :57 → Býchory (:15) → Radovesnice II, Rozehnaly → Žiželice, škola → Pod Vinicí → Loukonosy → Žiželice, náměstí, 58 min by the loop (the 16:57 slot trip runs direct, 46 min); Žiželice :29 → Končice → Býchory (:57) → Kolín, 46 min direct (the 17:29 slot stands for the 17:19 by the loop, which passes Býchory at 17:57). 3 buses (waits 34 at Žiželice, 42 at Kolín)."
+    }
+   ]
+  },
+  "537": {
+   "core": [
+    "Kolín, nádraží",
+    "Konárovice, ObÚ",
+    "Jestřabí Lhota"
+   ],
+   "note": "Kolín – Konárovice – Býchory, škola – Němčice – Jestřabí Lhota, back via Volárna and Býchory: a school line, one bus, 12:35–15:45. Kolín 12:35 and 13:55 are 80 min apart, and so are the Jestřabí Lhota departures 13:11 and 14:31 (both 0-minute turns), so it runs every 80. Off: Jestřabí Lhota 15:06 → Kolín, after the 14:31 → Konárovice, ObÚ → 14:52 → Jestřabí Lhota loop. The only service of Býchory, škola.",
+   "sim": [
+    {
+     "name": "537",
+     "every": 80,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Jestřabí Lhota",
+       "at": [
+        "13:55"
+       ]
+      },
+      {
+       "fr": "Jestřabí Lhota",
+       "to": "Kolín, nádraží",
+       "core_to": "Konárovice, ObÚ",
+       "at": [
+        "14:31"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Kolín 13:55 (and 12:35) → Konárovice → Býchory, škola → Jestřabí Lhota 14:31, 36 min; Jestřabí Lhota 14:31 (and 13:11) → Volárna → Býchory → Kolín, 39 min, 0-minute turn as in the timetable (the real 14:31 ends at Konárovice, ObÚ). 1 bus (wait 5 at Kolín)."
+    }
+   ]
+  },
+  "659": {
+   "core": [
+    "Český Brod, železniční stanice",
+    "Kostelec nad Černými lesy, náměstí",
+    "Stříbrná Skalice, železniční stanice",
+    "Stříbrná Skalice, náměstí"
+   ],
+   "note": "Český Brod – Přistoupim – Krupá – Kostelec nad Černými lesy – Prusice – Konojedy – Oplany – Vlkančice – Stříbrná Skalice. Hourly: Český Brod :00 from 16:00 (13:55 and 14:55 at :55, off), Stříbrná Skalice, náměstí :37 (14:37–17:37; 13:33 off). Anchor set to 16:00 by hand: the automatic 14:20 comes from the Kostelec short trips (Kostelec 13:50, 14:50 → Český Brod; Český Brod 15:25 → Kostelec), whose stops are on 659 (the 282 rule). Listed: those shorts, Kostelec 12:58 → Krupá, Stříbrná Skalice 19:37 → Krupá and the Vlkančice morning trips.",
+   "sim": [
+    {
+     "name": "659",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Český Brod, železniční stanice",
+       "to": "Stříbrná Skalice, náměstí",
+       "core_to": "Stříbrná Skalice, železniční stanice",
+       "at": [
+        0
+       ]
+      },
+      {
+       "fr": "Stříbrná Skalice, náměstí",
+       "to": "Český Brod, železniční stanice",
+       "at": [
+        37
+       ]
+      }
+     ],
+     "why": "Český Brod :00 → Kostelec nad Černými lesy (:28) → Prusice → Nučice → Konojedy → Vlkančice → Stříbrná Skalice, železniční stanice (:06) → náměstí :11, 71 min, by the 13:55 / 14:55 path; the 16:00 and 18:00 run via Prusice, rozcestí instead of Prusice, and the 17:00 ends at the station. back from Stříbrná Skalice, náměstí :37 → Prusice → Kostelec (:20) → Český Brod :48, 71 min, not via Nučice; 3 buses (waits 26 at Stříbrná Skalice, 12 at Český Brod)."
+    }
+   ],
+   "anchor": "16:00"
+  },
+  "660": {
+   "core": [
+    "Český Brod, železniční stanice",
+    "Tuchoraz",
+    "Kostelec nad Černými lesy, náměstí",
+    "Doubravčice"
+   ],
+   "note": "Český Brod – Přistoupim – Tuchoraz – Přehvozdí – Kozojedy – Kostelec nad Černými lesy. Hourly and exact from 16:00: Český Brod :00 (14:15, 15:10 off), Kostelec :02 (13:47 off). The Kostelec 13:45 and 15:20 trips to Doubravčice (and 7:15 back in the morning) are the only service of Štíhlice (okres Praha-východ; no other sheet has 660): 660 Doubravčice, every 480. Through-running with 491 and 661 at Český Brod: see the notes.",
+   "sim": [
+    {
+     "name": "660",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Český Brod, železniční stanice",
+       "to": "Kostelec nad Černými lesy, náměstí",
+       "at": [
+        0
+       ]
+      },
+      {
+       "fr": "Kostelec nad Černými lesy, náměstí",
+       "to": "Český Brod, železniční stanice",
+       "at": [
+        2
+       ]
+      }
+     ],
+     "why": "Český Brod :00 → Tuchoraz → Přehvozdí, u hřbitova → Kozojedy, rozcestí → Kostelec nad Černými lesy, náměstí :28, 28 min; Kostelec :02 → Kozojedy → Tuchoraz → Český Brod :30, 28 min. 2 buses (waits 34 at Kostelec, 30 at Český Brod)."
+    },
+    {
+     "name": "660 Doubravčice",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Kostelec nad Černými lesy, náměstí",
+       "to": "Doubravčice",
+       "at": [
+        "15:20"
+       ]
+      },
+      {
+       "fr": "Doubravčice",
+       "to": "Kostelec nad Černými lesy, náměstí",
+       "untimed": true
+      }
+     ],
+     "why": "Kostelec nad Černými lesy 15:20 → Kozojedy, rozcestí → Štíhlice → Doubravčice 15:37, 17 min (the real 15:20; 13:45 is off); back to Kostelec untimed (19 min, the 7:15 morning trip's path): where the real bus goes after Doubravčice is open for the live map. Every 480, 1 bus: the only service of Štíhlice."
+    }
+   ]
+  },
+  "661": {
+   "core": [
+    "Český Brod, železniční stanice",
+    "Kounice",
+    "Starý Vestec",
+    "Lysá nad Labem, železniční stanice"
+   ],
+   "note": "Český Brod – Kounice – Bříství – Starý Vestec – Přerov nad Labem – Semice – Lysá nad Labem, železniční stanice. Lysá leaves hourly at :15 (14:15–18:15); Český Brod at 15:00 and 16:00, then 17:30 and 18:30 (the 660 buses arriving at :30). Anchor set to 15:00 by hand: in the automatic 16:00 window Český Brod changes from :00 to :30 and no hourly pattern passes, and the method keeps an hourly line hourly. Off: Český Brod 13:55, 17:30, 18:30; listed: Lysá 15:40 → Semice → 16:02 → Lysá and the evening Starý Vestec trips.",
+   "sim": [
+    {
+     "name": "661",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Český Brod, železniční stanice",
+       "to": "Lysá nad Labem, železniční stanice",
+       "at": [
+        0
+       ]
+      },
+      {
+       "fr": "Lysá nad Labem, železniční stanice",
+       "to": "Český Brod, železniční stanice",
+       "at": [
+        15
+       ]
+      }
+     ],
+     "why": "Český Brod :00 → Zborovská → Kounice → Starý Vestec → Semice → Lysá nad Labem, železniční stanice :40, 40 min; Lysá :15 → Český Brod :55, 40 min. 2 buses (waits 35 at Lysá, 5 at Český Brod)."
+    }
+   ],
+   "anchor": "15:00"
+  },
+  "662": {
+   "core": [
+    "Čelákovice, Toušeňská",
+    "Mochov",
+    "Český Brod, železniční stanice",
+    "Kouřim"
+   ],
+   "note": "Čelákovice, Toušeňská – Mochov – Vyšehořovice – Vykáň – Černíky – Český Brod – Liblice – Kšely – Vitice – Třebovle – Kouřim. Hourly and exact: Čelákovice :53, Kouřim :14; the bus turns at Kouřim in 0 min. Listed (stops on 662 and 661): Český Brod → Čelákovice 12:43, 13:44; Čelákovice → Vykáň 15:23, 16:23; and the Kounice – Mochov shuttle (licence 231662, ČSAD Střední Čechy, about hourly 13:23–18:57), 12 of whose 13 Mochov arrivals go on as 354 to Prague.",
+   "sim": [
+    {
+     "name": "662",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Čelákovice, Toušeňská",
+       "to": "Kouřim",
+       "at": [
+        53
+       ]
+      },
+      {
+       "fr": "Kouřim",
+       "to": "Čelákovice, Toušeňská",
+       "at": [
+        14
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Čelákovice, Toušeňská :53 → Mochov (:14) → Vykáň → Český Brod (:44) → Vitice → Kouřim :14, 81 min; Kouřim :14 → Čelákovice :33, 79 min, 0-minute turn as in the timetable. 3 buses (wait 20 at Čelákovice)."
+    }
+   ]
+  },
+  "675": {
+   "core": [
+    "Kolín, nádraží",
+    "Cerhenice, Náměstí Míru",
+    "Pečky, železniční stanice"
+   ],
+   "note": "Kolín – Nová Ves I – Velim – Cerhenice – Dobřichov – Pečky. Kolín leaves hourly at :03, odd hours to Pečky (15:03, 17:03; 13:13 off), even hours only to Cerhenice, Náměstí Míru (14:03, 16:03, 18:03); Pečky :14 even hours (14:14, 16:14, 18:14); from Cerhenice only 17:30. Two Simutrans lines (Ex4): 675 to Pečky every 120, and 675 Cerhenice every 480 on the one real return (the outstation rule: timed at the inbound rate). Off: Kolín 14:03 and 18:03 → Cerhenice, whose buses end there (their next trip open for the live map).",
+   "sim": [
+    {
+     "name": "675",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Pečky, železniční stanice",
+       "at": [
+        "15:03"
+       ]
+      },
+      {
+       "fr": "Pečky, železniční stanice",
+       "to": "Kolín, nádraží",
+       "at": [
+        "16:14"
+       ]
+      }
+     ],
+     "why": "Kolín 15:03 → Velim → Cerhenice, Náměstí Míru (15:31) → Dobřichov → Pečky, železniční stanice 15:46, 43 min; Pečky 16:14 → Kolín 16:57, 43 min. 1 bus (waits 28 at Pečky, 6 at Kolín)."
+    },
+    {
+     "name": "675 Cerhenice",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Cerhenice, Náměstí Míru",
+       "notvia": [
+        "Pečky, železniční stanice"
+       ],
+       "at": [
+        "16:03"
+       ]
+      },
+      {
+       "fr": "Cerhenice, Náměstí Míru",
+       "to": "Kolín, nádraží",
+       "notvia": [
+        "Pečky, železniční stanice"
+       ],
+       "at": [
+        "17:30"
+       ]
+      }
+     ],
+     "why": "Kolín 16:03 → Nová Ves I → Velim → Cerhenice, Náměstí Míru 16:30, 27 min (the Pečky trips are kept out); Cerhenice 17:30 → Kolín 17:57, the only real return of the afternoon. Every 480 (repeats 0:03 / 1:30 and 8:03 / 9:30), 1 bus."
+    }
+   ]
+  },
+  "681": {
+   "core": [
+    "Kolín, nádraží",
+    "Uhlířské Janovice, náměstí",
+    "Petrovice II, Losiny"
+   ],
+   "note": "Kolín – Pašinka – Ratboř – Suchdol – Onomyšl – Rašovice – Uhlířské Janovice, and Uhlířské Janovice – Kochánov – Petrovice II, Losiny. Kolín :07 hourly (no 17:07), Uhlířské Janovice :00 (no 16:00); the bus from Kolín leaves Uhlířské Janovice again on arrival. The Petrovice II trips (Uhlířské Janovice 13:40, 15:30; Petrovice II, Losiny 14:06, 15:56) are 681 Petrovice, every 480 with both rounds exact: the only service of Petrovice II and its villages (okres Kutná Hora, no other sheet has 681). Off: Kolín 5:37, 6:37; Petrovice II 12:36 → Kolín.",
+   "sim": [
+    {
+     "name": "681",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Uhlířské Janovice, náměstí",
+       "at": [
+        7
+       ]
+      },
+      {
+       "fr": "Uhlířské Janovice, náměstí",
+       "to": "Kolín, nádraží",
+       "at": [
+        0
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Kolín :07 → Pašinka → Ratboř → Suchdol → Onomyšl → Uhlířské Janovice :00, 53 min; Uhlířské Janovice :00 → Kolín :03, 63 min (the afternoon trips; the 17:00 takes 53), 0-minute turn as in the timetable. 2 buses (wait 4 at Kolín)."
+    },
+    {
+     "name": "681 Petrovice",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Uhlířské Janovice, náměstí",
+       "to": "Petrovice II, Losiny",
+       "at": [
+        "13:40",
+        "15:30"
+       ]
+      },
+      {
+       "fr": "Petrovice II, Losiny",
+       "to": "Uhlířské Janovice, náměstí",
+       "at": [
+        "14:06",
+        "15:56"
+       ]
+      }
+     ],
+     "why": "Uhlířské Janovice 13:40 and 15:30 → Mitrov → Kochánov → Petrovice II → Petrovice II, Losiny, 24 min; Losiny 14:06 and 15:56 → Uhlířské Janovice, 24 min (the real 2-minute turns). Every 480 with both afternoon rounds, 1 bus (60 min at Uhlířské Janovice between them)."
+    }
+   ]
+  },
+  "698": {
+   "core": [
+    "Poříčany, železniční stanice",
+    "Velenka",
+    "Semice, střed"
+   ],
+   "note": "Poříčany, železniční stanice – Chrást – Velenka – Kersko – Semice, střed. One bus, hourly from Poříčany at :05 and from 15:05 alternating: odd hours to Semice (15:05, 17:05, 19:05; back 15:24, 17:24 on arrival), even hours only to Velenka (16:05, 18:05; back 16:22, 18:22). Modelled as that circuit, every 120 with Poříčany twice. Off: 13:00 and 14:00 to Semice (13:19, 14:24 back; the 13:19 via Hradištko, also on 443).",
+   "sim": [
+    {
+     "name": "698",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Poříčany, železniční stanice",
+       "to": "Semice, střed",
+       "at": [
+        "17:05"
+       ]
+      },
+      {
+       "fr": "Semice, střed",
+       "to": "Poříčany, železniční stanice",
+       "at": [
+        "17:24"
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Poříčany, železniční stanice",
+       "to": "Velenka",
+       "notvia": [
+        "Semice, střed"
+       ],
+       "at": [
+        "16:05"
+       ]
+      },
+      {
+       "fr": "Velenka",
+       "to": "Poříčany, železniční stanice",
+       "notvia": [
+        "Semice, střed"
+       ],
+       "at": [
+        "16:22"
+       ]
+      }
+     ],
+     "why": "Poříčany 17:05 → Velenka → Kersko → Semice, střed 17:24, 19 min, and back at 17:24, 0-minute turn as in the timetable; Poříčany 16:05 (and 18:05) → Velenka 16:14, 9 min, Velenka 16:22 → Poříčany 16:31. 1 bus (waits 22 and 34 at Poříčany, 8 at Velenka)."
+    }
+   ]
+  },
+  "702": {
+   "core": [
+    "Kolín, nádraží",
+    "Červené Pečky, Opatovice",
+    "Suchdol"
+   ],
+   "note": "Kolín – Nebovidy – Červené Pečky – Opatovice – Bořetice – Suchdol. Hourly and exact, one bus: Kolín :02, Suchdol :35 (the 14:02 turns at Opatovice and the 14:44 starts there, so both legs are read at Opatovice). Anchor set to 15:00 by hand: the automatic 16:00 window holds the hour with no trip (17:02, 17:35).",
+   "sim": [
+    {
+     "name": "702",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Suchdol",
+       "core_to": "Červené Pečky, Opatovice",
+       "at": [
+        2
+       ]
+      },
+      {
+       "fr": "Suchdol",
+       "to": "Kolín, nádraží",
+       "knot": "Červené Pečky, Opatovice",
+       "knot_at": [
+        44
+       ]
+      }
+     ],
+     "why": "Kolín :02 → Nebovidy → Červené Pečky (Opatovice :16) → Suchdol :25, 23 min; Suchdol :35 → Opatovice (:44) → Kolín :58, 23 min. 1 bus (waits 10 at Suchdol, 4 at Kolín)."
+    }
+   ],
+   "anchor": "15:00"
+  },
+  "706": {
+   "core": [
+    "Žiželice, náměstí",
+    "Kolín, nádraží",
+    "Zásmuky, náměstí",
+    "Uhlířské Janovice, náměstí"
+   ],
+   "note": "Žiželice – Choťovice – Žehuň – Jestřabí Lhota – Volárna – Ovčáry – Kolín – Zibohlavy – Kořenice – Bečváry – Zásmuky – Církvice – Skvrňov – Uhlířské Janovice, through Kolín. Hourly at Kolín, nádraží: :47 towards Uhlířské Janovice (13:47–16:47, then 18:17, 19:17) and :13 towards Žiželice (15:13–19:13), read there and worked back to the ends (Žiželice :03, Uhlířské Janovice :12). Anchor set to 15:30 by hand: the 16:00 window holds the 17:33 from Žiželice, 30 min off. Listed: Kolín, PZKO-TOYOTA 14:31 → Žiželice (stops on MHD Kolín 4 and 6) and the Skvrňov / Zásmuky school trips.",
+   "sim": [
+    {
+     "name": "706",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Žiželice, náměstí",
+       "to": "Uhlířské Janovice, náměstí",
+       "knot": "Kolín, nádraží",
+       "knot_at": [
+        47
+       ]
+      },
+      {
+       "fr": "Uhlířské Janovice, náměstí",
+       "to": "Žiželice, náměstí",
+       "knot": "Kolín, nádraží",
+       "knot_at": [
+        13
+       ]
+      }
+     ],
+     "why": "Žiželice :03 → Jestřabí Lhota → Ovčáry → Kolín (:47) → Zibohlavy → Bečváry → Zásmuky (:21) → Skvrňov → Uhlířské Janovice :48, 105 min via Vavřinec (the 15:03 slot trip skips Vavřinec, 99 min); Uhlířské Janovice :12 → Zásmuky → Kolín (:13) → Žiželice :57, 105 min. 4 buses (waits 24 at Uhlířské Janovice, 6 at Žiželice)."
+    }
+   ],
+   "anchor": "15:30"
+  },
+  "707": {
+   "core": [
+    "Kolín, nádraží",
+    "Svatý Mikuláš",
+    "Hlízov, u váhy"
+   ],
+   "note": "Kolín – Starý Kolín – Svatá Kateřina – zámek Kačina – Svatý Mikuláš – Nové Dvory – Malín – Hlízov – Starý Kolín – Kolín, a one-way circle of 56 min. Hourly 12:57–14:57 (the 14:57 ends at Hlízov, u váhy), one bus, so every 60. The only service of Starý Kolín and Svatý Mikuláš, Svatá Kateřina.",
+   "sim": [
+    {
+     "name": "707",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Kolín, nádraží",
+       "core_to": "Hlízov, u váhy",
+       "at": [
+        57
+       ]
+      }
+     ],
+     "why": "Kolín :57 → Starý Kolín → Svatá Kateřina → Svatý Mikuláš (:20) → Nové Dvory → Malín → Hlízov, u váhy (:34) → Starý Kolín → Kolín, nádraží :53, 56 min. 1 bus (wait 4)."
+    }
+   ]
+  },
+  "821": {
+   "core": [
+    "Kolín, nádraží",
+    "Kouřim",
+    "Horní Kruty",
+    "Sázava, autobusové stanoviště"
+   ],
+   "note": "Kolín – Radovesnice I – Polní Voděrady – Krychnov – Svojšice – Kouřim – Toušice – Ždánice, u Jánů – Barchovice – Horní Kruty – Úžice – Sázava (okres Benešov). Kolín leaves hourly at :02: even hours to Sázava (12:02–18:02, exact), odd hours short to Horní Kruty (15:02) or Kouřim (17:02); towards Kolín it passes Kouřim hourly at :15 (Sázava 14:14, 16:19, 18:19; Ždánice, u Jánů 14:00; Horní Kruty 15:39). Two Simutrans lines (Ex4): 821 to Sázava and 821 Kouřim, which turns at Kouřim (the option to Horní Kruty is on the owner checks). Anchor 16:00 by hand: at the automatic 14:30 the Sázava return falls on :14 (2 exact) instead of :19 (5 exact). Listed: Horní Kruty 17:44 → Kouřim, Ždánice, u Jánů 14:00 → Horní Kruty.",
+   "sim": [
+    {
+     "name": "821",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Sázava, autobusové stanoviště",
+       "at": [
+        "16:02"
+       ]
+      },
+      {
+       "fr": "Sázava, autobusové stanoviště",
+       "to": "Kolín, nádraží",
+       "at": [
+        "16:19"
+       ]
+      }
+     ],
+     "why": "Kolín 16:02 → Svojšice → Kouřim (16:45) → Barchovice → Horní Kruty (17:21) → Sázava, autobusové stanoviště 17:46, 104 min; Sázava 16:19 → Kouřim (17:15) → Kolín 17:58, 99 min (16:19 and 18:19 exact; 12:14 and 14:14 leave 5 min earlier). 2 buses (waits 33 at Sázava, 4 at Kolín)."
+    },
+    {
+     "name": "821 Kouřim",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Kouřim",
+       "notvia": [
+        "Sázava, autobusové stanoviště"
+       ],
+       "at": [
+        "17:02"
+       ]
+      },
+      {
+       "fr": "Kouřim",
+       "to": "Kolín, nádraží",
+       "notvia": [
+        "Sázava, autobusové stanoviště"
+       ],
+       "at": [
+        "16:15"
+       ]
+      }
+     ],
+     "why": "Kolín :02 odd hours → Svojšice → Kouřim, 43 min: the 17:02 really ends at Kouřim (17:45), the 15:02 runs on to Horní Kruty (16:21); Kouřim :15 even hours → Kolín, 43 min, standing for Horní Kruty 15:39 (Kouřim 16:15) and Ždánice, u Jánů 14:00 (14:15). 1 bus (waits 30 at Kouřim, 4 at Kolín)."
+    }
+   ],
+   "anchor": "16:00"
+  },
+  "822": {
+   "core": [
+    "Kolín, nádraží",
+    "Plaňany, náměstí",
+    "Kouřim",
+    "Český Brod, železniční stanice",
+    "Klášterní Skalice"
+   ],
+   "note": "Kolín – Křečhoř – Břežany I – Plaňany – Vrbčany – Kouřim – Oleška – Vitice – Kšely – Český Brod, through Kouřim. Kolín leaves hourly at :19 (13:19–16:19; the 15:19 only to Kouřim; 17:24, 18:24 5 min later), Český Brod at :30 (15:30–19:30; 18:30, 19:30 only to Kouřim). Anchor set to 15:30 by hand: the automatic 14:10 window has no Český Brod departure; off: Kouřim 14:56 and Klášterní Skalice 13:54 → Kolín. The Kouřim – Klášterní Skalice shuttle (4 min, the only service of Klášterní Skalice) is 822 Klášterní Skalice.",
+   "sim": [
+    {
+     "name": "822",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Český Brod, železniční stanice",
+       "core_to": "Kouřim",
+       "at": [
+        19
+       ]
+      },
+      {
+       "fr": "Český Brod, železniční stanice",
+       "to": "Kolín, nádraží",
+       "core_to": "Kouřim",
+       "at": [
+        30
+       ]
+      }
+     ],
+     "why": "Kolín :19 → Křečhoř → Plaňany (:58) → Kouřim (:18) → Vitice → Český Brod :55, 96 min; Český Brod :30 → Kouřim (:07) → Plaňany → Kolín :59, 89 min (the 16:30 takes 96). 4 buses (waits 35 at Český Brod, 20 at Kolín)."
+    },
+    {
+     "name": "822 Klášterní Skalice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kouřim",
+       "to": "Klášterní Skalice",
+       "at": [
+        "15:24"
+       ]
+      },
+      {
+       "fr": "Klášterní Skalice",
+       "to": "Kouřim",
+       "at": [
+        "15:30"
+       ]
+      }
+     ],
+     "why": "Kouřim 15:24 → Klášterní Skalice 15:28 and 15:30 → Kouřim 15:34, 4 min each way (also 17:24 / 17:30; 13:45 and 13:54 are off). 1 bus (wait 110 at Kouřim)."
+    }
+   ],
+   "anchor": "15:30"
+  },
+  "824": {
+   "core": [
+    "Kolín, nádraží",
+    "Kouřim",
+    "Ždánice"
+   ],
+   "note": "Kolín – Radovesnice I – Lošany – Polní Voděrady – Dolní Chvatliny – Toušice – Svojšice, Votelež – Kouřim – Ždánice. Hourly and exact: Kolín :32 (17:32 only to Kouřim), Ždánice :31. Listed: Kouřim 13:28 → Kolín, the Ždánice – Kouřim school trips and Kbel, Kbílek 6:59 → Kolín.",
+   "sim": [
+    {
+     "name": "824",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Ždánice",
+       "core_to": "Kouřim",
+       "at": [
+        32
+       ]
+      },
+      {
+       "fr": "Ždánice",
+       "to": "Kolín, nádraží",
+       "at": [
+        31
+       ]
+      }
+     ],
+     "why": "Kolín :32 → Polní Voděrady → Toušice → Kouřim (:17) → Ždánice :29, 57 min; Ždánice :31 → Kouřim (:43) → Kolín :28, 57 min. 2 buses (waits 2 at Ždánice, 4 at Kolín)."
+    }
+   ]
+  },
+  "826": {
+   "core": [
+    "Pečky, železniční stanice",
+    "Klučov, Skramníky",
+    "Český Brod, železniční stanice",
+    "Břežany II"
+   ],
+   "note": "Pečky – Tatce – Klučov, Skramníky – Hořany – Poříčany – Klučov – Český Brod – Rostoklaty – Tuklaty – Břežany II. About every 1½ to 2 h: through Český Brod towards Břežany 14:00 (from Poříčany 13:19), 14:30, 16:00, 17:00; from Břežany II 13:07, 14:37, 16:37 (to Klučov, Skramníky), 18:07. Every 120 at the line's own anchor (13:30): Český Brod :00 even hours and Břežany II :37 even hours, each exact twice. Listed: Poříčany 12:58 → Pečky, Poříčany 14:35 → Hořany, Pečky 19:15 → Klučov, Skramníky.",
+   "sim": [
+    {
+     "name": "826",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pečky, železniční stanice",
+       "to": "Břežany II",
+       "knot": "Český Brod, železniční stanice",
+       "knot_at": [
+        "16:00"
+       ]
+      },
+      {
+       "fr": "Břežany II",
+       "to": "Pečky, železniční stanice",
+       "core_to": "Český Brod, železniční stanice",
+       "at": [
+        "16:37"
+       ]
+      }
+     ],
+     "why": "Pečky :16 → Klučov, Skramníky → Poříčany → Klučov → Český Brod (:00) → Rostoklaty → Břežany II :23, 67 min (the 14:00 slot through Český Brod is the 13:19 from Poříčany, the 16:00 the 15:15 from Pečky); Břežany II :37 → Český Brod (:00) → Poříčany → Pečky :56, 79 min. 2 buses (waits 80 at Pečky, 14 at Břežany II)."
+    }
+   ]
+  },
+  "235001": {
+   "core": [
+    "Kolín, Za Jízdárnou",
+    "Kolín, nemocnice",
+    "Kolín, nádraží",
+    "Kolín, Sendražice, II"
+   ],
+   "note": "MHD Kolín 1: Za Jízdárnou – nemocnice – gymnázium – Masarykova – náměstí Republiky – nádraží – Strojírny – Sendražice. Every 20 from 13:03 to 16:43 (Za Jízdárnou :03 / :23 / :43; Sendražice, II :17 / :37 / :57 to 17:17), then every 30. Anchor set to 15:00 by hand, where the every 20 runs (the 16:00 window holds the change to every 30). Two of those slots are trips to and from Kolín, Zibohlavy instead of Za Jízdárnou (Sendražice 13:58, 14:57; Zibohlavy 14:37, 15:37), read at nemocnice; Zibohlavy is also on 706.",
+   "sim": [
+    {
+     "name": "MHD Kolín 1",
+     "every": 20,
+     "legs": [
+      {
+       "fr": "Kolín, Za Jízdárnou",
+       "to": "Kolín, Sendražice, II",
+       "knot": "Kolín, nemocnice",
+       "knot_at": [
+        4
+       ]
+      },
+      {
+       "fr": "Kolín, Sendražice, II",
+       "to": "Kolín, Za Jízdárnou",
+       "core_to": "Kolín, nemocnice",
+       "at": [
+        17
+       ]
+      }
+     ],
+     "why": "Za Jízdárnou :03 / :23 / :43 → nemocnice → Masarykova → nádraží (:21) → Sendražice, II :32, 29 min; Sendražice :17 / :37 / :57 → nádraží → Okresní soud → Masarykova I → nemocnice → Za Jízdárnou, 31 min. 4 buses (waits 5 at Sendražice, 15 at Za Jízdárnou)."
+    }
+   ],
+   "anchor": "15:00"
+  },
+  "235002": {
+   "core": [
+    "Kolín, Štítary",
+    "Kolín, nádraží",
+    "Kolín, Šťáralka"
+   ],
+   "note": "MHD Kolín 2: Štítary – Benešova – náměstí Republiky – nádraží – Draslovka – Šťáralka. Every 20 from 13:16 to 16:36 (Štítary :16 / :36 / :56, Šťáralka :15 / :35 / :55), then every 30; modelled at the line's own anchor, 14:50. The bus leaves Štítary 1 min after arriving, as in the timetable. Listed: the Štítary – nádraží short trips.",
+   "sim": [
+    {
+     "name": "MHD Kolín 2",
+     "every": 20,
+     "legs": [
+      {
+       "fr": "Kolín, Štítary",
+       "to": "Kolín, Šťáralka",
+       "at": [
+        16
+       ]
+      },
+      {
+       "fr": "Kolín, Šťáralka",
+       "to": "Kolín, Štítary",
+       "at": [
+        15
+       ]
+      }
+     ],
+     "why": "Štítary :16 / :36 / :56 → Benešova → nádraží (:31) → Šťáralka :37, 21 min; Šťáralka :15 / :35 / :55 → nádraží → Štítary :35, 20 min. 3 buses (waits 18 at Šťáralka, 1 at Štítary)."
+    }
+   ]
+  },
+  "235003": {
+   "core": [
+    "Kolín, U Vodárny",
+    "Kolín, nádraží",
+    "Kolín, zimní stadion"
+   ],
+   "note": "MHD Kolín 3: U Vodárny – Masarykova – gymnázium – Polepská – nádraží – zálabská lékárna – zimní stadion. Every 30, each of the two buses on its own path: U Vodárny :05 via Atletický stadion (30 min; it leaves zimní stadion again at :35, 0-minute turn) and U Vodárny :35 direct (27 min; leaves at :05). So two Simutrans lines every 60, one per path.",
+   "sim": [
+    {
+     "name": "MHD Kolín 3",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kolín, U Vodárny",
+       "to": "Kolín, zimní stadion",
+       "notvia": [
+        "Kolín, Atletický stadion"
+       ],
+       "at": [
+        35
+       ]
+      },
+      {
+       "fr": "Kolín, zimní stadion",
+       "to": "Kolín, U Vodárny",
+       "at": [
+        5
+       ]
+      }
+     ],
+     "why": "U Vodárny :35 → ul.Míru → Masarykova I → Polepská → nádraží (:49) → Tovární → Veltrubská → zimní stadion :02, 27 min, not via Atletický stadion; zimní stadion :05 → nádraží → u nemocnice → U Vodárny :25, 20 min. 1 bus."
+    },
+    {
+     "name": "MHD Kolín 3 Atletický stadion",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kolín, U Vodárny",
+       "to": "Kolín, zimní stadion",
+       "via": [
+        "Kolín, Atletický stadion"
+       ],
+       "at": [
+        5
+       ]
+      },
+      {
+       "fr": "Kolín, zimní stadion",
+       "to": "Kolín, U Vodárny",
+       "at": [
+        35
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "U Vodárny :05 → the same way → Dymokurská → Atletický stadion → zimní stadion :35, 30 min; zimní stadion :35 → U Vodárny :55, 20 min, 0-minute turn as in the timetable. 1 bus."
+    }
+   ]
+  },
+  "235004": {
+   "core": [
+    "Kolín, Tesco",
+    "Kolín, nádraží",
+    "Kolín, PZKO-TOYOTA",
+    "Kolín, Retailpark Ovčáry"
+   ],
+   "note": "MHD Kolín 4: Tesco – Masarykova – Jateční – nádraží – Třídvorská – Ovčáry – Retailpark Ovčáry. Hourly and exact: Tesco :47, Retailpark Ovčáry :30 (back via PZKO-TOYOTA). Listed: Tesco 19:47 → nádraží → 20:13 → Tesco.",
+   "sim": [
+    {
+     "name": "MHD Kolín 4",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kolín, Tesco",
+       "to": "Kolín, Retailpark Ovčáry",
+       "at": [
+        47
+       ]
+      },
+      {
+       "fr": "Kolín, Retailpark Ovčáry",
+       "to": "Kolín, Tesco",
+       "at": [
+        30
+       ]
+      }
+     ],
+     "why": "Tesco :47 → Masarykova I → nádraží (:04) → Říční → Ovčáry → Retailpark Ovčáry :23, 36 min (12:47 and 13:47 also run via PZKO-TOYOTA); Retailpark :30 → PZKO-TOYOTA → Ovčáry → nádraží (:58) → Tesco :14, 44 min. 2 buses (waits 33 at Tesco, 7 at Retailpark)."
+    }
+   ]
+  },
+  "235005": {
+   "core": [
+    "Polepy",
+    "Kolín, nádraží",
+    "Kolín, Říční",
+    "Kolín, Silo"
+   ],
+   "note": "MHD Kolín 5: Polepy – 15 kop – Jateční – nádraží – zimní stadion – Sadová – Třídvorská – Říční / Silo. One bus: Polepy 13:44, 15:04, 16:44 → Kolín, Říční; Kolín, Silo 14:23, 15:43, 17:37 → Polepy (the bus goes on from Říční to Silo, 12 min). Every 480 with three slots each way holds all six afternoon trips exactly (the 290 precedent: an exact multi-slot row on a long interval); the morning trips (5:08–8:51) are off.",
+   "sim": [
+    {
+     "name": "MHD Kolín 5",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Polepy",
+       "to": "Kolín, Říční",
+       "at": [
+        "13:44",
+        "15:04",
+        "16:44"
+       ]
+      },
+      {
+       "fr": "Kolín, Silo",
+       "to": "Polepy",
+       "at": [
+        "14:23",
+        "15:43",
+        "17:37"
+       ],
+       "stops_via": [
+        "Kolín, Spel"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Polepy 13:44, 15:04, 16:44 → 15 kop → nádraží → Sadová → Třídvorská → Kolín, Říční, 27 min; the bus then repositions to Kolín, Silo (12 min, as the real 14:11 → 14:23 and 15:31 → 15:43); Silo 14:23, 15:43, 17:37 → Spel → Sadová → nádraží → Polepy, 27 min by the path via Spel (the 17:37 skips Spel, 23 min). Every 480, 1 bus."
+    }
+   ]
+  },
+  "235006": {
+   "core": [
+    "Kolín, Tesco",
+    "Kolín, nádraží",
+    "Kolín, PZKO-TOYOTA"
+   ],
+   "note": "MHD Kolín 6: Tesco – Masarykova – nádraží – Strojírny – Retailpark Ovčáry – PZKO-TOYOTA, for the factory shifts. Afternoon: Tesco 13:17, 13:37 → PZKO-TOYOTA; PZKO-TOYOTA 13:50 (via PZKO CEVA), 14:45 → Tesco, 14:15 → nádraží; the PZKO-TOYOTA – PZKO CEVA shuttle 14:01 / 14:40; evening 21:03 and 22:34–22:49. Every 480 on the 13:17 / 13:50 round (repeats 5:17 / 21:17, by the morning and night shifts); the only service of PZKO CEVA. The morning Retailpark Ovčáry → PZKO-TOYOTA trips follow MHD Kolín 4 arrivals (5 of 5).",
+   "sim": [
+    {
+     "name": "MHD Kolín 6",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Kolín, Tesco",
+       "to": "Kolín, PZKO-TOYOTA",
+       "at": [
+        "13:17"
+       ]
+      },
+      {
+       "fr": "Kolín, PZKO-TOYOTA",
+       "to": "Kolín, Tesco",
+       "at": [
+        "13:50"
+       ]
+      }
+     ],
+     "why": "Tesco 13:17 → nádraží → Strojírny → Retailpark Ovčáry → PZKO-TOYOTA, 23 min; PZKO-TOYOTA 13:50 → Retailpark Ovčáry → PZKO CEVA → nádraží → Tesco, 26 min. 1 bus."
+    }
+   ]
+  },
+  "235007": {
+   "core": [
+    "Kolín, U Vodárny",
+    "Kolín, nádraží",
+    "Kolín, PZKO-TOYOTA"
+   ],
+   "note": "MHD Kolín 7: U Vodárny – Jaselská – nádraží – Strojírny – Retailpark Ovčáry – PZKO-TOYOTA – PZKO NIPPON – PZKO TOYOTA TSUSHO, a shift line exactly every 8 h: U Vodárny 5:00, 13:00, 21:00; PZKO-TOYOTA 6:15, 14:10, 22:15. Every 480; the only service of Jaselská, PZKO NIPPON and PZKO TOYOTA TSUSHO.",
+   "sim": [
+    {
+     "name": "MHD Kolín 7",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Kolín, U Vodárny",
+       "to": "Kolín, PZKO TOYOTA TSUSHO",
+       "at": [
+        "13:00"
+       ]
+      },
+      {
+       "fr": "Kolín, PZKO-TOYOTA",
+       "to": "Kolín, U Vodárny",
+       "at": [
+        "14:10"
+       ]
+      }
+     ],
+     "why": "U Vodárny 13:00 → Jaselská → nádraží (13:10) → PZKO-TOYOTA (13:23) → PZKO NIPPON → PZKO TOYOTA TSUSHO, 28 min, then on to PZKO-TOYOTA (13:33); PZKO-TOYOTA 14:10 → NIPPON → TSUSHO → nádraží → U Vodárny 14:39, 29 min (6:15 and 22:15 leave 5 min later). 1 bus."
+    }
+   ]
+  },
+  "235008": {
+   "core": [
+    "Kolín, Karlovo náměstí",
+    "Kolín, nádraží",
+    "Kolín, U Vodárny"
+   ],
+   "note": "MHD Kolín 8: Karlovo náměstí – poliklinika – nádraží – Polepská – 15 kop – Jateční – gymnázium – plicní – Benešova – U Vodárny – Zborovská – náměstí Republiky – Karlovo náměstí, a 30-min one-way circle hourly at :20 (9:20–16:20; the 17:20 ends at U Vodárny). One bus; the only service of Karlovo náměstí, plicní and Zborovská.",
+   "sim": [
+    {
+     "name": "MHD Kolín 8",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kolín, Karlovo náměstí",
+       "to": "Kolín, Karlovo náměstí",
+       "core_to": "Kolín, U Vodárny",
+       "at": [
+        20
+       ]
+      }
+     ],
+     "why": "Karlovo náměstí :20 → nádraží (:28) → 15 kop → plicní → U Vodárny (:43) → Zborovská → Karlovo náměstí :50, 30 min. 1 bus (wait 30)."
+    }
+   ]
+  },
+  "235009": {
+   "core": [
+    "Kolín, Štítary",
+    "Kolín, nádraží",
+    "Kolín, Spálenka",
+    "Veltruby, Na Návsi"
+   ],
+   "note": "MHD Kolín 9: Štítary – Výfuk – U Vodárny – Masarykova – nádraží – Tatradomy – Sadová – Spálenka (– Veltruby). Afternoon: Štítary 15:46 (on to Veltruby, Na Návsi), 16:46, 17:46 → Spálenka; Veltruby 14:50, 16:20 (on arrival) and Spálenka 17:31, 18:31 → Štítary. Hourly with two buses, as the real afternoon: Štítary :46, back past Spálenka :31 (Veltruby :20). The only service of Spálenka; Veltruby, Školní and Hradištko I are also on 705.",
+   "sim": [
+    {
+     "name": "MHD Kolín 9",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kolín, Štítary",
+       "to": "Veltruby, Na Návsi",
+       "core_to": "Kolín, Spálenka",
+       "at": [
+        46
+       ]
+      },
+      {
+       "fr": "Veltruby, Na Návsi",
+       "to": "Kolín, Štítary",
+       "knot": "Kolín, Spálenka",
+       "knot_at": [
+        31
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Štítary :46 → nádraží (:04) → Spálenka (:14) → Veltruby, Na Návsi :20, 34 min: the 15:46 runs to Veltruby, the 16:46 and 17:46 end at Spálenka and run on 6 min to Veltruby in the game; Veltruby :20 → Školní → Hradištko I → Spálenka (:31) → Štítary :59, 39 min, 0-minute turn as in the timetable (the 17:31 and 18:31 start at Spálenka). 2 buses (wait 47 at Štítary)."
+    }
+   ]
+  },
+  "889": {
+   "core": [
+    "Pečky, železniční stanice",
+    "Chotutice, Průběžná",
+    "Plaňany, náměstí",
+    "Kouřim"
+   ],
+   "note": "889 Pečecko, PID Haló (on demand): Pečky – Dobřichov – Radim – Chotutice – Plaňany – Vrbčany – Třebovle – Klášterní Skalice – Kouřim, and Pečky – Ratenice – Poděbrady. Evening only, with fixed times: Pečky 20:12, 22:08, 0:08 → Kouřim; Kouřim 20:39, 22:39 → Pečky (0-minute turns at Kouřim). Chotutice has no other bus at any hour, so by the owner's PID Haló decision (2 Nov 2026) it gets 889 Chotutice, every 480 on the 20:12 / 20:39 round; the Poděbrady trips (Ratenice also on 498) and the later rounds are listed.",
+   "sim": [
+    {
+     "name": "889 Chotutice",
+     "every": 480,
+     "window": [
+      "20:00",
+      "22:00"
+     ],
+     "legs": [
+      {
+       "fr": "Pečky, železniční stanice",
+       "to": "Kouřim",
+       "at": [
+        "20:12"
+       ],
+       "stops": [
+        "Pečky, železniční stanice",
+        "Pečky, Tona",
+        "Pečky, Velké Chvalovice",
+        "Pečky, Palackého",
+        "Pečky, Tahiti",
+        "Dobřichov",
+        "Chotutice, Průběžná",
+        "Radim, ObÚ",
+        "Plaňany, náměstí",
+        "Plaňany, železniční stanice",
+        "Vrbčany",
+        "Třebovle, Miškovice",
+        "Klášterní Skalice",
+        "Kouřim"
+       ]
+      },
+      {
+       "fr": "Kouřim",
+       "to": "Pečky, železniční stanice",
+       "at": [
+        "20:39"
+       ],
+       "lay": 0,
+       "stops": [
+        "Kouřim",
+        "Klášterní Skalice",
+        "Třebovle, Miškovice",
+        "Vrbčany",
+        "Plaňany, železniční stanice",
+        "Plaňany, náměstí",
+        "Radim, ObÚ",
+        "Chotutice, Průběžná",
+        "Pečky, Hynkův mlýn",
+        "Dobřichov",
+        "Pečky, Tahiti",
+        "Pečky, Palackého",
+        "Pečky, Velké Chvalovice",
+        "Pečky, Tona",
+        "Pečky, železniční stanice"
+       ]
+      }
+     ],
+     "why": "Pečky 20:12 → Dobřichov → Chotutice, Průběžná → Radim, ObÚ → Plaňany → Vrbčany → Třebovle, Miškovice → Klášterní Skalice → Kouřim 20:39, 27 min; Kouřim 20:39 → Pečky, Hynkův mlýn → Pečky 21:05, 26 min, 0-minute turn as in the timetable. The game path keeps the named stops only (the on-demand virtual stops, virtuální zastávka, are left out). Every 480 (repeats 4:12 / 4:39 and 12:12 / 12:39), read 20:00–22:00 where its fixed trips run. 1 bus."
+    }
+   ]
+  }
+ },
+ "unmodelled": {},
+ "terminus_alias": {},
+ "terminus_alias_why": "",
+ "coverage_exceptions": {
+  "Velký Osek, nádraží": "Okres Kolín. On this sheet only XS2 (991002), the rail replacement bus Velký Osek – Kolín, serves it; line 705 (Poděbrady – Kolín – Kutná Hora – Čáslav, Nymbursko sheet) passes it all afternoon (13:05, 15:15, 16:25, 17:20, 18:25 …)."
+ },
+ "owner_checks": [
+  [
+   "821",
+   "821 Kouřim turns at Kouřim, 1 bus. Of its afternoon slot trips two really run beyond Kouřim, Kolín 15:02 → Horní Kruty 16:21 and Horní Kruty 15:39 → Kolín 16:58 (both chain with 772 at Horní Kruty, 2 of 2), and two really end at Kouřim, Kolín 17:02 → Kouřim 17:45 and Horní Kruty 17:44 → Kouřim 18:15. Horní Kruty's stops are all on 821 to Sázava every 120.",
+   "821 Horní Kruty: the same slots run to and from Horní Kruty, every 120 (Kolín 15:02, Horní Kruty 15:39), 78 min at Horní Kruty: 2 buses (+1); the 17:02 then runs beyond Kouřim, where the real bus stops."
+  ],
+  [
+   "660",
+   "Štíhlice (village stop, okres Praha-východ; 7:15 to Kostelec, 13:45 and 15:20 from Kostelec, no other line on any sheet) is kept by 660 Doubravčice, every 480, 1 bus: the sheet's one coverage choice.",
+   "A coverage exception (−1 bus): Štíhlice, Doubravčická, the village's other stop, is on 491 hourly."
+  ]
+ ],
+ "notes": "PID Kolínsko (okres Kolín, licences 230xxx and MHD Kolín 235001–235009). Timetable: PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026 (school day). Every terminus is treated as a loop (typed = real − 61 mod every). MHD Kolín is a small-town network, done with the same regional method. Eight lines run every 480 on their real rounds (889 Chotutice on its fixed evening round) (the 402B rule; Step 4 rule 3, the exact pattern with the same bus): 460 Radim (the only service of Radim, ObÚ), 660 Doubravčice (Štíhlice), 675 Cerhenice (its one real return), 681 Petrovice (two rounds), MHD Kolín 5 (three rounds), MHD Kolín 6 and 7 (factory shifts at PZKO-TOYOTA), 889 Chotutice (Chotutice). Six lines turn a bus on arrival as the timetable does (537 at Jestřabí Lhota, 662 at Kouřim, 681 at Uhlířské Janovice, 698 at Semice, MHD Kolín 3 at zimní stadion, MHD Kolín 9 at Veltruby): sized with no wait, the typed departure being the real minute − 1; that a bus arriving on the real minute still leaves within the entry's Leave up to (automatic) is an engine question to confirm once. Through-running seen in the 0–5 min chain test, kept as separate lines (open for the 2 Nov live map): 491 ↔ 660 and 660 ↔ 661 at Český Brod (660's :00 departures follow 491's :58 and 661's :55 arrivals equally, 661's 17:30 and 18:30 leave as the 660 buses arrive; a 491 + 660 circuit every 60 would need 3 buses instead of 4, but only the plates can tell which line feeds 660); 535 → 534 at Kolín (:05 → :06); 702 and 821 arrivals at Kolín :58 before 675 :03; 821 ↔ 772 at Horní Kruty and 821 ↔ 824 at Ždánice, u Jánů (2 of 2); 662's Kounice – Mochov shuttle ↔ 354 at Mochov (12 of 13 both ways); 435 ↔ 686 at Říčany, Wolkerova (5 of 14); 487 ↔ 790, 426, 455 at Vlašim (3–4 of 9); 826 → 433 at Pečky (4 of 11); MHD Kolín 4 → MHD Kolín 6 at Retailpark Ovčáry (5 of 5, morning). The OAD Kolín buses (435, 491, 660, 661, 662, 822, 698, 706, MHD Kolín) and the POLKOST buses (460, 487, 675, 681, 702, 707, 821, 824, 826) swap lines at Český Brod and Kolín all day; per-line Simutrans lines need more buses than the operators run, and pooling is the owner's choice (one case on the owner checks, 534 + 535). For the Praha-východ sheet: the Kounice – Mochov shuttle (licence 231662, ČSAD Střední Čechy, about hourly 13:23–18:57) continues 354 at Mochov, so the 354 buses run on to Kounice; it is listed here, its stops being on 661 and 662. PID Haló (owner, 2 Nov 2026: model a line where it is a place's only 13:00–19:00 service): 888 Českobrodsko and 889 Pečecko run only 20:12–0:42, so no stop of okres Kolín has Haló as its 13:00–19:00 service (stop_lines.json has no 888 / 889 entry). The stops only they serve are on-demand virtual stops (virtuální zastávka) in villages whose other stops are on modelled lines, plus Pečky, Hynkův mlýn (also on 675 at 6:21), Kostelec nad Černými lesy, Trativody and u křížku (okres Praha-východ) and the village of Chotutice, which has no other bus at all: the owner's Haló decision decides it, so it gets 889 Chotutice from 889's fixed evening trips (every 480).",
+ "artifact_url": "https://claude.ai/artifact/DwZ6PwMMR5qwPwcsd3FrcH"
+}

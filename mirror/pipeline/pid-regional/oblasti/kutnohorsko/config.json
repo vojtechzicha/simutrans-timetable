@@ -1,0 +1,1540 @@
+{
+ "title": "PID Kutnohorsko",
+ "oblast": "kutnohorsko",
+ "oblast_name": "Kutnohorsko",
+ "okres": "Kutná Hora",
+ "prefix": "240",
+ "output_html": "PID Kutnohorsko.html",
+ "artifact_url": "https://claude.ai/artifact/9tUWDoKxLkKS7y5wT22THk",
+ "snapshot": "2026-11-02",
+ "vehicle_day": "2026-11-02",
+ "vehicle_day_label_en": "Monday 2 Nov 2026",
+ "network_state_label": "2 Nov 2026",
+ "gtfs": {
+  "zip": "data/raw/gtfs/2026-11-01/gtfs.zip",
+  "service_date": "20261102",
+  "why": "PID GTFS downloaded Sun 1 Nov 2026 (feed 1-14 Nov). Service day Mon 2 Nov 2026 (the first live-map poll day), a normal school weekday (28 Oct was a holiday and 29-30 Oct autumn school holidays; regional lines run many school-day-only trips)."
+ },
+ "areas": [
+  {
+   "id": "kutnohorsko",
+   "name": "Kutnohorsko",
+   "prefix": "240",
+   "kind": "regional"
+  }
+ ],
+ "fitwin": [
+  300,
+  1380
+ ],
+ "cycle_lay": 3,
+ "all_termini_are_loops": true,
+ "stop_name_expansions": [],
+ "stop_name_fixed": {},
+ "terminus_alias": {},
+ "terminus_alias_why": "",
+ "coverage_exceptions": {
+  "Černíny": "served only by XS28 (992028), the replacement bus for the works on the Kutná Hora – Zruč nad Sázavou railway (regular network: the train).",
+  "Černíny, Zavadilka": "served only by XS28 (992028), the replacement bus for the works on the Kutná Hora – Zruč nad Sázavou railway (regular network: the train).",
+  "Zruč nad Sázavou": "Zruč nad Sázavou railway station: served only by XS28 (992028), the rail replacement bus (regular network: the train).",
+  "Hodkov zastávka": "Hodkov railway halt: served only by XS29 (992029), the replacement bus for the works on the Zbraslavice – Ledeč nad Sázavou railway (regular network: the train)."
+ },
+ "lines": {
+  "381": {
+   "core": [
+    "Praha, Háje",
+    "Zásmuky, náměstí",
+    "Kutná Hora, hlavní nádraží",
+    "Čáslav, železniční stanice",
+    "Čáslav, obchodní centrum"
+   ],
+   "note": "Praha, Háje – Říčany – Kostelec nad Černými lesy – Zásmuky – Kutná Hora – Čáslav, obchodní centrum. Exactly hourly all afternoon: Háje :00 (12:00–17:00 to the shopping centre, 18:00 to the bus station), Čáslav, obchodní centrum :48 (12:48–17:48); the bus that reaches Háje at :00 leaves again at :00. Off the pattern, all on the line's own stops: the Háje – Zásmuky, náměstí extras at :30 (14:30, 15:30, 16:30, 17:30; back 16:21), buses of the Zásmuky garage going home, and Kutná Hora, hlavní nádraží → Háje 13:40, 14:40.",
+   "sim": [
+    {
+     "name": "381",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Háje",
+       "to": "Čáslav, obchodní centrum",
+       "at": [
+        0
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Čáslav, obchodní centrum",
+       "to": "Praha, Háje",
+       "at": [
+        48
+       ]
+      }
+     ],
+     "why": "Háje :00 → Čáslav, obchodní centrum :12 (132 min); Čáslav :48 → Háje :00 (132 min). The bus that reaches Háje at :00 leaves at :00: 0-minute turn as in the timetable (19 of 23 arrivals)."
+    }
+   ]
+  },
+  "387": {
+   "core": [
+    "Praha, Háje",
+    "Kostelec nad Černými lesy, náměstí",
+    "Uhlířské Janovice, náměstí"
+   ],
+   "note": "Praha, Háje – Říčany – Kostelec nad Černými lesy – Staňkovice – Uhlířské Janovice. Háje :10 hourly; Uhlířské Janovice towards Prague 12:12, 13:12, 14:57, 15:57, 17:12, 19:42: the buses sleep at Uhlířské Janovice and the afternoon has fewer trips towards Prague. Modelled at 16:00 at the rate of the trips towards Prague (15:57, 17:12): every 120 with two slots each way, Háje every hour at :10, Uhlířské Janovice :57 and :12 of odd hours. Off the pattern: Uhlířské Janovice 12:12, 14:57 (15 min) and 19:42; Háje 13:30, 18:30 (to Kostelec), 19:30.",
+   "sim": [
+    {
+     "name": "387",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Praha, Háje",
+       "to": "Uhlířské Janovice, náměstí",
+       "at": [
+        "15:10",
+        "16:10"
+       ]
+      },
+      {
+       "fr": "Uhlířské Janovice, náměstí",
+       "to": "Praha, Háje",
+       "at": [
+        "15:57",
+        "17:12"
+       ]
+      }
+     ],
+     "why": "Háje :10 → Uhlířské Janovice :29 (79 min); Uhlířské Janovice 15:57, 17:12 (and 13:12, 13:57 a period earlier) → Háje (78 min). The :57 of 13:57 and the :12 of 15:12 have no real trip: the line runs at the rate of its trips towards Prague."
+    }
+   ]
+  },
+  "402": {
+   "core": [
+    "Praha, Roztyly",
+    "Zruč nad Sázavou, Sázavan",
+    "Zbraslavice, náměstí",
+    "Čáslav, autobusové stanoviště"
+   ],
+   "note": "Praha, Roztyly – Trhový Štěpánov – Zruč nad Sázavou – Zbraslavice – Červené Janovice – Čáslav. Every 2 h all day: Roztyly :20 of even hours (8:20–14:20), Čáslav :36 of odd hours (9:36–17:36). Modelled at the line's own pattern, 14:00–16:00 (set by hand): the 16:00 window holds only the 16:35 from Roztyly, 15 min off its :20. Off the pattern: Roztyly 16:35, 20:25; Čáslav 14:36; the Roztyly – Zruč trips 15:20, 17:35, 18:20 (buses going home to Zruč, all stops on the line).",
+   "anchor": "14:30",
+   "sim": [
+    {
+     "name": "402",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Praha, Roztyly",
+       "to": "Čáslav, autobusové stanoviště",
+       "at": [
+        "14:20"
+       ]
+      },
+      {
+       "fr": "Čáslav, autobusové stanoviště",
+       "to": "Praha, Roztyly",
+       "at": [
+        "15:36"
+       ]
+      }
+     ],
+     "why": "Roztyly 14:20 → Zruč nad Sázavou 15:41 → Čáslav 16:24 (124 min); Čáslav 15:36 → Roztyly 17:40 (124 min). Every 2 h as all day."
+    }
+   ]
+  },
+  "801": {
+   "core": [
+    "Kutná Hora, hlavní nádraží",
+    "Kutná Hora, Žižkov, poliklinika",
+    "Starý Kolín, železniční zastávka",
+    "Kutná Hora, Vrchlice, V Cihelně"
+   ],
+   "note": "Kutná Hora town line (Lutan): hlavní nádraží – Sedlec – Šipší – Hlouška – old town – Žižkov, poliklinika, every 15 min, with hourly Starý Kolín trips and 2-hourly Vrchlice trips. At hlavní nádraží towards Žižkov: :05, :20, :35 (odd hours), :50 (the Starý Kolín trip); :35 of even hours goes to Vrchlice, V Cihelně. Three Simutrans lines: 801 (5 slots each way per 2 h), 801 Starý Kolín (hourly) and 801 Vrchlice (every 120). In the game one trunk bus waits 117 min at hlavní nádraží each period; in reality that bus runs the Vrchlice round, so pooling 801 with 801 Vrchlice saves 1 bus (7 → 6, Lutan's real count). Off the pattern: 18:25, the 18:46 to Malín and the early and late Fučíkova trips.",
+   "sim": [
+    {
+     "name": "801",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kutná Hora, hlavní nádraží",
+       "to": "Kutná Hora, Žižkov, poliklinika",
+       "at": [
+        "14:05",
+        "14:20",
+        "15:05",
+        "15:20",
+        "15:35"
+       ],
+       "notvia": [
+        "Starý Kolín, železniční zastávka",
+        "Hlízov, u váhy"
+       ]
+      },
+      {
+       "fr": "Kutná Hora, Žižkov, poliklinika",
+       "to": "Kutná Hora, hlavní nádraží",
+       "at": [
+        "14:14",
+        "14:29",
+        "14:59",
+        "15:29",
+        "15:59"
+       ],
+       "notvia": [
+        "Starý Kolín, železniční zastávka",
+        "Hlízov, u váhy"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "hlavní nádraží → Sedlec → Šipší → old town → Žižkov, poliklinika (24 min) at :05, :20 every hour and :35 of odd hours; poliklinika → old town (Palackého náměstí, městské nádraží) → hlavní nádraží (24 min) at :29, :59 every hour and :14 of even hours. 0-minute turns at poliklinika as in the timetable."
+    },
+    {
+     "name": "801 Starý Kolín",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kutná Hora, Žižkov, poliklinika",
+       "to": "Starý Kolín, železniční zastávka",
+       "at": [
+        44
+       ],
+       "core_to": "Hlízov, u váhy"
+      },
+      {
+       "fr": "Starý Kolín, železniční zastávka",
+       "to": "Kutná Hora, Žižkov, poliklinika",
+       "knot": "Hlízov, u váhy",
+       "knot_at": [
+        40
+       ]
+      }
+     ],
+     "why": "poliklinika :44 → hlavní nádraží → Malín → Hlízov → Starý Kolín :23 (39 min; the 16:44 ends at Hlízov, u váhy and is run on); Starý Kolín :35 → poliklinika :14, read at Hlízov, u váhy :40, so the 17:40 from Hlízov counts."
+    },
+    {
+     "name": "801 Vrchlice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kutná Hora, hlavní nádraží",
+       "to": "Kutná Hora, Vrchlice, V Cihelně",
+       "at": [
+        "14:35"
+       ]
+      },
+      {
+       "fr": "Kutná Hora, Vrchlice, V Cihelně",
+       "to": "Kutná Hora, hlavní nádraží",
+       "at": [
+        "15:11"
+       ]
+      }
+     ],
+     "why": "hlavní nádraží :35 of even hours → old town → Vrchlice, V Cihelně :02 (27 min); V Cihelně :11 of odd hours → Táborská → Fučíkova → Kamenná kašna → hlavní nádraží :38 (27 min). One bus."
+    }
+   ]
+  },
+  "802": {
+   "core": [
+    "Kutná Hora, Žižkov, poliklinika",
+    "Kutná Hora, autobusové stanoviště",
+    "Kutná Hora, Sedlec, Čechova"
+   ],
+   "note": "Kutná Hora town line (Lutan): Žižkov, poliklinika – autobusové stanoviště – Šipší – Sedlec, Čechova, exactly hourly with one bus: poliklinika :10, Čechova :36. Modelled every 60. Off the pattern: the morning Karlov, Na Rovinách trips and the 17:34 Na Rovinách → Čechova, which ends the 17:10 bus's day; their stops are on 786 and 805.",
+   "sim": [
+    {
+     "name": "802",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kutná Hora, Žižkov, poliklinika",
+       "to": "Kutná Hora, Sedlec, Čechova",
+       "at": [
+        10
+       ]
+      },
+      {
+       "fr": "Kutná Hora, Sedlec, Čechova",
+       "to": "Kutná Hora, Žižkov, poliklinika",
+       "at": [
+        36
+       ]
+      }
+     ],
+     "why": "poliklinika :10 → Fučíkova → autobusové stanoviště → Šipší → Sedlec, Čechova :27 (17 min); Čechova :36 → Kouřimská → poliklinika :50 (14 min). One bus."
+    }
+   ]
+  },
+  "805": {
+   "core": [
+    "Kolín, nádraží",
+    "Kutná Hora, Hlouška, Na Špici",
+    "Kutná Hora, Karlov, celní úřad",
+    "Zbraslavice, náměstí",
+    "Zruč nad Sázavou, Sázavan"
+   ],
+   "note": "Kolín – Kutná Hora (Kaňk, Sedlec, Karlov) – Červené Janovice – Zbraslavice – Zruč nad Sázavou, with short workings Kolín – Kutná Hora. Kolín → Zruč exactly :57 of odd hours (12:57, 14:57, 16:57); Zruč → Kolín 14:36, 15:40, 17:20. Modelled every 120 at Kolín 14:57 / Zruč 14:36 (the bus of the 14:30 arrival, 6 min turn). Off the pattern: Zruč 15:40, 17:20, 18:30; the Kolín – Kutná Hora, autobusové stanoviště shorts (Kolín 13:57, 15:27, 16:27, 17:53, 18:57, 19:23; back 13:06, 13:36, 15:26) and Kolín – Karlov shorts (16:03; back 14:19, 14:49, 17:19), every stop on 805 and 785. The bus-station shorts would pass every 120 at Kolín 13:57 / bus station 15:26 at the inbound rate (+1 bus): on the owner checks.",
+   "sim": [
+    {
+     "name": "805",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Zruč nad Sázavou, Sázavan",
+       "at": [
+        "14:57"
+       ]
+      },
+      {
+       "fr": "Zruč nad Sázavou, Sázavan",
+       "to": "Kolín, nádraží",
+       "at": [
+        "14:36"
+       ]
+      }
+     ],
+     "window": [
+      "14:30",
+      "16:30"
+     ],
+     "why": "Kolín 14:57 → Kutná Hora (Kaňk, Sedlec, Hlouška, Karlov) → Červené Janovice → Zbraslavice → Zruč nad Sázavou 16:30 (93 min); Zruč 14:36 → Kolín 16:13 (97 min)."
+    }
+   ]
+  },
+  "785": {
+   "core": [
+    "Kolín, nádraží",
+    "Kutná Hora, autobusové stanoviště",
+    "Kutná Hora, Poličany",
+    "Kácov, náměstí"
+   ],
+   "note": "Kolín – Libenice – Kutná Hora – Malešov – Chlístovice – Čestín – Kácov. Exactly every 2 h: Kolín :25 of odd hours to Kácov, Kácov :55 of odd hours to Kolín (2-minute turn at Kácov). Modelled every 120 in its busiest window, 13:00–15:00. Off the pattern: the Kolín 12:35 / 14:25 → Poličany trips and their Poličany → Kutná Hora returns (stops on 785), the Kácov – Čestín shorts.",
+   "sim": [
+    {
+     "name": "785",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kolín, nádraží",
+       "to": "Kácov, náměstí",
+       "at": [
+        "15:25"
+       ],
+       "stops_via": [
+        "Chlístovice, Všesoky"
+       ],
+       "rt": 88
+      },
+      {
+       "fr": "Kácov, náměstí",
+       "to": "Kolín, nádraží",
+       "at": [
+        "14:55"
+       ]
+      }
+     ],
+     "why": "Kolín :25 of odd hours → Kutná Hora → Malešov → Chlístovice → Kácov (88 min, the 13:25 trip's time; shown via Chlístovice, Všesoky, the 15:25 trip's path, 5 min longer); Kácov :55 → Kolín (100 min, via Čestín, Čenovice)."
+    }
+   ]
+  },
+  "783": {
+   "core": [
+    "Kutná Hora, autobusové stanoviště",
+    "Žehušice, škola",
+    "Čáslav, autobusové stanoviště",
+    "Chvaletice, u městského úřadu",
+    "Bernardov"
+   ],
+   "note": "Kutná Hora – Bernardov – Žehušice – Chotusice – Čáslav, with Čáslav – Žehušice shorts and Kutná Hora – Chvaletice (Pardubický kraj). Kutná Hora → Čáslav 12:16, 14:16, 16:06, 18:06, back 12:48, 14:48, 16:43; the shorts make Čáslav – Žehušice hourly (Čáslav 13:48, 15:43, 17:43; Žehušice 14:10, 16:05, 18:05); Chvaletice exactly every 2 h (Kutná Hora 13:06, 15:06; Chvaletice 14:21, 16:21). Three Simutrans lines every 120. Pooling option (not applied): the trunk and the Žehušice shorts chain at Čáslav with 12- and 21-minute turns (Kutná Hora 14:16 → Čáslav 15:31, 15:43 → Žehušice, 16:05 → Čáslav 16:22, 16:43 → Kutná Hora), one circuit, 2 buses instead of 3. Off the pattern: Kutná Hora 16:06, 18:06 (10 min), Čáslav 16:43, the Bernardov shorts (11:21, 12:27, 17:06; Bernardov is on 783) and the morning Horka trips.",
+   "sim": [
+    {
+     "name": "783",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kutná Hora, autobusové stanoviště",
+       "to": "Čáslav, autobusové stanoviště",
+       "at": [
+        "14:16"
+       ]
+      },
+      {
+       "fr": "Čáslav, autobusové stanoviště",
+       "to": "Kutná Hora, autobusové stanoviště",
+       "at": [
+        "14:48"
+       ]
+      }
+     ],
+     "window": [
+      "14:00",
+      "16:00"
+     ],
+     "why": "Kutná Hora 14:16 → Bernardov → Žehušice → Chotusice → Čáslav 15:31 (78 min); Čáslav 14:48 → Kutná Hora 16:03 (75 min)."
+    },
+    {
+     "name": "783 Žehušice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Čáslav, autobusové stanoviště",
+       "to": "Žehušice, škola",
+       "at": [
+        "15:43"
+       ],
+       "notvia": [
+        "Kutná Hora, autobusové stanoviště"
+       ]
+      },
+      {
+       "fr": "Žehušice, škola",
+       "to": "Čáslav, autobusové stanoviště",
+       "at": [
+        "16:05"
+       ],
+       "notvia": [
+        "Kutná Hora, autobusové stanoviště"
+       ]
+      }
+     ],
+     "window": [
+      "15:30",
+      "17:30"
+     ],
+     "why": "Čáslav :43 of odd hours → Chotusice → Žehušice, škola :04 (21 min); Žehušice :05 → Čáslav :22 (17 min), the real 1-minute turn. One bus."
+    },
+    {
+     "name": "783 Chvaletice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kutná Hora, autobusové stanoviště",
+       "to": "Chvaletice, u městského úřadu",
+       "at": [
+        "15:06"
+       ]
+      },
+      {
+       "fr": "Chvaletice, u městského úřadu",
+       "to": "Kutná Hora, autobusové stanoviště",
+       "at": [
+        "14:21"
+       ]
+      }
+     ],
+     "window": [
+      "14:00",
+      "16:00"
+     ],
+     "why": "Kutná Hora 15:06 → Malín → Chvaletice 15:38 (32 min); Chvaletice 14:21 → Kutná Hora 14:53 (32 min). One bus, exactly every 2 h."
+    }
+   ]
+  },
+  "782": {
+   "core": [
+    "Kutná Hora, autobusové stanoviště",
+    "Horka I, Svobodná Ves, střed",
+    "Žehušice, škola",
+    "Vrdy, kulturní dům"
+   ],
+   "note": "Kutná Hora – Žehušice – Bílé Podolí – Vrdy, hourly: Kutná Hora :41 (:46 until 14:46), Vrdy :43 (13:48). Odd hours run via Horka I, Svobodná Ves (55 min), even hours direct (45 min), so two Simutrans lines every 120: 782 (direct) and 782 Horka. The 14:39 and 16:34 trips start at Žižkov, Fučíkova and are read at the bus station. Off the pattern: 12:46, 13:46, 14:46 and 13:48 (5 min); Kutná Hora 17:41 to Horka I only.",
+   "sim": [
+    {
+     "name": "782",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kutná Hora, autobusové stanoviště",
+       "to": "Vrdy, kulturní dům",
+       "at": [
+        "16:41"
+       ],
+       "notvia": [
+        "Horka I, Svobodná Ves, střed"
+       ]
+      },
+      {
+       "fr": "Vrdy, kulturní dům",
+       "to": "Kutná Hora, autobusové stanoviště",
+       "at": [
+        "17:43"
+       ]
+      }
+     ],
+     "why": "Kutná Hora :41 of even hours → Žehušice → Bílé Podolí → Vrdy :26 (45 min, direct); Vrdy :43 of odd hours → Kutná Hora :28 (45 min). One bus."
+    },
+    {
+     "name": "782 Horka",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kutná Hora, autobusové stanoviště",
+       "to": "Vrdy, kulturní dům",
+       "at": [
+        "15:41"
+       ],
+       "via": [
+        "Horka I, Svobodná Ves, střed"
+       ]
+      },
+      {
+       "fr": "Vrdy, kulturní dům",
+       "to": "Kutná Hora, autobusové stanoviště",
+       "at": [
+        "16:43"
+       ]
+      }
+     ],
+     "why": "Kutná Hora :41 of odd hours → Horka I, Svobodná Ves → Vrdy :36 (55 min, the 13:46 and 15:41 path); Vrdy :43 of even hours → Kutná Hora (47 min). One bus."
+    }
+   ]
+  },
+  "533": {
+   "core": [
+    "Kutná Hora, autobusové stanoviště",
+    "Týnec nad Labem, náměstí",
+    "Žiželice, náměstí",
+    "Chlumec nad Cidlinou, železniční stanice"
+   ],
+   "note": "Kutná Hora – Svatý Mikuláš – Týnec nad Labem – Žiželice – Chlumec nad Cidlinou (Královéhradecký kraj). Every 2 h: Chlumec :40 of even hours (8:40–16:40), Kutná Hora :56 of even hours until 14:56, then 17:16. Modelled at 14:00–16:00 (set by hand; the 16:00 window holds only the shifted 17:16). Off the pattern: Kutná Hora 17:16, 18:56 (to Žiželice); the Žiželice – Chlumec shuttle (Žiželice 13:04, 15:04; Chlumec 13:40, 15:40) and Chlumec 18:40 to Týnec, all on the line's stops.",
+   "sim": [
+    {
+     "name": "533",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kutná Hora, autobusové stanoviště",
+       "to": "Chlumec nad Cidlinou, železniční stanice",
+       "at": [
+        "14:56"
+       ]
+      },
+      {
+       "fr": "Chlumec nad Cidlinou, železniční stanice",
+       "to": "Kutná Hora, autobusové stanoviště",
+       "at": [
+        "14:40"
+       ]
+      }
+     ],
+     "window": [
+      "14:00",
+      "16:00"
+     ],
+     "why": "Kutná Hora 14:56 → Chlumec nad Cidlinou 16:20 (84 min); Chlumec 14:40 → Kutná Hora 16:04 (84 min)."
+    }
+   ]
+  },
+  "786": {
+   "core": [
+    "Kutná Hora, autobusové stanoviště",
+    "Kutná Hora, Karlov, celní úřad",
+    "Petrovice I",
+    "Paběnice, ObÚ"
+   ],
+   "note": "Kutná Hora – Karlov – Úmonín – Červené Janovice – Petrovice I – Paběnice. Kutná Hora :15 of even hours (12:15–18:15), Paběnice 13:19, 15:24. Modelled every 120 at 14:15 / 15:24 (14:00–16:00, set by hand: the 16:00 window has no Paběnice departure). Off the pattern: Paběnice 13:19 (5 min).",
+   "sim": [
+    {
+     "name": "786",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kutná Hora, autobusové stanoviště",
+       "to": "Paběnice, ObÚ",
+       "at": [
+        "14:15"
+       ],
+       "stops_via": [
+        "Kutná Hora, Perštejnec"
+       ]
+      },
+      {
+       "fr": "Paběnice, ObÚ",
+       "to": "Kutná Hora, autobusové stanoviště",
+       "at": [
+        "15:24"
+       ]
+      }
+     ],
+     "window": [
+      "14:00",
+      "16:00"
+     ],
+     "why": "Kutná Hora 14:15 → Perštejnec → Úmonín → Červené Janovice → Paběnice 15:19 (64 min, the slot trip's path); Paběnice 15:24 → Petrovice I → Karlov → Kutná Hora 16:25 (61 min). Two buses, as the real line."
+    }
+   ]
+  },
+  "788": {
+   "core": [
+    "Kutná Hora, autobusové stanoviště",
+    "Třebětín"
+   ],
+   "note": "Kutná Hora – Úmonín – Červené Janovice – Bludov – Třebětín, every 2 h with two buses: Kutná Hora 11:10, 13:15, 15:10, 17:15; Třebětín 12:12, 14:17, 16:12. Every 240 with two slots each way keeps every trip on its real minute.",
+   "sim": [
+    {
+     "name": "788",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Kutná Hora, autobusové stanoviště",
+       "to": "Třebětín",
+       "at": [
+        "13:15",
+        "15:10"
+       ]
+      },
+      {
+       "fr": "Třebětín",
+       "to": "Kutná Hora, autobusové stanoviště",
+       "at": [
+        "14:17",
+        "16:12"
+       ]
+      }
+     ],
+     "why": "Kutná Hora 13:15 and 15:10 → Třebětín (61 min); Třebětín 14:17 (1-minute turn) and 16:12 → Kutná Hora (61 min). Two buses."
+    }
+   ]
+  },
+  "481": {
+   "core": [
+    "Čáslav, autobusové stanoviště",
+    "Kutná Hora, autobusové stanoviště",
+    "Uhlířské Janovice, náměstí"
+   ],
+   "note": "Uhlířské Janovice – Rašovice – Vidice – Kutná Hora – Církvice – Čáslav. Every 2 h in the afternoon: Čáslav 12:14, 14:09, 16:14, 18:14, Uhlířské Janovice 12:39, 14:30, 16:29, 19:30. Every 240 with two slots each way keeps 14:09 and 16:14, 14:30 and 16:29 on their real minutes. Off the pattern: Čáslav 18:14 (5 min), Uhlířské Janovice 12:39, 19:30; the 15:28 Uhlířské Janovice – Onomyšl school trip.",
+   "sim": [
+    {
+     "name": "481",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Čáslav, autobusové stanoviště",
+       "to": "Uhlířské Janovice, náměstí",
+       "at": [
+        "14:09",
+        "16:14"
+       ]
+      },
+      {
+       "fr": "Uhlířské Janovice, náměstí",
+       "to": "Čáslav, autobusové stanoviště",
+       "at": [
+        "14:30",
+        "16:29"
+       ]
+      }
+     ],
+     "why": "Čáslav 14:09 (via Miskovice, Bylany) and 16:14 → Kutná Hora → Uhlířské Janovice (80 min); Uhlířské Janovice 14:30 and 16:29 → Čáslav (82 min; the 16:29 runs via Onomyšl, Křečovice, Nepoměřice and Košice, which are on the way out and on 746)."
+    }
+   ]
+  },
+  "710": {
+   "core": [
+    "Chrudim, autobusové stanoviště",
+    "Heřmanův Městec, nádraží",
+    "Heřmanův Městec, náměstí",
+    "Čáslav, železniční stanice"
+   ],
+   "note": "Chrudim (Pardubický kraj) – Heřmanův Městec – Bílé Podolí – Vrdy – Čáslav, železniční stanice. Hourly: Chrudim :42, Čáslav :18 (no Chrudim 16:42, no Čáslav 13:18, 16:18); in Heřmanův Městec the trips alternate between the railway station and the square. Modelled at 14:40 (the 16:00 window would leave 16:42 empty): one hourly line out via Heřmanův Městec, nádraží and back via Heřmanův Městec, náměstí, so both stops are on it. Off the pattern: the Chrudim – Heřmanův Městec shorts (12:42) and the morning Podhořany trips.",
+   "anchor": "14:40",
+   "sim": [
+    {
+     "name": "710",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Chrudim, autobusové stanoviště",
+       "to": "Čáslav, železniční stanice",
+       "at": [
+        42
+       ],
+       "stops_via": [
+        "Heřmanův Městec, nádraží"
+       ]
+      },
+      {
+       "fr": "Čáslav, železniční stanice",
+       "to": "Chrudim, autobusové stanoviště",
+       "at": [
+        18
+       ],
+       "stops_via": [
+        "Heřmanův Městec, náměstí"
+       ]
+      }
+     ],
+     "why": "Chrudim :42 → Heřmanův Městec, nádraží → Čáslav, železniční stanice :42 (60 min); Čáslav :18 → Heřmanův Městec, náměstí → Chrudim (59 min). The real trips alternate between the two Heřmanův Městec stops hour by hour; the game line takes the station one way and the square the other."
+    }
+   ]
+  },
+  "740": {
+   "core": [
+    "Čáslav, železniční stanice",
+    "Okřesaneč",
+    "Golčův Jeníkov, náměstí TGM"
+   ],
+   "note": "Čáslav, železniční stanice – Tupadly – Bratčice – Okřesaneč – Golčův Jeníkov (Kraj Vysočina). Čáslav :13 hourly: even hours to Golčův Jeníkov (14:13, 16:13, 18:13), odd hours to Okřesaneč (13:13, 15:13); Golčův Jeníkov back at 13:00, 15:00, 17:05. Modelled every 120 to Golčův Jeníkov, exact but for 17:05. The Okřesaneč trips are two afternoon rounds whose buses come back at once as 781 via Žleby (13:44 → 13:45, 15:44 → 15:45, 2 of 2): listed with 781, as every stop of that ring is on 740 and 781 Potěhy. Off the pattern: Golčův Jeníkov 17:05 (5 min), Čáslav 20:13 to Okřesaneč, the morning Okřesaneč and Chotěboř trips.",
+   "anchor": "15:00",
+   "sim": [
+    {
+     "name": "740",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Čáslav, železniční stanice",
+       "to": "Golčův Jeníkov, náměstí TGM",
+       "at": [
+        "16:13"
+       ]
+      },
+      {
+       "fr": "Golčův Jeníkov, náměstí TGM",
+       "to": "Čáslav, železniční stanice",
+       "at": [
+        "15:00"
+       ]
+      }
+     ],
+     "why": "Čáslav, železniční stanice 16:13 → Okřesaneč → Golčův Jeníkov 16:55 (42 min); Golčův Jeníkov 15:00 → Čáslav 15:44 (42 min). One bus, the real round (5-minute turn at Golčův Jeníkov)."
+    }
+   ]
+  },
+  "781": {
+   "core": [
+    "Čáslav, autobusové stanoviště",
+    "Žleby, náměstí",
+    "Žleby, Kamenné Mosty",
+    "Potěhy"
+   ],
+   "note": "Čáslav – Vrdy – Žleby – Kamenné Mosty – Hostovlice – Potěhy, a line of linked trips. Čáslav 12:45, 14:45, 16:45 → Potěhy, where every one goes on at once as 741 to Čáslav (3 of 3); the Okřesaneč → Čáslav trips (13:45, 15:45) are the 740 Okřesaneč buses coming back (2 afternoon rounds, listed: their stops are on 740 and 781 Potěhy). Modelled as the 781 Potěhy ring every 120. Off the pattern, all on these rings: the Kamenné Mosty trips (12:40, 18:18, 19:00), the Žleby shorts 15:50 / 17:08 and the Čáslav – Vrdy 13:18 / 13:34 pair.",
+   "sim": [
+    {
+     "name": "781 Potěhy",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Čáslav, autobusové stanoviště",
+       "to": "Potěhy",
+       "at": [
+        "14:45"
+       ]
+      },
+      {
+       "fr": "Potěhy",
+       "to": "Čáslav, autobusové stanoviště",
+       "at": [
+        "15:27"
+       ],
+       "lines": [
+        "741"
+       ],
+       "notvia": [
+        "Zbýšov, Chlum"
+       ]
+      }
+     ],
+     "window": [
+      "14:30",
+      "16:30"
+     ],
+     "why": "Čáslav 14:45 → Vrdy → Žleby → Kamenné Mosty → Hostovlice → Potěhy 15:26 (781, 41 min); Potěhy 15:27 → Tupadly → Adamov → Schořov → Drobovice → Čáslav 15:55 (741, 28 min). One bus every 120, as the real 12:45, 14:45 and 16:45 buses run."
+    }
+   ]
+  },
+  "741": {
+   "core": [
+    "Čáslav, autobusové stanoviště",
+    "Potěhy",
+    "Zbýšov, Chlum"
+   ],
+   "note": "Čáslav – Drobovice – Tupadly – Potěhy – Vlkaneč – Zbýšov, Chlum. One bus a round of about 2 h 20: Čáslav 12:30, 15:00, 17:15, Chlum 12:10, 13:55, 16:00. Modelled every 120 at 15:00 / 16:00 (its 14:30–16:30 round). The Potěhy → Čáslav trips (13:27, 15:27, 17:27) are the 781 buses coming back and are on 781 Potěhy. Off the pattern: Čáslav 12:30, 17:15; Chlum 12:10, 13:55 (5 min); the 19:13 to Bratčice.",
+   "sim": [
+    {
+     "name": "741",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Čáslav, autobusové stanoviště",
+       "to": "Zbýšov, Chlum",
+       "at": [
+        "15:00"
+       ]
+      },
+      {
+       "fr": "Zbýšov, Chlum",
+       "to": "Čáslav, autobusové stanoviště",
+       "at": [
+        "16:00"
+       ]
+      }
+     ],
+     "window": [
+      "14:30",
+      "16:30"
+     ],
+     "why": "Čáslav 15:00 → Potěhy → Vlkaneč → Zbýšov, Chlum 15:46 (46 min); Chlum 16:00 → Čáslav 16:55 (55 min; the leg's median is 58). One bus, the real round."
+    }
+   ]
+  },
+  "742": {
+   "core": [
+    "Čáslav, autobusové stanoviště",
+    "Zbýšov",
+    "Dobrovítov, Dědice",
+    "Ledeč nad Sázavou, Husovo náměstí",
+    "Ledeč nad Sázavou, Podolí"
+   ],
+   "note": "Čáslav – Žáky – Zbýšov – Kozlov – Ledeč nad Sázavou (Kraj Vysočina), with shorts to Zbýšov, Dobrovítov, Třebětín and Žáky. Ledeč: Čáslav 12:13 (to Podolí), 15:13; back 12:17, 14:45 (from Podolí). 742 runs the real round of one bus, Čáslav 12:13 → Podolí 13:19, Podolí 14:45 → Čáslav, every 240; 742 Dobrovítov keeps the only trip to Dobrovítov, Dědice. Off the pattern, all on these two lines: Čáslav 15:13 → Ledeč, Ledeč 12:17 and 17:47 (to Zbýšov), the Zbýšov shorts 16:13 / 16:38, Čáslav 17:13 → Třebětín, Žáky 18:13 / 18:28.",
+   "sim": [
+    {
+     "name": "742",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Čáslav, autobusové stanoviště",
+       "to": "Ledeč nad Sázavou, Podolí",
+       "at": [
+        "12:13"
+       ],
+       "core_to": "Zbýšov",
+       "notvia": [
+        "Dobrovítov, Dědice"
+       ]
+      },
+      {
+       "fr": "Ledeč nad Sázavou, Podolí",
+       "to": "Čáslav, autobusové stanoviště",
+       "at": [
+        "14:45"
+       ]
+      }
+     ],
+     "window": [
+      "14:30",
+      "16:30"
+     ],
+     "why": "Čáslav 12:13 → Zbýšov → Kozlov → Ledeč nad Sázavou, Podolí 13:19 (66 min); Podolí 14:45 → Čáslav 15:55 (70 min). One bus every 240, the real round; its 16:13 repeat is the real 16:13 Zbýšov short run on to Ledeč (read to Zbýšov, `core_to`)."
+    },
+    {
+     "name": "742 Dobrovítov",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Čáslav, autobusové stanoviště",
+       "to": "Dobrovítov, Dědice",
+       "at": [
+        "13:43"
+       ]
+      },
+      {
+       "fr": "Dobrovítov, Dědice",
+       "to": "Čáslav, autobusové stanoviště",
+       "at": [
+        "14:18"
+       ]
+      }
+     ],
+     "window": [
+      "13:00",
+      "15:00"
+     ],
+     "why": "Čáslav 13:43 (from zem.škola 13:38) → Zbýšov → Dobrovítov, Dědice 14:15; back 14:18 via Šebestěnice → Čáslav 14:50. Every 480, one bus, the only service of Dobrovítov, Dědice."
+    }
+   ]
+  },
+  "749": {
+   "core": [
+    "Čáslav, zem.škola",
+    "Souňov",
+    "Petrovice I"
+   ],
+   "note": "Čáslav – Krchleby – Souňov – Třebonín – Zbýšov – Petrovice I, run together with 743. One bus: Čáslav, zem.škola 14:17 → Petrovice I 15:13, 15:19 → Souňov 15:56, on at once as 743 via Kluky to Čáslav (2 of 2 at Souňov); the 743 passes zem.škola at 16:17, the minute the next 749 leaves there, so the game bus turns there (in reality another bus runs the 16:17). Modelled as that ring, every 120. The Třebonín, rozcestí Chedrbí → Čáslav trips (13:54, 16:04) are the 743 buses and are on 743. Off the pattern: Čáslav 18:20 → Petrovice I.",
+   "sim": [
+    {
+     "name": "749",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Čáslav, zem.škola",
+       "to": "Petrovice I",
+       "at": [
+        "14:17"
+       ],
+       "lay": 0
+      },
+      {
+       "fr": "Petrovice I",
+       "to": "Souňov",
+       "at": [
+        "15:19"
+       ]
+      },
+      {
+       "fr": "Souňov",
+       "to": "Čáslav, zem.škola",
+       "at": [
+        "15:56"
+       ],
+       "lines": [
+        "743"
+       ],
+       "lay": 0,
+       "rt": 21
+      }
+     ],
+     "window": [
+      "14:00",
+      "16:00"
+     ],
+     "why": "Čáslav, zem.škola 14:17 → Krchleby → Souňov → Třebonín → Zbýšov → Petrovice I 15:13 (749, 56 min); Petrovice I 15:19 → Souňov 15:56 (749, 37 min); Souňov 15:56 → Kluky → Močovice → Čáslav, zem.škola 16:17 (743, 21 min, the 15:56 trip's own time). 0-minute turn at Souňov as in the timetable; at zem.škola the game bus turns where the real 743 trip runs on to the bus station (16:21) and another bus starts the real 16:17, so the ring is one bus."
+    }
+   ]
+  },
+  "743": {
+   "core": [
+    "Čáslav, autobusové stanoviště",
+    "Petrovice I",
+    "Třebonín, rozcestí Chedrbí"
+   ],
+   "note": "Čáslav – Močovice – Kluky – Souňov – Paběnice – Petrovice I, run together with 749. Čáslav 12:40, 14:55, 16:40 → Petrovice I; Petrovice I 13:39, 15:49 → Třebonín, rozcestí Chedrbí, where the bus goes on at once as 749 to Čáslav (13:54, 16:04; 2 of 2). Modelled as that ring, every 120. The Souňov → Čáslav trips (13:56, 15:56) are the 749 buses coming back and are on 749. Off the pattern: Čáslav 14:55 (15 min), Petrovice I 13:39; the 13:22 Čáslav – Kluky trip, which runs on as 746 to Uhlířské Janovice.",
+   "sim": [
+    {
+     "name": "743",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Čáslav, autobusové stanoviště",
+       "to": "Petrovice I",
+       "at": [
+        "16:40"
+       ]
+      },
+      {
+       "fr": "Petrovice I",
+       "to": "Třebonín, rozcestí Chedrbí",
+       "at": [
+        "15:49"
+       ]
+      },
+      {
+       "fr": "Třebonín, rozcestí Chedrbí",
+       "to": "Čáslav, autobusové stanoviště",
+       "at": [
+        "16:04"
+       ],
+       "lines": [
+        "749"
+       ]
+      }
+     ],
+     "window": [
+      "15:30",
+      "17:30"
+     ],
+     "why": "Čáslav 16:40 → Močovice → Kluky → Souňov → Paběnice → Petrovice I 17:31 (743, 51 min); Petrovice I 15:49 → Paběnice → Třebonín, rozcestí Chedrbí 16:03 (743, 14 min); 16:04 → Krchleby → Čáslav 16:17 (749, 13 min). One bus every 120."
+    }
+   ]
+  },
+  "746": {
+   "core": [
+    "Uhlířské Janovice, náměstí",
+    "Kluky [KH]",
+    "Čáslav, autobusové stanoviště"
+   ],
+   "note": "Uhlířské Janovice – Chlístovice – Vidice – Malešov – Kluky – Čáslav. Uhlířské Janovice 11:16, 13:08, 15:16 (from the school 15:14); Čáslav 15:35, 18:05; and the 743 trip Čáslav 13:22 → Kluky runs on as 746 at 13:48 (2 of 2). Modelled every 240 with two slots each way, the real pairs of the two buses (13:08 / 15:35 and 15:14 / 18:05): all four afternoon trips and the 11:16 exact; the repeats 17:08 and 14:05 have no trip. Off the pattern: the Kluky 13:48 through trip.",
+   "sim": [
+    {
+     "name": "746",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Uhlířské Janovice, náměstí",
+       "to": "Čáslav, autobusové stanoviště",
+       "at": [
+        "13:08",
+        "15:16"
+       ],
+       "stops_via": [
+        "Malešov, Polánka"
+       ]
+      },
+      {
+       "fr": "Čáslav, autobusové stanoviště",
+       "to": "Uhlířské Janovice, náměstí",
+       "at": [
+        "15:35",
+        "18:05"
+       ],
+       "stops_via": [
+        "Vidice, Roztěž, Golf"
+       ]
+      }
+     ],
+     "window": [
+      "14:30",
+      "16:30"
+     ],
+     "why": "Uhlířské Janovice 13:08 and 15:16 (from the school 15:14) → Chlístovice → Vidice, Roztěž → Malešov, Albrechtice, Polánka → Kluky → Čáslav (77 min, the 13:08's path; the 15:14 runs via Vidice, Roztěž, Golf in 71); Čáslav 15:35 and 18:05 → Kluky → Malešov → Vidice, Roztěž, Golf → Uhlířské Janovice (69 min, the 18:05's path; the 15:35 runs via Polánka in 77). Every 240, two buses, the real 13:08 / 15:35 and 15:14 / 18:05 pairs."
+    }
+   ]
+  },
+  "780": {
+   "core": [
+    "Čáslav, železniční stanice",
+    "Třemošnice, autobusové stanoviště"
+   ],
+   "note": "Čáslav, železniční stanice – Žleby – Ronov nad Doubravou – Třemošnice. Exactly every 2 h, one bus: Čáslav :18 of even hours, Třemošnice :03 of odd hours (12:18–18:18). Modelled every 120, exact. Off the pattern: the Čáslav 13:50 / Třemošnice 14:33 pair via Vrdy and Vinaře (from and to the bus station), whose stops are on 781, 782 and 784.",
+   "sim": [
+    {
+     "name": "780",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Čáslav, železniční stanice",
+       "to": "Třemošnice, autobusové stanoviště",
+       "at": [
+        "14:18"
+       ]
+      },
+      {
+       "fr": "Třemošnice, autobusové stanoviště",
+       "to": "Čáslav, železniční stanice",
+       "at": [
+        "15:03"
+       ]
+      }
+     ],
+     "why": "Čáslav, železniční stanice :18 of even hours → Třemošnice :52 (34 min); Třemošnice :03 of odd hours → Čáslav :37 (34 min). One bus."
+    }
+   ]
+  },
+  "784": {
+   "core": [
+    "Horka I, Svobodná Ves, horní",
+    "Vrdy, Dolní Bučice",
+    "Čáslav, autobusové stanoviště"
+   ],
+   "note": "Horka I, Svobodná Ves – Brambory – Bílé Podolí – Vrdy – Čáslav, one bus all afternoon. Horka 14:20 → Čáslav 14:47 → (at once) Horka 15:20, 15:25 → Čáslav 16:00, 16:18 → Horka 16:53; modelled as that sequence every 180 with two slots each way. Off the pattern: the Horka – Vrdy, Dolní Bučice shuttles (13:25, 13:45, 17:20), whose stops are on this line.",
+   "sim": [
+    {
+     "name": "784",
+     "every": 180,
+     "legs": [
+      {
+       "fr": "Horka I, Svobodná Ves, horní",
+       "to": "Čáslav, autobusové stanoviště",
+       "at": [
+        "14:20",
+        "15:25"
+       ],
+       "rt": 27
+      },
+      {
+       "fr": "Čáslav, autobusové stanoviště",
+       "to": "Horka I, Svobodná Ves, horní",
+       "at": [
+        "14:47",
+        "16:20"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Horka I, Svobodná Ves 14:20 and 15:25 → Vrdy → Čáslav (27 min, the 14:20 trip's time; the 15:25 runs via Semtěš to the railway station); Čáslav 14:47 (0-minute turn as in the timetable) and 16:20 (from the railway station 16:18) → Horka (33 min). One bus every 180."
+    }
+   ]
+  },
+  "687": {
+   "core": [
+    "Uhlířské Janovice, náměstí",
+    "Zbraslavice, náměstí",
+    "Bohdaneč",
+    "Ledeč nad Sázavou, Husovo náměstí"
+   ],
+   "note": "Uhlířské Janovice – Zbraslavice – Bohdaneč – Ledeč nad Sázavou (Kraj Vysočina). Every 2 h: Uhlířské Janovice :38 of odd hours (11:38–17:38), Ledeč nad Sázavou, Husovo náměstí 12:58, 15:01, 17:01 (15:01 starts at Podolí 14:59). Modelled every 120 at :38 and :01. Off the pattern: Ledeč 19:13; the morning Bohdaneč trip.",
+   "sim": [
+    {
+     "name": "687",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Uhlířské Janovice, náměstí",
+       "to": "Ledeč nad Sázavou, Husovo náměstí",
+       "at": [
+        "15:38"
+       ]
+      },
+      {
+       "fr": "Ledeč nad Sázavou, Husovo náměstí",
+       "to": "Uhlířské Janovice, náměstí",
+       "at": [
+        "17:01"
+       ],
+       "stops_via": [
+        "Ledeč nad Sázavou, Obrvaň"
+       ]
+      }
+     ],
+     "why": "Uhlířské Janovice 15:38 → Ledeč nad Sázavou, Husovo náměstí 16:47 (76 min); Ledeč :01 → Uhlířské Janovice, shown via Habrek and Obrvaň, the path of the 12:58 trip (the 13:01 slot, 84 min), so those two stops are on a line; the 15:01 and 17:01 run direct."
+    }
+   ]
+  },
+  "770": {
+   "core": [
+    "Uhlířské Janovice, náměstí",
+    "Sázava, autobusové stanoviště",
+    "Ostředek",
+    "Benešov, Terminál"
+   ],
+   "note": "Uhlířské Janovice – Staňkovice – Sázava – Ostředek – Benešov, Terminál, with Benešov – Ostředek shorts between. Benešov :28 every hour, alternating: even hours to Uhlířské Janovice (back from Uhlířské Janovice :12 of even hours), odd hours to Ostředek (back from Ostředek :00 of even hours, where the bus turns at once). Two Simutrans lines, 770 and 770 Ostředek, every 120 each, exact. Off the pattern: Benešov 19:33 (5 min).",
+   "sim": [
+    {
+     "name": "770",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Uhlířské Janovice, náměstí",
+       "to": "Benešov, Terminál",
+       "at": [
+        "16:12"
+       ]
+      },
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Uhlířské Janovice, náměstí",
+       "at": [
+        "16:28"
+       ]
+      }
+     ],
+     "why": "Uhlířské Janovice 16:12 → Sázava → Ostředek → Benešov 17:32 (80 min); Benešov 16:28 → Uhlířské Janovice 17:48 (80 min)."
+    },
+    {
+     "name": "770 Ostředek",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Benešov, Terminál",
+       "to": "Ostředek",
+       "at": [
+        "15:28"
+       ],
+       "notvia": [
+        "Uhlířské Janovice, náměstí"
+       ]
+      },
+      {
+       "fr": "Ostředek",
+       "to": "Benešov, Terminál",
+       "at": [
+        "16:00"
+       ],
+       "notvia": [
+        "Uhlířské Janovice, náměstí"
+       ],
+       "lay": 0
+      }
+     ],
+     "why": "Benešov 15:28 → Ostředek 16:00 (32 min); Ostředek 16:00 → Benešov 16:32: 0-minute turn as in the timetable (4 of 5 arrivals). One bus every 120."
+    }
+   ]
+  },
+  "771": {
+   "core": [
+    "Uhlířské Janovice, náměstí",
+    "Soběšín",
+    "Sázava, autobusové stanoviště",
+    "Kácov, náměstí"
+   ],
+   "note": "Kácov – Zbizuby – Soběšín – Rataje nad Sázavou – Uhlířské Janovice / Sázava. One bus runs a round: Uhlířské Janovice 13:00 → Soběšín, 13:40 → Sázava, 14:30 → Soběšín (via Ledečko), 15:50 → Uhlířské Janovice; modelled as that circuit every 240. 771 Kácov keeps the Sázava – Kácov trips (Sázava 12:30, Kácov 6:55), the only service of Zbizuby and Kácov, železniční stanice. Off the pattern: Uhlířské Janovice 15:40, 17:40 → Soběšín (buses going home to Soběšín).",
+   "sim": [
+    {
+     "name": "771",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Uhlířské Janovice, náměstí",
+       "to": "Soběšín",
+       "at": [
+        "13:00"
+       ]
+      },
+      {
+       "fr": "Soběšín",
+       "to": "Sázava, autobusové stanoviště",
+       "at": [
+        "13:40"
+       ]
+      },
+      {
+       "fr": "Sázava, autobusové stanoviště",
+       "to": "Soběšín",
+       "at": [
+        "14:30"
+       ],
+       "stops_via": [
+        "Ledečko"
+       ]
+      },
+      {
+       "fr": "Soběšín",
+       "to": "Uhlířské Janovice, náměstí",
+       "at": [
+        "15:50"
+       ]
+      }
+     ],
+     "window": [
+      "13:00",
+      "17:00"
+     ],
+     "why": "Uhlířské Janovice 13:00 → Soběšín 13:37; Soběšín 13:40 → Rataje nad Sázavou → Talmberk → Sázava 14:18; Sázava 14:30 → Ledečko → Přívlaky → Soběšín 15:26 (56 min); Soběšín 15:50 → Uhlířské Janovice 16:26. One bus every 240, the real round."
+    },
+    {
+     "name": "771 Kácov",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Sázava, autobusové stanoviště",
+       "to": "Kácov, náměstí",
+       "at": [
+        "12:30"
+       ]
+      },
+      {
+       "fr": "Kácov, náměstí",
+       "to": "Sázava, autobusové stanoviště",
+       "at": [
+        "14:55"
+       ]
+      }
+     ],
+     "window": [
+      "12:00",
+      "14:00"
+     ],
+     "why": "Sázava 12:30 → Rataje nad Sázavou → Zbizuby → Kácov, železniční stanice → Kácov, náměstí 13:40 (70 min); back at 14:55, which stands for the real Kácov 6:55 → Sázava 8:08 one period earlier. Every 480, one bus."
+    }
+   ]
+  },
+  "772": {
+   "core": [
+    "Uhlířské Janovice, náměstí",
+    "Vavřinec",
+    "Horní Kruty"
+   ],
+   "note": "Uhlířské Janovice – Vavřinec – Skvrňov – Uhlířské Janovice (a loop) and Horní Kruty – Skvrňov – Vavřinec. The loop runs 11:00, 12:30, 13:10; the Horní Kruty – Vavřinec shuttle exactly every 2 h (Horní Kruty 14:21, 16:21; Vavřinec 15:21, 17:21). Two Simutrans lines: 772 (the shuttle, every 120) and 772 okruh (the loop at 13:10, every 480), the only service of Vavřinec, Žíšov and Chmeliště. Off the pattern: the 12:30 loop.",
+   "sim": [
+    {
+     "name": "772",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Horní Kruty",
+       "to": "Vavřinec",
+       "at": [
+        "14:21"
+       ]
+      },
+      {
+       "fr": "Vavřinec",
+       "to": "Horní Kruty",
+       "at": [
+        "15:21"
+       ]
+      }
+     ],
+     "window": [
+      "14:00",
+      "16:00"
+     ],
+     "why": "Horní Kruty 14:21 → Skvrňov → Vavřinec 14:39; Vavřinec 15:21 → Horní Kruty 15:39 (18 min each way). One bus every 120."
+    },
+    {
+     "name": "772 okruh",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Uhlířské Janovice, náměstí",
+       "to": "Uhlířské Janovice, náměstí",
+       "at": [
+        "13:10"
+       ]
+      }
+     ],
+     "window": [
+      "12:30",
+      "14:30"
+     ],
+     "why": "Uhlířské Janovice 13:10 → Kolínská → Žíšov → Chmeliště → Bláto → Skvrňov → Církvice → Vavřinec → Uhlířské Janovice 13:40 (30 min, a loop). Every 480, one bus."
+    }
+   ]
+  },
+  "773": {
+   "core": [
+    "Uhlířské Janovice, náměstí",
+    "Sázava, autobusové stanoviště"
+   ],
+   "note": "Uhlířské Janovice – Staňkovice – Úžice – Sázava. Exactly every 2 h, one bus: Uhlířské Janovice :10 of odd hours, Sázava :10 of even hours (12:10–17:10). Modelled every 120, exact.",
+   "sim": [
+    {
+     "name": "773",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Uhlířské Janovice, náměstí",
+       "to": "Sázava, autobusové stanoviště",
+       "at": [
+        "15:10"
+       ]
+      },
+      {
+       "fr": "Sázava, autobusové stanoviště",
+       "to": "Uhlířské Janovice, náměstí",
+       "at": [
+        "16:10"
+       ]
+      }
+     ],
+     "why": "Uhlířské Janovice :10 of odd hours → Sázava (36 min); Sázava :10 of even hours → Uhlířské Janovice (38 min). One bus."
+    }
+   ]
+  },
+  "787": {
+   "core": [
+    "Uhlířské Janovice, náměstí",
+    "Čestín",
+    "Zruč nad Sázavou, Sázavan"
+   ],
+   "note": "Uhlířské Janovice – Petrovice II – Čestín – Řendějov – Zruč nad Sázavou. One bus, a round of about 3 h: Uhlířské Janovice 12:45, 15:30, 18:30; Zruč 14:27, 16:37. Modelled every 180 at 15:30 / 16:37. Off the pattern: Uhlířské Janovice 12:45, Zruč 14:27; the Čestín – Zruč shorts (14:41, 17:47).",
+   "sim": [
+    {
+     "name": "787",
+     "every": 180,
+     "legs": [
+      {
+       "fr": "Uhlířské Janovice, náměstí",
+       "to": "Zruč nad Sázavou, Sázavan",
+       "at": [
+        "15:30"
+       ]
+      },
+      {
+       "fr": "Zruč nad Sázavou, Sázavan",
+       "to": "Uhlířské Janovice, náměstí",
+       "at": [
+        "16:37"
+       ]
+      }
+     ],
+     "why": "Uhlířské Janovice 15:30 → Čestín → Řendějov → Zruč nad Sázavou 16:23 (53 min); Zruč 16:37 → Uhlířské Janovice 17:30 (53 min). One bus every 180."
+    }
+   ]
+  },
+  "845": {
+   "core": [
+    "Zruč nad Sázavou, Sázavan",
+    "Loket, Všebořice",
+    "Dolní Kralovice",
+    "Křelovice"
+   ],
+   "note": "Zruč nad Sázavou – Loket – Dolní Kralovice – Hořice – Senožaty – Křelovice (Kraj Vysočina). Exactly every 2 h: Zruč :51 of odd hours, Křelovice :05 of odd hours (11:05–17:05). Modelled every 120, exact. Off the pattern, all on the line's stops: the Zruč – Dolní Kralovice shorts (13:13, 14:20, 18:23) and Dolní Kralovice – Křelovice shorts (13:05, 14:27).",
+   "sim": [
+    {
+     "name": "845",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Zruč nad Sázavou, Sázavan",
+       "to": "Křelovice",
+       "at": [
+        "15:51"
+       ]
+      },
+      {
+       "fr": "Křelovice",
+       "to": "Zruč nad Sázavou, Sázavan",
+       "at": [
+        "15:05"
+       ]
+      }
+     ],
+     "why": "Zruč nad Sázavou :51 of odd hours → Loket → Dolní Kralovice → Hořice → Křelovice (64 min); Křelovice :05 of odd hours → Zruč (63 min). Two buses."
+    }
+   ]
+  },
+  "778": {
+   "core": [
+    "Zruč nad Sázavou, Sázavan",
+    "Pertoltice",
+    "Bohdaneč",
+    "Zbraslavice, náměstí"
+   ],
+   "note": "Zruč nad Sázavou – Dolní Pohleď – Pertoltice – Bohdaneč – Zbraslavice. Afternoon: Zruč 14:30 → Zbraslavice, 15:30 → Zruč, 16:30 → Bohdaneč; Zbraslavice 12:45 → Zruč; Pertoltice 17:15 → Zruč. Modelled every 120 at the real 14:30 / 15:30 round (the 16:30 Bohdaneč trip counted as the next slot). Off the pattern: Zbraslavice 12:45, Pertoltice 17:15 (the 776 bus), Pertoltice 11:15.",
+   "sim": [
+    {
+     "name": "778",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Zruč nad Sázavou, Sázavan",
+       "to": "Zbraslavice, náměstí",
+       "at": [
+        "14:30"
+       ],
+       "core_to": "Bohdaneč"
+      },
+      {
+       "fr": "Zbraslavice, náměstí",
+       "to": "Zruč nad Sázavou, Sázavan",
+       "at": [
+        "15:30"
+       ]
+      }
+     ],
+     "window": [
+      "14:30",
+      "16:30"
+     ],
+     "why": "Zruč nad Sázavou 14:30 → Pertoltice → Bohdaneč → Zbraslavice 15:20 (50 min; its 16:30 repeat is the real 16:30 Bohdaneč trip run on); Zbraslavice 15:30 → Zruč 16:20 (50 min). One bus."
+    }
+   ]
+  },
+  "776": {
+   "core": [
+    "Zruč nad Sázavou, Sázavan",
+    "Pertoltice",
+    "Vlastějovice"
+   ],
+   "note": "Zruč nad Sázavou – Horka II – Vlastějovice – Pertoltice – Dolní Pohleď – Zruč nad Sázavou (a loop; the morning loops run the other way round) and Zruč – Horka II – Vlastějovice – Pertoltice. Afternoon: the 14:15 loop, and Zruč 16:35 → Pertoltice 17:12, where the bus goes on as 778 at 17:15 to Zruč (2 of 2). Modelled as the 14:15 loop every 480, the only service of Vlastějovice and Pertoltice, Machovice. Off the pattern: the 16:35 to Pertoltice (its stops are on the loop).",
+   "sim": [
+    {
+     "name": "776",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Zruč nad Sázavou, Sázavan",
+       "to": "Zruč nad Sázavou, Sázavan",
+       "at": [
+        "14:15"
+       ]
+      }
+     ],
+     "window": [
+      "14:00",
+      "16:00"
+     ],
+     "why": "Zruč nad Sázavou 14:15 → Horka II → Vlastějovice → Pertoltice, Machovice → Pertoltice → Dolní Pohleď → Zruč 15:07 (52 min, a loop; the morning loops run the other way round). Every 480, one bus."
+    }
+   ]
+  }
+ },
+ "unmodelled": {
+  "992026": "Rail replacement bus (NAD) for engineering works on the railway: the rail sheets model the trains.",
+  "992027": "Rail replacement bus (NAD) for engineering works on the railway: the rail sheets model the trains.",
+  "992028": "Rail replacement bus (NAD) for engineering works on the railway: the rail sheets model the trains.",
+  "992029": "Rail replacement bus (NAD) for engineering works on the railway: the rail sheets model the trains."
+ },
+ "owner_checks": [
+  [
+   "805",
+   "Kolín – Kutná Hora, autobusové stanoviště short workings, 5 out / 3 back 13:00–19:00 at no fixed minute (Kolín 13:57, 15:27, 16:27, 17:53, 18:57; back 13:06, 13:36, 15:26; the Karlov shorts 16:03 / 14:19, 14:49, 17:19 are a separate inflow, listed). Listed as designed (0 buses): every stop is on 805 or 785.",
+   "+1 bus: a line 805 Kutná Hora every 120, Kolín 13:57 / autobusové stanoviště 15:26 (typed 56 / 25), at the inbound rate, exact in 13:45–15:45 and 30 min off elsewhere; 15:27, 16:27, 17:53, 18:57 from Kolín then buses going home."
+  ]
+ ],
+ "notes": "PID Kutnohorsko (okres Kutná Hora, licences 240xxx), with the Prague lines whose outer end is here (381, 387, 402) and 710 Chrudim – Čáslav (Pardubický licence). Timetable: PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026 (school day). Every terminus is treated as a loop (typed = real − 61 mod every). Most district lines are single trips every 2 h or rarer; each is modelled at one real afternoon round. Rings from the timetable's 0-minute chains (bus goes on at once as another number), modelled: 781 → 741 at Potěhy, 749 → 743 at Souňov and 743 → 749 at Třebonín, rozcestí Chedrbí; the live map of 2 Nov will confirm them. Other through-running seen in the timetable: 740 → 781 at Okřesaneč (2 of 2, two afternoon rounds, listed); 533 ↔ 783 and 481 ↔ 783 at Kutná Hora, autobusové stanoviště (3–4 of 7 / 3 of 5 trips); 481 → 771 and 481 → 687 at Uhlířské Janovice (3 of 9); 743 → 746 at Kluky (2 of 2, the 13:22 Čáslav – Kluky – Uhlířské Janovice); 776 → 778 at Pertoltice (2 of 2); 805 → 782 at Na Špici (2 of 3); 801 ↔ 381 at Kutná Hora, hlavní nádraží (2 of 4). For the live map of 2 Nov also: the 749 ring turns its bus at Čáslav, zem.škola, where in reality the 743 runs on to the bus station and a third bus starts the 16:17; 783's trunk and Žehušice shorts chain at Čáslav with 12- and 21-minute turns (one circuit would need 2 buses instead of 3); one 801 trunk bus waits 117 min at hlavní nádraží where the real bus runs the Vrchlice round (801 pooled with 801 Vrchlice: 6 buses instead of 7). Pooling is offered, not applied. The rail replacement buses XS26–XS29 are not modelled.",
+ "other_sheets": {
+  "praha_bus": {
+   "lines": [],
+   "label": "Prague Bus Lines Check",
+   "short": "Prague bus sheet",
+   "url": "https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF",
+   "why": "regional companions of the city lines (through, pooled or interleaved), modelled on the Prague bus sheet with their buses (owner, 30 Oct 2026)"
+  },
+  "praha_city": {
+   "lines": [],
+   "label": "Prague Bus Lines Check (city lines 100-299)",
+   "short": "Prague bus sheet",
+   "url": "https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF",
+   "schedule": "../../data/derived/praha_city_schedule.json"
+  },
+  "benesovsko": {
+   "lines": [],
+   "label": "PID Benešovsko",
+   "short": "Benešovsko sheet",
+   "url": null,
+   "schedule": "../benesovsko/data/derived/schedule.json"
+  },
+  "berounsko": {
+   "lines": [],
+   "label": "PID Berounsko",
+   "short": "Berounsko sheet",
+   "url": null,
+   "schedule": "../berounsko/data/derived/schedule.json"
+  },
+  "kladensko": {
+   "lines": [],
+   "label": "PID Kladensko",
+   "short": "Kladensko sheet",
+   "url": null,
+   "schedule": "../kladensko/data/derived/schedule.json"
+  },
+  "kolinsko": {
+   "lines": [],
+   "label": "PID Kolínsko",
+   "short": "Kolínsko sheet",
+   "url": null,
+   "schedule": "../kolinsko/data/derived/schedule.json"
+  },
+  "melnicko": {
+   "lines": [],
+   "label": "PID Mělnicko",
+   "short": "Mělnicko sheet",
+   "url": null,
+   "schedule": "../melnicko/data/derived/schedule.json"
+  },
+  "mladoboleslavsko": {
+   "lines": [],
+   "label": "PID Mladoboleslavsko",
+   "short": "Mladoboleslavsko sheet",
+   "url": null,
+   "schedule": "../mladoboleslavsko/data/derived/schedule.json"
+  },
+  "nymbursko": {
+   "lines": [],
+   "label": "PID Nymbursko",
+   "short": "Nymbursko sheet",
+   "url": null,
+   "schedule": "../nymbursko/data/derived/schedule.json"
+  },
+  "praha-vychod": {
+   "lines": [],
+   "label": "PID Praha-východ",
+   "short": "Praha-východ sheet",
+   "url": null,
+   "schedule": "../praha-vychod/data/derived/schedule.json"
+  },
+  "praha-zapad": {
+   "lines": [],
+   "label": "PID Praha-západ",
+   "short": "Praha-západ sheet",
+   "url": null,
+   "schedule": "../praha-zapad/data/derived/schedule.json"
+  },
+  "pribramsko": {
+   "lines": [],
+   "label": "PID Příbramsko",
+   "short": "Příbramsko sheet",
+   "url": null,
+   "schedule": "../pribramsko/data/derived/schedule.json"
+  },
+  "rakovnicko": {
+   "lines": [],
+   "label": "PID Rakovnicko",
+   "short": "Rakovnicko sheet",
+   "url": null,
+   "schedule": "../rakovnicko/data/derived/schedule.json"
+  }
+ },
+ "hubs": []
+}
