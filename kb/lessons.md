@@ -184,9 +184,14 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   otherwise I agree with the way you modeled it". When a row's trips run a variant route, name it in the row's note, with the
   running time used, and say where the game line differs.
 
-## 2 Nov — Prague 130
+## 2 Nov — Prague 130, lines moved to the 2 Nov network
 - **2 Nov:** "Decide based on the timetable - is it fair to do the full run or not? As always - are there some stops without
   service" → 130 runs to Filmové ateliéry only 05:10–08:05 and 12:35–16:00; from 15:38 it short-turns at Řeporyjské náměstí and
   X130 (licence 101130, outside the sheet's 100100–100299 range, so never seen by the pipeline) runs Filmové ateliéry – Slivenec.
   The 16:00 peak is the short turn, so the game line is cut back. Before cutting a game line, list who serves each stop it drops
   in the game (here 301, 352, 104, 120, 170 and 105 do) and check the save already turns buses at the new end (100174R does).
+- **2 Nov:** "later, look at updated 131 and 176 timetables - maybe the trolleybuses need update as wwell?" → from 2 Nov 131 and 176
+  run as trolleybuses 51 and 53 (PID permanent change). Then "You're okay for changed lines to move to 2 Nov network, do not move vehicles
+  in lines not affected if possible" → a feed diff found 11 changed bus lines. Moved: 7 of them plus 131/176 gone. Kept: 133, 161/312 and 209
+  (temporary closures), 232 (only the route type changed) and 101 (frozen). Check every difference against PID's notices first: the older
+  export had itself left out stops that the game already serves (149, 158, 166, 167).

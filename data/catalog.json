@@ -301,6 +301,11 @@
      "at": "2026-11-02T17:50:00.000Z",
      "version": 17,
      "note": "130 at the peak is the short turn Zličín – Řeporyjské náměstí (the Filmové ateliéry run ends at 16:00, X130 covers Barrandov – Slivenec); game line 100130 to be cut back, 3 → 2 buses"
+    },
+    {
+     "at": "2026-11-02T18:40:00.000Z",
+     "version": 18,
+     "note": "Lines that changed by 2 Nov on the 2 Nov export (112 4 → 3, 240 8 → 7, 149/158/166/167 stops, 234); 131 and 176 gone (trolleybuses 51 and 53 from 2 Nov); every other card unchanged"
     }
    ]
   },

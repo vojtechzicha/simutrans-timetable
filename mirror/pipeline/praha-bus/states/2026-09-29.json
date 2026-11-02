@@ -10,6 +10,27 @@
   "service_date": "20260930",
   "_why": "Today's PID export (valid 29 Sep - 12 Oct 2026); Wednesday 30 Sep is a normal weekday on it."
  },
+ "gtfs_lines_from": {
+  "raw": "2026-11-02",
+  "url": "https://data.pid.cz/PID_GTFS.zip",
+  "service_date": "20261104",
+  "lines": [
+   "112",
+   "131",
+   "149",
+   "158",
+   "166",
+   "167",
+   "176",
+   "234",
+   "240"
+  ],
+  "_why": "Owner, 2 Nov 2026: \"You're okay for changed lines to move to 2 Nov network, do not move vehicles in lines not affected if possible\". These lines come from the 2 Nov export (valid 2-15 Nov), Wednesday 4 Nov; every other line stays on 30 Sep. 131 and 176: gone from 2 Nov 04:00, their trips run as trolleybuses 51 and 53 (PID permanent change \"Posílení trolejbusů v Praze\"). 112 and 234: new timetables from 2 Nov. 240: the Dubeč - Běchovice diversion of 20 Aug - 2 Nov is over. 149, 158, 166, 167: the 30 Sep export left out Karlštejnská and Butovická, Toužimská, Nemocnice Bulovka and Zahradníčkova; the game lines already stop there. Kept on 30 Sep: 101 (route changed 14 Oct, but cards 100-108 are frozen); 133 (+2 min from the Žižkov tram closure, 11 Oct - 18 Dec); 161 and 312 (new 26 Oct timetables with 312's temporary Tuchoměřice diversion, until further notice); 209 (Druhanická temporarily closed from 1 Nov); 232 (same trips, only the export now calls it a trolleybus).",
+  "gone_why": {
+   "131": "its trips run as trolleybus 51 from 2 Nov: delete game line 100131",
+   "176": "its trips run as trolleybus 53 from 2 Nov: delete game line 100176"
+  }
+ },
  "output_html": "Prague Bus Lines Check.html",
  "game_raw": "2026-09-29",
  "halt_aliases": {

@@ -41,6 +41,12 @@ seznam-autobusu.cz returns 403 to plain curl, so use `common.fetch` (full browse
 
 - **Days:**
   - The timetable is PID's export of 29 Sep, service date Wed 30 Sep.
+  - Lines that changed by 2 Nov use the 2 Nov export (service date Wed 4 Nov), the rest stay on 30 Sep (state `gtfs_lines_from`;
+    owner, 2 Nov 2026: "You're okay for changed lines to move to 2 Nov network, do not move vehicles in lines not affected if possible").
+    Moved: 112 and 234 (new timetables 2 Nov), 240 (the Dubeč – Běchovice diversion is over), 149, 158, 166 and 167 (the 30 Sep export
+    left out stops the game lines serve). 131 and 176 left: from 2 Nov their trips run as trolleybuses 51 and 53. Kept: 101 (frozen),
+    133 (tram closure to 18 Dec), 161 and 312 (312's temporary Tuchoměřice diversion), 209 (Druhanická closed for now), 232 (same trips,
+    only the export now calls it a trolleybus). `02_gtfs_lines.py` swaps in the listed lines' trips; their cards say "timetable of 4 November".
   - Vehicles are from Fri 25 Sep. Records from 21–24 and 29 Sep fill in lines and courses nobody logged on the 25th; the card marks them "logged <day> Sep".
   - The game export is autosave04 of 29 Sep, 17:22.
 - **Buses needed:**
@@ -150,6 +156,9 @@ interleaved in the real timetiable". State `regional`:
   (`simlines.groups`), so the other cards keep their published grouping. `simlines.bus_by_record` ["111"]: a course logged "přejezd
   na linku 329" goes on the line that runs 329's rows first, so 111B carries 329's SOR BN 12s (owner: "I don't think NB 12s are so used
   on 329"). Schedule rows carry `via` (the companion their trips come from) for this.
+- 130 (owner, 2 Nov 2026: "is it fair to do the full run or not? … are there some stops without service"): the peak is the short turn
+  Zličín – Řeporyjské náměstí (the run to Filmové ateliéry ends at 16:00, X130 runs Filmové ateliéry – Slivenec, licence 101130, off
+  this sheet). Hand-set rows say to cut game line 100130 back (3 → 2 buses) and which game lines keep each dropped stop.
 - 329 via Květnice (owner, 1 Nov 2026: "Is it the line going via Květnice or not. If not, is it okay not to have it modeled?" → "I agree
   with the way you modeled it", note asked for): the :04 row out is the 15:04 and 16:04 trips via Květnice + Dobročovice (54 min;
   13:49 via Květnice only, 17:49 direct); the :23 row back is direct (47 min), as every afternoon trip back is (Květnice back only

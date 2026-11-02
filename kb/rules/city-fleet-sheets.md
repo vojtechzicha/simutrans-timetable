@@ -17,6 +17,12 @@ vehicle category per line. Accessibility is not wanted.
   complete weekday (preferably a Friday) and say so on the sheet. "Yesterday's state" on a Sunday = vehicles from the last weekday,
   network as of yesterday (confirmed 28 Sep).
 - **Network:** the timetable in force on the target date. Short-term closures → regular state; long-term → as they run.
+- **Network changes after the data day** (owner, 2 Nov 2026: "You're okay for changed lines to move to 2 Nov network, do not move
+  vehicles in lines not affected if possible"): move only the lines that changed, from the newer export (state `gtfs_lines_from`).
+  Every other line, its cards and its buses stay as they were. A line counts as changed when PID gives it a new timetable
+  or a permanent change, when a diversion ended, or when the older export had left out stops the game line already serves. A difference that
+  comes from a temporary closure (even "do odvolání") stays on the older export, and so do frozen cards. A line that left the network leaves the sheet, and
+  the game check says to delete its game line.
 - **Peak:** ~15:00–17:00, reference hour 16:00 — but each line is anchored at **its own busiest 2 h in 13:00–18:00**, unless
   15:00–17:00 is within one departure of it (owner, 20 Oct: Ostrava bus 23 "20 minutes is the most common afternoon pattern").
 - Morning-only duties are left out and listed under "Not counted". Evening/night course groups are left out of type history.

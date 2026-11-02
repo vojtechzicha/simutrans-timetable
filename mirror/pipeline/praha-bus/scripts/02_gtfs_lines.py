@@ -38,26 +38,44 @@ def main():
         if n.isdigit() and (lo <= int(n) <= hi or n in extra) and r['route_id'] in routes:
             lic.setdefault(r['route_id'], dict(licence=n, operators=set()))['operators'].add(r['sub_agency_name'])
     sd = g['service_date']
-    cal = {r['service_id']: r for r in rd('calendar.txt')}
-    cd = collections.defaultdict(dict)
-    for r in rd('calendar_dates.txt'): cd[r['service_id']][r['date']] = r['exception_type']
-    wd = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'][datetime.date(int(sd[:4]), int(sd[4:6]), int(sd[6:])).weekday()]
-    def active(sid):
-        e = cd[sid].get(sd)
-        if e: return e == '1'
-        c = cal.get(sid); return bool(c) and c['start_date'] <= sd <= c['end_date'] and c[wd] == '1'
-    trips = {t['trip_id']: t for t in rd('trips.txt') if t['route_id'] in lic and active(t['service_id'])}
-    stops = {r['stop_id']: r['stop_name'].replace('\xa0', ' ') for r in rd('stops.txt')}
-    st = collections.defaultdict(list)
-    for r in rd('stop_times.txt'):
-        if r['trip_id'] in trips: st[r['trip_id']].append((int(r['stop_sequence']), r['stop_id'], r['departure_time'], r['arrival_time']))
-    by_route = collections.defaultdict(list)
-    for tid, rs in st.items():
-        rs.sort(); seq = []; tm = []
-        for _, sid, dt, _ in rs:
-            nm = stops[sid]
-            if not seq or seq[-1] != nm: seq.append(nm); tm.append(mins(dt))      # a stop served twice in a row (two stands) counts once
-        by_route[trips[tid]['route_id']].append(dict(seq=tuple(seq), tm=tm, o=seq[0], d=seq[-1], dep=mins(rs[0][2]), arr=mins(rs[-1][3]), dir=trips[tid]['direction_id']))
+    def feed_trips(rd, sd, rids):
+        """Trips of the given route ids on service date sd, by route id."""
+        cal = {r['service_id']: r for r in rd('calendar.txt')}
+        cd = collections.defaultdict(dict)
+        for r in rd('calendar_dates.txt'): cd[r['service_id']][r['date']] = r['exception_type']
+        wd = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'][datetime.date(int(sd[:4]), int(sd[4:6]), int(sd[6:])).weekday()]
+        def active(sid):
+            e = cd[sid].get(sd)
+            if e: return e == '1'
+            c = cal.get(sid); return bool(c) and c['start_date'] <= sd <= c['end_date'] and c[wd] == '1'
+        trips = {t['trip_id']: t for t in rd('trips.txt') if t['route_id'] in rids and active(t['service_id'])}
+        stops = {r['stop_id']: r['stop_name'].replace('\xa0', ' ') for r in rd('stops.txt')}
+        st = collections.defaultdict(list)
+        for r in rd('stop_times.txt'):
+            if r['trip_id'] in trips: st[r['trip_id']].append((int(r['stop_sequence']), r['stop_id'], r['departure_time'], r['arrival_time']))
+        by = collections.defaultdict(list)
+        for tid, rs in st.items():
+            rs.sort(); seq = []; tm = []
+            for _, sid, dt, _ in rs:
+                nm = stops[sid]
+                if not seq or seq[-1] != nm: seq.append(nm); tm.append(mins(dt))      # a stop served twice in a row (two stands) counts once
+            by[trips[tid]['route_id']].append(dict(seq=tuple(seq), tm=tm, o=seq[0], d=seq[-1], dep=mins(rs[0][2]), arr=mins(rs[-1][3]), dir=trips[tid]['direction_id']))
+        return by
+    by_route = feed_trips(rd, sd, lic)
+    # lines taken from a later feed (state gtfs_lines_from; owner, 2 Nov 2026: "You're okay for changed lines to move to 2 Nov
+    # network, do not move vehicles in lines not affected if possible"): their trips replace the base feed's, matched by
+    # route_short_name; a listed line without trips there is gone from the network and leaves the sheet (131, 176 -> trolleybus)
+    GL = s.get('gtfs_lines_from'); line_sd = {}; gone = []
+    if GL:
+        z2 = zipfile.ZipFile(os.path.join(RAW, 'gtfs', GL['raw'], 'gtfs.zip'))
+        rd2 = lambda n: csv.DictReader(io.TextIOWrapper(z2.open(n), encoding='utf-8-sig'))
+        r2 = {r['route_short_name']: r['route_id'] for r in rd2('routes.txt') if r['route_type'] == '3' and r['route_short_name'] in GL['lines']}
+        by2 = feed_trips(rd2, GL['service_date'], set(r2.values()))
+        for rid in list(lic):
+            L = routes[rid]['route_short_name']
+            if L not in GL['lines'] or routes[rid]['route_type'] != '3': continue
+            if by2.get(r2.get(L)): by_route[rid] = by2[r2[L]]; line_sd[L] = GL['service_date']
+            else: del lic[rid]; gone.append(L)
     rid_of = {routes[rid]['route_short_name']: rid for rid in lic if routes[rid]['route_type'] == '3'}
     def with_companions(C, ts):
         """C's trips plus its pooled lines' trips; a through line's trip is joined to the C trip it continues (same stop, same
@@ -87,7 +105,8 @@ def main():
         if L in comp and R['route_type'] == '3': ts = with_companions(L, ts)
         TS[L] = ts
         rec = dict(line=L, licence=info['licence'], route_type=R['route_type'], long_name=R['route_long_name'],
-                   operators=sorted(info['operators']), trips=len(ts), night=R.get('is_night') == '1', regional=R.get('is_regional') == '1')
+                   operators=sorted(info['operators']), trips=len(ts), night=R.get('is_night') == '1', regional=R.get('is_regional') == '1',
+                   service_date=line_sd.get(L, sd))
         if L in comp and R['route_type'] == '3':
             rec['companions'] = [dict(line=Rl, how=how, long_name=routes[rid_of[Rl]]['route_long_name'] if Rl in rid_of else '',
                                       trips=sum(1 for t in ts if t.get('via') == Rl)) for how, Rl in comp[L]]
@@ -225,7 +244,7 @@ def main():
         out[Rl]['interleave'] = rows
         for r_ in rows:
             if r_['city'] in out: out[r_['city']].setdefault('interleaved_by', []).append(dict(r_, line=Rl, long_name=out[Rl]['long_name'], operators=out[Rl]['operators']))
-    save(dict(lines=out, service_date=sd, gtfs_raw=g['raw']), os.path.join(DER, s['name'], 'gtfs_lines.json'))
+    save(dict(lines=out, service_date=sd, gtfs_raw=g['raw'], later=dict(GL, lines=sorted(line_sd), gone=gone) if GL else None), os.path.join(DER, s['name'], 'gtfs_lines.json'))
     print(len(out), 'lines;', sum(1 for r in out.values() if r.get('peak')), 'with peak trips;',
           sum(1 for r in out.values() if not r.get('trips')), 'without trips on', sd)
 
