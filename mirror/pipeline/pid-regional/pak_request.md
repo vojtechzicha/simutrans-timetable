@@ -1,6 +1,6 @@
 # Pak requests from the PID regional sheets
 
-From pipeline/pid-regional/scripts/04_vehicles.py (2026-11-02 live map). Buses on the twelve oblast sheets whose type and livery have no object in VZ-PID-bus (regional) or VZ-MHD<Town>-bus (town lines). They are shown as "requested" on the sheets, never as a stand-in (rules/pak-objects.md). "?" = the live map's vehicle window names no type for the bus (and the bus is not in the register); the second poll day may name it.
+From pipeline/pid-regional/scripts/04_vehicles.py (2026-11-02 live map). Buses on the twelve oblast sheets whose type and livery have no object in VZ-PID-bus (regional) or VZ-MHD<Town>-bus (town lines). They are shown as "requested" on the sheets, never as a stand-in (rules/pak-objects.md). "?" = the vehicle window of the live map names no type for the bus (and the bus is not in the register); the second poll day may name it.
 
 | Real type | Wanted object | Buses | Operators | Paint (register) | Example numbers | Sheets |
 |---|---|---|---|---|---|---|

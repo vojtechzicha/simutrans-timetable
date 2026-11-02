@@ -92,7 +92,23 @@
  "network_state_label": "2 Nov 2026",
  "praha_bus": {
   "state": "praha-bus/states/2026-09-29.json",
-  "url": "https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF"
+  "url": "https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF",
+  "live_buses": {
+   "why": "318 on the Prague bus sheet v19 (2 Nov live map, session simutrans-timetable-13): 318A and 318B",
+   "nums": [
+    7921,
+    1161,
+    7909,
+    7913,
+    7923,
+    7922,
+    7908,
+    7819,
+    7955,
+    7958,
+    7882
+   ]
+  }
  },
  "live": {
   "dir": "data/raw/live",

@@ -55,6 +55,9 @@ REG = json.load(open(os.path.join(PIPE, 'praha-bus', 'data', 'derived', 'vehicle
 # the Prague bus sheet's buses
 pb = json.load(open(os.path.join(PIPE, 'praha-bus', 'data', 'derived', '2026-09-29', 'courses.json'), encoding='utf-8'))
 PRAGUE_IDS = {c_['id'] for c in pb['courses'] if not c.get('spare') for ch in c['chain'] for c_ in ch['cars'] if c_.get('id')}
+# buses the Prague bus sheet took from the PID live map since (fleet numbers, config.praha_bus.live_buses; e.g. 318 on v19)
+PRAGUE_NUMS = {int(n) for n in SH['praha_bus'].get('live_buses', {}).get('nums', [])}
+def prague_bus(v): return v in PRAGUE_NUMS or INFO.get(v, {}).get('car_id') in PRAGUE_IDS
 
 def tlen(ty):
     m = (re.search(r'(\d+)[,._](\d)\s*M\b', ty or '', re.I) or re.search(r'\b(\d{2})\s*M\b', ty or '', re.I)
@@ -165,7 +168,7 @@ def evidence(s, seen):
         for t in g.get('trips', []):
             if not (W[0] - 30 <= t['d'] < W[1] + 30 or (t['dev'] <= 3 and 750 <= t['d'] < 1170)): continue
             for v, f, l in seen.get(t['tid'], []):
-                if INFO.get(v, {}).get('car_id') in PRAGUE_IDS: continue
+                if prague_bus(v): continue
                 dd = (0 if W[0] <= t['d'] < W[1] else min(abs(t['d'] - W[0]), abs(t['d'] - W[1]))) + (0 if t['dev'] <= 3 else 10)
                 lab = f"{t['line']} {hm(t['dep0'])} from {t['fr0'].split(', ', 1)[-1] if t['fr0'].count(', ') else t['fr0']}"
                 if v not in ev or dd < ev[v][0]: ev[v] = (dd, lab)
@@ -203,7 +206,7 @@ for k, ev in EV.items():
             out_ = max(dup, key=lambda p: ev[p][0]); mine[mine.index(out_)] = v; used[v] = k; used.pop(out_, None)
 
 def free_in(v, W, busy):
-    return v not in used and INFO.get(v, {}).get('car_id') not in PRAGUE_IDS and not any(f < W[1] and l > W[0] for f, l, *_ in busy.get(v, []))
+    return v not in used and not prague_bus(v) and not any(f < W[1] and l > W[0] for f, l, *_ in busy.get(v, []))
 def op_short(o): return re.sub(r'\b(a\.s\.|s\.r\.o\.|spol\. s r\.o\.|, )', '', o).strip(' ,').upper()
 designed = collections.defaultdict(list)
 OBL_BUSES = collections.defaultdict(set)    # buses that ran an oblast's lines on the day
