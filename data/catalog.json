@@ -311,6 +311,11 @@
      "at": "2026-11-02T19:35:00.000Z",
      "version": 19,
      "note": "318's 11 buses from the PID live map of Mon 2 Nov instead of designed Setras: 3 articulated (Citaro C2 GÜ 7955, 7958; Urbino 18 IV 1161) and 8 Setras; not pooled with 317"
+    },
+    {
+     "at": "2026-11-02T19:45:00.000Z",
+     "version": 20,
+     "note": "318 note corrected: 10 of the 11 were on 318 at 16:00, 7922 stands in for 7965 (not in the register); method names the live map"
     }
    ]
   },
