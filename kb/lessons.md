@@ -183,3 +183,10 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   Dobročovice trips and the :23 back the direct ones, but the card never said so. "yes, please do put the note there, so I know -
   otherwise I agree with the way you modeled it". When a row's trips run a variant route, name it in the row's note, with the
   running time used, and say where the game line differs.
+
+## 2 Nov — Prague 130
+- **2 Nov:** "Decide based on the timetable - is it fair to do the full run or not? As always - are there some stops without
+  service" → 130 runs to Filmové ateliéry only 05:10–08:05 and 12:35–16:00; from 15:38 it short-turns at Řeporyjské náměstí and
+  X130 (licence 101130, outside the sheet's 100100–100299 range, so never seen by the pipeline) runs Filmové ateliéry – Slivenec.
+  The 16:00 peak is the short turn, so the game line is cut back. Before cutting a game line, list who serves each stop it drops
+  in the game (here 301, 352, 104, 120, 170 and 105 do) and check the save already turns buses at the new end (100174R does).

@@ -1418,6 +1418,29 @@
      "why": "Zvole branch, every 30 at :14 and :44 (14:14–18:14)."
     }
    ]
+  },
+  "130": {
+   "_why": "Owner, 2 Nov 2026: \"is it fair to do the full run or not\". The timetable in force since 29 Aug 2026 (still the same in the 2 Nov feed) runs 130 to Filmové ateliéry Barrandov only 05:10–08:05 and 12:35–16:00. From 15:38 it is the short turn Zličín – Řeporyjské náměstí, and X130 (licence 101130, not on this sheet) runs Filmové ateliéry – Slivenec. So the peak is the short turn.",
+   "rows": [
+    {
+     "o": "Zličín",
+     "d": "Řeporyjské náměstí",
+     "every": 30,
+     "real": [
+      8
+     ],
+     "why": "Short turn, every 30 at :08 from 15:38 (16 min). Until 15:08 the :08 and :38 run on to Filmové ateliéry Barrandov (40 min); from 15:38 X130 runs Filmové ateliéry – Slivenec instead. Game line 100130 still runs the full route with 3 buses: end it at Řeporyjské náměstí, turning on the second stand as 100174R does (2 buses). No stop loses its game buses: Nádraží Řeporyje, Ořešská and Mrákovská keep 301 and 352, Za Farou 104, Škola Slivenec – Návětrná and Opálová 120, Högerova 170, Slavínského and Filmové ateliéry 105."
+    },
+    {
+     "o": "Řeporyjské náměstí",
+     "d": "Zličín",
+     "every": 30,
+     "real": [
+      15
+     ],
+     "why": "Short turn, every 30 at :15 from 16:15 (15 min). Until 16:00 the buses come from Filmové ateliéry Barrandov (15:20 is the last)."
+    }
+   ]
   }
  },
  "simlines": {

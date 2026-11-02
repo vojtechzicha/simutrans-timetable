@@ -296,6 +296,11 @@
      "at": "2026-11-01T18:50:00.000Z",
      "version": 16,
      "note": "329 rows say the :04 out runs via Květnice + Dobročovice and the :23 back runs direct; game line 100329 takes the detour both ways (still 4 buses on 111B)"
+    },
+    {
+     "at": "2026-11-02T17:50:00.000Z",
+     "version": 17,
+     "note": "130 at the peak is the short turn Zličín – Řeporyjské náměstí (the Filmové ateliéry run ends at 16:00, X130 covers Barrandov – Slivenec); game line 100130 to be cut back, 3 → 2 buses"
     }
    ]
   },
