@@ -197,6 +197,21 @@ def main():
         logged[L] = got
         for k in sorted(got, key=ckey):
             out.append(dict(line=L, **got[k]))
+    # observed buses (state observed_buses; owner, 1 Nov 2026, on 318: "I am sure 318 runs some articulated buses - either now or
+    # when you have evidence, tell it to rewrite to use articulated buses"): a line with no deployment record takes the buses the
+    # PID live map showed on it, in the state's order (a card's Simutrans lines take them in that order); the other buses seen
+    # on the line are listed after them as not needed
+    byn = {(str(v['num']), v['operator']): cid for cid, v in V.items()}
+    for L, ob in s.get('observed_buses', {}).items():
+        if L.startswith('_') or L not in P or logged.get(L): continue
+        got = {}
+        for i, b in enumerate(ob['buses'] + ob.get('not_needed', [])):
+            spare = i >= len(ob['buses']); num = str(b['num'])
+            c = dict(course=b['course'], chain=[dict(set=num, cars=[car(num, byn.get((num, b['operator'])))], note='')], swap=False,
+                     split=False, am=[], am_only=spare, source=ob['day'], observed=b['note'])
+            if spare: c['spare'] = 'seen'
+            got[f'{b["course"]}#{num}'] = c; out.append(dict(line=L, **c))
+        logged[L] = got
     taken = busy | {x['id'] for c in out for ch in c['chain'] for x in ch['cars'] if x['id']}
     # the operators' city-line types (fallback for lines without any history)
     by_op = collections.defaultdict(collections.Counter)

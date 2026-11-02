@@ -195,3 +195,7 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   in lines not affected if possible" → a feed diff found 11 changed bus lines. Moved: 7 of them plus 131/176 gone. Kept: 133, 161/312 and 209
   (temporary closures), 232 (only the route type changed) and 101 (frozen). Check every difference against PID's notices first: the older
   export had itself left out stops that the game already serves (149, 158, 166, 167).
+- **2 Nov:** 318 from the PID live map (Mon 2 Nov, polled by the PID regional session): 19 buses on 83 trips. 13 of the 48 peak trips
+  ran articulated, so 3 of the 11 counted buses are (Citaro C2 GÜ 7955, 7958; Martin Uher Urbino 18 IV 1161), and the owner was
+  right. The buses carry 317 course numbers, but in the peak only 7952 went over to 317, so 317 is not pooled even though
+  pooling was pre-approved. The pak already had Urbino 18 IV in VZ-PID; only the type token and the length were missing.

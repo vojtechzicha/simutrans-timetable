@@ -1594,5 +1594,132 @@
    "161": "312 Bořislavka – Tuchoměřice runs on 161's buses: on 25 Sep courses 1, 2, 3, 5 and 6 of 161 also ran 312. Its :00 and :30 departures fill 161's gaps at Bořislavka (together every 10). Its trips are rows of this card.",
    "229": "364 (Doubek) and 366 (Doubek via Křenice; Mukařov) run on 229's buses: on 25 Sep ten of 229's eleven courses also ran 364 and 366. Their trips are rows of this card."
   }
+ },
+ "observed_buses": {
+  "318": {
+   "day": "2026-11-02",
+   "seen": "PID live map, Mon 2 Nov",
+   "source": "PID live map (mapa.pid.cz), polled by session simutrans-timetable-4d: pipeline/pid-regional/data/derived/318_observed_2026-11-02.json",
+   "_why": "Owner, 1 Nov 2026 (relayed): \"I am sure 318 runs some articulated buses - either now or when you have evidence, tell it to rewrite to use articulated buses\". No deployment record of 318 exists, so the 11 buses were designed (Setra S 415 LE business). On Mon 2 Nov 19 buses ran 318; the 11 counted are those on 318 around 16:00, each on the Simutrans line of the branch it ran most in the peak. 317 is not pooled: of the peak buses only 7952 went over to 317.",
+   "summary": "Buses seen on 318 on Monday 2 November (PID live map): 19 buses on 83 trips 13:00–19:00, all ČSAD Benešov or Martin Uher. In 15:00–17:59, 13 of 48 trips ran articulated (Citaro C2 GÜ 8, Urbino 18 IV 5). The 11 counted are the buses on 318 around 16:00; 3 of them are articulated. They carry course numbers of the 317 rotation, but in the peak they stay on 318: only 7952 went over to 317, so 317 is not pooled here. The other buses seen on 318 are listed as not needed.",
+   "buses": [
+    {
+     "num": 7921,
+     "operator": "ČSAD Benešov",
+     "course": "317/59",
+     "note": "Seen on 318 on Mon 2 Nov (7 trips, 14:25–18:25; in 15:00–17:59: 5 Jíloviště). Course 317/59 of the 317 rotation."
+    },
+    {
+     "num": 1161,
+     "operator": "MARTIN UHER",
+     "course": "317/13",
+     "note": "Seen on 318 on Mon 2 Nov (7 trips, 14:40–18:33; in 15:00–17:59: 5 Jíloviště). Course 317/13 of the 317 rotation."
+    },
+    {
+     "num": 7909,
+     "operator": "ČSAD Benešov",
+     "course": "317/60",
+     "note": "Seen on 318 on Mon 2 Nov (9 trips, 13:18–18:59; in 15:00–17:59: 4 Jíloviště). Course 317/60 of the 317 rotation."
+    },
+    {
+     "num": 7913,
+     "operator": "ČSAD Benešov",
+     "course": "317/47",
+     "note": "Seen on 318 on Mon 2 Nov (7 trips, 13:33–18:03; in 15:00–17:59: 4 Jíloviště). Course 317/47 of the 317 rotation."
+    },
+    {
+     "num": 7923,
+     "operator": "ČSAD Benešov",
+     "course": "317/57",
+     "note": "Seen on 318 on Mon 2 Nov (8 trips, 14:03–18:44; in 15:00–17:59: 4 Jíloviště). Course 317/57 of the 317 rotation."
+    },
+    {
+     "num": 7922,
+     "operator": "ČSAD Benešov",
+     "course": "317/54",
+     "note": "Seen on 318 on Mon 2 Nov (4 trips, 16:36–18:49; in 15:00–17:59: 3 Jíloviště); also ran 320, 449 that afternoon. Course 317/54 of the 317 rotation."
+    },
+    {
+     "num": 7908,
+     "operator": "ČSAD Benešov",
+     "course": "317/52",
+     "note": "Seen on 318 on Mon 2 Nov (3 trips, 14:18–17:06; in 15:00–17:59: 2 Jíloviště); also ran 314, 449, 748 that afternoon. Course 317/52 of the 317 rotation."
+    },
+    {
+     "num": 7819,
+     "operator": "ČSAD Benešov",
+     "course": "317/56",
+     "note": "Seen on 318 on Mon 2 Nov (6 trips, 13:03–18:54; in 15:00–17:59: 2 Trnová, 1 Řitka). Course 317/56 of the 317 rotation."
+    },
+    {
+     "num": 7955,
+     "operator": "ČSAD Benešov",
+     "course": "317/10",
+     "note": "Seen on 318 on Mon 2 Nov (5 trips, 13:07–18:07; in 15:00–17:59: 1 Jíloviště, 1 Trnová). Course 317/10 of the 317 rotation."
+    },
+    {
+     "num": 7958,
+     "operator": "ČSAD Benešov",
+     "course": "317/11",
+     "note": "Seen on 318 on Mon 2 Nov (4 trips, 14:33–16:58; in 15:00–17:59: 2 Řitka, 1 Jíloviště); also ran 320 that afternoon. Course 317/11 of the 317 rotation."
+    },
+    {
+     "num": 7882,
+     "operator": "ČSAD Benešov",
+     "course": "317/40",
+     "note": "Seen on 318 on Mon 2 Nov (1 trip, 15:28; in 15:00–17:59: 1 Řitka); also ran 314, 748 that afternoon. Course 317/40 of the 317 rotation."
+    }
+   ],
+   "not_needed": [
+    {
+     "num": 7901,
+     "operator": "ČSAD Benešov",
+     "course": "317/58",
+     "note": "Seen on 318 on Mon 2 Nov (2 trips, 16:10–16:51; in 15:00–17:59: 2 Jíloviště). Course 317/58 of the 317 rotation."
+    },
+    {
+     "num": 7959,
+     "operator": "ČSAD Benešov",
+     "course": "317/3",
+     "note": "Seen on 318 on Mon 2 Nov (2 trips, 17:03–17:44; in 15:00–17:59: 2 Jíloviště); also ran 317, 320 that afternoon. Course 317/3 of the 317 rotation."
+    },
+    {
+     "num": 7952,
+     "operator": "ČSAD Benešov",
+     "course": "317/7",
+     "note": "Seen on 318 on Mon 2 Nov (2 trips, 14:07–17:48; in 15:00–17:59: 1 Řitka); also ran 317 that afternoon. Course 317/7 of the 317 rotation."
+    },
+    {
+     "num": 7897,
+     "operator": "ČSAD Benešov",
+     "course": "317/51",
+     "note": "Seen on 318 on Mon 2 Nov (5 trips, 13:29–18:30; in 15:00–17:59: 1 Jíloviště). Course 317/51 of the 317 rotation."
+    },
+    {
+     "num": 7926,
+     "operator": "ČSAD Benešov",
+     "course": "317/49",
+     "note": "Seen on 318 on Mon 2 Nov (4 trips, 14:28–18:40; in 15:00–17:59: 1 Jíloviště); also ran 320, 748 that afternoon. Course 317/49 of the 317 rotation."
+    },
+    {
+     "num": 7915,
+     "operator": "ČSAD Benešov",
+     "course": "317/48",
+     "note": "Seen on 318 on Mon 2 Nov (1 trip, 13:28; in 15:00–17:59: none); also ran 314, 320, 748 that afternoon. Course 317/48 of the 317 rotation."
+    },
+    {
+     "num": 7917,
+     "operator": "ČSAD Benešov",
+     "course": "317/53",
+     "note": "Seen on 318 on Mon 2 Nov (1 trip, 14:48; in 15:00–17:59: none); also ran 314, 449, 748 that afternoon. Course 317/53 of the 317 rotation."
+    },
+    {
+     "num": 7965,
+     "operator": "ARRIVA STŘEDNÍ ČECHY s.r.o.",
+     "course": "317/6",
+     "note": "Seen on 318 on Mon 2 Nov (5 trips, 15:03–17:40; in 15:00–17:59: 5 Jíloviště); also ran 317 that afternoon. Course 317/6 of the 317 rotation. Not in the 29 Sep register (no type), so not counted."
+    }
+   ]
+  }
  }
 }

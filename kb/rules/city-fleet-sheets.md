@@ -114,6 +114,11 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
 ## Designed vehicles, spares, "never ship without vehicles"
 - **Never publish a sheet without vehicles on its lines** (29 Sep: "you are missing the vehicle assignment to lines"). Fill every
   line in this order: observed data (even post-peak sightings, marked provisional) → other days' records → designed vehicles.
+- **A line with no deployment record takes the buses seen on the PID live map** on a working day (state `observed_buses`; owner, 1 Nov
+  2026, on 318: "I am sure 318 runs some articulated buses - either now or when you have evidence, tell it to rewrite"). Count the
+  buses on the line around 16:00, each on the Simutrans line of the branch it ran most in 15:00–17:59, and list the rest of the buses
+  seen there as not needed. A bus missing from the register is listed but not counted. Pool with the line whose course numbers
+  the buses carry only if they actually swap between the lines in the peak.
 - **Designed vehicles get real car numbers** ("fetch older records and use real car numbers"): from the line's own history, active,
   home depot, main type, and not out anywhere that day (check the day overview/live feed). Mark "designed, not recorded" with the
   date of the history record. If history runs out: free active cars of the line's own types, then the operator's usual types.

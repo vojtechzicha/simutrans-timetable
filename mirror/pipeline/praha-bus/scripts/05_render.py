@@ -44,6 +44,7 @@ def main():
     # left the network say why in the game check
     MON = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     def day(sd): return f'{int(sd[6:])} {MON[int(sd[4:6])]}'
+    OBS = {k: v for k, v in s.get('observed_buses', {}).items() if not k.startswith('_')}
     LATER = G.get('later') or {}; GONE = (s.get('gtfs_lines_from') or {}).get('gone_why', {})
     later_txt = (f' Lines {", ".join(LATER["lines"])} changed since and use the timetable of {day(LATER["service_date"])} instead'
                  + (f'; {" and ".join(LATER["gone"])} left the network on 2 November (their trips run as trolleybuses; the game check says what to delete)' if LATER.get('gone') else '')
@@ -351,6 +352,7 @@ def main():
                              f'not out anywhere in PID on {int(vd[8:])} Sep.')
             if spare == 'surplus':
                 notes.append(f'Logged on {int(c["source"][8:10])} Sep; not needed at 16:00 (the line needs {p.get("need")}). Not counted.')
+            if c.get('observed'): notes.append(c['observed'])
             if spare == 'not needed':
 
                 notes.append(f'In the line\'s history (last on {dd(c["hist"])}) and free on {int(vd[8:])} Sep, but not needed at 16:00. Not counted.')
@@ -363,6 +365,7 @@ def main():
             if c.get('moved_from'): flag = f'<span class="flag pm">from {esc(c["moved_from"])}</span>'
             if c['split']: flag += '<span class="flag pm">PM part</span>'
             src = '' if des or spare == 'not needed' or c['source'] == vd else f'<span class="src">logged {int(c["source"][8:10])} Sep</span> '
+            if c.get('observed') is not None: src = f'<span class="src">seen {int(c["source"][8:10])} {MONTHS[int(c["source"][5:7])][:3]}</span> '
             rows.append(f'<tr class="{"sp" if spare else ("unc" if (des or c["am_only"] or c["swap"]) else "")}"><td class="k">{esc(c["course"] if not des else "")}</td><td class="v">{chain}</td>'
                         f'<td class="n">{flag}{src}<span class="nt">{esc(" ".join(notes))}</span></td></tr>')
             rowc.append(c)
@@ -403,7 +406,8 @@ def main():
             for k in range(len(sls)):
                 title, _ = sl_head(L, k)
                 new.append(f'<tr class="brh"><td colspan="3">Simutrans line {esc(sl_label(L, k))}: {esc(title)} · {len(got[k])} of {sls[k]["need"]} needed'
-                           + ((' (a course logged going over to a regional line is on the line that runs it; the rest in course order, a choice)' if by_rec else
+                           + ((' (each bus on the line whose branch it ran most in the 15:00–17:59 peak, ' + esc(OBS[L]['seen']) + '; a choice)' if L in OBS else
+                               ' (a course logged going over to a regional line is on the line that runs it; the rest in course order, a choice)' if by_rec else
                                ' (buses split over the lines in course order, a choice)') if k == 0 else '') + '</td></tr>')
                 new += [rows[i] for i in got[k]]
             rows = new + [rows[i] for i in range(len(rows)) if i not in used]
@@ -413,7 +417,8 @@ def main():
             extra_note = (f'<p class="callout info">{n + nsur} courses are logged against {need} needed at 16:00. {nsur} are marked “not needed” and dimmed at the '
                           'bottom. The counted buses keep one of every type on the line first, then the lowest course numbers. The records carry no times, '
                           'so morning-only or school courses cannot be picked out.</p>')
-        how = 'by round trip' if (p.get('need_cycle') or 0) >= (p.get('need_on_road') or 0) else f'on the road at once over all patterns (the main round trip alone needs {p.get("need_cycle") or "fewer"})'
+        if L in OBS: extra_note += f'<p class="callout info">{esc(OBS[L]["summary"])}</p>'
+        how ='by round trip' if (p.get('need_cycle') or 0) >= (p.get('need_on_road') or 0) else f'on the road at once over all patterns (the main round trip alone needs {p.get("need_cycle") or "fewer"})'
         if sls:
             split = ' + '.join(f'{sl_label(L, k)} {x["need"]}' for k, x in enumerate(sls))
             needtxt = (f'<span class="need">{need} bus{"es" if need != 1 else ""} needed, each Simutrans line sized from its own schedule'

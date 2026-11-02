@@ -159,6 +159,12 @@ interleaved in the real timetiable". State `regional`:
 - 130 (owner, 2 Nov 2026: "is it fair to do the full run or not? … are there some stops without service"): the peak is the short turn
   Zličín – Řeporyjské náměstí (the run to Filmové ateliéry ends at 16:00, X130 runs Filmové ateliéry – Slivenec, licence 101130, off
   this sheet). Hand-set rows say to cut game line 100130 back (3 → 2 buses) and which game lines keep each dropped stop.
+- 318's buses come from the PID live map (state `observed_buses`; owner, 1 Nov 2026: "I am sure 318 runs some articulated buses"):
+  the PID regional session's poll of Mon 2 Nov (`pipeline/pid-regional/data/derived/318_observed_2026-11-02.json`). It shows the
+  11 buses on 318 around 16:00, each on 318A (Jíloviště) or 318B (Trnová / Řitka) by the branch it ran most in the peak: 3 articulated
+  (Citaro C2 GÜ 7955, 7958; Urbino 18 IV 1161), 8 Setras. The other 8 buses seen there are listed as not needed (7965 is not in the
+  29 Sep register). Not pooled with 317: the buses carry 317 course numbers, but in the peak only 7952 went over to 317.
+  `04_courses.py` reads the list; the Urbino 18 IV got its VZ-PID token and an 18.0 m length (no other card changed).
 - 329 via Květnice (owner, 1 Nov 2026: "Is it the line going via Květnice or not. If not, is it okay not to have it modeled?" → "I agree
   with the way you modeled it", note asked for): the :04 row out is the 15:04 and 16:04 trips via Květnice + Dobročovice (54 min;
   13:49 via Květnice only, 17:49 direct); the :23 row back is direct (47 min), as every afternoon trip back is (Květnice back only
