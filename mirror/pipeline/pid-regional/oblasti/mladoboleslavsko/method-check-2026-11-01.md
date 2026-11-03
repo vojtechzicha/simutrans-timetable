@@ -1,3 +1,5 @@
+> 3 Nov 2026: re-checked for branches read by trip ends instead of where trips pass (the 381 Zásmuky case). Where `branch-check-2026-11-03.md` or `branch-review-2026-11-03.md` differs from this file, the 3 Nov files stand (the review over the check).
+
 # Method check: PID Mladoboleslavsko (okres Mladá Boleslav), 1–2 Nov 2026
 
 Designed line by line with `../../../bus-schedule-method.md` (v4) and the pid-regional `DESIGN_BRIEF.md` (incl. "Learned on the pilot"), against the whole-day readings `data/derived/reading/<L>.txt` (PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026, a school day), with the owner’s lessons (`kb/lessons.md`) as the yardstick. The pilot review (Rakovnicko) was read for what a reviewer flags.

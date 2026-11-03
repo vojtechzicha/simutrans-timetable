@@ -260,7 +260,7 @@
     "Praha, Budějovická"
    ],
    "anchor": "16:00",
-   "note": "Benešov, Terminál – Poříčí nad Sázavou – Nespeky – Kamenice – Jesenice – Praha, Budějovická. Hourly in the afternoon: Benešov :50 (14:50–17:50), Budějovická 15:35, 16:37, 17:35, 18:37: every 120 with two slots each way holds all of them on the minute. Model hour set by hand to 16:00: the busiest stretch, 13:00–15:00, is the Benešov – Nespeky short trips (all on 337's own path). Those shorts (Benešov 14:25, 15:29; Nespeky 15:02) are listed: every one runs through at Nespeky as 651 to Pyšely (4 of 4 arrivals, 6 of 6 departures), see 651.",
+   "note": "Benešov, Terminál – Poříčí nad Sázavou – Nespeky – Kamenice – Jesenice – Praha, Budějovická. Hourly in the afternoon: Benešov :50 (14:50–17:50), Budějovická 15:35, 16:37, 17:35, 18:37: every 120 with two slots each way holds all of them on the minute. Model hour set by hand to 16:00: the busiest stretch, 13:00–15:00, is the Benešov – Nespeky short trips (all on 337's own path). Those shorts (Benešov 14:25, 15:29; Nespeky 15:02) are listed: every one runs through at Nespeky as 651 to Pyšely (4 of 4 arrivals, 6 of 6 departures), see 651. Off the pattern: Benešov 13:40, 18:35; Budějovická 12:45, 13:50, 14:47 (10 to 15 min off the hourly :50 and :35 / :37).",
    "sim": [
     {
      "name": "337",
@@ -294,7 +294,7 @@
     "Kamenice, kulturní dům",
     "Týnec nad Sázavou, železniční stanice"
    ],
-   "note": "Praha, Budějovická – Jesenice – Sulice – Kamenice – Řehenice – Týnec nad Sázavou, železniční stanice. Týnec → Prague hourly at :40 (14:40–18:40); Prague → Týnec hourly at :20, every 30 (:20 / :50) 15:20–17:20. The first trips start at Týnec (3:53–6:44) and the last ones end there (20:10, 21:38, 0:19), so the line is timed both ways at its inbound rate (the outstation rule): the 15:50 and 16:50 from Prague are off the pattern; the Kamenice :41 shorts are their probable returns (live map to confirm). Listed: the Kamenice shorts (Prague 13:05, 14:35; Kamenice 14:41, 15:41, 16:41) and the Sulice, Želivec shorts (13:55, 16:16; 7 of 7 follow a 335 arrival there), all on 339's path.",
+   "note": "Praha, Budějovická – Jesenice – Sulice – Kamenice – Řehenice – Týnec nad Sázavou, železniční stanice. Týnec → Prague hourly at :40 (14:40–18:40); Prague → Týnec hourly at :20, every 30 (:20 / :50) 15:20–17:20. The first trips start at Týnec (3:53–6:44) and the last ones end there (20:10, 21:38, 0:19), so the line is timed both ways at its inbound rate (the outstation rule): the 15:50 and 16:50 from Prague are off the pattern (on the 2 Nov live map the 15:50 bus stays at Týnec and the 16:50 bus is the 18:40 back). The Kamenice shorts are not their returns and not a branch: out of Prague 13:05 and 14:35 (2), back from Kamenice 14:41, 15:41 and 16:41 (3), fewer than 3 each way; only the 14:35 comes back as the 15:41, the 14:41 and 16:41 are run by buses that do not come from 339 (9361; 9163 from the 441). Listed: those shorts and the Sulice, Želivec shorts (13:55, 16:16; 7 of 7 follow a 335 arrival there), all on 339's path. Also off the pattern: Týnec 12:55 and Budějovická 18:05, 15 min off the hourly :40 and :20.",
    "sim": [
     {
      "name": "339",
@@ -325,7 +325,7 @@
     "Stříbrná Skalice, náměstí",
     "Sázava, autobusové stanoviště"
    ],
-   "note": "Praha, Háje – Uhříněves – Říčany – Mukařov – Jevany – Stříbrná Skalice – Sázava, autobusové stanoviště. Sázava → Prague hourly at :30 (12:30–17:30); Prague → Sázava every 30 at :20 / :50 (14:20–17:20). The buses sleep at Sázava (4:25–7:23 the trips start there), so 382 is timed both ways at the inbound rate. Of the two Háje departures an hour it keeps the :50, which the :48 arrivals from Sázava turn into in 2 minutes (3 buses; the :20 would need 4); the :20 departures (14:20–18:20) are off the pattern, the buses going home. The Stříbrná Skalice morning shorts are listed.",
+   "note": "Praha, Háje – Uhříněves – Říčany – Mukařov – Jevany – Stříbrná Skalice – Sázava, autobusové stanoviště. Sázava → Prague hourly at :30 (12:30–17:30); Prague → Sázava every 30 at :20 / :50 (14:20–17:20). The buses sleep at Sázava (4:25–7:23 the trips start there), so 382 is timed both ways at the inbound rate. Of the two Háje departures an hour it keeps the :20: on the 2 Nov live map the :20 buses are the ones that come back from Sázava at :30 and turn at Háje in about 32 minutes (9953, 9947, 9377: 14:20 / 15:20 / 16:20 out, 16:30 / 17:30 / 18:15 back). The :50 departures (14:50, 15:50, 16:50) are off the pattern, the buses going home: their buses (9180, 9375, 9178) do not come back before 20:00, nor does the 17:20 bus (9371). Also off: Háje 12:30 and 13:15 (before the :20 pattern starts), Sázava 18:15 (15 min off). The Stříbrná Skalice morning shorts are listed.",
    "sim": [
     {
      "name": "382",
@@ -335,9 +335,8 @@
        "fr": "Praha, Háje",
        "to": "Sázava, autobusové stanoviště",
        "at": [
-        50
-       ],
-       "lay": 2
+        20
+       ]
       },
       {
        "fr": "Sázava, autobusové stanoviště",
@@ -347,7 +346,7 @@
        ]
       }
      ],
-     "why": "Praha, Háje :50 → Sázava, autobusové stanoviště (78 min), Sázava :30 → Háje (78 min); the :48 arrivals leave Háje again at :50 (the real 2-minute turn). 3 buses (waits 2 at Háje, 22 at Sázava)."
+     "why": "Praha, Háje :20 → Sázava, autobusové stanoviště (78 min), Sázava :30 → Háje (78 min). 4 buses (waits 32 at Háje, 52 at Sázava); keeping the :50 instead would be the 3-bus cycle with a 2-minute turn at Háje, which no bus makes on the live map."
     }
    ]
   },
@@ -391,7 +390,7 @@
     "Senohraby, železniční stanice",
     "Hrusice"
    ],
-   "note": "Nespeky – Pyšely – Senohraby – Hrusice (ARRIVA). One bus in a fixed sequence in the afternoon, plus the Benešov 337 bus that runs on at Nespeky to Pyšely and back (337 14:25 → Nespeky 14:44 → 651 to Pyšely 14:51 → 14:55 → Nespeky 15:02 → 337 to Benešov). Two Simutrans lines: 651 is the 14:33–16:33 round of the Pyšely bus (Hrusice and Senohraby, exact), 651 Nespeky the Pyšely – Nespeky trips (Pyšely, hotel Doly has no other line). The Senohraby stops (okres Praha-východ) have no other line.",
+   "note": "Nespeky – Pyšely – Senohraby – Hrusice (ARRIVA). One bus in a fixed sequence in the afternoon, plus the Benešov 337 bus that runs on at Nespeky to Pyšely and back (337 14:25 → Nespeky 14:44 → 651 to Pyšely 14:51 → 14:55 → Nespeky 15:02 → 337 to Benešov). Two Simutrans lines: 651 is the 14:33–16:33 round of the Pyšely bus (Hrusice and Senohraby, exact), 651 Nespeky the Pyšely – Nespeky trips (Pyšely, hotel Doly has no other line). The Senohraby stops (okres Praha-východ) have no other line. Off the pattern, one trip each with no repeating minute: Nespeky → Pyšely 14:10 and 14:44, Pyšely → Nespeky 13:52, the through trips Nespeky → Senohraby 12:59, 17:27 and 18:50, Senohraby → Nespeky 18:15 and Hrusice → Nespeky 17:00 (all on 651's stops).",
    "sim": [
     {
      "name": "651",
@@ -688,7 +687,7 @@
     "Netvořice",
     "Neveklov"
    ],
-   "note": "Benešov – Týnec nad Sázavou – Lešany – Kamenný Přívoz – Netvořice – Neveklov, a school line of single trips. The one afternoon round Benešov – Neveklov is 14:30 → 15:51 and Neveklov 15:57 → Benešov 17:20: every 240, one bus. It is the only service of Brodce, Zbořený Kostelec, Pecerady, Lešany, Brejlov, Kamenný Přívoz, Hostěradice and Neveklov, Ouštice. Listed: Benešov → Týnec 13:35, → Netvořice 16:35, 18:35; Týnec → Neveklov 13:30, → Benešov 14:30, 15:35; Neveklov → Týnec 14:37; Netvořice → Týnec 17:44.",
+   "note": "Benešov – Týnec nad Sázavou – Lešany – Kamenný Přívoz – Netvořice – Neveklov, a school line of single trips. The one afternoon round Benešov – Neveklov is 14:30 → 15:51 and Neveklov 15:57 → Benešov 17:20: every 240, one bus. It is the only service of Brodce, Zbořený Kostelec, Pecerady, Lešany, Brejlov, Kamenný Přívoz, Hostěradice and Neveklov, Ouštice. Listed: Benešov → Týnec 13:35, → Netvořice 16:35, 18:35; Týnec → Neveklov 13:30, → Benešov 14:30, 15:35; Neveklov → Týnec 14:37; Netvořice → Týnec 17:44; Netvořice → Benešov 12:43 (passes Týnec 13:05).",
    "sim": [
     {
      "name": "753",
@@ -1275,7 +1274,7 @@
     "Vlašim, Domašín, náměstí",
     "Vlašim, Hrazená Lhota"
    ],
-   "note": "Vlašim town line: Terminál – Sukova loop – Terminál – Městský úřad – sídliště – Domašín – Hrazená Lhota. Hourly: Terminál :51 (12:51–14:51, 16:51), Hrazená Lhota :23 (13:23–15:23, 17:23), each bus turning at Hrazená Lhota on arrival. Modelled at its anchor (14:20). Listed: the Domašín shorts 14:18 / 14:59.",
+   "note": "Vlašim town line: Terminál – Sukova loop – Terminál – Městský úřad – sídliště – Domašín – Hrazená Lhota. Hourly: Terminál :51 (12:51–14:51, 16:51), Hrazená Lhota :23 (13:23–15:23, 17:23), each bus turning at Hrazená Lhota on arrival. Modelled at its anchor (14:20). Listed: the Domašín shorts 14:18 / 14:59. The real buses run the Sukova loop on the way out and again on the way back into Terminál; the game line runs it once per round, on the way out (its stops are served hourly).",
    "sim": [
     {
      "name": "841",
@@ -2173,7 +2172,7 @@
     "Lukavec",
     "Čechtice"
    ],
-   "note": "Pacov – Bratřice – Mezilesí – Lukavec – Čechtice (Vysočina), and Pacov town shuttles (železniční stanice – Jetřichovská křižovatka). Every 2 hours: Pacov :18 even hours to Čechtice (12:18–16:18), Čechtice :50 even hours (12:50–16:50), exact. The town shuttles' stops are on this line and 406; listed.",
+   "note": "Pacov – Bratřice – Mezilesí – Lukavec – Čechtice (Vysočina), and the Pacov town shuttle (železniční stanice – autobusové nádraží – Jetřichovská křižovatka). Every 2 hours: Pacov :18 even hours to Čechtice (12:18–16:18), Čechtice :50 even hours (12:50–16:50), exact. The shuttle runs on the odd hours, železniční stanice :50 (13:50, 15:50, 17:50) and Jetřichovská křižovatka :58 (13:58, 15:58, 17:58), exact, as its own Simutrans line 865 Pacov. Off the pattern: the three school extras in the town, 14:39 from Pacov, strojírny, 14:46 from Jetřichovská křižovatka and 15:05 from železniční stanice (stops on 865). The 865 buses run the shuttle in their layover at Pacov on the 2 Nov live map (18101, 18104): pooled, 865 and 865 Pacov need 2 buses instead of 3 (option, not applied).",
    "sim": [
     {
      "name": "865",
@@ -2195,6 +2194,33 @@
       }
      ],
      "why": "Pacov, železniční stanice 16:18 → Čechtice (50 min), Čechtice 16:50 → Pacov (48 min). 2 buses (the bus waits 102 min at Čechtice, as in the timetable)."
+    },
+    {
+     "name": "865 Pacov",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pacov, železniční stanice",
+       "to": "Pacov, Jetřichovská ul.křižovatka",
+       "at": [
+        "13:50"
+       ],
+       "notvia": [
+        "Bratřice"
+       ]
+      },
+      {
+       "fr": "Pacov, Jetřichovská ul.křižovatka",
+       "to": "Pacov, železniční stanice",
+       "at": [
+        "13:58"
+       ],
+       "notvia": [
+        "Bratřice"
+       ]
+      }
+     ],
+     "why": "Pacov, železniční stanice :50 of odd hours → autobusové nádraží, Poláček → Pacov, Jetřichovská ul.křižovatka :57 (7 min); Jetřichovská :58 → škola Za branou sídliště → Pacov, železniční stanice :05 (7 min), the 1-minute turn of the timetable. 3 exact departures each way 13:00–19:00. One bus."
     }
    ]
   },
@@ -2431,6 +2457,6 @@
  "terminus_alias_why": "",
  "coverage_exceptions": {},
  "owner_checks": [],
- "notes": "Okres Benešov with its Prague lines (332, 337, 339 from Budějovická; 382, 383 from Háje; 406, 426, 401, 408 from Roztyly) and the lines from the Jihočeský kraj and Vysočina that reach it (401, 408, 453, 455, 456, 457, 459, 846, 865, 866, 867). Every terminus is a loop: each typed value is the real minute − 1. Outstation lines (339, 382, 755: the buses sleep at the far end) are timed both ways at the inbound rate; their extra departures towards the far end are listed, as the owner set on 25 Oct 2026. Where the real timetable sends the arriving bus straight back (426 and 406 at Roztyly, 453 at Tábor and Mladá Vožice, 794 at Vlašim, 840, 841, MHD Benešov 3, 848 Zdiměřice), the leg has a 0-minute wait so the bus count follows the real turn; this assumes the fork's automatic Leave up to lets a bus that arrives on the real minute leave although the loop rule typed it 1 min earlier (an engine question, still to confirm). Vlašim, Terminál is a timed pulse at :50, when 426 leaves for Prague and 790, 455, 842 and others arrive (their 0-minute chains to 426 are this connection, not through buses). Through-running seen in the timetable, to confirm on the live map of 2 Nov: 337's Benešov – Nespeky shorts run on as 651 to Pyšely (all of them); 408 and 459 buses go on as 453 at Tábor (9 of 16, 5 of 11); the Sulice, Želivec shorts of 339 follow 335 arrivals (7 of 7); MHD Benešov 4 is interlined with 1 and 2. Pooling (not applied): 426's Prague trips and its Benešov shorts turn into each other at Vlašim in about 10 minutes; 791's two ends alternate at Benešov (3 buses as one circuit instead of 4); 752 Týnec's shorts fit in the Jílové buses' 55-minute layover at Benešov (752 and 752 Týnec, 5 buses, about 3 pooled); 453 Vlašim runs with 453 at Tábor and Mladá Vožice (4 buses, 3 pooled). X390 (Rabyně – Slapy) replaces line 390's closed section over the Slapy dam until 31 Dec 2027 and is modelled as it runs. Alternative to 651 Nespeky, if the real working should show: one circuit 651 Benešov every 120 (Benešov 15:29 → Nespeky as 337, on at 15:48 → Pyšely as 651, Pyšely 14:55 → Nespeky, on at 15:02 → Benešov as 337), 1 bus, the same as now. Owner, 2 Nov 2026: places whose only afternoon service is PID Haló (on demand) get a Simutrans line from their fixed trips, at most every 480 (here 848 Zdiměřice, which also runs Haló 887's Novotinky loop).",
+ "notes": "Okres Benešov with its Prague lines (332, 337, 339 from Budějovická; 382, 383 from Háje; 406, 426, 401, 408 from Roztyly) and the lines from the Jihočeský kraj and Vysočina that reach it (401, 408, 453, 455, 456, 457, 459, 846, 865, 866, 867). Every terminus is a loop: each typed value is the real minute − 1. Outstation lines (339, 382, 755: the buses sleep at the far end) are timed both ways at the inbound rate; their extra departures towards the far end are listed, as the owner set on 25 Oct 2026. Where the real timetable sends the arriving bus straight back (426 and 406 at Roztyly, 453 at Tábor and Mladá Vožice, 794 at Vlašim, 840, 841, MHD Benešov 3, 848 Zdiměřice), the leg has a 0-minute wait so the bus count follows the real turn; this assumes the fork's automatic Leave up to lets a bus that arrives on the real minute leave although the loop rule typed it 1 min earlier (an engine question, still to confirm). Vlašim, Terminál is a timed pulse at :50, when 426 leaves for Prague and 790, 455, 842 and others arrive (their 0-minute chains to 426 are this connection, not through buses). Through-running seen in the timetable, to confirm on the live map of 2 Nov: 337's Benešov – Nespeky shorts run on as 651 to Pyšely (all of them); 408 and 459 buses go on as 453 at Tábor (9 of 16, 5 of 11); the Sulice, Želivec shorts of 339 follow 335 arrivals (7 of 7); MHD Benešov 4 is interlined with 1 and 2. Pooling (not applied): 426's Prague trips and its Benešov shorts turn into each other at Vlašim in about 10 minutes; 791's two ends alternate at Benešov (3 buses as one circuit instead of 4); 752 Týnec's shorts fit in the Jílové buses' 55-minute layover at Benešov (752 and 752 Týnec, 5 buses, about 3 pooled); 453 Vlašim runs with 453 at Tábor and Mladá Vožice (4 buses, 3 pooled). X390 (Rabyně – Slapy) replaces line 390's closed section over the Slapy dam until 31 Dec 2027 and is modelled as it runs. Alternative to 651 Nespeky, if the real working should show: one circuit 651 Benešov every 120 (Benešov 15:29 → Nespeky as 337, on at 15:48 → Pyšely as 651, Pyšely 14:55 → Nespeky, on at 15:02 → Benešov as 337), 1 bus, the same as now. Owner, 2 Nov 2026: places whose only afternoon service is PID Haló (on demand) get a Simutrans line from their fixed trips, at most every 480 (here 848 Zdiměřice, which also runs Haló 887's Novotinky loop). 865 Pacov (the odd-hour town shuttle) runs in the layover of the 865 buses at Pacov on the 2 Nov live map (18101, 18104): pooled with 865, 2 buses instead of 3 (not applied).",
  "artifact_url": "https://claude.ai/artifact/LHA5oGkvV95SvhwYH77ekU"
 }

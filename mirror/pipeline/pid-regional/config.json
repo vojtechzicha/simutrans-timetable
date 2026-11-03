@@ -116,7 +116,8 @@
    "2026-11-02",
    "2026-11-03"
   ],
-  "note": "PID live map (mapa.pid.cz getData.php), polled every minute 12:00-20:00 (every 3 min 5:00-12:00 and 20:00-23:00) on Mon 2 and Tue 3 Nov 2026 by scripts/01_live_poll.py; each bus once per line through getVehicleWindow.php (operator, type, course)."
+  "note": "PID live map (mapa.pid.cz getData.php), polled every minute 12:00-20:00 (every 3 min 5:00-12:00 and 20:00-23:00) on Mon 2 Nov 2026, and on Tue 3 Nov 2026 so far only 5:00-7:20 (this version, 3 Nov morning: the Tuesday trips fill only designed buses and missing types; the evening version adds the whole Tuesday), by scripts/01_live_poll.py; each bus once per line through getVehicleWindow.php (operator, type, course).",
+  "note_full": "PID live map (mapa.pid.cz getData.php), polled every minute 12:00-20:00 (every 3 min 5:00-12:00 and 20:00-23:00) on Mon 2 and Tue 3 Nov 2026 by scripts/01_live_poll.py; each bus once per line through getVehicleWindow.php (operator, type, course)."
  },
  "index": {
   "sheets": {
@@ -698,10 +699,45 @@
    "1420": "VZ-IREDO-Irizar_i4_14M-bila",
    "1431": "VZ-IREDO-Irizar_i4_14M-bila",
    "1415": "VZ-DPPraha-Crossway_Pro_12M-bila",
-   "9034": "OUT: an operator's own plain red scheme (ARRIVA CITY reserve bus), outside the VZ-PID scope (fleet desk, 2 Nov 2026); the owner can overrule",
    "8505": "VZ-Praha-SOR_BN_9_5-pidcervenomodrobila",
-   "8584": "VZ-PID-Crossway_LE_Line_12M-pidsedocervena"
+   "8584": "VZ-PID-Crossway_LE_Line_12M-pidsedocervena",
+   "8187": "VZ-PID-Urbanway_12M_CNG-pidcervenomodrobila",
+   "8190": "VZ-PID-Urbanway_12M_CNG-pidcervenomodrobila",
+   "8246": "VZ-PID-Urbino_18_III-pidcervenomodrobila",
+   "8248": "VZ-PID-Urbino_18_III-pidcervenomodrobila",
+   "8250": "VZ-PID-Urbino_18_III-pidcervenomodrobila",
+   "8252": "VZ-PID-Urbino_18_III-pidcervenomodrobila",
+   "8254": "VZ-PID-Urbino_18_III-pidcervenomodrobila",
+   "33275": "VZ-PID-SOR_CN_12-pidcervenomodrobila",
+   "11611": "VZ-IREDO-Crossway_LE_Line_12M-bilapk",
+   "11645": "VZ-IREDO-Crossway_LE_Line_12M-bilapk",
+   "11697": "VZ-IREDO-Crossway_LE_Line_12M-bilapk",
+   "10645": "VZ-IREDO-Crossway_LE_Line_14_5M-bilapk",
+   "10654": "VZ-IREDO-Crossway_LE_Line_14_5M-bilapk",
+   "11656": "VZ-IREDO-Crossway_LE_Line_14_5M-bilapk",
+   "8282": "VZ-PID-Lions_City_18C-pidsedocervena"
   },
-  "by_vehicle_why": "Fleet desk (simutrans-custom-czech-pak128-80), 2 Nov 2026, pak main a21aff5: the objects drawn or settled per fleet number, each paint checked on photos. 1420 / 1431 are probably the plain white KAD i4 (VZ-IREDO); KAD also has two grey-red i4s."
+  "by_vehicle_why": "Fleet desk (simutrans-custom-czech-pak128-80), 2 Nov 2026, pak main a21aff5: the objects drawn or settled per fleet number, each paint checked on photos. 1420 / 1431 are probably the plain white KAD i4 (VZ-IREDO); KAD also has two grey-red i4s. 3 Nov 2026 (fleet desk, from the seznam-autobusu register): AD Střední Čechy 8187, 8190, 8246–8254 and BusLine 33275 are in the PID tricolour (pidcervenomodrobila); ČSAD Liberec 11611, 11645, 11697, 10645, 10654, 11656 are plain white (VZ-IREDO bilapk); 8282 (CVR Mondi full wrap) keeps the type's normal livery until the owner decides on wraps; 9034 is no longer out of scope (owner, 3 Nov: \"If something exists in the real PID, it should be modeled\"): requested in its red until drawn.",
+  "paint_by_vehicle": {
+   "12536": "Doprava Ústeckého kraje, zelená",
+   "12555": "Doprava Ústeckého kraje, zelená",
+   "12557": "Doprava Ústeckého kraje, zelená",
+   "12559": "Doprava Ústeckého kraje, zelená",
+   "18101": "bílá & polep VDV, zelené šipky",
+   "18102": "bílá & polep VDV, zelené šipky",
+   "18104": "bílá & polep VDV, zelené šipky",
+   "18106": "bílá & polep VDV, zelené šipky",
+   "18151": "bílá & polep VDV, zelené šipky",
+   "18152": "bílá & polep VDV, zelené šipky",
+   "18153": "bílá & polep VDV, zelené šipky",
+   "17011": "IDESKA, zelená",
+   "10642": "bílá",
+   "10759": "světle zelená",
+   "1013": "schéma PID, šedá s červenými svislými pruhy",
+   "1466": "schéma PID, šedá s červenými svislými pruhy",
+   "1468": "schéma PID, šedá s červenými svislými pruhy",
+   "1469": "schéma PID, šedá s červenými svislými pruhy"
+  },
+  "paint_by_vehicle_why": "3 Nov 2026, fleet desk: register paint for buses the sheets' register lookup (by live-map car id) did not find; used only where the register entry has no paint. A paint that is no PID scheme makes the bus requested until the fleet desk names its object."
  }
 }

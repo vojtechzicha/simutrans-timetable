@@ -73,7 +73,7 @@
     "Mníšek pod Brdy, železniční zastávka Rymaně",
     "Příbram, Jiráskovy sady"
    ],
-   "note": "Praha, Smíchovské nádraží – Mníšek pod Brdy, two ends: u Šibence (out :20 hourly 14:20–17:20, back :13, plus 14:43) and železniční zastávka Rymaně (out :50 hourly 14:50–17:50, back 15:38, 16:26, 17:38). The buses alternate the two ends (the 0-5 minute chains at Smíchovské nádraží: 8 of 19 arrivals go straight out again as 319), so one circuit line every 120 with two slots on each leg, all exact. The Praha – Dobříš – Příbram trips of licence 104319 (out 6:18–9:36, back from Příbram 14:01, 15:06, 16:00) run over stops of 317 and 395 and are listed, as are the 18:20 / 18:50 trips to Mníšek, náměstí.",
+   "note": "Praha, Smíchovské nádraží – Mníšek pod Brdy, two ends: u Šibence (out :20 hourly 14:20–17:20, back :13, plus 14:43) and železniční zastávka Rymaně (out :50 hourly 14:50–17:50, back 15:38, 16:26, 17:38). The buses alternate the two ends (the 0-5 minute chains at Smíchovské nádraží: 8 of 19 arrivals go straight out again as 319), so one circuit line every 120 with two slots on each leg, all exact. The Praha – Dobříš – Příbram trips of licence 104319 (out 6:18–9:36, back from Příbram 14:01, 15:06, 16:00 and from Dobříš 13:03) run over stops of 317 and 395 and are listed, as are the 18:20 / 18:50 trips to Mníšek, náměstí.",
    "sim": [
     {
      "name": "319",
@@ -128,7 +128,7 @@
     "Praha, Na Plácku",
     "Sedlčany, autobusové stanoviště"
    ],
-   "note": "Praha, Smíchovské nádraží – Zbraslav – Davle – Štěchovice – Nové Dvory – Chotilsko – Křepenice – Nalžovice – Sedlčany. The buses sleep at Sedlčany (4:00–7:10 seven trips into Prague). Hourly at :45 both ways 8:45–12:45; in the afternoon Prague sends every 30 (:15 / :45, 13:45–18:15) and Sedlčany hourly (13:35, 14:20, 15:20, 16:15, 17:15, 18:15). An outstation line, timed at the inbound rate: every 60, Smíchovské nádraží :45, Sedlčany :15. The :15 departures from Prague are buses going home (off the pattern), as are Sedlčany 13:35, 14:20, 15:20 (5–10 min off) and the evening trips.",
+   "note": "Praha, Smíchovské nádraží – Zbraslav – Davle – Štěchovice – Nové Dvory – Chotilsko – Křepenice – Nalžovice – Sedlčany. The buses sleep at Sedlčany (4:00–7:10 seven trips into Prague). Hourly at :45 both ways 8:45–12:45; in the afternoon Prague sends every 30 (:15 / :45, 13:45–18:15) and Sedlčany hourly (13:35, 14:20, 15:20, 16:15, 17:15, 18:15). An outstation line, timed at the inbound rate: every 60, Smíchovské nádraží :45, Sedlčany :15. The :15 departures from Prague (14:15–18:15) are extra buses and off the pattern: read at Davle, obec, between 13:00 and 19:00 Prague sends 11 trips and Sedlčany 6, and on the 2 Nov live map the extra buses carry on from Sedlčany as the local lines 450, 549, 551 and 552. Also off the pattern: Sedlčany 13:35 (20 min off the :15 slot), 14:20 and 15:20 (5 min) and the evening trips.",
    "sim": [
     {
      "name": "360",
@@ -160,31 +160,32 @@
     "Nový Knín",
     "Dobříš, náměstí"
    ],
-   "note": "Praha, Smíchovské nádraží – Davle – Štěchovice – Slapy – Buš – Čím – Korkyně – Nový Knín – Mokrovraty – Stará Huť – Dobříš. Out of Prague hourly at :05 (12:05–17:05 to Dobříš; 18:05 and 19:05 end at Nový Knín); towards Prague from Dobříš only 12:25, 14:05, 15:05, 16:15, 17:45, 19:35. The buses sleep at Nový Knín and Dobříš (4:25–7:20 the first trips start there): an outstation line, timed at the inbound rate of its 16:00 window, every 120: Smíchovské nádraží 16:05 (even hours :05), Dobříš 16:15. Off the pattern: Smíchovské nádraží 13:05, 15:05, 17:05, 19:05; Dobříš 14:05, 15:05, 17:45. Listed: the Dobříš – Nový Knín shuttles (Dobříš 14:35, 16:40, 18:40; Nový Knín 12:47, 15:47); their stops are on 361.",
+   "note": "Praha, Smíchovské nádraží – Davle – Štěchovice – Slapy – Buš – Čím – Korkyně – Nový Knín – Mokrovraty – Stará Huť – Dobříš. Out of Prague hourly at :05, exact (12:05–17:05 to Dobříš; 18:05 and 19:05 end at Nový Knín); towards Prague from Dobříš 12:25, 14:05, 15:05, 16:15, 17:45, 19:35, about hourly but at uneven minutes. The buses sleep at Nový Knín and Dobříš (the first trips of the day start there, 4:25–7:20), but in the afternoon those from Dobříš turn and come back about hourly: read at Štěchovice 13:00–19:00 the line runs 6 trips out and 5 back, so the inbound rate is hourly (the 2 Nov sheet took every 120 from the single 16:15 in the 15:30–17:30 band). Hourly both ways in the line's window 14:00–16:00, exact: Smíchovské nádraží :05 and Dobříš :05 (14:05, 15:05), 4 buses. The window is set by hand (anchor 14:30): 14:00–16:00 and 15:00–17:00 are equally busy, and only 14:00–16:00 holds the hourly pairs at one minute. Off the pattern: Dobříš 12:25, 16:15, 17:45 and 19:35 (the uneven minutes). Listed: the Dobříš – Nový Knín shuttles (Dobříš 13:55 to Stará Huť, Karla Čapka, 14:35, 16:40, 18:40; Nový Knín 12:47, 15:47); their stops are on 361.",
    "sim": [
     {
      "name": "361",
-     "every": 120,
+     "every": 60,
      "legs": [
       {
        "fr": "Praha, Smíchovské nádraží",
        "to": "Dobříš, náměstí",
        "core_to": "Nový Knín",
        "at": [
-        "16:05"
+        5
        ]
       },
       {
        "fr": "Dobříš, náměstí",
        "to": "Praha, Smíchovské nádraží",
        "at": [
-        "16:15"
+        5
        ]
       }
      ],
-     "why": "Smíchovské nádraží 16:05 (every 2 h at even hours :05) → Dobříš, náměstí via Štěchovice, Slapy, Nový Knín and Stará Huť (90 min); Dobříš 16:15 back (84 min). The 18:05 slot is the real trip to Nový Knín, run on to Dobříš in the game."
+     "why": "Smíchovské nádraží :05 every hour → Dobříš, náměstí via Štěchovice, Slapy, Nový Knín and Stará Huť (90 min); Dobříš :05 back (84 min). The 18:05 and 19:05 slots are the real trips to Nový Knín, run on to Dobříš in the game. 4 buses (waits 36 at Smíchovské nádraží, 30 at Dobříš)."
     }
-   ]
+   ],
+   "anchor": "14:30"
   },
   "392": {
    "core": [
@@ -248,7 +249,7 @@
        ]
       }
      ],
-     "why": "Short trips Smíchovské nádraží 15:45 / 16:45 → Dobříš, náměstí via Voznice (37 min) and Dobříš 15:46 / 16:58 back (40 min), every 120; the other short trips (14:05, 15:05, 17:25, 18:05, 18:25 out; 14:46, 17:46, 18:10, 18:50 back) are off the pattern."
+     "why": "Short trips Smíchovské nádraží 15:45 / 16:45 → Dobříš, náměstí via Voznice (37 min) and Dobříš 15:46 / 16:58 back (40 min), every 120; the other short trips (14:05, 15:05, 17:25, 18:05, 18:25 out; 14:46, 18:10, 18:50 back) are off the pattern (the 17:46 back is the 15:46 slot two hours on)."
     },
     {
      "name": "392 Žírovy",
@@ -286,7 +287,7 @@
     "Příbram, Drkolnov",
     "Příbram, Březové Hory"
    ],
-   "note": "Express Praha, Smíchovské nádraží – Drásov – Dubno – Příbram (no stop in Dobříš). One-directional: 18 trips into Prague 4:25–7:50, 25 out of Prague 13:05–20:25, none back in the afternoon. Out every 20 at :05 / :25 / :45 until 14:45, then every 15 to 17:45: :00 and :15 to Drkolnov (Březové Hory from 17:15), :30 and :45 to Jiráskovy sady only. The Drkolnov buses go back to Prague as 395 trips (Step 5b: at Drkolnov 395 sends 5 an hour towards Prague and brings 3, 393 brings 2 and sends none). So 393 is a circuit: out on 393 at :00 / :15, back on 395 at :12 / :36. The :30 / :45 trips that end at Jiráskovy sady are off the pattern (their buses go on as 472 and 521 or to the garage; every stop of theirs is on the circuit).",
+   "note": "Express Praha, Smíchovské nádraží – Drásov – Dubno – Příbram (no stop in Dobříš). One-directional: 18 trips into Prague 4:25–7:50, 25 out of Prague 13:05–20:25, none back in the afternoon. Out every 20 at :05 / :25 / :45 until 14:45, then every 15 to 17:45: :00 and :15 to Drkolnov (Březové Hory from 17:15), :30 and :45 to Jiráskovy sady only. The Drkolnov buses go back to Prague as 395 trips (Step 5b: at Drkolnov 395 sends 5 an hour towards Prague and brings 3, 393 brings 2 and sends none). So 393 is a circuit: out on 393 at :00 / :15, back on 395 at :12 / :36. The :30 / :45 trips that end at Jiráskovy sady are off the pattern (on the 2 Nov live map the buses of all six go on from Jiráskovy sady, the :30 trips as 472 and the :45 trips as 521; every stop of theirs is on the circuit).",
    "sim": [
     {
      "name": "393",
@@ -325,7 +326,7 @@
     "Příbram, Březové Hory"
    ],
    "anchor": "16:00",
-   "note": "Praha, Smíchovské nádraží – Dobříš (through the town, náměstí) – Dubno – Příbram, Jiráskovy sady – Drkolnov, some trips 3 min on to Březové Hory. Out of Prague every 20 all day (:15 / :35 / :55). Towards Prague every 20 until 12:20, then 5 an hour (every 12, :00 :12 :24 :36 :48, from 16:12 to 18:00): two of the five are the 393 express buses going back (Simutrans line 393, :12 / :36), so 395 runs every 20 out and :00 / :24 / :48 back. Anchor 16:00, set by hand for the 393 / 395 pair.",
+   "note": "Praha, Smíchovské nádraží – Dobříš (through the town, náměstí) – Dubno – Příbram, Jiráskovy sady – Drkolnov, some trips 3 min on to Březové Hory. Out of Prague every 20 all day (:15 / :35 / :55). Towards Prague every 20 until 12:20, then 5 an hour (every 12, :00 :12 :24 :36 :48, from 16:12 to 18:00): two of the five are the 393 express buses going back (Simutrans line 393, :12 / :36), so 395 runs every 20 out and :00 / :24 / :48 back. The trips on to Březové Hory (Prague 12:35–15:35, back from Březové Hory 12:35–15:31) are the same pattern; the game line ends at Drkolnov, and the stop Březové Hory is on 503, 505, 508 and 521. Anchor 16:00, set by hand for the 393 / 395 pair.",
    "sim": [
     {
      "name": "395",
@@ -770,7 +771,7 @@
     "Střezimíř, náměstí",
     "Tábor, autobusové nádraží"
    ],
-   "note": "Sedlčany – Jesenice – Sedlec-Prčice – Střezimíř – Borotín – Chotoviny – Tábor (Jihočeský kraj). Through trips: Tábor 12:45, 13:45, 14:50, 16:45, 18:45; Sedlčany 14:20, 15:20, 16:15, 18:20. Every 120 at the line's 16:00 window: Tábor :45 even hours (12:45, 16:45, 18:45 exact), Sedlčany 16:15, 2 buses; towards Sedlčany the game line runs via Nedrahovice, Lipský mlýn as the 16:45 does. Sedlčany – Sedlec-Prčice short trips run every 2 h (Sedlčany 15:15, 17:15; Sedlec-Prčice 14:40, 16:40): 454 Sedlec-Prčice, every 120, exact, the only afternoon service of Jesenice, Boudy, Martinice and Mezné, Kosova Hora, Dohnalova Lhota and Janov, Nedrahovice, Radeč and Sedlec-Prčice, Malkovice. Off: Tábor 13:45 and 14:50 (5 min); Sedlčany 14:20 and 18:20 (5 min) and 15:20 (55 min); the Střezimíř trips 13:10 / 13:15.",
+   "note": "Sedlčany – Jesenice – Sedlec-Prčice – Střezimíř – Borotín – Chotoviny – Tábor (Jihočeský kraj). Through trips: Tábor 12:45, 13:45, 14:50, 16:45, 18:45; Sedlčany 14:20, 15:20, 16:15, 18:20. Every 120 at the line's 16:00 window: Tábor :45 even hours (12:45, 16:45, 18:45 exact), Sedlčany 16:15, 2 buses; towards Sedlčany the game line runs via Nedrahovice, Lipský mlýn as the 16:45 does. Sedlčany – Sedlec-Prčice short trips run every 2 h (Sedlčany 15:15, 17:15; Sedlec-Prčice 14:40, 16:40): 454 Sedlec-Prčice, every 120, exact, the only afternoon service of Jesenice, Boudy, Martinice and Mezné, Kosova Hora, Dohnalova Lhota and Janov, Nedrahovice, Radeč and Sedlec-Prčice, Malkovice. Off: Tábor 14:50 (5 min) and 13:45 (an hour off the :45 slot); Sedlčany 14:20 and 18:20 (5 min) and 15:20 (55 min); the Střezimíř trips 13:10 / 13:15. The Tábor trips 12:45, 13:45 and 14:50 and every trip from Sedlčany run through Nedrahovice village; the 16:45 and 18:45 go via Lipský mlýn, so the game line goes out that way, and Nedrahovice, Lipský mlýn is served in the afternoon by the 16:45 only.",
    "sim": [
     {
      "name": "454",
@@ -1011,7 +1012,7 @@
     "Mirovice, náměstí",
     "Písek, autobusové nádraží"
    ],
-   "note": "Příbram – Zbenice – Kozárovice – Chraštice – Mirovice (Jihočeský kraj) – Mirotice – Předotice – Písek. One through round a day in the afternoon (Příbram 12:15 → Písek, Písek 15:15 → Příbram): 478, every 480, 1 bus. The Příbram – Mirovice trips (12:55, 14:45, 16:35, 18:25 out, 12:30 back) are buses going home to Mirovice (an outstation; their stops are on 478) and are off the pattern. 478 Chraštice: the Mirovice – Boješice – Řeteč – Chraštičky – Chraštice shuttle (16:00 / 16:15; also 12:25 / 12:52), every 480, the only service of Boješice, Řeteč, Chraštičky and Ohař.",
+   "note": "Příbram – Zbenice – Kozárovice – Chraštice – Mirovice (Jihočeský kraj) – Mirotice – Předotice – Písek. One through round a day in the afternoon (Příbram 12:15 → Písek, Písek 15:15 → Příbram): 478, every 480, 1 bus. The Příbram – Mirovice trips (12:55, 14:45, 16:35, 18:25 out, 12:30 back) are buses going home to Mirovice (an outstation: at Kozárovice 13:00–19:00 four trips run towards Mirovice and one back; on the 2 Nov live map the buses go on as 495 and as the Chraštice shuttle; their stops are on 478) and are off the pattern. 478 Chraštice: the Mirovice – Boješice – Řeteč – Chraštičky – Chraštice shuttle (16:00 / 16:15; also 12:25 / 12:52), every 480, the only service of Boješice, Řeteč, Chraštičky and Ohař.",
    "sim": [
     {
      "name": "478",
@@ -1114,7 +1115,7 @@
     "Nepomuk, sídliště",
     "Mirovice, náměstí"
    ],
-   "note": "A network around Rožmitál and Březnice: Rožmitál – Březnice by two roads (via Bezděkov, Hlubyně and Vševily, or via Pňovice and Přední Poříčí), Rožmitál – Nepomuk (okres Příbram) and Březnice – Počaply – Mirovice (Jihočeský kraj). One Simutrans line per road: 495 (via Hlubyně: Březnice 13:40, 14:50, Rožmitál 13:40, 14:35; every 120, two slots each way, exact; 2 buses), 495 Pňovice (Březnice 15:35, Rožmitál 18:10; every 360; 1 bus), 495 Nepomuk (Rožmitál 15:40, Nepomuk 15:55; every 120; 1 bus) and 495 Mirovice (Březnice 15:30, Mirovice 14:15; every 120; 1 bus). Off: Březnice 12:45, 17:35, 19:01; Rožmitál 16:10, 13:45 (5 min), Nepomuk 15:55 → Březnice beyond Rožmitál; Mirovice 13:15, 16:00, 19:23; Březnice 12:00, 17:45; the Rožmitál – Pňovice local trips 14:40 / 14:46.",
+   "note": "A network around Rožmitál and Březnice: Rožmitál – Březnice by two roads (via Bezděkov, Hlubyně and Vševily, or via Pňovice and Přední Poříčí), Rožmitál – Nepomuk (okres Příbram) and Březnice – Počaply – Mirovice (Jihočeský kraj). One Simutrans line per road: 495 (via Hlubyně: Březnice 13:40, 14:50, Rožmitál 13:40, 14:35; every 120, two slots each way, exact; 2 buses), 495 Pňovice (Březnice 15:35, Rožmitál 18:10; every 360; 1 bus), 495 Nepomuk (Rožmitál 15:40, Nepomuk 15:55; every 120; 1 bus) and 495 Mirovice (Březnice 15:30, Mirovice 14:15; every 120; 1 bus). Off: Březnice 12:45, 17:35, 19:01; Rožmitál 16:10, 13:45 (5 min), Nepomuk 15:55 → Březnice beyond Rožmitál; Mirovice 13:15, 16:00, 19:23; Březnice 12:00, 17:45; Počaply 14:05 → Březnice (6 min); the Rožmitál – Pňovice local trips 14:40 / 14:46.",
    "sim": [
     {
      "name": "495",
@@ -1381,7 +1382,7 @@
     "Dubno, učiliště",
     "Příbram, Bytíz, věznice"
    ],
-   "note": "Šachetní – Drkolnov – Milínská – Jiráskovy sady – Nová Hospoda – Dubno, učiliště, some trips 3 min on to Bytíz, věznice (the prison). Every 30 at :05 / :35 until 15:05 (back from Dubno :00 / :30); then Šachetní 15:25 (Bytíz), 15:55 (Nová Hospoda Polní short), 16:45, 17:05 (short), 17:45 (Bytíz), 18:05. Read at Nová Hospoda Polní (all trips pass it). 501: every 120 with three slots each way in the line's window 14:30–16:30 (Šachetní 14:35, 15:05, 15:55; Dubno 15:00, 15:30 and the Polní short 16:27), exact; the shorts are run on to Dubno in the game. 501 Bytíz takes the prison trips (every 480, Šachetní 15:25, Bytíz 16:02). Off the pattern: Šachetní 13:35, 16:45, 18:05; Dubno 13:35, 14:30 (to Jiráskovy sady), 17:10; the Bytíz trips 14:05 / 14:37 and 17:45 / 18:12.",
+   "note": "Šachetní – Drkolnov – Milínská – Jiráskovy sady – Nová Hospoda – Dubno, učiliště, some trips 3 min on to Bytíz, věznice (the prison). Every 30 at :05 / :35 until 15:05 (back from Dubno :00 / :30); then Šachetní 15:25 (Bytíz), 15:55 (Nová Hospoda Polní short), 16:45, 17:05 (short), 17:45 (Bytíz), 18:05. Read at Nová Hospoda Polní (all trips pass it). 501: every 120 with three slots each way in the line's window 14:30–16:30 (Šachetní 14:35, 15:05, 15:55; Dubno 15:00, 15:30 and the Polní short 16:27), exact; the shorts are run on to Dubno in the game. 501 Bytíz takes the prison trips (every 480, Šachetní 15:25, Bytíz 16:02). Off the pattern: Šachetní 13:35, 16:45, 18:05, 18:40 (to Jiráskovy sady); Dubno 13:35, 14:00, 14:30 (to Jiráskovy sady), 17:10, 18:45; the Bytíz trips 14:05 / 14:37 and 17:45 / 18:12 (three prison rounds a day 80–140 min apart, no interval holds them).",
    "sim": [
     {
      "name": "501",
@@ -2147,7 +2148,7 @@
     "Kamýk nad Vltavou, u Mášů"
    ],
    "anchor": "15:00",
-   "note": "Dobříš – Daleké Dušníky – Nečín – Hřiměždice, Vestec (one trip a day on to Kamýk nad Vltavou via Velká, Sedla). Afternoon: Dobříš 12:55, 14:45, 15:55, 18:45; Vestec 13:31, 15:25, 18:05, each a 0-minute turn at Vestec (the chains, 7 of 9). Anchor set to 15:00 by hand: the 16:00 window holds no trip towards Dobříš (15:25 and 18:05 lie outside). 520: every 120, Dobříš 14:45, Vestec 15:25 (0-minute turn as in the timetable), 1 bus. 520 Kamýk: the Kamýk trips (Dobříš 16:45 out, Kamýk 6:24 in the morning back, the bus sleeps at Kamýk), every 480, the only service of Kamýk nad Vltavou, Velká, Sedla. Off: Dobříš 12:55, 15:55, 18:45; Vestec 13:31, 18:05; the Daleké Dušníky short 14:05.",
+   "note": "Dobříš – Daleké Dušníky – Nečín – Hřiměždice, Vestec (one trip a day on to Kamýk nad Vltavou via Velká, Sedla). Afternoon: Dobříš 12:55, 14:45, 15:55, 18:45; Vestec 13:31, 15:25, 18:05, each a 0-minute turn at Vestec (the chains, 7 of 9). Anchor set to 15:00 by hand: the 16:00 window holds no trip towards Dobříš (15:25 and 18:05 lie outside). 520: every 120, Dobříš 14:45, Vestec 15:25 (0-minute turn as in the timetable), 1 bus. 520 Kamýk: the Kamýk trips (Dobříš 16:45 out, Kamýk 6:24 in the morning back, the bus sleeps at Kamýk), every 480, the only service of Kamýk nad Vltavou, Velká, Sedla. Off: Dobříš 12:55, 15:55 (18:45 is the 14:45 slot four hours on); Vestec 13:31, 18:05; the Daleké Dušníky short 14:05.",
    "sim": [
     {
      "name": "520",
@@ -2207,7 +2208,7 @@
     "Rožmitál pod Třemšínem, autobusové stanoviště",
     "Věšín, Buková"
    ],
-   "note": "Příbram, autobusové nádraží (some trips from Jiráskovy sady, 393 buses going on) – Březové Hory – Bohutín – Láz – Vranovice – Sedlice – Rožmitál pod Třemšínem, every 2nd hour on to Věšín, Buková. Out of Příbram every 30, back from Rožmitál hourly; the buses sleep at Rožmitál and Věšín (outstation, timed at the inbound rate). 521: every 120, Příbram 15:06, 16:36, Rožmitál 15:38, 16:08. 521 Věšín: every 120, Příbram :36 odd hours, Věšín 16:55. Off: Příbram 14:06, 16:06, 18:06 (buses going home), Rožmitál 13:48, 18:08; Věšín 13:00, 14:15.",
+   "note": "Příbram, autobusové nádraží (some trips from Jiráskovy sady, 393 buses going on) – Březové Hory – Bohutín – Láz – Vranovice – Sedlice – Rožmitál pod Třemšínem, every 2nd hour on to Věšín, Buková. Out of Příbram every 30, back from Rožmitál 13:48, 15:08, 15:38, 16:08, 18:08 and from Věšín 13:00, 14:15, 16:55; the buses sleep at Rožmitál and Věšín (outstation, timed at the inbound rate). 521: every 120, Příbram 15:06, 16:36, Rožmitál 15:38, 16:08. 521 Věšín: every 120, Příbram :36 odd hours, Věšín 16:55. Off: Příbram 14:06 and 16:06 (the even-hour :06 trips: 8 trips out to Rožmitál against 5 back 13:00–19:00; on the 2 Nov live map the 16:06 bus goes on as 495 and the 14:06 bus comes back as the 15:38), Rožmitál 13:48 and 15:08; Věšín 13:00, 14:15. Rožmitál 18:08 is the 16:08 slot two hours on.",
    "sim": [
     {
      "name": "521",
@@ -2273,7 +2274,7 @@
     "Hvožďany"
    ],
    "anchor": "15:00",
-   "note": "Rožmitál – Voltuš – Hutě pod Třemšínem – Roželov – Hvožďany. Out of Rožmitál every 90 (14:35, 16:05, 17:35, 19:05), back from Hvožďany only 12:27 and 15:07: the buses sleep at Hvožďany or go on there as 524 to Březnice (16:43 → 16:45). An outstation line, timed at its inbound rate: every 180, Rožmitál 14:35 (17:35 exact too), Hvožďany 15:07, 1 bus. Anchor set to 15:00 by hand: the 16:00 window holds no trip towards Rožmitál. Off: Rožmitál 16:05, 19:05 (buses going home or on as 524). Listed: the Rožmitál – Hutě, Zadní shuttles 13:05 / 13:19 (stops on 522).",
+   "note": "Rožmitál – Voltuš – Hutě pod Třemšínem – Roželov – Hvožďany. Out of Rožmitál every 90 (14:35, 16:05, 17:35, 19:05), back from Hvožďany only 12:27 and 15:07: the buses sleep at Hvožďany (on the 2 Nov live map 9612 is not seen again until 20:00 after the 16:05, nor 9832 after the 17:35; the 524 16:45 to Březnice is the 524's own bus 9567, not the 522 that arrives at 16:43). An outstation line, timed at its inbound rate: every 180, Rožmitál 14:35 (17:35 exact too), Hvožďany 15:07, 1 bus. Anchor set to 15:00 by hand: the 16:00 window holds no trip towards Rožmitál. Off: Rožmitál 16:05, 19:05 (buses going home). Listed: the Rožmitál – Hutě, Zadní shuttles 13:05 / 13:19 (stops on 522).",
    "sim": [
     {
      "name": "522",
@@ -2341,7 +2342,7 @@
     "Hvožďany",
     "Hvožďany, Leletice"
    ],
-   "note": "Březnice – Volenice – Pročevily – Hvožďany – Leletice. The afternoon is one bus: Březnice 14:40 → Leletice, Leletice 15:05 → Březnice, Březnice 15:30 → Hvožďany via Volenice, Bubovice, Zliv, Hvožďany 16:45 → Březnice (the 522 bus going on, the chains at Hvožďany), Březnice 17:10 → Leletice. Modelled as that sequence every 480, its way back from Leletice on the real 4:41 in the repeat, 1 bus: Leletice, Jamky, Javory, Vacíkov, Pročevily and Zliv have no other line.",
+   "note": "Březnice – Volenice – Pročevily – Hvožďany – Leletice. The afternoon trips chain into one bus's sequence: Březnice 14:40 → Leletice, Leletice 15:05 → Březnice, Březnice 15:30 → Hvožďany via Volenice, Bubovice, Zliv, Hvožďany 16:45 → Březnice (the bus that went out at 15:30; the timetable's 16:43 → 16:45 chain with 522 is not run through on the 2 Nov live map), Březnice 17:10 → Leletice. On the 2 Nov live map three buses shared them (9459 the 14:40 and 15:05, 9567 the 15:30 and 16:45, 9615 the 17:10). Modelled as that sequence every 480, its way back from Leletice on the real 4:41 in the repeat, 1 bus: Leletice, Jamky, Javory, Vacíkov, Pročevily and Zliv have no other line.",
    "sim": [
     {
      "name": "524",
@@ -2651,7 +2652,7 @@
     "Rožmitál pod Třemšínem, Strýčkovy",
     "Rožmitál pod Třemšínem, autobusové stanoviště"
    ],
-   "note": "Příbram, Jiráskovy sady – Bohutín – Vysoká u Příbramě – Narysov – Třebsko – Modřovice – Strýčkovy – Nesvačily – Rožmitál. Afternoon: Jiráskovy sady 14:36 → Rožmitál 15:20; Rožmitál 13:35 and 15:30 → Třebsko (the bus goes on as 472 there), Třebsko 17:11 → Rožmitál. Every 480 at the 14:36 / 15:30 round, 1 bus; the 15:30 is read to Třebsko and the game bus runs on to Jiráskovy sady. Strýčkovy, Nesvačily, Nový Dvůr, Modřovice, rozcestí and Vysoká u Příbramě, Rusalka have no other line.",
+   "note": "Příbram, Jiráskovy sady – Bohutín – Vysoká u Příbramě – Narysov – Třebsko – Modřovice – Strýčkovy – Nesvačily – Rožmitál. Afternoon: Jiráskovy sady 14:36 → Rožmitál 15:20; Rožmitál 13:35 and 15:30 → Třebsko (on the 2 Nov live map the 13:35's bus goes on as 472 13:49 to Příbram; the 15:30's waits at Třebsko and comes back as the 17:11), Třebsko 17:11 → Rožmitál. Every 480 at the 14:36 / 15:30 round, 1 bus; the 15:30 is read to Třebsko and the game bus runs on to Jiráskovy sady. Strýčkovy, Nesvačily, Nový Dvůr, Modřovice, rozcestí and Vysoká u Příbramě, Rusalka have no other line.",
    "sim": [
     {
      "name": "567",
@@ -2760,8 +2761,13 @@
    "coverage",
    "Four stops served 13:00–19:00 only by variant trips, each close to a stop a modelled line serves, are coverage exceptions: Stará Huť, Karla Čapka (0.50 km from Stará Huť, Knínská), Nečín, Žebrák (0.46 km from Nečín, Lipiny), Mladý Smolivec, Starý Smolivec, I (0.14 km from Starý Smolivec, II), Bohutín, Vysoká Pec, sídliště (0.33 km from Bohutín, Vysoká Pec).",
    "Serve them all: 3 more buses (a 361 Karla Čapka line every 480 with an empty return, 1; a 515 Čelina line every 480, 1; 522 routed via Starý Smolivec, I misses the 15:07 and needs a second bus, 1; 509 via Vysoká Pec, sídliště, a 2-minute detour its slot trips do not make, 0)."
+  ],
+  [
+   "361",
+   "361 is set hourly both ways at :05 (Smíchovské nádraží 13:05–17:05 exact; Dobříš 14:05 and 15:05 exact, 16:15, 17:45 and 19:35 off the slot), 4 buses: the Prague departures are hourly all afternoon and the trips from Dobříš are about hourly.",
+   "Every 120 at the 16:00 window (Smíchovské nádraží 16:05, Dobříš 16:15, both exact), 2 buses: half of the Prague departures (13:05, 15:05, 17:05, 19:05) would be off the pattern."
   ]
  ],
- "notes": "PID Příbramsko (okres Příbram with Dobříš and Sedlčany: licences 300xxx and the MHD Příbram lines 305xxx), the Prague lines whose outer end is in the okres (314, 317, 319, 360, 361, 392, 393, 395, 420) and the Jihočeský and Plzeňský long lines placed here (407, 416, 428, 438, 451, 454, 472, 477, 523). Timetable: PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026 (school day). Every terminus is treated as a loop (typed = real − 61 mod every). Most district lines are school-day lines of single trips; they are bent onto one real afternoon round each (every 120–480, 1 bus), kept where they are a place's only service, including the far ends in Jihočeský and Plzeňský kraj (owner, 2 Nov 2026: serve every place). Through-running: 393 buses go back to Prague as 395 trips at Příbram, Drkolnov (modelled, Simutrans line 393; the morning plates of 2 Nov already show every 393 trip on a 395 course) and on as 521 and 472 at Jiráskovy sady; the 450 bus runs the 549 Petrovice – Kuní trip and the 559 bus the 513 Vrchotice trips in the game (both folded into those lines). Seen in the timetable, for the 2 Nov live map: 500 trips go on as 510 at Jablonná, Horní Hbity; 522 buses go on as 524 at Hvožďany; 551 goes on as 552 at Kamýk; 567 goes on as 472 at Třebsko; 754 meets 486 at Osečany in the morning; 314 and 748 meet at Bratřínov (2 of 6). Timed connections, two operators: 517 → 317 at Dobříš, náměstí (most 517 arrivals). MHD Příbram rotates its buses between lines: 508 trips ending at Šachetní go on as 501 (4 of 4) and 503 departures from Svatá Hora follow 502 arrivals (13 of 14). That is why the town network's 18 buses here are more than the operator runs; pooling the town lines is the owner's option (not applied), and the 2 Nov live map will show the rotation. 317 (ČSAD Benešov) may later be pooled with 318 by the Prague bus sheet. The stops of okres Praha-západ (Davle, Hvozdnice and Bojanovice on 314, Mníšek pod Brdy on 317 and 319) and okres Benešov (754 Neveklov – Benešov, 519 Votice, 556 Heřmaničky, 454 Střezimíř) on these lines are served by no other PID line.",
+ "notes": "PID Příbramsko (okres Příbram with Dobříš and Sedlčany: licences 300xxx and the MHD Příbram lines 305xxx), the Prague lines whose outer end is in the okres (314, 317, 319, 360, 361, 392, 393, 395, 420) and the Jihočeský and Plzeňský long lines placed here (407, 416, 428, 438, 451, 454, 472, 477, 523). Timetable: PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026 (school day). Every terminus is treated as a loop (typed = real − 61 mod every). Most district lines are school-day lines of single trips; they are bent onto one real afternoon round each (every 120–480, 1 bus), kept where they are a place's only service, including the far ends in Jihočeský and Plzeňský kraj (owner, 2 Nov 2026: serve every place). Through-running: 393 buses go back to Prague as 395 trips at Příbram, Drkolnov (modelled, Simutrans line 393; the morning plates of 2 Nov already show every 393 trip on a 395 course) and on as 521 and 472 at Jiráskovy sady; the 450 bus runs the 549 Petrovice – Kuní trip and the 559 bus the 513 Vrchotice trips in the game (both folded into those lines). Checked on the 2 Nov live map: 500 trips go on as 510 at Jablonná, Horní Hbity (7221, 7223); 551 goes on as 552 at Kamýk (7501); 567 goes on as 472 at Třebsko on the 13:35 only (9832; the 15:30's bus comes back as the 17:11); 522 buses do not go on as 524 at Hvožďany (9612 and 9832 are not seen again until 20:00; the 524 16:45 is the 524's own bus 9567). From the timetable: 754 meets 486 at Osečany in the morning; 314 and 748 meet at Bratřínov (2 of 6). Timed connections, two operators: 517 → 317 at Dobříš, náměstí (most 517 arrivals). MHD Příbram rotates its buses between lines: 508 trips ending at Šachetní go on as 501 (4 of 4) and 503 departures from Svatá Hora follow 502 arrivals (13 of 14). That is why the town network's 18 buses here are more than the operator runs; pooling the town lines is the owner's option (not applied), and the 2 Nov live map will show the rotation. 317 (ČSAD Benešov) may later be pooled with 318 by the Prague bus sheet. The stops of okres Praha-západ (Davle, Hvozdnice and Bojanovice on 314, Mníšek pod Brdy on 317 and 319) and okres Benešov (754 Neveklov – Benešov, 519 Votice, 556 Heřmaničky, 454 Střezimíř) on these lines are served by no other PID line.",
  "artifact_url": "https://claude.ai/artifact/RAWhd2p3iFLibqfRhP9LFH"
 }

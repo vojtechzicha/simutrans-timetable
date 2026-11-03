@@ -48,7 +48,7 @@
     "Čáslav, železniční stanice",
     "Čáslav, obchodní centrum"
    ],
-   "note": "Praha, Háje – Říčany – Kostelec nad Černými lesy – Zásmuky – Kutná Hora – Čáslav, obchodní centrum. Exactly hourly all afternoon: Háje :00 (12:00–17:00 to the shopping centre, 18:00 to the bus station), Čáslav, obchodní centrum :48 (12:48–17:48); the bus that reaches Háje at :00 leaves again at :00. Off the pattern, all on the line's own stops: the Háje – Zásmuky, náměstí extras at :30 (14:30, 15:30, 16:30, 17:30; back 16:21), buses of the Zásmuky garage going home, and Kutná Hora, hlavní nádraží → Háje 13:40, 14:40.",
+   "note": "Praha, Háje – Říčany – Kostelec nad Černými lesy – Zásmuky – Kutná Hora – Čáslav, obchodní centrum, with every other afternoon bus turning at Zásmuky. Read at Zásmuky, náměstí, the line runs every 30 min 14:00–18:00: towards Zásmuky :09 (on to Čáslav) and :39 (ending there: Háje 14:30, 15:30, 16:30, 17:30); towards Prague :51 (from Čáslav) and :21 (14:21, 15:21, 16:21: the Kutná Hora, hlavní nádraží 13:40 and 14:40 and the Zásmuky 16:21). Two Simutrans lines: 381 hourly Háje :00 → Čáslav, obchodní centrum :48 → Háje, and 381 Zásmuky hourly Háje :30 → Zásmuky, náměstí :21 → Háje. On the 2 Nov live map the buses switch between the two ends at Háje (1683 and 9373 came in from Čáslav and went out to Zásmuky at 16:30 and 17:30; 9372 ran Háje 14:30 → Zásmuky and back at 16:21). Off the pattern: Háje 18:00 and 19:00 (to Čáslav, autobusové stanoviště and Kutná Hora), the morning Zásmuky starts 4:21, 4:51 and the 0:05 to Zásmuky (the garage), Kutná Hora 11:10, 22:11 → Háje.",
    "sim": [
     {
      "name": "381",
@@ -71,6 +71,38 @@
       }
      ],
      "why": "Háje :00 → Čáslav, obchodní centrum :12 (132 min); Čáslav :48 → Háje :00 (132 min). The bus that reaches Háje at :00 leaves at :00: 0-minute turn as in the timetable (19 of 23 arrivals)."
+    },
+    {
+     "name": "381 Zásmuky",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Háje",
+       "to": "Zásmuky, náměstí",
+       "at": [
+        30
+       ],
+       "lay": 0,
+       "notvia": [
+        "Bečváry"
+       ]
+      },
+      {
+       "fr": "Zásmuky, náměstí",
+       "to": "Praha, Háje",
+       "at": [
+        21
+       ],
+       "notvia": [
+        "Čáslav, Kalabousek"
+       ]
+      }
+     ],
+     "why": "Read at Zásmuky, náměstí (Step 3), the trips that end there and the Kutná Hora, hlavní nádraží trips that pass it towards Prague are one hourly branch, 4 out and 3 back 13:00–19:00 (the afternoon-branch rule): Háje :30 → Zásmuky :39 (14:30–17:30 exact), Zásmuky :21 → Háje :30 (14:21, 15:21, 16:21 exact). With 381 the two make Háje – Zásmuky every 30 min as in reality. Háje turn 0 min as on 381 (the real :30 departures take buses that came in from Čáslav at :00): 3 buses, 4 with a 3-minute wait. Model window 15:00–17:00, the branch's own hour (its last return from Zásmuky is 16:21).",
+     "window": [
+      "15:00",
+      "17:00"
+     ]
     }
    ]
   },
@@ -272,7 +304,7 @@
     "Zbraslavice, náměstí",
     "Zruč nad Sázavou, Sázavan"
    ],
-   "note": "Kolín – Kutná Hora (Kaňk, Sedlec, Karlov) – Červené Janovice – Zbraslavice – Zruč nad Sázavou, with short workings Kolín – Kutná Hora. Kolín → Zruč exactly :57 of odd hours (12:57, 14:57, 16:57); Zruč → Kolín 14:36, 15:40, 17:20. Modelled every 120 at Kolín 14:57 / Zruč 14:36 (the bus of the 14:30 arrival, 6 min turn). Off the pattern: Zruč 15:40, 17:20, 18:30; the Kolín – Kutná Hora, autobusové stanoviště shorts (Kolín 13:57, 15:27, 16:27, 17:53, 18:57, 19:23; back 13:06, 13:36, 15:26) and Kolín – Karlov shorts (16:03; back 14:19, 14:49, 17:19), every stop on 805 and 785. The bus-station shorts would pass every 120 at Kolín 13:57 / bus station 15:26 at the inbound rate (+1 bus): on the owner checks.",
+   "note": "Kolín – Kutná Hora (Kaňk, Sedlec, Karlov) – Červené Janovice – Zbraslavice – Zruč nad Sázavou, with short workings Kolín – Kutná Hora. Kolín → Zruč exactly :57 of odd hours (12:57, 14:57, 16:57); Zruč → Kolín 14:36, 15:40, 17:20. Modelled every 120 at Kolín 14:57 / Zruč 14:36 (the bus of the 14:30 arrival, 6 min turn). Off the pattern: Zruč 15:40, 17:20, 18:30; the Kolín – Kutná Hora, autobusové stanoviště shorts (Kolín 13:57, 15:27, 16:27, 17:53, 18:57, 19:23; back 13:06, 13:36, 15:26) and Kolín – Karlov shorts (16:03; back 14:19, 14:49, 17:19), every stop on 805 and 785. Read at Hlouška, Na Špici with every trip that passes it: towards Kolín the shorts repeat at :31 (14:31 and 17:31 from Karlov, 15:31 from the bus station), towards Kutná Hora they do not within 13:00–19:00 (13:57 and 17:53 leave Kolín at :57 like the Zruč trips, the 18:57 reaches Kutná Hora after 19:00; 15:27, 16:03 and 16:27 in the 16:00 hour), so they stay listed. The bus-station shorts would pass every 120 at Kolín 13:57 / bus station 15:26 at the inbound rate (+1 bus): on the owner checks.",
    "sim": [
     {
      "name": "805",
@@ -1438,7 +1470,7 @@
  "owner_checks": [
   [
    "805",
-   "Kolín – Kutná Hora, autobusové stanoviště short workings, 5 out / 3 back 13:00–19:00 at no fixed minute (Kolín 13:57, 15:27, 16:27, 17:53, 18:57; back 13:06, 13:36, 15:26; the Karlov shorts 16:03 / 14:19, 14:49, 17:19 are a separate inflow, listed). Listed as designed (0 buses): every stop is on 805 or 785.",
+   "Kolín – Kutná Hora, autobusové stanoviště short workings, 5 out / 3 back 13:00–19:00: towards Kutná Hora no three at one minute within the window (Kolín 13:57, 15:27, 16:27, 17:53, 18:57), back from the bus station at no fixed minute (13:06, 13:36, 15:26); read at Hlouška, Na Špici the trips towards Kolín repeat at :31 (14:31 and 17:31 from Karlov, 15:31 from the bus station), the Karlov shorts 16:03 / 14:19, 14:49, 17:19 being a separate end, listed. Listed as designed (0 buses): every stop is on 805 or 785.",
    "+1 bus: a line 805 Kutná Hora every 120, Kolín 13:57 / autobusové stanoviště 15:26 (typed 56 / 25), at the inbound rate, exact in 13:45–15:45 and 30 min off elsewhere; 15:27, 16:27, 17:53, 18:57 from Kolín then buses going home."
   ]
  ],

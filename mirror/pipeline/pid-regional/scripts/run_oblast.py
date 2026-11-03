@@ -8,7 +8,7 @@
    coverage check (Step 9) -> data/derived/schedule.json
 5. audits (written to oblasti/<id>/data/derived/audit-*.txt and printed in short): audit/step4_regional.py (Step 4: window
    slots vs real departures), audit/branch_check.py (legs read at a midpoint), audit/path_check.py (each slot's trip
-   against the modelled stops). Every flag must be fixed in lines.json or explained on the card / in the method check.
+   against the modelled stops), audit/passing_check.py (afternoon trips off every slot, read at the stops they pass). Every flag must be fixed in lines.json or explained on the card / in the method check.
 """
 import os, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); HOME = os.path.dirname(HERE); PIPE = os.path.dirname(HOME)
@@ -64,7 +64,10 @@ if '--no-audit' not in sys.argv:
     run([os.path.join(PIPE, 'audit', 'step4_regional.py'), rel, '--md', os.path.join(der, 'audit-step4.md')], PIPE, out='audit-step4.txt')
     run([os.path.join(PIPE, 'audit', 'branch_check.py'), PIPE], PIPE, out='audit-branch.txt', env={'AUDIT_SHEETS': rel})
     run([os.path.join(PIPE, 'audit', 'path_check.py'), PIPE], PIPE, out='audit-path.txt', env={'AUDIT_SHEETS': rel})
-    for f in ('audit-step4.txt', 'audit-branch.txt', 'audit-path.txt'):
+    # trips off every slot, read at the stops they pass (3 Nov 2026, after 381 Zásmuky): each EACH WAY flag is a branch to
+    # model or a reason on the card
+    run([os.path.join(PIPE, 'audit', 'passing_check.py'), PIPE], PIPE, out='audit-passing.txt', env={'AUDIT_SHEETS': rel})
+    for f in ('audit-step4.txt', 'audit-branch.txt', 'audit-path.txt', 'audit-passing.txt'):
         t = open(os.path.join(der, f), encoding='utf-8').read()
         print(f'--- {f}:', '\n'.join(l for l in t.splitlines() if l.strip())[:2500])
     print(f'full audits: {der}\\audit-step4.md, audit-branch.txt, audit-path.txt')

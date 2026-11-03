@@ -58,6 +58,13 @@ No every 1440 / 720 — max 480 ("we can bend the reality a bit"). Shift-change 
   repeats all day, so an empty return shuttles back every period. Add one only for something specific, e.g. a stop nobody
   else serves (387, 543B). Pick which departures fall off by the plates and by the waits (290: 16:19 off, not 14:59, needs
   4 buses instead of 5).
+- **Read the inbound rate where the extra trips turn, with every trip that passes there** (owner, 3 Nov 2026: "381 you haven't
+  done the Zásmuky branch. That is not off the pattern … I clearly see 381 runs Zásmuky/Čáslav switching"). 381's Háje :30
+  trips to Zásmuky were filed as garage buses going home because only one trip *starts* at Zásmuky towards Prague; the
+  Kutná Hora → Háje 13:40 and 14:40 pass Zásmuky at :21, so the branch runs 4 out and 3 back 13:00–19:00 and is its own line
+  (381 Zásmuky every 60). The outstation rule applies only to what is left after this reading; ≥ 3 each way at a repeating
+  minute is a branch (the 20/30 Oct rule). `pipeline/audit/passing_check.py` (run by PID `run_oblast.py`) lists, per line,
+  the afternoon trips no slot passes, read at every stop; every EACH WAY flag gets a model change or a reason on the card.
 - **Forks past the reading point:** a leg read at a midpoint (`core_to` short of the terminal, or a `knot`) counts trips
   wherever they end, so Step 4 can pass on another branch's trips. 292 was read at Píšť, Mýto and its two Ostrava slots were
   Strahovice trips on a line that ended at Chuchelná (owner, 25 Oct 2026: "half of the services going to Chuchelná, half
@@ -122,7 +129,16 @@ Owner, 1 Nov 2026: "Do the full PID. Divide it per "oblast" (like Mladoboleslavs
   buses are excluded. Regional buses use the `VZ-Praha-bus` / `VZ-DPPraha-bus` objects as they are and `VZ-PID-bus` only for
   what those lack; a town line's bus in its town's own paint uses `VZ-MHD<Town>`, in PID paint the PID object
   (`rules/pak-objects.md`; `config.pak.rules` maps the live map's type text). An empty "Typ vozu" is the map's answer, not a
-  failed window: the bus shows "?" until a later poll or the register names it.
+  failed window: the bus shows "?" until a later poll or the register names it. A bus whose register paint is no PID scheme
+  (an operator's own colours, another region's livery, a full wrap) is requested, never put on the grey-red object (owner,
+  3 Nov 2026, via the fleet desk: "If something exists in the real PID, it should be modeled... include more liveries where
+  needed"); a bus with no paint in the register is assumed grey-red and listed for the fleet desk's photo check.
+- **A republished sheet keeps its published buses** (keep_roster, 3 Nov 2026; owner, 2 Nov 2026 on the Prague bus sheet: "do
+  not move vehicles in lines not affected if possible"): `04_vehicles.py` starts the matching from each sheet's
+  `roster_published.json`. A published bus that is still evidence for its line never moves; a published designed bus is
+  reserved for its line while it is free in the line's window. New or changed lines take free buses or designed ones. After
+  each publish, copy `roster.json` to `roster_published.json`. v1 → v2 on 3 Nov: 2 bus moves on lines that already existed
+  (340's two to 340 Masarykova).
 - **A check that waits on vehicle evidence is settled by it:** when the live map confirms the sheet's choice (pooling 534+535,
   430+436, 433+434 on 2 Nov: run apart), the check becomes a sentence in the line's note naming the buses seen; it stays an
   owner check only if the evidence leaves a real choice, and a changed model is reported, never silent.

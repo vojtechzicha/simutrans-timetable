@@ -52,7 +52,7 @@
     "Praha, Zličín",
     "Praha, Kukulova"
    ],
-   "note": "Rakovník – Lužná – Ruda – Nové Strašecí – Stochov – Praha, Zličín – Praha, Vypich, where the buses arrive, and Praha, Kukulova, where they leave (one terminus). The buses sleep in Rakovník, so the afternoon is an outflow from Prague: from 15:30 to 17:30 Rakovník sends 15:30 (to Zličín only), 16:00, 16:40 and Kukulova 15:58, 16:28, 16:53, 17:23. Timed at the rate towards Prague, every 120 with three slots each way; Kukulova 16:28 and the Rakovník departures 13:00–15:00 (buses going to Prague for the peak) are off the pattern, and the Prague-only trips (Kukulova → Zličín 13:39, 15:45; Zličín → Stochov 16:30) are listed.",
+   "note": "Rakovník – Lužná – Ruda – Nové Strašecí – Stochov – Praha, Zličín – Praha, Vypich, where the buses arrive, and Praha, Kukulova, where they leave (one terminus). The buses sleep in Rakovník (the first trips of the day start there, and at Kukulova). Between 13:00 and 15:00 Rakovník sends seven buses to Prague (13:00, 13:20, 13:40, 14:00, 14:20, 14:40, 15:00) and Prague sends three back (Kukulova 13:18, 14:08, 14:38); from 15:30 to 17:30 the two ends are level: Rakovník 15:30 (to Zličín only), 16:00, 16:40 and Kukulova 15:58, 16:28, 16:53, 17:23. Timed at three slots each way every 120, the rate of that second stretch; Kukulova 16:28, the Rakovník departures 13:00–15:00 (their buses come back from Kukulova between 14:38 and 16:53) and Kukulova 12:48, 13:18, 14:08, 14:38, 18:05 are off the pattern, and the Prague-only trips (Kukulova → Zličín 13:39, 15:45; Zličín → Stochov 16:30) are listed. The three Rakovník – Zličín trips (13:20, 14:00, 15:30) are not a branch: their buses go on from Zličín as the 305 of 15:05 to Karlovy Vary (13:20) and as the 404 of 15:40 and 17:40 to Kralovice (14:00, 15:30).",
    "sim": [
     {
      "name": "304",
@@ -165,7 +165,7 @@
     "Kadaň, autobusové nádraží"
    ],
    "anchor": "16:00",
-   "note": "Praha, Zličín – Krupá, Šustna – Mutějovice – Svojetín – Měcholupy – Žatec – Kadaň. Kadaň → Prague every 2 hours at :50 all day; Zličín → Kadaň about two per 2 hours at no fixed minute (13:05, 14:15, 16:10, 17:00, 18:10). Modelled at 16:00: the 13:00–15:00 window is the variant via Nové Strašecí, Rynholec and Lány (Zličín 14:40, 18:40; Kadaň 13:47; listed, its stops are on 417, 304 and 581); Zličín 13:05, 14:15 and 17:00 are off the pattern. The Chbany and Deštnice villages (Ústecký kraj) have no other line, so each direction is shown by the path that serves them.",
+   "note": "Praha, Zličín – Krupá, Šustna – Mutějovice – Svojetín – Měcholupy – Žatec – Kadaň. Kadaň → Prague every 2 hours at :50 all day; Zličín → Kadaň about two per 2 hours at no fixed minute (13:05, 14:15, 16:10, 17:00, 18:10). Modelled at 16:00: the 13:00–15:00 window is the variant via Nové Strašecí, Rynholec and Lány (Zličín 14:40, 18:40; Kadaň 13:47; listed, its stops are on 417, 304 and 581); Zličín 13:05, 14:15 and 17:00 are off the pattern at the Prague end. Read at Žatec, autobusové nádraží, Žatec – Kadaň is hourly both ways from 13:30 to 18:30: the 415 slots pass at 13:30, 15:35, 17:30 towards Kadaň and 13:30, 15:30, 17:30 towards Prague, and the other hours are the Zličín 13:05, 14:40 and 17:00 trips (Žatec 14:35, 16:30, 18:30) and Kadaň 13:47, 15:47 and 17:50 (Žatec 14:30, 16:25, 18:25; the 15:47 and 17:50 end at Žatec, their buses 8385 and 8409 came from Prague). Second Simutrans line 415 Žatec, every 120 at the odd hours (Kadaň 15:47, Žatec 16:30), 1 bus. The Chbany and Deštnice villages (Ústecký kraj) have no other line, so each direction is shown by the path that serves them.",
    "sim": [
     {
      "name": "415",
@@ -200,6 +200,34 @@
       }
      ],
      "why": "Zličín 16:10 and Kadaň 16:50 every 120; out shown by the 14:15 trip's path via the Chbany villages (Vikletice, Vadkovice, Malé Krhovice, 118 min; the 16:10 itself takes the main road, 115 min), back via Měcholupy, Želeč, Deštnice and Svojetín, ObÚ (140 min; the 16:50 skips Deštnice, 134 min), so every stop of 415 is on the line."
+    },
+    {
+     "name": "415 Žatec",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kadaň, autobusové nádraží",
+       "to": "Žatec, autobusové nádraží",
+       "at": [
+        "15:47"
+       ],
+       "notvia": [
+        "Praha, Zličín"
+       ],
+       "rt": 38
+      },
+      {
+       "fr": "Žatec, autobusové nádraží",
+       "to": "Kadaň, autobusové nádraží",
+       "at": [
+        "16:30"
+       ],
+       "via": [
+        "Nové Strašecí, Palackého"
+       ]
+      }
+     ],
+     "why": "Kadaň 15:47 → Žatec, autobusové nádraží 16:25 (38 min, via the Chbany villages as the 15:47 runs); Žatec 16:30 → Kadaň 17:05 (35 min, the Zličín 14:40 trip's path via the Chbany rozcestí stops); every 120 at the odd hours, so Žatec – Kadaň is hourly with 415. The slots stand for Kadaň 13:47 (runs on to Prague via Nové Strašecí), 15:47 and 17:50 towards Žatec and for the Zličín 13:05, 14:40 and 17:00 trips at Žatec (14:35, 16:30, 18:30) towards Kadaň; the legs are read so that only those count (out of Kadaň the trips that do not reach Zličín, out of Žatec the trip via Nové Strašecí), the rest stay on 415. 1 bus."
     }
    ]
   },
@@ -731,7 +759,7 @@
     "Slabce, pošta",
     "Skryje"
    ],
-   "note": "Rakovník – Pavlíkov – Panoší Újezd – Slabce – Hracholusky – Hřebečníky – Skryje. The buses sleep at Skryje, so the afternoon sends more out (13:30 and 15:30 to Slabce; 14:40, 16:30, 18:30 to Skryje) than come back (16:04): timed at the rate towards Rakovník, every 240 on the real round Rakovník 14:40 → Skryje 15:24, Skryje 16:04 → Rakovník. Rakovník 16:30 and 18:30 (buses going home) and Skryje 12:34 are off the pattern.",
+   "note": "Rakovník – Pavlíkov – Panoší Újezd – Slabce – Hracholusky – Hřebečníky – Skryje. The buses sleep at Skryje, so the afternoon sends more out (13:30 and 15:30 to Slabce; 14:40, 16:30, 18:30 to Skryje) than come back (16:04): timed at the rate towards Rakovník, every 240 on the real round Rakovník 14:40 → Skryje 15:24, Skryje 16:04 → Rakovník. Rakovník 16:30 and 18:30 and Skryje 12:34 are off the pattern (no bus comes back before 19:00: the 16:30's goes on as a 574 to Křivoklát, the 18:30's returns at 20:19).",
    "sim": [
     {
      "name": "576",
@@ -988,7 +1016,7 @@
     "Rakovník, autobusové stanoviště",
     "Rakovník, železniční zastávka západ"
    ],
-   "note": "Louny, Luna – Louny – Cítoliby – Ročov – Třeboc – Hředle – Krupá – Lišany – Rakovník, run by the Ústecký kraj: through trips Rakovník 13:00, 14:20 (from železniční zastávka západ, to Louny, Luna), 17:30 and Louny 12:25 (from Luna), 16:00, plus Louny – Třeboc and Louny – Domoušice, Solopysky trips. 711 runs every 240 on one bus's real round (Rakovník, železniční zastávka západ 14:20 → Louny, Luna; Louny 16:00 → Rakovník), so Třeboc, Louny, sokolovna and Luna, Prokopova and sídliště gen.Kholla are on a line; 711 Domoušice, every 480, is the Louny 14:00 → Solopysky → 14:30 → Louny round, the only service of Solopysky. Off the pattern: Rakovník 13:00, 17:30, Louny 12:30; the Louny – Třeboc trips are listed.",
+   "note": "Louny, Luna – Louny – Cítoliby – Ročov – Třeboc – Hředle – Krupá – Lišany – Rakovník, run by the Ústecký kraj: through trips Rakovník 13:00, 14:20 (from železniční zastávka západ, to Louny, Luna), 17:30 and Louny 12:25 (from Luna), 16:00, plus Louny – Třeboc and Louny – Domoušice, Solopysky trips. 711 runs every 240 on one bus's real round (Rakovník, železniční zastávka západ 14:20 → Louny, Luna; Louny 16:00 → Rakovník), so Třeboc, Louny, sokolovna and Luna, Prokopova and sídliště gen.Kholla are on a line; 711 Domoušice, every 480, is the Louny 14:00 → Solopysky → 14:30 → Louny round, the only service of Solopysky. Off the pattern: Rakovník 13:00, 17:30, Louny 12:30; the Louny – Třeboc trips (Louny 15:00, 17:30, 19:00; Třeboc 16:00, 19:30: two each way before 19:00, so no line) are listed.",
    "sim": [
     {
      "name": "711",
@@ -1052,7 +1080,7 @@
    "Serve both with their own lines, every 480 on the real trip with an untimed return (Hořovičky 18:00 → Kněževes, železniční zastávka → Rakovník; Kadaň 14:47 → Chbany, Poláky, točna → Praha, Zličín): +2 buses."
   ]
  ],
- "notes": "PID Rakovnicko: okres Rakovník (licences 310xxx) and the PID lines whose first stop inwards from the outer end lies in it; PID GTFS of 1 Nov 2026, Monday 2 Nov 2026 (a school day). Every terminus is treated as a loop (typed = real − 1). The Prague-end lines 304, 305, 404, 415 and 417 are timed at both terminals; their Prague stops are on the Prague bus sheet. Most district lines are school-day lines of single trips, each bent onto one real afternoon round on one bus (every 120 to 480); six run every 480 (571, 572 Slabce, 573 Šípy, 574, 584 Vinařice, 711 Domoušice), each kept for stops no other line serves, inside or outside the kraj (owner, 2 Nov 2026: \"Yes, serve every place\"). The 0-minute turns at Hořovičky (573), Lhota pod Džbánem and Vinařice (584) and Domoušice, Solopysky (711 Domoušice) are modelled as in the timetable; this assumes the fork's automatic \"Leave up to\" lets a bus that arrives on the real minute leave although the loop rule types the departure 1 min early. Through-running seen in the timetable: 304 and 577 at Stochov, Slovanka II; 581 and 561 at Senomaty (modelled as 581 Senomaty). Open for the 2 Nov live map: where the 304 Rakovník – Zličín trips (13:20, 14:00, 15:30) go on, and the 304 ↔ 404 and 304 → 306 chains at Praha, Zličín; whether 561 Šamotka 14:10 → Kolešovice 15:26 goes on as 560 Kolešovice 15:30 (one circuit would save a bus); 562 → 561 at Rakovník, střelnice and 562 → 560 at the autobusové stanoviště. Lines 580 and 625 (Kladensko sheet) also serve Rakovník. The save holds one-convoy lines 100304 … 100760 for these numbers, without timetables.",
+ "notes": "PID Rakovnicko: okres Rakovník (licences 310xxx) and the PID lines whose first stop inwards from the outer end lies in it; PID GTFS of 1 Nov 2026, Monday 2 Nov 2026 (a school day). Every terminus is treated as a loop (typed = real − 1). The Prague-end lines 304, 305, 404, 415 and 417 are timed at both terminals; their Prague stops are on the Prague bus sheet. Most district lines are school-day lines of single trips, each bent onto one real afternoon round on one bus (every 120 to 480); six run every 480 (571, 572 Slabce, 573 Šípy, 574, 584 Vinařice, 711 Domoušice), each kept for stops no other line serves, inside or outside the kraj (owner, 2 Nov 2026: \"Yes, serve every place\"). The 0-minute turns at Hořovičky (573), Lhota pod Džbánem and Vinařice (584) and Domoušice, Solopysky (711 Domoušice) are modelled as in the timetable; this assumes the fork's automatic \"Leave up to\" lets a bus that arrives on the real minute leave although the loop rule types the departure 1 min early. Through-running seen in the timetable: 304 and 577 at Stochov, Slovanka II; 581 and 561 at Senomaty (modelled as 581 Senomaty). On the 2 Nov live map the 304 Rakovník – Zličín trips (13:20, 14:00, 15:30) go on from Zličín as the 305 of 15:05 to Karlovy Vary (13:20) and as the 404 of 15:40 and 17:40 to Kralovice (14:00, 15:30). Open: the other 304 ↔ 404 and 304 → 306 chains at Praha, Zličín; whether 561 Šamotka 14:10 → Kolešovice 15:26 goes on as 560 Kolešovice 15:30 (one circuit would save a bus); 562 → 561 at Rakovník, střelnice and 562 → 560 at the autobusové stanoviště. Lines 580 and 625 (Kladensko sheet) also serve Rakovník. The save holds one-convoy lines 100304 … 100760 for these numbers, without timetables.",
  "other_sheets": {
   "praha_bus": {
    "lines": [],

@@ -220,7 +220,7 @@
     "Mělník, Mlazice",
     "Štětí, závod"
    ],
-   "note": "Praha, Ládví – Kojetice – Libiš – Kly – Mělník – Mlazice (– Liběchov – Štětí, Ústecký kraj). Ládví every 30 minutes: :00 to Štětí, závod, :30 to Mělník, Mlazice (13:00–18:30); back at Mlazice :23 (Štětí trips) and :53 (Mlazice starts). Two Simutrans lines. The even-hour Štětí trips out (12:00, 14:00, 16:00) and the 14:56 and 15:56 back run via Liběchov, Ješovice (5 min longer); 369 Štětí takes that path so Ješovice is on a line. Off: Ládví 16:45, 17:45 to Mlazice (extra departures out of Prague); Mlazice 12:23, 16:08; listed: the Ládví – Podolí shorts (15:45; 14:12, 15:12 back; stops on 349).",
+   "note": "Praha, Ládví – Kojetice – Libiš – Kly – Mělník – Mlazice (– Liběchov – Štětí, Ústecký kraj). Ládví every 30 minutes: :00 to Štětí, závod, :30 to Mělník, Mlazice (13:00–18:30); back at Mlazice :23 (Štětí trips) and :53 (Mlazice starts). In the afternoon a third stream runs the same road 15 minutes after the :30: Ládví 15:45 (to Mělník, Podolí), 16:45 and 17:45 (to Mlazice), back Podolí 14:12, 15:12 and Mlazice 16:08 (Podolí 16:12) — hourly at every stop both ways, 3 each way, run by 349 buses between their 349 trips (2 Nov live map: 8203, 8213, 8205, 8206). Two Simutrans lines: 369 Štětí hourly, and 369 with two slots an hour (Ládví :30 and :45, Mlazice :53 and :08), modelled at 15:30 (window 15:00–17:00, the line's busiest two hours), where both slots are exact each way (the one-slot row, Ládví :30 and Mlazice :53 only, also passes Step 4 by one trip's tolerance and would need 3 buses instead of 6; the two-slot row has more exact hits, so it is the one kept). The even-hour Štětí trips out (12:00, 14:00, 16:00) and the 14:56 and 15:56 back run via Liběchov, Ješovice (5 min longer); 369 Štětí takes that path so Ješovice is on a line. Off: Mlazice 12:23.",
    "sim": [
     {
      "name": "369 Štětí",
@@ -268,8 +268,10 @@
         "Štětí, závod"
        ],
        "at": [
-        30
-       ]
+        30,
+        45
+       ],
+       "core_to": "Mělník, Podolí"
       },
       {
        "fr": "Mělník, Mlazice",
@@ -277,14 +279,18 @@
        "notvia": [
         "Štětí, závod"
        ],
-       "at": [
-        53
-       ]
+       "knot": "Mělník, Podolí",
+       "knot_at": [
+        57,
+        12
+       ],
+       "knot_rt": 4
       }
      ],
-     "why": "Ládví :30 → Kojetice → Kly → Mělník → Mlazice, 53 min; Mlazice :53 → Ládví, 58 min; exact hourly. 3 buses."
+     "why": "Ládví :30 and :45 → Kojetice → Kly → Mělník → Podolí → Mlazice, 53 min (the 15:45 ends at Podolí, 49 min); Mlazice :53 and :08 → Ládví, 58 min, timed at Mělník, Podolí :57 and :12 (the 14:12 and 15:12 start at Podolí, 4 min after Mlazice). Both slots exact each way in the window; the :45 / :12 slot runs 14:12–18:38 in reality, on 349 buses. 6 buses."
     }
-   ]
+   ],
+   "anchor": "15:30"
   },
   "351": {
    "core": [
@@ -497,7 +503,7 @@
     "Zlosyň",
     "Kralupy nad Vltavou, železniční stanice"
    ],
-   "note": "Praha, Kobylisy – Odolena Voda – Úžice – Dřínov – Hostín – Vojkovice – Zlosyň – Veltrusy – Kralupy nad Vltavou. Kobylisy hourly at :05 from 15:05 (odd hours to Kralupy, even hours to Zlosyň) with Odolena Voda and Úžice shorts; Kralupy back 13:42, 14:12, 14:47, 16:55, 17:55. The buses sleep out (the morning runs into Prague), so the line is timed at the window's one trip each way, every 120 as the Kralupy departures run. Off: Kobylisy 12:10, 13:28 (Dřínov), 14:03, 16:05, 18:05 (Zlosyň, buses going home), 14:55, 15:55, 16:55, 18:15 (Odolena Voda), 16:28, 17:28 (Úžice); Kralupy 12:37, 13:42, 14:12, 14:47, 17:55; Úžice 17:00.",
+   "note": "Praha, Kobylisy – Odolena Voda – Úžice – Dřínov – Hostín – Vojkovice – Zlosyň – Veltrusy – Kralupy nad Vltavou. Kobylisy hourly at :05 from 15:05 (odd hours to Kralupy, even hours to Zlosyň) with Odolena Voda and Úžice shorts; Kralupy back 13:42, 14:12, 14:47, 16:55, 17:55. The buses sleep out (the morning runs into Prague), so the line is timed at the window's one trip each way, every 120 as the Kralupy departures run. Off: Kobylisy 12:10, 13:28 (Dřínov), 14:03, 16:05, 18:05 (Zlosyň: no trip comes back towards Prague from Zlosyň between 15:03 and 17:11), 14:55, 15:55, 16:55, 18:15 (Odolena Voda), 16:28, 17:28 (Úžice); Kralupy 12:37, 13:42, 14:12, 14:47, 17:55; Úžice 17:00.",
    "sim": [
     {
      "name": "372",
@@ -530,7 +536,7 @@
     "Brázdim, Nový Brázdim",
     "Kostelec nad Labem, Martinská"
    ],
-   "note": "Praha, Letňany – Čakovice – Miškovice – Veleň – Sluhy and Mratín, or Brázdim and Polerady – Kostelec nad Labem. The two paths alternate trip by trip both ways. Letňany every 12 minutes 15:22–16:58 (via Sluhy :22, :46; via Brázdim :34, :58), otherwise :25, :40, :55; Kostelec every 15 minutes at :26, :41, :56. One Simutrans line per path, each every 120 at its inbound rate (three back per 2 hours); the fourth departure out of Letňany per path is a bus going home (the buses sleep at Kostelec), chosen by the shortest waits. Off: see the rows; Kostelec 12:24, 12:44, 15:00, 19:25.",
+   "note": "Praha, Letňany – Čakovice – Miškovice – Veleň – Sluhy and Mratín, or Brázdim and Polerady – Kostelec nad Labem. The two paths alternate trip by trip both ways. Letňany every 12 minutes 15:22–16:58 (via Sluhy :22, :46; via Brázdim :34, :58), otherwise :25, :40, :55; Kostelec every 15 minutes at :26, :41, :56. One Simutrans line per path, each every 120 at its inbound rate (three back per 2 hours); the fourth departure out of Letňany per path is off the pattern, chosen by the shortest waits: in the peak Letňany leaves every 12 minutes and Kostelec every 15, so 8 leave Prague against 6 coming back in 15:30–17:30 (20 against 18 in 13:00–19:00 at Veleň, Mírovice). Off: see the rows; Kostelec 12:24, 12:44, 15:00, 19:25.",
    "sim": [
     {
      "name": "377",
@@ -606,7 +612,7 @@
     "Varnsdorf, autobusové nádraží",
     "Rumburk, železniční stanice"
    ],
-   "note": "Praha, Letňany – Mělník – Liběchov – Dubá – Česká Lípa – Nový Bor – Varnsdorf – Rumburk (ČSAD Liberec and ČSAD Střední Čechy). Letňany :30 hourly to Nový Bor via Dubá (13:30–17:30) and :10 hourly to Varnsdorf direct via Medonosy (14:10–17:10); back Nový Bor 12:25, 13:25, 13:55, 16:25 and Varnsdorf 14:28, 16:28, 17:58, 18:58 (via Dubá); Rumburk 13:13. The buses sleep up north, so each end is timed at its inbound rate, one trip per 2 hours, and the other departures out of Prague are buses going home. The Rumburk stops (Ústecký kraj) have only the 13:13: their own line every 480.",
+   "note": "Praha, Letňany – Mělník – Liběchov – Dubá – Česká Lípa – Nový Bor – Varnsdorf – Rumburk (ČSAD Liberec and ČSAD Střední Čechy). Letňany :30 hourly to Nový Bor via Dubá (13:30–17:30) and :10 hourly to Varnsdorf direct via Medonosy (14:10–17:10); back Nový Bor 12:25, 13:25, 13:55, 16:25 and Varnsdorf 14:28, 16:28, 17:58, 18:58 (via Dubá); Rumburk 13:13. Fewer trips come back to Prague than leave it (at Česká Lípa, 13:00–19:00: 6 towards Prague, 10 away), so each end is timed at its inbound rate, one trip per 2 hours, and the other departures out of Prague are off the pattern; some of those buses do return (the 14:10 and 15:10 come back as the 17:58 and 18:58 from Varnsdorf). The Rumburk stops (Ústecký kraj) have only the 13:13: their own line every 480.",
    "sim": [
     {
      "name": "400",
@@ -891,7 +897,7 @@
     "Kralupy nad Vltavou, železniční stanice",
     "Kralupy nad Vltavou, obchodní centrum"
    ],
-   "note": "Mělník – Hořín – Býkev – Spomyšl – Nová Ves – Nelahozeves – Kralupy nad Vltavou. Hourly both ways: Mělník :55 (12:50, 14:50 at :50), Kralupy, železniční stanice :55; at odd hours the trips back end at Spomyšl and their buses go on as 464 to Mělník (14:45, 16:45). Two roads through Nová Ves: by Nové Ouholice (the :55 out trips) or by Veltrusy – Staré Ouholice – Vepřek (the odd-hour trips back, and the 12:50 / 14:50 out via Vraňany village). The way back takes the second road, whose stops are only on 466; Vraňany (village) is a coverage exception (230 m from Vraňany, škola on 464). Listed: the 12:50 and 14:50, the Kralupy – Nelahozeves shuttles (16:25, 17:25; 17:11, 18:11), Kralupy → Veltrusy 15:25 and back 16:06, 18:15 → Nová Ves, Spomyšl shorts.",
+   "note": "Mělník – Hořín – Býkev – Spomyšl – Nová Ves – Nelahozeves – Kralupy nad Vltavou. Hourly both ways: Mělník :55 (12:50, 14:50 at :50), Kralupy, obchodní centrum :45 (železniční stanice :55; the 17:55 starts at the station); at odd hours the trips back end at Spomyšl and their buses go on as 464 to Mělník (14:45, 16:45). The Kralupy end is obchodní centrum: 5 of the 6 afternoon departures start there and the 16:55 from Mělník ends there (the 14:50 and 15:55 end at the station, 10 min before it). Two roads through Nová Ves: by Nové Ouholice (the :55 out trips) or by Veltrusy – Staré Ouholice – Vepřek (the odd-hour trips back, and the 12:50 / 14:50 out via Vraňany village). The way back takes the second road, whose stops are only on 466 (the 14:45, 16:45 and 17:55 run direct via Nové Ouholice); Vraňany (village) is a coverage exception (230 m from Vraňany, škola on 464). 466 Nelahozeves is the Kralupy – Nelahozeves short working: železniční stanice :25 → Nelahozeves, u starého mostu :44 (15:25 on to Veltrusy, 16:25, 17:25, and the 18:15 from obchodní centrum) and u starého mostu :11 → železniční stanice :30 (16:06 from Veltrusy, 17:11, 18:11), hourly 3 each way, read at u starého mostu, where the road is served every 30 minutes from 15:14; the Mělník buses run it in their Kralupy layover (2 Nov live map: 8058, 8081). Listed: the 12:50 and 14:50.",
    "sim": [
     {
      "name": "466",
@@ -899,24 +905,56 @@
      "legs": [
       {
        "fr": "Mělník, autobusové nádraží",
-       "to": "Kralupy nad Vltavou, železniční stanice",
+       "to": "Kralupy nad Vltavou, obchodní centrum",
        "at": [
         55
-       ]
+       ],
+       "core_to": "Kralupy nad Vltavou, železniční stanice"
       },
       {
-       "fr": "Kralupy nad Vltavou, železniční stanice",
+       "fr": "Kralupy nad Vltavou, obchodní centrum",
        "to": "Mělník, autobusové nádraží",
        "core_to": "Spomyšl",
        "stops_via": [
         "Nová Ves, Staré Ouholice"
        ],
-       "at": [
+       "knot": "Kralupy nad Vltavou, železniční stanice",
+       "knot_at": [
         55
+       ],
+       "rt": 81
+      }
+     ],
+     "why": "Mělník :55 → Hořín → Býkev → Spomyšl → Nová Ves, Nové Ouholice → Nelahozeves → Kralupy, železniční stanice (:01) → městský úřad → kulturní dům → obchodní centrum, 77 min (the :55 slot trips' road; the 14:50 and 15:55 end at the station and the game bus runs on); obchodní centrum :45 → železniční stanice (:55, the timed knot) → Veltrusy → Staré Ouholice → Vepřek → Spomyšl → Býkev → Mělník by the 13:45 and 15:45 road, 81 min set by hand (their 59 min to Spomyšl, where the real trips end and the game bus runs on, plus the 16:45's 22 min Spomyšl → Mělník; the builder's median mixed the trips that go round by Lužec). The 14:45, 16:45 and 17:55 run direct via Nové Ouholice (70 min) and are listed by the passing audit. 4 buses."
+    },
+    {
+     "name": "466 Nelahozeves",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Kralupy nad Vltavou, železniční stanice",
+       "to": "Nelahozeves, u starého mostu",
+       "notvia": [
+        "Spomyšl",
+        "Hořín, Brozánky"
+       ],
+       "at": [
+        25
+       ]
+      },
+      {
+       "fr": "Nelahozeves, u starého mostu",
+       "to": "Kralupy nad Vltavou, železniční stanice",
+       "notvia": [
+        "Spomyšl",
+        "Hořín, Brozánky"
+       ],
+       "at": [
+        11
        ]
       }
      ],
-     "why": "Mělník :55 → Hořín → Býkev → Spomyšl → Nová Ves, Nové Ouholice → Nelahozeves → Kralupy, železniční stanice (the :55 slot trips' road), 66 min; Kralupy :55 → Veltrusy → Staré Ouholice → Vepřek → Spomyšl → Býkev → Mělník by the 13:45 and 15:45 road, 79 min (the 15:55 slot trip ends at Spomyšl and the game bus runs on; the 16:55 runs direct via Nové Ouholice). 4 buses."
+     "why": "Kralupy, železniční stanice :25 → poliklinika → Lobeč → Nelahozeves, Lešany → zámek → u nadjezdu → u starého mostu :44, 19 min; u starého mostu :11 → the same stops back → železniční stanice :30, 19 min. Exact: 15:25 (on to Veltrusy), 16:25, 17:25 and the 18:15 from obchodní centrum (station 18:25); back 16:06 from Veltrusy (u starého mostu 16:11), 17:11, 18:11. The Mělník trips (via Spomyšl or Hořín) are kept out. 2 buses (waits 27 at Nelahozeves, 55 at Kralupy)."
     }
    ]
   },
@@ -1058,7 +1096,7 @@
     "Dolní Beřkovice",
     "Horní Počaply"
    ],
-   "note": "Mělník – Hořín, Brozánky – Dolní Beřkovice – Horní Počaply. Hourly all day: Mělník :50 (10:50–17:50), Horní Počaply :40 (11:40–18:40), exact. Off: 18:55.",
+   "note": "Mělník – Hořín, Brozánky – Dolní Beřkovice – Horní Počaply. Hourly all day: Mělník :50 (10:50–17:50), Horní Počaply :40 (11:40–18:40), exact. Off: 18:55. The way back calls at Hořín, Brozánky on the four trips 12:38–15:40 and at Hořín, Brozánky, Staré Brozánky on the others (from 16:40, as every trip out does); the game line's way back follows the 15:40.",
    "sim": [
     {
      "name": "475",
@@ -1079,7 +1117,7 @@
        ]
       }
      ],
-     "why": "Mělník :50 → Dolní Beřkovice → Horní Počaply, 25 min; Horní Počaply :40 → Mělník, 26 min. 2 buses (waits 25 at Horní Počaply, 44 at Mělník)."
+     "why": "Mělník :50 → Dolní Beřkovice → Horní Počaply, 25 min; Horní Počaply :40 → Dolní Beřkovice → Hořín, Brozánky → Mělník, 26 min (the 15:40's road; from 16:40 the way back calls at Hořín, Brozánky, Staré Brozánky). 2 buses (waits 25 at Horní Počaply, 44 at Mělník)."
     }
    ]
   },
@@ -1562,7 +1600,7 @@
     "Holubice",
     "Zákolany"
    ],
-   "note": "Zákolany – Otvovice – Holubice – Tursko – Dolany – Kralupy nad Vltavou, Minice – town centre – železniční stanice – obchodní centrum. Every 2 hours: Zákolany :16 at even hours (12:16, 14:16, 16:16), Kralupy, obchodní centrum :43 at even hours; in the odd hours the Kralupy town trips Minice ↔ obchodní centrum (13:42, 15:42, 17:42 and 13:43, 15:43, 17:43), whose stops are all on 857, so they are listed (a row of their own, every 120, would need 2 buses; Minice – železniční stanice also has 316 Kralupy hourly). Every 120 at the window's pair.",
+   "note": "Zákolany – Otvovice – Holubice – Tursko – Dolany – Kralupy nad Vltavou, Minice – town centre – železniční stanice – obchodní centrum. Two Simutrans lines, both every 120, together hourly in the town as in reality. 857: Zákolany :16 and Kralupy, obchodní centrum :43 at even hours (12:16, 14:16, 16:16 and 12:43, 14:43, 16:43). 857 Minice: in the odd hours the Kralupy town trips run obchodní centrum :43 → Minice (13:43, 15:43, 17:43) and Minice :42 → obchodní centrum (13:42, 15:42, 17:42), exact; the 13:43 runs one stop on to Dolany nad Vltavou, Debrno and the 17:42 on to Kralupy, Synthos. Minice – železniční stanice also has 316 Kralupy hourly. The same buses run both on the 2 Nov live map (7309: Zákolany 14:16 → obchodní centrum 15:08, obchodní centrum 15:43 → Minice), so pooling 857 with 857 Minice is the owner's option.",
    "sim": [
     {
      "name": "857",
@@ -1584,6 +1622,33 @@
       }
      ],
      "why": "Zákolany 16:16 → Otvovice → Holubice → Tursko → Dolany nad Vltavou, Debrno → Kralupy, Minice → poliklinika → železniční stanice → tř.Legií → Revoluční → Masarykova → obchodní centrum, 52 min; obchodní centrum 16:43 back the same way, 50 min. 2 buses."
+    },
+    {
+     "name": "857 Minice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Kralupy nad Vltavou, obchodní centrum",
+       "to": "Kralupy nad Vltavou, Minice",
+       "at": [
+        "15:43"
+       ],
+       "notvia": [
+        "Zákolany"
+       ]
+      },
+      {
+       "fr": "Kralupy nad Vltavou, Minice",
+       "to": "Kralupy nad Vltavou, obchodní centrum",
+       "at": [
+        "15:42"
+       ],
+       "notvia": [
+        "Zákolany"
+       ]
+      }
+     ],
+     "why": "Kralupy, obchodní centrum 15:43 (also 13:43, 17:43) → Revoluční → železniční stanice → poliklinika → Čechova → Minice, 24 min; Minice 15:42 (13:42, 17:42) → the same stops back → obchodní centrum, 26 min. `notvia` Zákolany keeps the Zákolany trips out. 2 buses."
     }
    ]
   }
@@ -1599,7 +1664,7 @@
    "Serve them all: +2 buses (668 Mělnické Vtelno every 480 on the 15:15 / 16:20 round, 1 bus; 480 every 480 on the 13:41 with an empty return, 1 bus), plus 413 back via the school (every trip 5 min longer, no bus) and 466 out via Vraňany village (no bus, but that road skips Spomyšl, the line's core point)."
   ]
  ],
- "notes": "Mělnicko (okres Mělník, licence prefix 250), Mon 2 Nov 2026. Hubs: Mělník, autobusové nádraží (464–476, 646, 668, 691, 695, 696, 747); Kralupy nad Vltavou, železniční stanice (316, 370, 372, 466, 473, 646, 663, 857); Neratovice (348, 351, 473, 479, 658); Mšeno (668, 689, 690, 693, 695, 696); and in Prague Ládví (348, 349, 368, 369), Kobylisy (370, 372), Letňany (351, 377, 400, 410, 413) and Bořislavka (316). The Prague lines are outstation lines in the afternoon (the buses sleep in the district and run into Prague in the morning): where more leave Prague than come back, each end is timed at the trips towards Prague and the other departures are listed as off the pattern; which ones fall off was chosen by the shortest waits, to confirm with the 2 Nov live map. Through-running seen in the 0-minute chain test, to confirm with the live map (kept as separate lines): 466 Kralupy 13:45 and 15:45 → Spomyšl go on as 464 14:45 and 16:45 → Mělník, and 464 Horní Beřkovice 16:27 → Spomyšl goes on as 466 16:48 → Mělník; 692 Kokořín 15:15 → Liběchov goes on as 691 15:53 → Mělník, and 691 17:47 → Liběchov as 692 18:05 → Kokořín; 476 Mělník 12:27 and 15:27 → Nedomice go on as 480 13:23 and 16:23; 694 arrivals at Kokořín are followed by 692 departures (2 of 4); 368 turns at Kojetice, Tůmovka in 0 minutes (13 of 13). At Praha, Ládví more than half of the 348, 349, 368 and 369 arrivals are followed within 5 min by a city 103 departure, at Kobylisy most 370 arrivals by a 200 — frequent city lines, probably chance. Pooling (not applied, the owner's choice): 316 with 316 Kralupy (the 54-minute wait at Bořislavka is the :30 the Kralupy trip takes); the three 348 lines (one pool for Ládví – Neratovice); 464 with 466 through Spomyšl. 0-minute turns as in the timetable (689 at Stránka, Ostrý; 690 at Kadlín; 693 at Okna) keep the real slots with lay 0: this assumes the fork's automatic Leave up to lets a bus that arrives on the real minute leave although the loop rule typed the departure 1 min early. Also for the live map: 475 → 747 at Mělník, autobusové nádraží (475 arrives :05, 747 leaves :05; 5 of 15 arrivals, a 0-minute chain, same operator; one pool would not save a bus); at Mělník the Praha-východ sheet's 482 follows 476 arrivals (5 of 12) and precedes 470 (2 of 3) and 747 departures (4 of 13); at Kralupy, železniční stanice 857 departures follow 856 arrivals (2 of 4); and whether 349 turns in 0 minutes at Ládví (20 of 33 arrivals followed by a 349 departure; with lay 0 it would need 6 buses, not 7).",
+ "notes": "Mělnicko (okres Mělník, licence prefix 250), Mon 2 Nov 2026. Hubs: Mělník, autobusové nádraží (464–476, 646, 668, 691, 695, 696, 747); Kralupy nad Vltavou, železniční stanice (316, 370, 372, 466, 473, 646, 663, 857); Neratovice (348, 351, 473, 479, 658); Mšeno (668, 689, 690, 693, 695, 696); and in Prague Ládví (348, 349, 368, 369), Kobylisy (370, 372), Letňany (351, 377, 400, 410, 413) and Bořislavka (316). The Prague lines are outstation lines in the afternoon (the buses sleep in the district and run into Prague in the morning): where more leave Prague than come back, each end is timed at the trips towards Prague and the other departures are listed as off the pattern; which ones fall off was chosen by the shortest waits, to confirm with the 2 Nov live map. Through-running seen in the 0-minute chain test, to confirm with the live map (kept as separate lines): 466 Kralupy 13:45 and 15:45 → Spomyšl go on as 464 14:45 and 16:45 → Mělník, and 464 Horní Beřkovice 16:27 → Spomyšl goes on as 466 16:48 → Mělník; 692 Kokořín 15:15 → Liběchov goes on as 691 15:53 → Mělník, and 691 17:47 → Liběchov as 692 18:05 → Kokořín; 476 Mělník 12:27 and 15:27 → Nedomice go on as 480 13:23 and 16:23; 694 arrivals at Kokořín are followed by 692 departures (2 of 4); 368 turns at Kojetice, Tůmovka in 0 minutes (13 of 13). At Praha, Ládví more than half of the 348, 349, 368 and 369 arrivals are followed within 5 min by a city 103 departure, at Kobylisy most 370 arrivals by a 200 — frequent city lines, probably chance. Pooling (not applied, the owner's choice): 316 with 316 Kralupy (the 54-minute wait at Bořislavka is the :30 the Kralupy trip takes); the three 348 lines (one pool for Ládví – Neratovice); 464 with 466 through Spomyšl; 857 with 857 Minice; 466 with 466 Nelahozeves (the shuttles run on the Mělník buses in their Kralupy layover: 8058, 8081); 349 with 369 (the :45 / :12 stream runs on 349 buses: 8203, 8213, 8205, 8206). 0-minute turns as in the timetable (689 at Stránka, Ostrý; 690 at Kadlín; 693 at Okna) keep the real slots with lay 0: this assumes the fork's automatic Leave up to lets a bus that arrives on the real minute leave although the loop rule typed the departure 1 min early. Also for the live map: 475 → 747 at Mělník, autobusové nádraží (475 arrives :05, 747 leaves :05; 5 of 15 arrivals, a 0-minute chain, same operator; one pool would not save a bus); at Mělník the Praha-východ sheet's 482 follows 476 arrivals (5 of 12) and precedes 470 (2 of 3) and 747 departures (4 of 13); at Kralupy, železniční stanice 857 departures follow 856 arrivals (2 of 4); and whether 349 turns in 0 minutes at Ládví (20 of 33 arrivals followed by a 349 departure; with lay 0 it would need 6 buses, not 7).",
  "other_sheets": {
   "praha_bus": {
    "lines": [],

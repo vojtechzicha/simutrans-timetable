@@ -1,0 +1,1465 @@
+======== pid-regional/oblasti/benesovsko: 7 lines EACH WAY, 11 ONE WAY
+[EACH WAY] 339 (339): 5 each way, 7 one way at Vestec, Šátalka; off the pattern there:
+      → 12:55 Týnec nad Sázavou, železniční stanice → Praha, Budějovická
+      ← 13:05 Praha, Budějovická → Kamenice, kulturní dům
+      → 13:55 Sulice, Želivec → Praha, Budějovická
+      ← 14:35 Praha, Budějovická → Kamenice, kulturní dům
+      → 14:41 Kamenice, kulturní dům → Praha, Budějovická
+      → 15:41 Kamenice, kulturní dům → Praha, Budějovická
+      ← 15:50 Praha, Budějovická → Týnec nad Sázavou, železniční stanice
+      → 16:16 Sulice, Želivec → Praha, Budějovická
+      → 16:41 Kamenice, kulturní dům → Praha, Budějovická
+      ← 16:50 Praha, Budějovická → Týnec nad Sázavou, železniční stanice
+      ← 18:05 Praha, Budějovická → Týnec nad Sázavou, železniční stanice
+[EACH WAY] 383 (383): 4 each way, 5 one way at Zvánovice; off the pattern there:
+      ← 12:45 Praha, Háje → Chocerady
+      → 12:53 Ondřejov, náměstí → Mukařov [PH]
+      → 13:06 Chocerady → Praha, Háje
+      → 13:36 Ondřejov, náměstí → Mukařov [PH]
+      ← 13:38 Mukařov [PH] → Chocerady
+      ← 13:45 Praha, Háje → Chocerady
+      → 17:06 Chocerady → Praha, Háje
+      ← 17:45 Praha, Háje → Chocerady
+      → 18:06 Chocerady → Praha, Háje
+[EACH WAY] 337 (337): 4 each way, 4 one way at Poříčí nad Sázavou, rozcestí Nové Městečko; off the pattern there:
+      ← 12:45 Praha, Budějovická → Benešov, Terminál
+      → 13:40 Benešov, Terminál → Praha, Budějovická
+      ← 13:50 Praha, Budějovická → Benešov, Terminál
+      → 14:25 Benešov, Terminál → Nespeky
+      ← 14:47 Praha, Budějovická → Benešov, Terminál
+      ← 15:02 Nespeky → Benešov, Terminál
+      → 15:29 Benešov, Terminál → Nespeky
+      → 18:35 Benešov, Terminál → Praha, Budějovická
+[EACH WAY] 651 (651, 651 Nespeky): 3 each way, 5 one way at Pyšely, sokolovna; off the pattern there:
+      → 12:59 Nespeky → Senohraby, železniční stanice
+      ← 13:52 Pyšely, náměstí → Nespeky
+      → 14:10 Nespeky → Pyšely, náměstí
+      → 14:44 Nespeky → Pyšely, náměstí
+      ← 17:00 Hrusice → Nespeky
+      → 17:27 Nespeky → Senohraby, železniční stanice
+      ← 18:15 Senohraby, železniční stanice → Nespeky
+      → 18:50 Nespeky → Senohraby, železniční stanice
+[EACH WAY] 753 (753): 3 each way, 5 one way at Týnec nad Sázavou, železniční stanice; off the pattern there:
+      → 12:43 Netvořice → Benešov, Terminál
+      ← 13:30 Týnec nad Sázavou, železniční stanice → Neveklov
+      ← 13:35 Benešov, Terminál → Týnec nad Sázavou, železniční stanice
+      → 14:30 Týnec nad Sázavou, železniční stanice → Benešov, Terminál
+      → 14:37 Neveklov → Týnec nad Sázavou, železniční stanice
+      → 15:35 Týnec nad Sázavou, železniční stanice → Benešov, Terminál
+      ← 16:35 Benešov, Terminál → Netvořice
+      → 17:44 Netvořice → Týnec nad Sázavou, železniční stanice
+[EACH WAY] 332 (332, 332 Neveklov): 3 each way, 4 one way at Neveklov, Tloskov, SÚS; off the pattern there:
+      → 11:30 Praha, Budějovická → Neveklov
+      → 12:57 Praha, Budějovická → Neveklov
+      ← 13:09 Neveklov → Praha, Budějovická
+      → 13:57 Praha, Budějovická → Neveklov
+      ← 14:06 Neveklov → Praha, Budějovická
+      ← 15:01 Neveklov → Jílové u Prahy, náměstí
+[EACH WAY] 795 (795): 3 each way, 3 one way at Vlašim, obchodní centrum; off the pattern there:
+      → 12:40 Zruč nad Sázavou, Sázavan → Vlašim, zbrojovka
+      ← 13:10 Vlašim, Terminál → Zruč nad Sázavou, Sázavan
+      ← 14:10 Vlašim, Terminál → Trhový Štěpánov, náměstí
+      → 14:39 Trhový Štěpánov, náměstí → Vlašim, Terminál
+      ← 14:42 Vlašim, zbrojovka → Zruč nad Sázavou, Sázavan
+      → 15:10 Zruč nad Sázavou, Sázavan → Vlašim, Terminál
+[ONE WAY] 755 (755, 755 Měřín): 2 each way, 5 one way at Václavice, Vatěkov, rozcestí; off the pattern there:
+      ← 12:45 Neveklov → Benešov, Terminál
+      ← 13:45 Rabyně, Měřín → Benešov, Terminál
+      → 13:50 Benešov, Terminál → Neveklov
+      → 15:20 Benešov, Terminál → Neveklov
+      → 15:50 Benešov, Terminál → Neveklov, Jablonná
+      → 18:05 Benešov, Terminál → Neveklov
+      → 18:50 Benešov, Terminál → Neveklov
+[ONE WAY] 408 (408): 2 each way, 4 one way at Tábor, poliklinika; off the pattern there:
+      → 11:00 Praha, Roztyly → Tábor, autobusové nádraží
+      → 13:29 Chyšky → Tábor, autobusové nádraží
+      ← 14:25 Tábor, autobusové nádraží → Jistebnice
+      ← 16:20 Tábor, autobusové nádraží → Sedlec-Prčice, náměstí
+      ← 17:05 Tábor, autobusové nádraží → Benešov, Terminál
+      ← 18:20 Tábor, autobusové nádraží → Praha, Roztyly
+[ONE WAY] 488 (488): 2 each way, 3 one way at Václavice, statek; off the pattern there:
+      → 12:25 Štěchovice → Benešov, Terminál
+      ← 13:10 Benešov, Terminál → Štěchovice
+      ← 13:50 Benešov, Terminál → Netvořice, pošta
+      → 15:53 Netvořice, pošta → Benešov, Terminál
+      ← 17:50 Benešov, Terminál → Štěchovice
+[ONE WAY] 532 (532): 2 each way, 3 one way at Votice, železniční stanice; off the pattern there:
+      → 13:00 Votice, železniční stanice → Jankov, Bedřichovice
+      → 13:20 Votice, železniční stanice → Votice, autobusové stanoviště
+      ← 13:25 Votice, autobusové stanoviště → Votice, Beztahov
+      ← 15:57 Jankov, Bedřichovice → Votice, železniční stanice
+      → 17:10 Votice, železniční stanice → Neustupov, Vlčkovice
+[ONE WAY] 752 (752, 752 Týnec): 2 each way, 3 one way at Bukovany, rozcestí; off the pattern there:
+      → 13:35 Benešov, Terminál → Týnec nad Sázavou, železniční stanice
+      ← 14:13 Týnec nad Sázavou, železniční stanice → Benešov, Terminál
+      ← 17:05 Jílové u Prahy, náměstí → Benešov, Terminál
+      ← 18:04 Jílové u Prahy, náměstí → Benešov, Terminál
+[ONE WAY] 794 (794): 2 each way, 3 one way at Řimovice; off the pattern there:
+      → 12:44 Kácov, náměstí → Vlašim, zbrojovka
+      → 14:44 Kácov, náměstí → Vlašim, Terminál
+      ← 15:45 Vlašim, Terminál → Zdislavice
+      → 17:42 Kácov, náměstí → Vlašim, Terminál
+      ← 18:15 Vlašim, Terminál → Trhový Štěpánov, náměstí
+[ONE WAY] 796 (796): 2 each way, 3 one way at Čerčany, železniční stanice; off the pattern there:
+      ← 12:40 Benešov, Terminál → Pyšely, náměstí
+      → 13:11 Pyšely, náměstí → Benešov, Terminál
+      ← 13:40 Benešov, Terminál → Pyšely, náměstí
+      → 14:11 Pyšely, náměstí → Benešov, Terminál
+      → 15:21 Pyšely, náměstí → Benešov, Terminál
+[ONE WAY] 382 (382): 1 each way, 5 one way at Vyžlovka, hotel Praha; off the pattern there:
+      ← 12:30 Praha, Háje → Sázava, autobusové stanoviště
+      ← 13:15 Praha, Háje → Sázava, autobusové stanoviště
+      ← 14:50 Praha, Háje → Sázava, autobusové stanoviště
+      ← 15:50 Praha, Háje → Sázava, autobusové stanoviště
+      ← 16:50 Praha, Háje → Sázava, autobusové stanoviště
+      → 18:15 Sázava, autobusové stanoviště → Praha, Háje
+[ONE WAY] 841 (841): 1 each way, 5 one way at Vlašim, ZŠ Vorlina; off the pattern there:
+      ← 13:23 Vlašim, Hrazená Lhota → Vlašim, Terminál
+      → 14:18 Vlašim, Terminál → Vlašim, Domašín, náměstí
+      ← 14:23 Vlašim, Hrazená Lhota → Vlašim, Terminál
+      ← 14:59 Vlašim, Domašín, náměstí → Vlašim, Terminál
+      ← 15:23 Vlašim, Hrazená Lhota → Vlašim, Terminál
+      ← 17:23 Vlašim, Hrazená Lhota → Vlašim, Terminál
+[ONE WAY] 200390 (X390): 1 each way, 3 one way at Čím, Hrdlička; off the pattern there:
+      ← 13:15 Slapy, Motorest → Rabyně, Nová Rabyně
+      ← 15:25 Slapy, Motorest → Rabyně, Nová Rabyně
+      → 17:40 Rabyně, Nová Rabyně → Slapy, Motorest
+      ← 18:15 Slapy, Motorest → Rabyně, Nová Rabyně
+[ONE WAY] 842 (842, 842 Čechtice): 0 each way, 4 one way at Čechtice, zámek; off the pattern there:
+      ← 14:20 Vlašim, Terminál → Čechtice
+      ← 16:20 Vlašim, Terminál → Čechtice
+      ← 17:15 Vlašim, Terminál → Dolní Kralovice
+      ← 18:40 Vlašim, Terminál → Čechtice
+======== pid-regional/oblasti/berounsko: 6 lines EACH WAY, 10 ONE WAY
+[EACH WAY] 531 (531): 6 each way, 7 one way at Příbram, Archiv; off the pattern there:
+      → 12:05 Hořovice, náměstí B.Němcové → Příbram, Archiv
+      → 12:47 Hořovice, železniční stanice → Příbram, Archiv
+      → 13:25 Hořovice, náměstí B.Němcové → Příbram, Archiv
+      ← 13:51 Příbram, Archiv → Hořovice, železniční stanice
+      → 13:57 Hořovice, železniční stanice → Příbram, Archiv
+      ← 14:21 Příbram, Archiv → Hořovice, náměstí B.Němcové
+      → 14:35 Hořovice, náměstí B.Němcové → Příbram, Archiv
+      ← 14:51 Příbram, Archiv → Hořovice, železniční stanice
+      → 14:57 Hořovice, železniční stanice → Příbram, Archiv
+      ← 15:21 Příbram, Archiv → Jince, náměstí
+      ← 15:51 Příbram, Archiv → Hořovice, železniční stanice
+      ← 16:51 Příbram, Archiv → Hořovice, železniční stanice
+[EACH WAY] 641 (641): 4 each way, 5 one way at Zdice, škola; off the pattern there:
+      → 12:50 Hořovice, nemocnice → Beroun, autobusové nádraží
+      ← 13:00 Beroun, autobusové nádraží → Hořovice, nemocnice
+      ← 14:02 Beroun, autobusové nádraží → Hořovice, nemocnice
+      ← 14:07 Beroun, autobusové nádraží → Zdice, škola
+      → 14:32 Zdice, náměstí → Beroun, autobusové nádraží
+      → 15:20 Hořovice, nemocnice → Beroun, autobusové nádraží
+      ← 16:00 Beroun, autobusové nádraží → Zdice, škola
+      → 17:52 Zdice, náměstí → Beroun, autobusové nádraží
+      ← 18:00 Beroun, autobusové nádraží → Zdice, škola
+[EACH WAY] 643 (643): 4 each way, 5 one way at Podluhy, Na drahách; off the pattern there:
+      → 13:00 Hořovice, náměstí B.Němcové → Podluhy, Na drahách
+      ← 13:05 Podluhy, Na drahách → Cerhovice, Třenice
+      → 14:00 Hořovice, náměstí B.Němcové → Podluhy, Na drahách
+      ← 14:10 Podluhy, Na drahách → Tlustice, Cintlovka
+      → 14:31 Tlustice, Cintlovka → Křešín [PB]
+      ← 14:56 Křešín [PB] → Hořovice, náměstí B.Němcové
+      ← 15:45 Podluhy, Na drahách → Hořovice, náměstí B.Němcové
+      → 16:35 Hořovice, náměstí B.Němcové → Podluhy, Na drahách
+      ← 17:45 Podluhy, Na drahách → Hořovice, náměstí B.Němcové
+[EACH WAY] 394 (394): 3 each way, 12 one way at Zdice, náměstí; off the pattern there:
+      ← 12:40 Praha, Nové Butovice → Zdice, náměstí
+      → 13:28 Zdice, náměstí → Praha, Nové Butovice
+      ← 13:40 Praha, Nové Butovice → Zdice, náměstí
+      ← 14:15 Praha, Nové Butovice → Zdice, náměstí
+      ← 15:15 Praha, Nové Butovice → Zdice, náměstí
+      ← 17:20 Praha, Nové Butovice → Zdice, náměstí
+      ← 17:45 Praha, Nové Butovice → Zdice, náměstí
+      → 18:38 Zdice, náměstí → Praha, Nové Butovice
+      → 18:58 Zdice, náměstí → Praha, Nové Butovice
+[EACH WAY] 526 (526): 3 each way, 3 one way at Hředle [BE 2]; off the pattern there:
+      ← 12:50 Bzová → Zdice, náměstí
+      → 13:25 Zdice, náměstí → Žebrák, náměstí
+      → 17:15 Zdice, náměstí → Hředle [BE 2]
+      ← 17:24 Hředle [BE 2] → Zdice, náměstí
+      → 18:47 Zdice, náměstí → Hředle [BE 2]
+      ← 18:56 Hředle [BE 2] → Zdice, náměstí
+[EACH WAY] 529 (529): 3 each way, 3 one way at Hvozdec, myslivna; off the pattern there:
+      → 13:15 Hořovice, náměstí B.Němcové → Hvozdec
+      ← 13:22 Hvozdec → Hořovice, náměstí B.Němcové
+      → 15:05 Hořovice, náměstí B.Němcové → Hvozdec
+      ← 15:12 Hvozdec → Hořovice, náměstí B.Němcové
+      → 18:50 Hořovice, náměstí B.Němcové → Hvozdec
+      ← 18:57 Hvozdec → Hořovice, náměstí B.Němcové
+[ONE WAY] 631 (631, 631 u lípy): 2 each way, 6 one way at Králův Dvůr, u zámku; off the pattern there:
+      ← 13:25 Králův Dvůr, u zámku → Nižbor, u lípy
+      ← 13:50 Všeradice → Beroun, autobusové nádraží
+      ← 13:56 Králův Dvůr, u zámku → Nižbor, Šnárová
+      ← 14:21 Králův Dvůr, u zámku → Nižbor, u lípy
+      ← 16:51 Všeradice → Beroun, autobusové nádraží
+      ← 18:13 Všeradice → Nižbor, Šnárová
+[ONE WAY] 637 (637, 637 Řevnice): 2 each way, 4 one way at Beroun, pod dálnicí; off the pattern there:
+      ← 13:08 Kublov, Slovanka → Beroun, autobusové nádraží
+      ← 14:08 Kublov, Slovanka → Beroun, autobusové nádraží
+      ← 16:08 Kublov, Slovanka → Beroun, autobusové nádraží
+      ← 17:36 Roztoky, Placanda → Beroun, autobusové nádraží
+[ONE WAY] 640 (640): 2 each way, 4 one way at Zdice, škola; off the pattern there:
+      ← 13:08 Zdice, škola → Lochovice, náměstí
+      ← 14:43 Zdice, škola → Jince, sokolovna
+      ← 16:28 Zdice, škola → Jince, sokolovna
+      ← 18:28 Zdice, škola → Hostomice, náměstí
+[ONE WAY] 825 (825, 825 Mořina): 2 each way, 3 one way at Loděnice; off the pattern there:
+      ← 13:07 Králův Dvůr, Popovice → Mořinka
+      → 13:14 Mořina → Králův Dvůr, Popovice
+      ← 13:54 Loděnice → Mezouň, Letník
+      ← 18:14 Králův Dvůr, Popovice → Mořina
+[ONE WAY] 380 (380): 1 each way, 11 one way at Praha, Vypich; off the pattern there:
+      → 12:27 Králův Dvůr, Počaply, Obchodní centrum → Praha, Vypich
+      → 13:27 Králův Dvůr, Počaply, Obchodní centrum → Praha, Vypich
+      → 14:02 Králův Dvůr, Počaply, Obchodní centrum → Praha, Vypich
+      → 14:30 Rudná, Vypich → Praha, Vypich
+      → 14:32 Králův Dvůr, Počaply, Obchodní centrum → Praha, Vypich
+      → 15:02 Králův Dvůr, Počaply, Obchodní centrum → Praha, Vypich
+      → 15:32 Králův Dvůr, Počaply, Obchodní centrum → Praha, Vypich
+      → 16:02 Králův Dvůr, Počaply, Obchodní centrum → Praha, Vypich
+      → 16:32 Králův Dvůr, Počaply, Obchodní centrum → Praha, Vypich
+      → 17:02 Králův Dvůr, Počaply, Obchodní centrum → Praha, Vypich
+      → 17:33 Králův Dvůr, Počaply, Obchodní centrum → Praha, Vypich
+[ONE WAY] 384 (384, 384 Hořovice): 1 each way, 4 one way at Tlustice; off the pattern there:
+      ← 12:00 Praha, Zličín → Hořovice, náměstí B.Němcové
+      → 13:34 Hořovice, náměstí B.Němcové → Zdice, náměstí
+      ← 15:55 Zdice, náměstí → Hořovice, náměstí B.Němcové
+      ← 17:50 Praha, Zličín → Hořovice, náměstí B.Němcové
+      ← 18:00 Zdice, náměstí → Hořovice, náměstí B.Němcové
+[ONE WAY] 633 (633, 633 Tetín): 1 each way, 4 one way at Tetín, křižovatka; off the pattern there:
+      ← 13:03 Beroun, Zdejcina → Liteň, náměstí
+      ← 14:03 Beroun, Zdejcina → Liteň, náměstí
+      ← 17:03 Beroun, Zdejcina → Tetín, křižovatka
+      ← 18:03 Beroun, Zdejcina → Tetín, křižovatka
+[ONE WAY] 527 (527): 1 each way, 3 one way at Cerhovice, náměstí; off the pattern there:
+      → 13:03 Žebrák, náměstí → Cerhovice, náměstí
+      → 13:44 Cerhovice, náměstí → Komárov, Buzuluk
+      ← 14:34 Komárov, Buzuluk → Žebrák, náměstí
+      → 16:23 Žebrák, náměstí → Cerhovice, náměstí
+[ONE WAY] 548 (548, 548 Praskolesy): 1 each way, 3 one way at Záluží, v Brance; off the pattern there:
+      ← 13:41 Cerhovice, škola → Hořovice, náměstí B.Němcové
+      ← 14:12 Zbiroh, náměstí → Praskolesy
+      → 14:37 Hořovice, nemocnice → Zbiroh, náměstí
+      ← 15:25 Zbiroh, náměstí → Hořovice, nemocnice
+[ONE WAY] 636 (636): 1 each way, 3 one way at Hýskov, Náměstí 5.května; off the pattern there:
+      ← 12:35 Loděnice → Hýskov, Náměstí 5.května
+      → 13:10 Hýskov, Náměstí 5.května → Loděnice
+      · 14:25 Hýskov, Náměstí 5.května → Chyňava, škola
+      ← 14:45 Chyňava, u Jonášů → Hýskov, Náměstí 5.května
+      · 15:20 Hýskov, Náměstí 5.května → Chyňava, škola
+      ← 15:45 Chyňava, u Jonášů → Hýskov, Náměstí 5.května
+======== pid-regional/oblasti/kladensko: 7 lines EACH WAY, 13 ONE WAY
+[EACH WAY] 300 (300, 300 Kladno): 9 each way, 15 one way at Praha, Nádraží Veleslavín; off the pattern there:
+      → 12:50 Kladno, Rozdělov → Praha, Nádraží Veleslavín
+      → 13:00 Smečno → Praha, Nádraží Veleslavín
+      ← 13:30 Praha, Nádraží Veleslavín → Smečno
+      → 13:50 Kladno, Rozdělov → Praha, Nádraží Veleslavín
+      ← 14:30 Praha, Nádraží Veleslavín → Libušín, náměstí
+      ← 14:45 Praha, Nádraží Veleslavín → Kladno, Sítná
+      → 14:45 Libušín, náměstí → Praha, Nádraží Veleslavín
+      → 14:50 Smečno → Praha, Nádraží Veleslavín
+      ← 15:15 Praha, Nádraží Veleslavín → Kladno, u kostela
+      → 15:25 Kladno, Rozdělov → Praha, Nádraží Veleslavín
+      ← 15:30 Praha, Nádraží Veleslavín → Libušín, náměstí
+      ← 15:38 Praha, Nádraží Veleslavín → Hřebeč
+      → 15:50 Libušín, náměstí → Praha, Nádraží Veleslavín
+      ← 16:30 Praha, Nádraží Veleslavín → Libušín, náměstí
+      ← 16:38 Praha, Nádraží Veleslavín → Hřebeč
+      ← 16:45 Praha, Nádraží Veleslavín → Kladno, u kostela
+      → 17:08 Libušín, náměstí → Praha, Nádraží Veleslavín
+      ← 17:20 Praha, Nádraží Veleslavín → Kladno, u kostela
+      ← 17:28 Praha, Nádraží Veleslavín → Hřebeč
+      ← 17:40 Praha, Nádraží Veleslavín → Kladno, u kostela
+      → 18:00 Kladno, Rozdělov → Praha, Nádraží Veleslavín
+      ← 18:20 Praha, Nádraží Veleslavín → Kladno, u kostela
+      ← 18:28 Praha, Nádraží Veleslavín → Hřebeč
+      ← 18:40 Praha, Nádraží Veleslavín → Kladno, u kostela
+[EACH WAY] 330 (330, 330 Libušín): 6 each way, 7 one way at Praha, Nádraží Veleslavín; off the pattern there:
+      → 13:28 Kladno, autobusové nádraží → Praha, Nádraží Veleslavín
+      → 14:13 Kladno, autobusové nádraží → Praha, Nádraží Veleslavín
+      ← 14:20 Praha, Nádraží Veleslavín → Kladno, Havlíčkovo náměstí
+      → 14:33 Kladno, autobusové nádraží → Praha, Nádraží Veleslavín
+      → 15:08 Kladno, autobusové nádraží → Praha, Nádraží Veleslavín
+      ← 15:55 Praha, Nádraží Veleslavín → Libušín, náměstí
+      → 16:43 Kladno, autobusové nádraží → Praha, Nádraží Veleslavín
+      ← 16:55 Praha, Nádraží Veleslavín → Libušín, náměstí
+      → 16:55 Kladno, Havlíčkovo náměstí → Praha, Nádraží Veleslavín
+      ← 17:33 Praha, Nádraží Veleslavín → Kladno, Havlíčkovo náměstí
+      → 17:35 Kladno, Havlíčkovo náměstí → Praha, Nádraží Veleslavín
+      ← 17:53 Praha, Nádraží Veleslavín → Libušín, náměstí
+      ← 18:33 Praha, Nádraží Veleslavín → Vinařice, Na Horce
+[EACH WAY] 399 (399): 5 each way, 8 one way at Praha, Nádraží Veleslavín; off the pattern there:
+      ← 13:15 Praha, Nádraží Veleslavín → Kladno, Energie
+      ← 13:45 Praha, Nádraží Veleslavín → Kladno, Energie
+      → 13:59 Kladno, Energie → Praha, Nádraží Veleslavín
+      ← 14:10 Praha, Nádraží Veleslavín → Kladno, Energie
+      ← 14:40 Praha, Nádraží Veleslavín → Kladno, Energie
+      → 16:41 Kladno, Energie → Praha, Nádraží Veleslavín
+      → 17:01 Kladno, Energie → Praha, Nádraží Veleslavín
+      ← 17:25 Praha, Nádraží Veleslavín → Kladno, Energie
+      → 17:41 Kladno, Energie → Praha, Nádraží Veleslavín
+      ← 17:45 Praha, Nádraží Veleslavín → Kladno, Energie
+      → 18:01 Kladno, Energie → Praha, Nádraží Veleslavín
+      ← 18:25 Praha, Nádraží Veleslavín → Kladno, Energie
+      ← 18:45 Praha, Nádraží Veleslavín → Kladno, Energie
+[EACH WAY] 555 (555, 555 Roztoky): 3 each way, 5 one way at Žilina; off the pattern there:
+      → 12:45 Kladno, autobusové nádraží → Zbečno, železniční stanice
+      ← 12:58 Zbečno, železniční stanice → Kladno, autobusové nádraží
+      ← 13:26 Zbečno, Újezd nad Zbečnem → Kladno, autobusové nádraží
+      → 14:05 Kladno, autobusové nádraží → Běleč [KD]
+      ← 14:38 Běleč [KD] → Kladno, autobusové nádraží
+      ← 14:48 Zbečno, železniční stanice → Kladno, autobusové nádraží
+      → 16:05 Kladno, autobusové nádraží → Zbečno, železniční stanice
+      ← 17:48 Zbečno, železniční stanice → Kladno, autobusové nádraží
+[EACH WAY] 220630 (630): 3 each way, 4 one way at Chyňava, Lhotka u Berouna, náves; off the pattern there:
+      → 12:13 Kladno, autobusové nádraží → Beroun, Jarov, náves
+      → 12:43 Kladno, autobusové nádraží → Beroun, Jarov, náves
+      ← 12:48 Beroun, Jarov, náves → Kladno, autobusové nádraží
+      → 13:39 Kladno, autobusové nádraží → Beroun, Jarov, náves
+      ← 13:49 Beroun, Jarov, náves → Kladno, autobusové nádraží
+      → 14:13 Kladno, autobusové nádraží → Beroun, Jarov, náves
+      ← 14:52 Beroun, Jarov, náves → Kladno, autobusové nádraží
+[EACH WAY] 350 (350, 350 Velké Přílepy): 3 each way, 4 one way at Svrkyně; off the pattern there:
+      ← 12:50 Praha, Dejvická → Kladno, OAZA
+      → 13:20 Kladno, OAZA → Praha, Dejvická
+      ← 14:05 Praha, Dejvická → Lichoceves, Noutonice
+      → 15:01 Lichoceves, Noutonice → Praha, Dejvická
+      ← 17:05 Praha, Dejvická → Lichoceves, Noutonice
+      → 17:15 Kladno, OAZA → Praha, Dejvická
+      → 18:18 Kladno, OAZA → Praha, Dejvická
+[EACH WAY] 587 (587 Byseň): 3 each way, 3 one way at Vinařice, rozcestí Třebichovice; off the pattern there:
+      → 13:10 Smečno → Libušín, náměstí
+      ← 13:32 Libušín, náměstí → Smečno
+      → 14:10 Smečno → Libušín, náměstí
+      ← 14:32 Libušín, náměstí → Slaný, autobusové nádraží
+      → 14:50 Slaný, autobusové nádraží → Libušín, náměstí
+      ← 16:12 Libušín, náměstí → Drnek
+[ONE WAY] 627 (627): 2 each way, 5 one way at Smečno; off the pattern there:
+      ← 13:07 Smečno → Slaný, autobusové nádraží
+      → 13:40 Slaný, autobusové nádraží → Smečno
+      ← 14:01 Smečno → Slaný, autobusové nádraží
+      ← 14:40 Smečno → Slaný, autobusové nádraží
+      → 14:40 Slaný, autobusové nádraží → Smečno
+      ← 15:29 Smečno → Slaný, autobusové nádraží
+      ← 18:10 Smečno → Slaný, autobusové nádraží
+[ONE WAY] 306 (306, 306 Hostivice, 306 Hostouň, 306 Jeneč): 2 each way, 4 one way at Praha, Zličín; off the pattern there:
+      ← 13:10 Praha, Zličín → Jeneč, Lidická
+      ← 13:30 Praha, Zličín → Hostivice, Ve Vilkách
+      ← 14:00 Praha, Zličín → Hostivice, Ve Vilkách
+      → 14:09 Hostivice, Ve Vilkách → Praha, Zličín
+      ← 14:30 Praha, Zličín → Hostivice, Ve Vilkách
+      → 14:39 Hostivice, Ve Vilkách → Praha, Zličín
+[ONE WAY] 388 (388): 2 each way, 4 one way at Slaný, železniční stanice; off the pattern there:
+      ← 12:40 Praha, Nádraží Veleslavín → Slaný, Arbesova
+      → 13:36 Slaný, Arbesova → Praha, Nádraží Veleslavín
+      ← 13:40 Praha, Nádraží Veleslavín → Slaný, Arbesova
+      → 14:16 Slaný, Arbesova → Praha, Nádraží Veleslavín
+      → 14:46 Slaný, Arbesova → Praha, Nádraží Veleslavín
+      → 18:36 Slaný, Arbesova → Praha, Nádraží Veleslavín
+[ONE WAY] 619 (619): 2 each way, 4 one way at Třtice, u brodku; off the pattern there:
+      → 12:15 Kladno, autobusové nádraží → Řevničov
+      → 13:35 Kladno, autobusové nádraží → Třtice
+      ← 14:32 Třtice → Kladno, autobusové nádraží
+      → 15:35 Kladno, autobusové nádraží → Třtice
+      → 18:05 Kladno, autobusové nádraží → Třtice
+[ONE WAY] 626 (626, 626 Theodor): 2 each way, 4 one way at Pchery, Theodor; off the pattern there:
+      ← 12:39 Kladno, autobusové nádraží → Pchery, Theodor
+      ← 13:39 Kladno, autobusové nádraží → Pchery, Theodor
+      ← 14:04 Kladno, autobusové nádraží → Pchery, Theodor
+      → 14:07 Pchery, Theodor → Kladno, autobusové nádraží
+      → 14:25 Pchery, Theodor → Kladno, autobusové nádraží
+      ← 17:39 Kladno, autobusové nádraží → Velvary, náměstí
+[ONE WAY] 324 (324): 2 each way, 3 one way at Smečno; off the pattern there:
+      ← 13:00 Smečno → Slaný, autobusové nádraží
+      → 13:49 Slaný, autobusové nádraží → Smečno
+      ← 15:00 Smečno → Slaný, autobusové nádraží
+      → 15:09 Slaný, autobusové nádraží → Smečno
+      ← 15:10 Kladno, gymnasium → Smečno
+[ONE WAY] 365 (365, 365 Unhošť): 2 each way, 3 one way at Praha, Šafránecká; off the pattern there:
+      → 16:45 Stochov, náměstí → Praha, Motol
+      → 17:45 Stochov, náměstí → Praha, Motol
+      → 17:59 Hostivice, Ve Vilkách → Praha, Motol
+      ← 18:05 Praha, Motol → Hostivice, Ve Vilkách
+[ONE WAY] 307 (307, 307 Unhošť): 1 each way, 8 one way at Úhonice, škola; off the pattern there:
+      → 13:10 Praha, Zličín → Unhošť, náměstí
+      → 13:40 Praha, Zličín → Úhonice
+      ← 14:16 Úhonice → Praha, Zličín
+      → 14:50 Praha, Zličín → Červený Újezd [PZ]
+      → 15:20 Praha, Zličín → Červený Újezd [PZ]
+      → 15:50 Praha, Zličín → Červený Újezd [PZ]
+      → 16:20 Praha, Zličín → Červený Újezd [PZ]
+      → 16:50 Praha, Zličín → Červený Újezd [PZ]
+      → 17:20 Praha, Zličín → Červený Újezd [PZ]
+[ONE WAY] 322 (322): 1 each way, 3 one way at Tuchoměřice, rozcestí; off the pattern there:
+      ← 12:36 Kladno, autobusové nádraží → Praha, Nádraží Veleslavín
+      ← 13:36 Kladno, autobusové nádraží → Praha, Nádraží Veleslavín
+      → 14:00 Praha, Nádraží Veleslavín → Kladno, autobusové nádraží
+      ← 17:37 Kladno, autobusové nádraží → Praha, Nádraží Veleslavín
+[ONE WAY] 708 (708): 1 each way, 3 one way at Slaný, modelářské středisko; off the pattern there:
+      → 13:00 Panenský Týnec → Slaný, Arbesova
+      ← 14:08 Slaný, Arbesova → Panenský Týnec
+      ← 16:02 Slaný, Arbesova → Panenský Týnec
+      ← 18:02 Slaný, Arbesova → Panenský Týnec
+[ONE WAY] 858 (858): 1 each way, 3 one way at Třebusice; off the pattern there:
+      ← 12:35 Slaný, gymnázium → Libčice nad Vltavou, železniční zastávka Letky
+      → 13:12 Libčice nad Vltavou, železniční zastávka Letky → Slaný, gymnázium
+      ← 14:40 Slaný, gymnázium → Libčice nad Vltavou, železniční zastávka Letky
+      ← 16:40 Slaný, gymnázium → Libčice nad Vltavou, železniční zastávka Letky
+[ONE WAY] 593 (593): 0 each way, 5 one way at Velvary, železniční stanice; off the pattern there:
+      ← 13:01 Velvary, železniční stanice → Slaný, autobusové nádraží
+      ← 14:01 Velvary, železniční stanice → Hobšovice, II
+      ← 14:55 Velvary, železniční stanice → Slaný, autobusové nádraží
+      ← 16:55 Velvary, železniční stanice → Slaný, autobusové nádraží
+      ← 18:55 Velvary, železniční stanice → Hobšovice, II
+[ONE WAY] 342 (342, 342 Knovíz): 0 each way, 3 one way at Tuchoměřice, rozcestí; off the pattern there:
+      ← 13:09 Slaný, železniční stanice → Praha, Nádraží Veleslavín
+      ← 14:09 Slaný, železniční stanice → Praha, Nádraží Veleslavín
+      ← 16:09 Slaný, železniční stanice → Praha, Nádraží Veleslavín
+======== pid-regional/oblasti/kolinsko: 2 lines EACH WAY, 12 ONE WAY
+[EACH WAY] 662 (662): 6 each way, 8 one way at Kounice; off the pattern there:
+      → 12:42 Mochov → Kounice
+      ← 13:23 Kounice → Mochov
+      → 13:27 Mochov → Kounice
+      → 14:27 Mochov → Kounice
+      ← 14:33 Kounice → Mochov
+      ← 15:13 Kounice → Mochov
+      → 15:27 Mochov → Kounice
+      ← 16:13 Kounice → Mochov
+      → 16:27 Mochov → Kounice
+      ← 17:27 Kounice → Mochov
+      → 17:33 Mochov → Kounice
+      ← 17:55 Kounice → Mochov
+[EACH WAY] 235002 (MHD Kolín 2): 4 each way, 5 one way at Kolín, Šťáralka; off the pattern there:
+      ← 14:08 Kolín, Šťáralka → Kolín, nádraží
+      → 17:01 Kolín, Štítary → Kolín, Šťáralka
+      → 17:31 Kolín, Štítary → Kolín, Šťáralka
+      ← 17:41 Kolín, Šťáralka → Kolín, Štítary
+      → 18:01 Kolín, Štítary → Kolín, Šťáralka
+      ← 18:11 Kolín, Šťáralka → Kolín, Štítary
+      → 18:31 Kolín, Štítary → Kolín, Šťáralka
+      ← 18:41 Kolín, Šťáralka → Kolín, Štítary
+[ONE WAY] 822 (822, 822 Klášterní Skalice): 2 each way, 4 one way at Plaňany, Blinka; off the pattern there:
+      → 12:25 Český Brod, železniční stanice → Kolín, nádraží
+      ← 12:36 Kolín, nádraží → Vitice, u školy
+      → 13:54 Klášterní Skalice → Kolín, nádraží
+      → 14:56 Kouřim → Kolín, nádraží
+      → 16:30 Český Brod, železniční stanice → Kolín, nádraží
+      ← 17:24 Kolín, nádraží → Český Brod, železniční stanice
+[ONE WAY] 826 (826): 2 each way, 4 one way at Poříčany, železniční stanice; off the pattern there:
+      → 12:58 Poříčany, škola → Pečky, železniční stanice
+      → 13:07 Břežany II → Pečky, železniční stanice
+      ← 13:48 Pečky, železniční stanice → Břežany II
+      → 14:35 Poříčany, škola → Hořany
+      ← 16:15 Pečky, železniční stanice → Břežany II
+      → 18:07 Břežany II → Pečky, železniční stanice
+[ONE WAY] 235006 (MHD Kolín 6): 2 each way, 3 one way at Kolín, PZKO-TOYOTA; off the pattern there:
+      ← 13:37 Kolín, Tesco → Kolín, PZKO-TOYOTA
+      → 14:01 Kolín, PZKO-TOYOTA → Kolín, PZKO CEVA
+      → 14:15 Kolín, PZKO-TOYOTA → Kolín, nádraží
+      ← 14:40 Kolín, PZKO CEVA → Kolín, PZKO-TOYOTA
+      → 14:45 Kolín, PZKO-TOYOTA → Kolín, Tesco
+[ONE WAY] 435 (435): 2 each way, 3 one way at Říčany, podhradí; off the pattern there:
+      ← 12:55 Český Brod, železniční stanice → Říčany, Wolkerova
+      → 13:05 Říčany, Wolkerova → Klučov, Skramníky
+      ← 13:32 Klučov, Skramníky → Říčany, Wolkerova
+      ← 14:32 Klučov, Skramníky → Říčany, Wolkerova
+[ONE WAY] 536 (536): 2 each way, 3 one way at Žiželice, škola; off the pattern there:
+      → 13:55 Žiželice, Loukonosy → Kolín, nádraží
+      → 15:26 Žiželice, náměstí → Kolín, nádraží
+      → 17:19 Žiželice, náměstí → Kolín, nádraží
+[ONE WAY] 660 (660, 660 Doubravčice): 2 each way, 3 one way at Tuchoraz, U Sadů; off the pattern there:
+      → 12:55 Český Brod, železniční stanice → Kostelec nad Černými lesy, náměstí
+      ← 13:47 Kostelec nad Černými lesy, náměstí → Český Brod, železniční stanice
+      → 14:15 Český Brod, železniční stanice → Kostelec nad Černými lesy, náměstí
+      → 15:10 Český Brod, železniční stanice → Kostelec nad Černými lesy, náměstí
+[ONE WAY] 661 (661): 2 each way, 3 one way at Semice, střed; off the pattern there:
+      ← 12:50 Lysá nad Labem, železniční stanice → Český Brod, železniční stanice
+      ← 15:40 Lysá nad Labem, železniční stanice → Semice, střed
+      → 16:02 Semice, střed → Lysá nad Labem, železniční stanice
+      → 17:30 Český Brod, železniční stanice → Lysá nad Labem, železniční stanice
+      → 18:30 Český Brod, železniční stanice → Lysá nad Labem, železniční stanice
+[ONE WAY] 821 (821, 821 Kouřim): 2 each way, 3 one way at Ždánice, u Jánů; off the pattern there:
+      → 14:00 Ždánice, u Jánů → Horní Kruty
+      ← 14:00 Ždánice, u Jánů → Kolín, nádraží
+      → 15:02 Kolín, nádraží → Horní Kruty
+      ← 15:39 Horní Kruty → Kolín, nádraží
+      ← 17:44 Horní Kruty → Kouřim
+[ONE WAY] 235009 (MHD Kolín 9): 1 each way, 3 one way at Kolín, Štítary; off the pattern there:
+      → 13:01 Kolín, Spálenka → Kolín, Štítary
+      → 14:14 Kolín, nádraží → Kolín, Štítary
+      → 14:50 Veltruby, Na Návsi → Kolín, Štítary
+[ONE WAY] 659 (659): 1 each way, 3 one way at Krupá [KO]; off the pattern there:
+      ← 12:58 Kostelec nad Černými lesy, náměstí → Krupá [KO]
+      ← 13:50 Kostelec nad Černými lesy, náměstí → Český Brod, železniční stanice
+      ← 14:50 Kostelec nad Černými lesy, náměstí → Český Brod, železniční stanice
+      → 15:25 Český Brod, železniční stanice → Kostelec nad Černými lesy, náměstí
+[ONE WAY] 675 (675, 675 Cerhenice): 1 each way, 3 one way at Velim, škola; off the pattern there:
+      ← 13:13 Kolín, nádraží → Pečky, železniční stanice
+      ← 14:03 Kolín, nádraží → Cerhenice, Náměstí Míru
+      ← 18:03 Kolín, nádraží → Cerhenice, Náměstí Míru
+[ONE WAY] 491 (491): 0 each way, 4 one way at Louňovice, I.hráz; off the pattern there:
+      → 13:29 Louňovice, I.hráz → Český Brod, železniční stanice
+      → 14:29 Louňovice, I.hráz → Český Brod, železniční stanice
+      → 15:29 Louňovice, I.hráz → Český Brod, železniční stanice
+      → 16:29 Louňovice, I.hráz → Český Brod, železniční stanice
+======== pid-regional/oblasti/kutnohorsko: 3 lines EACH WAY, 3 ONE WAY
+[EACH WAY] 805 (805): 5 each way, 9 one way at Kutná Hora, Šipší, Sběrná; off the pattern there:
+      ← 13:06 Kutná Hora, autobusové stanoviště → Kolín, nádraží
+      ← 13:36 Kutná Hora, autobusové stanoviště → Kolín, nádraží
+      → 13:57 Kolín, nádraží → Kutná Hora, autobusové stanoviště
+      ← 14:19 Kutná Hora, Karlov, celní úřad → Kolín, nádraží
+      ← 14:49 Kutná Hora, Karlov, celní úřad → Kolín, nádraží
+      ← 15:26 Kutná Hora, autobusové stanoviště → Kolín, nádraží
+      → 15:27 Kolín, nádraží → Kutná Hora, autobusové stanoviště
+      ← 15:40 Zruč nad Sázavou, Sázavan → Kolín, nádraží
+      → 16:03 Kolín, nádraží → Kutná Hora, Karlov, celní úřad
+      → 16:27 Kolín, nádraží → Kutná Hora, autobusové stanoviště
+      ← 17:19 Kutná Hora, Karlov, celní úřad → Kolín, nádraží
+      ← 17:20 Zruč nad Sázavou, Sázavan → Kolín, nádraží
+      → 17:53 Kolín, nádraží → Kutná Hora, autobusové stanoviště
+[EACH WAY] 781 (781 Potěhy): 3 each way, 5 one way at Čáslav, autobusové stanoviště; off the pattern there:
+      ← 12:40 Žleby, Kamenné Mosty → Čáslav, železniční stanice
+      → 13:18 Čáslav, železniční stanice → Vrdy, kulturní dům
+      ← 13:34 Vrdy, kulturní dům → Čáslav, železniční stanice
+      ← 13:45 Okřesaneč → Čáslav, železniční stanice
+      ← 15:45 Okřesaneč → Čáslav, železniční stanice
+      → 15:50 Čáslav, autobusové stanoviště → Žleby, náměstí
+      ← 17:08 Žleby, náměstí → Čáslav, železniční stanice
+      → 18:18 Čáslav, železniční stanice → Žleby, Kamenné Mosty
+[EACH WAY] 742 (742, 742 Dobrovítov): 3 each way, 3 one way at Žáky, Dolní Štrampouch; off the pattern there:
+      → 12:17 Ledeč nad Sázavou, Husovo náměstí → Čáslav, autobusové stanoviště
+      ← 15:13 Čáslav, autobusové stanoviště → Ledeč nad Sázavou, Husovo náměstí
+      → 16:38 Zbýšov → Čáslav, autobusové stanoviště
+      ← 17:13 Čáslav, autobusové stanoviště → Třebětín
+      ← 18:13 Čáslav, autobusové stanoviště → Žáky, Dolní Štrampouch
+      → 18:28 Žáky, Dolní Štrampouch → Čáslav, autobusové stanoviště
+[ONE WAY] 533 (533): 2 each way, 3 one way at Žiželice, náměstí; off the pattern there:
+      → 13:04 Žiželice, náměstí → Chlumec nad Cidlinou, železniční stanice
+      ← 13:40 Chlumec nad Cidlinou, železniční stanice → Žiželice, náměstí
+      → 15:04 Žiželice, náměstí → Chlumec nad Cidlinou, železniční stanice
+      ← 15:40 Chlumec nad Cidlinou, železniční stanice → Žiželice, Hradišťko II
+      → 17:16 Kutná Hora, autobusové stanoviště → Chlumec nad Cidlinou, železniční stanice
+[ONE WAY] 402 (402): 1 each way, 3 one way at Zruč nad Sázavou, prům.zóna Jih; off the pattern there:
+      → 14:36 Čáslav, autobusové stanoviště → Praha, Roztyly
+      ← 15:20 Praha, Roztyly → Zruč nad Sázavou, Sázavan
+      ← 16:35 Praha, Roztyly → Čáslav, autobusové stanoviště
+      ← 17:35 Praha, Roztyly → Zruč nad Sázavou, Sázavan
+[ONE WAY] 782 (782, 782 Horka): 1 each way, 3 one way at Žehušice, škola; off the pattern there:
+      → 12:46 Kutná Hora, autobusové stanoviště → Vrdy, kulturní dům
+      → 13:46 Kutná Hora, autobusové stanoviště → Vrdy, kulturní dům
+      ← 13:48 Vrdy, kulturní dům → Kutná Hora, autobusové stanoviště
+      → 14:39 Kutná Hora, Žižkov, Fučíkova → Vrdy, kulturní dům
+======== pid-regional/oblasti/melnicko: 9 lines EACH WAY, 10 ONE WAY
+[EACH WAY] 370 (370, 370 Postřižín): 8 each way, 12 one way at Zdiby, u Celnice; off the pattern there:
+      ← 12:31 Kralupy nad Vltavou, železniční stanice → Praha, Kobylisy
+      ← 13:25 Kralupy nad Vltavou, železniční stanice → Praha, Kobylisy
+      ← 13:28 Kozomín, rozcestí → Praha, Kobylisy
+      → 13:35 Praha, Kobylisy → Kralupy nad Vltavou, železniční stanice
+      → 13:43 Praha, Kobylisy → Kralupy nad Vltavou, železniční stanice
+      ← 13:49 Kralupy nad Vltavou, železniční stanice → Praha, Kobylisy
+      → 13:53 Praha, Kobylisy → Postřižín, u kapličky
+      → 14:28 Praha, Kobylisy → Odolena Voda, Dolní náměstí
+      → 14:45 Praha, Kobylisy → Odolena Voda, Dolní náměstí
+      ← 15:25 Kralupy nad Vltavou, železniční stanice → Praha, Kobylisy
+      → 15:35 Praha, Kobylisy → Postřižín, u kapličky
+      → 15:45 Praha, Kobylisy → Odolena Voda, Dolní náměstí
+      ← 16:30 Postřižín, u kapličky → Praha, Kobylisy
+      → 16:45 Praha, Kobylisy → Odolena Voda, Dolní náměstí
+      ← 17:25 Kralupy nad Vltavou, železniční stanice → Praha, Kobylisy
+      → 17:35 Praha, Kobylisy → Postřižín, u kapličky
+      → 17:45 Praha, Kobylisy → Odolena Voda, Dolní náměstí
+      ← 18:05 Postřižín, u kapličky → Praha, Kobylisy
+      → 18:25 Praha, Kobylisy → Kralupy nad Vltavou, železniční stanice
+      → 18:45 Praha, Kobylisy → Odolena Voda, Dolní náměstí
+[EACH WAY] 368 (368): 8 each way, 8 one way at Kojetice, Tůmovka; off the pattern there:
+      ← 12:58 Praha, Ládví → Kojetice, Tůmovka
+      ← 13:23 Praha, Ládví → Kojetice, Tůmovka
+      → 13:33 Kojetice, Tůmovka → Praha, Ládví
+      → 13:56 Kojetice, Tůmovka → Praha, Ládví
+      ← 14:15 Praha, Ládví → Kojetice, Tůmovka
+      ← 14:33 Praha, Ládví → Kojetice, Tůmovka
+      → 14:48 Kojetice, Tůmovka → Praha, Ládví
+      → 15:08 Kojetice, Tůmovka → Praha, Ládví
+      ← 15:15 Praha, Ládví → Kojetice, Tůmovka
+      ← 15:33 Praha, Ládví → Kojetice, Tůmovka
+      → 15:48 Kojetice, Tůmovka → Praha, Ládví
+      → 16:08 Kojetice, Tůmovka → Praha, Ládví
+      ← 16:15 Praha, Ládví → Kojetice, Tůmovka
+      → 16:48 Kojetice, Tůmovka → Praha, Ládví
+      ← 17:57 Praha, Ládví → Kojetice, Tůmovka
+      → 18:32 Kojetice, Tůmovka → Praha, Ládví
+[EACH WAY] 372 (372): 5 each way, 10 one way at Úžice [ME]; off the pattern there:
+      ← 12:37 Kralupy nad Vltavou, železniční stanice → Praha, Kobylisy
+      → 13:28 Praha, Kobylisy → Dřínov, náves
+      ← 13:42 Kralupy nad Vltavou, železniční stanice → Praha, Kobylisy
+      → 14:03 Praha, Kobylisy → Zlosyň
+      ← 14:12 Kralupy nad Vltavou, železniční stanice → Praha, Kobylisy
+      → 16:05 Praha, Kobylisy → Zlosyň
+      → 16:28 Praha, Kobylisy → Úžice [ME]
+      ← 17:00 Úžice [ME] → Praha, Kobylisy
+      → 17:28 Praha, Kobylisy → Úžice [ME]
+      ← 17:55 Kralupy nad Vltavou, železniční stanice → Praha, Kobylisy
+      → 18:05 Praha, Kobylisy → Zlosyň
+[EACH WAY] 668 (668): 4 each way, 5 one way at Nebužely, u hřbitova; off the pattern there:
+      ← 12:53 Mšeno, železniční stanice → Mělník, autobusové nádraží
+      → 13:05 Mělník, autobusové nádraží → Mšeno, železniční stanice
+      ← 14:09 Mšeno, škola → Mělník, autobusové nádraží
+      → 14:12 Řepín → Mšeno
+      → 15:15 Mělník, autobusové nádraží → Mělnické Vtelno
+      ← 15:53 Mšeno, železniční stanice → Řepín
+      ← 16:20 Mělnické Vtelno → Mělník, autobusové nádraží
+      → 17:20 Mělník, autobusové nádraží → Řepín
+[EACH WAY] 348 (348, 348 Libiš, 348 Obříství): 3 each way, 6 one way at Libiš, u slávisty; off the pattern there:
+      → 12:45 Praha, Ládví → Libiš, obec
+      → 13:15 Praha, Ládví → Obříství
+      ← 13:24 Libiš, obec → Praha, Ládví
+      → 13:51 Praha, Ládví → Obříství
+      ← 13:54 Libiš, obec → Praha, Ládví
+      ← 14:12 Obříství → Praha, Ládví
+      ← 14:46 Libiš, obec → Praha, Ládví
+      ← 18:17 Libiš, obec → Praha, Ládví
+      ← 18:54 Libiš, obec → Praha, Ládví
+[EACH WAY] 400 (400, 400 Rumburk, 400 Varnsdorf): 3 each way, 5 one way at Varnsdorf, autobusové nádraží; off the pattern there:
+      → 10:40 Praha, Letňany → Varnsdorf, autobusové nádraží
+      → 12:40 Praha, Letňany → Varnsdorf, autobusové nádraží
+      → 14:45 Nový Bor, autobusové nádraží → Varnsdorf, autobusové nádraží
+      → 15:10 Praha, Letňany → Varnsdorf, autobusové nádraží
+      ← 15:28 Varnsdorf, autobusové nádraží → Nový Bor, autobusové nádraží
+      ← 17:58 Varnsdorf, autobusové nádraží → Praha, Letňany
+      ← 18:58 Varnsdorf, autobusové nádraží → Praha, Letňany
+[EACH WAY] 692 (692): 3 each way, 5 one way at Kokořín, Šemanovice; off the pattern there:
+      ← 13:00 Kokořín → Kokořín, Šemanovice
+      → 13:45 Kokořín, Šemanovice → Kokořín
+      ← 14:00 Kokořín → Kokořín, Šemanovice
+      → 14:15 Kokořín, Šemanovice → Kokořín
+      → 14:24 Mělník, Pšovka → Kokořín
+      ← 16:00 Kokořín → Kokořín, Šemanovice
+      → 16:15 Kokořín, Šemanovice → Kokořín
+      → 18:05 Liběchov → Kokořín
+[EACH WAY] 473 (473, 473 Zálezlice): 3 each way, 4 one way at Zálezlice, Kozárovice; off the pattern there:
+      ← 12:54 Neratovice, Kojetická → Kralupy nad Vltavou, železniční stanice
+      ← 14:01 Neratovice, Kojetická → Zálezlice, Kozárovice
+      → 14:31 Zálezlice, Kozárovice → Neratovice, Kojetická
+      ← 14:44 Neratovice, Kojetická → Kralupy nad Vltavou, železniční stanice
+      → 14:44 Kralupy nad Vltavou, železniční stanice → Neratovice, Kojetická
+      → 18:06 Zálezlice, Kozárovice → Neratovice, Kojetická
+      → 18:25 Kralupy nad Vltavou, železniční stanice → Neratovice, Kojetická
+[EACH WAY] 658 (658): 3 each way, 4 one way at Veliká Ves; off the pattern there:
+      ← 12:59 Neratovice, železniční stanice → Odolena Voda, závod
+      → 13:40 Odolena Voda, závod → Neratovice, železniční stanice
+      ← 13:59 Neratovice, železniční stanice → Odolena Voda, závod
+      → 14:40 Odolena Voda, závod → Neratovice, železniční stanice
+      ← 14:46 Neratovice, železniční stanice → Odolena Voda, závod
+      ← 15:29 Neratovice, železniční stanice → Odolena Voda, závod
+      → 16:10 Odolena Voda, závod → Neratovice, železniční stanice
+[ONE WAY] 316 (316, 316 Kralupy): 2 each way, 4 one way at Kralupy nad Vltavou, železniční stanice; off the pattern there:
+      ← 13:05 Kralupy nad Vltavou, železniční stanice → Praha, Bořislavka
+      → 13:20 Praha, Bořislavka → Kralupy nad Vltavou, železniční stanice
+      ← 13:45 Kralupy nad Vltavou, železniční stanice → Praha, Bořislavka
+      ← 14:38 Kralupy nad Vltavou, železniční stanice → Praha, Bořislavka
+      ← 18:36 Kralupy nad Vltavou, železniční stanice → Praha, Bořislavka
+[ONE WAY] 663 (663 Úžice): 2 each way, 4 one way at Zlončice; off the pattern there:
+      → 12:56 Kralupy nad Vltavou, železniční stanice → Odolena Voda, Dolní náměstí
+      → 13:56 Kralupy nad Vltavou, železniční stanice → Odolena Voda, Dolní náměstí
+      → 14:36 Kralupy nad Vltavou, železniční stanice → Odolena Voda, Dolní náměstí
+      ← 15:13 Odolena Voda, Dolní náměstí → Kralupy nad Vltavou, železniční stanice
+      → 16:26 Kralupy nad Vltavou, železniční stanice → Odolena Voda, Dolní náměstí
+      ← 18:15 Úžice, logistické centrum → Kralupy nad Vltavou, železniční stanice
+[ONE WAY] 351 (351, 351 Čakovičky): 2 each way, 3 one way at Neratovice, III.ZŠ; off the pattern there:
+      ← 13:04 Neratovice, železniční stanice → Praha, Letňany
+      ← 14:04 Neratovice, železniční stanice → Praha, Letňany
+      ← 15:34 Neratovice, železniční stanice → Praha, Letňany
+[ONE WAY] 466 (466, 466 Nelahozeves): 2 each way, 3 one way at Nová Ves, Nové Ouholice; off the pattern there:
+      → 14:45 Kralupy nad Vltavou, obchodní centrum → Mělník, autobusové nádraží
+      → 16:45 Kralupy nad Vltavou, obchodní centrum → Mělník, autobusové nádraží
+      → 17:55 Kralupy nad Vltavou, železniční stanice → Mělník, autobusové nádraží
+[ONE WAY] 696 (696): 2 each way, 3 one way at Mělnické Vtelno; off the pattern there:
+      → 12:43 Mšeno → Mělnické Vtelno
+      ← 13:03 Mělnické Vtelno → Mšeno
+      → 14:05 Mšeno → Mělník, autobusové nádraží
+      ← 15:05 Mělník, autobusové nádraží → Mšeno
+      → 18:32 Mšeno → Mělnické Vtelno
+[ONE WAY] 377 (377, 377 Brázdim): 1 each way, 11 one way at Veleň, Mírovice; off the pattern there:
+      ← 13:20 Praha, Letňany → Kostelec nad Labem, Martinská
+      ← 13:40 Praha, Letňany → Kostelec nad Labem, Martinská
+      ← 13:55 Praha, Letňany → Kostelec nad Labem, Martinská
+      ← 14:25 Praha, Letňany → Kostelec nad Labem, Martinská
+      ← 14:40 Praha, Letňany → Kostelec nad Labem, Martinská
+      → 15:00 Kostelec nad Labem, Martinská → Praha, Letňany
+      ← 15:58 Praha, Letňany → Kostelec nad Labem, Martinská
+      ← 16:22 Praha, Letňany → Kostelec nad Labem, Martinská
+      ← 17:40 Praha, Letňany → Kostelec nad Labem, Martinská
+      ← 17:55 Praha, Letňany → Kostelec nad Labem, Martinská
+      ← 18:10 Praha, Letňany → Kostelec nad Labem, Martinská
+      ← 18:40 Praha, Letňany → Kostelec nad Labem, Martinská
+[ONE WAY] 349 (349): 1 each way, 5 one way at Mělník, Pšovka; off the pattern there:
+      ← 14:55 Praha, Ládví → Mělník, Mlazice
+      ← 15:55 Praha, Ládví → Mělník, Mlazice
+      ← 16:55 Praha, Ládví → Mělník, Mlazice
+      → 17:10 Mělník, Mlazice → Praha, Ládví
+      ← 17:25 Praha, Ládví → Mělník, Mlazice
+      ← 17:55 Praha, Ládví → Mělník, Mlazice
+[ONE WAY] 476 (476): 1 each way, 3 one way at Ovčáry [ME]; off the pattern there:
+      ← 13:03 Brandýs n.L.-St.Bol., nádraží → Mělník, autobusové nádraží
+      ← 14:03 Brandýs n.L.-St.Bol., nádraží → Mělník, autobusové nádraží
+      ← 15:03 Brandýs n.L.-St.Bol., nádraží → Mělník, autobusové nádraží
+      → 17:15 Mělník, autobusové nádraží → Nedomice, křížek
+[ONE WAY] 464 (464): 0 each way, 6 one way at Spomyšl; off the pattern there:
+      ← 12:44 Horní Beřkovice, točna → Mělník, autobusové nádraží
+      ← 14:04 Horní Beřkovice, točna → Spomyšl, u lávky
+      ← 14:39 Horní Beřkovice, točna → Vraňany, škola
+      ← 14:45 Spomyšl → Mělník, autobusové nádraží
+      ← 16:27 Horní Beřkovice, točna → Spomyšl
+      ← 16:45 Spomyšl → Mělník, autobusové nádraží
+[ONE WAY] 475 (475): 0 each way, 3 one way at Hořín, Brozánky, Staré Brozánky; off the pattern there:
+      ← 16:40 Horní Počaply → Mělník, autobusové nádraží
+      ← 17:40 Horní Počaply → Mělník, autobusové nádraží
+      ← 18:40 Horní Počaply → Mělník, autobusové nádraží
+======== pid-regional/oblasti/mladoboleslavsko: 7 lines EACH WAY, 9 ONE WAY
+[EACH WAY] 737 (737, 737 direct): 6 each way, 8 one way at Mladá Boleslav, rozcestí Podlázky 0.5; off the pattern there:
+      ← 12:57 Čistá, hřiště → Mladá Boleslav, autobusové stanoviště
+      ← 13:20 Bělá pod Bezdězem, Atmos → Mladá Boleslav, autobusové stanoviště
+      → 13:45 Mladá Boleslav, autobusové stanoviště → Bělá pod Bezdězem, Atmos
+      ← 13:50 Bělá pod Bezdězem, Atmos → Mladá Boleslav, autobusové stanoviště
+      ← 14:10 Bělá pod Bezdězem, Atmos → Mladá Boleslav, autobusové stanoviště
+      → 14:25 Mladá Boleslav, autobusové stanoviště → Čistá, hřiště
+      → 14:35 Mladá Boleslav, autobusové stanoviště → Bělá pod Bezdězem, Atmos
+      → 16:55 Mladá Boleslav, autobusové stanoviště → Bělá pod Bezdězem, Atmos
+      → 17:20 Mladá Boleslav, autobusové stanoviště → Bělá pod Bezdězem, Atmos
+      ← 17:25 Bělá pod Bezdězem, Atmos → Mladá Boleslav, autobusové stanoviště
+      → 17:50 Mladá Boleslav, autobusové stanoviště → Bělá pod Bezdězem, Atmos
+      → 18:20 Mladá Boleslav, autobusové stanoviště → Bělá pod Bezdězem, Atmos
+      ← 18:25 Bělá pod Bezdězem, Atmos → Mladá Boleslav, autobusové stanoviště
+[EACH WAY] 442 (442, 442 Dražice): 5 each way, 7 one way at Benátky nad Jizerou, Vaněčkova; off the pattern there:
+      ← 13:00 Benátky nad Jizerou, autobusové stanoviště → Benátky nad Jizerou, Dražice, dvůr
+      → 13:10 Benátky nad Jizerou, Dražice, dvůr → Benátky nad Jizerou, autobusové stanoviště
+      ← 13:24 Benátky nad Jizerou, autobusové stanoviště → Benátky nad Jizerou, Dražice, dvůr
+      → 13:45 Benátky nad Jizerou, Dražice, dvůr → Benátky nad Jizerou, autobusové stanoviště
+      ← 14:02 Benátky nad Jizerou, autobusové stanoviště → Benátky nad Jizerou, Dražice, dvůr
+      → 14:26 Benátky nad Jizerou, Dražice, dvůr → Benátky nad Jizerou, autobusové stanoviště
+      → 14:31 Mladá Boleslav, autobusové stanoviště → Lysá nad Labem, železniční stanice
+      → 15:26 Benátky nad Jizerou, Dražice, dvůr → Benátky nad Jizerou, autobusové stanoviště
+      → 15:55 Benátky nad Jizerou, Dražice, dvůr → Benátky nad Jizerou, autobusové stanoviště
+      ← 16:08 Benátky nad Jizerou, autobusové stanoviště → Benátky nad Jizerou, Dražice, dvůr
+      → 16:45 Benátky nad Jizerou, Dražice, dvůr → Benátky nad Jizerou, autobusové stanoviště
+      ← 17:15 Benátky nad Jizerou, autobusové stanoviště → Benátky nad Jizerou, Dražice, dvůr
+[EACH WAY] 775 (775): 4 each way, 5 one way at Luštěnice, Zelená; off the pattern there:
+      ← 12:25 Mladá Boleslav, autobusové stanoviště → Luštěnice, Sluneční
+      → 13:29 Luštěnice, Sluneční → Mladá Boleslav, autobusové stanoviště
+      ← 13:40 Mladá Boleslav, autobusové stanoviště → Horky nad Jizerou
+      ← 14:15 Mladá Boleslav, Zalužany ŠKODA → Horky nad Jizerou
+      → 14:20 Horky nad Jizerou → Mladá Boleslav, autobusové stanoviště
+      ← 15:02 Luštěnice, Brodecká → Luštěnice, Sluneční
+      ← 15:46 Luštěnice, Zelená → Benátky nad Jizerou, autobusové stanoviště
+      → 17:57 Brodce, sokolovna → Dobrovice, autobusové stanoviště
+      → 18:44 Luštěnice, Sluneční → Luštěnice, Brodecká
+[EACH WAY] 427 (427): 3 each way, 5 one way at Rokytá, Dolní Rokytá, rozcestí; off the pattern there:
+      → 13:40 Mnichovo Hradiště, dopravní terminál → Mimoň, Žitavská
+      → 14:30 Mladá Boleslav, autobusové stanoviště → Mimoň, autobusové stanoviště
+      ← 15:35 Mimoň, Žitavská → Mnichovo Hradiště, dopravní terminál
+      → 16:20 Mnichovo Hradiště, dopravní terminál → Ralsko, Kuřívody
+      ← 17:41 Ralsko, Kuřívody → Mnichovo Hradiště, dopravní terminál
+      → 17:45 Mnichovo Hradiště, dopravní terminál → Mimoň, Žitavská
+      ← 17:50 Mimoň, Žitavská → Mnichovo Hradiště, dopravní terminál
+      → 18:40 Mnichovo Hradiště, dopravní terminál → Mimoň, autobusové stanoviště
+[EACH WAY] 715 (715, 715 Mnichovo Hradiště): 3 each way, 4 one way at Bakov nad Jizerou, náměstí; off the pattern there:
+      → 12:18 Žďár, Žehrov → Mladá Boleslav, autobusové stanoviště
+      ← 13:00 Mladá Boleslav, autobusové stanoviště → Mnichovo Hradiště, dopravní terminál
+      → 13:39 Mnichovo Hradiště, dopravní terminál → Bakov nad Jizerou, železniční zastávka
+      ← 14:15 Bakov nad Jizerou, železniční zastávka → Mnichovo Hradiště, dopravní terminál
+      ← 14:35 Mladá Boleslav, autobusové stanoviště → Žďár, Žehrov
+      → 15:09 Mnichovo Hradiště, dopravní terminál → Bakov nad Jizerou, železniční zastávka
+      ← 17:35 Bakov nad Jizerou, železniční zastávka → Žďár, Žehrov
+[EACH WAY] 431 (431, 431 Stará Lysá): 3 each way, 3 one way at Předměřice nad Jizerou, u kostela; off the pattern there:
+      ← 12:29 Boreč, Žebice → Předměřice nad Jizerou, u kostela
+      → 13:29 Předměřice nad Jizerou, u kostela → Benátky nad Jizerou, Husovo náměstí
+      ← 15:02 Benátky nad Jizerou, Husovo náměstí → Předměřice nad Jizerou, u kostela
+      → 15:29 Předměřice nad Jizerou, u kostela → Bezno
+      → 17:17 Lysá nad Labem, železniční stanice → Kochánky
+      ← 17:39 Kochánky → Lysá nad Labem, železniční stanice
+[EACH WAY] 714 (714, 714 Sobotka): 3 each way, 3 one way at Mladá Boleslav, autobusové stanoviště; off the pattern there:
+      → 12:37 Kněžmost, Srbsko → Mladá Boleslav, autobusové stanoviště
+      ← 14:00 Mladá Boleslav, autobusové stanoviště → Kněžmost, náměstí
+      → 14:05 Kněžmost, náměstí → Mladá Boleslav, autobusové stanoviště
+      → 14:40 Kněžmost, náměstí → Mladá Boleslav, autobusové stanoviště
+      ← 15:10 Mladá Boleslav, autobusové stanoviště → Kněžmost, náměstí
+      ← 17:05 Mladá Boleslav, autobusové stanoviště → Kněžmost, Srbsko
+[ONE WAY] 732 (732): 2 each way, 4 one way at Březovice, Víska, Kluček; off the pattern there:
+      ← 13:15 Březovice → Bělá pod Bezdězem, Bezdědice
+      ← 14:44 Čistá, hřiště → Bělá pod Bezdězem, Bezdědice
+      → 15:24 Bělá pod Bezdězem, Bezdědice → Čistá, škola
+      ← 17:43 Čistá, škola → Bělá pod Bezdězem, Bezdědice
+      → 18:19 Bělá pod Bezdězem, Bezdědice → Čistá, škola
+      ← 18:43 Čistá, škola → Bělá pod Bezdězem, Bezdědice
+[ONE WAY] 315 (315): 2 each way, 3 one way at Mladá Boleslav, autobusové stanoviště; off the pattern there:
+      ← 12:55 Benátky nad Jizerou, autobusové stanoviště → Mladá Boleslav, autobusové stanoviště
+      ← 13:35 Mladá Boleslav, autobusové stanoviště → Mnichovo Hradiště, dopravní terminál
+      → 13:55 Mladá Boleslav, autobusové stanoviště → Praha, Černý Most
+      → 14:25 Mladá Boleslav, autobusové stanoviště → Praha, Černý Most
+      ← 14:35 Mladá Boleslav, autobusové stanoviště → Mnichovo Hradiště, dopravní terminál
+[ONE WAY] 345 (345): 2 each way, 3 one way at Mladá Boleslav, autobusové stanoviště; off the pattern there:
+      → 12:45 Praha, Černý Most → Mladá Boleslav, autobusové stanoviště
+      ← 13:43 Mnichovo Hradiště, náměstí → Mladá Boleslav, autobusové stanoviště
+      → 13:45 Praha, Černý Most → Mladá Boleslav, autobusové stanoviště
+      ← 13:53 Mnichovo Hradiště, náměstí → Mladá Boleslav, autobusové stanoviště
+      → 14:30 Mladá Boleslav, autobusové stanoviště → Mnichovo Hradiště, náměstí
+[ONE WAY] 412 (412): 2 each way, 3 one way at Praha, Černý Most; off the pattern there:
+      → 13:30 Praha, Černý Most → Mladá Boleslav, autobusové stanoviště
+      ← 14:30 Mladá Boleslav, autobusové stanoviště → Praha, Černý Most
+      → 14:45 Praha, Černý Most → Mladá Boleslav, autobusové stanoviště
+      → 15:45 Praha, Černý Most → Mladá Boleslav, autobusové stanoviště
+      ← 16:30 Mladá Boleslav, autobusové stanoviště → Praha, Černý Most
+[ONE WAY] 467 (467): 1 each way, 6 one way at Roudnice nad Labem, ČSAD; off the pattern there:
+      → 11:30 Mladá Boleslav, autobusové stanoviště → Roudnice nad Labem, ČSAD
+      → 13:30 Mladá Boleslav, autobusové stanoviště → Roudnice nad Labem, ČSAD
+      → 13:33 Mělník, autobusové nádraží → Roudnice nad Labem, ČSAD
+      → 14:30 Mladá Boleslav, autobusové stanoviště → Roudnice nad Labem, ČSAD
+      → 15:30 Mladá Boleslav, autobusové stanoviště → Roudnice nad Labem, ČSAD
+      → 16:30 Mladá Boleslav, autobusové stanoviště → Roudnice nad Labem, ČSAD
+[ONE WAY] 699 (699, 699 Kadlín): 1 each way, 3 one way at Písková Lhota, hlavní silnice; off the pattern there:
+      → 12:40 Chotětov → Mladá Boleslav, autobusové stanoviště
+      → 14:45 Chotětov → Mladá Boleslav, autobusové stanoviště
+      → 17:10 Chotětov → Mladá Boleslav, autobusové stanoviště
+[ONE WAY] 712 (712): 1 each way, 3 one way at Katusice; off the pattern there:
+      → 13:10 Mladá Boleslav, autobusové stanoviště → Katusice
+      → 13:40 Katusice → Bělá pod Bezdězem, Atmos
+      → 15:15 Mladá Boleslav, autobusové stanoviště → Katusice
+      ← 15:48 Katusice → Mladá Boleslav, autobusové stanoviště
+[ONE WAY] 724 (724): 1 each way, 3 one way at Řitonice; off the pattern there:
+      ← 12:30 Mladá Boleslav, autobusové stanoviště → Libáň, autobusové stanoviště
+      ← 14:40 Mladá Boleslav, autobusové stanoviště → Libáň, autobusové stanoviště
+      ← 15:32 Březno → Řitonice
+[ONE WAY] 725 (725, 725 Vlčí Pole): 1 each way, 3 one way at Zelenecká Lhota, rozcestí; off the pattern there:
+      → 12:30 Mladá Boleslav, autobusové stanoviště → Dolní Bousov, Vlčí Pole
+      · 13:30 Dolní Bousov, Vlčí Pole → Zelenecká Lhota, rozcestí
+      → 13:37 Zelenecká Lhota, Záhuby → Sobotka, náměstí
+      · 16:23 Zelenecká Lhota, Záhuby → Markvartice, pošta
+      → 17:30 Mladá Boleslav, autobusové stanoviště → Zelenecká Lhota, Záhuby
+======== pid-regional/oblasti/nymbursko: 2 lines EACH WAY, 3 ONE WAY
+[EACH WAY] 430 (430): 4 each way, 5 one way at Milovice, železniční stanice; off the pattern there:
+      → 12:52 Lipník → Lysá nad Labem, železniční stanice
+      ← 13:16 Lysá nad Labem, železniční stanice → Lipník
+      → 13:52 Lipník → Lysá nad Labem, železniční stanice
+      ← 14:01 Lysá nad Labem, železniční stanice → Milovice, železniční stanice
+      → 14:30 Milovice, železniční stanice → Lysá nad Labem, železniční stanice
+      ← 15:01 Lysá nad Labem, železniční stanice → Lipník
+      → 15:55 Milovice, železniční stanice → Lysá nad Labem, železniční stanice
+      ← 17:01 Lysá nad Labem, železniční stanice → Milovice, Balonka
+      → 17:51 Milovice, Balonka → Lysá nad Labem, železniční stanice
+[EACH WAY] 705 (705, 705 Kolín): 3 each way, 4 one way at Kutná Hora, Karlov, Na Rovinách; off the pattern there:
+      ← 12:20 Kolín, nádraží → Kutná Hora, Karlov, Na Rovinách
+      ← 12:50 Kolín, nádraží → Čáslav, obchodní centrum
+      ← 13:20 Kolín, nádraží → Kutná Hora, Karlov, Na Rovinách
+      → 13:54 Kutná Hora, Karlov, Na Rovinách → Poděbrady, železniční stanice
+      ← 14:32 Kolín, PZKO-TOYOTA → Čáslav, obchodní centrum
+      → 14:54 Kutná Hora, Karlov, Na Rovinách → Kolín, nádraží
+      → 18:01 Čáslav, obchodní centrum → Volárna
+[ONE WAY] 432 (432): 2 each way, 3 one way at Mladá Boleslav, autobusové stanoviště; off the pattern there:
+      → 11:46 Lysá nad Labem, železniční stanice → Mladá Boleslav, autobusové stanoviště
+      → 12:46 Lysá nad Labem, železniční stanice → Mladá Boleslav, autobusové stanoviště
+      → 13:46 Lysá nad Labem, železniční stanice → Mladá Boleslav, autobusové stanoviště
+      ← 14:33 Mladá Boleslav, autobusové stanoviště → Lysá nad Labem, železniční stanice
+[ONE WAY] 436 (436): 2 each way, 3 one way at Čachovice, železniční stanice; off the pattern there:
+      → 13:10 Nymburk, hl.nádraží → Lipník
+      ← 13:15 Lipník → Nymburk, hl.nádraží
+      → 14:10 Nymburk, hl.nádraží → Lipník
+      ← 14:42 Lipník → Nymburk, hl.nádraží
+      ← 15:16 Lipník → Nymburk, hl.nádraží
+[ONE WAY] 585 (585): 1 each way, 3 one way at Vršce, farma; off the pattern there:
+      ← 13:02 Kopidlno, náměstí → Jičín, autobusové stanoviště
+      → 15:35 Jičín, autobusové stanoviště → Kopidlno, náměstí
+      → 16:35 Jičín, autobusové stanoviště → Poděbrady, železniční stanice
+      → 18:30 Jičín, železniční stanice → Chroustov
+======== pid-regional/oblasti/praha-vychod: 9 lines EACH WAY, 9 ONE WAY
+[EACH WAY] 371 (371, 371 Astrapark, 371 Klecánky, 371 Vodochody): 4 each way, 11 one way at Zdiby, u Celnice; off the pattern there:
+      ← 12:46 Klecany, Klecánky → Praha, Kobylisy
+      ← 13:15 Husinec, Řež, závod → Praha, Kobylisy
+      ← 13:38 Klecany, Astrapark → Praha, Kobylisy
+      → 13:50 Praha, Kobylisy → Husinec, Řež, závod
+      → 14:23 Praha, Kobylisy → Klecany, Astrapark
+      ← 14:25 Husinec, Řež, závod → Praha, Kobylisy
+      → 14:53 Praha, Kobylisy → Klecany, Astrapark
+      → 15:53 Praha, Kobylisy → Klecany, Astrapark
+      → 16:08 Praha, Kobylisy → Klecany, Astrapark
+      → 16:23 Praha, Kobylisy → Klecany, Astrapark
+      → 16:53 Praha, Kobylisy → Klecany, Astrapark
+      → 17:50 Praha, Kobylisy → Husinec, Řež, závod
+      → 18:10 Praha, Kobylisy → Klecany, Astrapark
+      → 18:20 Praha, Kobylisy → Husinec, Řež, závod
+      → 18:50 Praha, Kobylisy → Husinec, Řež, závod
+[EACH WAY] 411 (411, 411 Brnky): 4 each way, 6 one way at Zdiby, u Celnice; off the pattern there:
+      ← 13:05 Praha, Kobylisy → Zdiby, Holosmetky
+      ← 13:15 Praha, Kobylisy → Zdiby, Brnky
+      → 13:28 Zdiby, Holosmetky → Praha, Kobylisy
+      ← 14:05 Praha, Kobylisy → Zdiby, Holosmetky
+      ← 14:15 Praha, Kobylisy → Zdiby, Brnky
+      → 14:20 Zdiby, Holosmetky → Praha, Kobylisy
+      → 14:38 Zdiby, Brnky → Praha, Kobylisy
+      ← 17:35 Praha, Kobylisy → Zdiby, Brnky
+      → 17:58 Zdiby, Brnky → Praha, Kobylisy
+      ← 18:31 Praha, Kobylisy → Zdiby, Holosmetky
+[EACH WAY] 353 (353, 353 Brandýs, 353 Mstětice): 4 each way, 5 one way at Praha, Černý Most; off the pattern there:
+      → 12:54 Praha, Čertousy → Praha, Černý Most
+      → 14:55 Svémyslice → Praha, Černý Most
+      ← 15:28 Praha, Černý Most → Praha, Čertousy
+      ← 15:58 Praha, Černý Most → Praha, Čertousy
+      → 16:04 Praha, Čertousy → Praha, Černý Most
+      → 16:34 Praha, Čertousy → Praha, Černý Most
+      ← 16:58 Praha, Černý Most → Praha, Čertousy
+      ← 17:28 Praha, Černý Most → Praha, Čertousy
+[EACH WAY] 335 (335): 3 each way, 8 one way at Sulice, Želivec; off the pattern there:
+      ← 12:23 Praha, Budějovická → Kamenice, kulturní dům
+      → 13:16 Kamenice, kulturní dům → Praha, Budějovická
+      ← 13:34 Praha, Budějovická → Kamenice, kulturní dům
+      → 13:46 Kamenice, kulturní dům → Sulice, Želivec
+      ← 14:40 Praha, Budějovická → Kamenice, kulturní dům
+      ← 15:05 Praha, Budějovická → Kamenice, kulturní dům
+      ← 15:31 Praha, Budějovická → Kamenice, kulturní dům
+      → 16:06 Kamenice, kulturní dům → Sulice, Želivec
+      ← 16:33 Praha, Budějovická → Kamenice, kulturní dům
+      ← 17:52 Praha, Budějovická → Kamenice, kulturní dům
+[EACH WAY] 354 (354, 354 LE&CO, 354 Mochovská): 3 each way, 8 one way at Praha, Černý Most; off the pattern there:
+      → 12:41 Mochov → Praha, Černý Most
+      → 13:11 Mochov → Praha, Černý Most
+      ← 13:15 Praha, Černý Most → Mochov
+      → 13:41 Mochov → Praha, Černý Most
+      → 14:20 Jirny, LE&CO → Praha, Černý Most
+      → 14:41 Mochov → Praha, Černý Most
+      → 14:51 Mochov → Praha, Černý Most
+      ← 17:35 Praha, Černý Most → Nehvizdy, Mochovská
+      → 17:45 Mochov → Praha, Černý Most
+      → 18:13 Mochov → Praha, Černý Most
+      ← 18:15 Praha, Černý Most → Mochov
+[EACH WAY] 343 (343, 343 Zeleneč, 344): 3 each way, 4 one way at Nehvizdy, škola; off the pattern there:
+      → 13:15 Horoušany, u rybníka → Nehvizdy, škola
+      ← 13:30 Nehvizdy, škola → Horoušany, u rybníka
+      → 14:20 Horoušany, u rybníka → Nehvizdy, škola
+      ← 14:30 Nehvizdy, škola → Horoušany, u rybníka
+      → 15:20 Horoušany, u rybníka → Nehvizdy, škola
+      ← 15:30 Nehvizdy, škola → Horoušany, u rybníka
+[EACH WAY] 303 (303): 3 each way, 3 one way at Sibřina, škola; off the pattern there:
+      ← 12:57 Šestajovice, Za Stodolami → Křenice
+      → 13:04 Křenice → Praha, Černý Most
+      ← 13:33 Praha, Černý Most → Křenice
+      → 14:04 Křenice → Praha, Černý Most
+      ← 14:33 Praha, Černý Most → Křenice
+      → 15:04 Křenice → Praha, Černý Most
+[EACH WAY] 666 (666): 3 each way, 3 one way at Nový Vestec, u mostu; off the pattern there:
+      → 13:05 Brandýs n.L.-St.Bol., autobusové stanoviště → Káraný, pošta
+      ← 13:22 Káraný, pošta → Brandýs n.L.-St.Bol., autobusové stanoviště
+      → 14:05 Brandýs n.L.-St.Bol., autobusové stanoviště → Káraný, pošta
+      ← 14:22 Káraný, pošta → Brandýs n.L.-St.Bol., autobusové stanoviště
+      → 18:03 Brandýs n.L.-St.Bol., autobusové stanoviště → Káraný, pošta
+      ← 18:22 Káraný, pošta → Brandýs n.L.-St.Bol., autobusové stanoviště
+[EACH WAY] 670 (670): 3 each way, 3 one way at Hlavenec; off the pattern there:
+      ← 12:58 Brandýs n.L.-St.Bol., nádraží → Mečeříž
+      → 13:40 Kostelní Hlavno, u kostela → Brandýs n.L.-St.Bol., autobusové stanoviště
+      ← 14:01 Brandýs n.L.-St.Bol., nádraží → Sudovo Hlavno
+      → 14:28 Sudovo Hlavno → Brandýs n.L.-St.Bol., autobusové stanoviště
+      ← 18:05 Brandýs n.L.-St.Bol., autobusové stanoviště → Mečeříž
+      → 18:32 Mečeříž → Brandýs n.L.-St.Bol., autobusové stanoviště
+[ONE WAY] 373 (373): 2 each way, 5 one way at Úžice, Netřeba; off the pattern there:
+      → 12:50 Odolena Voda, Ke Stadionu → Praha, Kobylisy
+      ← 12:55 Praha, Kobylisy → Odolena Voda, Ke Stadionu
+      ← 13:55 Praha, Kobylisy → Odolena Voda, Ke Stadionu
+      ← 14:42 Praha, Kobylisy → Odolena Voda, Ke Stadionu
+      → 14:50 Odolena Voda, Ke Stadionu → Praha, Kobylisy
+      ← 16:12 Praha, Kobylisy → Odolena Voda, Ke Stadionu
+      ← 18:12 Praha, Kobylisy → Odolena Voda, Ke Stadionu
+[ONE WAY] 492 (492): 2 each way, 3 one way at Jevany, Bohumil; off the pattern there:
+      → 12:52 Černé Voděrady → Kostelec nad Černými lesy, náměstí
+      ← 13:04 Kostelec nad Černými lesy, náměstí → Černé Voděrady
+      ← 13:49 Kostelec nad Černými lesy, náměstí → Černé Voděrady
+      → 13:52 Černé Voděrady → Kostelec nad Černými lesy, náměstí
+      → 15:52 Černé Voděrady → Kostelec nad Černými lesy, náměstí
+[ONE WAY] 667 (667): 2 each way, 3 one way at Tuřice; off the pattern there:
+      ← 12:55 Horky nad Jizerou → Brandýs n.L.-St.Bol., nádraží
+      → 12:56 Brandýs n.L.-St.Bol., nádraží → Benátky nad Jizerou, autobusové stanoviště
+      → 13:56 Brandýs n.L.-St.Bol., nádraží → Benátky nad Jizerou, autobusové stanoviště
+      ← 14:57 Horky nad Jizerou → Brandýs n.L.-St.Bol., nádraží
+      ← 15:45 Benátky nad Jizerou, autobusové stanoviště → Brandýs n.L.-St.Bol., nádraží
+[ONE WAY] 374 (374): 1 each way, 4 one way at Klecany, Ahold; off the pattern there:
+      → 13:30 Praha, Kobylisy → Máslovice
+      → 14:00 Praha, Kobylisy → Máslovice
+      → 17:30 Praha, Kobylisy → Máslovice
+      → 18:00 Praha, Kobylisy → Máslovice
+[ONE WAY] 489 (489): 1 each way, 4 one way at Všestary, Menčice; off the pattern there:
+      ← 13:41 Všestary → Mnichovice, požární dům
+      → 14:33 Mnichovice, požární dům → Všestary
+      ← 15:34 Strančice, železniční stanice → Louňovice
+      ← 17:34 Strančice, železniční stanice → Louňovice
+      ← 18:34 Strančice, železniční stanice → Klokočná, náves
+[ONE WAY] 669 (669, 669 Mečeříž): 1 each way, 4 one way at Křenek; off the pattern there:
+      → 12:56 Brandýs n.L.-St.Bol., nádraží → Kostelní Hlavno, u kostela
+      → 13:56 Brandýs n.L.-St.Bol., nádraží → Mečeříž
+      → 15:35 Brandýs n.L.-St.Bol., autobusové stanoviště → Sudovo Hlavno
+      → 17:35 Brandýs n.L.-St.Bol., autobusové stanoviště → Sudovo Hlavno
+[ONE WAY] 302 (302, 302 Vinořská): 1 each way, 3 one way at Praha, U Vodojemu; off the pattern there:
+      ← 12:36 Veleň, u pomníku → Praha, Letňany
+      → 13:34 Praha, Letňany → Přezletice, Vinořská
+      ← 13:37 Veleň, u pomníku → Praha, Letňany
+      ← 14:04 Přezletice, Vinořská → Praha, Letňany
+[ONE WAY] 482 (482, 482 Rožkovo údolí): 1 each way, 3 one way at Kly, Krauzovna; off the pattern there:
+      → 14:22 Brandýs n.L.-St.Bol., Pražská → Mělník, autobusové nádraží
+      → 15:22 Brandýs n.L.-St.Bol., Pražská → Mělník, autobusové nádraží
+      → 16:22 Brandýs n.L.-St.Bol., Pražská → Mělník, autobusové nádraží
+[ONE WAY] 375 (375): 0 each way, 3 one way at Praha, Českomoravská; off the pattern there:
+      → 12:53 Brandýs n.L.-St.Bol., železniční stanice → Praha, Českomoravská
+      → 13:13 Brandýs n.L.-St.Bol., železniční stanice → Praha, Českomoravská
+      → 18:08 Brandýs n.L.-St.Bol., železniční stanice → Praha, Českomoravská
+======== pid-regional/oblasti/praha-zapad: 9 lines EACH WAY, 11 ONE WAY
+[EACH WAY] 359 (340 Masarykova, 359): 5 each way, 10 one way at Roztoky, rozcestí Žalov; off the pattern there:
+      ← 13:25 Praha, Suchdol → Roztoky, Maxmiliánka
+      → 13:34 Roztoky, nádraží [PZ] → Roztoky, Levý Hradec
+      ← 14:37 Roztoky, Levý Hradec → Roztoky, nádraží [PZ]
+      → 14:39 Roztoky, nádraží [PZ] → Roztoky, Levý Hradec
+      → 15:12 Roztoky, nádraží [PZ] → Roztoky, Levý Hradec
+      ← 15:39 Roztoky, Levý Hradec → Roztoky, nádraží [PZ]
+      → 15:43 Roztoky, nádraží [PZ] → Roztoky, Levý Hradec
+      → 16:13 Roztoky, nádraží [PZ] → Roztoky, Levý Hradec
+      ← 16:39 Roztoky, Levý Hradec → Roztoky, nádraží [PZ]
+      → 16:43 Roztoky, nádraží [PZ] → Roztoky, Levý Hradec
+      → 17:13 Roztoky, nádraží [PZ] → Roztoky, Levý Hradec
+      ← 17:41 Roztoky, Levý Hradec → Roztoky, nádraží [PZ]
+      → 17:43 Roztoky, nádraží [PZ] → Roztoky, Levý Hradec
+      → 18:13 Roztoky, nádraží [PZ] → Roztoky, Levý Hradec
+      → 18:42 Roztoky, nádraží [PZ] → Roztoky, Levý Hradec
+[EACH WAY] 444 (444): 5 each way, 8 one way at Kamenice, u Dvora; off the pattern there:
+      → 12:55 Jílové u Prahy, náměstí → Kamenice, kulturní dům
+      → 13:55 Jílové u Prahy, náměstí → Kamenice, kulturní dům
+      → 14:37 Jílové u Prahy, náměstí → Kamenice, kulturní dům
+      ← 14:59 Kamenice, kulturní dům → Davle, obec
+      ← 15:59 Kamenice, kulturní dům → Kamenice, Těptín
+      → 16:34 Jílové u Prahy, náměstí → Kamenice, kulturní dům
+      ← 16:59 Kamenice, kulturní dům → Kamenice, Těptín
+      → 17:04 Jílové u Prahy, náměstí → Kamenice, kulturní dům
+      ← 18:18 Kamenice, kulturní dům → Kamenice, Těptín
+      ← 18:44 Kamenice, kulturní dům → Jílové u Prahy, náměstí
+[EACH WAY] 356 (356, 356 Lichoceves, 356 Statenice, 356 Velká Brána): 4 each way, 7 one way at Statenice, Černý Vůl, hospoda; off the pattern there:
+      → 13:10 Praha, Bořislavka → Statenice
+      → 13:30 Praha, Bořislavka → Lichoceves
+      ← 13:30 Statenice → Praha, Bořislavka
+      ← 14:04 Lichoceves → Praha, Bořislavka
+      → 18:00 Praha, Bořislavka → Lichoceves
+      ← 18:04 Lichoceves → Praha, Bořislavka
+      → 18:24 Praha, Bořislavka → Praha, Obchodní centrum Ruzyně
+      ← 18:38 Statenice → Praha, Bořislavka
+[EACH WAY] 390 (390, 390 Štěchovice): 4 each way, 5 one way at Praha, Zbraslavské náměstí; off the pattern there:
+      ← 12:41 Štěchovice, Třebenice → Praha, Smíchovské nádraží
+      → 13:55 Praha, Smíchovské nádraží → Štěchovice
+      ← 13:55 Štěchovice → Praha, Smíchovské nádraží
+      ← 13:56 Štěchovice, Třebenice → Praha, Smíchovské nádraží
+      ← 14:35 Štěchovice → Praha, Smíchovské nádraží
+      → 14:35 Praha, Smíchovské nádraží → Štěchovice, Třebenice
+      → 16:35 Praha, Smíchovské nádraží → Štěchovice
+      ← 17:06 Štěchovice, Třebenice → Praha, Smíchovské nádraží
+      → 18:40 Praha, Smíchovské nádraží → Štěchovice, Třebenice
+[EACH WAY] 688 (688): 4 each way, 5 one way at Nový Knín, Starý Knín; off the pattern there:
+      → 12:35 Mníšek pod Brdy, náměstí → Dobříš, náměstí
+      ← 12:45 Dobříš, náměstí → Mníšek pod Brdy, náměstí
+      → 13:05 Mníšek pod Brdy, náměstí → Dobříš, náměstí
+      ← 13:35 Dobříš, náměstí → Mníšek pod Brdy, náměstí
+      → 14:42 Nový Knín → Dobříš, náměstí
+      ← 15:35 Dobříš, náměstí → Mníšek pod Brdy, náměstí
+      → 17:15 Mníšek pod Brdy, náměstí → Dobříš, náměstí
+      ← 18:05 Dobříš, náměstí → Mníšek pod Brdy, náměstí
+[EACH WAY] 418 (418): 4 each way, 4 one way at Praha, Stodůlky; off the pattern there:
+      → 13:25 Praha, Stodůlky → Jinočany, Logport
+      ← 14:10 Jinočany, Logport → Praha, Stodůlky
+      → 14:25 Praha, Stodůlky → Jinočany, Logport
+      ← 15:10 Jinočany, Logport → Praha, Stodůlky
+      → 15:25 Praha, Stodůlky → Jinočany, Logport
+      ← 18:10 Jinočany, Logport → Praha, Stodůlky
+      → 18:25 Praha, Stodůlky → Jinočany, Logport
+      ← 18:50 Jinočany, Logport → Praha, Stodůlky
+[EACH WAY] 340 (340, 340 Masarykova): 3 each way, 26 one way at Roztoky, u rybníčku; off the pattern there:
+      → 13:05 Praha, Dejvická → Roztoky, Levý Hradec
+      ← 13:49 Roztoky, Levý Hradec → Praha, Dejvická
+      → 13:55 Praha, Dejvická → Roztoky, Levý Hradec
+      ← 14:16 Roztoky, Levý Hradec → Praha, Dejvická
+      → 15:23 Praha, Dejvická → Roztoky, Přemyslovská
+      → 15:53 Praha, Dejvická → Roztoky, Přemyslovská
+      → 16:23 Praha, Dejvická → Roztoky, Přemyslovská
+      → 16:53 Praha, Dejvická → Roztoky, Přemyslovská
+      → 17:23 Praha, Dejvická → Roztoky, Přemyslovská
+      → 17:53 Praha, Dejvická → Roztoky, Přemyslovská
+      ← 18:18 Roztoky, Levý Hradec → Praha, Dejvická
+[EACH WAY] 447 (447): 3 each way, 5 one way at Mníšek pod Brdy, železniční stanice; off the pattern there:
+      ← 13:16 Mníšek pod Brdy, náměstí → Mníšek pod Brdy, železniční stanice
+      → 13:21 Mníšek pod Brdy, železniční stanice → Mníšek pod Brdy, náměstí
+      ← 15:29 Voznice, Chouzavá → Mníšek pod Brdy, železniční stanice
+      → 15:51 Mníšek pod Brdy, železniční stanice → Mníšek pod Brdy, náměstí
+      → 16:51 Mníšek pod Brdy, železniční stanice → Mníšek pod Brdy, náměstí
+      ← 18:30 Mníšek pod Brdy, náměstí → Mníšek pod Brdy, železniční stanice
+      → 18:36 Mníšek pod Brdy, železniční stanice → Mníšek pod Brdy, náměstí
+[EACH WAY] 449 (449): 3 each way, 4 one way at Řitka, hlavní silnice; off the pattern there:
+      ← 12:49 Mníšek pod Brdy, náměstí → Čisovice, Bojov
+      → 13:25 Čisovice, Bojov → Mníšek pod Brdy, náměstí
+      → 15:19 Jíloviště → Mníšek pod Brdy, náměstí
+      ← 16:05 Mníšek pod Brdy, náměstí → Jíloviště
+      ← 16:35 Mníšek pod Brdy, náměstí → Jíloviště
+      ← 17:20 Mníšek pod Brdy, náměstí → Čisovice, Bojov
+      → 17:55 Čisovice, Bojov → Mníšek pod Brdy, náměstí
+[ONE WAY] 320 (320): 2 each way, 4 one way at Praha, Smíchovské nádraží; off the pattern there:
+      ← 12:30 Mníšek pod Brdy, náměstí → Praha, Smíchovské nádraží
+      → 13:00 Praha, Smíchovské nádraží → Mníšek pod Brdy, Stříbrná Lhota
+      ← 13:21 Mníšek pod Brdy, Stříbrná Lhota → Praha, Smíchovské nádraží
+      → 14:40 Praha, Smíchovské nádraží → Mníšek pod Brdy, Stříbrná Lhota
+      → 16:40 Praha, Smíchovské nádraží → Mníšek pod Brdy, Stříbrná Lhota
+      → 18:40 Praha, Smíchovské nádraží → Mníšek pod Brdy, Stříbrná Lhota
+[ONE WAY] 336 (336): 2 each way, 4 one way at Praha, Zličín; off the pattern there:
+      ← 13:05 Praha, Zličín → Jeneč, Lidická
+      ← 13:29 Praha, Zličín → Jeneč, Lidická
+      → 13:43 Jeneč, Lidická → Praha, Zličín
+      ← 13:59 Praha, Zličín → Jeneč, Lidická
+      ← 14:28 Praha, Zličín → Jeneč, Lidická
+      → 14:39 Jeneč, Lidická → Praha, Zličín
+[ONE WAY] 310 (310): 2 each way, 3 one way at Tachlovice, Na vrškách; off the pattern there:
+      ← 13:31 Rudná, Zdrav.stř. → Praha, Zličín
+      ← 14:13 Nučice, Prokopská náves → Praha, Zličín
+      → 14:19 Praha, Zličín → Nučice, Prokopská náves
+      → 16:17 Praha, Zličín → Nučice, Prokopská náves
+      → 18:18 Praha, Zličín → Nučice, Prokopská náves
+[ONE WAY] 338 (338): 2 each way, 3 one way at Štěchovice; off the pattern there:
+      ← 12:53 Hradištko, zámek → Štěchovice
+      → 13:20 Praha, Smíchovské nádraží → Hradištko, Pikovice, most
+      → 13:25 Štěchovice → Hradištko, Pikovice, most
+      → 14:25 Praha, Smíchovské nádraží → Hradištko, Pikovice, most
+      ← 17:34 Hradištko, Pikovice, most → Praha, Smíchovské nádraží
+[ONE WAY] 446 (446): 2 each way, 3 one way at Mníšek pod Brdy, kaple; off the pattern there:
+      → 14:15 Kytín, náves → Mníšek pod Brdy, kaple
+      ← 14:22 Mníšek pod Brdy, kaple → Kytín, náves
+      → 14:34 Kytín, náves → Mníšek pod Brdy, kaple
+      ← 14:40 Mníšek pod Brdy, kaple → Kytín, náves
+      → 18:03 Dobříš, náměstí → Mníšek pod Brdy, náměstí
+[ONE WAY] 326 (326): 1 each way, 6 one way at Praha, Volha; off the pattern there:
+      ← 13:22 Praha, Volha → Jesenice, Belnická
+      ← 13:52 Praha, Volha → Jesenice, Belnická
+      ← 14:22 Praha, Volha → Jesenice, Belnická
+      ← 14:52 Praha, Volha → Jesenice, Belnická
+      ← 15:22 Praha, Volha → Jesenice, Belnická
+      ← 15:52 Praha, Volha → Jesenice, Belnická
+[ONE WAY] 748 (748): 1 each way, 5 one way at Mníšek pod Brdy, náměstí; off the pattern there:
+      ← 13:19 Mníšek pod Brdy, náměstí → Řitka
+      ← 14:19 Mníšek pod Brdy, náměstí → Řitka
+      ← 14:37 Mníšek pod Brdy, náměstí → Bratřínov
+      ← 15:19 Mníšek pod Brdy, náměstí → Řitka
+      ← 16:07 Mníšek pod Brdy, náměstí → Bratřínov
+      → 16:40 Bratřínov → Mníšek pod Brdy, náměstí
+[ONE WAY] 313 (313): 1 each way, 3 one way at Třebotov, sanatorium; off the pattern there:
+      ← 13:13 Praha, Nádraží Radotín → Choteč
+      ← 15:13 Praha, Nádraží Radotín → Choteč
+      ← 17:13 Praha, Nádraží Radotín → Choteč
+      → 18:33 Roblín → Praha, Nádraží Radotín
+[ONE WAY] 441 (441): 1 each way, 3 one way at Jílové u Prahy, učiliště; off the pattern there:
+      → 14:10 Jílové u Prahy, náměstí → Jílové u Prahy, Luka p.Medníkem, nádraží
+      ← 14:27 Jílové u Prahy, Luka p.Medníkem, nádraží → Jílové u Prahy, náměstí
+      → 17:50 Jílové u Prahy, náměstí → Jílové u Prahy, Luka p.Medníkem
+      → 18:50 Jílové u Prahy, náměstí → Jílové u Prahy, Luka p.Medníkem
+[ONE WAY] 664 (664): 1 each way, 3 one way at Vonoklasy, samoobsluha; off the pattern there:
+      → 15:56 Vonoklasy, samoobsluha → Černošice, železniční zastávka
+      → 17:56 Vonoklasy, samoobsluha → Černošice, železniční zastávka
+      → 18:57 Vonoklasy, samoobsluha → Černošice, železniční zastávka
+[ONE WAY] 445 (445, 445 Vrané): 0 each way, 3 one way at Jílové u Prahy, učiliště; off the pattern there:
+      → 13:45 Jílové u Prahy, náměstí → Vrané nad Vltavou, železniční stanice
+      → 14:45 Jílové u Prahy, náměstí → Březová-Oleško, Oleško
+      → 15:45 Jílové u Prahy, náměstí → Březová-Oleško, Oleško
+======== pid-regional/oblasti/pribramsko: 12 lines EACH WAY, 16 ONE WAY
+[EACH WAY] 502 (502, 502 Brod, 502 Žežice): 6 each way, 8 one way at Příbram, Československé armády; off the pattern there:
+      → 13:15 Příbram, Zdaboř, komerční zóna → Příbram, Svatá Hora
+      → 15:55 Příbram, Zdaboř, komerční zóna → Příbram, Svatá Hora
+      ← 16:20 Příbram, Svatá Hora → Příbram, Zdaboř, komerční zóna
+      → 16:25 Příbram, Zdaboř, komerční zóna → Příbram, Svatá Hora
+      ← 16:50 Příbram, Svatá Hora → Příbram, Zdaboř, komerční zóna
+      → 16:55 Příbram, Zdaboř, komerční zóna → Příbram, Svatá Hora
+      ← 17:20 Příbram, Svatá Hora → Příbram, Žežice
+      → 17:25 Příbram, Zdaboř, komerční zóna → Příbram, Svatá Hora
+      ← 17:50 Příbram, Svatá Hora → Příbram, Zdaboř, komerční zóna
+      → 17:50 Příbram, Žežice → Příbram, Svatá Hora
+      ← 18:20 Příbram, Svatá Hora → Příbram, Zdaboř, komerční zóna
+      → 18:25 Příbram, Zdaboř, komerční zóna → Příbram, Svatá Hora
+      ← 18:50 Příbram, Svatá Hora → Příbram, Zdaboř, komerční zóna
+[EACH WAY] 395 (393, 395): 6 each way, 7 one way at Příbram, Březové Hory; off the pattern there:
+      → 11:55 Praha, Smíchovské nádraží → Příbram, Březové Hory
+      → 12:35 Praha, Smíchovské nádraží → Příbram, Březové Hory
+      → 12:55 Praha, Smíchovské nádraží → Příbram, Březové Hory
+      ← 13:07 Příbram, Březové Hory → Praha, Smíchovské nádraží
+      ← 13:19 Příbram, Březové Hory → Praha, Smíchovské nádraží
+      ← 13:31 Příbram, Březové Hory → Praha, Smíchovské nádraží
+      → 13:55 Praha, Smíchovské nádraží → Příbram, Březové Hory
+      → 14:15 Praha, Smíchovské nádraží → Příbram, Březové Hory
+      ← 14:21 Příbram, Březové Hory → Praha, Smíchovské nádraží
+      ← 14:51 Příbram, Březové Hory → Praha, Smíchovské nádraží
+      ← 15:11 Příbram, Březové Hory → Praha, Smíchovské nádraží
+      ← 15:31 Příbram, Březové Hory → Praha, Smíchovské nádraží
+      → 15:35 Praha, Smíchovské nádraží → Příbram, Březové Hory
+[EACH WAY] 501 (501, 501 Bytíz): 6 each way, 7 one way at Příbram, pod Kaňkou; off the pattern there:
+      ← 13:35 Dubno, učiliště → Příbram, Šachetní
+      → 13:35 Příbram, Šachetní → Dubno, učiliště
+      ← 14:00 Dubno, učiliště → Příbram, Šachetní
+      → 14:05 Příbram, Šachetní → Příbram, Bytíz, věznice
+      ← 14:37 Příbram, Bytíz, věznice → Příbram, Šachetní
+      → 16:45 Příbram, Šachetní → Dubno, učiliště
+      ← 17:10 Dubno, učiliště → Příbram, Šachetní
+      → 17:45 Příbram, Šachetní → Příbram, Bytíz, věznice
+      → 18:05 Příbram, Šachetní → Dubno, učiliště
+      ← 18:12 Příbram, Bytíz, věznice → Příbram, Šachetní
+      → 18:40 Příbram, Šachetní → Příbram, Jiráskovy sady
+      ← 18:45 Dubno, učiliště → Příbram, Šachetní
+[EACH WAY] 360 (360): 5 each way, 6 one way at Praha, Smíchovské nádraží; off the pattern there:
+      ← 11:45 Sedlčany, autobusové stanoviště → Praha, Smíchovské nádraží
+      ← 12:45 Sedlčany, autobusové stanoviště → Praha, Smíchovské nádraží
+      ← 13:35 Sedlčany, autobusové stanoviště → Praha, Smíchovské nádraží
+      → 14:15 Praha, Smíchovské nádraží → Sedlčany, autobusové stanoviště
+      ← 14:20 Sedlčany, autobusové stanoviště → Praha, Smíchovské nádraží
+      → 15:15 Praha, Smíchovské nádraží → Sedlčany, autobusové stanoviště
+      ← 15:20 Sedlčany, autobusové stanoviště → Praha, Smíchovské nádraží
+      → 16:15 Praha, Smíchovské nádraží → Sedlčany, autobusové stanoviště
+      → 17:15 Praha, Smíchovské nádraží → Sedlčany, autobusové stanoviště
+      → 18:15 Praha, Smíchovské nádraží → Sedlčany, autobusové stanoviště
+      → 18:55 Praha, Smíchovské nádraží → Sedlčany, autobusové stanoviště
+[EACH WAY] 505 (505): 4 each way, 5 one way at Příbram, Orlov, kaplička; off the pattern there:
+      ← 13:05 Příbram, Kozičín → Příbram, Orlov
+      → 13:45 Příbram, Orlov → Příbram, Kozičín
+      ← 14:15 Příbram, Kozičín → Příbram, Orlov
+      → 14:50 Příbram, Orlov → Příbram, Kozičín
+      ← 15:20 Příbram, Kozičín → Příbram, Orlov
+      ← 17:24 Příbram, autobusové nádraží (ul. Čs.armády) → Příbram, Orlov
+      → 17:40 Příbram, Orlov → Příbram, Kozičín
+      ← 18:10 Příbram, Kozičín → Příbram, Orlov
+      → 18:43 Příbram, Orlov → Příbram, K Podlesí
+[EACH WAY] 392 (392, 392 Dobříš, 392 Žírovy): 3 each way, 4 one way at Voznice, polesí; off the pattern there:
+      → 14:05 Praha, Smíchovské nádraží → Dobříš, náměstí
+      ← 14:46 Dobříš, náměstí → Praha, Smíchovské nádraží
+      → 15:05 Praha, Smíchovské nádraží → Dobříš, náměstí
+      → 18:05 Praha, Smíchovské nádraží → Dobříš, náměstí
+      ← 18:10 Dobříš, náměstí → Praha, Smíchovské nádraží
+      ← 18:50 Dobříš, náměstí → Praha, Smíchovské nádraží
+[EACH WAY] 454 (454, 454 Sedlec-Prčice): 3 each way, 4 one way at Nedrahovice, Úklid; off the pattern there:
+      → 12:45 Tábor, autobusové nádraží → Sedlčany, autobusové stanoviště
+      → 13:45 Tábor, autobusové nádraží → Sedlčany, autobusové stanoviště
+      ← 14:20 Sedlčany, autobusové stanoviště → Tábor, autobusové nádraží
+      → 14:50 Tábor, autobusové nádraží → Sedlčany, autobusové stanoviště
+      ← 15:20 Sedlčany, autobusové stanoviště → Tábor, autobusové nádraží
+      → 16:40 Sedlec-Prčice, náměstí → Sedlčany, autobusové stanoviště
+      ← 18:20 Sedlčany, autobusové stanoviště → Tábor, autobusové nádraží
+[EACH WAY] 472 (472, 472 Strakonice): 3 each way, 4 one way at Třebsko; off the pattern there:
+      → 13:49 Třebsko → Příbram, autobusové nádraží
+      ← 14:00 Příbram, autobusové nádraží → Březnice, autobusové stanoviště
+      → 14:00 Březnice, autobusové stanoviště → Příbram, autobusové nádraží
+      ← 14:45 Příbram, autobusové nádraží → Uzenice
+      → 14:55 Březnice, autobusové stanoviště → Příbram, autobusové nádraží
+      ← 15:40 Příbram, autobusové nádraží → Uzenice
+      ← 17:19 Příbram, Jiráskovy sady → Březnice, autobusové stanoviště
+[EACH WAY] 511 (511, 511 Hořejany): 3 each way, 4 one way at Tochovice, železniční stanice; off the pattern there:
+      → 12:35 Příbram, autobusové nádraží → Březnice, autobusové stanoviště
+      ← 12:45 Březnice, autobusové stanoviště → Příbram, autobusové nádraží
+      → 13:20 Tochovice, ObÚ → Chraštice
+      ← 13:54 Chraštice → Příbram, autobusové nádraží
+      ← 17:05 Březnice, autobusové stanoviště → Tochovice, ObÚ
+      → 17:30 Tochovice, ObÚ → Březnice, autobusové stanoviště
+      ← 18:02 Chraštice → Tochovice, ObÚ
+[EACH WAY] 495 (495, 495 Mirovice, 495 Nepomuk, 495 Pňovice): 3 each way, 3 one way at Březnice, autobusové stanoviště; off the pattern there:
+      → 14:05 Počaply → Březnice, autobusové stanoviště
+      ← 15:55 Nepomuk, sídliště → Březnice, autobusové stanoviště
+      → 16:00 Mirovice, náměstí → Březnice, autobusové stanoviště
+      ← 16:10 Rožmitál pod Třemšínem, autobusové stanoviště → Březnice, autobusové stanoviště
+      → 17:35 Březnice, autobusové stanoviště → Rožmitál pod Třemšínem, autobusové stanoviště
+      ← 17:45 Březnice, autobusové stanoviště → Mirovice, náměstí
+[EACH WAY] 509 (509): 3 each way, 3 one way at Trhové Dušníky, Litavka; off the pattern there:
+      ← 14:02 Příbram, Jiráskovy sady → Trhové Dušníky
+      → 15:37 Trhové Dušníky → Láz, Horní
+      ← 16:42 Láz, Horní → Trhové Dušníky
+      → 17:17 Trhové Dušníky → Láz, Horní
+      ← 17:58 Láz, Horní → Trhové Dušníky
+      → 18:37 Trhové Dušníky → Příbram, autobusové nádraží (ul. Čs.armády)
+[EACH WAY] 520 (520, 520 Kamýk): 3 each way, 3 one way at Svaté Pole, u kostela; off the pattern there:
+      ← 12:55 Dobříš, náměstí → Hřiměždice, Vestec
+      → 13:31 Hřiměždice, Vestec → Dobříš, náměstí
+      ← 14:05 Dobříš, náměstí → Daleké Dušníky
+      → 14:22 Daleké Dušníky → Dobříš, náměstí
+      ← 15:55 Dobříš, náměstí → Hřiměždice, Vestec
+      → 18:05 Hřiměždice, Vestec → Dobříš, náměstí
+[ONE WAY] 361 (361): 2 each way, 6 one way at Dobříš, železniční stanice; off the pattern there:
+      → 12:47 Nový Knín → Dobříš, náměstí
+      ← 13:55 Dobříš, náměstí → Stará Huť, Karla Čapka
+      ← 14:35 Dobříš, náměstí → Nový Knín
+      → 15:47 Nový Knín → Dobříš, náměstí
+      ← 16:15 Dobříš, náměstí → Praha, Smíchovské nádraží
+      ← 16:40 Dobříš, náměstí → Nový Knín
+      ← 17:45 Dobříš, náměstí → Praha, Smíchovské nádraží
+      ← 18:40 Dobříš, náměstí → Nový Knín
+[ONE WAY] 407 (407): 2 each way, 4 one way at Praha, Smíchovské nádraží; off the pattern there:
+      ← 13:00 Praha, Smíchovské nádraží → Písek, autobusové nádraží
+      ← 14:00 Praha, Smíchovské nádraží → Prachatice, autobusové nádraží
+      → 15:00 Písek, autobusové nádraží → Praha, Smíchovské nádraží
+      ← 15:10 Praha, Smíchovské nádraží → Milín
+      ← 17:35 Praha, Smíchovské nádraží → Písek, autobusové nádraží
+[ONE WAY] 471 (471, 471 Klučenice): 2 each way, 4 one way at Solenice; off the pattern there:
+      → 13:35 Příbram, autobusové nádraží → Klučenice
+      → 15:15 Příbram, autobusové nádraží → Solenice
+      ← 15:30 Klučenice → Solenice
+      → 15:55 Milín → Milevsko, autobusové stanoviště
+      ← 17:50 Solenice → Příbram, autobusové nádraží
+      → 17:52 Solenice → Klučenice
+[ONE WAY] 521 (521, 521 Věšín): 2 each way, 4 one way at Příbram, Jiráskovy sady; off the pattern there:
+      → 13:34 Příbram, Jiráskovy sady → Věšín, Buková
+      → 16:34 Příbram, Jiráskovy sady → Rožmitál pod Třemšínem, autobusové stanoviště
+      → 17:34 Příbram, Jiráskovy sady → Věšín, Buková
+      → 18:34 Příbram, Jiráskovy sady → Rožmitál pod Třemšínem, autobusové stanoviště
+[ONE WAY] 514 (514): 2 each way, 3 one way at Svaté Pole, Budínek; off the pattern there:
+      → 13:30 Županovice → Dobříš, náměstí
+      ← 13:40 Dobříš, náměstí → Drevníky
+      ← 15:00 Dobříš, náměstí → Županovice
+      → 15:40 Županovice → Dobříš, náměstí
+      ← 18:15 Dobříš, náměstí → Županovice
+[ONE WAY] 515 (515): 2 each way, 3 one way at Nečín, Lipiny, rozcestí; off the pattern there:
+      → 13:08 Borotice, Čelina → Nečín
+      ← 13:25 Nečín → Borotice, Čelina
+      → 13:53 Borotice, Čelina → Příbram, autobusové nádraží
+      ← 14:40 Příbram, autobusové nádraží → Borotice, Čelina
+      ← 17:40 Příbram, autobusové nádraží → Hřiměždice, Vestec
+[ONE WAY] 478 (478, 478 Chraštice): 1 each way, 6 one way at Zbenice; off the pattern there:
+      ← 12:55 Příbram, autobusové nádraží → Mirovice, náměstí
+      → 13:36 Chraštice → Zbenice
+      ← 13:40 Zbenice → Chraštice
+      ← 14:45 Příbram, autobusové nádraží → Mirovice, náměstí
+      ← 16:35 Příbram, autobusové nádraží → Mirovice, náměstí
+      ← 17:25 Příbram, autobusové nádraží → Chraštice
+      ← 18:25 Příbram, autobusové nádraží → Mirovice, náměstí
+[ONE WAY] 508 (508): 1 each way, 4 one way at Příbram, Šachetní; off the pattern there:
+      ← 13:00 Příbram, Svatá Hora → Příbram, Svatá Hora
+      ← 13:40 Příbram, Svatá Hora → Příbram, Šachetní
+      ← 14:00 Příbram, Svatá Hora → Příbram, Svatá Hora
+      → 14:38 Příbram, Jiráskovy sady → Příbram, Svatá Hora
+      ← 15:40 Příbram, Svatá Hora → Příbram, Svatá Hora
+[ONE WAY] 450 (450, 450 Milevsko, 450 Obděnice): 1 each way, 3 one way at Nechvalice, Bratříkovice, rozcestí; off the pattern there:
+      ← 13:15 Sedlčany, autobusové stanoviště → Petrovice [PB 2]
+      ← 17:30 Sedlčany, autobusové stanoviště → Petrovice [PB 2]
+      ← 18:15 Sedlčany, autobusové stanoviště → Milevsko, autobusové stanoviště
+[ONE WAY] 500 (500, 500 Solenice): 1 each way, 3 one way at Krásná Hora nad Vltavou; off the pattern there:
+      → 13:45 Příbram, autobusové nádraží → Petrovice [PB 2]
+      → 15:16 Jablonná, Horní Hbity → Krásná Hora nad Vltavou
+      → 16:25 Krásná Hora nad Vltavou → Petrovice [PB 2]
+[ONE WAY] 506 (506, 506 Zavržice): 1 each way, 3 one way at Příbram, Žižkova; off the pattern there:
+      ← 14:05 Příbram, Svatá Hora areál → Příbram, Zdaboř, Červená
+      ← 15:20 Příbram, Svatá Hora areál → Příbram, Zdaboř, Červená
+      ← 18:05 Příbram, Svatá Hora areál → Příbram, Zavržice
+[ONE WAY] 507 (507): 1 each way, 3 one way at Příbram, Zdaboř, Žežická; off the pattern there:
+      ← 13:13 Příbram, Slivických bojovníků → Příbram, Kovohutě
+      → 14:18 Příbram, Kovohutě → Příbram, Jiráskovy sady
+      → 14:40 Příbram, Kovohutě → Příbram, Zdaboř, Žežická
+      → 15:53 Příbram, Zdaboř, Žežická → Příbram, Jiráskovy sady
+[ONE WAY] 519 (519): 1 each way, 3 one way at Votice, železniční stanice; off the pattern there:
+      ← 13:20 Sedlčany, autobusové stanoviště → Votice, autobusové stanoviště
+      ← 14:00 Sedlčany, autobusové stanoviště → Votice, autobusové stanoviště
+      ← 15:05 Sedlčany, autobusové stanoviště → Votice, autobusové stanoviště
+[ONE WAY] 754 (754, 754 Sestrouň): 1 each way, 3 one way at Višňová, rozcestí; off the pattern there:
+      → 12:20 Benešov, Terminál → Příbram, autobusové nádraží
+      ← 13:20 Příbram, autobusové nádraží → Sedlčany, autobusové stanoviště
+      → 13:30 Benešov, Terminál → Příbram, autobusové nádraží
+      → 14:30 Benešov, Terminál → Příbram, autobusové nádraží
+[ONE WAY] 393 (393): 0 each way, 14 one way at Praha, Smíchovské nádraží; off the pattern there:
+      → 13:05 Praha, Smíchovské nádraží → Příbram, Drkolnov
+      → 13:25 Praha, Smíchovské nádraží → Příbram, Drkolnov
+      → 13:45 Praha, Smíchovské nádraží → Příbram, Drkolnov
+      → 14:05 Praha, Smíchovské nádraží → Příbram, Drkolnov
+      → 14:25 Praha, Smíchovské nádraží → Příbram, Drkolnov
+      → 14:45 Praha, Smíchovské nádraží → Příbram, Drkolnov
+      → 15:30 Praha, Smíchovské nádraží → Příbram, Jiráskovy sady
+      → 15:45 Praha, Smíchovské nádraží → Příbram, Jiráskovy sady
+      → 16:30 Praha, Smíchovské nádraží → Příbram, Jiráskovy sady
+      → 16:45 Praha, Smíchovské nádraží → Příbram, Jiráskovy sady
+      → 17:30 Praha, Smíchovské nádraží → Příbram, Jiráskovy sady
+      → 17:45 Praha, Smíchovské nádraží → Příbram, Jiráskovy sady
+      → 18:30 Praha, Smíchovské nádraží → Příbram, Březové Hory
+      → 18:45 Praha, Smíchovské nádraží → Příbram, Březové Hory
+[ONE WAY] 319 (319): 0 each way, 5 one way at Praha, Smíchovské nádraží; off the pattern there:
+      ← 13:03 Dobříš, náměstí → Praha, Smíchovské nádraží
+      ← 14:01 Příbram, Březové Hory → Praha, Smíchovské nádraží
+      ← 14:43 Mníšek pod Brdy, u Šibence → Praha, Smíchovské nádraží
+      ← 15:06 Příbram, Drkolnov → Praha, Smíchovské nádraží
+      ← 16:00 Příbram, Drkolnov → Praha, Smíchovské nádraží
+======== pid-regional/oblasti/rakovnicko: 2 lines EACH WAY, 9 ONE WAY
+[EACH WAY] 304 (304): 7 each way, 11 one way at Stochov, Slovanka II; off the pattern there:
+      → 12:30 Rakovník, autobusové stanoviště → Praha, Vypich
+      ← 12:48 Praha, Kukulova → Rakovník, autobusové stanoviště
+      → 13:00 Rakovník, autobusové stanoviště → Praha, Vypich
+      ← 13:18 Praha, Kukulova → Rakovník, autobusové stanoviště
+      → 13:20 Rakovník, autobusové stanoviště → Praha, Zličín
+      → 13:40 Rakovník, autobusové stanoviště → Praha, Vypich
+      ← 14:08 Praha, Kukulova → Rakovník, autobusové stanoviště
+      → 14:20 Rakovník, autobusové stanoviště → Praha, Vypich
+      ← 14:38 Praha, Kukulova → Rakovník, autobusové stanoviště
+      → 15:00 Rakovník, autobusové stanoviště → Praha, Vypich
+      → 15:24 Stochov, Slovanka II → Praha, Vypich
+      ← 16:28 Praha, Kukulova → Rakovník, autobusové stanoviště
+      ← 16:30 Praha, Zličín → Stochov, Slovanka II
+      ← 18:05 Praha, Kukulova → Rakovník, autobusové stanoviště
+[EACH WAY] 711 (711, 711 Domoušice): 3 each way, 3 one way at Třeboc; off the pattern there:
+      ← 12:25 Louny, Luna → Rakovník, železniční zastávka západ
+      → 13:00 Rakovník, autobusové stanoviště → Louny, autobusové nádraží
+      ← 15:00 Louny, autobusové nádraží → Třeboc
+      → 16:00 Třeboc → Louny, autobusové nádraží
+      → 17:30 Rakovník, autobusové stanoviště → Louny, autobusové nádraží
+      ← 17:30 Louny, autobusové nádraží → Třeboc
+[ONE WAY] 561 (561, 581 Senomaty): 2 each way, 6 one way at Rakovník, autobusové stanoviště; off the pattern there:
+      → 12:45 Rakovník, Šamotka → Senomaty
+      → 13:00 Rakovník, střelnice → Rakovník, hasičský záchr.sbor
+      → 14:00 Rakovník, autobusové stanoviště → Senomaty, Nouzov
+      ← 14:40 Senomaty, Nouzov → Rakovník, Šamotka
+      → 15:10 Rakovník, Šamotka → Petrovice [PB 1]
+      ← 15:13 Senomaty → Rakovník, autobusové stanoviště
+      → 15:16 Rakovník, střelnice → Rakovník, autobusové stanoviště
+      → 16:30 Rakovník, autobusové stanoviště → Řeřichy
+[ONE WAY] 562 (562, 562 Lubná): 2 each way, 5 one way at Rakovník, autobusové stanoviště; off the pattern there:
+      ← 13:48 Rakovník, hasičský záchr.sbor → Lubná, závod
+      → 14:24 Lubná, závod → Rakovník, autobusové stanoviště
+      → 14:50 Rakovník, garáže Transdev Stř.Č. → Rakovník, střelnice
+      ← 15:00 Rakovník, autobusové stanoviště → Rakovník, garáže Transdev Stř.Č.
+      ← 15:52 Rakovník, hasičský záchr.sbor → Rakovník, autobusové stanoviště
+      ← 16:31 Olešná [RA] → Rakovník, garáže Transdev Stř.Č.
+      ← 17:45 Rakovník, autobusové stanoviště → Rakovník, garáže Transdev Stř.Č.
+[ONE WAY] 575 (575): 2 each way, 4 one way at Všetaty, rozcestí Lašovice; off the pattern there:
+      ← 12:26 Zvíkovec → Rakovník, autobusové stanoviště
+      ← 13:53 Slabce, pošta → Rakovník, autobusové stanoviště
+      → 15:00 Rakovník, autobusové stanoviště → Pavlíkov, Tytry
+      ← 15:36 Pavlíkov, Tytry → Rakovník, autobusové stanoviště
+      → 16:00 Rakovník, autobusové stanoviště → Slabce, pošta
+      ← 17:50 Slabce, Kostelík → Rakovník, autobusové stanoviště
+[ONE WAY] 584 (584, 584 Vinařice): 2 each way, 3 one way at Rakovník, rozcestí Cikánka; off the pattern there:
+      ← 13:00 Mutějovice, Lhota p.Džbánem → Rakovník, autobusové stanoviště
+      → 15:30 Rakovník, autobusové stanoviště → Mutějovice, Lhota p.Džbánem
+      → 16:30 Rakovník, autobusové stanoviště → Mutějovice
+      ← 16:51 Krupá, Šustna → Rakovník, autobusové stanoviště
+      ← 18:51 Krupá, Šustna → Rakovník, autobusové stanoviště
+[ONE WAY] 404 (404): 1 each way, 5 one way at Ruda, u rybníka; off the pattern there:
+      → 14:10 Praha, Zličín → Kralovice
+      → 15:10 Praha, Zličín → Rakovník, Plzeňská
+      → 16:10 Praha, Zličín → Rakovník, autobusové stanoviště
+      → 17:10 Praha, Zličín → Rakovník, Plzeňská
+      → 18:10 Praha, Zličín → Rakovník, Plzeňská
+[ONE WAY] 415 (415, 415 Žatec): 1 each way, 5 one way at Praha, Zličín; off the pattern there:
+      ← 13:05 Praha, Zličín → Kadaň, autobusové nádraží
+      → 13:47 Kadaň, autobusové nádraží → Praha, Zličín
+      ← 14:15 Praha, Zličín → Kadaň, autobusové nádraží
+      ← 14:40 Praha, Zličín → Kadaň, autobusové nádraží
+      ← 17:00 Praha, Zličín → Kadaň, autobusové nádraží
+      ← 18:40 Praha, Zličín → Kadaň, autobusové nádraží
+[ONE WAY] 560 (560, 560 Kolešovice): 1 each way, 3 one way at Rakovník, Čs.legií; off the pattern there:
+      ← 12:34 Hořovičky → Rakovník, autobusové stanoviště
+      ← 14:02 Hořovičky → Rakovník, autobusové stanoviště
+      → 14:45 Rakovník, autobusové stanoviště → Kryry, Strojetice, křižovatka
+      ← 18:00 Hořovičky → Rakovník, autobusové stanoviště
+[ONE WAY] 576 (576): 1 each way, 3 one way at Všetaty, rozcestí; off the pattern there:
+      → 13:30 Rakovník, autobusové stanoviště → Slabce, pošta
+      → 15:30 Rakovník, autobusové stanoviště → Slabce, pošta
+      → 16:30 Rakovník, autobusové stanoviště → Skryje
+[ONE WAY] 760 (760): 0 each way, 5 one way at Vroutek, Kryrská; off the pattern there:
+      ← 13:04 Podbořany, autobusové nádraží → Rakovník, autobusové stanoviště
+      ← 14:04 Podbořany, autobusové nádraží → Rakovník, autobusové stanoviště
+      ← 15:04 Podbořany, autobusové nádraží → Rakovník, autobusové stanoviště
+      ← 17:07 Podbořany, autobusové nádraží → Rakovník, autobusové stanoviště
+      ← 18:04 Podbořany, autobusové nádraží → Rakovník, autobusové stanoviště

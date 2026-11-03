@@ -7,7 +7,7 @@
     "Zbečno, Újezd nad Zbečnem",
     "Roztoky, závod"
    ],
-   "note": "Kladno, autobusové nádraží – Kamenné Žehrovice – Žilina – Lhota – Bratronice – Běleč – Sýkořice – Zbečno (– Újezd nad Zbečnem / – Křivoklát – Roztoky, závod). Hourly in the afternoon: Kladno :35 (14:35 – 18:35; 16:05 extra; 13:35 to Roztoky), and at Zbečno, železniční stanice towards Kladno :44 / :48 (13:48 and 15:44 are trips from Újezd nad Zbečnem, 4 min before; 14:48, 16:44, 17:48, 18:48 start at Zbečno). Modelled at 16:00: the busiest stretch (14:00 – 16:00) is the Běleč, Újezd and Roztoky shorts, whose stops are on 555. The game line turns at Újezd nad Zbečnem (as the 15:40 does), timed from the knot at Zbečno. 555 Roztoky is the one bus that runs on through Křivoklát to Roztoky, závod (13:35, back 14:50 to Zbečno); it is the only service of Zbečno, u hřbitova and Zbečno, Novina. Off the pattern: Kladno 16:05; Zbečno 14:48, 17:48, 18:48 (4 min from :44). Listed: Kladno – Běleč 14:05, Běleč 14:38 – Kladno; the Zbečno – Újezd shuttles (12:50, 15:30).",
+   "note": "Kladno, autobusové nádraží – Kamenné Žehrovice – Žilina – Lhota – Bratronice – Běleč – Sýkořice – Zbečno (– Újezd nad Zbečnem / – Křivoklát – Roztoky, závod). Hourly in the afternoon: Kladno :35 (14:35 – 18:35; 16:05 extra; 13:35 to Roztoky), and at Zbečno, železniční stanice towards Kladno :44 / :48 (13:48 and 15:44 are trips from Újezd nad Zbečnem, 4 min before; 14:48, 16:44, 17:48, 18:48 start at Zbečno). Modelled at 16:00: the busiest stretch (14:00 – 16:00) is the Běleč, Újezd and Roztoky shorts, whose stops are on 555. The game line turns at Újezd nad Zbečnem (as the 15:40 does), timed from the knot at Zbečno. 555 Roztoky is the one bus that runs on through Křivoklát to Roztoky, závod (13:35, back 14:50 to Zbečno); it is the only service of Zbečno, u hřbitova and Zbečno, Novina. Off the pattern: Kladno 16:05, 12:45 (the midday phase, 10 min off; it passes Žilina after 13:00); Zbečno 14:48, 17:48, 18:48 (4 min from :44) and 12:58 (14 min off). Listed: Kladno – Běleč 14:05, Běleč 14:38 – Kladno; the Zbečno – Újezd shuttles (12:50, 15:30).",
    "anchor": "16:00",
    "sim": [
     {
@@ -282,7 +282,7 @@
     "Hobšovice, I",
     "Velvary, železniční stanice"
    ],
-   "note": "Slaný – Žižice – Hobšovice – Černuc – Velvary. Slaný every 2 h at odd hours :11 (13:11, 15:11, 17:11; 11:33 before); Velvary hourly :55 from 14:55 to 16:55 (13:01 before). Every 120 both ways on the round of one bus: Slaný 15:11 → Velvary 15:45, back 15:55 (10 min turn); keeping 16:55 instead of 15:55 would need a second bus. Off the pattern: Velvary 13:01, 14:55, 16:55. Listed: the Velvary – Hobšovice shorts (14:01, 18:55).",
+   "note": "Slaný – Žižice – Hobšovice – Černuc – Velvary. Slaný every 2 h at odd hours :11 (13:11, 15:11, 17:11; 11:33 before); Velvary hourly :55 from 14:55 to 16:55 (13:01 before). Every 120 both ways on the round of one bus: Slaný 15:11 → Velvary 15:45, back 15:55 (10 min turn); keeping 16:55 instead of 15:55 would need a second bus. Off the pattern: Velvary 13:01 (the back of the Slaný 11:33), 14:55 (after the Velvary – Hobšovice 14:01) and 16:55 (a bus that comes in on the 596 trip from Straškov). Listed: the Velvary – Hobšovice shorts (14:01, 18:55).",
    "sim": [
     {
      "name": "593",
@@ -1159,7 +1159,7 @@
        ]
       }
      ],
-     "why": "Libčice, Letky :12 / Slaný, gymnázium :40, every 60, via Holubice, Zákolany, Koleč, Želenice and Knovíz; back via Slaný, Netovice."
+     "why": "Libčice, Letky :12 / Slaný, gymnázium :40, every 60, via Holubice, Zákolany, Koleč, Želenice and Knovíz; back via Slaný, Netovice as the 13:46 and 15:40 run; the 12:35, 14:40 and 16:40 take Brandýsek and Třebusice instead (stops on 620 and 342)."
     }
    ]
   },
@@ -1171,7 +1171,7 @@
     "Chyňava, u Jonášů",
     "Beroun, Jarov, náves"
    ],
-   "note": "Kladno – Pletený Újezd – Braškov – Kyšice – Unhošť – Malé Kyšice – Chyňava – Železná – Lhotka – Beroun, Jarov. Every 30, timed at Unhošť, náměstí at :17 / :47 both ways (12:47 – 18:47): Kladno :13 and :39 / :43 (the :39 trips via Braškov, Valdek, 4 min longer), Beroun :18 – :25 and :49 – :52 by four paths in Chyňava. One Simutrans line every 60 that goes round twice with different paths, so the variant villages stay on it: out at :13 direct and at :39 via Braškov, Valdek and Chyňava, Libečov (as the 14:39); back via Chyňava, Malé Přílepy (as the 15:50 and 16:50) and via Chyňava, sídliště (as the 15:18). Off the pattern: none at Unhošť 13:17 – 18:47; listed (stops on 630): Kladno – Malé Kyšice 17:43, 18:43; Kladno – Železná 16:39 (read at Chyňava, it fills its slot); Beroun 17:55 – Unhošť.",
+   "note": "Kladno – Pletený Újezd – Braškov – Kyšice – Unhošť – Malé Kyšice – Chyňava – Železná – Lhotka – Beroun, Jarov. Every 30, timed at Unhošť, náměstí at :17 / :47 both ways (12:47 – 18:47): Kladno :13 and :39 / :43 (the :39 trips via Braškov, Valdek, 4 min longer), Beroun :18 – :25 and :49 – :52 by four paths in Chyňava. One Simutrans line every 60 that goes round twice with different paths, so the variant villages stay on it: out at :13 direct and at :39 via Braškov, Valdek and Chyňava, Libečov (as the 14:39); back via Chyňava, Malé Přílepy (as the 15:50 and 16:50) and via Chyňava, sídliště (as the 15:18). Off the pattern: none at Unhošť 13:17 – 18:47; listed (stops on 630): Kladno – Malé Kyšice 17:43, 18:43; Kladno – Železná 16:39 (read at Chyňava, it fills its slot); Beroun 17:55 – Unhošť. The Kladno trips 12:13 – 14:13 and the Beroun trips back to 15:18 also pass Chyňava, Lhotka u Berouna, náves; the game line serves it on the way back and skips it on the way out, as the trips after 15:30 do.",
    "sim": [
     {
      "name": "630",
@@ -1272,7 +1272,7 @@
     "Brandýsek",
     "Praha, Nádraží Veleslavín"
    ],
-   "note": "Slaný, železniční stanice – Slaný, autobusové nádraží – Knovíz – Pchery – Brandýsek – Stehelčeves – Praha, Nádraží Veleslavín. Hourly all day: Slaný :09 (14:39 extra), Nádraží Veleslavín :32, exact. The 13:09, 14:09 and 16:09 from Slaný run via Středokluky, Kněževes and Tuchoměřice (12 min longer); their stops are on 322, 414 and 429. The Nádraží Veleslavín – Knovíz shorts (15:02, 16:02, 17:02, 18:02 out, 15:53 and 16:53 back) run on 342's own stops and only two of them come back, so they are listed, not a line; also listed: Slaný 14:39.",
+   "note": "Slaný, železniční stanice – Slaný, autobusové nádraží – Knovíz – Pchery – Brandýsek – Stehelčeves – Praha, Nádraží Veleslavín. Hourly all day: Slaný :09 (14:39 extra), Nádraží Veleslavín :32, exact. The 13:09, 14:09 and 16:09 from Slaný run via Středokluky, Kněževes and Tuchoměřice (12 min longer); their stops are on 322, 414 and 429. Second Simutrans line 342 Knovíz: the afternoon shorts Nádraží Veleslavín :02 (15:02, 16:02, 17:02, 18:02) – Knovíz and back Knovíz :53 (15:53, 16:53); read at Knovíz the Slaný 14:39 passes at 14:51, so three trips go back at about :52 and four go out, and none returns at 17:53 or 18:53 because the buses stay at Knovíz (the first trip of the day, 4:53, starts there). Off the pattern: Slaný 14:39 (extra, 30 min off the :09).",
    "sim": [
     {
      "name": "342",
@@ -1294,6 +1294,33 @@
       }
      ],
      "why": "Slaný, železniční stanice :09 / Nádraží Veleslavín :32, every 60, direct via Stehelčeves and Buštěhrad, Bouchalka (57 min; the :09 trips via Středokluky take 69), 56 min back."
+    },
+    {
+     "name": "342 Knovíz",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Nádraží Veleslavín",
+       "to": "Knovíz",
+       "at": [
+        2
+       ],
+       "notvia": [
+        "Slaný, železniční stanice"
+       ]
+      },
+      {
+       "fr": "Knovíz",
+       "to": "Praha, Nádraží Veleslavín",
+       "at": [
+        53
+       ],
+       "notvia": [
+        "Slaný, železniční stanice"
+       ]
+      }
+     ],
+     "why": "Nádraží Veleslavín :02 → Knovíz :46 (44 min) via Letiště, Buštěhrad, Stehelčeves, Brandýsek, Pchery and Jemníky; Knovíz :53 → Nádraží Veleslavín :36 (43 min). `notvia` Slaný keeps the Slaný trips out of both legs (the 14:39 from Slaný passes Knovíz at 14:51 and stays on 342 as an extra). 2 buses."
     }
    ]
   },
@@ -1365,7 +1392,7 @@
     "Družec, náves",
     "Stochov, náměstí"
    ],
-   "note": "Praha, Motol – Bílá Hora – Hostivice – Jeneč – Unhošť – Kyšice – Velká Dobrá – Doksy – Kamenné Žehrovice – Tuchlovice – Stochov. Hourly: Motol :25 (13:25 – 17:25, then 18:35), Stochov :22 (12:22 – 15:22, then 16:45, 17:45). Out of Motol the :25 alternates: odd hours via Družec, náves (75 min), even hours direct (67 min); towards Prague the :22 trips all run via Družec. Modelled at 14:30 (window 14:00 – 16:00), where the :22 pattern runs; at 16:00 the Stochov trips are at :45 and no hourly row passes. Off the pattern: Stochov 16:45, 17:45; Motol 18:35. Listed (stops on 365): the Motol – Unhošť shorts (14:55, 15:55 out; 14:35, 15:35, 16:35 back) and the Motol – Hostivice, Ve Vilkách shorts (16:55, 18:05; 17:59, 19:00).",
+   "note": "Praha, Motol – Bílá Hora – Hostivice – Jeneč – Unhošť – Kyšice – Velká Dobrá – Doksy – Kamenné Žehrovice – Tuchlovice – Stochov. Hourly: Motol :25 (13:25 – 17:25, then 18:35), Stochov :22 (12:22 – 15:22, then 16:45, 17:45). Out of Motol the :25 alternates: odd hours via Družec, náves (75 min), even hours direct (67 min); towards Prague the :22 trips all run via Družec. Modelled at 14:30 (window 14:00 – 16:00), where the :22 pattern runs; at 16:00 the Stochov trips are at :45 and no hourly row passes. Off the pattern: Stochov 16:45, 17:45; Motol 18:35. Second Simutrans line 365 Unhošť: the hourly shorts between the Stochov trips, Motol :55 out and back :35, five each way read at Hostivice, Jeneček (out 14:55, 15:55, 16:55, 18:05, 19:05; back 14:35, 15:35, 16:35, 17:59, 19:00); the game line takes the Unhošť end of 14:35 – 16:35. Listed (stops on 306): the Motol – Hostivice, Ve Vilkách shorts (16:55, 18:05; 17:59, 19:00). Off the pattern: Motol 18:05, 19:05, Hostivice, Ve Vilkách 17:59, 19:00 (10 – 25 min off). The 365 Stochov buses run the Unhošť shorts in their turn at Motol (2 Nov live map: 8816, 8769, 8820, 8832): one circuit 365 + 365 Unhošť would need 5 buses instead of 6; pooling is an option, not applied.",
    "anchor": "14:30",
    "sim": [
     {
@@ -1395,6 +1422,33 @@
       }
      ],
      "why": "Motol :25 / Stochov :22, every 60. The game line runs via Družec, náves both ways (as the odd-hour trips out and every :22 back; the even-hour trips out skip it, 8 min shorter), and back via Hostivice, K Dálnici as the 15:22 does, so that stop stays on a line."
+    },
+    {
+     "name": "365 Unhošť",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Motol",
+       "to": "Unhošť, náměstí",
+       "at": [
+        55
+       ],
+       "notvia": [
+        "Kyšice"
+       ]
+      },
+      {
+       "fr": "Unhošť, náměstí",
+       "to": "Praha, Motol",
+       "at": [
+        35
+       ],
+       "notvia": [
+        "Kyšice"
+       ]
+      }
+     ],
+     "why": "Motol :55 → Unhošť, náměstí :29 (34 min) via Bílá Hora, Hostivice and Jeneč; Unhošť :35 → Motol :10 (35 min); `notvia` Kyšice keeps the Stochov trips out. The legs count the Unhošť trips (out 14:55, 15:55; back 14:35, 15:35, 16:35); the Ve Vilkách end of the same hourly shorts (16:55, 18:05; 17:59, 19:00) is listed. 2 buses; on the 2 Nov live map the shorts are run by the Stochov buses in their turn at Motol (8816: Stochov 13:22 → Motol, Unhošť 14:55 / 15:35, Stochov 16:25; 8769: Stochov 14:22, Unhošť 15:55 / 16:35, Stochov 17:25), and one circuit of 365 and 365 Unhošť would need 5 buses instead of 4 + 2 (an owner option, not applied)."
     }
    ]
   },
@@ -1405,7 +1459,7 @@
     "Lichoceves, Noutonice",
     "Kladno, OAZA"
    ],
-   "note": "Praha, Dejvická – Roztoky – Úholičky – Velké Přílepy – Svrkyně – Noutonice – Okoř – Číčovice – Buštěhrad – Kladno, OAZA, with shorts to Velké Přílepy or Noutonice. Kladno line hourly: Dejvická :35 (13:35 – 18:35), Kladno, OAZA :03 in 14:03 – 16:03 (15:00), at :15 – :20 before and after (13:20, 17:15, 18:18). The shorts leave Dejvická at :05 (14:05 and 17:05 to Noutonice, 15:05, 16:05, 18:05 to Velké Přílepy) and pass Velké Přílepy at :08 back (15:01 from Noutonice, 16:08, 17:08). Modelled at 15:00 (window 14:30 – 16:30), where both run hourly. Off the pattern: Kladno 13:20, 17:15, 18:18.",
+   "note": "Praha, Dejvická – Roztoky – Úholičky – Velké Přílepy – Svrkyně – Noutonice – Okoř – Číčovice – Buštěhrad – Kladno, OAZA, with shorts to Velké Přílepy or Noutonice. Kladno line hourly: Dejvická :35 (13:35 – 18:35), Kladno, OAZA :03 in 14:03 – 16:03 (15:00), at :15 – :20 before and after (13:20, 17:15, 18:18). The shorts leave Dejvická at :05 (14:05 and 17:05 to Noutonice, 15:05, 16:05, 18:05 to Velké Přílepy) and pass Velké Přílepy at :08 back (15:01 from Noutonice, 16:08, 17:08). Modelled at 15:00 (window 14:30 – 16:30), where both run hourly. Off the pattern: Kladno 13:20, 17:15, 18:18, 19:15 (12 – 17 min off the :03); Dejvická 12:50 (the midday :50, 15 min off the :35).",
    "anchor": "15:00",
    "sim": [
     {
@@ -1466,7 +1520,7 @@
     "Kladno, gymnasium",
     "Kladno, autobusové nádraží"
    ],
-   "note": "Praha, Zličín – Chrášťany – Rudná – Úhonice – Ptice – Červený Újezd – Svárov – Unhošť – Malé Přítočno – Kladno, autobusové nádraží, with Zličín – Unhošť shorts. Kladno line: Zličín :05 (14:05, 15:05, 16:05), Kladno :17 (13:17 – 17:17). Unhošť shorts: Zličín :35 (13:10, 14:35 – 18:05 every 30 after 16:35), Unhošť :16 (13:16 – 18:16). Together every 30 at Unhošť. Modelled at 15:00 (window 14:30 – 16:30), where both run hourly; after 16:05 Zličín sends no more trips to Kladno. Off the pattern: Zličín 17:05, 17:35, 18:05 (Unhošť; buses going home), 13:10. Listed (stops on 307): Zličín – Červený Újezd 14:50 – 17:20 every 30, one way (no trip back); Zličín – Úhonice 13:40 / 14:16; Zličín – Kladno, U Hvězdy 18:35. The real buses alternate at Zličín (Kladno arrival :22 → Unhošť :35, Unhošť arrival :52 → Kladno :05, 13 min): as one circuit line 307 would need 4 buses instead of 5 (Zličín :05 → Kladno :17 → Zličín :35 → Unhošť :16 → Zličín) — to confirm on the 2 Nov plates.",
+   "note": "Praha, Zličín – Chrášťany – Rudná – Úhonice – Ptice – Červený Újezd – Svárov – Unhošť – Malé Přítočno – Kladno, autobusové nádraží, with Zličín – Unhošť shorts. Kladno line: Zličín :05 (14:05, 15:05, 16:05), Kladno :17 (13:17 – 17:17). Unhošť shorts: Zličín :35 (13:10, 14:35 – 18:05 every 30 after 16:35), Unhošť :16 (13:16 – 18:16). Together every 30 at Unhošť. Modelled at 15:00 (window 14:30 – 16:30), where both run hourly; after 16:05 Zličín sends no more trips to Kladno. Off the pattern: Zličín 13:10, 17:05 (Unhošť; its bus is not seen again that day) and 18:05 (Unhošť; its bus comes back as the 19:16). Listed (stops on 307): Zličín – Červený Újezd 14:50 – 17:20 every 30, one way (no trip back); Zličín – Úhonice 13:40 / 14:16; Zličín – Kladno, U Hvězdy 18:35. The real buses alternate at Zličín (Kladno arrival :22 → Unhošť :35, Unhošť arrival :52 → Kladno :05, 13 min): as one circuit line 307 would need 4 buses instead of 5 (Zličín :05 → Kladno :17 → Zličín :35 → Unhošť :16 → Zličín); the 2 Nov live map shows exactly that (8953, 8956, 8874 and 8996 each alternate a Kladno and an Unhošť round). Pooling is an option, not applied.",
    "anchor": "15:00",
    "sim": [
     {
@@ -1591,7 +1645,7 @@
     "Libušín, náměstí",
     "Smečno"
    ],
-   "note": "Praha, Nádraží Veleslavín – Lidice – Buštěhrad – Kladno – Libušín – Svinařov – Smečno, with shorts to Kladno, Libušín and Hřebeč. Out of Nádraží Veleslavín every 15 in the afternoon: :00 Smečno (13:00 – 18:00 hourly), :15 and :45 Kladno, u kostela (14:15 – 18:40), :30 Libušín (14:30 – 16:30), plus Hřebeč 15:38 – 18:28. Towards Prague: Smečno :20 (15:20 – 18:20; 13:00, 14:00, 14:50 before), Kladno, Rozdělov 13:50, 15:25, 16:20, 17:00, 18:00, 18:20, Libušín 14:30, 14:45, 15:50, 17:08. The buses sleep in Kladno and Libušín (the first trips start there), so the afternoon sends more out of Prague than come back. Two Simutrans lines: 300 to Smečno, hourly, exact; 300 Kladno at the rate of the trips towards Prague (every 120, two slots each way). Off the pattern (buses going home): Nádraží Veleslavín 14:15, 15:15, 16:45, 17:20, 17:40, 18:20, 18:40 to Kladno, 13:30 to Smečno; Rozdělov 13:50, 15:25, 18:00; Smečno 13:00, 14:00, 14:50. Listed (their stops are on 300): the Libušín shorts (out 14:30, 15:30, 16:30; back 14:30, 14:45, 15:50, 17:08; a 300 Libušín line every 120, Nádraží Veleslavín 16:30 / Libušín 15:50, would pass for 1 bus, but all their stops are on 300), the Hřebeč shorts (one way in the afternoon) and Nádraží Veleslavín – Kladno, Sítná 14:45.",
+   "note": "Praha, Nádraží Veleslavín – Lidice – Buštěhrad – Kladno – Libušín – Svinařov – Smečno, with shorts to Kladno, Libušín and Hřebeč. Out of Nádraží Veleslavín every 15 in the afternoon: :00 Smečno (13:00 – 18:00 hourly), :15 and :45 Kladno, u kostela (14:15 – 18:40), :30 Libušín (14:30 – 16:30), plus Hřebeč 15:38 – 18:28. Towards Prague: Smečno :20 (15:20 – 18:20; 13:00, 14:00, 14:50 before), Kladno, Rozdělov 13:50, 15:25, 16:20, 17:00, 18:00, 18:20, Libušín 14:30, 14:45, 15:50, 17:08. The buses sleep in Kladno and Libušín (the first trips start there). The Kladno shorts run out of Nádraží Veleslavín about every 30 min (nine, 14:15 – 18:40) but come back from Kladno, Rozdělov about hourly (six): read at Kladno, u kostela, with the Libušín and Smečno trips that pass it, 18 buses go out and 17 come back 13:00 – 19:00, so the surplus of shorts is small. On the 2 Nov live map five shorts come back as the Rozdělov trips an hour or so later (14:15 → 15:25, 15:15 → 16:20, 16:15 → 17:00, 16:45 → 18:00, 17:20 → 18:20), the 15:45 and 18:40 go on as 324 trips, the 17:40 as a 616 and the 18:20 ends there. Two Simutrans lines: 300 to Smečno, hourly, exact; 300 Kladno at the rate of the trips back from Kladno (every 120, two slots each way). Off the pattern: Nádraží Veleslavín 15:15, 16:45, 17:20, 17:40, 18:20, 18:40 to Kladno, 13:30 to Smečno; Rozdělov 13:50, 15:25, 18:00; Smečno 13:00, 14:00, 14:50. Listed (their stops are on 300): the Libušín shorts (out 14:30, 15:30, 16:30, hourly and exact; back 14:30, 14:45, 15:50, 17:08 with no repeating minute, so there is no line; a 300 Libušín every 120, Nádraží Veleslavín 16:30 / Libušín 15:50, would stand for one bus's round), the Hřebeč shorts (one way in the afternoon) and Nádraží Veleslavín – Kladno, Sítná 14:45.",
    "anchor": "16:00",
    "sim": [
     {
@@ -1646,7 +1700,7 @@
        ]
       }
      ],
-     "why": "Nádraží Veleslavín 15:45, 16:15 → Kladno, u kostela (42 min); the bus runs on one stop to Kladno, Rozdělov and leaves there at 16:20, 17:00 (44 min to Prague), as the Kladno shorts do. Every 120 is the rate of the trips towards Prague (2 in 15:30 – 17:30); the other outbound :15 / :45 trips are buses going home. 3 buses; `lay` 3 at Nádraží Veleslavín, because the builder's 17:44 → 17:45 chain is the 15:45 slot's repeat, not a real turn."
+     "why": "Nádraží Veleslavín 15:45, 16:15 → Kladno, u kostela (42 min); the bus runs on one stop to Kladno, Rozdělov and leaves there at 16:20, 17:00 (44 min to Prague), as the Kladno shorts do. Every 120 is the rate of the trips towards Prague (2 in 15:30 – 17:30); the other outbound trips (15:15, 16:45, 17:20, 17:40, 18:20, 18:40) come back an hour later or go on as 324 / 616 trips. 3 buses; `lay` 3 at Nádraží Veleslavín, because the builder's 17:44 → 17:45 chain is the 15:45 slot's repeat, not a real turn."
     }
    ]
   },
@@ -1659,7 +1713,7 @@
     "Kladno, gymnasium",
     "Kladno, autobusové nádraží"
    ],
-   "note": "Praha, Zličín – Hostivice – Jeneč – Dobrovíz – Hostouň – Dolany – Velké Přítočno – Kladno, autobusové nádraží, with shorts to Hostivice, Ve Vilkách, Jeneč, Lidická and Hostouň. Between Zličín and Hostivice every 10 in the afternoon: out of Zličín :15 / :35 / :55 Hostivice (every 20 from 14:55 to 18:35), :05 Hostouň (15:05 – 17:05; 14:15, 16:25), :45 Kladno (13:45 – 16:45, 18:45; no 17:45), :25 Jeneč at odd hours (15:25, 17:25); back at Hostivice :04 / :24 / :44 (Hostivice, every 20 from 15:04 to 18:25), Hostouň :55 (14:55 – 17:56; 17:15), Kladno :10 (16:10, 17:11; 12:59, 14:08, 14:59, 18:03 around it), Jeneč 13:20, 14:20, 15:30, 16:30. Three Simutrans lines, exact in 15:30 – 17:30. The Kladno trips towards Prague take four paths; the game line takes the 16:10 one (via Kladno, Showa and Hostouň, Kladenská); the 12:59 and 14:59 run via Hřebeč, základní škola. Off the pattern: Zličín 14:15, 16:25 (Hostouň), 17:45 does not run; Hostouň 17:15; Kladno 12:59, 14:59, 18:03. The Zličín – Jeneč, Lidická shorts (out every 2 h, back hourly in two phases) and the evening Jeneč trips run on stops 306 and 306 Hostouň serve and are listed (Step 3); a 306 Jeneč line every 120 (Zličín 17:25, Jeneč 16:30) would cost 1 bus.",
+   "note": "Praha, Zličín – Hostivice – Jeneč – Dobrovíz – Hostouň – Dolany – Velké Přítočno – Kladno, autobusové nádraží, with shorts to Hostivice, Ve Vilkách, Jeneč, Lidická and Hostouň. Between Zličín and Hostivice every 10 in the afternoon: out of Zličín :15 / :35 / :55 Hostivice (every 20 from 14:55 to 18:35), :05 Hostouň (15:05 – 17:05; 14:15, 16:25), :45 Kladno (13:45 – 16:45, 18:45; no 17:45), :25 Jeneč (15:25, 17:25, 18:25; 13:10, 17:45, 18:55 besides); back at Hostivice :04 / :24 / :44 (Hostivice, every 20 from 15:04 to 18:25), Hostouň :55 (14:55 – 17:56; 17:15), Kladno :10 (16:10, 17:11; 12:59, 14:08, 14:59, 18:03 around it), Jeneč :30 (15:30, 16:30; 13:20, 14:20 before). Read at Jeneč, Lidická, the Jeneč shorts are the third hourly service beside the Kladno (:08) and Hostouň (:28) trips: out :48 (15:48, 16:48, 17:48, 18:48, the 16:48 being the Hostouň 16:25) and back :30 (15:30, 16:30, 17:30, the 17:30 being the Hostouň 17:15), so Jeneč has a bus every 20 each way from 15:00 to 18:00. Four Simutrans lines, exact in 15:30 – 17:30; 306 Jeneč and 306 Hostouň are both read at Jeneč, Lidická, so that each counts its own minutes there. The Kladno trips towards Prague take four paths; the game line takes the 16:10 one (via Kladno, Showa and Hostouň, Kladenská); the 12:59 and 14:59 run via Hřebeč, základní škola. Off the pattern: Zličín 14:15 (Hostouň), 13:10, 17:45, 18:05 (to Jeneč, vysílací středisko) and 18:55 (Jeneč), the Kladno 17:45 does not run; Jeneč 13:20, 14:20; Kladno 12:59, 14:59, 18:03; Hostivice, Ve Vilkách before the every-20 stretch starts at 14:55 (Zličín 13:30, 14:00, 14:30; back 14:09, 14:39) and back 18:35 (9 min before the :44). On the 2 Nov live map the Jeneč and Hostouň shorts share buses (8774: Jeneč 15:25 and 16:30, then Hostouň 17:05 and 17:56; 8795: Jeneč 15:30, Hostouň 16:05 and 16:55, Jeneč 17:45); as one circuit the two lines would still need 4 buses, so they stay apart.",
    "anchor": "16:00",
    "sim": [
     {
@@ -1688,6 +1742,33 @@
      "why": "Zličín :45 / Kladno :10, every 60, out via Hostivice, Jeneč, Dobrovíz, Hostouň, Na Pohoří, Dolany, Velké Přítočno (61 min); back via Kladno, Showa, Velké Přítočno, Dolany and Hostouň, Kladenská as the 16:10 runs."
     },
     {
+     "name": "306 Jeneč",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Zličín",
+       "to": "Jeneč, Lidická",
+       "at": [
+        25
+       ],
+       "notvia": [
+        "Kladno, autobusové nádraží"
+       ]
+      },
+      {
+       "fr": "Jeneč, Lidická",
+       "to": "Praha, Zličín",
+       "at": [
+        30
+       ],
+       "notvia": [
+        "Kladno, autobusové nádraží"
+       ]
+      }
+     ],
+     "why": "Zličín :25 → Jeneč, Lidická :48 (23 min) via Sobín, Hostivice and Hostivice, Ve Vilkách; Jeneč, Lidická :30 → Zličín :55 (25 min). Read at Jeneč, Lidická together with 306 Hostouň, so the Hostouň 16:25 (Jeneč 16:48) and the Hostouň 17:15 (Jeneč 17:30) count here and the :05 / :55 Hostouň trips there. 2 buses; the real buses alternate Jeneč and Hostouň rounds (8774, 8795 on 2 Nov), but one circuit of the two lines would need the same 4 buses."
+    },
+    {
      "name": "306 Hostouň",
      "every": 60,
      "legs": [
@@ -1699,20 +1780,23 @@
        ],
        "notvia": [
         "Kladno, autobusové nádraží"
-       ]
+       ],
+       "core_to": "Jeneč, Lidická"
       },
       {
        "fr": "Hostouň, Posvícenská náves",
        "to": "Praha, Zličín",
-       "at": [
-        55
+       "knot": "Jeneč, Lidická",
+       "knot_at": [
+        10
        ],
+       "knot_rt": 15,
        "notvia": [
         "Kladno, autobusové nádraží"
        ]
       }
      ],
-     "why": "Zličín :05 / Hostouň, Posvícenská náves :55, every 60, via Hostivice, Jeneč, Dobrovíz and Hostouň, Na Pohoří; 35 min out, 40 min back."
+     "why": "Zličín :05 / Hostouň, Posvícenská náves :55, every 60, via Hostivice, Jeneč, Dobrovíz and Hostouň, Na Pohoří; 35 min out, 40 min back. Both legs are read at Jeneč, Lidická (:28 out, :10 back), the reading 306 Jeneč shares, so this line keeps its :05 / :55 trips and the Hostouň extras 16:25 and 17:15 stand on 306 Jeneč's :25 / :30 slots."
     },
     {
      "name": "306 Hostivice",
@@ -1786,7 +1870,7 @@
     "Kladno, Havlíčkovo náměstí",
     "Libušín, náměstí"
    ],
-   "note": "Praha, Nádraží Veleslavín – Kladno, autobusové nádraží – Kladno, Havlíčkovo náměstí – Vinařice – Libušín (peak line, LAMER and POHL). In the afternoon every 15: out of Nádraží Veleslavín :10 / :25 / :40 / :55 from 15:10 to 16:55 (the :55 to Libušín, the others to Kladno, autobusové nádraží or Havlíčkovo náměstí), then 17:13, 17:33, 17:53 (Libušín), 18:13; towards Prague at Kladno, autobusové nádraží :08 / :23 / :38 / :53 from 14:53 to 16:23, then 16:43, 17:03, 17:23 (Libušín), 17:43. Modelled at 15:15 (window 14:45 – 16:45, where the every-15 runs; at 16:00 the window catches the change to every 20). Two Simutrans lines: 330 to Havlíčkovo náměstí (the Kladno, autobusové nádraží shorts are read at Kladno, autobusové nádraží and run on two stops in the game) and 330 Libušín, every 120 on the one real round of one bus (out 14:50, back 15:46). Off the pattern: Nádraží Veleslavín 14:20, 17:13, 17:33, 18:13, 18:33 (Vinařice), Libušín 15:55, 16:55, 17:53 (buses going home); towards Prague 13:28, 14:13, 14:33, 15:08, 16:43, 17:03, 17:43, Libušín 13:31, 17:01.",
+   "note": "Praha, Nádraží Veleslavín – Kladno, autobusové nádraží – Kladno, Havlíčkovo náměstí – Vinařice – Libušín (peak line, LAMER and POHL). In the afternoon every 15: out of Nádraží Veleslavín :10 / :25 / :40 / :55 from 15:10 to 16:55 (the :55 to Libušín, the others to Kladno, autobusové nádraží or Havlíčkovo náměstí), then 17:13, 17:33, 17:53 (Libušín), 18:13; towards Prague at Kladno, autobusové nádraží :08 / :23 / :38 / :53 from 14:53 to 16:23, then 16:43, 17:03, 17:23 (Libušín), 17:43. Modelled at 15:15 (window 14:45 – 16:45, where the every-15 runs; at 16:00 the window catches the change to every 20). Two Simutrans lines: 330 to Havlíčkovo náměstí (the Kladno, autobusové nádraží shorts are read at Kladno, autobusové nádraží and run on two stops in the game) and 330 Libušín, every 120 on the one real round of one bus (out 14:50, back 15:46). Off the pattern: Nádraží Veleslavín 14:20, 17:13, 17:33, 18:13, 18:33 (Vinařice), Libušín 15:55, 16:55, 17:53 (the Libušín trips out run hourly at about :55, but only 13:31, 15:46 and 17:01 come back towards Prague, at no repeating minute); towards Prague 13:28, 14:13, 14:33, 15:08, 16:43, 17:03, 17:43, Havlíčkovo náměstí 16:55 (10 min) and 17:35 (5 min), Libušín 13:31, 17:01.",
    "anchor": "15:15",
    "sim": [
     {
@@ -1841,7 +1925,7 @@
        ]
       }
      ],
-     "why": "Nádraží Veleslavín 14:50 → Libušín 15:41 via Kladno, Havlíčkovo náměstí and Vinařice; Libušín 15:46 → Prague (55 min): the round of one bus, 5 min turn as in the timetable. The other Libušín trips out (15:55, 16:55, 17:53) are buses going home; the line runs at the rate towards Prague.",
+     "why": "Nádraží Veleslavín 14:50 → Libušín 15:41 via Kladno, Havlíčkovo náměstí and Vinařice; Libušín 15:46 → Prague (55 min): the round of one bus, 5 min turn as in the timetable. The other Libušín trips out (15:55, 16:55, 17:53) have no matching way back: of the three buses, the 15:55 returns as the 17:01, the 16:55 stays at Libušín and the 17:53 returns as the 18:46 to Kladno; the line runs at the rate towards Prague, one round every 120.",
      "window": [
       "14:30",
       "16:30"
@@ -1857,7 +1941,7 @@
     "Louny, ČSAD",
     "Chomutov, železniční stanice"
    ],
-   "note": "Praha, Nádraží Veleslavín – Slaný – Královice – Kvílice – Hořešovice – Panenský Týnec – Louny – Postoloprty – Chomutov. Every 2 h each: Nádraží Veleslavín :15 at odd hours to Chomutov (11:15 – 19:15) and at even hours to Hořešovice (10:15 – 18:15); Chomutov :40 at even hours (10:40 – 16:40, 18:48), Hořešovice :51 at odd hours (10:51 – 18:51); Slaný shorts Nádraží Veleslavín :45 (14:45 – 18:45) and Slaný :50 (14:50, 15:50, 16:50). All exact. Through running at Hořešovice: 8 of the 9 arrivals of 389 go on within 1 min as 589 to Louny, and 7 of the 8 departures come off a 589 from Louny; 389 Hořešovice is therefore one Simutrans line with 589 (Prague – Hořešovice – Žerotín – Louny and back), 3 buses instead of 4 for the two lines apart. Listed (stops on 389): the Louny – Chomutov shuttles (Louny 13:34, 15:34, 17:34; Chomutov 13:40, 15:40, 17:40), Slaný 17:45, 18:45 (one way).",
+   "note": "Praha, Nádraží Veleslavín – Slaný – Královice – Kvílice – Hořešovice – Panenský Týnec – Louny – Postoloprty – Chomutov. Every 2 h each: Nádraží Veleslavín :15 at odd hours to Chomutov (11:15 – 19:15) and at even hours to Hořešovice (10:15 – 18:15); Chomutov :40 at even hours (10:40 – 16:40, 18:48), Hořešovice :51 at odd hours (10:51 – 18:51); Slaný shorts Nádraží Veleslavín :45 (14:45 – 18:45) and Slaný :50 (14:50, 15:50, 16:50). All exact. Through running at Hořešovice: 8 of the 9 arrivals of 389 go on within 1 min as 589 to Louny, and 7 of the 8 departures come off a 589 from Louny; 389 Hořešovice is therefore one Simutrans line with 589 (Prague – Hořešovice – Žerotín – Louny and back), 3 buses instead of 4 for the two lines apart. Fourth Simutrans line 389 Chomutov: the Louny – Chomutov shuttles (Louny 13:34, 15:34, 17:34; Chomutov 13:40, 15:40, 17:40) that fill the other hours of the hourly service between the two towns, three each way, exact. Listed: Slaný 17:45, 18:45 (one way; the 17:45 bus comes back as the 388 of 18:36, the 18:45 ends there). The 389 buses run the Chomutov shuttles in their wait at Chomutov (2 Nov live map: 7760, 7761, 7757): one circuit 389 + 389 Chomutov would need 4 buses instead of 5; pooling is an option, not applied.",
    "anchor": "16:00",
    "sim": [
     {
@@ -1958,6 +2042,33 @@
       }
      ],
      "why": "Nádraží Veleslavín :45 / Slaný, autobusové nádraží :50, every 60, the Slaný shorts by the motorway; 27 min each way."
+    },
+    {
+     "name": "389 Chomutov",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Louny, autobusové nádraží",
+       "to": "Chomutov, železniční stanice",
+       "at": [
+        "13:34"
+       ],
+       "notvia": [
+        "Praha, Nádraží Veleslavín"
+       ]
+      },
+      {
+       "fr": "Chomutov, železniční stanice",
+       "to": "Louny, autobusové nádraží",
+       "at": [
+        "13:40"
+       ],
+       "notvia": [
+        "Praha, Nádraží Veleslavín"
+       ]
+      }
+     ],
+     "why": "Louny, autobusové nádraží :34 → Chomutov, železniční stanice :14 (40 min) via Postoloprty and Údlice; Chomutov :40 → Louny :23 (43 min); every 120 at odd hours. `notvia` Nádraží Veleslavín keeps the through trips out. 2 buses; the real buses run these shuttles in their wait at Chomutov, so one circuit with 389 would need 4 buses instead of 3 + 2 (an owner option, not applied)."
     }
    ]
   },
@@ -2072,6 +2183,6 @@
    "Serve them: Malíkovice, Hvězda, rozcestí with a 587 line every 480 (1 bus); Vinařice, rozcestí Třebichovice with the 587 Smečno – Libušín shuttle hourly (1 bus); Hřebeč, základní škola with a 306 Hřebeč line every 480 (1 bus); Slaný, Želevčice, obec with a 708 Zlonice line every 480 (1 bus): 4 buses for all four."
   ]
  ],
- "notes": "Kladensko: okres Kladno with Slánsko, the Prague lines whose outer end is here and the district lines from Kladno, Slaný and Velvary. Service day Mon 2 Nov 2026. Every terminus is typed as a loop (1 min early); the real minutes are shown. The Prague lines are outstation lines (their buses sleep in Kladno, Slaný, Libušín, Unhošť): the afternoon sends more buses out of Prague than come back, so each runs at the rate of its trips towards Prague and the extra outbound departures are listed as buses going home. Short workings with no stop of their own get their own Simutrans line where they run at least three times each way 13:00 – 19:00 and regularly in the model hours (306 Hostivice, 307 and 386 Unhošť, 350 Velké Přílepy, 389 Slaný, 618 Stochov, 624 Kladno, 626 Theodor); the others are listed on their card. Three rows keep a 0-minute turn of the real timetable (587 Byseň at Tuřany, Byseň; 588 at Milý, Bor; 627 at Slaný): typed 1 min early as every loop, the bus leaves within the entry's automatic Leave up to. Through running seen in the timetable (0 – 5 min at the terminal; the 2 Nov live map will confirm): 389 and 589 at Hořešovice (8 of 9, modelled as one Simutrans line), 324 Smečno shorts on as 627 to Slaný (8 of 10), 617 on as 620 at Kladno (9 of 15; as one circuit 617 + 620 would need 8 buses instead of 9), 622 on as 617 at Kladno (6 of 8), 650 on as 618 at Kladno (10 of 15), 618 and 630 at Kladno (12 of 22), 300 on as 616 at Kladno, Sítná (3 of 3), 580 and 588 at Slaný (5 of 12), 597 on as 626 at Velvary (2 of 4), 628 on as 417 at Mšec (2 of 2); at Praha, Nádraží Veleslavín 300, 330 and 399 (LAMER / POHL / Arriva) swap buses (19 of the 45 departures of 399 follow a 300 arrival within 5 min, 19 a 399 arrival).",
+ "notes": "Kladensko: okres Kladno with Slánsko, the Prague lines whose outer end is here and the district lines from Kladno, Slaný and Velvary. Service day Mon 2 Nov 2026. Every terminus is typed as a loop (1 min early); the real minutes are shown. The Prague lines are outstation lines (their buses sleep in Kladno, Slaný, Libušín, Unhošť): the afternoon sends more buses out of Prague than come back, so each runs at the rate of its trips towards Prague and the extra outbound departures are listed as buses going home. Short workings with no stop of their own get their own Simutrans line where they run at least three times each way 13:00 – 19:00 and regularly in the model hours (306 Hostivice, 306 Jeneč, 307 and 386 Unhošť, 342 Knovíz, 350 Velké Přílepy, 365 Unhošť, 389 Slaný, 389 Chomutov, 618 Stochov, 624 Kladno, 626 Theodor; read at the stop where they turn, counting every trip that passes it, as the 3 Nov re-check asks); the others are listed on their card. Three rows keep a 0-minute turn of the real timetable (587 Byseň at Tuřany, Byseň; 588 at Milý, Bor; 627 at Slaný): typed 1 min early as every loop, the bus leaves within the entry's automatic Leave up to. Through running seen in the timetable (0 – 5 min at the terminal; the 2 Nov live map will confirm): 389 and 589 at Hořešovice (8 of 9, modelled as one Simutrans line), 324 Smečno shorts on as 627 to Slaný (8 of 10), 617 on as 620 at Kladno (9 of 15; as one circuit 617 + 620 would need 8 buses instead of 9), 622 on as 617 at Kladno (6 of 8), 650 on as 618 at Kladno (10 of 15), 618 and 630 at Kladno (12 of 22), 300 on as 616 at Kladno, Sítná (3 of 3), 580 and 588 at Slaný (5 of 12), 597 on as 626 at Velvary (2 of 4), 628 on as 417 at Mšec (2 of 2); at Praha, Nádraží Veleslavín 300, 330 and 399 (LAMER / POHL / Arriva) swap buses (19 of the 45 departures of 399 follow a 300 arrival within 5 min, 19 a 399 arrival).",
  "artifact_url": "https://claude.ai/artifact/USfta9raPAmHs8RXHibiwi"
 }

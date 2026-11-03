@@ -140,7 +140,7 @@
     "Sobotka, náměstí",
     "Jičín, autobusové stanoviště"
    ],
-   "note": "Praha, Černý Most – Mladá Boleslav – Sobotka – Jičín, every 2 hours: Praha → Jičín :55 odd hours until 13:55, then 16:00, 18:00, 20:00; Jičín → Praha :35 even hours (10:35 – 16:35). Modelled at 16:00 by hand: 13:30–15:30 is busier only by the Praha – Mladá Boleslav short trips (13:30, 14:30, 14:45, 15:45, 16:30), whose stops are on the line; they are listed. The buses sleep in Jičín and Mladá Boleslav, so Praha sends more out in the afternoon than come back.",
+   "note": "Praha, Černý Most – Mladá Boleslav – Sobotka – Jičín, every 2 hours: Praha → Jičín :55 odd hours until 13:55, then 16:00, 18:00, 20:00; Jičín → Praha :35 even hours (10:35 – 16:35). Modelled at 16:00 by hand: 13:30–15:30 is busier only by the Praha – Mladá Boleslav short trips (13:30, 14:30, 14:45, 15:45, 16:30), whose stops are on the line; they are listed. The short trips are three out of Praha (13:30, 14:45, 15:45) and two back from Mladá Boleslav (14:30, 16:30), not on one repeating minute, so they stay listed; with the Jičín trips 6 buses leave Praha and 5 arrive there between 13:00 and 19:00.",
    "anchor": "16:00",
    "sim": [
     {
@@ -323,7 +323,7 @@
     "Lysá nad Labem, železniční stanice",
     "Benátky nad Jizerou, Dražice, dvůr"
    ],
-   "note": "Mladá Boleslav – Benátky nad Jizerou – Milovice – Lysá nad Labem, hourly: Lysá :18 (14:18 – 19:18; 16:18 and 18:18 end at Benátky), Mladá Boleslav :31 (14:31, 15:31; 16:36, 18:38 later), modelled at its anchor 14:50. 442 Dražice is the Benátky – Dražice, dvůr shuttle, one bus all day with 1–5 min turns. Off the pattern: Mladá Boleslav 12:23, 13:23, 16:36, 18:38; Lysá 12:06, 13:01; Benátky 18:37 → Lysá.",
+   "note": "Mladá Boleslav – Benátky nad Jizerou – Milovice – Lysá nad Labem, hourly: Lysá :18 (14:18 – 19:18; 16:18 and 18:18 end at Benátky), Mladá Boleslav :31 (14:31, 15:31; 16:36, 18:38 later), modelled at its anchor 14:50. 442 Dražice is the Benátky – Dražice, dvůr shuttle, one bus all day with 1–5 min turns. Off the pattern: Mladá Boleslav 12:23, 13:23, 16:36, 18:38; Lysá 12:06, 13:01; Benátky 18:37 → Lysá. The Dražice shuttle runs by two paths, the short one (Dražická, u hřbitova) and the longer one by Husovo náměstí and Vaněčkova, at no repeating minute (out of Benátky 13:00, 13:24, 14:02, 14:38, 14:58, 15:15, 15:38, 16:08, 16:58, 17:15), so it stays one Simutrans line on the short path.",
    "sim": [
     {
      "name": "442",
@@ -708,7 +708,7 @@
     "Mnichovo Hradiště, Sychrov",
     "Boseň, Mužský"
    ],
-   "note": "Mnichovo Hradiště – Sychrov loop – Boseň, Mužský. One bus: Mnichovo Hradiště 15:05 → round Sychrov → Mužský 15:59 / 16:22 → Mnichovo Hradiště, plus Sychrov loops 13:47, 15:50, 17:45 and Mužský 13:42 → Mnichovo Hradiště direct. Modelled every 2 hours on the Mužský round (window 15:00–17:00 by hand); the loops run over stops of that line and are listed.",
+   "note": "Mnichovo Hradiště – Sychrov loop – Boseň, Mužský. The Mužský round Mnichovo Hradiště 15:05 → round Sychrov → Mužský 15:59 / 16:22 → Mnichovo Hradiště (and Mužský 13:42 → Mnichovo Hradiště direct), plus the Sychrov loops 13:47, 15:50 and 17:45 (34 min, back by the same road). On 2 Nov the round was bus 8611 and the loops 8663 (13:47, 17:45) and 8621 (15:50): the loops are a second bus, as modelled. Two Simutrans lines: 716 every 2 hours on the Mužský round (window 15:00–17:00 by hand), and 716 Sychrov, the three Sychrov loops 13:47, 15:50 and 17:45 on their own (every 2 hours, one bus).",
    "anchor": "15:30",
    "sim": [
     {
@@ -731,6 +731,23 @@
       }
      ],
      "why": "Mnichovo Hradiště 15:05 → Mužský round the Sychrov loop (Podolí, Kruhy, Sychrov) and Lhotice (54 min); Mužský 16:22 → Mnichovo Hradiště (23 min)."
+    },
+    {
+     "name": "716 Sychrov",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Mnichovo Hradiště, dopravní terminál",
+       "to": "Mnichovo Hradiště, dopravní terminál",
+       "at": [
+        "15:47"
+       ],
+       "notvia": [
+        "Boseň, Mužský"
+       ]
+      }
+     ],
+     "why": "The Sychrov loop alone: dopravní terminál :47 odd hours → náměstí, za zámkem, Podolí, Dolení Kruhy, Hoření Kruhy → Sychrov, Pazderna, u rybníka, Sychrov and back the same way → dopravní terminál, 34 min (the real 13:47, 15:50, 17:45; 15:50 is 3 and 17:45 is 2 min off). One bus. With the Mužský round’s pass through Sychrov (15:26 and 17:26 in the game) Sychrov has a bus about every hour, as in reality."
     }
    ]
   },
@@ -1645,7 +1662,7 @@
     "Kropáčova Vrutice, Krpy",
     "Dolní Slivno"
    ],
-   "note": "Mladá Boleslav – Bezno – Kropáčova Vrutice – Dolní Slivno: Mladá Boleslav 14:30 → Dolní Slivno, Dolní Slivno 13:29 and 15:29 → Bezno, and the Bezno – Krpy shuttle. 767 runs every 240 on the real round 14:30 / 15:29 (the Bezno trips run on to Mladá Boleslav in the game), modelled at 14:30 by hand where that round runs. The shuttle (Bezno 15:58, 16:58, 18:03 → Kropáčova Vrutice, Krpy; Krpy 16:37, 17:37, 18:37 → Bezno) runs only over stops of 767 and is listed. Its Bezno arrivals meet 699 departures (4 of 8).",
+   "note": "Mladá Boleslav – Bezno – Kropáčova Vrutice – Dolní Slivno: Mladá Boleslav 14:30 → Dolní Slivno, Dolní Slivno 13:29 and 15:29 → Bezno, and the Bezno – Krpy shuttle. 767 runs every 240 on the real round 14:30 / 15:29 (the Bezno trips run on to Mladá Boleslav in the game), modelled at 14:30 by hand where that round runs. The Bezno – Krpy shuttle (Bezno 15:58, 16:58, 18:03 → Kropáčova Vrutice, Krpy; Krpy 16:37, 17:37, 18:37 → Bezno) is hourly with three trips each way, so it has its own Simutrans line, 767 Krpy (window 15:50–17:50 by hand; the Bezno 18:03 is 5 min off its :58 slot). Off the pattern: Dolní Slivno 13:29 and Bezno 18:58 → Dolní Slivno. The shuttle’s Bezno arrivals meet 699 departures (4 of 8).",
    "anchor": "14:30",
    "sim": [
     {
@@ -1669,6 +1686,37 @@
       }
      ],
      "why": "Mladá Boleslav 14:30 → Dolní Slivno (56 min); Dolní Slivno 15:29 → Bezno, run on to Mladá Boleslav (56 min); every 240."
+    },
+    {
+     "name": "767 Krpy",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Bezno",
+       "to": "Kropáčova Vrutice, Krpy",
+       "at": [
+        58
+       ],
+       "notvia": [
+        "Dolní Slivno"
+       ]
+      },
+      {
+       "fr": "Kropáčova Vrutice, Krpy",
+       "to": "Bezno",
+       "at": [
+        37
+       ],
+       "notvia": [
+        "Dolní Slivno"
+       ]
+      }
+     ],
+     "window": [
+      "15:50",
+      "17:50"
+     ],
+     "why": "Bezno :58 → Chotětov, Sušno, Kropáčova Vrutice → Krpy (20 min); Krpy :37 back (20 min), the hourly Bezno – Krpy shuttle (Bezno 15:58, 16:58, 18:03; Krpy 16:37, 17:37, 18:37). Window 15:50–17:50 by hand: 15:58 and 16:58, 16:37 and 17:37 are all exact (18:03 is 5 min off :58). 1-minute turn at Bezno as in the timetable."
     }
    ]
   },

@@ -1,3 +1,5 @@
+> 3 Nov 2026: re-checked for branches read by trip ends instead of where trips pass (the 381 Zásmuky case). Where `branch-check-2026-11-03.md` or `branch-review-2026-11-03.md` differs from this file, the 3 Nov files stand (the review over the check).
+
 # Method check: PID Berounsko (okres Beroun, prefix 210), 1 Nov 2026
 
 Designed line by line with `../../DESIGN_BRIEF.md` (including "Learned on the pilot") and the bus schedule method v4

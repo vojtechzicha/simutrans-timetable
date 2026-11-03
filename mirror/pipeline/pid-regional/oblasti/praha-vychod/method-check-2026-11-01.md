@@ -1,3 +1,5 @@
+> 3 Nov 2026: re-checked for branches read by trip ends instead of where trips pass (the 381 Zásmuky case). Where `branch-check-2026-11-03.md` or `branch-review-2026-11-03.md` differs from this file, the 3 Nov files stand (the review over the check).
+
 # Method check: PID Praha-východ (okres Praha-východ), 1–2 Nov 2026
 
 The hand design of every line of the oblast (`lines.json`), checked step by step against the bus schedule method v4

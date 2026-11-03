@@ -1,3 +1,5 @@
+> 3 Nov 2026: re-checked for branches read by trip ends instead of where trips pass (the 381 Zásmuky case). Where `branch-check-2026-11-03.md` or `branch-review-2026-11-03.md` differs from this file, the 3 Nov files stand (the review over the check).
+
 # Bus schedule method, PID Benešovsko (okres Benešov), 2 Nov 2026
 
 Designed against `DESIGN_BRIEF.md`, the bus schedule method v4 (`mirror/pipeline/bus-schedule-method.md`), `kb/lessons.md` and the Rakovnicko pilot review. Data: PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026 (`data/derived/trips.json`), the whole-day readings (`data/derived/reading/<L>.txt`), the builder output (`schedule.json`) and the three audits. Every terminus is a loop: typed = (real − 61) mod every; the real minutes below are the slots, the typed values are the builder's. Live-map plates were not yet in the readings (only early-morning sightings), so every pairing below is from the 0–5-minute chain test and is to be confirmed on the 2 Nov live map.

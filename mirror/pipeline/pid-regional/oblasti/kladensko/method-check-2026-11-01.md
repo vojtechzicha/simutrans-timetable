@@ -1,3 +1,5 @@
+> 3 Nov 2026: re-checked for branches read by trip ends instead of where trips pass (the 381 Zásmuky case). Where `branch-check-2026-11-03.md` or `branch-review-2026-11-03.md` differs from this file, the 3 Nov files stand (the review over the check).
+
 # Method check: PID Kladensko (okres Kladno, licence prefix 220), 2 Nov 2026
 
 Designed line by line for the sheet's service day **Mon 2 Nov 2026** (PID GTFS of 1 Nov 2026), following

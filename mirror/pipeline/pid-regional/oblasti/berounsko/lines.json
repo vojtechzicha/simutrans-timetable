@@ -614,7 +614,7 @@
     "Všeradice"
    ],
    "anchor": "15:00",
-   "note": "Nižbor, Šnárová – Hýskov – Beroun – Králův Dvůr – Tmaň – Suchomasty – Všeradice, a through line: from 14:32 the buses run Šnárová :32 → Beroun :00 → Všeradice :56 (via Vinařice, Nesvačily, Podbrdy), at once :57 back via Bykoš and Libomyšl, Želkovice → Beroun :39, then Beroun :02 → Šnárová :30, three buses round each hour. Modelled as that circuit every 60, anchor 15:00 where it runs (the knot reading at Beroun :00 also takes the Beroun-start 13:00 and 14:00). Off: Všeradice 13:50, 16:51, 18:13. Listed: Šnárová 13:32 → Beroun, Králův Dvůr, u zámku 13:56 → Šnárová, Šnárová 17:36 → Tmaň, and the Beroun / Králův Dvůr – Nižbor, u lípy trips (they run through with 649).",
+   "note": "Nižbor, Šnárová – Hýskov – Beroun – Králův Dvůr – Tmaň – Suchomasty – Všeradice, a through line: from 14:32 the buses run Šnárová :32 → Beroun :00 → Všeradice :56 (via Vinařice, Nesvačily, Podbrdy), at once :57 back via Bykoš and Libomyšl, Želkovice → Beroun :39, then Beroun :02 → Šnárová :30, three buses round each hour. Modelled as that circuit every 60, anchor 15:00 where it runs (the knot reading at Beroun :00 also takes the Beroun-start 13:00 and 14:00). Off: Všeradice 13:50, 16:51, 18:13. Listed: Šnárová 13:32 → Beroun, Králův Dvůr, u zámku 13:56 → Šnárová and Šnárová 17:36 → Tmaň. The short trips Beroun – Hýskov – Nižbor, u lípy are a second Simutrans line, 631 u lípy: out 13:25 and 14:21 from Králův Dvůr, u zámku (Beroun :32 and :28), 15:28 and 16:28 from Beroun, back 13:14, 14:14, 15:09 and 16:09, four each way every hour until 16:30 (read at Nižbor, u lípy, not by where the trips start). Each of them runs on as 649 to Žloukovice and back on the same bus (2 Nov live map: 9563, 9794, 9610, 9565 and 9794 on 5 of 5 rounds).",
    "sim": [
     {
      "name": "631",
@@ -647,6 +647,33 @@
       }
      ],
      "why": "Šnárová :32 → Všeradice through Beroun (:00, the knot) and the Vinařice road with the Málkov, Jednota spur, 84 min; Všeradice :57 → Beroun via Bykoš, 42 min (1-minute turn as in the timetable; 15:57 also via Málkov); Beroun :02 → Šnárová, 28 min. 3 buses (waits 2, 1, 23)."
+    },
+    {
+     "name": "631 u lípy",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Beroun, autobusové nádraží",
+       "to": "Nižbor, u lípy",
+       "at": [
+        28
+       ],
+       "notvia": [
+        "Nižbor, Šnárová"
+       ]
+      },
+      {
+       "fr": "Nižbor, u lípy",
+       "to": "Beroun, autobusové nádraží",
+       "at": [
+        9
+       ],
+       "notvia": [
+        "Nižbor, Šnárová"
+       ]
+      }
+     ],
+     "why": "Beroun, autobusové nádraží :28 → Brožíkova, Eternitka, Hýskov → Nižbor, u lípy, 23 min (the 13:25 and 14:21 start at Králův Dvůr, u zámku 7 min earlier and pass Beroun at :32 and :28); u lípy :09 back to Beroun, 22 min (13:14 and 14:14 are 5 min later). The Šnárová trips are kept out (notvia). The bus waits 18 min at u lípy, which the same bus fills with the 649 round to Žloukovice."
     }
    ]
   },
@@ -782,7 +809,7 @@
     "Řevnice, nádraží"
    ],
    "anchor": "14:00",
-   "note": "Two branches from Beroun. West: Beroun – Králův Dvůr – Zahořany – Hudlice – Otročiněves – Nový Jáchymov – Roztoky – Broumy – Kublov; Beroun :00 hourly (13:00–15:00 to Kublov, 16:00–18:00 to Nový Jáchymov: buses going home, they sleep there), Kublov :08 hourly (13:08–16:08), exact; the anchor is set to 14:00, where the Kublov pattern runs both ways (the automatic 16:00 holds the home runs). East: Beroun – Tetín – Koněprusy – Liteň – Skuhrov – Svinaře – Řevnice, one bus's round Beroun 14:05 → Řevnice 14:53, Řevnice 15:14 → Beroun 15:59, every 120 (Beroun → Liteň 16:03 counts as a short working). Listed: Liteň – Svinaře, Halouny shorts (13:00, 14:57; Halouny 13:20 → Beroun), Beroun → Liteň 18:00, Řevnice → Liteň 16:38, Roztoky, Placanda 17:36 → Beroun (a 638 bus running on), Nový Jáchymov 19:00 → Králův Dvůr.",
+   "note": "Two branches from Beroun. West: Beroun – Králův Dvůr – Zahořany – Hudlice – Otročiněves – Nový Jáchymov – Roztoky – Broumy – Kublov; Beroun :00 hourly (13:00–15:00 to Kublov, 16:00–18:00 only to Nový Jáchymov), Kublov :08 hourly (13:08–16:08), exact; the anchor is set to 14:00, where the Kublov pattern runs both ways (the automatic 16:00 holds the trips that end at Nový Jáchymov). Read at Nový Jáchymov, 13:00–19:00 is 6 trips out and 5 back, but 16:00–19:00 is 3 out (16:00, 17:00, 18:00) against 1 back (Roztoky, Placanda 17:36, a 638 bus running on): the 16:00–18:00 trips are buses going home. Nový Jáchymov is an outstation (five morning trips 4:37–6:57 start there; on the 2 Nov live map 9809 and 9570 ended their day there after the 16:00 and 17:00, and 9594 came back from the 18:00 as the 19:00 → Králův Dvůr). They stay on the :00 slots, counted at Nový Jáchymov. East: Beroun – Tetín – Koněprusy – Liteň – Skuhrov – Svinaře – Řevnice, one bus's round Beroun 14:05 → Řevnice 14:53, Řevnice 15:14 → Beroun 15:59, every 120 (Beroun → Liteň 16:03 counts as a short working). Listed: Liteň – Svinaře, Halouny shorts (13:00, 14:57; Halouny 13:20 → Beroun), Beroun → Liteň 18:00, Řevnice → Liteň 16:38, Roztoky, Placanda 17:36 → Beroun (a 638 bus running on), Nový Jáchymov 19:00 → Králův Dvůr.",
    "sim": [
     {
      "name": "637",
@@ -810,7 +837,7 @@
        ]
       }
      ],
-     "why": "Beroun :00 → Kublov, Slovanka via Hudlice, Nový Jáchymov and Broumy, through Trubská (the 15:00 / 15:08 trips' detour, the only service of Trubská), 53 min; Kublov :08 back the same way, 50 min; the 16:00–18:00 Nový Jáchymov trips count as short workings. 2 buses (waits 15 at Kublov, 2 at Beroun)."
+     "why": "Beroun :00 → Kublov, Slovanka via Hudlice, Nový Jáchymov and Broumy, through Trubská (the 15:00 / 15:08 trips' detour, the only service of Trubská), 53 min; Kublov :08 back the same way, 50 min; the 16:00–18:00 trips to Nový Jáchymov (buses going home) count on the :00 slots at Nový Jáchymov. 2 buses (waits 15 at Kublov, 2 at Beroun)."
     },
     {
      "name": "637 Řevnice",
@@ -1228,7 +1255,7 @@
     "Nižbor, u lípy",
     "Nižbor, Žloukovice"
    ],
-   "note": "Nižbor, u lípy – Nižbor, Žloukovice, a 7-min shuttle, hourly u lípy :51 / Žloukovice :02 (14:51–17:02; 12:55, 13:55 and 13:07, 14:07 a few minutes earlier), exact. Every trip runs through with the 631 trips Beroun / Králův Dvůr – Nižbor, u lípy (6 of 6 departures follow one); kept as its own line, because a circuit with them would add a bus, not save one.",
+   "note": "Nižbor, u lípy – Nižbor, Žloukovice, a 7-min shuttle, hourly u lípy :51 / Žloukovice :02 (14:51–17:02; 12:55, 13:55 and 13:07, 14:07 a few minutes earlier), exact. Every trip runs through with the 631 u lípy trips Beroun / Králův Dvůr – Nižbor, u lípy (6 of 6 departures follow one; the 2 Nov live map shows the same bus on both). Kept as its own line; one circuit with 631 u lípy would need 2 buses instead of 3 (Beroun :28 → u lípy :51 → Žloukovice :58, :02 → u lípy :09 → Beroun :31); pooling is an option, not applied.",
    "sim": [
     {
      "name": "649",
@@ -1429,6 +1456,6 @@
    "Serve them: Zaječov, u hřbitova with 545 Olešná every 240 (Hořovice 13:30 → Olešná, Olešná 13:59 → Hořovice, both exact), +1 bus; Mezouň, Letník either on every 825 Mořina return by the road of the 8:33 Mořinka trip (0 buses, +27 min on each return) or as 825 Letník every 480 on the 13:54, +1 bus."
   ]
  ],
- "notes": "Okres Beroun (licence 210, Arriva Střední Čechy on every line) and the Prague lines whose outer end is here (380, 384, 394; 952 is a night line). X384 is a replacement line for works, running since at least 29 Sep, modelled as it runs. Every terminus is a loop: typed values are the real minute − 1. Real 0–2-minute turns (526 at Zdice and Knížkovice, 529 Hvozdec, 531 Hořovice, železniční stanice, 544 Hořovice at Mrtník, 547 Cerhovice, 631 Všeradice, 639 Lštěň, 643 Třenice, X384 Levín) keep the real slots; the fork's automatic Leave up to lets the bus that arrives on the real minute leave (an engine question to confirm once). Through running seen in the timetable (0–5-min chains, to be confirmed by the 2 Nov live map): 649 with the 631 Nižbor, u lípy trips (6 of 6); 641 Beroun – Trubín – Zdice, škola running on as 640 (3 of 4); 526 arrivals at Zdice followed by 641 departures (7 of 13); 631 and 637 at Beroun, autobusové nádraží (7 of 19); 633 → 638 at Beroun (3 of 6); 638 → 637 at Roztoky, Placanda (2 of 2); 544 → 545 at Komárov, Buzuluk and 546 → 545 at Olešná (2 of 2 each); 642 → 639 at Lochovice (4 of 5); 548 → 642 at Praskolesy (2 of 2); 825 → 380, 384 and 636 at Loděnice (2 of 2); 394 with Prague 142 at Nové Butovice (21 of 37) and 384 with Prague 100 and 306 at Zličín. The 544 Hořovice 14:52 bus becomes the 544 shuttle at Zaječov (15:24 arrival, 16:08 departure; a chain the 0–5-min test misses). The three 638 ends chain on two buses in the timetable (Branov 14:24 → Beroun 15:14 → Skryje 15:25; Skryje 16:26 → Beroun 17:19 → Broumy 17:30; Broumy 15:53 → Beroun 16:28 → Branov 16:30); they are modelled as three exact lines (3 buses), and pooling them is an owner option (−1 bus, Branov and Skryje every 4 h). Each real line is its own Simutrans line here, so the per-line totals (65 buses) are higher than the operator's own; pooling at Beroun, Hořovice and Zdice is an owner option, not applied. Prague stops are covered by the Prague bus sheet. The Příbram stops 531 serves only on its Archiv and Zdaboř variants (Příbram, Archiv, II. and III. poliklinika, Na Cihelně, Československé armády, Seifertova, Zdaboř) are left to the Příbramsko sheet.",
+ "notes": "Okres Beroun (licence 210, Arriva Střední Čechy on every line) and the Prague lines whose outer end is here (380, 384, 394; 952 is a night line). X384 is a replacement line for works, running since at least 29 Sep, modelled as it runs. Every terminus is a loop: typed values are the real minute − 1. Real 0–2-minute turns (526 at Zdice and Knížkovice, 529 Hvozdec, 531 Hořovice, železniční stanice, 544 Hořovice at Mrtník, 547 Cerhovice, 631 Všeradice, 639 Lštěň, 643 Třenice, X384 Levín) keep the real slots; the fork's automatic Leave up to lets the bus that arrives on the real minute leave (an engine question to confirm once). Through running seen in the timetable (0–5-min chains, to be confirmed by the 2 Nov live map): 649 with the 631 u lípy trips Beroun – Nižbor, u lípy (6 of 6; the 2 Nov live map shows the same bus on both, 5 of 5 rounds, pooled they would need 2 buses instead of 3); 641 Beroun – Trubín – Zdice, škola running on as 640 (3 of 4); 526 arrivals at Zdice followed by 641 departures (7 of 13); 631 and 637 at Beroun, autobusové nádraží (7 of 19); 633 → 638 at Beroun (3 of 6); 638 → 637 at Roztoky, Placanda (2 of 2); 544 → 545 at Komárov, Buzuluk and 546 → 545 at Olešná (2 of 2 each); 642 → 639 at Lochovice (4 of 5); 548 → 642 at Praskolesy (2 of 2); 825 → 380, 384 and 636 at Loděnice (2 of 2); 394 with Prague 142 at Nové Butovice (21 of 37) and 384 with Prague 100 and 306 at Zličín. The 544 Hořovice 14:52 bus becomes the 544 shuttle at Zaječov (15:24 arrival, 16:08 departure; a chain the 0–5-min test misses). The three 638 ends chain on two buses in the timetable (Branov 14:24 → Beroun 15:14 → Skryje 15:25; Skryje 16:26 → Beroun 17:19 → Broumy 17:30; Broumy 15:53 → Beroun 16:28 → Branov 16:30); they are modelled as three exact lines (3 buses), and pooling them is an owner option (−1 bus, Branov and Skryje every 4 h). Each real line is its own Simutrans line here, so the per-line totals (67 buses) are higher than the operator's own; pooling at Beroun, Hořovice and Zdice is an owner option, not applied. Prague stops are covered by the Prague bus sheet. The Příbram stops 531 serves only on its Archiv and Zdaboř variants (Příbram, Archiv, II. and III. poliklinika, Na Cihelně, Československé armády, Seifertova, Zdaboř) are left to the Příbramsko sheet.",
  "artifact_url": "https://claude.ai/artifact/6574bcYazwXHe3zKYKyE6h"
 }

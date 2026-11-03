@@ -848,7 +848,7 @@
     "Zdiby, Holosmetky",
     "Zdiby, Brnky"
    ],
-   "note": "Praha, Kobylisy – Zdiby, then two ends: Zdiby, Holosmetky (hourly, Kobylisy :55 from 14:55 to 16:55, Holosmetky :16 from 15:16 to 17:16) and the Zdiby, Brnky loop (out via Pod Mezí, back via Pod Hájem, Zlatý kopec and Přemyšlení, Chaberská; Kobylisy 13:15, 14:15, 15:25, 16:25, 17:35, Brnky 13:42, 14:38, 15:42, 16:44, 17:58: hourly with a drift). Both ends turn at once (the 0-minute chain test: 8 of 11 Brnky and 8 of 13 Holosmetky arrivals leave again within 5 min). Two Simutrans lines; 411 Brnky is approximate (owner check).",
+   "note": "Praha, Kobylisy – Zdiby, then two ends: Zdiby, Holosmetky (hourly, Kobylisy :55 from 14:55 to 16:55, Holosmetky :16 from 15:16 to 17:16) and the Zdiby, Brnky loop (out via Pod Mezí, back via Pod Hájem, Zlatý kopec and Přemyšlení, Chaberská; Kobylisy 13:15, 14:15, 15:25, 16:25, 17:35, Brnky 13:42, 14:38, 15:42, 16:44, 17:58: hourly with a drift). The Holosmetky trips outside 14:55–17:16 are off the pattern: Kobylisy 13:05, 14:05 and 18:31, Holosmetky 13:28, 14:20 and 18:46. Both ends turn at once (the 0-minute chain test: 8 of 11 Brnky and 8 of 13 Holosmetky arrivals leave again within 5 min). Two Simutrans lines; 411 Brnky is approximate (owner check).",
    "sim": [
     {
      "name": "411",
@@ -929,7 +929,7 @@
     "Sibřina",
     "Křenice"
    ],
-   "note": "Praha, Černý Most – Horní Počernice – Šestajovice – Klánovice – Újezd nad Lesy – Koloděje – Sibřina – Křenice. Every 30 all afternoon: Černý Most :03 / :33 (13:03–19:03), Křenice :07 / :37 from 15:37 (13:04–15:04 at :04 / :37). Some trips run through Sibřina, škola and Na Paloučku (out 13:33, 14:33, back 13:04, 14:04, 15:04): those stops are on 765.",
+   "note": "Praha, Černý Most – Horní Počernice – Šestajovice – Klánovice – Újezd nad Lesy – Koloděje – Sibřina – Křenice. Every 30 all afternoon: Černý Most :03 / :33 (13:03–19:03), Křenice :07 / :37 from 15:37 (13:04–15:04 at :04 / :37). Three trips each way run through Sibřina, škola and Sibřina, Na Paloučku, hourly and only until 15:16 (out Šestajovice, Za Stodolami 12:57, Černý Most 13:33 and 14:33; back 13:04, 14:04 and 15:04): after 15:33 every trip takes the direct road, so there is no peak branch to model. Sibřina, škola is on 765; Sibřina, Na Paloučku is on 329 of the Prague bus sheet.",
    "sim": [
     {
      "name": "303",
@@ -963,7 +963,7 @@
     "Horoušany, u rybníka",
     "Nehvizdy, škola"
    ],
-   "note": "Praha, Nádraží Klánovice-sever – Šestajovice – Jirny – Nové Jirny, hájovna, hourly (Klánovice-sever :10 from 14:10, hájovna :36 from 14:36). The line's other part, Horoušany, u rybníka – Nehvizdy, škola (Horoušany :50 / Nehvizdy :00 hourly, extra :20 / :30 until 15:30), is run by the 344 buses: every one of those trips meets a 344 bus at Horoušany within 0–5 minutes (9 of 9 arrivals, 8 of 9 departures), so it is modelled inside the 344 circuit. Two midday trips run Klánovice-sever – Zeleneč – Svémyslice (13:05, back 13:29; 12:15 / 12:49): 343 Zeleneč, the only service of Zeleneč, železniční zastávka.",
+   "note": "Praha, Nádraží Klánovice-sever – Šestajovice – Jirny – Nové Jirny, hájovna, hourly (Klánovice-sever :10 from 14:10, hájovna :36 from 14:36). The line's other part, Horoušany, u rybníka – Nehvizdy, škola (Horoušany :50 / Nehvizdy :00 hourly; extra Horoušany 13:15, 14:20, 15:20 and Nehvizdy 13:30, 14:30, 15:30, none after 15:30), is run by the 344 buses: every one of those trips meets a 344 bus at Horoušany within 0–5 minutes (9 of 9 arrivals, 8 of 9 departures), so it is modelled inside the 344 circuit. Two midday trips run Klánovice-sever – Zeleneč – Svémyslice (13:05, back 13:29; 12:15 / 12:49): 343 Zeleneč, the only service of Zeleneč, železniční zastávka.",
    "sim": [
     {
      "name": "343",
@@ -1017,7 +1017,7 @@
     "Horoušany, u rybníka",
     "Nehvizdy, škola"
    ],
-   "note": "Praha, Černý Most – Horní Počernice – Šestajovice – Jirny – Horoušánky – Horoušany, u rybníka, every 30 all afternoon: Černý Most :18 / :48 (13:18–18:48), Horoušany :07 / :37 (13:37–19:07). Every second bus goes on as 343 to Nehvizdy, škola and back (the 0-minute chain test: 9 of 9 343 trips there leave on a 344 arrival, 8 of 9 come back to a 344 departure): the :18 from Černý Most reaches Horoušany :50, runs 343 to Nehvizdy (:57, back :00) and leaves Horoušany :07 as 344. Modelled as one circuit with Černý Most twice: the Nehvizdy round fills the bus's wait at Horoušany, so 344 and the Nehvizdy trips need 3 buses together (344 alone needs 3, a separate Nehvizdy shuttle 1 more). The 343 extras at :20 / :30 (until 15:30) are listed.",
+   "note": "Praha, Černý Most – Horní Počernice – Šestajovice – Jirny – Horoušánky – Horoušany, u rybníka, every 30 all afternoon: Černý Most :18 / :48 (13:18–18:48), Horoušany :07 / :37 (13:37–19:07). Every second bus goes on as 343 to Nehvizdy, škola and back (the 0-minute chain test: 9 of 9 343 trips there leave on a 344 arrival, 8 of 9 come back to a 344 departure): the :18 from Černý Most reaches Horoušany :50, runs 343 to Nehvizdy (:57, back :00) and leaves Horoušany :07 as 344. Modelled as one circuit with Černý Most twice: the Nehvizdy round fills the bus's wait at Horoušany, so 344 and the Nehvizdy trips need 3 buses together (344 alone needs 3, a separate Nehvizdy shuttle 1 more). The 343 extras (Horoušany 13:15, 14:20, 15:20; Nehvizdy 13:30, 14:30, 15:30) are listed: the second bus does the Nehvizdy round only until 15:30, and the 16:00 peak has one round an hour.",
    "sim": [
     {
      "name": "344",
@@ -1087,7 +1087,7 @@
     "Mochov"
    ],
    "anchor": "15:30",
-   "note": "Praha, Černý Most – Horní Počernice – Jirny, Logistický park – Nehvizdy – Mochov. Hourly to Mochov (Černý Most :00, 14:00–17:00; Mochov :31) and hourly to Nehvizdy, Mochovská in between (Černý Most :30, 14:30–17:35; Mochovská :06, 15:06–17:01). Modelled at 15:30 (window 15:00–17:00) by hand: the busiest stretch, 13:10–15:10, is extra trips on the line's own stops (Mochov 13:11, 13:41, 14:41, 14:51; the Jirny, LE&CO trips); the pattern runs from 14:00. At Mochov most buses meet line 662 within 0–5 minutes (12 of 17 both ways): through-running into the Mochov area, for the live map. Two trips a day serve Jirny, LE&CO (17:10 out, 17:35 back; also 13:30 / 14:20): 354 LE&CO.",
+   "note": "Praha, Černý Most – Horní Počernice – Jirny, Logistický park – Nehvizdy – Mochov. Hourly to Mochov (Černý Most :00, 14:00–17:00; Mochov :31) and hourly to Nehvizdy, Mochovská in between (Černý Most :30, 14:30–17:35; Mochovská :06, 15:06–17:01). Modelled at 15:30 (window 15:00–17:00) by hand: the busiest stretch, 13:10–15:10, is extra trips on the line's own stops (Mochov 13:11, 13:41, 14:41, 14:51; the Jirny, LE&CO trips); the pattern runs from 14:00. Also off the pattern: Černý Most 13:15, 18:15 and 18:30 to Mochov, Mochov 17:45 and 18:13 back. At Mochov most buses meet line 662 within 0–5 minutes (12 of 17 both ways): through-running into the Mochov area, for the live map. Two trips a day serve Jirny, LE&CO (17:10 out, 17:35 back; also 13:30 / 14:20): 354 LE&CO.",
    "sim": [
     {
      "name": "354",
@@ -1426,7 +1426,7 @@
     "Sulice, Želivec",
     "Kamenice, kulturní dům"
    ],
-   "note": "Praha, Budějovická – Vestec – Jesenice – Hlubočinka – Sulice / Radějovice – Křížkový Újezdec – Želivec – Kostelec u Křížků – Kamenice, kulturní dům. Out of Prague every 30 to 35 min in two alternating routes: via Hlubočinka and Sulice (14:05, 15:05, 16:06, 17:20, 18:20, 53 min) and via Radějovice and Křížkový Újezdec (13:34, 14:40, 15:31, 16:33, 17:52, 49 min). Back from Kamenice only about hourly (13:16, 14:23, 15:10, 16:24, 17:09, 18:38), each the long way through Štiřín, Všedobrovice, Petříkov, Křížkový Újezdec, Sulice and Radějovice (71 min). An outstation line: the buses sleep at Kamenice (first trips 4:42–5:46 start there) and many go on there as 444 (the chain test: 10 of 21 arrivals). Timed at the inbound rate, every 120 with two slots each way: out the two Hlubočinka trips 16:06 and 17:20 (the only route through Sulice, Hlubočinka), back 16:24 and 17:09 (also 14:23, 15:10 within a minute). The Radějovice trips 15:31 and 16:33 out are buses going home (off the pattern). The Kamenice – Sulice, Želivec shorts (13:46, 16:06, 19:32) go on as 339 and are listed.",
+   "note": "Praha, Budějovická – Vestec – Jesenice – Hlubočinka – Sulice / Radějovice – Křížkový Újezdec – Želivec – Kostelec u Křížků – Kamenice, kulturní dům. Out of Prague every 30 to 35 min in two alternating routes: via Hlubočinka and Sulice (14:05, 15:05, 16:06, 17:20, 18:20, 53 min) and via Radějovice and Křížkový Újezdec (13:34, 14:40, 15:31, 16:33, 17:52, 18:52, 49 min). Back from Kamenice only about hourly (13:16, 14:23, 15:10, 16:24, 17:09, 18:38), each the long way through Štiřín, Všedobrovice, Petříkov, Křížkový Újezdec, Sulice and Radějovice (71 min). An outstation line: the buses sleep at Kamenice (first trips 4:42–5:46 start there) and many go on there as 444 (the chain test: 10 of 21 arrivals). Timed at the inbound rate, every 120 with two slots each way: out the two Hlubočinka trips 16:06 and 17:20 (the only route through Sulice, Hlubočinka), back 16:24 and 17:09 (also 14:23, 15:10 within a minute). The Radějovice trips out (13:34, 14:40, 15:31, 16:33, 17:52, 18:52) are off the pattern: they are the trips whose buses stay out there. On the 2 Nov live map the Radějovice buses went on to 444 at Kamenice (9172, 9141, 9136, 9133, 9181; the 16:33 bus 9148 was next seen on the line at 18:20), while the Hlubočinka buses came back as the line's 16:24, 17:09 and 18:38 (9133, 9181, 9172). Read at Hlubočinka, obchodní centrum the afternoon is 11 trips out and 6 back. The Kamenice – Sulice, Želivec shorts (13:46, 16:06, 19:32) go on as 339 and are listed.",
    "sim": [
     {
      "name": "335",
@@ -2290,7 +2290,7 @@
   }
  },
  "unmodelled": {
-  "876": "School line Brandýs nad Labem, autobusové stanoviště – Kostelec nad Labem – Neratovice, Lobkovice, škola, one trip each way (8:08 out, 14:05 back). Step 8: its stops are on 482 (Brandýs, náměstí, Pražská, nádraží, Kostelec nad Labem, u váhy), and Neratovice, Lobkovice, škola (okres Mělník) is on 480 (Mělnicko sheet).",
+  "876": "School line Brandýs nad Labem, autobusové stanoviště – Kostelec nad Labem – Neratovice, Lobkovice, škola, one trip each way (8:08 out, 14:05 back). Step 8: its stops are on 482 (Brandýs, náměstí, Pražská, nádraží, Kostelec nad Labem, u váhy), and Neratovice, Lobkovice, škola (okres Mělník) is a coverage exception of the Mělnicko sheet (one afternoon trip; 350 m from Neratovice, Lobkovice, hřbitov, which 482 serves every 30).",
   "671": "School line: in the afternoon only trips out of Přezletice, Panská pole (13:30–17:10, to Jenštejn, Hradní or Dehtáry and to Veleň – Brázdim – Polerady – Záryby), none back (its three back trips run at 7:19–7:30). Step 8: every stop it serves 13:00–19:00 is on modelled lines: Přezletice, Panská pole on 302 (its way to Veleň runs via Panská pole), Podolanka on 375, Jenštejn on 367, Jenštejn, Hradní, Dehtáry and Domov seniorů on 376, 378 and 396 (Prague bus sheet), Veleň, Brázdim and Polerady on 321, Záryby on 482, Polerady, rozcestí on 377 Brázdim (Mělnicko sheet; a coverage exception here).",
   "677": "School line from Nehvizdy, škola: in the afternoon only one way (Nehvizdy 13:00, 14:05, 15:15, 16:20 → Mochov – Vyšehořovice – Tuklaty → Úvaly; 12:05 to Vyšehořovičky), no trip back after 7:18. Step 8: every stop it serves 13:00–19:00 is on modelled lines: Nehvizdy on 655 and 354, Mochov on 354, Tuklaty and Úvaly on 484 and 655; the three Vyšehořovice stops are served all afternoon by 662 (about every 20 min, modelled on the Kolínsko sheet; coverage exceptions here, checked in the cross-sheet pass).",
   "397": "Shift line of the Modletice warehouses (Opatov – D1 – Modletice, Kaufland / Doubravice): in the afternoon out of Opatov 13:30, 14:20, 16:20, 17:50 and back 14:53, 15:23, 15:53 from Doubravice and 16:45, 17:20, 18:12 from Kaufland, no repeating pattern and twice as many trips back as out. Step 8: every stop it serves 13:00–19:00 (Modletice, Doubravice, rozcestí, V hůrce, Kaufland) is on modelled lines: Modletice, Doubravice, V hůrce and Kaufland on 328 and 765, Modletice, rozcestí on 363 (Prague bus sheet).",

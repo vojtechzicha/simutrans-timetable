@@ -134,7 +134,7 @@
     "Roblín",
     "Černošice, železniční zastávka"
    ],
-   "note": "Praha, Nádraží Radotín – Kosoř – Třebotov – Choteč – Roblín – Solopisky – Černošice, železniční zastávka. Radotín :43 every hour all day (to Černošice, Roblín or only Choteč); towards Radotín hourly at Choteč :19 (14:19–18:19), from Choteč, Černošice or Roblín, and the buses turn at Radotín in 3 min (:40 → :43). One Simutrans line to Černošice: the trips that end at Choteč or Roblín run on in the game. Off the pattern: the Choteč short trips Radotín 13:13, 15:13, 17:13, 19:13, the Černošice – Roblín shuttle 16:46 / 16:58 and Roblín 18:33.",
+   "note": "Praha, Nádraží Radotín – Kosoř – Třebotov – Choteč – Roblín – Solopisky – Černošice, železniční zastávka. Radotín :43 every hour all day (to Černošice, Roblín or only Choteč); towards Radotín hourly at Choteč :19 (14:19–18:19), from Choteč, Černošice or Roblín, and the buses turn at Radotín in 3 min (:40 → :43). One Simutrans line to Černošice: the trips that end at Choteč or Roblín run on in the game. Off the pattern: the Choteč short trips Radotín 13:13, 15:13, 17:13, 19:13 (one bus every 2 hours, back from Choteč 14:19, 16:19, 18:19, which are three of the hourly :19 back slots, so only the way out is off), the Černošice – Roblín shuttle 16:46 / 16:58 and Roblín 18:33.",
    "sim": [
     {
      "name": "313",
@@ -396,7 +396,7 @@
     "Roztoky, nádraží [PZ]",
     "Roztoky, Levý Hradec"
    ],
-   "note": "Praha, Dejvická – Podbaba – Sedlecký přívoz – Roztoky, nádraží – Tyršovo náměstí – rozcestí Žalov – Přemyslovská / Levý Hradec (buses arrive at Přemyslovská and leave from Levý Hradec). In the afternoon peak Dejvická sends 8 an hour (:11 :17 :23 :41 :47 :53 to Přemyslovská, :29 :59 to Roztoky, nádraží, whose buses go on at once as 359 round the town to Levý Hradec), and 6 an hour come back (Levý Hradec :02 :09 :24 :32 :54, and Roztoky, nádraží :50, the 359 buses from Levý Hradec). The buses sleep in Roztoky (first trips 5:21–6:00 start there), so the afternoon is an outflow: the line is timed both ways at the inbound rate, six slots an hour, and the :23 / :53 departures (buses going home) are off the pattern.",
+   "note": "Praha, Dejvická – Podbaba – Sedlecký přívoz – Roztoky, nádraží – Tyršovo náměstí – rozcestí Žalov – Přemyslovská / Levý Hradec (buses arrive at Přemyslovská and leave from Levý Hradec). In the afternoon peak Dejvická sends 8 an hour: :11 :17 :23 :41 :47 :53 to Přemyslovská by the direct road, and :29 :59 to Roztoky, nádraží, where the bus goes on at once as 359 round the town (17. listopadu, Masarykova, Solníky, Obránců míru) to Levý Hradec; 6 an hour come back (Levý Hradec :02 :09 :24 :32 :54 by the direct road, and Roztoky, nádraží :50, the 359 bus that left Levý Hradec at :39 round the town). The buses sleep in Roztoky (first trips 5:21–6:00 start there), so the afternoon is an outflow: the line is timed both ways at the inbound rate, six slots an hour, and the :23 / :53 departures (buses going home; on 2 Nov buses 8880 and 1468 ran them and came back to Dejvická without a 340 trip) are off the pattern. Two Simutrans lines, one per path: 340 by the direct road (:11 :17 :41 :47, back :02 :09 :32 and nádraží :50) and 340 Masarykova, the :29 / :59 trips round the town to Levý Hradec with the :24 / :54 returns by the direct road (on 2 Nov buses 8800 and 8814 each ran one of these hourly cycles). Off the pattern besides the :23 / :53: Dejvická 13:05, 13:55, 14:25 and Levý Hradec 13:49, 14:16, 18:18, single minutes outside the peak.",
    "sim": [
     {
      "name": "340",
@@ -409,10 +409,11 @@
        "at": [
         11,
         17,
-        29,
         41,
-        47,
-        59
+        47
+       ],
+       "via": [
+        "Roztoky, Tyršovo náměstí"
        ]
       },
       {
@@ -420,16 +421,51 @@
        "to": "Praha, Dejvická",
        "knot": "Roztoky, nádraží [PZ]",
        "knot_at": [
-        2,
         10,
         17,
-        32,
         40,
         50
-       ]
+       ],
+       "lay": 0
       }
      ],
-     "why": "Dejvická :11 :17 :29 :41 :47 :59 → Podbaba, Sedlecký přívoz, Roztoky, nádraží, Tyršovo náměstí, u rybníčku, rozcestí Žalov → Přemyslovská, 21 min; back from Levý Hradec :02 :09 :24 :32 :42 :54 via rozcestí Žalov and nádraží, 21 min. 6 buses. The :29 / :59 slots are the nádraží trips: the real bus goes on round the town as 359 (17. listopadu, Masarykova, Solníky, Obránců míru) and reaches Levý Hradec 3 min later, while the game bus runs the direct road; the :42 back slot is the 359 bus that leaves Roztoky, nádraží at :50."
+     "why": "Dejvická :11 :17 :41 :47 → Podbaba, Sedlecký přívoz, Roztoky, nádraží, Tyršovo náměstí, u rybníčku, rozcestí Žalov → Přemyslovská, 21 min; back from Levý Hradec :02 :09 :32 :42 via rozcestí Žalov and nádraží, 21 min (the :42 slot is the bus that leaves Roztoky, nádraží at :50 after its 359 round through the town; in the game it runs the direct road from Levý Hradec). 0-minute turns at Levý Hradec as in the timetable: the :11 and :41 buses arrive :32 and :02 and leave at once (2 Nov: 8760, 1469), the :47 bus turns in 1 min (1896). 4 buses."
+    },
+    {
+     "name": "340 Masarykova",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Praha, Dejvická",
+       "to": "Roztoky, nádraží [PZ]",
+       "at": [
+        29,
+        59
+       ],
+       "notvia": [
+        "Roztoky, Tyršovo náměstí"
+       ]
+      },
+      {
+       "fr": "Roztoky, nádraží [PZ]",
+       "to": "Roztoky, Levý Hradec",
+       "lines": [
+        "359"
+       ],
+       "untimed": true
+      },
+      {
+       "fr": "Roztoky, Levý Hradec",
+       "to": "Praha, Dejvická",
+       "knot": "Roztoky, nádraží [PZ]",
+       "knot_at": [
+        2,
+        32
+       ],
+       "lay": 1
+      }
+     ],
+     "why": "The :29 / :59 trips, which run round Roztoky as 359: Dejvická → Podbaba, Sedlecký přívoz → Roztoky, nádraží, 14 min, then straight on (no timetable at nádraží; the real 359 leaves the minute the 340 arrives, :13 / :43) → Tyršovo náměstí, 17. listopadu, Masarykova, Solníky, Obránců míru, rozcestí Žalov, Přemyslovská → Levý Hradec, 10 min; back Levý Hradec :24 / :54 by the direct road → Dejvická, 21 min. 1-minute turn at Levý Hradec as in the timetable (the round arrives :23 / :53, the 340 trip leaves :24 / :54). 2 buses; with 340 the same 6 as one line."
     }
    ]
   },
@@ -618,7 +654,7 @@
     "Lichoceves",
     "Praha, Obchodní centrum Ruzyně"
    ],
-   "note": "Praha, Bořislavka – Pučálka – Horoměřice – Velká Brána – Statenice, Černý Vůl – Statenice, then on to Tuchoměřice and Praha, Obchodní centrum Ruzyně, to Lichoceves, or ending at Statenice. Out of Bořislavka every 10 in the afternoon in a fixed rotation: :15 / :45 Obchodní centrum Ruzyně, :35 Lichoceves, :05 Statenice, :25 / :55 Horoměřice, Velká Brána; back Obchodní centrum Ruzyně :26 / :56, Lichoceves :59, Statenice :25, Horoměřice, v lipkách :41. Four Simutrans lines, one per destination (Ex4), at the line's own peak 14:00–16:00; the Velká Brána short turns (out every 30, back hourly from v lipkách) at their inbound rate, hourly, with the :55 departures off the pattern. Listed: the Tuchoměřice, u dvora and Outlet trips 17:48, 18:53, 19:45.",
+   "note": "Praha, Bořislavka – Pučálka – Horoměřice – Velká Brána – Statenice, Černý Vůl – Statenice, then on to Tuchoměřice and Praha, Obchodní centrum Ruzyně, to Lichoceves, or ending at Statenice. Out of Bořislavka every 10 in the afternoon in a fixed rotation: :15 / :45 Obchodní centrum Ruzyně, :35 Lichoceves, :05 Statenice, :25 / :55 Horoměřice, Velká Brána; back Obchodní centrum Ruzyně :26 / :56, Lichoceves :59, Statenice :25, Horoměřice, v lipkách :41. Four Simutrans lines, one per destination (Ex4), at the line's own peak 14:00–16:00; the Velká Brána short turns (out every 30, back hourly from v lipkách) at their inbound rate, hourly, with the :55 departures off the pattern. Outside 14:00–18:00 the rotation drifts by 5–30 min and those trips are listed (Bořislavka 13:10, 13:30, 18:00, 18:12, 18:24, 18:38; Statenice 13:30, 18:38; Lichoceves 14:04, 17:19, 18:04), as are the Tuchoměřice, u dvora and Outlet trips 17:48, 18:53, 19:45.",
    "sim": [
     {
      "name": "356",
@@ -760,7 +796,7 @@
     "Roztoky, nádraží [PZ]",
     "Roztoky, Maxmiliánka"
    ],
-   "note": "Praha, Suchdol – Únětice – Roztoky (rozcestí Žalov, Obránců míru, Solníky, Masarykova, 17. listopadu, nádraží, Tiché údolí) – Maxmiliánka, hourly: Suchdol :55 (13:25–17:55), Maxmiliánka :00 (13:00–18:00). The other half of 359 is the Roztoky town round Roztoky, nádraží – Levý Hradec (nádraží :13 / :43, Levý Hradec :39), run every time by the 340 buses: every 340 arrival at nádraží goes on as 359 and every 359 departure from nádraží follows a 340 arrival (18 of 18), so those trips are carried by 340 (its :29 / :59 and :42 slots), and their stops are on 359 and 340. Off the pattern: the evening Únětice trips and Maxmiliánka 19:00–22:00. At Suchdol every 359 bus goes on as 107 (11 of 11).",
+   "note": "Praha, Suchdol – Únětice – Roztoky (rozcestí Žalov, Obránců míru, Solníky, Masarykova, 17. listopadu, nádraží, Tiché údolí) – Maxmiliánka, hourly: Suchdol :55 (13:25–17:55), Maxmiliánka :00 (13:00–18:00). The other half of 359 is the Roztoky town round Roztoky, nádraží – Levý Hradec (nádraží :13 / :43 every 30, Levý Hradec :39 hourly), run every time by the 340 buses: every 340 arrival at nádraží goes on as 359 and every 359 departure from nádraží follows a 340 arrival (18 of 18). The round out of nádraží is modelled as the Simutrans line 340 Masarykova (Dejvická :29 / :59 → nádraží → round the town → Levý Hradec), so 17. listopadu, Masarykova, Solníky and Obránců míru have their three buses an hour towards Levý Hradec as in reality; the hourly :39 round back from Levý Hradec is carried by 340's :42 slot (nádraží :50 → Dejvická) on the direct road, so towards nádraží those four stops have only this line's hourly service in the game. Off the pattern: the evening Únětice trips and Maxmiliánka 19:00–22:00. At Suchdol every 359 bus goes on as 107 (11 of 11).",
    "sim": [
     {
      "name": "359",
@@ -792,7 +828,7 @@
     "Štěchovice",
     "Štěchovice, Třebenice"
    ],
-   "note": "Praha, Smíchovské nádraží – Zbraslav – Davle – Štěchovice – Slapy – Štěchovice, Třebenice. To Třebenice hourly from 15:25 (Smíchovské nádraží :25, Třebenice :11; 13:35 and 14:35 run 10 minutes later, 17:06 back 5 minutes earlier). The Třebenice line is timed in the hours of its own pattern, 15:00–17:00 (the line's anchor, 14:20, comes from the Štěchovice short trips). The Štěchovice short trips (Smíchovské nádraží 13:55, 15:35, 16:35, 17:35; Štěchovice 13:55, 14:35, 15:35, 17:35) are listed: all their stops are on 390, and their buses run 440 between them (9 of 9 short departures follow a 440 arrival).",
+   "note": "Praha, Smíchovské nádraží – Zbraslav – Davle – Štěchovice – Slapy – Štěchovice, Třebenice. Two Simutrans lines. 390 runs to Třebenice hourly from 15:25 (Smíchovské nádraží :25, Třebenice :11; 13:35 and 14:35 run 10 minutes later, 17:06 back 5 minutes earlier), timed in the hours of its own pattern, 15:00–17:00. 390 Štěchovice is the short working that turns at Štěchovice: Smíchovské nádraží 13:55, 15:35, 16:35, 17:35 and Štěchovice 13:55, 14:35, 15:35, 17:35, four each way and hourly at :35 from 15:35. It is modelled every 2 hours (15:35 and 17:35 exact both ways) because Štěchovice has no 16:35 departure for an hourly pattern to stand on. Off the pattern: on 390 Smíchovské nádraží 14:35 and 18:40, Třebenice 13:56; on 390 Štěchovice 13:55 both ways, Smíchovské nádraží 16:35 and Štěchovice 14:35. The short trips’ buses run 440 between them (9 of 9 short departures follow a 440 arrival). Pooling 390 Štěchovice with 440 is an option (not applied), since its buses wait about 85 minutes at each end.",
    "sim": [
     {
      "name": "390",
@@ -818,6 +854,37 @@
       "15:00",
       "17:00"
      ]
+    },
+    {
+     "name": "390 Štěchovice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Praha, Smíchovské nádraží",
+       "to": "Štěchovice",
+       "at": [
+        "15:35"
+       ],
+       "notvia": [
+        "Štěchovice, Třebenice"
+       ]
+      },
+      {
+       "fr": "Štěchovice",
+       "to": "Praha, Smíchovské nádraží",
+       "at": [
+        "15:35"
+       ],
+       "notvia": [
+        "Štěchovice, Třebenice"
+       ]
+      }
+     ],
+     "window": [
+      "15:00",
+      "17:00"
+     ],
+     "why": "Smíchovské nádraží :35 odd hours → Zbraslav, Davle → Štěchovice, 35 min; Štěchovice :35 odd hours → Smíchovské nádraží, 34 min. 15:35 and 17:35 are real both ways (window 15:00–17:00 by hand). An hourly pattern would have no real Štěchovice departure at 16:35 and fails Step 4. 2 buses, with about 85 min of waiting at each end."
     }
    ]
   },
@@ -1144,7 +1211,7 @@
     "Mníšek pod Brdy, OPS Magdaléna",
     "Voznice, Chouzavá"
    ],
-   "note": "Mníšek pod Brdy, náměstí – Pražská – Čisovická – u hřbitova – železniční stanice (– OPS Magdaléna), and by kaple and Kytín to Voznice, Chouzavá: one bus on irregular single trips, náměstí 14:03 (Chouzavá), 14:46 (OPS Magdaléna), 15:11 (Chouzavá), 16:46, 18:30 (železniční stanice). Modelled as one circuit every 120 on the real 14:03–15:00 round: náměstí → Chouzavá → náměstí → OPS Magdaléna → náměstí, both turns 0 min as in the timetable. Off the pattern: 15:11 / 15:29 to Chouzavá and the železniční stanice shuttles 13:16, 16:46, 18:30, 19:40 (stops on the OPS Magdaléna leg).",
+   "note": "Mníšek pod Brdy, náměstí – Pražská – Čisovická – u hřbitova – železniční stanice (– OPS Magdaléna), and by kaple and Kytín to Voznice, Chouzavá: one bus on irregular single trips, náměstí 14:03 (Chouzavá), 14:46 (OPS Magdaléna), 15:11 (Chouzavá), 16:46, 18:30 (železniční stanice). Modelled as one circuit every 120 on the real 14:03–15:00 round: náměstí → Chouzavá → náměstí → OPS Magdaléna → náměstí, both turns 0 min as in the timetable. Off the pattern: 15:11 / 15:29 to Chouzavá and the železniční stanice shuttles 13:16, 18:30, 19:40 (stops on the OPS Magdaléna leg); the 16:46 / 16:51 shuttle is what the OPS Magdaléna repeat 16:46 / 16:52 stands for.",
    "sim": [
     {
      "name": "447",
@@ -1515,6 +1582,6 @@
   "Praha, Na Hůrce": "A Prague stop with no city line: served about every 15 minutes 13:00–19:00 by 365 and 386 (Kladensko sheet); on this sheet only 347's two Motol trips (8:50, 14:19) pass it, which are listed (Step 8)."
  },
  "owner_checks": [],
- "notes": "PID Praha-západ (okres Praha-západ, licences 290xxx and 297xxx, and the Prague lines whose first stop inwards from the outer end is in the okres). Timetable: PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026 (school day). Every terminus is treated as a loop (typed = real − 61 mod every). Most lines here are Prague lines (from Zličín, Stodůlky, Smíchovské nádraží, Nádraží Radotín, Opatov, Obchodní náměstí, Dejvická, Bořislavka, Suchdol); they are timed at both terminals and their Prague stops are covered by the Prague bus sheet. Regular afternoon destination variants get their own Simutrans line (Ex4); sparse variants whose stops other lines serve are listed on their cards. Through running seen in the 0–5 minute chain test: every 340 trip to Roztoky, nádraží goes on as the 359 round to Levý Hradec (18 of 18), carried by 340's slots; every 359 bus at Suchdol goes on as 107 (11 of 11); the 390 Štěchovice short trips run 440 in between (9 of 9); the 449 Jíloviště trips and the 748 Řitka trips are 318 buses (4 of 4, 3 of 3); the 362 buses come from and go on as 332 at Jílové (5 of 5). Partial: 311 → 632 at Řevnice (5 of 11), 664 → the 419 Mokropsy round at Černošice (6 of 14), 326 ↔ 331 at Opatov (13 of 38), the 310 Nučice short trips → 308 (2 of 2), 762 → 327 at Jesenice (6 of 6, two operators). Open for the 2 Nov live map, more than half of the trips in the chain test: 334 ↔ 317 at Smíchovské nádraží (22 of 25 departures follow a 317 arrival, same operator) and 331 ↔ 385 at Opatov (20 of 30 arrivals). The live map of 2 Nov will confirm them all. 0-minute turns as in the timetable (441 at Luka p.Medníkem, nádraží; 447 at Voznice, Chouzavá and OPS Magdaléna): the departure is typed 1 min early by the loop rule and a bus arriving on the real minute leaves within the entry's Leave up to (automatic, half the gap); to be confirmed with an engine session. On other sheets: 301, 312, 318, 333, 352 (Prague bus sheet, companions); 407 and 428 are on the Příbramsko sheet.",
+ "notes": "PID Praha-západ (okres Praha-západ, licences 290xxx and 297xxx, and the Prague lines whose first stop inwards from the outer end is in the okres). Timetable: PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026 (school day). Every terminus is treated as a loop (typed = real − 61 mod every). Most lines here are Prague lines (from Zličín, Stodůlky, Smíchovské nádraží, Nádraží Radotín, Opatov, Obchodní náměstí, Dejvická, Bořislavka, Suchdol); they are timed at both terminals and their Prague stops are covered by the Prague bus sheet. Regular afternoon destination variants get their own Simutrans line (Ex4); sparse variants whose stops other lines serve are listed on their cards. Through running seen in the 0–5 minute chain test: every 340 trip to Roztoky, nádraží goes on as the 359 round to Levý Hradec (18 of 18), modelled as the Simutrans line 340 Masarykova; every 359 bus at Suchdol goes on as 107 (11 of 11); the 390 Štěchovice short trips run 440 in between (9 of 9); the 449 Jíloviště trips and the 748 Řitka trips are 318 buses (4 of 4, 3 of 3); the 362 buses come from and go on as 332 at Jílové (5 of 5). Partial: 311 → 632 at Řevnice (5 of 11), 664 → the 419 Mokropsy round at Černošice (6 of 14), 326 ↔ 331 at Opatov (13 of 38), the 310 Nučice short trips → 308 (2 of 2), 762 → 327 at Jesenice (6 of 6, two operators). Open for the 2 Nov live map, more than half of the trips in the chain test: 334 ↔ 317 at Smíchovské nádraží (22 of 25 departures follow a 317 arrival, same operator) and 331 ↔ 385 at Opatov (20 of 30 arrivals). The live map of 2 Nov will confirm them all. 0-minute turns as in the timetable (441 at Luka p.Medníkem, nádraží; 447 at Voznice, Chouzavá and OPS Magdaléna): the departure is typed 1 min early by the loop rule and a bus arriving on the real minute leaves within the entry's Leave up to (automatic, half the gap); to be confirmed with an engine session. On other sheets: 301, 312, 318, 333, 352 (Prague bus sheet, companions); 407 and 428 are on the Příbramsko sheet.",
  "artifact_url": "https://claude.ai/artifact/CDDnFgXhcNaKqBa9BuLbmJ"
 }

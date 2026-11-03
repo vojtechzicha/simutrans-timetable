@@ -1,3 +1,5 @@
+> 3 Nov 2026: re-checked for branches read by trip ends instead of where trips pass (the 381 Zásmuky case). Where `branch-check-2026-11-03.md` or `branch-review-2026-11-03.md` differs from this file, the 3 Nov files stand (the review over the check).
+
 # Method check: PID Rakovnicko (okres Rakovník, prefix 310), 1–2 Nov 2026
 
 The pilot oblast of the PID regional sheets, designed by hand line by line with `../../DESIGN_BRIEF.md` and the bus schedule

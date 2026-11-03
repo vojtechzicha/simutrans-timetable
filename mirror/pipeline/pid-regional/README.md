@@ -53,14 +53,16 @@ The PID live map observes every bus on every line instead, on two working days.
 | `02_gtfs.py` | GTFS → `data/derived/lines.json` (every route, oblast and why), `ends.json`, `city_stops.json`, `stop_okres.json`, `stop_lines.json`; per oblast `oblasti/<id>/data/derived/trips.json`, `line_class.json`, `versions.json` in the ODIS regional schema. **Do not run while designers work** (it rewrites every trips.json). |
 | `00_config.py <id> [--final]` | `oblasti/<id>/lines.json` (the hand design) + shared settings → `oblasti/<id>/config.json` for the ODIS scripts. `--final` adds every sibling sheet's coverage (only when no designer is running). |
 | `03_read.py <id>` | The whole-day reading per line (`reading/<L>.txt`): core points, paths in full names, every trip at the core points, the stops only this line serves, the 0–5 min chain test at the ends, and (after the poll) each bus seen and the afternoon bus chains. |
-| `run_oblast.py <id> [--draft] [--final]` | 00 → 03 → (`odis-regional-hko/scripts/03b_draft.py`) → `odis-regional-hko/scripts/05_schedule.py --base pid-regional/oblasti/<id>` → audits (`../audit/step4_regional.py`, `branch_check.py`, `path_check.py` with `AUDIT_SHEETS`), coverage split by okres, slots with no real trip. |
-| `04_vehicles.py` | All oblasts at once: the buses of every Simutrans line from the live map by augmenting-path matching (one bus, one line, one sheet), designed buses with reasons, pak objects (`config.pak.rules`). |
+| `run_oblast.py <id> [--draft] [--final]` | 00 → 03 → (`odis-regional-hko/scripts/03b_draft.py`) → `odis-regional-hko/scripts/05_schedule.py --base pid-regional/oblasti/<id>` → audits (`../audit/step4_regional.py`, `branch_check.py`, `path_check.py`, `passing_check.py` with `AUDIT_SHEETS`), coverage split by okres, slots with no real trip. |
+| `04_vehicles.py` | All oblasts at once: the buses of every Simutrans line from the live map by augmenting-path matching (one bus, one line, one sheet), starting from the published roster (`roster_published.json`, keep_roster), designed buses with reasons, pak objects (`config.pak.rules`, `by_vehicle`, `paint_by_vehicle`; a known non-PID paint is requested, never grey-red). |
 | `05b_game.py <id>` | The save's lines against the sheet (missing / extra stops, buses, name fixes; "a line to build"). |
 | `06_render.py <id>` | The sheet. `07_index.py`: "PID All Lines". `observed.py <line> <date>`: one line's trips with the buses seen (for the Prague session's 317/318). |
 
 The schedule method is `../bus-schedule-method.md` (v4) in full: every PID regional line is a regional line, and the town
 networks (MHD Benešov, Kolín, Příbram, Říčany, Vlašim, Beroun) are small towns. Designers work from `DESIGN_BRIEF.md`,
-reviewers from `REVIEW_BRIEF.md`; each oblast keeps `method-check-2026-11-01.md` and `review-2026-11-01.md`.
+reviewers from `REVIEW_BRIEF.md`; each oblast keeps `method-check-2026-11-01.md` and `review-2026-11-01.md`. The 3 Nov
+branch re-check (`BRANCH_BRIEF.md`) added `branch-check-2026-11-03.md` (designer) and `branch-review-2026-11-03.md` (reviewer)
+per oblast, and `audit-passing-2026-11-03-before.txt` / `-after.txt` for the whole sheet set.
 
 ## Decisions
 - **Owner, 2 Nov 2026 — "Yes, serve every place":** a stop no other modelled line serves gets a Simutrans line (at most
@@ -77,6 +79,15 @@ reviewers from `REVIEW_BRIEF.md`; each oblast keeps `method-check-2026-11-01.md`
   rule typed the departure 1 min early; to confirm with an engine session.
 - **owner_checks only for real choices** (the pilot's 13 were cut to 1 by the review: outstation rate, no empty returns,
   exact beats approximate, only-service lines, Step 5b and pooling are decided by the rules).
+- **Owner, 3 Nov 2026 — "381 you haven't done the Zásmuky branch":** branches are read where the trips pass, never by trip
+  ends; ≥ 3 each way 13:00–19:00 at a repeating minute is a line of its own; the outstation rule applies only to what is
+  left. Re-check of all twelve sheets: 14 new Simutrans lines (381 Zásmuky, 865 Pacov, 631 u lípy, 342 Knovíz, 365 Unhošť,
+  389 Chomutov, 306 Jeneč, 857 Minice, 466 Nelahozeves, 767 Krpy, 716 Sychrov, 390 Štěchovice, 340 Masarykova, 415 Žatec),
+  6 changed (382 :50 → :20, 361 every 120 → 60, 369 second slot, 466 town end, 340 split, 659 path), 1155 → 1184 buses.
+- **Republish keeps the published buses** (keep_roster; owner on the Prague sheet, 2 Nov: "do not move vehicles in lines not
+  affected if possible"): copy `roster.json` → `roster_published.json` after each publish.
+- **Pooling options go on the cards, never on owner_checks** (307, 631 + 649, 365, 389, 865 are named there
+  with the buses seen doing it).
 - Pilot lessons (Rakovnicko, 1–2 Nov) are in `DESIGN_BRIEF.md` → "Learned on the pilot".
 
 ## How to update
@@ -85,4 +96,5 @@ reviewers from `REVIEW_BRIEF.md`; each oblast keeps `method-check-2026-11-01.md`
 2. New vehicles: run `01_live_poll.py` detached over a weekday (with `keep_awake.py`), set `config.live.days`, run
    `03_read.py` per oblast and `04_vehicles.py`.
 3. `run_oblast.py <id> --final` for every oblast (cross-sheet coverage), `05b_game.py`, `06_render.py`, `07_index.py`.
-4. Republish each sheet to its artifact URL; `pnpm sync` in the repo; give the owner the in-game change list.
+4. Republish each sheet to its artifact URL; copy each `roster.json` to `roster_published.json`; `pnpm sync` in the repo; give the
+   owner the in-game change list (old → new: typed values, buses in / out).

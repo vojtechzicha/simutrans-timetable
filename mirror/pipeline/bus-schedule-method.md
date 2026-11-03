@@ -19,7 +19,11 @@ Version 4 (25 Oct 2026): the rules below from the hand check of the Hlučínsko 
 - **Outstation lines.** Where the buses sleep at the far ends (garages or villages: the first morning trips start there),
   the afternoon sends more buses out of the city than come back, and Step 5b cannot pair the surplus across lines. Time the
   line both ways at its inbound rate and list the extra outbound departures (buses going home) as off the pattern. Its
-  outbound row then has fewer slots than real departures; say why on the card.
+  outbound row then has fewer slots than real departures; say why on the card. **Count the inbound rate at the point where the
+  extra trips turn, with every trip that passes it** (Step 3), not only the trips that start there: 381's Háje → Zásmuky
+  extras (14:30–17:30) looked like garage buses going home because one trip starts at Zásmuky towards Prague, but the
+  Kutná Hora → Háje 13:40 and 14:40 pass Zásmuky at 14:21 and 15:21: 4 out and 3 back, a branch with its own line
+  (owner, 3 Nov 2026: "That is not off the pattern … I clearly see 381 runs Zásmuky/Čáslav switching").
 - **No empty-return lines just for frequency** (owner: "Unless those empty runs add something really needed and specific,
   don't add them just for frequency"). In the game a line repeats all day, so an empty return shuttles back every period.
   Add one only for something specific, such as a stop that has no other service (387, 543B, 553 Orlová kept their reasons).
@@ -202,7 +206,7 @@ Each doubtful row goes on the "To check" list, with its off-pattern trips and a 
 | Mistake | Effect | Fix |
 |---|---|---|
 | Fitting only the 15:30–17:30 band | 409 every 120 (30 min off); 514 3 buses instead of 2 | Read the whole day (Step 1) |
-| Grouping trips by start/end stop pair | 501 lost Dětmarovice; 505's rotation and the 401/406 ring broke into wrong shuttles | Passing times at core points (Step 3) |
+| Grouping trips by start/end stop pair | 501 lost Dětmarovice; 505's rotation and the 401/406 ring broke into wrong shuttles; 381 Zásmuky (3 Nov) filed as buses going home | Passing times at core points (Step 3); `audit/passing_check.py` |
 | Folding variant minutes into the main row | 417's exact hourly pattern became approximate | Variants get their own line or are listed (Steps 5, 11) |
 | Slot chosen by smallest worst deviation | 504 at :01 instead of :06 | Exact minutes first (Step 4) |
 | Timetable at a knot the bus passes through | 501B timed at the station, waited there | Time the terminal, work back (Step 6) |

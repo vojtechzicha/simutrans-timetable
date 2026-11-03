@@ -345,6 +345,9 @@
        "core_to": "Stříbrná Skalice, železniční stanice",
        "at": [
         0
+       ],
+       "stops_via": [
+        "Prusice, rozcestí"
        ]
       },
       {
@@ -355,7 +358,7 @@
        ]
       }
      ],
-     "why": "Český Brod :00 → Kostelec nad Černými lesy (:28) → Prusice → Nučice → Konojedy → Vlkančice → Stříbrná Skalice, železniční stanice (:06) → náměstí :11, 71 min, by the 13:55 / 14:55 path; the 16:00 and 18:00 run via Prusice, rozcestí instead of Prusice, and the 17:00 ends at the station. back from Stříbrná Skalice, náměstí :37 → Prusice → Kostelec (:20) → Český Brod :48, 71 min, not via Nučice; 3 buses (waits 26 at Stříbrná Skalice, 12 at Český Brod)."
+     "why": "Český Brod :00 → Kostelec nad Černými lesy (:28) → Prusice, rozcestí → Nučice → Konojedy → Vlkančice → Stříbrná Skalice, železniční stanice (:06) → náměstí :11, 71 min, by the road of the 16:00, 17:00 and 18:00 (the 13:55 and 14:55 call at Prusice instead of Prusice, rozcestí; the 17:00 ends at the station). back from Stříbrná Skalice, náměstí :37 → Prusice → Kostelec (:20) → Český Brod :48, 71 min, not via Nučice; 3 buses (waits 26 at Stříbrná Skalice, 12 at Český Brod)."
     }
    ],
    "anchor": "16:00"
@@ -451,7 +454,7 @@
     "Český Brod, železniční stanice",
     "Kouřim"
    ],
-   "note": "Čelákovice, Toušeňská – Mochov – Vyšehořovice – Vykáň – Černíky – Český Brod – Liblice – Kšely – Vitice – Třebovle – Kouřim. Hourly and exact: Čelákovice :53, Kouřim :14; the bus turns at Kouřim in 0 min. Listed (stops on 662 and 661): Český Brod → Čelákovice 12:43, 13:44; Čelákovice → Vykáň 15:23, 16:23; and the Kounice – Mochov shuttle (licence 231662, ČSAD Střední Čechy, about hourly 13:23–18:57), 12 of whose 13 Mochov arrivals go on as 354 to Prague.",
+   "note": "Čelákovice, Toušeňská – Mochov – Vyšehořovice – Vykáň – Černíky – Český Brod – Liblice – Kšely – Vitice – Třebovle – Kouřim. Hourly and exact: Čelákovice :53, Kouřim :14; the bus turns at Kouřim in 0 min. Listed (stops on 662 and 661): Český Brod → Čelákovice 12:43, 13:44; Čelákovice → Vykáň 15:23, 16:23; and the Kounice – Mochov shuttle (licence 231662, ČSAD Střední Čechy; 18 min over Vyšehořovice and Vykáň): out of Mochov 13:27, 14:27, 15:27, 16:27, 17:33, 18:57, back from Kounice 13:23, 14:33, 15:13, 16:13, 17:27, 17:55. It runs on the Prague 354 buses (12 of its 13 Mochov arrivals go on as 354), exact at :27 on the way out but with no repeating minute on the way back (an hourly slot is 0–20 min off), so it is not a line here; an approximate line is on the owner checks.",
    "sim": [
     {
      "name": "662",
@@ -483,7 +486,7 @@
     "Cerhenice, Náměstí Míru",
     "Pečky, železniční stanice"
    ],
-   "note": "Kolín – Nová Ves I – Velim – Cerhenice – Dobřichov – Pečky. Kolín leaves hourly at :03, odd hours to Pečky (15:03, 17:03; 13:13 off), even hours only to Cerhenice, Náměstí Míru (14:03, 16:03, 18:03); Pečky :14 even hours (14:14, 16:14, 18:14); from Cerhenice only 17:30. Two Simutrans lines (Ex4): 675 to Pečky every 120, and 675 Cerhenice every 480 on the one real return (the outstation rule: timed at the inbound rate). Off: Kolín 14:03 and 18:03 → Cerhenice, whose buses end there (their next trip open for the live map).",
+   "note": "Kolín – Nová Ves I – Velim – Cerhenice – Dobřichov – Pečky. Kolín leaves hourly at :03, odd hours to Pečky (15:03, 17:03; 13:13 off), even hours only to Cerhenice, Náměstí Míru (14:03, 16:03, 18:03); Pečky :14 even hours (14:14, 16:14, 18:14); from Cerhenice only 17:30. Two Simutrans lines (Ex4): 675 to Pečky every 120, and 675 Cerhenice every 480 on the one real return (the outstation rule: timed at the inbound rate). Off: Kolín 14:03 and 18:03 → Cerhenice; on the 2 Nov live map the 14:03's bus (8596) went on as 679 at 15:16 and the 18:03's ended its day there, while the 16:03's (1648) came back as the 17:30, the round 675 Cerhenice models.",
    "sim": [
     {
      "name": "675",
@@ -1323,6 +1326,11 @@
    "660",
    "Štíhlice (village stop, okres Praha-východ; 7:15 to Kostelec, 13:45 and 15:20 from Kostelec, no other line on any sheet) is kept by 660 Doubravčice, every 480, 1 bus: the sheet's one coverage choice.",
    "A coverage exception (−1 bus): Štíhlice, Doubravčická, the village's other stop, is on 491 hourly."
+  ],
+  [
+   "662",
+   "The Kounice – Mochov shuttle runs about hourly in the afternoon on the 354 buses (out of Mochov 13:27, 14:27, 15:27, 16:27, 17:33, 18:57; back from Kounice 13:23, 14:33, 15:13, 16:13, 17:27, 17:55) but is not a line here: the way out repeats at :27, the way back does not. Kounice is on 661 and the stops between Mochov and Černíky are on 662.",
+   "A line 662 Kounice every 60: Mochov :27 → Kounice and Kounice :13 → Mochov, 18 min each way. The way out is exact (13:27–16:27); on the way back only 15:13 and 16:13 are exact (13:23 is 10, 14:33 20, 17:27 14 min off). 2 buses (+2)."
   ]
  ],
  "notes": "PID Kolínsko (okres Kolín, licences 230xxx and MHD Kolín 235001–235009). Timetable: PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026 (school day). Every terminus is treated as a loop (typed = real − 61 mod every). MHD Kolín is a small-town network, done with the same regional method. Eight lines run every 480 on their real rounds (889 Chotutice on its fixed evening round) (the 402B rule; Step 4 rule 3, the exact pattern with the same bus): 460 Radim (the only service of Radim, ObÚ), 660 Doubravčice (Štíhlice), 675 Cerhenice (its one real return), 681 Petrovice (two rounds), MHD Kolín 5 (three rounds), MHD Kolín 6 and 7 (factory shifts at PZKO-TOYOTA), 889 Chotutice (Chotutice). Six lines turn a bus on arrival as the timetable does (537 at Jestřabí Lhota, 662 at Kouřim, 681 at Uhlířské Janovice, 698 at Semice, MHD Kolín 3 at zimní stadion, MHD Kolín 9 at Veltruby): sized with no wait, the typed departure being the real minute − 1; that a bus arriving on the real minute still leaves within the entry's Leave up to (automatic) is an engine question to confirm once. Through-running seen in the 0–5 min chain test, kept as separate lines (open for the 2 Nov live map): 491 ↔ 660 and 660 ↔ 661 at Český Brod (660's :00 departures follow 491's :58 and 661's :55 arrivals equally, 661's 17:30 and 18:30 leave as the 660 buses arrive; a 491 + 660 circuit every 60 would need 3 buses instead of 4, but only the plates can tell which line feeds 660); 535 → 534 at Kolín (:05 → :06); 702 and 821 arrivals at Kolín :58 before 675 :03; 821 ↔ 772 at Horní Kruty and 821 ↔ 824 at Ždánice, u Jánů (2 of 2); 662's Kounice – Mochov shuttle ↔ 354 at Mochov (12 of 13 both ways); 435 ↔ 686 at Říčany, Wolkerova (5 of 14); 487 ↔ 790, 426, 455 at Vlašim (3–4 of 9); 826 → 433 at Pečky (4 of 11); MHD Kolín 4 → MHD Kolín 6 at Retailpark Ovčáry (5 of 5, morning). The OAD Kolín buses (435, 491, 660, 661, 662, 822, 698, 706, MHD Kolín) and the POLKOST buses (460, 487, 675, 681, 702, 707, 821, 824, 826) swap lines at Český Brod and Kolín all day; per-line Simutrans lines need more buses than the operators run, and pooling is the owner's choice (one case on the owner checks, 534 + 535). For the Praha-východ sheet: the Kounice – Mochov shuttle (licence 231662, ČSAD Střední Čechy, about hourly 13:23–18:57) continues 354 at Mochov, so the 354 buses run on to Kounice; it is listed here, its stops being on 661 and 662. PID Haló (owner, 2 Nov 2026: model a line where it is a place's only 13:00–19:00 service): 888 Českobrodsko and 889 Pečecko run only 20:12–0:42, so no stop of okres Kolín has Haló as its 13:00–19:00 service (stop_lines.json has no 888 / 889 entry). The stops only they serve are on-demand virtual stops (virtuální zastávka) in villages whose other stops are on modelled lines, plus Pečky, Hynkův mlýn (also on 675 at 6:21), Kostelec nad Černými lesy, Trativody and u křížku (okres Praha-východ) and the village of Chotutice, which has no other bus at all: the owner's Haló decision decides it, so it gets 889 Chotutice from 889's fixed evening trips (every 480).",

@@ -1,3 +1,5 @@
+> 3 Nov 2026: re-checked for branches read by trip ends instead of where trips pass (the 381 Zásmuky case). Where `branch-check-2026-11-03.md` or `branch-review-2026-11-03.md` differs from this file, the 3 Nov files stand (the review over the check).
+
 # Method check: PID Kutnohorsko (okres Kutná Hora), designed 2 Nov 2026
 
 Every line of the oblast set by hand with the bus schedule method v4 (`mirror/pipeline/bus-schedule-method.md`), the brief

@@ -14,6 +14,11 @@ sheet only:
    vehicle day, free in the line's window; (b) one seen on the line on the second poll day (Tue 3 Nov: the owner, 1 Nov
    2026: "Use more than a sample day - working day assumption holds from September to November"); (c) a free bus of the
    line's operator that ran this oblast's lines that day, of the line's commonest type; (d) any free bus of the operator.
+6. Keep the published roster (kb rules/bus-sheets.md, keep_roster; 3 Nov 2026, v2 after v1 of 2 Nov): the matching starts
+   from each sheet's published buses (data/derived/roster_published.json) wherever they are still evidence for the same
+   Simutrans line, and a kept bus never moves (owner, 2 Nov 2026, Prague bus sheet: "do not move vehicles in lines not
+   affected if possible"): a new or changed line takes free buses or designed ones; the spares rule never swaps a kept bus;
+   a published designed bus stays while it is still free. So v1 -> v2 changes only what the new evidence changes.
 Each bus: PID number, operator, type (the live map's vehicle window), length from the type, paint from the
 seznam-autobusu register (praha-bus registers of 29 Sep, joined by the car id of the vehicle card) where it has the car,
 and its pak object (pak_rules in pid-regional/config.json; town lines use their VZ-MHD<Town> package).
@@ -76,10 +81,13 @@ for pk in SH['pak']['packages']:
         for m in re.finditer(r'(?im)^name=(\S+)\s*$', t):
             ln = re.search(r'(?im)^length=(\d+)', t[m.end():]); INST[m.group(1)] = int(ln.group(1)) if ln else 8
 def livery(paint):
+    """the PID livery of a register paint; None for a known paint that is no PID scheme (an operator's own colours, another
+    region's, a full wrap): that bus is requested, never put on the grey-red object (owner, 3 Nov 2026: "If something exists in
+    the real PID, it should be modeled... include more liveries where needed"). No paint in the register: PID grey-red."""
     p = (paint or '').lower()
     for k, v in SH['pak']['paints']:
         if k in p: return v
-    return SH['pak']['default_livery']
+    return None if p else SH['pak']['default_livery']
 def objs(pre):
     """installed objects of one type and livery: 'VZ-PID-<tok>-<liv>-<tok>', articulated '...-<tok>-A' + '-B'"""
     return sorted(n for n in INST if n.startswith(pre))
@@ -115,6 +123,8 @@ def pak_of(ty, paint, town, op='', num=None):
         # white-and-green MHD Říčany NovoCitis had silently become VZ-Praha-NovoCiti_Life-pidsedocervena)
         return dict(ok=False, core=tok, liv='', obj=None, want=f"VZ-MHD{pk}-{tok}-<town livery> ({ty}, town line of {town}; {paint or 'paint not in the register'})")
     liv = livery(paint)
+    if liv is None:
+        return dict(ok=False, core=tok, liv='', obj=None, want=f"VZ-PID-{tok}-<{paint}> ({ty})")
     packs = ['VZ-DPPraha', 'VZ-PID', 'VZ-Praha'] if 'Dopravní podnik' in (op or '') else ['VZ-PID', 'VZ-Praha', 'VZ-DPPraha']
     for pre in packs:
         ns = objs(f"{pre}-{tok}-{liv}-")
@@ -140,9 +150,11 @@ def info(v, town=None):
         # MHD Kolín: the live map gives no type; the fleet desk's fleet list (17 Conecto LF II, 2 NovoCiti Life, all white)
         ty = SH['pak']['untyped'][op]; note = 'type not reported by the live map; the town fleet is 17 Conecto LF II and 2 NovoCiti Life (fleet desk)'
     ty = ty or '?'
+    # the register paint the fleet desk read where the lookup by car id found none (config pak.paint_by_vehicle, 3 Nov 2026)
+    paint = r.get('paint') or SH['pak'].get('paint_by_vehicle', {}).get(str(v), '')
     return dict(num=str(v), operator=op, type=ty, full=ty + (' (probable)' if note else ''), len=tlen(ty),
-                paint=r.get('paint', ''), garage=r.get('garage', ''), course=w.get('course', ''), car_id=w.get('car_id'),
-                pak=pak_of(ty, r.get('paint', ''), town, op, v), note=note)
+                paint=paint, garage=r.get('garage', ''), course=w.get('course', ''), car_id=w.get('car_id'),
+                pak=pak_of(ty, paint, town, op, v), note=note)
 
 # ---------------------------------------------------------------- the Simutrans lines of every sheet
 sims = []; TOWN = {}; OPS = {}
@@ -181,13 +193,41 @@ for k, ev in EV.items():
     for v, (dd, lab) in ev.items(): cand[v].append((dd, k))
 for v in cand: cand[v].sort()
 owner = {}
+# 6. the published roster first (keep_roster): (oblast, PID line, Simutrans line name) -> its seen and designed buses
+PUB = {}; PUBWHY = {}
+for o in SH['oblasti']:
+    pp = os.path.join(HOME, 'oblasti', o['id'], 'data', 'derived', 'roster_published.json')
+    if os.path.exists(pp):
+        for L_, rs in json.load(open(pp, encoding='utf-8'))['lines'].items():
+            for r in rs:
+                PUB[(o['id'], L_, r['name'])] = ([b['num'] for b in r.get('seen', [])], [b['num'] for b in r.get('designed', [])])
+                for b in r.get('designed', []): PUBWHY[(o['id'], L_, r['name'], b['num'])] = b.get('why', '').removeprefix('kept from the published sheet: ')
+KEPT = set()
+for k in K:
+    pub = PUB.get((k[0], k[1], SM[k]['name']))
+    if not pub: continue
+    j = 0
+    for n in pub[0]:
+        v = int(n) if n.isdigit() else n
+        if v in EV[k] and v not in owner.values() and j < NEED[k]: owner[(k, j)] = v; KEPT.add(v); j += 1
+# a published designed bus is reserved for its line while it is not busy in that line's window (kept before any matching)
+RES = {}
+for k in K:
+    pub = PUB.get((k[0], k[1], SM[k]['name']))
+    if not pub: continue
+    W = SM[k]['window']
+    for n in pub[1]:
+        v = int(n) if n.isdigit() else n
+        if v not in RES and v not in KEPT and not prague_bus(v) and not any(f < W[1] and l > W[0] for f, l, *_ in BUSY.get(v, [])):
+            RES[v] = k; cand.pop(v, None)
 def try_assign(v, vis):
     for dd, k in cand[v]:
         for j in range(NEED[k]):
             sl = (k, j)
             if sl in vis: continue
             vis.add(sl)
-            if sl not in owner or try_assign(owner[sl], vis): owner[sl] = v; return True
+            # a kept bus never moves (owner, 2 Nov 2026: "do not move vehicles in lines not affected if possible")
+            if sl not in owner or (owner[sl] not in KEPT and try_assign(owner[sl], vis)): owner[sl] = v; return True
     return False
 import sys; sys.setrecursionlimit(20000)
 for v in sorted(cand, key=lambda v: (len(cand[v]), cand[v][0][0], v)):
@@ -201,7 +241,7 @@ for k, ev in EV.items():
         ty = info(v)['type']; mine = assigned[k]
         if ty in {info(p)['type'] for p in mine}: continue
         cnt = collections.Counter(info(p)['type'] for p in mine)
-        dup = [p for p in mine if cnt[info(p)['type']] > 1]
+        dup = [p for p in mine if cnt[info(p)['type']] > 1 and p not in KEPT]
         if dup:
             out_ = max(dup, key=lambda p: ev[p][0]); mine[mine.index(out_)] = v; used[v] = k; used.pop(out_, None)
 
@@ -214,8 +254,13 @@ for oid, L, i, s, x in sims:
     for g in s['legs']:
         for t in g.get('trips', []):
             for v, f, l in SEEN.get(t['tid'], []): OBL_BUSES[oid].add(v)
+# (0) first, on every line: its reserved published designed buses (keep_roster)
+for v, k in RES.items():
+    if v not in used and len(assigned[k]) + len(designed[k]) < SM[k]['need']:
+        designed[k].append(dict(info(v, TOWN[(k[0], k[1])]), why='kept from the published sheet: ' + PUBWHY.get((k[0], k[1], SM[k]['name'], str(v)), '')))
+        used[v] = k
 for oid, L, i, s, x in sims:
-    k = (oid, L, i); short = s['need'] - len(assigned[k])
+    k = (oid, L, i); short = s['need'] - len(assigned[k]) - len(designed[k])
     if short <= 0: continue
     W = s['window']; town = TOWN[(oid, L)]
     tys = collections.Counter(info(v)['type'] for v in EV[k]) or collections.Counter(

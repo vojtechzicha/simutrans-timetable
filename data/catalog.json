@@ -2900,7 +2900,7 @@
    ],
    "region": "PID regional",
    "kind": "fleet",
-   "summary": "Okres Benešov: 63 PID lines as 75 Simutrans lines, 138 buses (137 seen on the live map, 1 designed); 5 more listed with the reason. Owner checks: 0.",
+   "summary": "Okres Benešov: 63 PID lines as 76 Simutrans lines, 140 buses (139 seen on the live map, 1 designed); 5 more listed with the reason. Owner checks: 0.",
    "pipeline": "pipeline/pid-regional",
    "build": "python -X utf8 scripts/run_oblast.py benesovsko --final; then 04_vehicles.py, 05b_game.py benesovsko, 06_render.py benesovsko",
    "fetch": "scripts/01_live_poll.py (live map, detached, keep_awake.py); GTFS by hand into data/raw/gtfs/<date>/",
@@ -2915,12 +2915,12 @@
      "name": "PID live map",
      "url": "https://mapa.pid.cz/",
      "role": "live positions",
-     "note": "getData.php every minute 12:00–20:00 on Mon 2 and Tue 3 Nov 2026; getVehicleWindow.php per bus: operator, type, course"
+     "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id; read from the praha-bus pipeline"
+     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -2938,16 +2938,16 @@
      "note": "VZ-Praha-bus and VZ-DPPraha-bus (regional PID buses), VZ-PID-bus, town packs (own paint only), VZ-DUK/IDOL/JIKORD/IREDO-bus; open requests in pid-regional/pak_request.md"
     }
    ],
-   "vehicleDay": "Mon 2 Nov 2026 (PID live map), Tue 3 Nov fill-ins",
+   "vehicleDay": "Mon 2 Nov 2026 (PID live map); Tue 3 Nov 5:00–7:20 for designed buses and types",
    "networkDate": "PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026",
    "updateRecipe": [
     "New timetable: download PID GTFS into data/raw/gtfs/<date>/, set config.gtfs (a school weekday), run scripts/02_gtfs.py.",
     "New vehicles: run scripts/01_live_poll.py detached over a weekday (with keep_awake.py); set config.live.days.",
     "Per oblast: python -X utf8 scripts/run_oblast.py <id>; read the changed lines' readings; adjust oblasti/<id>/lines.json.",
     "Then run_oblast.py <id> --final for all, 04_vehicles.py, 05b_game.py, 06_render.py, 07_index.py (or final_build.py).",
-    "Republish each sheet to its artifact URL; give the owner the in-game change list."
+    "Republish each sheet to its artifact URL; copy each roster.json to roster_published.json (keep_roster); give the owner the in-game change list (old → new)."
    ],
-   "notes": "Licence prefix 20xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/benesovsko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed. Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
+   "notes": "Licence prefix 20xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/benesovsko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed; re-checked 3 Nov for branches read by trip ends instead of where the trips pass (owner on 381 Zásmuky; branch-check / branch-review-2026-11-03.md, audit/passing_check.py). Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/praha-bus",
@@ -2967,6 +2967,11 @@
      "at": "2026-11-02T20:12:29+01:00",
      "version": 1,
      "note": "First publish: designed, reviewed line by line, buses from the 2 Nov live map"
+    },
+    {
+     "at": "2026-11-03T07:29:01+01:00",
+     "version": 2,
+     "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/LHA5oGkvV95SvhwYH77ekU"
@@ -2980,7 +2985,7 @@
    ],
    "region": "PID regional",
    "kind": "fleet",
-   "summary": "Okres Beroun: 28 PID lines as 40 Simutrans lines, 65 buses (63 seen on the live map, 2 designed); 1 more listed with the reason. Owner checks: 1.",
+   "summary": "Okres Beroun: 28 PID lines as 41 Simutrans lines, 67 buses (64 seen on the live map, 3 designed); 1 more listed with the reason. Owner checks: 1.",
    "pipeline": "pipeline/pid-regional",
    "build": "python -X utf8 scripts/run_oblast.py berounsko --final; then 04_vehicles.py, 05b_game.py berounsko, 06_render.py berounsko",
    "fetch": "scripts/01_live_poll.py (live map, detached, keep_awake.py); GTFS by hand into data/raw/gtfs/<date>/",
@@ -2995,12 +3000,12 @@
      "name": "PID live map",
      "url": "https://mapa.pid.cz/",
      "role": "live positions",
-     "note": "getData.php every minute 12:00–20:00 on Mon 2 and Tue 3 Nov 2026; getVehicleWindow.php per bus: operator, type, course"
+     "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id; read from the praha-bus pipeline"
+     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3018,16 +3023,16 @@
      "note": "VZ-Praha-bus and VZ-DPPraha-bus (regional PID buses), VZ-PID-bus, town packs (own paint only), VZ-DUK/IDOL/JIKORD/IREDO-bus; open requests in pid-regional/pak_request.md"
     }
    ],
-   "vehicleDay": "Mon 2 Nov 2026 (PID live map), Tue 3 Nov fill-ins",
+   "vehicleDay": "Mon 2 Nov 2026 (PID live map); Tue 3 Nov 5:00–7:20 for designed buses and types",
    "networkDate": "PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026",
    "updateRecipe": [
     "New timetable: download PID GTFS into data/raw/gtfs/<date>/, set config.gtfs (a school weekday), run scripts/02_gtfs.py.",
     "New vehicles: run scripts/01_live_poll.py detached over a weekday (with keep_awake.py); set config.live.days.",
     "Per oblast: python -X utf8 scripts/run_oblast.py <id>; read the changed lines' readings; adjust oblasti/<id>/lines.json.",
     "Then run_oblast.py <id> --final for all, 04_vehicles.py, 05b_game.py, 06_render.py, 07_index.py (or final_build.py).",
-    "Republish each sheet to its artifact URL; give the owner the in-game change list."
+    "Republish each sheet to its artifact URL; copy each roster.json to roster_published.json (keep_roster); give the owner the in-game change list (old → new)."
    ],
-   "notes": "Licence prefix 21xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/berounsko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed. Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
+   "notes": "Licence prefix 21xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/berounsko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed; re-checked 3 Nov for branches read by trip ends instead of where the trips pass (owner on 381 Zásmuky; branch-check / branch-review-2026-11-03.md, audit/passing_check.py). Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/praha-bus",
@@ -3047,6 +3052,11 @@
      "at": "2026-11-02T20:12:29+01:00",
      "version": 1,
      "note": "First publish: designed, reviewed line by line, buses from the 2 Nov live map"
+    },
+    {
+     "at": "2026-11-03T07:29:01+01:00",
+     "version": 2,
+     "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/6574bcYazwXHe3zKYKyE6h"
@@ -3060,7 +3070,7 @@
    ],
    "region": "PID regional",
    "kind": "fleet",
-   "summary": "Okres Kladno: 45 PID lines as 62 Simutrans lines, 155 buses (153 seen on the live map, 0 designed); 2 more listed with the reason. Owner checks: 1.",
+   "summary": "Okres Kladno: 45 PID lines as 66 Simutrans lines, 163 buses (158 seen on the live map, 3 designed); 2 more listed with the reason. Owner checks: 1.",
    "pipeline": "pipeline/pid-regional",
    "build": "python -X utf8 scripts/run_oblast.py kladensko --final; then 04_vehicles.py, 05b_game.py kladensko, 06_render.py kladensko",
    "fetch": "scripts/01_live_poll.py (live map, detached, keep_awake.py); GTFS by hand into data/raw/gtfs/<date>/",
@@ -3075,12 +3085,12 @@
      "name": "PID live map",
      "url": "https://mapa.pid.cz/",
      "role": "live positions",
-     "note": "getData.php every minute 12:00–20:00 on Mon 2 and Tue 3 Nov 2026; getVehicleWindow.php per bus: operator, type, course"
+     "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id; read from the praha-bus pipeline"
+     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3098,16 +3108,16 @@
      "note": "VZ-Praha-bus and VZ-DPPraha-bus (regional PID buses), VZ-PID-bus, town packs (own paint only), VZ-DUK/IDOL/JIKORD/IREDO-bus; open requests in pid-regional/pak_request.md"
     }
    ],
-   "vehicleDay": "Mon 2 Nov 2026 (PID live map), Tue 3 Nov fill-ins",
+   "vehicleDay": "Mon 2 Nov 2026 (PID live map); Tue 3 Nov 5:00–7:20 for designed buses and types",
    "networkDate": "PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026",
    "updateRecipe": [
     "New timetable: download PID GTFS into data/raw/gtfs/<date>/, set config.gtfs (a school weekday), run scripts/02_gtfs.py.",
     "New vehicles: run scripts/01_live_poll.py detached over a weekday (with keep_awake.py); set config.live.days.",
     "Per oblast: python -X utf8 scripts/run_oblast.py <id>; read the changed lines' readings; adjust oblasti/<id>/lines.json.",
     "Then run_oblast.py <id> --final for all, 04_vehicles.py, 05b_game.py, 06_render.py, 07_index.py (or final_build.py).",
-    "Republish each sheet to its artifact URL; give the owner the in-game change list."
+    "Republish each sheet to its artifact URL; copy each roster.json to roster_published.json (keep_roster); give the owner the in-game change list (old → new)."
    ],
-   "notes": "Licence prefix 22xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/kladensko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed. Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
+   "notes": "Licence prefix 22xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/kladensko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed; re-checked 3 Nov for branches read by trip ends instead of where the trips pass (owner on 381 Zásmuky; branch-check / branch-review-2026-11-03.md, audit/passing_check.py). Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/praha-bus",
@@ -3127,6 +3137,11 @@
      "at": "2026-11-02T20:12:29+01:00",
      "version": 1,
      "note": "First publish: designed, reviewed line by line, buses from the 2 Nov live map"
+    },
+    {
+     "at": "2026-11-03T07:29:01+01:00",
+     "version": 2,
+     "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/USfta9raPAmHs8RXHibiwi"
@@ -3140,7 +3155,7 @@
    ],
    "region": "PID regional",
    "kind": "fleet",
-   "summary": "Okres Kolín: 32 PID lines as 39 Simutrans lines, 71 buses (69 seen on the live map, 2 designed); 2 more listed with the reason. Owner checks: 2.",
+   "summary": "Okres Kolín: 32 PID lines as 39 Simutrans lines, 71 buses (69 seen on the live map, 2 designed); 2 more listed with the reason. Owner checks: 3.",
    "pipeline": "pipeline/pid-regional",
    "build": "python -X utf8 scripts/run_oblast.py kolinsko --final; then 04_vehicles.py, 05b_game.py kolinsko, 06_render.py kolinsko",
    "fetch": "scripts/01_live_poll.py (live map, detached, keep_awake.py); GTFS by hand into data/raw/gtfs/<date>/",
@@ -3155,12 +3170,12 @@
      "name": "PID live map",
      "url": "https://mapa.pid.cz/",
      "role": "live positions",
-     "note": "getData.php every minute 12:00–20:00 on Mon 2 and Tue 3 Nov 2026; getVehicleWindow.php per bus: operator, type, course"
+     "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id; read from the praha-bus pipeline"
+     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3178,16 +3193,16 @@
      "note": "VZ-Praha-bus and VZ-DPPraha-bus (regional PID buses), VZ-PID-bus, town packs (own paint only), VZ-DUK/IDOL/JIKORD/IREDO-bus; open requests in pid-regional/pak_request.md"
     }
    ],
-   "vehicleDay": "Mon 2 Nov 2026 (PID live map), Tue 3 Nov fill-ins",
+   "vehicleDay": "Mon 2 Nov 2026 (PID live map); Tue 3 Nov 5:00–7:20 for designed buses and types",
    "networkDate": "PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026",
    "updateRecipe": [
     "New timetable: download PID GTFS into data/raw/gtfs/<date>/, set config.gtfs (a school weekday), run scripts/02_gtfs.py.",
     "New vehicles: run scripts/01_live_poll.py detached over a weekday (with keep_awake.py); set config.live.days.",
     "Per oblast: python -X utf8 scripts/run_oblast.py <id>; read the changed lines' readings; adjust oblasti/<id>/lines.json.",
     "Then run_oblast.py <id> --final for all, 04_vehicles.py, 05b_game.py, 06_render.py, 07_index.py (or final_build.py).",
-    "Republish each sheet to its artifact URL; give the owner the in-game change list."
+    "Republish each sheet to its artifact URL; copy each roster.json to roster_published.json (keep_roster); give the owner the in-game change list (old → new)."
    ],
-   "notes": "Licence prefix 23xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/kolinsko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed. Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
+   "notes": "Licence prefix 23xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/kolinsko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed; re-checked 3 Nov for branches read by trip ends instead of where the trips pass (owner on 381 Zásmuky; branch-check / branch-review-2026-11-03.md, audit/passing_check.py). Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/praha-bus",
@@ -3207,6 +3222,11 @@
      "at": "2026-11-02T20:12:29+01:00",
      "version": 1,
      "note": "First publish: designed, reviewed line by line, buses from the 2 Nov live map"
+    },
+    {
+     "at": "2026-11-03T07:29:01+01:00",
+     "version": 2,
+     "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/DwZ6PwMMR5qwPwcsd3FrcH"
@@ -3220,7 +3240,7 @@
    ],
    "region": "PID regional",
    "kind": "fleet",
-   "summary": "Okres Kutná Hora: 32 PID lines as 41 Simutrans lines, 67 buses (62 seen on the live map, 5 designed); 4 more listed with the reason. Owner checks: 1.",
+   "summary": "Okres Kutná Hora: 32 PID lines as 42 Simutrans lines, 70 buses (65 seen on the live map, 5 designed); 4 more listed with the reason. Owner checks: 1.",
    "pipeline": "pipeline/pid-regional",
    "build": "python -X utf8 scripts/run_oblast.py kutnohorsko --final; then 04_vehicles.py, 05b_game.py kutnohorsko, 06_render.py kutnohorsko",
    "fetch": "scripts/01_live_poll.py (live map, detached, keep_awake.py); GTFS by hand into data/raw/gtfs/<date>/",
@@ -3235,12 +3255,12 @@
      "name": "PID live map",
      "url": "https://mapa.pid.cz/",
      "role": "live positions",
-     "note": "getData.php every minute 12:00–20:00 on Mon 2 and Tue 3 Nov 2026; getVehicleWindow.php per bus: operator, type, course"
+     "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id; read from the praha-bus pipeline"
+     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3258,16 +3278,16 @@
      "note": "VZ-Praha-bus and VZ-DPPraha-bus (regional PID buses), VZ-PID-bus, town packs (own paint only), VZ-DUK/IDOL/JIKORD/IREDO-bus; open requests in pid-regional/pak_request.md"
     }
    ],
-   "vehicleDay": "Mon 2 Nov 2026 (PID live map), Tue 3 Nov fill-ins",
+   "vehicleDay": "Mon 2 Nov 2026 (PID live map); Tue 3 Nov 5:00–7:20 for designed buses and types",
    "networkDate": "PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026",
    "updateRecipe": [
     "New timetable: download PID GTFS into data/raw/gtfs/<date>/, set config.gtfs (a school weekday), run scripts/02_gtfs.py.",
     "New vehicles: run scripts/01_live_poll.py detached over a weekday (with keep_awake.py); set config.live.days.",
     "Per oblast: python -X utf8 scripts/run_oblast.py <id>; read the changed lines' readings; adjust oblasti/<id>/lines.json.",
     "Then run_oblast.py <id> --final for all, 04_vehicles.py, 05b_game.py, 06_render.py, 07_index.py (or final_build.py).",
-    "Republish each sheet to its artifact URL; give the owner the in-game change list."
+    "Republish each sheet to its artifact URL; copy each roster.json to roster_published.json (keep_roster); give the owner the in-game change list (old → new)."
    ],
-   "notes": "Licence prefix 24xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/kutnohorsko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed. Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
+   "notes": "Licence prefix 24xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/kutnohorsko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed; re-checked 3 Nov for branches read by trip ends instead of where the trips pass (owner on 381 Zásmuky; branch-check / branch-review-2026-11-03.md, audit/passing_check.py). Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/praha-bus",
@@ -3287,6 +3307,11 @@
      "at": "2026-11-02T20:12:29+01:00",
      "version": 1,
      "note": "First publish: designed, reviewed line by line, buses from the 2 Nov live map"
+    },
+    {
+     "at": "2026-11-03T07:29:01+01:00",
+     "version": 2,
+     "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/9tUWDoKxLkKS7y5wT22THk"
@@ -3300,7 +3325,7 @@
    ],
    "region": "PID regional",
    "kind": "fleet",
-   "summary": "Okres Mělník: 34 PID lines as 45 Simutrans lines, 108 buses (105 seen on the live map, 3 designed); 2 more listed with the reason. Owner checks: 1.",
+   "summary": "Okres Mělník: 34 PID lines as 47 Simutrans lines, 115 buses (109 seen on the live map, 6 designed); 2 more listed with the reason. Owner checks: 1.",
    "pipeline": "pipeline/pid-regional",
    "build": "python -X utf8 scripts/run_oblast.py melnicko --final; then 04_vehicles.py, 05b_game.py melnicko, 06_render.py melnicko",
    "fetch": "scripts/01_live_poll.py (live map, detached, keep_awake.py); GTFS by hand into data/raw/gtfs/<date>/",
@@ -3315,12 +3340,12 @@
      "name": "PID live map",
      "url": "https://mapa.pid.cz/",
      "role": "live positions",
-     "note": "getData.php every minute 12:00–20:00 on Mon 2 and Tue 3 Nov 2026; getVehicleWindow.php per bus: operator, type, course"
+     "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id; read from the praha-bus pipeline"
+     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3338,16 +3363,16 @@
      "note": "VZ-Praha-bus and VZ-DPPraha-bus (regional PID buses), VZ-PID-bus, town packs (own paint only), VZ-DUK/IDOL/JIKORD/IREDO-bus; open requests in pid-regional/pak_request.md"
     }
    ],
-   "vehicleDay": "Mon 2 Nov 2026 (PID live map), Tue 3 Nov fill-ins",
+   "vehicleDay": "Mon 2 Nov 2026 (PID live map); Tue 3 Nov 5:00–7:20 for designed buses and types",
    "networkDate": "PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026",
    "updateRecipe": [
     "New timetable: download PID GTFS into data/raw/gtfs/<date>/, set config.gtfs (a school weekday), run scripts/02_gtfs.py.",
     "New vehicles: run scripts/01_live_poll.py detached over a weekday (with keep_awake.py); set config.live.days.",
     "Per oblast: python -X utf8 scripts/run_oblast.py <id>; read the changed lines' readings; adjust oblasti/<id>/lines.json.",
     "Then run_oblast.py <id> --final for all, 04_vehicles.py, 05b_game.py, 06_render.py, 07_index.py (or final_build.py).",
-    "Republish each sheet to its artifact URL; give the owner the in-game change list."
+    "Republish each sheet to its artifact URL; copy each roster.json to roster_published.json (keep_roster); give the owner the in-game change list (old → new)."
    ],
-   "notes": "Licence prefix 25xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/melnicko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed. Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
+   "notes": "Licence prefix 25xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/melnicko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed; re-checked 3 Nov for branches read by trip ends instead of where the trips pass (owner on 381 Zásmuky; branch-check / branch-review-2026-11-03.md, audit/passing_check.py). Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/praha-bus",
@@ -3367,6 +3392,11 @@
      "at": "2026-11-02T20:12:29+01:00",
      "version": 1,
      "note": "First publish: designed, reviewed line by line, buses from the 2 Nov live map"
+    },
+    {
+     "at": "2026-11-03T07:29:01+01:00",
+     "version": 2,
+     "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/2PM9ugvAGcmiXr1QaT6CMR"
@@ -3380,7 +3410,7 @@
    ],
    "region": "PID regional",
    "kind": "fleet",
-   "summary": "Okres Mladá Boleslav: 45 PID lines as 55 Simutrans lines, 93 buses (92 seen on the live map, 1 designed); 3 more listed with the reason. Owner checks: 3.",
+   "summary": "Okres Mladá Boleslav: 45 PID lines as 57 Simutrans lines, 95 buses (92 seen on the live map, 3 designed); 3 more listed with the reason. Owner checks: 3.",
    "pipeline": "pipeline/pid-regional",
    "build": "python -X utf8 scripts/run_oblast.py mladoboleslavsko --final; then 04_vehicles.py, 05b_game.py mladoboleslavsko, 06_render.py mladoboleslavsko",
    "fetch": "scripts/01_live_poll.py (live map, detached, keep_awake.py); GTFS by hand into data/raw/gtfs/<date>/",
@@ -3395,12 +3425,12 @@
      "name": "PID live map",
      "url": "https://mapa.pid.cz/",
      "role": "live positions",
-     "note": "getData.php every minute 12:00–20:00 on Mon 2 and Tue 3 Nov 2026; getVehicleWindow.php per bus: operator, type, course"
+     "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id; read from the praha-bus pipeline"
+     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3418,16 +3448,16 @@
      "note": "VZ-Praha-bus and VZ-DPPraha-bus (regional PID buses), VZ-PID-bus, town packs (own paint only), VZ-DUK/IDOL/JIKORD/IREDO-bus; open requests in pid-regional/pak_request.md"
     }
    ],
-   "vehicleDay": "Mon 2 Nov 2026 (PID live map), Tue 3 Nov fill-ins",
+   "vehicleDay": "Mon 2 Nov 2026 (PID live map); Tue 3 Nov 5:00–7:20 for designed buses and types",
    "networkDate": "PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026",
    "updateRecipe": [
     "New timetable: download PID GTFS into data/raw/gtfs/<date>/, set config.gtfs (a school weekday), run scripts/02_gtfs.py.",
     "New vehicles: run scripts/01_live_poll.py detached over a weekday (with keep_awake.py); set config.live.days.",
     "Per oblast: python -X utf8 scripts/run_oblast.py <id>; read the changed lines' readings; adjust oblasti/<id>/lines.json.",
     "Then run_oblast.py <id> --final for all, 04_vehicles.py, 05b_game.py, 06_render.py, 07_index.py (or final_build.py).",
-    "Republish each sheet to its artifact URL; give the owner the in-game change list."
+    "Republish each sheet to its artifact URL; copy each roster.json to roster_published.json (keep_roster); give the owner the in-game change list (old → new)."
    ],
-   "notes": "Licence prefix 26xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/mladoboleslavsko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed. Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
+   "notes": "Licence prefix 26xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/mladoboleslavsko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed; re-checked 3 Nov for branches read by trip ends instead of where the trips pass (owner on 381 Zásmuky; branch-check / branch-review-2026-11-03.md, audit/passing_check.py). Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/praha-bus",
@@ -3447,6 +3477,11 @@
      "at": "2026-11-02T20:12:29+01:00",
      "version": 1,
      "note": "First publish: designed, reviewed line by line, buses from the 2 Nov live map"
+    },
+    {
+     "at": "2026-11-03T07:29:01+01:00",
+     "version": 2,
+     "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/XnWc4U9zu5gWhBw2UZmeyj"
@@ -3475,12 +3510,12 @@
      "name": "PID live map",
      "url": "https://mapa.pid.cz/",
      "role": "live positions",
-     "note": "getData.php every minute 12:00–20:00 on Mon 2 and Tue 3 Nov 2026; getVehicleWindow.php per bus: operator, type, course"
+     "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id; read from the praha-bus pipeline"
+     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3498,16 +3533,16 @@
      "note": "VZ-Praha-bus and VZ-DPPraha-bus (regional PID buses), VZ-PID-bus, town packs (own paint only), VZ-DUK/IDOL/JIKORD/IREDO-bus; open requests in pid-regional/pak_request.md"
     }
    ],
-   "vehicleDay": "Mon 2 Nov 2026 (PID live map), Tue 3 Nov fill-ins",
+   "vehicleDay": "Mon 2 Nov 2026 (PID live map); Tue 3 Nov 5:00–7:20 for designed buses and types",
    "networkDate": "PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026",
    "updateRecipe": [
     "New timetable: download PID GTFS into data/raw/gtfs/<date>/, set config.gtfs (a school weekday), run scripts/02_gtfs.py.",
     "New vehicles: run scripts/01_live_poll.py detached over a weekday (with keep_awake.py); set config.live.days.",
     "Per oblast: python -X utf8 scripts/run_oblast.py <id>; read the changed lines' readings; adjust oblasti/<id>/lines.json.",
     "Then run_oblast.py <id> --final for all, 04_vehicles.py, 05b_game.py, 06_render.py, 07_index.py (or final_build.py).",
-    "Republish each sheet to its artifact URL; give the owner the in-game change list."
+    "Republish each sheet to its artifact URL; copy each roster.json to roster_published.json (keep_roster); give the owner the in-game change list (old → new)."
    ],
-   "notes": "Licence prefix 27xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/nymbursko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed. Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
+   "notes": "Licence prefix 27xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/nymbursko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed; re-checked 3 Nov for branches read by trip ends instead of where the trips pass (owner on 381 Zásmuky; branch-check / branch-review-2026-11-03.md, audit/passing_check.py). Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/praha-bus",
@@ -3527,6 +3562,11 @@
      "at": "2026-11-02T20:12:29+01:00",
      "version": 1,
      "note": "First publish: designed, reviewed line by line, buses from the 2 Nov live map"
+    },
+    {
+     "at": "2026-11-03T07:29:01+01:00",
+     "version": 2,
+     "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/RKJK8GTGiQz7tjVLnQpbPA"
@@ -3555,12 +3595,12 @@
      "name": "PID live map",
      "url": "https://mapa.pid.cz/",
      "role": "live positions",
-     "note": "getData.php every minute 12:00–20:00 on Mon 2 and Tue 3 Nov 2026; getVehicleWindow.php per bus: operator, type, course"
+     "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id; read from the praha-bus pipeline"
+     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3578,16 +3618,16 @@
      "note": "VZ-Praha-bus and VZ-DPPraha-bus (regional PID buses), VZ-PID-bus, town packs (own paint only), VZ-DUK/IDOL/JIKORD/IREDO-bus; open requests in pid-regional/pak_request.md"
     }
    ],
-   "vehicleDay": "Mon 2 Nov 2026 (PID live map), Tue 3 Nov fill-ins",
+   "vehicleDay": "Mon 2 Nov 2026 (PID live map); Tue 3 Nov 5:00–7:20 for designed buses and types",
    "networkDate": "PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026",
    "updateRecipe": [
     "New timetable: download PID GTFS into data/raw/gtfs/<date>/, set config.gtfs (a school weekday), run scripts/02_gtfs.py.",
     "New vehicles: run scripts/01_live_poll.py detached over a weekday (with keep_awake.py); set config.live.days.",
     "Per oblast: python -X utf8 scripts/run_oblast.py <id>; read the changed lines' readings; adjust oblasti/<id>/lines.json.",
     "Then run_oblast.py <id> --final for all, 04_vehicles.py, 05b_game.py, 06_render.py, 07_index.py (or final_build.py).",
-    "Republish each sheet to its artifact URL; give the owner the in-game change list."
+    "Republish each sheet to its artifact URL; copy each roster.json to roster_published.json (keep_roster); give the owner the in-game change list (old → new)."
    ],
-   "notes": "Licence prefix 28xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/praha-vychod/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed. Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
+   "notes": "Licence prefix 28xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/praha-vychod/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed; re-checked 3 Nov for branches read by trip ends instead of where the trips pass (owner on 381 Zásmuky; branch-check / branch-review-2026-11-03.md, audit/passing_check.py). Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/praha-bus",
@@ -3607,6 +3647,11 @@
      "at": "2026-11-02T20:12:29+01:00",
      "version": 1,
      "note": "First publish: designed, reviewed line by line, buses from the 2 Nov live map"
+    },
+    {
+     "at": "2026-11-03T07:29:01+01:00",
+     "version": 2,
+     "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/HGUoRK7t8C3PzT9qDq77x6"
@@ -3620,7 +3665,7 @@
    ],
    "region": "PID regional",
    "kind": "fleet",
-   "summary": "Okres Praha-západ: 36 PID lines as 45 Simutrans lines, 88 buses (83 seen on the live map, 5 designed); 16 more listed with the reason. Owner checks: 0.",
+   "summary": "Okres Praha-západ: 36 PID lines as 47 Simutrans lines, 90 buses (83 seen on the live map, 7 designed); 16 more listed with the reason. Owner checks: 0.",
    "pipeline": "pipeline/pid-regional",
    "build": "python -X utf8 scripts/run_oblast.py praha-zapad --final; then 04_vehicles.py, 05b_game.py praha-zapad, 06_render.py praha-zapad",
    "fetch": "scripts/01_live_poll.py (live map, detached, keep_awake.py); GTFS by hand into data/raw/gtfs/<date>/",
@@ -3635,12 +3680,12 @@
      "name": "PID live map",
      "url": "https://mapa.pid.cz/",
      "role": "live positions",
-     "note": "getData.php every minute 12:00–20:00 on Mon 2 and Tue 3 Nov 2026; getVehicleWindow.php per bus: operator, type, course"
+     "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id; read from the praha-bus pipeline"
+     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3658,16 +3703,16 @@
      "note": "VZ-Praha-bus and VZ-DPPraha-bus (regional PID buses), VZ-PID-bus, town packs (own paint only), VZ-DUK/IDOL/JIKORD/IREDO-bus; open requests in pid-regional/pak_request.md"
     }
    ],
-   "vehicleDay": "Mon 2 Nov 2026 (PID live map), Tue 3 Nov fill-ins",
+   "vehicleDay": "Mon 2 Nov 2026 (PID live map); Tue 3 Nov 5:00–7:20 for designed buses and types",
    "networkDate": "PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026",
    "updateRecipe": [
     "New timetable: download PID GTFS into data/raw/gtfs/<date>/, set config.gtfs (a school weekday), run scripts/02_gtfs.py.",
     "New vehicles: run scripts/01_live_poll.py detached over a weekday (with keep_awake.py); set config.live.days.",
     "Per oblast: python -X utf8 scripts/run_oblast.py <id>; read the changed lines' readings; adjust oblasti/<id>/lines.json.",
     "Then run_oblast.py <id> --final for all, 04_vehicles.py, 05b_game.py, 06_render.py, 07_index.py (or final_build.py).",
-    "Republish each sheet to its artifact URL; give the owner the in-game change list."
+    "Republish each sheet to its artifact URL; copy each roster.json to roster_published.json (keep_roster); give the owner the in-game change list (old → new)."
    ],
-   "notes": "Licence prefix 29xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/praha-zapad/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed. Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
+   "notes": "Licence prefix 29xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/praha-zapad/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed; re-checked 3 Nov for branches read by trip ends instead of where the trips pass (owner on 381 Zásmuky; branch-check / branch-review-2026-11-03.md, audit/passing_check.py). Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/praha-bus",
@@ -3687,6 +3732,11 @@
      "at": "2026-11-02T20:12:29+01:00",
      "version": 1,
      "note": "First publish: designed, reviewed line by line, buses from the 2 Nov live map"
+    },
+    {
+     "at": "2026-11-03T07:29:01+01:00",
+     "version": 2,
+     "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/CDDnFgXhcNaKqBa9BuLbmJ"
@@ -3700,7 +3750,7 @@
    ],
    "region": "PID regional",
    "kind": "fleet",
-   "summary": "Okres Příbram: 58 PID lines as 81 Simutrans lines, 127 buses (120 seen on the live map, 7 designed); 3 more listed with the reason. Owner checks: 2.",
+   "summary": "Okres Příbram: 58 PID lines as 81 Simutrans lines, 129 buses (122 seen on the live map, 7 designed); 3 more listed with the reason. Owner checks: 3.",
    "pipeline": "pipeline/pid-regional",
    "build": "python -X utf8 scripts/run_oblast.py pribramsko --final; then 04_vehicles.py, 05b_game.py pribramsko, 06_render.py pribramsko",
    "fetch": "scripts/01_live_poll.py (live map, detached, keep_awake.py); GTFS by hand into data/raw/gtfs/<date>/",
@@ -3715,12 +3765,12 @@
      "name": "PID live map",
      "url": "https://mapa.pid.cz/",
      "role": "live positions",
-     "note": "getData.php every minute 12:00–20:00 on Mon 2 and Tue 3 Nov 2026; getVehicleWindow.php per bus: operator, type, course"
+     "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id; read from the praha-bus pipeline"
+     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3738,16 +3788,16 @@
      "note": "VZ-Praha-bus and VZ-DPPraha-bus (regional PID buses), VZ-PID-bus, town packs (own paint only), VZ-DUK/IDOL/JIKORD/IREDO-bus; open requests in pid-regional/pak_request.md"
     }
    ],
-   "vehicleDay": "Mon 2 Nov 2026 (PID live map), Tue 3 Nov fill-ins",
+   "vehicleDay": "Mon 2 Nov 2026 (PID live map); Tue 3 Nov 5:00–7:20 for designed buses and types",
    "networkDate": "PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026",
    "updateRecipe": [
     "New timetable: download PID GTFS into data/raw/gtfs/<date>/, set config.gtfs (a school weekday), run scripts/02_gtfs.py.",
     "New vehicles: run scripts/01_live_poll.py detached over a weekday (with keep_awake.py); set config.live.days.",
     "Per oblast: python -X utf8 scripts/run_oblast.py <id>; read the changed lines' readings; adjust oblasti/<id>/lines.json.",
     "Then run_oblast.py <id> --final for all, 04_vehicles.py, 05b_game.py, 06_render.py, 07_index.py (or final_build.py).",
-    "Republish each sheet to its artifact URL; give the owner the in-game change list."
+    "Republish each sheet to its artifact URL; copy each roster.json to roster_published.json (keep_roster); give the owner the in-game change list (old → new)."
    ],
-   "notes": "Licence prefix 30xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/pribramsko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed. Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
+   "notes": "Licence prefix 30xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/pribramsko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed; re-checked 3 Nov for branches read by trip ends instead of where the trips pass (owner on 381 Zásmuky; branch-check / branch-review-2026-11-03.md, audit/passing_check.py). Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/praha-bus",
@@ -3767,6 +3817,11 @@
      "at": "2026-11-02T20:12:29+01:00",
      "version": 1,
      "note": "First publish: designed, reviewed line by line, buses from the 2 Nov live map"
+    },
+    {
+     "at": "2026-11-03T07:29:01+01:00",
+     "version": 2,
+     "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/RAWhd2p3iFLibqfRhP9LFH"
@@ -3780,7 +3835,7 @@
    ],
    "region": "PID regional",
    "kind": "fleet",
-   "summary": "Okres Rakovník: 22 PID lines as 30 Simutrans lines, 47 buses (46 seen on the live map, 1 designed); 2 more listed with the reason. Owner checks: 1.",
+   "summary": "Okres Rakovník: 22 PID lines as 31 Simutrans lines, 48 buses (47 seen on the live map, 1 designed); 2 more listed with the reason. Owner checks: 1.",
    "pipeline": "pipeline/pid-regional",
    "build": "python -X utf8 scripts/run_oblast.py rakovnicko --final; then 04_vehicles.py, 05b_game.py rakovnicko, 06_render.py rakovnicko",
    "fetch": "scripts/01_live_poll.py (live map, detached, keep_awake.py); GTFS by hand into data/raw/gtfs/<date>/",
@@ -3795,12 +3850,12 @@
      "name": "PID live map",
      "url": "https://mapa.pid.cz/",
      "role": "live positions",
-     "note": "getData.php every minute 12:00–20:00 on Mon 2 and Tue 3 Nov 2026; getVehicleWindow.php per bus: operator, type, course"
+     "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id; read from the praha-bus pipeline"
+     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3818,16 +3873,16 @@
      "note": "VZ-Praha-bus and VZ-DPPraha-bus (regional PID buses), VZ-PID-bus, town packs (own paint only), VZ-DUK/IDOL/JIKORD/IREDO-bus; open requests in pid-regional/pak_request.md"
     }
    ],
-   "vehicleDay": "Mon 2 Nov 2026 (PID live map), Tue 3 Nov fill-ins",
+   "vehicleDay": "Mon 2 Nov 2026 (PID live map); Tue 3 Nov 5:00–7:20 for designed buses and types",
    "networkDate": "PID GTFS of 1 Nov 2026, service day Mon 2 Nov 2026",
    "updateRecipe": [
     "New timetable: download PID GTFS into data/raw/gtfs/<date>/, set config.gtfs (a school weekday), run scripts/02_gtfs.py.",
     "New vehicles: run scripts/01_live_poll.py detached over a weekday (with keep_awake.py); set config.live.days.",
     "Per oblast: python -X utf8 scripts/run_oblast.py <id>; read the changed lines' readings; adjust oblasti/<id>/lines.json.",
     "Then run_oblast.py <id> --final for all, 04_vehicles.py, 05b_game.py, 06_render.py, 07_index.py (or final_build.py).",
-    "Republish each sheet to its artifact URL; give the owner the in-game change list."
+    "Republish each sheet to its artifact URL; copy each roster.json to roster_published.json (keep_roster); give the owner the in-game change list (old → new)."
    ],
-   "notes": "Licence prefix 31xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/rakovnicko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed. Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
+   "notes": "Licence prefix 31xxxx; Prague- and other-kraj-licensed lines by their outer end. Designed per oblast by a subagent (oblasti/rakovnicko/method-check-2026-11-01.md), reviewed line by line on Fable (review-2026-11-01.md), fixed; re-checked 3 Nov for branches read by trip ends instead of where the trips pass (owner on 381 Zásmuky; branch-check / branch-review-2026-11-03.md, audit/passing_check.py). Owner rules: serve every place (also outside the kraj and PID Haló-only places), the save's buses are a check not a base, bus replacement lines modelled as they run.",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/praha-bus",
@@ -3847,6 +3902,11 @@
      "at": "2026-11-02T20:12:29+01:00",
      "version": 1,
      "note": "First publish: designed, reviewed line by line, buses from the 2 Nov live map"
+    },
+    {
+     "at": "2026-11-03T07:29:01+01:00",
+     "version": 2,
+     "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/3cugFHCZkHEaNjpFymVHfH"
@@ -3897,6 +3957,11 @@
      "at": "2026-11-02T20:12:29+01:00",
      "version": 1,
      "note": "First publish"
+    },
+    {
+     "at": "2026-11-03T07:29:01+01:00",
+     "version": 2,
+     "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/KSHcamNtjkpPVahiQvbfVU"

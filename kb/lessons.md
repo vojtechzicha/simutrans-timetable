@@ -184,7 +184,7 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   otherwise I agree with the way you modeled it". When a row's trips run a variant route, name it in the row's note, with the
   running time used, and say where the game line differs.
 
-## 1–2 Nov — PID regional, per oblast
+## 1–3 Nov — PID regional, per oblast
 - **1 Nov:** "Do the full PID. Divide it per "oblast" (like Mladoboleslavsko), all PID lines should be in. Then use Fable and/or
   subagents to comb line by line, look at my usual notes (there seems to be lot of them usually) and make sure it is polished."
   → twelve okres sheets by licence prefix plus an index of every PID route; a designer subagent per oblast and an independent
@@ -212,6 +212,21 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   the sheets' choice stood and the checks became notes. Settle evidence-bound checks when the evidence lands, before the owner
   reads them. Also: the live map leaves "Typ vozu" empty for some fleets (OAD Kolín, some Arriva City); a loader must let a later
   row with a type win over an earlier empty one (the first-row-wins loader hid nothing that day, but would have on day 2).
+
+- **3 Nov:** "381 you haven't done the Zásmuky branch. That is not off the pattern, looking at all our rules in the timeframe, I
+  clearly see 381 runs Zásmuky/Čáslav switching. This is weird. Verify specifically and then … you may have to correct
+  everywhere." → the designer and the Fable reviewer had both read 381's Zásmuky trips by start and end: one trip starts at
+  Zásmuky towards Prague, so the four Háje :30 trips looked like garage buses going home. Read at Zásmuky, the Kutná Hora →
+  Háje 13:40 / 14:40 make it 4 out, 3 back, hourly; the 2 Nov live map shows buses switching between the ends at Háje. New
+  line 381 Zásmuky (3 buses). The same reading was then run on every line of the twelve sheets (`audit/passing_check.py`,
+  86 lines flagged for a verdict; `pid-regional/BRANCH_BRIEF.md`). A reviewer handed the designer's reading tends to confirm it:
+  check outstation claims against the passing times, never the trip ends.
+- **3 Nov:** the PID regional vehicle step had no keep_roster; a first v2 run moved 14 published buses (a chain 365 → 618 →
+  600 → 628 to free one bus for a new line). Kept buses are now fixed and published designed buses reserved: 2 moves left.
+  Run the change list (old → new) before publishing a sheet the owner may have built.
+- **3 Nov (via the fleet desk):** "If something exists in the real PID, it should be modeled... include more liveries where
+  needed" → no bus is out of scope for its paint (9034 Arriva City red included); the PID regional builder had put buses with a
+  known non-PID paint (DÚK green, DPP city scheme, wraps) on the grey-red object, now they are requested.
 
 ## 2 Nov — Prague 130, lines moved to the 2 Nov network
 - **2 Nov:** "Decide based on the timetable - is it fair to do the full run or not? As always - are there some stops without

@@ -22,6 +22,15 @@ Coordinator: session simutrans-timetable-4d. **Version 1 of all 13 sheets is pub
 Settled tonight by the 2 Nov live map (checks → notes, model unchanged): 534+535 (Kolínsko), 430+436 and 433+434 (Nymbursko).
 Untyped buses: 11 sheet buses have no type (the live map names none; not in the register): pak_request.md.
 
+## Tuesday 3 Nov, morning: the branch re-check (owner on 381)
+Owner, 3 Nov: "381 you haven't done the Zásmuky branch … you may have to correct everywhere." 381 fixed by the coordinator
+(381 Zásmuky every 60, 3 buses; Kutnohorsko lines.json). New audit `../audit/passing_check.py` (run by `run_oblast.py`):
+86 lines with ≥ 3 off-pattern trips each way at one stop (`audit-passing-2026-11-03-before.txt`). Brief: `BRANCH_BRIEF.md`.
+Six Sonnet designers (two oblasts each) write `oblasti/<id>/branch-check-2026-11-03.md`; then a Fable reviewer per pair writes
+`branch-review-2026-11-03.md`. When all are done: `run_oblast.py <id> --final` for each, then the Tuesday steps below (the v2
+build picks up the new lines and their buses). Also changed: `04_vehicles.py` no longer puts a bus of known non-PID paint
+on the grey-red object (requested instead); `paint_check_2026-11-03.md` went to the fleet desk.
+
 ## Tuesday 3 Nov
 1. The poller (`01_live_poll.py 2026-11-03T20:15`, started 20:03 Mon, logs `data/raw/live/poll2.log`) and `keep_awake.py`
    (until 20:20) run. It now also records trolleybuses (route type 11) and Prague city line 232 for the Prague session.
