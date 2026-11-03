@@ -3737,6 +3737,11 @@
      "at": "2026-11-03T07:29:01+01:00",
      "version": 2,
      "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
+    },
+    {
+     "at": "2026-11-03T07:37:08+01:00",
+     "version": 3,
+     "note": "340 Masarykova takes 340's two spare buses (1469, 1896) instead of two others"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/CDDnFgXhcNaKqBa9BuLbmJ"

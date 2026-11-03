@@ -18,7 +18,8 @@ sheet only:
    from each sheet's published buses (data/derived/roster_published.json) wherever they are still evidence for the same
    Simutrans line, and a kept bus never moves (owner, 2 Nov 2026, Prague bus sheet: "do not move vehicles in lines not
    affected if possible"): a new or changed line takes free buses or designed ones; the spares rule never swaps a kept bus;
-   a published designed bus stays while it is still free. So v1 -> v2 changes only what the new evidence changes.
+   a published designed bus stays while it is still free; a published bus its changed line no longer holds goes first to
+   the PID line's other Simutrans lines. So v1 -> v2 changes only what the new evidence changes.
 Each bus: PID number, operator, type (the live map's vehicle window), length from the type, paint from the
 seznam-autobusu register (praha-bus registers of 29 Sep, joined by the car id of the vehicle card) where it has the car,
 and its pak object (pak_rules in pid-regional/config.json; town lines use their VZ-MHD<Town> package).
@@ -210,6 +211,14 @@ for k in K:
     for n in pub[0]:
         v = int(n) if n.isdigit() else n
         if v in EV[k] and v not in owner.values() and j < NEED[k]: owner[(k, j)] = v; KEPT.add(v); j += 1
+# published buses of a PID line that its changed Simutrans lines no longer hold (340 split into 340 + 340 Masarykova): offered
+# first to the line's other Simutrans lines, so the owner moves those buses instead of adding others
+LEFT = collections.defaultdict(list)
+for k in K:
+    pub = PUB.get((k[0], k[1], SM[k]['name']))
+    for n in (pub[0] if pub else []):
+        v = int(n) if n.isdigit() else n
+        if v not in KEPT and v not in LEFT[(k[0], k[1])]: LEFT[(k[0], k[1])].append(v)
 # a published designed bus is reserved for its line while it is not busy in that line's window (kept before any matching)
 RES = {}
 for k in K:
@@ -259,6 +268,13 @@ for v, k in RES.items():
     if v not in used and len(assigned[k]) + len(designed[k]) < SM[k]['need']:
         designed[k].append(dict(info(v, TOWN[(k[0], k[1])]), why='kept from the published sheet: ' + PUBWHY.get((k[0], k[1], SM[k]['name'], str(v)), '')))
         used[v] = k
+for oid, L, i, s, x in sims:
+    k = (oid, L, i)
+    for v in LEFT.get((oid, L), []):
+        # busy in the window on its own line's trips is what makes it this line's bus, so no free-in-window test here
+        if v not in used and not prague_bus(v) and len(assigned[k]) + len(designed[k]) < s['need']:
+            designed[k].append(dict(info(v, TOWN[(oid, L)]), why=f"kept from the published sheet, where it ran {L}: the line's Simutrans lines changed"))
+            used[v] = k
 for oid, L, i, s, x in sims:
     k = (oid, L, i); short = s['need'] - len(assigned[k]) - len(designed[k])
     if short <= 0: continue

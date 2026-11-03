@@ -22,14 +22,13 @@ Coordinator: session simutrans-timetable-4d. **Version 1 of all 13 sheets is pub
 Settled tonight by the 2 Nov live map (checks → notes, model unchanged): 534+535 (Kolínsko), 430+436 and 433+434 (Nymbursko).
 Untyped buses: 11 sheet buses have no type (the live map names none; not in the register): pak_request.md.
 
-## Tuesday 3 Nov, morning: the branch re-check (owner on 381)
-Owner, 3 Nov: "381 you haven't done the Zásmuky branch … you may have to correct everywhere." 381 fixed by the coordinator
-(381 Zásmuky every 60, 3 buses; Kutnohorsko lines.json). New audit `../audit/passing_check.py` (run by `run_oblast.py`):
-86 lines with ≥ 3 off-pattern trips each way at one stop (`audit-passing-2026-11-03-before.txt`). Brief: `BRANCH_BRIEF.md`.
-Six Sonnet designers (two oblasts each) write `oblasti/<id>/branch-check-2026-11-03.md`; then a Fable reviewer per pair writes
-`branch-review-2026-11-03.md`. When all are done: `run_oblast.py <id> --final` for each, then the Tuesday steps below (the v2
-build picks up the new lines and their buses). Also changed: `04_vehicles.py` no longer puts a bus of known non-PID paint
-on the grey-red object (requested instead); `paint_check_2026-11-03.md` went to the fleet desk.
+## Tuesday 3 Nov, morning: the branch re-check (owner on 381) — published as v2 at 07:29 (commit caa1f48)
+Owner, 3 Nov: "381 you haven't done the Zásmuky branch … you may have to correct everywhere." 381 fixed (381 Zásmuky every 60);
+`../audit/passing_check.py` (run by `run_oblast.py`) flagged 86 lines; six Sonnet designers (`branch-check-2026-11-03.md`) and
+six Fable reviewers (`branch-review-2026-11-03.md`): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses. `04_vehicles.py`
+now keeps the published buses (keep_roster; `roster_published.json` = the 07:29 version). Known non-PID paint is requested.
+Open: a Fable second read of the five reviewer-made changes (306 Jeneč, 415 Žatec, 340 Masarykova, 466 Nelahozeves, 369's
+second slot) → `second-read-2026-11-03.md`; apply any DISAGREE before the evening build.
 
 ## Tuesday 3 Nov
 1. The poller (`01_live_poll.py 2026-11-03T20:15`, started 20:03 Mon, logs `data/raw/live/poll2.log`) and `keep_awake.py`
@@ -38,8 +37,11 @@ on the grey-red object (requested instead); `paint_check_2026-11-03.md` went to 
    id from `polls.jsonl` + `vehicles.jsonl`: route, course, type, first/last seen. Send it to the Prague bus session
    (simutrans-timetable-13) with the 317/318 Tuesday files (`observed.py 317 2026-11-03`, `318`), and the type of 7965 if
    Tuesday names it.
-3. After 20:15: `scripts/final_build.py 20:20 2026-11-03` (04 then uses day 2: designed buses filled, day-2 types win over
+3. Restore the full live note: `config.live.note = config.live.note_full` (the morning note says Tue 5:00–7:20 only).
+   After 20:15: `scripts/final_build.py 20:20 2026-11-03` (04 then uses day 2: designed buses filled, day-2 types win over
    day-1 empty ones), check STILL SHORT and the "?" count, re-render, republish the 12 + index to the same URLs, bump
    `publishes` in the catalog (`catalog_pid.py urls.json "Tuesday fill-ins"`), `pnpm sync` (keep other sessions' unsynced
    sheets at HEAD), commit, push.
-4. Tell the fleet desk of any type still missing after Tuesday; give the owner the change list of v1 → v2 (buses in/out).
+4. Change list morning → evening: scratchpad `changes_v1_v2.py <v2m_build> <v2m_published> . out.md` (the snapshot of the
+   07:29 version); copy each `roster.json` → `roster_published.json`; catalog label "Tuesday fill-ins". Tell the fleet desk of
+   any type still missing (1466/1468/1469: read Platil's seznam page if the map gives none); give the owner the list.

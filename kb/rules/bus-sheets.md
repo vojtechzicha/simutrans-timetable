@@ -136,7 +136,9 @@ Owner, 1 Nov 2026: "Do the full PID. Divide it per "oblast" (like Mladoboleslavs
 - **A republished sheet keeps its published buses** (keep_roster, 3 Nov 2026; owner, 2 Nov 2026 on the Prague bus sheet: "do
   not move vehicles in lines not affected if possible"): `04_vehicles.py` starts the matching from each sheet's
   `roster_published.json`. A published bus that is still evidence for its line never moves; a published designed bus is
-  reserved for its line while it is free in the line's window. New or changed lines take free buses or designed ones. After
+  reserved for its line while it is free in the line's window. A published bus its changed line no longer holds goes first
+  to that PID line's other Simutrans lines (340 split into 340 + 340 Masarykova: 340's two spare buses move across, nothing
+  new is added). New or changed lines take free buses or designed ones. After
   each publish, copy `roster.json` to `roster_published.json`. v1 → v2 on 3 Nov: 2 bus moves on lines that already existed
   (340's two to 340 Masarykova).
 - **A check that waits on vehicle evidence is settled by it:** when the live map confirms the sheet's choice (pooling 534+535,
