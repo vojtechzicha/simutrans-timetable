@@ -3325,7 +3325,7 @@
    ],
    "region": "PID regional",
    "kind": "fleet",
-   "summary": "Okres Mělník: 34 PID lines as 47 Simutrans lines, 115 buses (109 seen on the live map, 6 designed); 2 more listed with the reason. Owner checks: 1.",
+   "summary": "Okres Mělník: 34 PID lines as 47 Simutrans lines, 115 buses (109 seen on the live map, 6 designed); 2 more listed with the reason. Owner checks: 2.",
    "pipeline": "pipeline/pid-regional",
    "build": "python -X utf8 scripts/run_oblast.py melnicko --final; then 04_vehicles.py, 05b_game.py melnicko, 06_render.py melnicko",
    "fetch": "scripts/01_live_poll.py (live map, detached, keep_awake.py); GTFS by hand into data/raw/gtfs/<date>/",
@@ -3397,6 +3397,11 @@
      "at": "2026-11-03T07:29:01+01:00",
      "version": 2,
      "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
+    },
+    {
+     "at": "2026-11-03T07:56:53+01:00",
+     "version": 3,
+     "note": "Second read: 369's two-slot row on the owner checks (one slot saves 3 buses); no typed value changed"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/2PM9ugvAGcmiXr1QaT6CMR"

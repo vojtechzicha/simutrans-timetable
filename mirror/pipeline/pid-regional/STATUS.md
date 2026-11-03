@@ -27,8 +27,9 @@ Owner, 3 Nov: "381 you haven't done the Zásmuky branch … you may have to corr
 `../audit/passing_check.py` (run by `run_oblast.py`) flagged 86 lines; six Sonnet designers (`branch-check-2026-11-03.md`) and
 six Fable reviewers (`branch-review-2026-11-03.md`): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses. `04_vehicles.py`
 now keeps the published buses (keep_roster; `roster_published.json` = the 07:29 version). Known non-PID paint is requested.
-Open: a Fable second read of the five reviewer-made changes (306 Jeneč, 415 Žatec, 340 Masarykova, 466 Nelahozeves, 369's
-second slot) → `second-read-2026-11-03.md`; apply any DISAGREE before the evening build.
+Second read of the five reviewer-made changes (`second-read-2026-11-03.md`): all five patterns agreed; 369's hand anchor
+removed and its row put on owner_checks (one slot saves 3 buses) — Mělnicko republished. Praha-západ republished with 340's two
+spare buses on 340 Masarykova. `roster_published.json` = what is published now.
 
 ## Tuesday 3 Nov
 1. The poller (`01_live_poll.py 2026-11-03T20:15`, started 20:03 Mon, logs `data/raw/live/poll2.log`) and `keep_awake.py`

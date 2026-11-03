@@ -74,6 +74,8 @@ No every 1440 / 720 — max 480 ("we can bend the reality a bit"). Shift-change 
   every flag is fixed or explained on the card (`pipeline/audit/branch-check-2026-10-25.md`).
 - A sheet the owner may already have in the game is rebuilt with `keep_roster` (Ostrava bus; regional sheets' shared
   04_roster step 6): published buses stay on their line wherever they are still evidence for it.
+- A hand anchor never hides an approximation (3 Nov 2026, 369): if the builder's own window shows an empty slot, the row is
+  approximate and goes on owner_checks with its slower option, even when another window audits clean.
 - A multi-slot row on a long interval (290: every 120, four slots each way) is fine when it is exact in the window and no
   simpler interval passes Step 4; put the simpler option on the owner checks.
 - Label every typed value with its own real time, worked out from the value (+61 at loops), never by zipping two sorted lists.

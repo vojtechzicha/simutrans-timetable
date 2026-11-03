@@ -227,7 +227,8 @@ for k in K:
     W = SM[k]['window']
     for n in pub[1]:
         v = int(n) if n.isdigit() else n
-        if v not in RES and v not in KEPT and not prague_bus(v) and not any(f < W[1] and l > W[0] for f, l, *_ in BUSY.get(v, [])):
+        # busy in the window only on its own PID line's trips is no reason to drop it (340 Masarykova's buses run 340 trips)
+        if v not in RES and v not in KEPT and not prague_bus(v) and not any(f < W[1] and l > W[0] and r != k[1] for f, l, r, *_ in BUSY.get(v, [])):
             RES[v] = k; cand.pop(v, None)
 def try_assign(v, vis):
     for dd, k in cand[v]:

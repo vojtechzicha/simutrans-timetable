@@ -224,6 +224,10 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
 - **3 Nov:** the PID regional vehicle step had no keep_roster; a first v2 run moved 14 published buses (a chain 365 → 618 →
   600 → 628 to free one bus for a new line). Kept buses are now fixed and published designed buses reserved: 2 moves left.
   Run the change list (old → new) before publishing a sheet the owner may have built.
+- **3 Nov:** a second Fable read of the five changes a reviewer (not a designer) had made agreed with all five patterns, but
+  369's second slot had been made to pass Step 4 by a hand anchor (15:30); in the builder's window its back row has an empty
+  17:12. Anchor removed, the row stays, the one-slot option (−3 buses) is an owner check. Changes made by a reviewer get a
+  second reader too.
 - **3 Nov (via the fleet desk):** "If something exists in the real PID, it should be modeled... include more liveries where
   needed" → no bus is out of scope for its paint (9034 Arriva City red included); the PID regional builder had put buses with a
   known non-PID paint (DÚK green, DPP city scheme, wraps) on the grey-red object, now they are requested.
