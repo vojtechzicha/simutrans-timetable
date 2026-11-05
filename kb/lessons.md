@@ -247,3 +247,15 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   ran articulated, so 3 of the 11 counted buses are (Citaro C2 GÜ 7955, 7958; Martin Uher Urbino 18 IV 1161), and the owner was
   right. The buses carry 317 course numbers, but in the peak only 7952 went over to 317, so 317 is not pooled even though
   pooling was pre-approved. The pak already had Urbino 18 IV in VZ-PID; only the type token and the length were missing.
+
+## 3 Nov — Prague circuits from 138 up, the 90-years paint
+- **3 Nov:** "Is there any advantage in 138 being one line?" → one bus (12 → 11), at the cost of an 8-entry circuit in place of two
+  game lines. Then "for Prague update all lines 138 and above for this rule - if originally it was two lines and you suggest collapsing,
+  do it when there is bus saved and something more" → of the cards from 138 up, only 138, 139, 161 + 312, 197 and 226 put two game lines
+  into one circuit; 318 and 363 extend one game line. 139, 197 and 226 save 1 bus each with a 4-entry circuit and stay. 138 splits again.
+  161 + 312 had been a circuit that saved nothing (7 = 4 + 3): the 20 Oct "≥ 1 bus" check had let it through. The owner chose to split
+  it but keep the 186 → 396 through line, both of which had been their own 30 Oct calls, so ask before reversing an owner's earlier
+  decision even when a new rule covers it. Size the separate alternative with the same code (patch `circuitize` out), never by hand.
+- **3 Nov:** the fleet desk drew the DPP 90-years paint (5025, 5050, trolleybus 509). The second NB 18 livery in the pak made the
+  render name the livery on every NB 18, including cards 100–108; those cards now come from `assets/frozen_cards.json` (v20, byte for
+  byte), so a pak or render change can no longer reach them.

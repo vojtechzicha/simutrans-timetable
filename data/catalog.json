@@ -316,6 +316,11 @@
      "at": "2026-11-02T19:45:00.000Z",
      "version": 20,
      "note": "318 note corrected: 10 of the 11 were on 318 at 16:00, 7922 stands in for 7965 (not in the register); method names the live map"
+    },
+    {
+     "at": "2026-11-05T15:08:00.000Z",
+     "version": 21,
+     "note": "From 138 up a circuit in place of two game lines needs a saved bus and something more (owner, 3 Nov): 138 and 161/312 back to separate lines (12 and 7 buses), 139/197/226 keep theirs; 5025/5050 on the new 90-years NB 18 objects; cards 100-108 unchanged"
     }
    ]
   },

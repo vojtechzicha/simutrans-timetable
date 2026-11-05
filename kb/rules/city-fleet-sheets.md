@@ -56,6 +56,12 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
 - **Shortest terminal wait by default** (owner, 18 Oct): don't model interworking/line swaps at the peak if each line turns faster on
   its own (Ostrava 1 + 2 stay separate). Model a cross-line circuit only when the weekday peak is observed doing it.
 - Cross-branch circuits for star lines only where they save ≥ 1 vehicle ("where it significantly shortens wait, do it", 20 Oct).
+- **Prague from line 138 up: two game lines become one circuit only for a saved bus *and* something more** (owner, 3 Nov: "if
+  originally it was two lines and you suggest collapsing, do it when there is bus saved and something more (closer to reality, only
+  one additional loop, limited spaces at terminal, etc.)"). A 4-entry circuit (each bus alternates the two branches) counts as one
+  additional loop: 139, 197 and 226 keep theirs, and the card says what the merge gains. 138 (1 bus saved, 8 entries) and 161 + 312
+  (no bus saved; pooled in real life, the owner chose to split) went back to separate lines (state `simlines.separate`). A through
+  line (186 → 396 at Vinoř, every trip, 0 min) is not a circuit and stays. Lines below 138 keep the 20 Oct rule.
 
 ## Splits, branches, pools
 - Where course (kurz) numbers mark a branch, split by range (Brno 5S = kurzy 21–27; Prague 17 = 1–17 / 21–37).

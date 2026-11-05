@@ -26,7 +26,8 @@ import argparse, collections, datetime, glob, json, os, re
 from common import state, load, save, RAW, DER, ASSETS, _txt, parse_vypis
 
 LIVERY_NAMES = {'pidsedocervena': 'PID grey-red', 'pidcervenomodrobila': 'PID red-white-blue', 'dppcervenobila': 'DPP red-white',
-                'mestskacervenobila': 'city red-white', 'veoliacervenoseda': 'Veolia red-grey', 'bila': 'white'}
+                'mestskacervenobila': 'city red-white', 'veoliacervenoseda': 'Veolia red-grey', 'bila': 'white',
+                'bilofialova': '90 years white-purple'}
 
 def parse_records(path):
     t = open(path, encoding='utf-8').read(); out = []
@@ -39,7 +40,8 @@ def parse_records(path):
 
 KNOWN = [('schéma PID, šedá', 'pidsedocervena'), ('schéma PID, červeno-bílo-modrá', 'pidcervenomodrobila'), ('Veolia', 'veoliacervenoseda'),
          ('bílá', 'bila'), ('tyrkysová se žlutým pruhem', 'tyrkysovozluta'),
-         ('CVR Fashion Arena', 'fashionarena')]   # line 238 wrap kept as its own objects (user, via the pak session, 29 Sep)
+         ('CVR Fashion Arena', 'fashionarena'),   # line 238 wrap kept as its own objects (user, via the pak session, 29 Sep)
+         ('bílo-fialová, výroční polep 90 let trolejbusů', 'bilofialova')]   # DPP's 90-years paint, not an advert (fleet desk, pak c6f4b44, 3 Nov 2026)
 
 def base_livery(v):
     """The car's own livery slug, or None for an advert wrap or a livery the pak does not have."""

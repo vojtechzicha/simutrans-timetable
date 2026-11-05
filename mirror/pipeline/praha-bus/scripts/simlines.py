@@ -7,6 +7,8 @@ own schedule, as the Ostrava bus sheet does. The Ostrava bus lib is reused read-
   * state simlines.circuit[L] = row order: one circuit line, owner-set (102, 103);
   * state simlines.auto: rows paired two by two are the separate branch lines; lib.circuitize runs the branches as circuits
     instead where that saves >= 1 bus (owner rule, 20 Oct 2026); it searches at most 8 departures per period.
+  * state simlines.separate: from 138 up, a circuit in place of two game lines must save a bus and give something more (owner,
+    3 Nov 2026); the cards that fail stay separate branch lines.
 Sizing: a plain line by lib.slot_need (arrivals matched to departures at each terminus, exact for uneven slots), a circuit by
 lib.pattern_need (one bus followed round the entries in running order). Running time = median of the 15:00-17:59 trips.
 Minimum wait at a terminus = min(3, its shortest timetabled turnaround in 15:00-17:59), never below 2: departures at loops are
@@ -65,6 +67,9 @@ def build(L, ts, rows, s):
         return [circuit([rows[i] for i in cfg['circuit'][L]])]
     pairs = [[rows[i], rows[i + 1]] for i in range(0, len(rows), 2)]
     seps = [plain(p) for p in pairs]
+    # state simlines.separate: cards from 138 up whose branches stay separate Simutrans lines (owner, 3 Nov 2026: two game lines
+    # are collapsed into one circuit only where it saves a bus and something more, e.g. only one additional loop)
+    if L in cfg.get('separate', []): return seps
     # circuitize on synthetic trips at the typed slots with the median running time (its own rt takes the max of the trips)
     R = [dict(fr=A(r['o']), to=A(r['d']), every=r['every'], real=r['real']) for r in rows]
     syn = [dict(o=A(r['o']), d=A(r['d']), dep=t, arr=t + rt(r['o'], r['d'])) for r in rows for t in range(840, 1140) if t % r['every'] in r['real']]

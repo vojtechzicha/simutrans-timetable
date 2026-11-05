@@ -1,25 +1,26 @@
 {
- "commit": "VZ-DPPraha-bus: 5e9ddee; VZ-Praha-bus: 5e9ddee; VZ-Praha-water: 5e9ddee; VZ-PID-bus: 5e9ddee",
+ "commit": "VZ-DPPraha-bus: c6f4b44; VZ-Praha-bus: c6f4b44; VZ-Praha-water: c6f4b44; VZ-PID-bus: c6f4b44",
  "source": {
   "VZ-DPPraha-bus": {
    "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
-   "commit": "5e9ddee 2026-10-29 SOR NB 18 / 31Tr: sections 8 + 6, not 9 + 5"
+   "commit": "c6f4b44 2026-11-03 Model every real PID livery: operator schemes, region paints, DPP 90 let"
   },
   "VZ-Praha-bus": {
    "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
-   "commit": "5e9ddee 2026-10-29 SOR NB 18 / 31Tr: sections 8 + 6, not 9 + 5"
+   "commit": "c6f4b44 2026-11-03 Model every real PID livery: operator schemes, region paints, DPP 90 let"
   },
   "VZ-Praha-water": {
    "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
-   "commit": "5e9ddee 2026-10-29 SOR NB 18 / 31Tr: sections 8 + 6, not 9 + 5"
+   "commit": "c6f4b44 2026-11-03 Model every real PID livery: operator schemes, region paints, DPP 90 let"
   },
   "VZ-PID-bus": {
    "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
-   "commit": "5e9ddee 2026-10-29 SOR NB 18 / 31Tr: sections 8 + 6, not 9 + 5"
+   "commit": "c6f4b44 2026-11-03 Model every real PID livery: operator schemes, region paints, DPP 90 let"
   }
  },
  "objects": {
   "VZ-DPPraha-Crossway_LE_12_8M-dppcervenobila-Crossway_LE_12_8M": "VZ-DPPraha-bus",
+  "VZ-DPPraha-Crossway_LE_City_12M-dppcervenobila-Crossway_LE_City_12M": "VZ-DPPraha-bus",
   "VZ-DPPraha-Crossway_LE_City_14_5M-pidsedocervena-Crossway_LE_City_14_5M": "VZ-DPPraha-bus",
   "VZ-DPPraha-Crossway_Pro_10_8M-bila-Crossway_Pro_10_8M": "VZ-DPPraha-bus",
   "VZ-DPPraha-Crossway_Pro_12M-bila-Crossway_Pro_12M": "VZ-DPPraha-bus",
@@ -32,6 +33,8 @@
   "VZ-DPPraha-SOR_NB_12-dppcervenobila-NB_12": "VZ-DPPraha-bus",
   "VZ-DPPraha-SOR_NB_12-pidcervenomodrobila-NB_12": "VZ-DPPraha-bus",
   "VZ-DPPraha-SOR_NB_12-pidsedocervena-NB_12": "VZ-DPPraha-bus",
+  "VZ-DPPraha-SOR_NB_18-bilofialova-NB_18-A": "VZ-DPPraha-bus",
+  "VZ-DPPraha-SOR_NB_18-bilofialova-NB_18-B": "VZ-DPPraha-bus",
   "VZ-DPPraha-SOR_NB_18-dppcervenobila-NB_18-A": "VZ-DPPraha-bus",
   "VZ-DPPraha-SOR_NB_18-dppcervenobila-NB_18-B": "VZ-DPPraha-bus",
   "VZ-DPPraha-SOR_NS_18-dppcervenobila-SOR_NS_18-A": "VZ-DPPraha-bus",
@@ -58,11 +61,13 @@
   "VZ-PID-Crossway_LE_Line_10_8M-pidsedocervena-Crossway_LE_Line_10_8M": "VZ-PID-bus",
   "VZ-PID-Crossway_LE_Line_12M-pidcervenomodrobila-Crossway_LE_Line_12M": "VZ-PID-bus",
   "VZ-PID-Crossway_LE_Line_12M-pidsedocervena-Crossway_LE_Line_12M": "VZ-PID-bus",
+  "VZ-PID-Crossway_LE_Line_12M_Hybrid-pidsedocervena-Crossway_LE_Line_12M_Hybrid": "VZ-PID-bus",
   "VZ-PID-Crossway_LE_Line_12M_NP-pidsedocervena-Crossway_LE_Line_12M_NP": "VZ-PID-bus",
   "VZ-PID-Crossway_LE_Line_13M-pidsedocervena-Crossway_LE_Line_13M": "VZ-PID-bus",
   "VZ-PID-Crossway_LE_Line_14_5M-pidsedocervena-Crossway_LE_Line_14_5M": "VZ-PID-bus",
   "VZ-PID-Crossway_Line_12M-pidcervenomodrobila-Crossway_Line_12M": "VZ-PID-bus",
   "VZ-PID-Crossway_Line_12M-pidsedocervena-Crossway_Line_12M": "VZ-PID-bus",
+  "VZ-PID-Crossway_Line_13M-pidsedocervena-Crossway_Line_13M": "VZ-PID-bus",
   "VZ-PID-Dekstra_LE_37-pidsedocervena-Dekstra_LE_37": "VZ-PID-bus",
   "VZ-PID-Dekstra_LE_37_CNG-pidsedocervena-Dekstra_LE_37_CNG": "VZ-PID-bus",
   "VZ-PID-Integro_II_L-pidsedocervena-Integro_II_L": "VZ-PID-bus",
@@ -70,6 +75,7 @@
   "VZ-PID-Irisbus_Crossway_LE_10_8M-pidsedocervena-Irisbus_Crossway_LE_10_8M": "VZ-PID-bus",
   "VZ-PID-Irisbus_Crossway_LE_12M-pidsedocervena-Irisbus_Crossway_LE_12M": "VZ-PID-bus",
   "VZ-PID-Irisbus_Crossway_LE_12_8M-pidsedocervena-Irisbus_Crossway_LE_12_8M": "VZ-PID-bus",
+  "VZ-PID-Irizar_i4_14M-pidsedocervena-Irizar_i4_14M": "VZ-PID-bus",
   "VZ-PID-Lions_City_10E-pidsedocervena-Lions_City_10E": "VZ-PID-bus",
   "VZ-PID-Lions_City_18C-pidsedocervena-Lions_City_18C-A": "VZ-PID-bus",
   "VZ-PID-Lions_City_18C-pidsedocervena-Lions_City_18C-B": "VZ-PID-bus",
@@ -83,9 +89,11 @@
   "VZ-PID-SOR_CN_12-pidcervenomodrobila-SOR_CN_12": "VZ-PID-bus",
   "VZ-PID-SOR_CN_12-pidsedocervena-SOR_CN_12": "VZ-PID-bus",
   "VZ-PID-SOR_CN_12_3-pidsedocervena-SOR_CN_12_3": "VZ-PID-bus",
+  "VZ-PID-SOR_CN_8_5-arrivacitycervena-SOR_CN_8_5": "VZ-PID-bus",
   "VZ-PID-SOR_CN_9_5-pidsedocervena-SOR_CN_9_5": "VZ-PID-bus",
   "VZ-PID-SOR_C_10_5-pidsedocervena-SOR_C_10_5": "VZ-PID-bus",
   "VZ-PID-SOR_C_9_5-pidsedocervena-SOR_C_9_5": "VZ-PID-bus",
+  "VZ-PID-SOR_EBN_11_1-pidsedocervena-SOR_EBN_11_1": "VZ-PID-bus",
   "VZ-PID-SOR_ICN_10_5-pidsedocervena-SOR_ICN_10_5": "VZ-PID-bus",
   "VZ-PID-SOR_ICN_12-pidsedocervena-SOR_ICN_12": "VZ-PID-bus",
   "VZ-PID-SOR_NBG_12-pidsedocervena-SOR_NBG_12": "VZ-PID-bus",
@@ -100,6 +108,10 @@
   "VZ-PID-Setra_S_419_UL-pidsedocervena-Setra_S_419_UL": "VZ-PID-bus",
   "VZ-PID-Setra_S_510_LE-pidsedocervena-Setra_S_510_LE": "VZ-PID-bus",
   "VZ-PID-Setra_S_515_LE-pidsedocervena-Setra_S_515_LE": "VZ-PID-bus",
+  "VZ-PID-Sprinter_519_CMS-pidsedocervena-Sprinter_519_CMS": "VZ-PID-bus",
+  "VZ-PID-Sprinter_519_KHMC-pidsedocervena-Sprinter_519_KHMC": "VZ-PID-bus",
+  "VZ-PID-Sprinter_519_KHMC_City-pidsedocervena-Sprinter_519_KHMC_City": "VZ-PID-bus",
+  "VZ-PID-Sprinter_City_35-pidsedocervena-Sprinter_City_35": "VZ-PID-bus",
   "VZ-PID-Stratos_LE_37-pidsedocervena-Stratos_LE_37": "VZ-PID-bus",
   "VZ-PID-Urbanway_12M_CNG-pidcervenomodrobila-Urbanway_12M_CNG": "VZ-PID-bus",
   "VZ-PID-Urbanway_12M_CNG-pidsedocervena-Urbanway_12M_CNG": "VZ-PID-bus",
@@ -112,6 +124,7 @@
   "VZ-PID-Urbino_18_IV-pidcervenomodrobila-Urbino_18_IV-B": "VZ-PID-bus",
   "VZ-PID-Urbino_18_IV-pidsedocervena-Urbino_18_IV-A": "VZ-PID-bus",
   "VZ-PID-Urbino_18_IV-pidsedocervena-Urbino_18_IV-B": "VZ-PID-bus",
+  "VZ-PID-Vehixel_Cytios_4-pidsedocervena-Vehixel_Cytios_4": "VZ-PID-bus",
   "VZ-Praha-BMC_Neocity_8_5-pidcervenomodrobila-BMC_Neocity_8_5": "VZ-Praha-bus",
   "VZ-Praha-BMC_Neocity_8_5-pidsedocervena-BMC_Neocity_8_5": "VZ-Praha-bus",
   "VZ-Praha-BMC_Procity_10_6-pidcervenomodrobila-BMC_Procity_10_6": "VZ-Praha-bus",

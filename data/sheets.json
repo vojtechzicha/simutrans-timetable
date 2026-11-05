@@ -4060,17 +4060,17 @@
    "file": "Prague Bus Lines Check.html",
    "location": "root",
    "title": "Prague Bus Lines Check",
-   "bytes": 1494395,
-   "sha256": "494b96c3a45ebf98",
-   "sourceModified": "2026-11-02T19:11:16.436Z",
-   "contentChangedAt": "2026-11-02T19:11:30.775Z",
-   "syncedAt": "2026-11-03T06:56:53.241Z",
+   "bytes": 1500588,
+   "sha256": "9a6d9009997699ae",
+   "sourceModified": "2026-11-05T15:06:51.536Z",
+   "contentChangedAt": "2026-11-05T15:08:56.634Z",
+   "syncedAt": "2026-11-05T15:08:56.634Z",
    "history": {
     "firstSeen": "2026-09-29T16:02:14.910Z",
     "firstPublished": "2026-09-29T16:02:14.910Z",
-    "lastPublished": "2026-11-02T19:45:00.000Z",
-    "publishCount": 20,
-    "latestVersion": 20,
+    "lastPublished": "2026-11-05T15:08:00.000Z",
+    "publishCount": 21,
+    "latestVersion": 21,
     "artifactUrls": [
      "https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF"
     ],
@@ -4222,6 +4222,11 @@
      "at": "2026-11-02T19:45:00.000Z",
      "version": 20,
      "note": "318 note corrected: 10 of the 11 were on 318 at 16:00, 7922 stands in for 7965 (not in the register); method names the live map"
+    },
+    {
+     "at": "2026-11-05T15:08:00.000Z",
+     "version": 21,
+     "note": "From 138 up a circuit in place of two game lines needs a saved bus and something more (owner, 3 Nov): 138 and 161/312 back to separate lines (12 and 7 buses), 139/197/226 keep theirs; 5025/5050 on the new 90-years NB 18 objects; cards 100-108 unchanged"
     }
    ]
   },

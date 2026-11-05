@@ -1203,7 +1203,7 @@
      "real": [
       0
      ],
-     "why": "312 on 161's buses, every 30 at :00 and :30 (16:00–17:00 to Tuchoměřice,Špejchar; 15:00 runs to Středokluky, 15:30 to Lichoceves, 17:30 to the komerční zóna)."
+     "why": "312 (in real life on 161's buses; its own line here, owner, 3 Nov 2026), every 30 at :00 and :30 (16:00–17:00 to Tuchoměřice,Špejchar; 15:00 runs to Středokluky, 15:30 to Lichoceves, 17:30 to the komerční zóna)."
     },
     {
      "o": "Tuchoměřice,Špejchar",
@@ -1519,6 +1519,10 @@
    "229": {
     "Depo Hostivař → Doubek :19": "game line 100364",
     "Depo Hostivař → Doubek :49": "game line 100366 (the save runs it on to Mukařov)"
+   },
+   "161": {
+    "Bořislavka → Přední Kopanina": "game line 100161P; 100161 (Bořislavka – Letiště, 1 bus) is then not needed: its trips run on 161 and 312",
+    "Bořislavka → Tuchoměřice,Špejchar": "game line 100312"
    }
   },
   "groups": {
@@ -1539,7 +1543,17 @@
   "bus_by_record": [
    "111"
   ],
-  "_bus_by_record_why": "Cards whose buses go on their Simutrans lines by the records first: a course logged \"přejezd na linku R\" goes on the line that runs R's trips (owner, 30 Oct 2026, 329: \"I don't think NB 12s are so used on 329\"; 329 ran on 111's SOR BN 12s 4516, 4517, 4522, 4523, 4528)."
+  "_bus_by_record_why": "Cards whose buses go on their Simutrans lines by the records first: a course logged \"přejezd na linku R\" goes on the line that runs R's trips (owner, 30 Oct 2026, 329: \"I don't think NB 12s are so used on 329\"; 329 ran on 111's SOR BN 12s 4516, 4517, 4522, 4523, 4528).",
+  "_separate_why": "Owner, 3 Nov 2026, for 138 and above: \"if originally it was two lines and you suggest collapsing, do it when there is bus saved and something more (closer to reality, only one additional loop, limited spaces at terminal, etc.)\". 138: one circuit saved 1 bus (12 -> 11) but ran 8 entries (three extra loops) -> two lines again. 161 + 312: the circuit saved nothing (7 = 4 + 3) -> two lines again (owner, 3 Nov: split). 139, 197, 226 keep their circuits (merge_why). 186 + 396 stays one through line (owner, 3 Nov: keep; every Vinoř trip runs on as 396). 318 and 363 extend one game line, so nothing is collapsed.",
+  "separate": [
+   "138",
+   "161"
+  ],
+  "merge_why": {
+   "139": "saves 1 bus (17 → 16) with only one additional loop: each bus alternates the two branches",
+   "197": "saves 1 bus (12 → 11) with only one additional loop: each bus alternates the two branches",
+   "226": "saves 1 bus (4 → 3) with only one additional loop: each bus alternates the two branches"
+  }
  },
  "regional": {
   "_why": "Owner, 30 Oct 2026: \"Now could you do the companion PID lines ...\" / \"Definitley include those that share buses so we have a full list. Also those that are \"proložené\" like 113/333.\" / \"I am 100% sure 301/352 are continuations of 174\" / \"Pool if they pool in real live\" / \"Include if they are interleaved in the real timetiable\". through: every trip of the regional line starts or ends at the minute a city trip ends or starts at the same stop (GTFS, 30 Sep): one through trip. pooled: the city line's courses also run the regional line (vehicle records, 25 Sep: 111 courses 2, 3, 4, 6, 7 -> 329; 161 courses 1, 2, 3, 5, 6 -> 312; 229 courses 1-9, 11 -> 364 and 366): the regional trips join the city card. interleaved: own buses, a shared stretch where the regional trips fall in the city line's gaps; own card after the city line. Left out (owner): 157/327, 157/331, 215/326 and 161/355 (one bus on one day).",
