@@ -132,6 +132,7 @@ def main():
     nspare = 0
     for (G, br), cs in groups.items():
         if br: need = TTF.get('branches', {}).get(G, {}).get(br, {}).get('need')
+        elif G in TTF.get('circuits', {}): need = TTF['circuits'][G].get('need')
         elif G in TTF.get('pools', {}): need = TTF['pools'][G].get('need')
         else: need = TTF['lines'].get(G, {}).get('cycle_need')
         if not need or len(cs) <= need: continue

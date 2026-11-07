@@ -118,6 +118,15 @@ def main():
             cs = [c for c in (cycle_need(ts, x, y, lay=lay), cycle_need(ts, y, x, lay=lay)) if c]
             branches.setdefault(key, {})[br['label']] = dict(need=max(c[0] for c in cs) if cs else None,
                                                             cycle=max(c[1] for c in cs) if cs else None, route=br['route'], line=br.get('line', key))
+    # one Simutrans line running every branch of a line in turn (state circuits; owner, 7 Nov 2026, 52: "you say 52 has two
+    # branches, courses show three, timetable say one ... Study buses"): on the live map every 52 trolleybus alternates Waltrovka
+    # and Jinonice, and 58's mix Miškovice and Čakovice. Sized by pool_need: one trolleybus followed round the legs in order.
+    circuits = {}
+    for L, cfg in s.get('circuits', {}).items():
+        if L.startswith('_'): continue
+        legs = [(L, o, d) for o, d in cfg['legs']]
+        pn = pool_need(by_line[L], legs, lay=cfg.get('lay', 3))
+        circuits[L] = dict(need=pn[0] if pn else None, cycle=pn[1] if pn else None, legs=cfg['legs'])
     metro = {}
     m = s.get('metro')
     if m:
@@ -172,10 +181,11 @@ def main():
         print('metro', {L: (v['need'], [(p['o'], p['d'], p['per_hour']) for p in v['patterns']]) for L, v in metro.items()})
     print('branches', {k: {l: b['need'] for l, b in v.items()} for k, v in branches.items()})
     later = {L: dict(gtfs_raw=GL['raw'], service_date=GL['service_date']) for L in GL['lines']} if GL else {}
-    save(dict(lines=out, pools=pools, branches=branches, metro=metro, service_date=g['service_date'], gtfs_raw=g['raw'], later=later), os.path.join(DER, s['name'], 'timetable.json'))
+    save(dict(lines=out, pools=pools, branches=branches, circuits=circuits, metro=metro, service_date=g['service_date'], gtfs_raw=g['raw'], later=later), os.path.join(DER, s['name'], 'timetable.json'))
     for L, v in out.items():
         print(L.rjust(3), 'trams@16', v['chain16'], 'min', v['min_runtime'], 'cycle', v['cycle_need'], [(x['o'][:12], x['every'], x['set'], 'exact' if x['exact'] else f'~{x["max_dev"]}') for x in v['schedule']])
     print('pools', pools)
+    print('circuits', {L: (c['need'], c['cycle']) for L, c in circuits.items()})
 
 if __name__ == '__main__':
     main()

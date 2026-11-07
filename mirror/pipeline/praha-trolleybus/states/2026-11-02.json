@@ -73,79 +73,6 @@
   "58",
   "59"
  ],
- "splits": {
-  "52": [
-   {
-    "label": "52 Na Knížecí – Jinonice",
-    "route": [
-     "Na Knížecí",
-     "Jinonice"
-    ],
-    "courses": [
-     1,
-     2,
-     3,
-     4,
-     5,
-     10
-    ],
-    "line": "52",
-    "why": "Not recorded: the records give no branch, and both branches run all week with the same low course numbers. Needs 5 by round trip; courses 1–5 in course order (14 min each way). Course 10, also logged, is surplus to both branches and is marked not needed."
-   },
-   {
-    "label": "52 Na Knížecí – Waltrovka",
-    "route": [
-     "Na Knížecí",
-     "Waltrovka"
-    ],
-    "courses": [
-     6,
-     7,
-     8
-    ],
-    "line": "52",
-    "why": "Not recorded: a choice, as for the other branch. Needs 3 by round trip (9 min each way)."
-   }
-  ],
-  "58": [
-   {
-    "label": "58 Palmovka – Miškovice",
-    "route": [
-     "Palmovka",
-     "Miškovice"
-    ],
-    "courses": [
-     1,
-     2,
-     3,
-     4,
-     5,
-     6,
-     7
-    ],
-    "line": "58",
-    "why": "Not recorded: the records give no branch. Needs 7 by round trip; courses 1–7 in course order."
-   },
-   {
-    "label": "58 Palmovka – Čakovice",
-    "route": [
-     "Palmovka",
-     "Čakovice"
-    ],
-    "courses": [
-     8,
-     9,
-     10,
-     11,
-     12,
-     13,
-     14
-    ],
-    "line": "58",
-    "why": "Not recorded: a choice, as for the other branch. Needs 7 by round trip; courses 8–14 (the courses that do not run at weekends)."
-   }
-  ]
- },
  "flags": {
   "51": [
    "info",
@@ -157,11 +84,11 @@
   ],
   "52": [
    "info",
-   "Line 52 has two branches from Na Knížecí, each every 8 min, together every 4 min on the shared section to Waltrovka. Each branch is its own Simutrans line. The records do not say which course runs which branch, so the split below is a choice sized by round trip (5 + 3 = 8; 9 recorded). Course 52/9 runs on other weekdays (24 and 29 Sep) but is not recorded on 25 Sep. The alternative, one line running Na Knížecí → Waltrovka → Na Knížecí → Jinonice → Na Knížecí, would need 9, the number recorded."
+   "One line, both branches: on the PID live map of Tue 3 Nov every 52 trolleybus alternates them, Na Knížecí → Waltrovka → Na Knížecí → Jinonice → Na Knížecí (512: Waltrovka 15:19, Jinonice 15:47, Waltrovka 16:31, Jinonice 16:59; 542, 543, 544 and 519 the same). So 52 is one Simutrans line with four entries, and the timetable runs it as one line too: each branch every 8 min, together every 4 min to Waltrovka. It needs 9 trolleybuses by round trip, and the 9 courses recorded on 25 Sep (52/1–8 and 52/10) all count. Two separate branch lines would need 8 (5 + 3), but no trolleybus runs that way."
   ],
   "58": [
    "info",
-   "Line 58 has two branches from Palmovka, each every 12 min, together every 6 min to Čakovice. Each branch is its own Simutrans line. The records do not say which course runs which branch, so the split below is a choice sized by round trip (7 + 7 = 14, all 14 recorded). One line alternating the branches would need 13."
+   "One line, both branches: on the PID live map of Tue 3 Nov the 58 trolleybuses run both. Most switch between Miškovice and Čakovice during the afternoon (101: Čakovice, Čakovice, Miškovice; 109: Miškovice, Čakovice, Miškovice; 110 and 111 the same), and a few stay on one (102 Miškovice, 104 Čakovice). The timetable runs each branch every 12 min, together every 6 min to Čakovice. As one Simutrans line alternating the branches, 58 needs 13 trolleybuses by round trip, one fewer than two branch lines (7 + 7): 13 of the 14 courses recorded on 25 Sep count, and the highest-numbered one is not needed."
   ],
   "59": [
    "info",
@@ -419,6 +346,132 @@
   [
    "<code>python scripts/run.py --state 2026-09-27</code>",
    "<code>python scripts/run.py --state 2026-11-02</code>"
+  ],
+  [
+   "Lines 52 and 58 each have two branches that run all week, and the course numbers do not say which course runs which. Each branch is its own Simutrans line, because Also at cannot change the route, and each is sized by its round trip. The courses are split in course order as a stated choice. The line card also gives how many trolleybuses a single line alternating the branches would need.",
+   "Lines 52 and 58 each have two branches. The PID live map of Tuesday 3 November shows which trips each trolleybus ran: every 52 trolleybus alternates Waltrovka and Jinonice, and the 58 trolleybuses run both Miškovice and Čakovice. So each is one Simutrans line whose four entries run the two branches in turn (owner, 7 November: “Study buses”). Its need follows one trolleybus round all four entries: 52 needs 9, 58 needs 13. The recorded courses are not tied to a branch, so none is split."
+  ],
+  [
+   " Branches are counted separately.",
+   " A line over two branches is followed round all four of its entries."
   ]
- ]
+ ],
+ "_splits_old": {
+  "52": [
+   {
+    "label": "52 Na Knížecí – Jinonice",
+    "route": [
+     "Na Knížecí",
+     "Jinonice"
+    ],
+    "courses": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     10
+    ],
+    "line": "52",
+    "why": "Not recorded: the records give no branch, and both branches run all week with the same low course numbers. Needs 5 by round trip; courses 1–5 in course order (14 min each way). Course 10, also logged, is surplus to both branches and is marked not needed."
+   },
+   {
+    "label": "52 Na Knížecí – Waltrovka",
+    "route": [
+     "Na Knížecí",
+     "Waltrovka"
+    ],
+    "courses": [
+     6,
+     7,
+     8
+    ],
+    "line": "52",
+    "why": "Not recorded: a choice, as for the other branch. Needs 3 by round trip (9 min each way)."
+   }
+  ],
+  "58": [
+   {
+    "label": "58 Palmovka – Miškovice",
+    "route": [
+     "Palmovka",
+     "Miškovice"
+    ],
+    "courses": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "line": "58",
+    "why": "Not recorded: the records give no branch. Needs 7 by round trip; courses 1–7 in course order."
+   },
+   {
+    "label": "58 Palmovka – Čakovice",
+    "route": [
+     "Palmovka",
+     "Čakovice"
+    ],
+    "courses": [
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14
+    ],
+    "line": "58",
+    "why": "Not recorded: a choice, as for the other branch. Needs 7 by round trip; courses 8–14 (the courses that do not run at weekends)."
+   }
+  ]
+ },
+ "_splits_old_why": "The 29 Sep branch split of 52 and 58 (courses in course order, a choice). Replaced on 7 Nov 2026 by circuits, from the live map.",
+ "splits": {},
+ "circuits": {
+  "_why": "Owner, 7 Nov 2026: \"you say 52 has two branches, courses show three, timetable say one, I am dissapointed. Study buses\". The PID live map of Tue 3 Nov (pipeline/pid-regional/data/raw/live/2026-11-03) gives each trolleybus's trips: every 52 trolleybus alternates Waltrovka and Jinonice, and the 58 trolleybuses run both Miškovice and Čakovice. So each line is one Simutrans line over both branches, entries in this order.",
+  "52": {
+   "legs": [
+    [
+     "Na Knížecí",
+     "Waltrovka"
+    ],
+    [
+     "Waltrovka",
+     "Na Knížecí"
+    ],
+    [
+     "Na Knížecí",
+     "Jinonice"
+    ],
+    [
+     "Jinonice",
+     "Na Knížecí"
+    ]
+   ]
+  },
+  "58": {
+   "legs": [
+    [
+     "Palmovka",
+     "Miškovice"
+    ],
+    [
+     "Miškovice",
+     "Palmovka"
+    ],
+    [
+     "Palmovka",
+     "Čakovice"
+    ],
+    [
+     "Čakovice",
+     "Palmovka"
+    ]
+   ]
+  }
+ }
 }

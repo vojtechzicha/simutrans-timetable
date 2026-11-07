@@ -75,6 +75,12 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
 ## Splits, branches, pools
 - Where course (kurz) numbers mark a branch, split by range (Brno 5S = kurzy 21–27; Prague 17 = 1–17 / 21–37).
 - Otherwise size each branch by need and pick the cars — prefer peak-only courses — and say on the sheet that the pick is a choice.
+- **Before splitting a line into branch lines, read its vehicles' trips** (owner, 7 Nov 2026, Prague trolleybus 52: "you say 52 has two
+  branches, courses show three, timetable say one, I am dissapointed. Study buses"). Where a live map gives trip ids per vehicle, follow
+  each vehicle through the peak: if they alternate or mix the branches (52: every trolleybus Waltrovka, Jinonice, Waltrovka …; 58: most
+  switch), the line is one Simutrans line whose entries run the branches in turn, sized round all of them, even when separate branch
+  lines would need one vehicle fewer (52: 9 against 5 + 3). Split only when vehicles stay on one branch. A course split that is only a
+  choice is a guess; don't publish it as the model.
 - Spares: keep on the main line when the other branch is a reinforcement (Brno 8); split evenly between two full branches (Prague 22).
 - **Short workings** are their own line only if they are a *peak trip*: ≥ 3 trips 15:00–17:59, no depot at either end, at least one
   departure 16:00–16:59 (owner ruling 28 Sep: Prague 3/9/22 shorts ending 15:38–15:47 are not peak trips), and they run alongside the

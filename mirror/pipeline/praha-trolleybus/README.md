@@ -80,6 +80,17 @@ network, do not move vehicles in lines not affected if possible".
 - **Page text** (`page_replace` in the state, applied by `05_render.py`): the lede and "How this was built" say which lines are on
   which day, so `assets/page.html` still renders the 29 Sep state unchanged.
 
+## 52 and 58 as one line each (published 7 Nov 2026, v7)
+
+Owner, 7 Nov 2026: "you say 52 has two branches, courses show three, timetable say one, I am dissapointed. Study buses". The 29 Sep
+split (`_splits_old` in the state) gave each branch its own Simutrans line and split the courses in course order, a choice made without
+vehicle evidence. The spare 52/10 then printed a third branch heading. The PID live map of Tue 3 Nov gives every trolleybus's trips
+(trip id → GTFS ends): every 52 trolleybus alternates Na Knížecí → Waltrovka → Na Knížecí → Jinonice → Na Knížecí, and the 58
+trolleybuses run both Miškovice and Čakovice (most switch during the afternoon, 102 and 104 stay on one). State `circuits` makes each
+line one Simutrans line with four entries in that order. `03_timetable.py` sizes it with `common.pool_need` (one trolleybus followed round
+the legs, 3 min at each terminus): 52 needs 9 (all 9 recorded courses count, 529 included), 58 needs 13 (58/14, 110, not needed). The
+render puts the entries in circuit order, and `splits` is empty. Two branch lines would need 8 (52) and 14 (58).
+
 ## How to update when the timetable changes
 
 1. Save the new PID GTFS in `data/raw/gtfs/<export date>/gtfs.zip` (or copy it from `../praha/data/raw/gtfs`, which gets the same feed).

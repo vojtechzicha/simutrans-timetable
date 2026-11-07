@@ -89,7 +89,12 @@ def main():
                 if {r['o'], r['d']} == set(b['route']) and b.get('line', i) == i: return lab
             return ''
         order = []
-        if pool and pool.get('legs'):
+        circ = TT.get('circuits', {}).get(G)
+        if circ:
+            for k, (o, d) in enumerate(circ['legs']):
+                r = next((x for x in TT['lines'].get(G, {}).get('schedule', []) if x['o'] == o and x['d'] == d), None)
+                if r: order.append((G, r, f'entry {k + 1} of the circuit'))
+        elif pool and pool.get('legs'):
             for k, (li, o, d) in enumerate(pool['legs']):
                 r = next((x for x in TT['lines'].get(li, {}).get('schedule', []) if x['o'] == o and x['d'] == d), None)
                 if r: order.append((li, r, f'stop {k + 1} of the circulation'))
@@ -126,7 +131,11 @@ def main():
                     notes.append(f'<li><span class="k">{i}</span> short working {esc(x["o"])} → {esc(x["d"])}: {times}. Not a peak trip (no departure in the 16:00 hour), so not modelled.</li>')
         lh = '<th>Line</th>' if len(ids) > 1 else ''
         head = ''
-        if pool and pool.get('legs'):
+        if circ:
+            head = (f'<p class="lpn"><b>One Simutrans line</b>: each trolleybus runs the {len(circ["legs"])} entries below in this order, '
+                    + ' → '.join(esc(o) for o, _ in circ['legs']) + f' → {esc(circ["legs"][0][0])}. Round trip about {circ["cycle"]} min, so '
+                    f'{circ["need"]} trolleybuses (at least 3 min at each terminus).</p>')
+        elif pool and pool.get('legs'):
             head = (f'<p class="lpn"><b>One Simutrans line for the shared pool</b>, with the four timed stops below in this order. '
                     f'At Nádraží Holešovice the tram only changes its number (through stop, no loop, no shift). '
                     f'Round trip about {pool["cycle"]} min, so {pool["need"]} trams at an 8-minute interval (at least 3 min turnaround at each timed stop).</p>')
@@ -204,7 +213,8 @@ def main():
                 depot[v['depot']][c.get('branch') or G].append(dict(set=v['set'], types=v['types'], course=c['id'], u=c['uncertain'], replaced=replaced))
         n = sum(mix.values())
         tl = [TT['lines'][i] for i in ids if i in TT['lines']]
-        if G in pools and TT['pools'][G].get('need'): needtxt = f'<span class="need">shared pool: {TT["pools"][G]["need"]} trams needed for the whole circulation</span>'
+        if G in TT.get('circuits', {}): needtxt = f'<span class="need">one Simutrans line over both branches: {TT["circuits"][G]["need"]} trolleybuses needed by round trip</span>'
+        elif G in pools and TT['pools'][G].get('need'): needtxt = f'<span class="need">shared pool: {TT["pools"][G]["need"]} trams needed for the whole circulation</span>'
         elif TT.get('branches', {}).get(G): needtxt = '<span class="need">' + '; '.join(f'{esc(l)}: {b["need"]} needed' for l, b in TT['branches'][G].items()) + '</span>'
         else: needtxt = f'<span class="need">timetable at 16:00: {tl[0]["cycle_need"]} trolleybus{"es" if tl[0]["cycle_need"] != 1 else ""} needed by round trip</span>' if tl and tl[0]['cycle_need'] else ''
         mix_html = ' '.join(f'<span class="mx u-{k}"><b>{mix[k]}</b>× {CLASS[k][0]}</span>' for k in ORDER if mix[k])
@@ -352,6 +362,7 @@ def main():
                 pc = round(100 * off / km) if km else 0
                 b = next((b for b in brs.values() if set(b['route']) == {r['o'], r['d']}), None)
                 need = b['need'] if b else TT['lines'][i]['cycle_need']
+                if i in TT.get('circuits', {}): need = f'{TT["circuits"][i]["need"]} (one line)' if k == 0 else ''
                 cat = ' · '.join(f'{CLASS[c][0]} ({m[c]})' for c in ORDER if m[c]) if k == 0 else ''
                 rt = f"{r['runtime']}" + (f"/{back['runtime']}" if back and back['runtime'] != r['runtime'] else '') + ' min'
                 span = f' rowspan="{len(outs)}"' if len(outs) > 1 else ''

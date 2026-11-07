@@ -277,3 +277,11 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   on 100158 (only 5162 parked). "Together" meant one line, not one card. The same publish shipped the X lines and IKEA left
   unpublished on 5 Nov: their 3–4 Nov records never came (seznam-autobusu blocks scripts), so the page now says their buses are
   designed, and IKEA runs on its own bus 9501 from the live map.
+
+## 7 Nov — Prague trolleybus 52 and 58 (study the vehicles)
+- **7 Nov:** "STILL NOT GOOD - why? you say 52 has two branches, courses show three, timetable say one, I am dissapointed. Study buses"
+  → the 29 Sep sheet had split 52 and 58 into branch lines with the courses divided in course order, "a stated choice" with no
+  vehicle evidence, and the spare 52/10 printed a third branch heading. The 3 Nov live map had every trolleybus's trips: every 52
+  trolleybus alternates Waltrovka and Jinonice, and the 58 trolleybuses mix Miškovice and Čakovice. v7: each is one line with four
+  entries (52 9, 58 13). The same "split in course order, a choice" stands on other city sheets (Brno, Ostrava, Plzeň, Prague
+  trams 17/22); check them against vehicle trips whenever a live source exists.
