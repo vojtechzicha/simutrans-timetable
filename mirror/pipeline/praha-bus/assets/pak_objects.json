@@ -1,21 +1,21 @@
 {
- "commit": "VZ-DPPraha-bus: c6f4b44; VZ-Praha-bus: c6f4b44; VZ-Praha-water: c6f4b44; VZ-PID-bus: c6f4b44",
+ "commit": "VZ-DPPraha-bus: 918a438; VZ-Praha-bus: 918a438; VZ-Praha-water: 918a438; VZ-PID-bus: 918a438",
  "source": {
   "VZ-DPPraha-bus": {
    "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
-   "commit": "c6f4b44 2026-11-03 Model every real PID livery: operator schemes, region paints, DPP 90 let"
+   "commit": "918a438 2026-11-05 VZ-Praha: the IKEA line's Conecto LF II in the IKEA forest wrap"
   },
   "VZ-Praha-bus": {
    "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
-   "commit": "c6f4b44 2026-11-03 Model every real PID livery: operator schemes, region paints, DPP 90 let"
+   "commit": "918a438 2026-11-05 VZ-Praha: the IKEA line's Conecto LF II in the IKEA forest wrap"
   },
   "VZ-Praha-water": {
    "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
-   "commit": "c6f4b44 2026-11-03 Model every real PID livery: operator schemes, region paints, DPP 90 let"
+   "commit": "918a438 2026-11-05 VZ-Praha: the IKEA line's Conecto LF II in the IKEA forest wrap"
   },
   "VZ-PID-bus": {
    "worktree": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",
-   "commit": "c6f4b44 2026-11-03 Model every real PID livery: operator schemes, region paints, DPP 90 let"
+   "commit": "918a438 2026-11-05 VZ-Praha: the IKEA line's Conecto LF II in the IKEA forest wrap"
   }
  },
  "objects": {
@@ -130,6 +130,7 @@
   "VZ-Praha-BMC_Procity_10_6-pidcervenomodrobila-BMC_Procity_10_6": "VZ-Praha-bus",
   "VZ-Praha-BMC_Procity_10_6-pidsedocervena-BMC_Procity_10_6": "VZ-Praha-bus",
   "VZ-Praha-Citywide_LF_12M-pidcervenomodrobila-Citywide_LF_12M": "VZ-Praha-bus",
+  "VZ-Praha-Conecto_LF-ikea-Conecto_LF": "VZ-Praha-bus",
   "VZ-Praha-Crossway_LE_12M-mestskacervenobila-Crossway_LE_12M": "VZ-Praha-bus",
   "VZ-Praha-Crossway_LE_12_8M-bila-Crossway_LE_12_8M": "VZ-Praha-bus",
   "VZ-Praha-Crossway_LE_12_8M-pidcervenomodrobila-Crossway_LE_12_8M": "VZ-Praha-bus",

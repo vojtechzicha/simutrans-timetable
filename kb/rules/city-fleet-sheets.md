@@ -68,6 +68,9 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   additional loop: 139, 197 and 226 keep theirs, and the card says what the merge gains. 138 (1 bus saved, 8 entries) and 161 + 312
   (no bus saved; pooled in real life, the owner chose to split) went back to separate lines (state `simlines.separate`). A through
   line (186 → 396 at Vinoř, every trip, 0 min) is not a circuit and stays. Lines below 138 keep the 20 Oct rule.
+  The owner can still ask for one line where real buses pool: 195 + 158 (owner, 7 Nov: "I see 158 uses 195 buses - design these
+  together then", then "I meant as one line") is one circuit Sídliště Letňany → Jesenická → Sídliště Letňany → Letňany, 19 buses,
+  the same as the two lines apart. When the owner says "together" for a pool, ask whether they mean one card or one line.
 
 ## Splits, branches, pools
 - Where course (kurz) numbers mark a branch, split by range (Brno 5S = kurzy 21–27; Prague 17 = 1–17 / 21–37).

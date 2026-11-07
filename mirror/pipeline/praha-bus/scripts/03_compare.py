@@ -115,7 +115,8 @@ def main():
     for gl in glines:
         gl['licence_number'] = str(gl['licence_number'])
         pid = str(gl['pid_number']) if gl.get('pid_number') is not None else gl['licence_number'][3:].lstrip('0')
-        regional = pid if gl['_src'] == 'regional' else None
+        # a pooled city line (195 + 158, owner 7 Nov 2026) has its game line in the main export: it goes on its host card too
+        regional = pid if gl['_src'] == 'regional' or (pid in home and home[pid] != pid) else None
         if regional: pid = home[regional]
         base = gl['name'].split(' ')[0] == gl['licence_number']
         halts = [e['halt_name'] for e in gl['entries'] if e.get('halt_name')]

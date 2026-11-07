@@ -23,13 +23,18 @@
    "167",
    "176",
    "234",
-   "240"
+   "240",
+   "195"
   ],
   "_why": "Owner, 2 Nov 2026: \"You're okay for changed lines to move to 2 Nov network, do not move vehicles in lines not affected if possible\". These lines come from the 2 Nov export (valid 2-15 Nov), Wednesday 4 Nov; every other line stays on 30 Sep. 131 and 176: gone from 2 Nov 04:00, their trips run as trolleybuses 51 and 53 (PID permanent change \"Posílení trolejbusů v Praze\"). 112 and 234: new timetables from 2 Nov. 240: the Dubeč - Běchovice diversion of 20 Aug - 2 Nov is over. 149, 158, 166, 167: the 30 Sep export left out Karlštejnská and Butovická, Toužimská, Nemocnice Bulovka and Zahradníčkova; the game lines already stop there. Kept on 30 Sep: 101 (route changed 14 Oct, but cards 100-108 are frozen); 133 (+2 min from the Žižkov tram closure, 11 Oct - 18 Dec); 161 and 312 (new 26 Oct timetables with 312's temporary Tuchoměřice diversion, until further notice); 209 (Druhanická temporarily closed from 1 Nov); 232 (same trips, only the export now calls it a trolleybus).",
   "gone_why": {
    "131": "its trips run as trolleybus 51 from 2 Nov: delete game line 100131",
    "176": "its trips run as trolleybus 53 from 2 Nov: delete game line 100176"
-  }
+  },
+  "_195_why": "195 is read from the 2 Nov export so that it and its pooled 158 come from one timetable day; its 224 trips are identical in the 30 Sep and 2 Nov exports, so nothing on 195 changes from this.",
+  "same": [
+   "195"
+  ]
  },
  "output_html": "Prague Bus Lines Check.html",
  "game_raw": "2026-09-29",
@@ -1203,7 +1208,7 @@
      "real": [
       0
      ],
-     "why": "312 (in real life on 161's buses; its own line here, owner, 3 Nov 2026), every 30 at :00 and :30 (16:00–17:00 to Tuchoměřice,Špejchar; 15:00 runs to Středokluky, 15:30 to Lichoceves, 17:30 to the komerční zóna)."
+     "why": "312 (in real life on 161's buses; its own line here, owner, 5 Nov 2026), every 30 at :00 and :30 (16:00–17:00 to Tuchoměřice,Špejchar; 15:00 runs to Středokluky, 15:30 to Lichoceves, 17:30 to the komerční zóna)."
     },
     {
      "o": "Tuchoměřice,Špejchar",
@@ -1462,11 +1467,65 @@
      "why": "Short turn, every 30 at :15 from 16:15 (15 min). Until 16:00 the buses come from Filmové ateliéry Barrandov (15:20 is the last)."
     }
    ]
+  },
+  "195": {
+   "_why": "Owner, 7 Nov 2026: 158 runs on 195's buses (pooled in real life), so its rows join the 195 card. Values as published for each line.",
+   "rows": [
+    {
+     "o": "Sídliště Letňany",
+     "d": "Jesenická",
+     "every": 15,
+     "real": [
+      0,
+      7
+     ],
+     "why": "195 to Jesenická at :00, :07, :15, :22, :30, :37, :45, :52 (14:07–17:07)."
+    },
+    {
+     "o": "Jesenická",
+     "d": "Sídliště Letňany",
+     "every": 15,
+     "real": [
+      7,
+      14
+     ],
+     "why": "195 from Jesenická at :07, :14, :22, :29, :37, :44, :52, :59 (15:52–17:37)."
+    },
+    {
+     "o": "Sídliště Letňany",
+     "d": "Letňany",
+     "every": 30,
+     "real": [
+      1,
+      9,
+      17,
+      24
+     ],
+     "why": "158 (in real life on 195's buses) to Letňany at :01, :09, :17, :24, :31, :39, :47, :54 (14:31–17:47)."
+    },
+    {
+     "o": "Letňany",
+     "d": "Sídliště Letňany",
+     "every": 15,
+     "real": [
+      6,
+      13
+     ],
+     "why": "158 back from Letňany at :06, :13, :21, :28 … every 7–8 min (14:43–18:28)."
+    }
+   ]
   }
  },
  "simlines": {
   "_why": "Owner, 28 Oct 2026: cards with branches show each Simutrans line on its own, sized from its own schedule, as the Ostrava sheet does (scripts/simlines.py); from 109 on the Ostrava rule decides: separate branch lines, or circuits where they save >= 1 bus (lib.circuitize). Owner, 30 Oct 2026: \"Never change lines 100-108\": 102 and 103 keep their published one-line cards, so no circuit entries here.",
-  "circuit": {},
+  "circuit": {
+   "195": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
   "auto": [
    "110",
    "109",
@@ -1523,6 +1582,9 @@
    "161": {
     "Bořislavka → Přední Kopanina": "game line 100161P; 100161 (Bořislavka – Letiště, 1 bus) is then not needed: its trips run on 161 and 312",
     "Bořislavka → Tuchoměřice,Špejchar": "game line 100312"
+   },
+   "195": {
+    "0": "one line in place of 100195 + 100158 (100158 is then not needed)"
    }
   },
   "groups": {
@@ -1544,7 +1606,7 @@
    "111"
   ],
   "_bus_by_record_why": "Cards whose buses go on their Simutrans lines by the records first: a course logged \"přejezd na linku R\" goes on the line that runs R's trips (owner, 30 Oct 2026, 329: \"I don't think NB 12s are so used on 329\"; 329 ran on 111's SOR BN 12s 4516, 4517, 4522, 4523, 4528).",
-  "_separate_why": "Owner, 3 Nov 2026, for 138 and above: \"if originally it was two lines and you suggest collapsing, do it when there is bus saved and something more (closer to reality, only one additional loop, limited spaces at terminal, etc.)\". 138: one circuit saved 1 bus (12 -> 11) but ran 8 entries (three extra loops) -> two lines again. 161 + 312: the circuit saved nothing (7 = 4 + 3) -> two lines again (owner, 3 Nov: split). 139, 197, 226 keep their circuits (merge_why). 186 + 396 stays one through line (owner, 3 Nov: keep; every Vinoř trip runs on as 396). 318 and 363 extend one game line, so nothing is collapsed.",
+  "_separate_why": "Owner, 3 Nov 2026, for 138 and above: \"if originally it was two lines and you suggest collapsing, do it when there is bus saved and something more (closer to reality, only one additional loop, limited spaces at terminal, etc.)\". 138: one circuit saved 1 bus (12 -> 11) but ran 8 entries (three extra loops) -> two lines again. 161 + 312: the circuit saved nothing (7 = 4 + 3) -> two lines again (owner, 5 Nov: split). 139, 197, 226 keep their circuits (merge_why). 186 + 396 stays one through line (owner, 5 Nov: keep; every Vinoř trip runs on as 396). 318 and 363 extend one game line, so nothing is collapsed.",
   "separate": [
    "138",
    "161"
@@ -1553,7 +1615,20 @@
    "139": "saves 1 bus (17 → 16) with only one additional loop: each bus alternates the two branches",
    "197": "saves 1 bus (12 → 11) with only one additional loop: each bus alternates the two branches",
    "226": "saves 1 bus (4 → 3) with only one additional loop: each bus alternates the two branches"
-  }
+  },
+  "keep_buses": {
+   "195": {
+    "_why": "Fewest moves (owner, 2 Nov 2026: \"do not move vehicles in lines not affected if possible\"): the five buses on 100158 (courses 18–22 of 195) stay; of 195's own 15, one is parked, as the pool needs 19.",
+    "0": [
+     "18",
+     "19",
+     "20",
+     "21",
+     "22"
+    ]
+   }
+  },
+  "_circuit_195_why": "Owner, 7 Nov 2026: \"I see 158 uses 195 buses - design these together then\" and, asked, \"I meant as one line\": one circuit Sídliště Letňany → Jesenická → Sídliště Letňany → Letňany → Sídliště Letňany, in place of 100195 + 100158. It needs 19 buses (143 min round, waits 5, 7, 8, 7 min), the same as the two lines on their own (195 14 + 158 5); the owner chose the one line, as in real life, over the from-138 rule."
  },
  "regional": {
   "_why": "Owner, 30 Oct 2026: \"Now could you do the companion PID lines ...\" / \"Definitley include those that share buses so we have a full list. Also those that are \"proložené\" like 113/333.\" / \"I am 100% sure 301/352 are continuations of 174\" / \"Pool if they pool in real live\" / \"Include if they are interleaved in the real timetiable\". through: every trip of the regional line starts or ends at the minute a city trip ends or starts at the same stop (GTFS, 30 Sep): one through trip. pooled: the city line's courses also run the regional line (vehicle records, 25 Sep: 111 courses 2, 3, 4, 6, 7 -> 329; 161 courses 1, 2, 3, 5, 6 -> 312; 229 courses 1-9, 11 -> 364 and 366): the regional trips join the city card. interleaved: own buses, a shared stretch where the regional trips fall in the city line's gaps; own card after the city line. Left out (owner): 157/327, 157/331, 215/326 and 161/355 (one bus on one day).",
@@ -1577,6 +1652,9 @@
    "229": [
     "364",
     "366"
+   ],
+   "195": [
+    "158"
    ]
   },
   "interleaved": {
@@ -1606,8 +1684,10 @@
    "186": "396 continues 186's Vinoř trips: every 396 trip leaves Vinoř (or Nádraží Satalice) the minute a 186 bus arrives, and returns into a 186 trip (35 trips on 30 Sep, no exception). The Vinoř trips are modelled as one through line Černý Most – Přezletice.",
    "111": "329 Skalka – Škvorec runs on 111's buses: on 25 Sep courses 2, 3, 4, 6 and 7 of 111 also ran 329 (přejezd na linku 329). Its trips are rows of this card and share its Simutrans lines.",
    "161": "312 Bořislavka – Tuchoměřice runs on 161's buses: on 25 Sep courses 1, 2, 3, 5 and 6 of 161 also ran 312. Its :00 and :30 departures fill 161's gaps at Bořislavka (together every 10). Its trips are rows of this card.",
-   "229": "364 (Doubek) and 366 (Doubek via Křenice; Mukařov) run on 229's buses: on 25 Sep ten of 229's eleven courses also ran 364 and 366. Their trips are rows of this card."
-  }
+   "229": "364 (Doubek) and 366 (Doubek via Křenice; Mukařov) run on 229's buses: on 25 Sep ten of 229's eleven courses also ran 364 and 366. Their trips are rows of this card.",
+   "195": "158 (Sídliště Letňany – Letňany) runs on 195's buses: on 25 Sep 21 of 195's 24 logged courses go over to 158 (přejezd na linku 158), and 158 has no record of its own. Owner, 7 Nov 2026: \"design these together\" / \"I meant as one line\". So both are one Simutrans line: each bus runs 195 to Jesenická and back, then 158 to Letňany and back. It needs 19 buses (143 min round), the same as two separate lines (195 14 + 158 5; the published cards had 15 + 5); it replaces game lines 100195 and 100158."
+  },
+  "_pooled_195_why": "Owner, 7 Nov 2026: \"I see 158 uses 195 buses - design these together then\". On 25 Sep 21 of 195's 24 logged courses are logged \"přejezd na linku 158\", and 158 has no record of its own. 158 (Sídliště Letňany – Letňany) runs on 195's first stretch from Sídliště Letňany, at the same 7–8 min headway, so its trips become rows of the 195 card and share its Simutrans lines."
  },
  "observed_buses": {
   "318": {
@@ -1734,6 +1814,40 @@
      "note": "Seen on 318 on Mon 2 Nov (5 trips, 15:03–17:40; in 15:00–17:59: 5 Jíloviště); also ran 317 that afternoon. Course 317/6 of the 317 rotation. Not in the 29 Sep register (no type), so not counted."
     }
    ]
+  },
+  "IKEA": {
+   "day": "2026-11-02",
+   "seen": "PID live map, Sun 1 and Mon 2 Nov",
+   "source": "PID live map (mapa.pid.cz), polled by the PID regional session: pipeline/pid-regional/data/raw/live/2026-11-0{1,2}/vehicles.jsonl",
+   "_why": "The IKEA line has no deployment record that could be read (seznam-autobusu.cz refuses scripted requests since 1 Nov). Its own bus, ARRIVA STŘEDNÍ ČECHY 9501 (Conecto LF II in the IKEA wrap; fleet desk, 5 Nov 2026), ran it on the live map on Sun 1 Nov evening and Mon 2 Nov morning.",
+   "summary": "9501, the IKEA line's own bus (Mercedes-Benz Conecto LF II in the IKEA wrap), on the PID live map on the line on Sun 1 Nov (19:54) and Mon 2 Nov (08:16). On Monday other ARRIVA buses (9607, 9883, 9902) also ran single trips of it between their own lines.",
+   "buses": [
+    {
+     "num": 9501,
+     "operator": "ARRIVA STŘEDNÍ ČECHY",
+     "course": "IKEA/1",
+     "note": "Seen on the IKEA line on the PID live map on Sun 1 Nov and Mon 2 Nov; the line's own bus (fleet desk)."
+    }
+   ],
+   "not_needed": []
   }
+ },
+ "x_lines": {
+  "_why": "Owner, 5 Nov 2026: \"All X lines are consider bprague buses (ignore existing lines)\". DPP's X lines (replacement buses, licence 101xxx) from the 2 Nov export, Wednesday 4 Nov: X130, X25, X9, X94, X95, X98. They are temporary and leave the sheet when the export drops them. Not the save's lines: each card is a line to build. Regional X lines (X384, X390, X391) and the rail replacements (XS, XR) are not Prague city lines.",
+  "prefix": "X",
+  "licence_range": [
+   101001,
+   101999
+  ],
+  "days": [
+   "2026-11-04",
+   "2026-11-03"
+  ],
+  "_days_why": "Their buses come from the deployment records of Wed 4 Nov (the timetable day), then Tue 3 Nov; the 25 Sep records predate X9, X95 and X98.",
+  "also": [
+   "IKEA"
+  ],
+  "_also_why": "Owner, 5 Nov 2026: \"Do include the IKEA line\": Černý Most – IKEA Černý Most – Černý Most (ARRIVA STŘEDNÍ ČECHY, licence 103116), read like the X lines.",
+  "buses_note": "on designed buses: seznam-autobusu.cz refuses scripted requests since 1 November, so the records of their days could not be read, and each card takes free active buses of its line's type, not out on 25 September; the IKEA line runs on its own bus, 9501, seen on it on the PID live map on 1 and 2 November"
  }
 }

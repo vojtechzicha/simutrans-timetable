@@ -239,3 +239,14 @@ def parse_register(paths, depot_name, depot_codes=None):
         veh[m.group(1)] = dict(type=typ[-1] if typ else '', types=typ, maker=mk, paint=paint, depot=dep,
                                year=yr.group(1) if yr else '', state=re.search(r'<tr class="car-line (\w+)', b).group(1))
     return veh
+
+# ---- extra city lines (state x_lines; owner, 5 Nov 2026: "All X lines are consider bprague buses (ignore existing lines)" /
+# "Do include the IKEA line") -----------------------------------------------------------------------------------------------
+def xline(s, L):
+    """DPP's X lines (X + number) and the state's x_lines.also (IKEA): lines to build, from the later export, own record days."""
+    XL = s.get('x_lines') or {}
+    return bool(XL) and ((L.startswith(XL.get('prefix', 'X')) and L[len(XL.get('prefix', 'X')):].isdigit()) or L in XL.get('also', []))
+def lkey(L):
+    """Line sort key: numbered lines by number, then X lines by number, then named lines (IKEA)."""
+    d = ''.join(ch for ch in L if ch.isdigit())
+    return (0 if L.isdigit() else 1 if d else 2, int(d) if d else 0, L)

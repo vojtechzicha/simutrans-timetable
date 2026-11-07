@@ -23,11 +23,11 @@ the operator is not part of the name, operators share an object per type and liv
 Usage: python 04_courses.py --state 2026-09-29
 """
 import argparse, collections, datetime, glob, json, os, re
-from common import state, load, save, RAW, DER, ASSETS, _txt, parse_vypis
+from common import state, load, save, RAW, DER, ASSETS, _txt, parse_vypis, xline
 
 LIVERY_NAMES = {'pidsedocervena': 'PID grey-red', 'pidcervenomodrobila': 'PID red-white-blue', 'dppcervenobila': 'DPP red-white',
                 'mestskacervenobila': 'city red-white', 'veoliacervenoseda': 'Veolia red-grey', 'bila': 'white',
-                'bilofialova': '90 years white-purple'}
+                'bilofialova': '90 years white-purple', 'ikea': 'IKEA wrap'}
 
 def parse_records(path):
     t = open(path, encoding='utf-8').read(); out = []
@@ -47,7 +47,8 @@ def base_livery(v):
     """The car's own livery slug, or None for an advert wrap or a livery the pak does not have."""
     p = v['paint'].split(' & ')[0].strip()
     if p.startswith('městské schéma, červeno-bílá'): return 'dppcervenobila' if v['operator'] == 'DPP' else 'mestskacervenobila'
-    if p == 'červená' and v['operator'] == 'DPP': return 'dppcervena'   # DPP coach red with the gold Praha skyline (8002 II; pak session, 29 Sep)
+    if p == 'červená' and v['operator'] == 'DPP': return 'dppcervena'
+    if p.startswith('CVR IKEA') and v['maker_type'] == 'Mercedes-Benz Conecto LF II': return 'ikea'   # the IKEA line's own bus 9501 (fleet desk, pak 918a438, 5 Nov 2026)   # DPP coach red with the gold Praha skyline (8002 II; pak session, 29 Sep)
     for k, slug in KNOWN:
         if p == k or p.startswith(k + ' ') or p.startswith(k + ','): return slug
     return None
@@ -169,17 +170,21 @@ def main():
                 if vs: out_.append(dict(car='+'.join(n for _, n in vs), ids=[i for i, _ in vs], course=c.group(1) if c else '', note=''))
         return out_
     out, logged = [], {}
+    # DPP's X lines (state x_lines; owner, 5 Nov 2026): records of their own days (the 4 Nov timetable's week), not 25 Sep;
+    # the 25 Sep day overview says nothing about a car's November day, so it does not bar them
+    XL = s.get('x_lines', {}); isx = lambda L: bool(XL.get('days')) and xline(s, L)
+    days_of = lambda L: XL['days'] if isx(L) else days
     for L, p in P.items():
         if p['route_type'] != '3': continue
-        per_day = {}
-        for d in days:
+        per_day = {}; days_L = days_of(L)
+        for d in days_L:
             path = os.path.join(RAW, 'vypravenost', d, f'{L}.html')
             recs = parse_records(path) if os.path.exists(path) else []
             if not recs and L in regional and d == vd: recs = overview_recs(d, L)
             if recs: per_day[d] = courses_of(recs)
         got = {}
         if per_day:
-            base = next(d for d in days if d in per_day)
+            base = next(d for d in days_L if d in per_day)
             got = {k: dict(c, source=base) for k, c in per_day[base].items()}
             # a car that later replaced another course's vehicle probably ran its own course only in the morning
             later = {x['set'] for c in got.values() for x in c['chain'][1:]}
@@ -187,14 +192,14 @@ def main():
             need = p.get('need') or 0
             counted = lambda: sum(1 for c in got.values() if not c['am_only'])
             used = {x['set'] for c in got.values() for x in c['chain']}
-            for d in days:            # courses not logged on the base day, from the nearest day that logged them (car free on the base day)
+            for d in days_L:          # courses not logged on the base day, from the nearest day that logged them (car free on the base day)
                 if counted() >= need: break
                 if d == base or d not in per_day: continue
                 for k in sorted(per_day[d], key=ckey):
                     if counted() >= need: break
                     c = per_day[d][k]
                     ids = {x['id'] for x in c['chain'][-1]['cars'] if x['id']}
-                    if k in got or c['chain'][-1]['set'] in used or (d != vd and ids & busy): continue
+                    if k in got or c['chain'][-1]['set'] in used or (d != vd and not isx(L) and ids & busy): continue
                     got[k] = dict(c, source=d, am_only=False); used |= {x['set'] for x in c['chain']}
         logged[L] = got
         for k in sorted(got, key=ckey):
@@ -214,18 +219,21 @@ def main():
             if spare: c['spare'] = 'seen'
             got[f'{b["course"]}#{num}'] = c; out.append(dict(line=L, **c))
         logged[L] = got
-    taken = busy | {x['id'] for c in out for ch in c['chain'] for x in ch['cars'] if x['id']}
+    taken = busy | {x['id'] for c in out if not isx(c['line']) for ch in c['chain'] for x in ch['cars'] if x['id']}
+    x_ids = {x['id'] for c in out if isx(c['line']) for ch in c['chain'] for x in ch['cars'] if x['id']}   # joins taken at the X lines' turn
     # the operators' city-line types (fallback for lines without any history)
     by_op = collections.defaultdict(collections.Counter)
     for c in out:
-        if not c['am_only']:
+        if not c['am_only'] and not isx(c['line']):
             for x in c['chain'][-1]['cars']:
                 if x['type'] != '?': by_op[x['operator']][x['type']] += 1
     # lines sized from their Simutrans lines (gtfs_lines simlines, 28 Oct 2026) design last: their larger need must not take the
     # free cars other lines were already given (146's +1 had shifted the fleet picks of 208, 211 and 220)
     # the regional companions (owner, 30 Oct 2026) design after every city line, so they cannot take a city line's free cars
-    for L, p in sorted(P.items(), key=lambda kv: (kv[0] in regional, bool(kv[1].get('simlines')))):
+    # DPP's X lines (5 Nov 2026) design after everything else: adding them must not move a free car another card was given
+    for L, p in sorted(P.items(), key=lambda kv: (isx(kv[0]), kv[0] in regional, bool(kv[1].get('simlines')))):
         if p['route_type'] != '3' or not p.get('need'): continue
+        if isx(L): taken |= x_ids
         got = logged.get(L, {})
         short = p['need'] - sum(1 for c in got.values() if not c['am_only'])
         if short <= 0: continue
@@ -275,7 +283,10 @@ def main():
     for L, cs in by_line.items():
         need = P[L].get('need') or 0
         if not need or len(cs) <= need: continue
-        order = sorted(cs, key=lambda c: (c['source'] != vd, ckey(c['course'])))      # best to keep first
+        # state simlines.keep_buses[L] (owner, 7 Nov 2026, 195 + 158 on one card): the courses a Simutrans line already runs in the
+        # game are kept first, so pooling two published cards moves no bus that can stay
+        kept = {str(x) for v in s.get('simlines', {}).get('keep_buses', {}).get(L, {}).values() if isinstance(v, list) for x in v}
+        order = sorted(cs, key=lambda c: (str(c['course']) not in kept, c['source'] != vd, ckey(c['course'])))      # best to keep first
         keep = []
         for ty, _ in collections.Counter(typ(c) for c in cs).most_common():
             if len(keep) >= need: break
@@ -288,7 +299,8 @@ def main():
     # a line's own surplus courses logged going over to another line (přejezd na linku B) are B's real buses: they replace B's designed
     # ones, course order first (owner, 30 Oct 2026: "I see all 117 written as continues to 203 - isn't there something to consider?";
     # 117's ten courses run 203 too, 203 has no record of its own). The designed picks of every other line stay as they were.
-    for B in sorted({c['line'] for c in out if c['source'] == 'designed'}, key=ckey):
+    # (not into an X line: its buses come from its own November days, and a 25 Sep přejezd onto it belongs to another timetable)
+    for B in sorted({c['line'] for c in out if c['source'] == 'designed' and not isx(c['line'])}, key=ckey):
         des = [c for c in out if c['line'] == B and c['source'] == 'designed']
         donors = [c for c in out if c.get('spare') == 'surplus' and c['line'] != B
                   and any(re.search(r'přejezd na link\S* [^.]*\b' + B + r'\b', ch['note']) for ch in c['chain'])]

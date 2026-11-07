@@ -10,7 +10,7 @@
 Usage: python 06_pak_request.py --state 2026-09-29
 """
 import argparse, collections, glob, importlib, os, re
-from common import state, load, save, RAW, DER, ASSETS
+from common import state, load, save, RAW, DER, ASSETS, lkey
 
 C = importlib.import_module('04_courses')
 
@@ -60,7 +60,7 @@ def main():
         if why: g['mapped'].append(dict(car=v['num'], operator=v['operator'], paint=v['paint'], why=why))
     for g in groups.values():
         g['fleet_cars'] = {op: fleet[(op, g['type'], g['livery'])] for op in g['operators']}
-        g['operators'] = dict(g['operators']); g['lines'] = sorted(g['lines'], key=int); g['years'] = f'{min(g["years"])}-{max(g["years"])}' if g['years'] else ''
+        g['operators'] = dict(g['operators']); g['lines'] = sorted(g['lines'], key=lkey); g['years'] = f'{min(g["years"])}-{max(g["years"])}' if g['years'] else ''
 
     # active DPP fleet types x liveries without an object
     dpp_missing = collections.defaultdict(lambda: dict(cars=0, on_city_lines=0, mapped=0))

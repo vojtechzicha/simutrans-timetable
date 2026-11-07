@@ -269,3 +269,11 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   Then "yes" → trolleybus v6: 51 1 → 8, 53 1 → 6 from the 3 Nov poll, with 52/58/59 byte-identical. DPP rotates its SNG 12Ts daily
   between 51, 52 and 53, so most of 53's real cars were already on the published 52 card. 53 got 2 of its own map cars, the 512
   it already had, and 3 free SNG 12Ts (designed).
+
+## 7 Nov — Prague 195 + 158
+- **7 Nov:** "I see 158 uses 195 buses - design these together then" → 21 of 195's 24 logged courses go over to 158, which has no
+  record of its own. Built first as one card with two Simutrans lines (the alternating circuit saved no bus: 19 either way), then,
+  asked, "I meant as one line - but ship and publish all" → one circuit in place of 100195 + 100158, keeping the five buses already
+  on 100158 (only 5162 parked). "Together" meant one line, not one card. The same publish shipped the X lines and IKEA left
+  unpublished on 5 Nov: their 3–4 Nov records never came (seznam-autobusu blocks scripts), so the page now says their buses are
+  designed, and IKEA runs on its own bus 9501 from the live map.

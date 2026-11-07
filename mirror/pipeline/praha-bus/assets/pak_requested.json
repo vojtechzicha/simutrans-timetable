@@ -1,6 +1,7 @@
 {
  "_doc": "Type tokens for pak object names, VZ-<package>-<Type>-<livery>-<id> (the VZ pak session's scheme, 29 Sep 2026): package DPPraha for cars DPP runs, Praha (one shared package VZ-Praha-bus) for every other operator; the operator is not part of the name, operators share an object per type and livery; articulated buses are -A/-B. 'type_tokens': register type -> Type token (DPP tokens are reused for the same model); 'id_tokens': Type token -> id where they differ (the DPP SOR objects). Which objects exist is read from pak_objects.json (00_pak_objects.py); every other name is 'requested' from the pak session. 'pid_type_tokens' (fleet desk, 30 Oct 2026): the regional companions' non-DPP cars are in VZ-PID-bus (VZ-PID-<Type>-<livery>-<Type>), whose tokens differ (Setra_S_515_LE, SOR_ICN_10_5); VZ-Praha-bus is only for city lines run by non-DPP operators.",
  "type_tokens": {
+  "Mercedes-Benz Conecto LF II": "Conecto_LF",
   "SOR NB 12": "SOR_NB_12",
   "SOR NB 18": "SOR_NB_18",
   "SOR BN 12": "SOR_BN_12",

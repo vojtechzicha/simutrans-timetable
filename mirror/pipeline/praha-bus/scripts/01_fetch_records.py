@@ -6,10 +6,12 @@ history_since (vypis?linka=L&since=D -> history/<line>.html), so 04_courses.py c
 day overview of the vehicle date (vypravenost/pid?datum=D -> <date>/overview.html) to check a designed car was free that day.
 Usage: python 01_fetch_records.py --state 2026-09-29"""
 import argparse, os, re
-from common import state, load, fetch, parse_vypis, RAW, DER
+from common import state, load, fetch, parse_vypis, RAW, DER, xline
 ap = argparse.ArgumentParser(); ap.add_argument('--state', required=True); s = state(ap.parse_args().state)
 P = load(os.path.join(DER, s['name'], 'gtfs_lines.json'))['lines']
-jobs = [(s['vehicle_date'], L) for L in P]
+XD = s.get('x_lines', {}).get('days', [])   # DPP's X lines (owner, 5 Nov 2026): their own days, the timetable's week
+isx = lambda L: bool(XD) and xline(s, L)
+jobs = [(s['vehicle_date'], L) for L in P if not isx(L)] + [(d, L) for L in P if isx(L) for d in XD]
 jobs += [(d, L) for d in s.get('extra_days_non_dpp', []) for L, v in P.items() if any(not o.startswith('Dopravní podnik') for o in v['operators'])]
 def courses(d, L):
     p = os.path.join(RAW, 'vypravenost', d, f'{L}.html')
@@ -21,11 +23,12 @@ def run(jobs):
         try: fetch(f'https://seznam-autobusu.cz/vypravenost/pid/vypis?datum={d}&linka={L}', dest, pause=2.0)
         except Exception as e: print('fail', d, L, e)
 run(jobs)
-more = [(d, L) for L in P if courses(s['vehicle_date'], L) < (P[L].get('need') or 0) for d in s.get('extra_days_non_dpp', [])]
+got_of = lambda L: max(courses(d, L) for d in XD) if isx(L) else courses(s['vehicle_date'], L)
+more = [(d, L) for L in P if not isx(L) and got_of(L) < (P[L].get('need') or 0) for d in s.get('extra_days_non_dpp', [])]
 run(more)
 # line history since history_since for lines still short of their need on the vehicle date (designed buses take real cars from it),
 # and the day overview of the vehicle date (every PID vehicle out that day: a designed car must not be among them)
-short = [L for L in P if courses(s['vehicle_date'], L) < (P[L].get('need') or 0)]
+short = [L for L in P if got_of(L) < (P[L].get('need') or 0)]
 for L in short:
     dest = os.path.join(RAW, 'vypravenost', 'history', f'{L}.html')
     if not os.path.exists(dest):

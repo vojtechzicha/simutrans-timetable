@@ -13,7 +13,7 @@ For each line on the service date:
 Usage: python 02_gtfs_lines.py --state 2026-09-29
 """
 import argparse, collections, csv, io, os, statistics, zipfile, datetime
-from common import state, save, RAW, DER, mins, runfit, best_offset, loop_shift, cycle_need
+from common import state, save, RAW, DER, mins, runfit, best_offset, loop_shift, cycle_need, xline
 import simlines
 
 WIN = (900, 1080)
@@ -76,6 +76,25 @@ def main():
             if L not in GL['lines'] or routes[rid]['route_type'] != '3': continue
             if by2.get(r2.get(L)): by_route[rid] = by2[r2[L]]; line_sd[L] = GL['service_date']
             else: del lic[rid]; gone.append(L)
+    # DPP's X lines (state x_lines; owner, 5 Nov 2026: "All X lines are consider bprague buses (ignore existing lines)"): every
+    # bus route of the later feed whose name starts with X and whose licence is in x_lines.licence_range (101001-101999 = DPP's
+    # replacement lines), with trips on its service date; read wholly from that feed (temporary lines, absent from the base one)
+    XL = s.get('x_lines')
+    if XL and GL:
+        xlo, xhi = XL['licence_range']
+        rt2 = {r['route_id']: r for r in rd2('routes.txt') if r['route_type'] == '3' and xline(s, r['route_short_name'])}
+        xl = {}
+        for r in rd2('route_sub_agencies.txt'):
+            n = r['route_licence_number']
+            if r['route_id'] in rt2 and n.isdigit() and (xlo <= int(n) <= xhi or rt2[r['route_id']]['route_short_name'] in XL.get('also', [])):
+                xl.setdefault(r['route_id'], dict(licence=n, operators=set()))['operators'].add(r['sub_agency_name'])
+        byx = feed_trips(rd2, GL['service_date'], set(xl))
+        for rid in list(lic):   # a base-feed copy of an X line gives way to the later feed's
+            if xline(s, routes[rid]['route_short_name']): del lic[rid]
+        for rid, info in xl.items():
+            if not byx.get(rid): continue
+            key = 'later:' + rid; routes[key] = rt2[rid]; lic[key] = info; by_route[key] = byx[rid]
+            line_sd[rt2[rid]['route_short_name']] = GL['service_date']
     rid_of = {routes[rid]['route_short_name']: rid for rid in lic if routes[rid]['route_type'] == '3'}
     def with_companions(C, ts):
         """C's trips plus its pooled lines' trips; a through line's trip is joined to the C trip it continues (same stop, same
@@ -122,8 +141,8 @@ def main():
             via = collections.Counter(t.get('via') for t in base if (t['dir'], t['seq']) == (dr, sq)).most_common(1)[0][0]
             if via: pats[-1]['via'] = via            # a companion's trips (state "regional"): 03_compare matches its game line to these
         main = {}
-        for p in pats:
-            main.setdefault(p['dir'], p)                   # busiest sequence per direction
+        for p in [p for p in pats if not p.get('via')] + [p for p in pats if p.get('via')]:
+            main.setdefault(p['dir'], p)                   # busiest sequence per direction; the card's own line before a pooled one (195 + 158)
         rec['patterns'] = pats; rec['main'] = [main[k] for k in sorted(main)]
         # headway / runtime / schedule per main direction (by terminus pair so short-turn trips don't mix in)
         for m in rec['main']:
