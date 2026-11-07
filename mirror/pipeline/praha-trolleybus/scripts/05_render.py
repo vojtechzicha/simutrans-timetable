@@ -100,7 +100,16 @@ def main():
                 if r: order.append((li, r, f'stop {k + 1} of the circulation'))
         else:
             order = [(i, r, brlabel(r, i)) for i in ids for r in TT['lines'].get(i, {}).get('schedule', [])]
+        brcfg_ = {b['label']: b for b in s.get('splits', {}).get(G, [])}
+        if brcfg_:   # one Simutrans line per branch (owner, 7 Nov 2026: "If two lines, look how buses do it"): its rows under its own heading
+            order = sorted(order, key=lambda x: list(brcfg_).index(x[2]) if x[2] in brcfg_ else 99)
+        cur_sl = None
         for i, r, sub in order:
+            if brcfg_ and sub in brcfg_ and sub != cur_sl:
+                cur_sl = sub; b_ = brs[sub]; cf = brcfg_[sub]
+                rts = [x['runtime'] for x in TT['lines'][i]['routes'] if {x['o'], x['d']} == set(b_['route'])]
+                rows.append(f'<tr class="slh"><td colspan="6"><b>Simutrans line {esc(cf.get("short", sub))}: {esc(" ⇄ ".join(b_["route"]))}</b>'
+                            f'<small>{b_["need"]} trolleybuses on its own: {" + ".join(str(x) for x in rts)} min running, round trip about {b_["cycle"]} min</small></td></tr>')
             if True:
                 kd = f'<small>{esc(r.get("kind_desc", ""))}</small>' if r.get('kind_desc') else ''
                 ltag = f'<span class="lp">loop · 1 min early{kd}</span>' if r['loop'] else f'<span class="lp st">no loop · as timetabled{kd}</span>'
@@ -119,6 +128,7 @@ def main():
                 dtxt = f'<small>{esc("; ".join(d))}</small>' if d else ''
                 lab = f'<td class="k">{i}</td>' if len(ids) > 1 else ''
                 if r.get('short'): sub = 'short working · own Simutrans line'
+                if brcfg_ and sub in brcfg_: sub = ''   # the line's heading row names it
                 subt = f'<span class="lp st">{esc(sub)}</span>' if sub else ''
                 rows.append(f'<tr>{lab}<td>{esc(r["o"])} <span class="arr">→</span> {esc(r["d"])}{subt}{ltag}</td><td class="num sv">{r["every"]}</td>'
                             f'<td class="num sv">{r["set"][0]}{real_o}</td><td class="sv">{esc(also)}{real_a}</td><td class="sv">auto</td><td class="fit">{fit}{dtxt}</td></tr>')
@@ -140,7 +150,7 @@ def main():
                     f'At Nádraží Holešovice the tram only changes its number (through stop, no loop, no shift). '
                     f'Round trip about {pool["cycle"]} min, so {pool["need"]} trams at an 8-minute interval (at least 3 min turnaround at each timed stop).</p>')
         elif brs:
-            head = '<p class="lpn"><b>' + str(len(brs)) + ' separate Simutrans lines</b>, one per branch: ' + '; '.join(f'{esc(l)} needs {b["need"]} trolleybuses (round trip about {b["cycle"]} min)' for l, b in brs.items()) + '.</p>'
+            head = ''
         nt = f'<details class="nm"><summary>Not modelled in 15:00–17:59 ({len(notes)})</summary><ul>{"".join(notes)}</ul></details>' if notes else ''
         return (f'<div class="sch"><h4>Simutrans schedule</h4><p class="lpn">Every trolleybus terminus is a turn (loop, bus-station circuit or block): Offset and Also at are set 1 min before the timetable departure, so the trolleybus clears the turn on time; the real minute is printed under each value. The fork counts offsets from 01:00, so on an interval that does not divide 60 the typed value is (real − 60 − 1) mod the interval: the real minute is under each value. Put the values on the departure stand, not on the arrival stop.</p>'
                 f'{head}<div class="tw"><table class="st"><thead><tr>{lh}<th>Terminus entry</th><th class="num">Departure every</th><th class="num">Offset</th><th>Also at</th><th>Leave up to</th><th>Fit</th></tr></thead><tbody>{"".join(rows)}</tbody></table></div>{nt}</div>')
@@ -196,10 +206,17 @@ def main():
             cs = sorted(cs, key=lambda c: (c['uncertain'] == 'spare', list(brcfg).index(c['branch']) if c.get('branch') in brcfg else 99, int(c['line']), c['course']))
         cur = None
         for c in cs:
-            if brcfg and c.get('branch') != cur:
-                cur = c.get('branch'); b = brcfg.get(cur, {}); nb = TT.get('branches', {}).get(G, {}).get(cur, {})
-                na = sum(1 for x in cs if x.get('branch') == cur and x['uncertain'] not in ('am', 'spare'))
-                rows.append(f'<tr class="brh"><td colspan="3"><b>{esc(cur or "no branch")}</b> · {na} assigned, {nb.get("need", "?")} needed by round trip<br><span class="muted">{esc(b.get("why", ""))}</span></td></tr>')
+            key_ = 'spare' if c['uncertain'] == 'spare' else c.get('branch')
+            if brcfg and key_ != cur:
+                cur = key_
+                if cur == 'spare':
+                    rows.append('<tr class="brh"><td colspan="3"><b>Not needed</b> · logged, but neither Simutrans line needs it at 16:00</td></tr>')
+                else:
+                    b = brcfg.get(cur, {}); nb = TT.get('branches', {}).get(G, {}).get(cur, {})
+                    na = sum(1 for x in cs if x.get('branch') == cur and x['uncertain'] not in ('am', 'spare'))
+                    first = cur == next(iter(brcfg))
+                    rows.append(f'<tr class="brh"><td colspan="3"><b>Simutrans line {esc(b.get("short", cur or "?"))}: {esc(" ⇄ ".join(nb.get("route", [])))}</b> · {na} of {nb.get("need", "?")} needed'
+                                + (' (trolleybuses split over the lines in course order, a choice)' if first else '') + f'<br><span class="muted">{esc(b.get("why", ""))}</span></td></tr>')
             final = next(v for v in c['veh'] if v['set'] == c['final'])
             if c['uncertain'] not in ('am', 'spare'): mix[unit_class(final['types'])] += 1
             elif c['uncertain'] == 'am': notcounted.append(c)
@@ -215,10 +232,19 @@ def main():
         tl = [TT['lines'][i] for i in ids if i in TT['lines']]
         if G in TT.get('circuits', {}): needtxt = f'<span class="need">one Simutrans line over both branches: {TT["circuits"][G]["need"]} trolleybuses needed by round trip</span>'
         elif G in pools and TT['pools'][G].get('need'): needtxt = f'<span class="need">shared pool: {TT["pools"][G]["need"]} trams needed for the whole circulation</span>'
-        elif TT.get('branches', {}).get(G): needtxt = '<span class="need">' + '; '.join(f'{esc(l)}: {b["need"]} needed' for l, b in TT['branches'][G].items()) + '</span>'
+        elif TT.get('branches', {}).get(G):
+            bl = TT['branches'][G]; sh = {x['label']: x.get('short', x['label']) for x in s.get('splits', {}).get(G, [])}
+            needtxt = '<span class="need">' + str(len(bl)) + ' Simutrans lines: ' + ' + '.join(f'{esc(sh.get(l, l))} {b["need"]}' for l, b in bl.items()) + f' = {sum(b["need"] for b in bl.values())} trolleybuses needed by round trip</span>'
         else: needtxt = f'<span class="need">timetable at 16:00: {tl[0]["cycle_need"]} trolleybus{"es" if tl[0]["cycle_need"] != 1 else ""} needed by round trip</span>' if tl and tl[0]['cycle_need'] else ''
         mix_html = ' '.join(f'<span class="mx u-{k}"><b>{mix[k]}</b>× {CLASS[k][0]}</span>' for k in ORDER if mix[k])
         fl = flags.get(G); fl_html = f'<p class="callout {fl[0]}">{esc(fl[1])}</p>' if fl else ''
+        brs_ = TT.get('branches', {}).get(G, {})
+        if brcfg and brs_:
+            fl_html = (f'<p class="callout info"><b>{len(brs_)} Simutrans lines</b>:' + ''.join(f'<br><b>{esc(brcfg[l].get("short", l))}</b> {esc(" ⇄ ".join(b["route"]))} · {b["need"]} trolleybuses'
+                       for l, b in brs_.items() if l in brcfg) + '</p>' + fl_html)
+        elif G in TT.get('circuits', {}):
+            c_ = TT['circuits'][G]
+            fl_html = (f'<p class="callout info"><b>1 Simutrans line</b> over both branches: ' + ' → '.join(esc(o) for o, _ in c_['legs']) + f' → {esc(c_["legs"][0][0])} · {c_["need"]} trolleybuses</p>' + fl_html)
         pnote = f'<p class="callout info">{esc(pools[G]["note"])}</p>' if G in pools else ''
         title = G.replace('/', ' + ') if G in pools else G
         pooltag = '<span class="flag pool big">shared pool</span>' if G in pools else ''

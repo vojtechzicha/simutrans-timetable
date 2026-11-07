@@ -77,10 +77,11 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
 - Otherwise size each branch by need and pick the cars — prefer peak-only courses — and say on the sheet that the pick is a choice.
 - **Before splitting a line into branch lines, read its vehicles' trips** (owner, 7 Nov 2026, Prague trolleybus 52: "you say 52 has two
   branches, courses show three, timetable say one, I am dissapointed. Study buses"). Where a live map gives trip ids per vehicle, follow
-  each vehicle through the peak: if they alternate or mix the branches (52: every trolleybus Waltrovka, Jinonice, Waltrovka …; 58: most
-  switch), the line is one Simutrans line whose entries run the branches in turn, sized round all of them, even when separate branch
-  lines would need one vehicle fewer (52: 9 against 5 + 3). Split only when vehicles stay on one branch. A course split that is only a
-  choice is a guess; don't publish it as the model.
+  each vehicle through the peak and say on the card what they do. Then size both ways: one Simutrans line over both branches only where
+  it needs fewer vehicles than one line per branch (owner, 7 Nov: "if it needs more, keep it as two lines - just it was not clear"): 58
+  is one line (13 against 7 + 7), 52 stays two (5 + 3 against 9) although its trolleybuses alternate. Two lines are shown the bus-sheet
+  way ("If two lines, look how buses do it"): "N Simutrans lines" box up front with each line's label, ends and count; a heading row per
+  line over its schedule entries and over its vehicles; not-needed vehicles once at the bottom, never under a branch heading.
 - Spares: keep on the main line when the other branch is a reinforcement (Brno 8); split evenly between two full branches (Prague 22).
 - **Short workings** are their own line only if they are a *peak trip*: ≥ 3 trips 15:00–17:59, no depot at either end, at least one
   departure 16:00–16:59 (owner ruling 28 Sep: Prague 3/9/22 shorts ending 15:38–15:47 are not peak trips), and they run alongside the

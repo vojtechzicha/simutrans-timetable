@@ -285,3 +285,7 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   trolleybus alternates Waltrovka and Jinonice, and the 58 trolleybuses mix Miškovice and Čakovice. v7: each is one line with four
   entries (52 9, 58 13). The same "split in course order, a choice" stands on other city sheets (Brno, Ostrava, Plzeň, Prague
   trams 17/22); check them against vehicle trips whenever a live source exists.
+- **7 Nov, later:** "if it needs more, keep it as two lines - just it was not clear. If two lines, look how buses do it. Decide again"
+  → v7 had made 52 one line at a cost of one trolleybus; the complaint was the unclear card, not the split. v8: 52 back to 52A
+  (Jinonice, 5) + 52B (Waltrovka, 3), laid out like the bus sheet's branch cards, same values and trolleybuses as v6; 58 stays one
+  line (13 < 14). Read what the owner objects to before changing the model.

@@ -105,7 +105,7 @@
    ],
    "region": "Praha",
    "kind": "fleet",
-   "summary": "PID trolleybus lines 51–59 with battery sections from OSM wire vs GTFS shapes; 52 and 58 each one line over both branches (live map); 51 and 53 on the 2 Nov network (they took over buses 131 and 176).",
+   "summary": "PID trolleybus lines 51–59 with battery sections from OSM wire vs GTFS shapes; 52 as two lines (52A, 52B), 58 as one line over both branches; 51 and 53 on the 2 Nov network (they took over buses 131 and 176).",
    "pipeline": "pipeline/praha-trolleybus",
    "build": "python scripts/run.py --state 2026-11-02 (published); python scripts/run.py --state 2026-09-27 rebuilds the 29 Sep sheet to the same file name",
    "fetch": "python scripts/run.py --state <new> --fetch (not the OSM wire: fetch the Overpass query in states/*.json osm.query by hand into data/raw/osm/<date>/)",
@@ -155,7 +155,7 @@
     "python scripts/run.py --state <new>; compare counts and schedule.",
     "Republish to https://claude.ai/artifact/7P7BZSczRixGop15Fd6zmX."
    ],
-   "notes": "Scripts are copies of ../praha/scripts (not imported). Lines 51, 52, 53, 58, 59. 52 and 58: one line over both branches each (state circuits, live map 3 Nov: 52 trolleybuses alternate, 58 mix), 9 and 13 needed. All termini loops −1. Fit core 16:00–17:00. State 2026-11-02: 51 (8) and 53 (6) on the 2 Nov export (gtfs_lines_from), vehicles from the live map (observed_lines) without taking the 52 card's cars; 232 (route type 11 in the export, run by buses) not modelled. 50 counted, 2 not needed.",
+   "notes": "Scripts are copies of ../praha/scripts (not imported). Lines 51, 52, 53, 58, 59. 52: two lines 52A/52B (5 + 3; one line would need 9). 58: one line over both branches (state circuits, 13 against 7 + 7). Live map 3 Nov: 52 trolleybuses alternate, 58 mix. All termini loops −1. Fit core 16:00–17:00. State 2026-11-02: 51 (8) and 53 (6) on the 2 Nov export (gtfs_lines_from), vehicles from the live map (observed_lines) without taking the 52 card's cars; 232 (route type 11 in the export, run by buses) not modelled. 50 counted, 2 not needed.",
    "rawSnapshots": [
     "gtfs/2026-09-28",
     "osm/2026-09-29",
@@ -185,6 +185,11 @@
      "at": "2026-11-07T19:00:00.000Z",
      "version": 7,
      "note": "52 and 58 each one Simutrans line over both branches (owner: \"Study buses\"; the 3 Nov live map shows every 52 trolleybus alternating Waltrovka/Jinonice and 58 mixing Miškovice/Čakovice): 52 8 → 9 (529 counted), 58 14 → 13 (110 not needed)"
+    },
+    {
+     "at": "2026-11-07T20:20:00.000Z",
+     "version": 8,
+     "note": "52 back to two Simutrans lines 52A (Jinonice, 5) and 52B (Waltrovka, 3), shown the bus-sheet way (owner: \"if it needs more, keep it as two lines - just it was not clear\"); same values and trolleybuses as v6; 58 stays one line (13)"
     }
    ],
    "dependsOn": [
