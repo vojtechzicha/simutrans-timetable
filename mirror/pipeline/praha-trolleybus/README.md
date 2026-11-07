@@ -10,7 +10,9 @@ Built by session simutrans-timetable-5a on 29 Sep 2026. Shared rules: `../README
 - `05_render.py` adds pak `core`/`chain`, a battery block on each card, the network table and the not-modelled list, and uses trolleybus wording.
 
 ```
-python scripts/run.py --state 2026-09-27            # rebuild from stored raw data
+python scripts/run.py --state 2026-11-02            # the published sheet (51 and 53 on the 2 Nov network)
+python scripts/run.py --state 2026-09-27            # the 29 Sep sheet (writes the same file name)
+python scripts/01b_live.py --state 2026-11-02       # re-extract the live-map trolleybuses from pipeline/pid-regional (not run by run.py)
 python scripts/run.py --state <new> --fetch         # download missing raw data first (not the OSM wire: see below)
 ```
 
@@ -49,10 +51,39 @@ seznam-autobusu.cz returns 403 to plain curl, so use `common.fetch` (full browse
 
 All 14 rows checked against the trips (`../praha/method-check-2026-10-25.md`); nothing changed. Both ends of every line run at one rate; 52's branches alternate 4 min apart at Na Knížecí. For the owner to decide: 51 fits exactly at every 120 with 2 slots (Hradčanská real 92 and 44, i.e. 15:32, 16:44, 17:32: Offset 31, Also at 103; Bořislavka real 72 and 24, i.e. 15:12, 16:24, 17:12: Offset 11, Also at 83; loop −1 and the 01:00 origin included), against the hourly approximation (up to 16 min off) on the sheet.
 
+## State 2026-11-02 (published 7 Nov 2026): lines 51 and 53 on the 2 Nov network
+
+From Mon 2 Nov 2026 04:00 (PID "Posílení trolejbusů v Praze", permanent) every trip of bus 131 runs as trolleybus 51 and every trip of
+bus 176 as trolleybus 53. The bus sheet dropped 131/176 the same day (v18). Owner, 2 Nov: "You're okay for changed lines to move to 2 Nov
+network, do not move vehicles in lines not affected if possible".
+
+- **Timetable** (`gtfs_lines_from`): 51 and 53 from the PID export of 2 Nov (`data/raw/gtfs/2026-11-02`, copied from praha-bus), Wed 4 Nov.
+  52, 58 and 59 stay on the 28 Sep export; their cards and the Klíčov garage are byte-identical to the 29 Sep publish (checked).
+  `03_timetable.py` and `03b_offwire.py` read the listed lines from the later feed. 51: every 6 min, 8 needed by round trip
+  (3 min turnaround; the old 2-min `turnaround_min` was for the one-trolleybus line and is gone, as are both `schedule_override`s).
+  53: every 15 min with two slots (:02/:09 and :00/:08 real), 6 needed.
+- **232** is route type 11 in the 2 Nov export, but buses run it (live map 3 Nov: SOR NB 12 3678). Listed as not modelled; it stays on
+  the bus sheet.
+- **Vehicles** (`observed_lines`, `04_courses.py`): seznam-autobusu.cz refuses scripted requests since 1 Nov, so 51 and 53 drop their
+  25 Sep records and take a hand-picked list from the PID live map. The PID regional session polled the map on Mon 2 Nov (20:00–23:50)
+  and all of Tue 3 Nov; `scripts/01b_live.py` extracts the trolleybuses into `data/raw/live/<day>/trolleybus.json` (the map has no
+  history, so these are the only copies besides pid-regional's). The map drops vehicles for long stretches (509 in 11 of 180 peak polls)
+  and showed 53 poorly (58 of 230 trips), so "not seen" is not "not running".
+  The fleet rotates daily between 51, 52 and 53, and the published 52 card holds most of the SNG 12Ts the map showed on 51/53. 52 keeps
+  them (owner's rule). Order of picks: the map's cars on the line that the 52 card doesn't have → the car the line already has in the game
+  (511 on 51, 512 on 53) → free SNG 12Ts seen in service that week (53: 542, 543, 544, marked designed).
+  51 = 511, 509, 514, 515, 516, 518, 533, 513. 53 = 530, 512, 537, 542, 543, 544. 534/536 (51) and 527/529/531/538/539/540 (53) stay on 52.
+- **Register**: cars 515–526 and 541–544 were delivered after the 29 Sep register; the ones used are in `vehicle_overrides` with the
+  live map's type (516 and 518: no type on the map, taken as SNG 12T like every typed car of the 515–544 series).
+- **Pak**: pak128 main c6f4b44. 509 (purple "90 let trolejbusů") runs 51/2 and uses `VZ-DPPraha-36Tr-fialova-36Tr`; 36Tr is now a
+  two-livery type, so its core names the livery.
+- **Page text** (`page_replace` in the state, applied by `05_render.py`): the lede and "How this was built" say which lines are on
+  which day, so `assets/page.html` still renders the 29 Sep state unchanged.
+
 ## How to update when the timetable changes
 
 1. Save the new PID GTFS in `data/raw/gtfs/<export date>/gtfs.zip` (or copy it from `../praha/data/raw/gtfs`, which gets the same feed).
-2. Copy `states/2026-09-27.json` to `states/<new>.json`. Set `network_date`, `gtfs.raw` and `gtfs.service_date`. For new vehicles, set `vehicle_date` (check the day overview for about 55 trolleybus courses) and `register.raw`, and run `01_fetch.py`. If the wire changed, fetch the Overpass query into `data/raw/osm/<today>/` and set `osm.raw`.
+2. Copy the latest state (`states/2026-11-02.json`) to `states/<new>.json` (drop `gtfs_lines_from`, `observed_lines` and `page_replace` once every line is on the new day). Set `network_date`, `gtfs.raw` and `gtfs.service_date`. For new vehicles, set `vehicle_date` (check the day overview for about 55 trolleybus courses) and `register.raw`, and run `01_fetch.py`. If the wire changed, fetch the Overpass query into `data/raw/osm/<today>/` and set `osm.raw`.
 3. Review `splits` (branch sizes are printed by 03_timetable), `schedule_override`, `turnaround_min`, `flags`, `not_modelled_lines` and `assets/termini.json` for new termini.
 4. `python scripts/run.py --state <new>`; compare the counts and the schedule; republish to the same artifact URL.
 

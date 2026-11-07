@@ -29,6 +29,13 @@ def main():
     isdep = lambda x: any(x.startswith(p) for p in dstops.get('prefix', [])) or x in dstops.get('names', [])
     kinds = load(os.path.join(ASSETS, 'termini.json'))['termini']
     trips = [t for t in gtfs_trips(os.path.join(RAW, 'gtfs', g['raw'], 'gtfs.zip'), g['service_date'], route_type=s.get('route_type', '0')) if t['line'].isdigit() and int(t['line']) < s.get('night_from', 90)]
+    # lines taken from a later feed (state gtfs_lines_from; owner, 2 Nov 2026: "You're okay for changed lines to move to 2 Nov
+    # network, do not move vehicles in lines not affected if possible"): only the listed lines change, every other line keeps its trips
+    GL = s.get('gtfs_lines_from')
+    if GL:
+        later = set(GL['lines'])
+        trips = [t for t in trips if t['line'] not in later] + [
+            t for t in gtfs_trips(os.path.join(RAW, 'gtfs', GL['raw'], 'gtfs.zip'), GL['service_date'], route_type=s.get('route_type', '0')) if t['line'] in later]
     for t in trips: t['o'], t['d'] = n(t['o']), n(t['d'])
     by_line = collections.defaultdict(list)
     for t in trips: by_line[t['line']].append(t)
@@ -164,7 +171,8 @@ def main():
             metro[L] = dict(patterns=rows, need=need, need_hi=need_hi, reverse_min=rng, chain16=chain_at(ts, 960)[0], depot_runs=minor)
         print('metro', {L: (v['need'], [(p['o'], p['d'], p['per_hour']) for p in v['patterns']]) for L, v in metro.items()})
     print('branches', {k: {l: b['need'] for l, b in v.items()} for k, v in branches.items()})
-    save(dict(lines=out, pools=pools, branches=branches, metro=metro, service_date=g['service_date'], gtfs_raw=g['raw']), os.path.join(DER, s['name'], 'timetable.json'))
+    later = {L: dict(gtfs_raw=GL['raw'], service_date=GL['service_date']) for L in GL['lines']} if GL else {}
+    save(dict(lines=out, pools=pools, branches=branches, metro=metro, service_date=g['service_date'], gtfs_raw=g['raw'], later=later), os.path.join(DER, s['name'], 'timetable.json'))
     for L, v in out.items():
         print(L.rjust(3), 'trams@16', v['chain16'], 'min', v['min_runtime'], 'cycle', v['cycle_need'], [(x['o'][:12], x['every'], x['set'], 'exact' if x['exact'] else f'~{x["max_dev"]}') for x in v['schedule']])
     print('pools', pools)

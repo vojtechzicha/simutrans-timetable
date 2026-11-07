@@ -23,6 +23,12 @@ vehicle category per line. Accessibility is not wanted.
   or a permanent change, when a diversion ended, or when the older export had left out stops the game line already serves. A difference that
   comes from a temporary closure (even "do odvolání") stays on the older export, and so do frozen cards. A line that left the network leaves the sheet, and
   the game check says to delete its game line.
+- **A changed line's vehicles when the deployment records have stopped** (Prague trolleybuses 51/53, 7 Nov 2026): the line drops
+  its old-day records and takes the cars the PID live map showed on it on a working day, except cars an unaffected card already has
+  (the 2 Nov rule protects that card). Fill the places left with the car the line already has in the game, then with free cars of
+  the line's type seen in service that week (designed, real numbers). Cars newer than the register take their type from the map.
+  The map drops vehicles for long stretches: compare trips seen with trips timetabled before reading a thin count as thin service
+  (53 on 3 Nov: 58 of 230 trips seen, 1–3 cars at a time, against a need of 6).
 - **Peak:** ~15:00–17:00, reference hour 16:00 — but each line is anchored at **its own busiest 2 h in 13:00–18:00**, unless
   15:00–17:00 is within one departure of it (owner, 20 Oct: Ostrava bus 23 "20 minutes is the most common afternoon pattern").
 - Morning-only duties are left out and listed under "Not counted". Evening/night course groups are left out of type history.

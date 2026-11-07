@@ -259,3 +259,13 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
 - **3 Nov:** the fleet desk drew the DPP 90-years paint (5025, 5050, trolleybus 509). The second NB 18 livery in the pak made the
   render name the livery on every NB 18, including cards 100–108; those cards now come from `assets/frozen_cards.json` (v20, byte for
   byte), so a pak or render change can no longer reach them.
+
+## 2–7 Nov — Prague trolleybuses 51/53 (the hand-off that never came)
+- **7 Nov:** "The trolleybus are not pdated and are not in line with buses, why?" → the bus sheet dropped 131/176 on 2 Nov (v18),
+  while the trolleybus half waited for a 51/53 vehicle file the PID regional session was to write on Tue 3 Nov evening. Its
+  poller did record the trolleybuses, but the session stopped before writing the file, and nothing tracked the open point, so for
+  five days 131/176's peak service was on neither sheet. When one sheet waits on another session, the waiting side reads the
+  stored raw data itself once the day has passed, instead of waiting for the file, and both sheets say the point is open.
+  Then "yes" → trolleybus v6: 51 1 → 8, 53 1 → 6 from the 3 Nov poll, with 52/58/59 byte-identical. DPP rotates its SNG 12Ts daily
+  between 51, 52 and 53, so most of 53's real cars were already on the published 52 card. 53 got 2 of its own map cars, the 512
+  it already had, and 3 free SNG 12Ts (designed).

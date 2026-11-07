@@ -163,7 +163,8 @@ def main():
         by_group[c['group']].append(c)
     pools = s.get('pools', {}); flags = s.get('flags', {})
     TAG = {'swap': '<span class="flag swap">swap</span>', 'am': '<span class="flag am">not counted</span>', 'spare': '<span class="flag am">not needed</span>',
-           'moved': '<span class="flag mv">moved line</span>', 'added': '<span class="flag mv">added</span>', 'designed': '<span class="flag ds">designed</span>'}
+           'moved': '<span class="flag mv">moved line</span>', 'added': '<span class="flag mv">added</span>', 'designed': '<span class="flag ds">designed</span>',
+           'live': '<span class="flag mv">live map</span>', 'kept': '<span class="flag mv">kept</span>'}
     cards, summ, notcounted = [], [], []
     depot = collections.defaultdict(lambda: collections.defaultdict(list))
     for G in s['line_order']:
@@ -253,6 +254,8 @@ def main():
                 elif it['u'] == 'moved': st = '<span class="flag mv">moved from another line</span>'
                 elif it['u'] == 'added': st = '<span class="flag mv">added for the new route</span>'
                 elif it['u'] == 'designed': st = '<span class="flag ds">designed addition</span>'
+                elif it['u'] == 'live': st = '<span class="flag mv">seen on the PID live map</span>'
+                elif it['u'] == 'kept': st = '<span class="flag mv">kept from the 29 Sep sheet</span>'
                 if G in pools: lbl = f'<span class="lb sm">{G.replace("/", " + ")}</span><span class="lsub">shared pool</span>'
                 elif ' ' in G: lbl = f'<span class="lb sm">{esc(G.split(" ")[0])}</span><span class="lsub">{esc(G.split(" ", 1)[1])}</span>'
                 else: lbl = f'<span class="lb sm">{G}</span>'
@@ -366,6 +369,10 @@ def main():
            '%%N_DEPOTS%%': str(len([d for d in dep_summ if d[0] not in s.get('museum_depots', [])])), '%%CROSSCHECK%%': crosscheck, '%%METRO%%': metro_rows, '%%PAK_COMMIT%%': PK['pak_commit'],
            '%%SERVICE_DATE%%': TT['service_date'], '%%GTFS_RAW%%': TT['gtfs_raw'], '%%NETWORK%%': net, '%%NOTMODELLED%%': notmod,
            '%%N_RECORDS%%': str(nrec), '%%N_REGISTER%%': str(len(V) - len(s.get('vehicle_overrides', {}))), '%%OSM_RAW%%': OW['osm']}
+    # state page_replace: [old, new] pairs for the page text of a state whose day differs per line (each old text exactly once)
+    for old, new in s.get('page_replace', []):
+        assert tpl.count(old) == 1, ('page_replace text not found once', old[:60])
+        tpl = tpl.replace(old, new)
     for k, v in rep.items(): tpl = tpl.replace(k, v)
     out = os.path.join(PROJECT, s['output_html'])
     open(out, 'w', encoding='utf-8').write(tpl)

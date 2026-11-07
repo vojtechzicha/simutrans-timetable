@@ -54,6 +54,17 @@ def main():
                                 chain=chain, am=[r['car'] for r in am], split=bool(pm), swap=len(chain) > 1,
                                 transfer=transfer, raw_notes=[r['note'] for r in rr if r['note']],
                                 veh=[vinfo(x) for x in dict.fromkeys(chain)], source=s['vehicle_date']))
+    # lines that changed after the vehicle day (state observed_lines, with gtfs_lines_from): their records no longer apply; they take
+    # the state's list of trolleybuses, read from the PID live map (scripts/01b_live.py), with the reason for each car in its note
+    OBS = {L: o for L, o in s.get('observed_lines', {}).items() if not L.startswith('_')}
+    courses = [c for c in courses if c['line'] not in OBS]
+    for L, ob in OBS.items():
+        for a in ob['cars']:
+            src = a.get('source', 'live')
+            courses.append(dict(id=a.get('id', f'{L}/{a["course"]}'), line=L, course=a['course'], pm_line=L, group=pool_of.get(L, L),
+                                chain=[a['set']], am=[], split=False, swap=False, transfer=None, raw_notes=[],
+                                veh=[vinfo(a['set'])], source=ob['day'] if src == 'live' else src, added_note=a['note'],
+                                observed=src))
     for a in s.get('added_courses', []):
         L = a['line']
         courses.append(dict(id=f'{L}/{a["course"]}', line=L, course=a['course'], pm_line=L, group=pool_of.get(L, L),
@@ -85,6 +96,7 @@ def main():
         if c['swap']: u = 'swap'
         elif any(o is not c and o['swap'] and x in o['chain'][1:] for x in c['chain'] for o in seen[x]): u = 'am'
         elif c['id'] in transfers: u = 'moved'
+        elif c.get('observed'): u = {'designed': 'designed', 'kept': 'kept'}.get(c['observed'], 'live')
         elif c.get('added_note'): u = 'designed' if c['source'] in ('designed', 'stand-in') else 'added'
         c['uncertain'] = u
         n = []

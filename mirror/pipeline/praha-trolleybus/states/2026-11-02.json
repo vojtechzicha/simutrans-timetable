@@ -1,0 +1,424 @@
+{
+ "name": "2026-11-02",
+ "title": "Prague Trolleybus Peak Fleet",
+ "network_date": "2026-09-27",
+ "vehicle_date": "2026-09-25",
+ "route_type": "11",
+ "gtfs": {
+  "raw": "2026-09-28",
+  "url": "https://data.pid.cz/PID_GTFS.zip",
+  "service_date": "20260929",
+  "_why": "Same feed and service date as the Prague tram sheet: the first weekday on the 27 Sep network (28 Sep is a public holiday)."
+ },
+ "osm": {
+  "raw": "2026-09-29",
+  "query": "[out:json][timeout:120];(way[\"trolley_wire\"=\"yes\"](49.94,14.22,50.18,14.71););out geom tags;",
+  "url": "https://overpass-api.de/api/interpreter",
+  "tolerance_m": 25
+ },
+ "register": {
+  "raw": "2026-09-29",
+  "operator_id": 106,
+  "trakce": "trolejbus",
+  "depots": {
+   "all": null
+  },
+  "depot_codes": {
+   "Klí": "Klíčov",
+   "Řep": "Řepy",
+   "Stře": "Střešovice"
+  }
+ },
+ "vypravenost": {
+  "slug": "pid",
+  "lines": [
+   "51",
+   "52",
+   "53",
+   "58",
+   "59",
+   "275"
+  ],
+  "history_since": "2026-09-14",
+  "history_lines": [
+   "51",
+   "52",
+   "53",
+   "58",
+   "59"
+  ]
+ },
+ "stop_aliases": {
+  "Letiště": "Terminál 1"
+ },
+ "night_from": 1000,
+ "description": "Lines 52, 58 and 59 as published on 29 Sep: network of Sunday 27 Sep 2026 (PID timetable of Tue 29 Sep), trolleybuses from the Friday 25 Sep afternoon peak. Lines 51 and 53 on the 2 Nov network (PID export of 2 Nov, timetable of Wed 4 Nov): from Mon 2 Nov they also run all trips of bus lines 131 and 176; trolleybuses from the PID live map of Tue 3 Nov.",
+ "fit_core": [
+  960,
+  1020
+ ],
+ "_fit_core_why": "The shared runfit prefers runs overlapping 15:30-16:30 by 30 min. Line 58's inbound 12-minute pattern starts at 16:20, so that window picked a 40-minute, 3-4 slot pattern fitted to only 4 departures (4.5 trips an hour instead of 5). The 16:00 reference hour of the shared rules is used instead; lines 52 and 59 give the same values either way.",
+ "turnaround_min": {},
+ "depot_stops": {
+  "prefix": [
+   "Garáž",
+   "Vozovna"
+  ],
+  "names": []
+ },
+ "line_order": [
+  "51",
+  "52",
+  "53",
+  "58",
+  "59"
+ ],
+ "splits": {
+  "52": [
+   {
+    "label": "52 Na Knížecí – Jinonice",
+    "route": [
+     "Na Knížecí",
+     "Jinonice"
+    ],
+    "courses": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     10
+    ],
+    "line": "52",
+    "why": "Not recorded: the records give no branch, and both branches run all week with the same low course numbers. Needs 5 by round trip; courses 1–5 in course order (14 min each way). Course 10, also logged, is surplus to both branches and is marked not needed."
+   },
+   {
+    "label": "52 Na Knížecí – Waltrovka",
+    "route": [
+     "Na Knížecí",
+     "Waltrovka"
+    ],
+    "courses": [
+     6,
+     7,
+     8
+    ],
+    "line": "52",
+    "why": "Not recorded: a choice, as for the other branch. Needs 3 by round trip (9 min each way)."
+   }
+  ],
+  "58": [
+   {
+    "label": "58 Palmovka – Miškovice",
+    "route": [
+     "Palmovka",
+     "Miškovice"
+    ],
+    "courses": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "line": "58",
+    "why": "Not recorded: the records give no branch. Needs 7 by round trip; courses 1–7 in course order."
+   },
+   {
+    "label": "58 Palmovka – Čakovice",
+    "route": [
+     "Palmovka",
+     "Čakovice"
+    ],
+    "courses": [
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14
+    ],
+    "line": "58",
+    "why": "Not recorded: a choice, as for the other branch. Needs 7 by round trip; courses 8–14 (the courses that do not run at weekends)."
+   }
+  ]
+ },
+ "flags": {
+  "51": [
+   "info",
+   "From Mon 2 Nov 2026 line 51 also runs every trip of bus line 131 (PID permanent change \"Posílení trolejbusů v Praze\"): every 6 min in the peak instead of one trolleybus every 44–72 min. 8 trolleybuses by round trip. The trolleybuses are from the PID live map of Tue 3 Nov (no deployment record exists after 1 Nov). Seven of the eight ran 51 that afternoon. 534 (51/7) and 536 (51/8) did too, but the 52 card has them and stays as it is, so 513 (on 51 in the morning) takes the eighth place."
+  ],
+  "53": [
+   "info",
+   "From Mon 2 Nov 2026 line 53 also runs every trip of bus line 176 (PID permanent change \"Posílení trolejbusů v Praze\"): every 7–8 min in the peak instead of one trolleybus every 53–83 min. 6 trolleybuses by round trip. The live map of Tue 3 Nov showed 53 poorly (58 of its 230 trips, 1–3 trolleybuses at a time) and eight SNG 12Ts on it during the day; six of them are on the 52 card, which stays as it is. So 53 keeps 512 (already on 53 in the game), takes 530 and 537 from the map, and three free SNG 12Ts seen on 51 and 52 that week (542, 543, 544, designed)."
+  ],
+  "52": [
+   "info",
+   "Line 52 has two branches from Na Knížecí, each every 8 min, together every 4 min on the shared section to Waltrovka. Each branch is its own Simutrans line. The records do not say which course runs which branch, so the split below is a choice sized by round trip (5 + 3 = 8; 9 recorded). Course 52/9 runs on other weekdays (24 and 29 Sep) but is not recorded on 25 Sep. The alternative, one line running Na Knížecí → Waltrovka → Na Knížecí → Jinonice → Na Knížecí, would need 9, the number recorded."
+  ],
+  "58": [
+   "info",
+   "Line 58 has two branches from Palmovka, each every 12 min, together every 6 min to Čakovice. Each branch is its own Simutrans line. The records do not say which course runs which branch, so the split below is a choice sized by round trip (7 + 7 = 14, all 14 recorded). One line alternating the branches would need 13."
+  ],
+  "59": [
+   "info",
+   "Airport line with bi-articulated 24 m trolleybuses, every 3 min at the peak. On 25 Sep courses 59/6 and 59/14 are not recorded (both are recorded on Tue 29 Sep). The 15 recorded courses cover the 14 needed by round trip, so no trolleybus is designed. 59/8 changed vehicle during the day (401 → 413)."
+  ]
+ },
+ "depot_order": [
+  "Klíčov",
+  "Řepy",
+  "Střešovice"
+ ],
+ "depot_notes": {
+  "Klíčov": "Bus garage Klíčov with the trolleybus base for line 58 (SOR TNS 18).",
+  "Řepy": "Bus garage Řepy: trolleybuses for lines 51, 52, 53 and 59."
+ },
+ "not_modelled_lines": {
+  "275": "Trolleybus line Sídliště Čakovice – Náměstí Jiřího Berana (2.1 km, entirely off-wire): 5 trips on weekdays, the last at 14:05, none in the afternoon peak. Not recorded on 25 Sep. Left out, like other off-peak-only lines.",
+  "232": "Bus line Smíchovské nádraží – Na Knížecí. The 2 Nov export lists it as a trolleybus route (route type 11) with the same trips as before, but it is run by buses: the only vehicle the live map showed on it on Tue 3 Nov was SOR NB 12 3678. It stays on the Prague bus lines check, as a bus line."
+ },
+ "output_html": "Prague Trolleybus Peak Fleet.html",
+ "artifact_url": "https://claude.ai/artifact/7P7BZSczRixGop15Fd6zmX",
+ "compare_with": "2026-09-27",
+ "gtfs_lines_from": {
+  "raw": "2026-11-02",
+  "url": "https://data.pid.cz/PID_GTFS.zip",
+  "service_date": "20261104",
+  "lines": [
+   "51",
+   "53"
+  ],
+  "_why": "Owner, 2 Nov 2026: \"You're okay for changed lines to move to 2 Nov network, do not move vehicles in lines not affected if possible\". From Mon 2 Nov 04:00 (PID \"Posílení trolejbusů v Praze\", permanent) every trip of bus 131 runs as trolleybus 51 and every trip of bus 176 as trolleybus 53. The bus sheet dropped 131 and 176 on 2 Nov (v18). 52, 58 and 59 are unchanged and stay on the 29 Sep export."
+ },
+ "live": {
+  "source_dir": "../pid-regional/data/raw/live",
+  "days": [
+   "2026-11-02",
+   "2026-11-03"
+  ],
+  "lines": [
+   "51",
+   "53",
+   "232"
+  ],
+  "_why": "seznam-autobusu.cz refuses scripted requests since 1 Nov 2026; the PID regional session polled the PID live map on 2 and 3 Nov."
+ },
+ "vehicle_overrides": {
+  "515": {
+   "type": "SNG 12T",
+   "types": [
+    "SNG 12T"
+   ],
+   "maker": "Bozankaya SNG 12T",
+   "paint": "schéma PID, šedá s červenými svislými pruhy",
+   "depot": "Řepy",
+   "year": "2026",
+   "state": "zar",
+   "source": "Not in the 29 Sep register (delivered later). PID live map 2–3 Nov: Bozankaya SNG 12T, car id 145354."
+  },
+  "516": {
+   "type": "SNG 12T",
+   "types": [
+    "SNG 12T"
+   ],
+   "maker": "Bozankaya SNG 12T",
+   "paint": "schéma PID, šedá s červenými svislými pruhy",
+   "depot": "Řepy",
+   "year": "2026",
+   "state": "zar",
+   "source": "Not in the 29 Sep register (delivered later). The PID live map gives no type for it; every typed car of the 515–544 series is a Bozankaya SNG 12T, so it is taken as one."
+  },
+  "518": {
+   "type": "SNG 12T",
+   "types": [
+    "SNG 12T"
+   ],
+   "maker": "Bozankaya SNG 12T",
+   "paint": "schéma PID, šedá s červenými svislými pruhy",
+   "depot": "Řepy",
+   "year": "2026",
+   "state": "zar",
+   "source": "Not in the 29 Sep register (delivered later). The PID live map gives no type for it; every typed car of the 515–544 series is a Bozankaya SNG 12T, so it is taken as one."
+  },
+  "542": {
+   "type": "SNG 12T",
+   "types": [
+    "SNG 12T"
+   ],
+   "maker": "Bozankaya SNG 12T",
+   "paint": "schéma PID, šedá s červenými svislými pruhy",
+   "depot": "Řepy",
+   "year": "2026",
+   "state": "zar",
+   "source": "Not in the 29 Sep register (delivered later). PID live map 2–3 Nov: Bozankaya SNG 12T, car id 148966."
+  },
+  "543": {
+   "type": "SNG 12T",
+   "types": [
+    "SNG 12T"
+   ],
+   "maker": "Bozankaya SNG 12T",
+   "paint": "schéma PID, šedá s červenými svislými pruhy",
+   "depot": "Řepy",
+   "year": "2026",
+   "state": "zar",
+   "source": "Not in the 29 Sep register (delivered later). PID live map 3 Nov: Bozankaya SNG 12T, car id 148967."
+  },
+  "544": {
+   "type": "SNG 12T",
+   "types": [
+    "SNG 12T"
+   ],
+   "maker": "Bozankaya SNG 12T",
+   "paint": "schéma PID, šedá s červenými svislými pruhy",
+   "depot": "Řepy",
+   "year": "2026",
+   "state": "zar",
+   "source": "Not in the 29 Sep register (delivered later). PID live map 2–3 Nov: Bozankaya SNG 12T, car id 148968."
+  }
+ },
+ "observed_lines": {
+  "_why": "Lines 51 and 53 changed on 2 Nov, so their 25 Sep records no longer apply and are dropped. There is no deployment record for them (seznam-autobusu.cz blocked), so they take the trolleybuses the PID live map showed on them on Tue 3 Nov, except the ones the published 52 card already has: 52 is not affected by the change and keeps its trolleybuses (owner, 2 Nov). The places left are filled first with the trolleybus each line already has in the game, then with free trolleybuses of the line's type seen in service on the trolleybus lines that week.",
+  "51": {
+   "day": "2026-11-03",
+   "cars": [
+    {
+     "course": 1,
+     "set": "511",
+     "note": "PID live map, Tue 3 Nov: course 51/1 all day (06:33–20:12), in the peak throughout. Already on line 51 in the game (51/2 on the 29 Sep sheet)."
+    },
+    {
+     "course": 2,
+     "set": "509",
+     "note": "PID live map, Tue 3 Nov: course 51/2, 07:03–20:06, in the peak 15:05–16:50 (the map drops it for up to 30 min). DPP's purple \"90 years of Prague trolleybuses\" car: its own pak object."
+    },
+    {
+     "course": 3,
+     "set": "514",
+     "note": "PID live map, Tue 3 Nov: course 51/3, 05:54–20:09, in the peak throughout."
+    },
+    {
+     "course": 4,
+     "set": "515",
+     "note": "PID live map, Tue 3 Nov: course 51/4 (also on Mon 2 Nov evening), 04:50–19:54, in the peak 15:19–17:42."
+    },
+    {
+     "course": 5,
+     "set": "516",
+     "note": "PID live map, Tue 3 Nov: course 51/5, on the map from 00:00 to 19:50, in the peak 17:10–17:44 (dropped before that). Type not given by the map: taken as SNG 12T (the 515–544 series)."
+    },
+    {
+     "course": 6,
+     "set": "518",
+     "note": "PID live map, Tue 3 Nov: course 51/6, 07:12–16:01; last seen at 16:01, so it may leave the line early in the peak. Type not given by the map: taken as SNG 12T (the 515–544 series)."
+    },
+    {
+     "course": 9,
+     "set": "533",
+     "note": "PID live map, Tue 3 Nov: course 51/9, 06:39–18:18, in the peak throughout."
+    },
+    {
+     "course": 10,
+     "set": "513",
+     "note": "PID live map, Tue 3 Nov: course 51/10 in the morning (06:18–08:00), later on 52/10. Taken for 51 because 534 (51/7) and 536 (51/8), seen on 51 all peak, are on the 52 card, which stays as it is."
+    }
+   ],
+   "seen_elsewhere": "534 (51/7) and 536 (51/8) ran 51 all peak on Tue 3 Nov but are on the 52 card, which stays unchanged."
+  },
+  "53": {
+   "day": "2026-11-03",
+   "cars": [
+    {
+     "course": 3,
+     "set": "530",
+     "note": "PID live map, Tue 3 Nov: course 53/3, 05:03–14:16 (on Mon 2 Nov evening on 52/5). Not seen after 14:16: the map showed only 58 of 53's 230 trips that day."
+    },
+    {
+     "course": 101,
+     "id": "53/+1",
+     "set": "512",
+     "note": "Kept: already on line 53 in the game (53/3 on the 29 Sep sheet). On Tue 3 Nov the live map shows it on 52/5.",
+     "source": "kept"
+    },
+    {
+     "course": 102,
+     "id": "53/+2",
+     "set": "537",
+     "note": "PID live map, Tue 3 Nov: course 53/5 in the morning (00:10–12:31; 531 took the course over at 12:56). Also on 53/5 on Mon 2 Nov evening."
+    },
+    {
+     "course": 103,
+     "id": "53/+3",
+     "set": "542",
+     "note": "Designed: a free SNG 12T (not on any card), seen in service on the live map on 52/6 (Mon 2 Nov evening) and 52/8 (Tue 3 Nov).",
+     "source": "designed"
+    },
+    {
+     "course": 104,
+     "id": "53/+4",
+     "set": "543",
+     "note": "Designed: a free SNG 12T (not on any card), seen in service on the live map on 52/9 (Tue 3 Nov).",
+     "source": "designed"
+    },
+    {
+     "course": 105,
+     "id": "53/+5",
+     "set": "544",
+     "note": "Designed: a free SNG 12T (not on any card), seen in service on the live map on 51/2 (Mon 2 Nov evening) and 52/6 (Tue 3 Nov).",
+     "source": "designed"
+    }
+   ],
+   "seen_elsewhere": "On Tue 3 Nov the map showed SNG 12Ts 527 (53/1), 529 (53/2), 531 (53/5), 538 (53/8), 539 (53/7) and 540 (53/4) on 53; all six are on the 52 card (529 as not needed), which stays unchanged."
+  }
+ },
+ "page_replace": [
+  [
+   "The Prague trolleybus network as of Sunday 27 September 2026 (PID timetable of Tuesday 29 September).",
+   "The Prague trolleybus network as of Monday 2 November 2026. Lines 51 and 53 are on the 2 November network (PID timetable of Wednesday 4 November): from that day they run every trip of bus lines 131 and 176. Lines 52, 58 and 59 did not change and stay as published for Sunday 27 September (PID timetable of Tuesday 29 September)."
+  ],
+  [
+   "Vehicles are those that ran on Friday 25 September (seznam-autobusu.cz deployment records).",
+   "Vehicles on 52, 58 and 59 are those that ran on Friday 25 September (seznam-autobusu.cz deployment records). Vehicles on 51 and 53 are from the PID live map of Tuesday 3 November, except the ones the 52 card already has."
+  ],
+  [
+   "no bus was recorded on a trolleybus line on 25 September.",
+   "no bus was recorded on a trolleybus line on 25 September, and the live map showed none on 51 or 53 on 3 November."
+  ],
+  [
+   "The vehicles come from the last weekday before it, Friday 25 September.</li>",
+   "The vehicles come from the last weekday before it, Friday 25 September. Lines 51 and 53 changed on Monday 2 November (PID permanent change “Posílení trolejbusů v Praze”: every trip of bus 131 runs as trolleybus 51, every trip of bus 176 as trolleybus 53). Only those two lines moved to the 2 November network; the others keep their 27 September cards and trolleybuses.</li>"
+  ],
+  [
+   "The recorded vehicles still cover the round-trip need on every line, so no trolleybus is designed.</li>",
+   "The recorded vehicles still cover the round-trip need on every line, so no trolleybus is designed. Lines 51 and 53 have no deployment record after the change: seznam-autobusu.cz refuses every scripted request since 1 November. Their trolleybuses come from the PID live map (<code>mapa.pid.cz</code>), polled every minute on Tuesday 3 November by the PID regional sheets. The map gives each vehicle its course and type, but it drops vehicles for minutes at a time and showed 53 poorly (58 of its 230 trips). Trolleybuses the 52 card already has stay there, so each line takes the map’s other trolleybuses first, then the one it already has in the game, then free trolleybuses of its type seen in service that week (marked designed). Each car’s note gives what the map showed.</li>"
+  ],
+  [
+   "and the Střešovice museum.</li>",
+   "and the Střešovice museum. Cars 515, 516, 518 and 542–544 were delivered after the register was read (29 September); their type is from the live map (516 and 518: the map gives none, and every typed car of the 515–544 series is a Bozankaya SNG 12T).</li>"
+  ],
+  [
+   " Line 51 uses the timetable's own 2-minute turnaround at Hradčanská.",
+   ""
+  ],
+  [
+   " Lines 51 and 53 run one trolleybus each with irregular gaps, so they get an hourly pattern with its largest deviation shown.",
+   ""
+  ],
+  [
+   "in the PID grey-red livery that all the peak vehicles wear.",
+   "in the PID grey-red livery, except 509, which wears DPP’s purple “90 years of Prague trolleybuses” paint and has its own object."
+  ],
+  [
+   "service date %%SERVICE_DATE%%.",
+   "service date %%SERVICE_DATE%%; lines 51 and 53 from the export of 2026-11-02, service date 20261104."
+  ],
+  [
+   "<code>python scripts/run.py --state 2026-09-27</code>",
+   "<code>python scripts/run.py --state 2026-11-02</code>"
+  ]
+ ]
+}

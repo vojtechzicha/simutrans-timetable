@@ -36,10 +36,25 @@ def main():
         return math.hypot(p[0] - a[0] - t * dx, p[1] - a[1] - t * dy)
     under = lambda p: any(dist(p, a, b) <= tol for a, b in grid.get((int(p[0] // 100), int(p[1] // 100)), ()))
 
-    z = zipfile.ZipFile(os.path.join(RAW, 'gtfs', g['raw'], 'gtfs.zip'))
+    # lines taken from a later feed (state gtfs_lines_from) read their shapes from it; every other line from the state's feed
+    GL = s.get('gtfs_lines_from'); later = set(GL['lines']) if GL else set()
+    res = collections.defaultdict(list)
+    feeds = [(g['raw'], lambda L: L not in later)] + ([(GL['raw'], lambda L: L in later)] if GL else [])
+    for raw, keep in feeds:
+        for L, ps in patterns(os.path.join(RAW, 'gtfs', raw, 'gtfs.zip'), s, keep, under, n).items():
+            res[L] += ps
+    save(dict(lines=res, osm=osm['raw'], tolerance_m=tol), os.path.join(DER, s['name'], 'offwire.json'))
+    for L, ps in res.items():
+        for p in ps:
+            print(L.rjust(3), p['trips'], f"{p['o']} -> {p['d']}", p['km'], 'km, off', p['off_km'], p['stretches'])
+
+def patterns(zpath, s, keep, under, n):
+    z = zipfile.ZipFile(zpath)
     rd = lambda f: csv.DictReader(io.TextIOWrapper(z.open(f), encoding='utf-8-sig'))
     rt = s.get('route_type', '11')
-    routes = {r['route_id']: r['route_short_name'] for r in rd('routes.txt') if r['route_type'] == rt}
+    lat0 = math.radians(50.08)
+    xy = lambda la, lo: (math.radians(lo) * 6371000 * math.cos(lat0), math.radians(la) * 6371000)
+    routes = {r['route_id']: r['route_short_name'] for r in rd('routes.txt') if r['route_type'] == rt and keep(r['route_short_name'])}
     trips = {t['trip_id']: t for t in rd('trips.txt') if t['route_id'] in routes}
     stops = {r['stop_id']: r['stop_name'] for r in rd('stops.txt')}
     st = collections.defaultdict(list)
@@ -81,10 +96,7 @@ def main():
         tot = sum(x['km'] for x in secs); off = sum(x['km'] for x in secs if not x['wire'])
         res[L].append(dict(o=n(stops[seq[0]]), d=n(stops[seq[-1]]), trips=cnt, km=round(tot, 1), off_km=round(off, 1),
                            stretches=[[a, b, round(k, 1)] for a, b, k in stretches], sections=secs))
-    save(dict(lines=res, osm=osm['raw'], tolerance_m=tol), os.path.join(DER, s['name'], 'offwire.json'))
-    for L, ps in res.items():
-        for p in ps:
-            print(L.rjust(3), p['trips'], f"{p['o']} -> {p['d']}", p['km'], 'km, off', p['off_km'], p['stretches'])
+    return res
 
 if __name__ == '__main__':
     main()
