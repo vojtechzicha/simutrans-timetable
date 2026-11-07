@@ -23,6 +23,9 @@ vehicle category per line. Accessibility is not wanted.
   or a permanent change, when a diversion ended, or when the older export had left out stops the game line already serves. A difference that
   comes from a temporary closure (even "do odvolání") stays on the older export, and so do frozen cards. A line that left the network leaves the sheet, and
   the game check says to delete its game line.
+  The owner can move a diverted line onto the newer timetable anyway: 161 and 312 (owner, 7 Nov 2026, "model these two properly")
+  run as they do on the 26 Oct timetables, 161 cut back from Letiště to Přední Kopanina, 312 to Tuchoměřice,škola and Špejchar.
+  When a card's line is on a diversion, say so on the card, so its game line (100161 to Letiště) doesn't look like a leftover.
 - **A changed line's vehicles when the deployment records have stopped** (Prague trolleybuses 51/53, 7 Nov 2026): the line drops
   its old-day records and takes the cars the PID live map showed on it on a working day, except cars an unaffected card already has
   (the 2 Nov rule protects that card). Fill the places left with the car the line already has in the game, then with free cars of

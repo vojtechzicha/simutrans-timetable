@@ -289,3 +289,11 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   → v7 had made 52 one line at a cost of one trolleybus; the complaint was the unclear card, not the split. v8: 52 back to 52A
   (Jinonice, 5) + 52B (Waltrovka, 3), laid out like the bus sheet's branch cards, same values and trolleybuses as v6; 58 stays one
   line (13 < 14). Read what the owner objects to before changing the model.
+
+## 7 Nov — Prague 161 and 312
+- **7 Nov:** "Is there a reason 161 does not go to Letiště?" → answered "no Letiště trip in either export, the save's 100161 is probably
+  left over from an older network". The owner's timetable showed 161 "Bořislavka – Letiště, změna trasy (diversion)": it was a
+  diversion. Then "the sheet sends them to Tuchoměřice?" → the 312 rows sit on 161's card, and the game check had read 100161
+  against 312's trips. Then "yes, please, model these two properly (and potentially remove them from the regional sheet)" → both on
+  the 26 Oct timetables (v23): 161 every 30 at :10/:20; 312 one circuit, hourly to škola and to Špejchar, 3 buses; 312 was not on any
+  regional sheet. Before explaining why a line skips a stop, check PID's notices for a diversion.

@@ -61,15 +61,19 @@ def build(L, ts, rows, s):
     # regional line can stay its own Simutrans line (owner, 30 Oct 2026, 111 + 329: "the 111 seems to stretched. Could we have two variants?")
     groups = cfg.get('groups', {}).get(L)
     if groups and not s.get('_in_group'):
-        s2 = dict(s, _in_group=True)
-        return [x for g in groups for x in (build(L, ts, [rows[i] for i in g], s2) or [])]
+        # state simlines.group_modes[L][k] = 'auto' | 'separate' | 'circuit' for group k (161 + 312, 7 Nov 2026: 161 stays its own
+        # line by the owner's 5 Nov choice; 312's two variants are sized by the auto rule inside its own game line)
+        gm = cfg.get('group_modes', {}).get(L, [])
+        return [x for k, g in enumerate(groups) for x in (build(L, ts, [rows[i] for i in g], dict(s, _in_group=True, _group_mode=gm[k] if k < len(gm) else None)) or [])]
+    if s.get('_group_mode') == 'circuit':
+        return [circuit(rows)]
     if mode == 'circuit':
         return [circuit([rows[i] for i in cfg['circuit'][L]])]
     pairs = [[rows[i], rows[i + 1]] for i in range(0, len(rows), 2)]
     seps = [plain(p) for p in pairs]
     # state simlines.separate: cards from 138 up whose branches stay separate Simutrans lines (owner, 3 Nov 2026: two game lines
     # are collapsed into one circuit only where it saves a bus and something more, e.g. only one additional loop)
-    if L in cfg.get('separate', []): return seps
+    if (L in cfg.get('separate', []) and s.get('_group_mode') != 'auto') or s.get('_group_mode') == 'separate': return seps
     # circuitize on synthetic trips at the typed slots with the median running time (its own rt takes the max of the trips)
     R = [dict(fr=A(r['o']), to=A(r['d']), every=r['every'], real=r['real']) for r in rows]
     syn = [dict(o=A(r['o']), d=A(r['d']), dep=t, arr=t + rt(r['o'], r['d'])) for r in rows for t in range(840, 1140) if t % r['every'] in r['real']]

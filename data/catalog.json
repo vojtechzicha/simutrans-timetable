@@ -253,7 +253,7 @@
     "Run python scripts/run.py --state <new> --fetch.",
     "Check printed counts (courses by source, designed lines, requested objects) and republish to https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF."
    ],
-   "notes": "Checks game lines vs PID stops. Need = max(cycle_need, buses on road). Designed buses from line history (roster coverage), then operator fleet; 213 logged surplus not needed, 797 counted. Pak hand-off via 06_pak_request.py; missing objects shown 'requested', no stand-ins. Branch cards (state simlines.auto) are split into Simutrans lines by simlines.py, each sized on its own; cards 100-108 frozen (owner, 30 Oct). Regional companions (state regional, owner 30 Oct): through (0-min trip chains), pooled (vehicle records), interleaved (shared stretch, real gaps); their non-DPP buses map to VZ-PID-bus. 195 + 158 (owner, 7 Nov): one circuit line on 195's card (regional.pooled + simlines.circuit), 19 buses, keep_buses keeps 100158's five. X9/X25/X130 on designed buses (no records since the 1 Nov block); IKEA on 9501 from the live map.",
+   "notes": "Checks game lines vs PID stops. Need = max(cycle_need, buses on road). Designed buses from line history (roster coverage), then operator fleet; 213 logged surplus not needed, 797 counted. Pak hand-off via 06_pak_request.py; missing objects shown 'requested', no stand-ins. Branch cards (state simlines.auto) are split into Simutrans lines by simlines.py, each sized on its own; cards 100-108 frozen (owner, 30 Oct). Regional companions (state regional, owner 30 Oct): through (0-min trip chains), pooled (vehicle records), interleaved (shared stretch, real gaps); their non-DPP buses map to VZ-PID-bus. 195 + 158 (owner, 7 Nov): one circuit line on 195's card (regional.pooled + simlines.circuit), 19 buses, keep_buses keeps 100158's five. X9/X25/X130 on designed buses (no records since the 1 Nov block); IKEA on 9501 from the live map. 161 + 312 on the 26 Oct timetables (owner, 7 Nov): 161 4 buses, 312 one circuit škola/Špejchar 3 buses (simlines.group_modes).",
    "rawSnapshots": [
     "game/2026-09-29",
     "gtfs/2026-09-29",
@@ -352,6 +352,11 @@
      "at": "2026-11-07T18:48:00.000Z",
      "version": 22,
      "note": "195 + 158 as one line (owner, 7 Nov: \"design these together\" / \"I meant as one line\"): one circuit Sídliště Letňany – Jesenická – Sídliště Letňany – Letňany in place of 100195 + 100158, 19 buses (was 15 + 5), 5162 parked; DPP's X lines X9, X25, X130 (designed buses) and the IKEA line (9501) as lines to build; cards 100–108 unchanged"
+    },
+    {
+     "at": "2026-11-07T21:05:00.000Z",
+     "version": 23,
+     "note": "161 and 312 on their 26 Oct timetables, as they run (owner, 7 Nov: \"model these two properly\"): 161 every 30 at :10/:20 both ways; 312 hourly to Tuchoměřice,škola (:00) and Špejchar (:30) as one circuit in game line 100312 (reroute from Lichoceves); same 7 buses"
     }
    ]
   },
