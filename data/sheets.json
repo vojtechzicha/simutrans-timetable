@@ -4060,17 +4060,17 @@
    "file": "Prague Bus Lines Check.html",
    "location": "root",
    "title": "Prague Bus Lines Check",
-   "bytes": 1533059,
-   "sha256": "1f6e3e582e8f26fd",
-   "sourceModified": "2026-11-07T21:07:16.466Z",
-   "contentChangedAt": "2026-11-07T21:08:09.821Z",
-   "syncedAt": "2026-11-07T21:08:09.821Z",
+   "bytes": 1533064,
+   "sha256": "d7b44b98cd8e18ef",
+   "sourceModified": "2026-11-08T09:35:50.734Z",
+   "contentChangedAt": "2026-11-08T09:36:43.347Z",
+   "syncedAt": "2026-11-08T09:37:38.103Z",
    "history": {
     "firstSeen": "2026-09-29T16:02:14.910Z",
     "firstPublished": "2026-09-29T16:02:14.910Z",
-    "lastPublished": "2026-11-07T21:05:00.000Z",
-    "publishCount": 23,
-    "latestVersion": 23,
+    "lastPublished": "2026-11-08T09:35:00.000Z",
+    "publishCount": 24,
+    "latestVersion": 24,
     "artifactUrls": [
      "https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF"
     ],
@@ -4237,6 +4237,11 @@
      "at": "2026-11-07T21:05:00.000Z",
      "version": 23,
      "note": "161 and 312 on their 26 Oct timetables, as they run (owner, 7 Nov: \"model these two properly\"): 161 every 30 at :10/:20 both ways; 312 hourly to Tuchoměřice,škola (:00) and Špejchar (:30) as one circuit in game line 100312 (reroute from Lichoceves); same 7 buses"
+    },
+    {
+     "at": "2026-11-08T09:35:00.000Z",
+     "version": 24,
+     "note": "177 as one Simutrans line (owner, 8 Nov: \"Could we make 177 one simutrans line? I like it more\"): one circuit Poliklinika Mazurská – Chodov – Volha – Chodov in game line 100177, as the save already runs it; 24 buses against 21 + 2 as two lines (6885 counted again); 177B \"a line to build\" withdrawn; cards 100–108 unchanged"
     }
    ]
   },

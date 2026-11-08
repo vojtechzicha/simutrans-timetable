@@ -74,6 +74,9 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   The owner can still ask for one line where real buses pool: 195 + 158 (owner, 7 Nov: "I see 158 uses 195 buses - design these
   together then", then "I meant as one line") is one circuit Sídliště Letňany → Jesenická → Sídliště Letňany → Letňany, 19 buses,
   the same as the two lines apart. When the owner says "together" for a pool, ask whether they mean one card or one line.
+  The owner can also ask for one line where the save already runs it so: 177 (owner, 8 Nov: "Could we make 177 one simutrans line?
+  I like it more") is one circuit Poliklinika Mazurská → Chodov → Volha → Chodov in game line 100177, 24 buses against 21 + 2, although
+  the real Volha shuttle has two buses of its own. Do it, and say the cost and the difference from real life on the card.
 
 ## Splits, branches, pools
 - Where course (kurz) numbers mark a branch, split by range (Brno 5S = kurzy 21–27; Prague 17 = 1–17 / 21–37).

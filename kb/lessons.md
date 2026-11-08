@@ -297,3 +297,8 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   against 312's trips. Then "yes, please, model these two properly (and potentially remove them from the regional sheet)" → both on
   the 26 Oct timetables (v23): 161 every 30 at :10/:20; 312 one circuit, hourly to škola and to Špejchar, 3 buses; 312 was not on any
   regional sheet. Before explaining why a line skips a stop, check PID's notices for a diversion.
+## 8 Nov — Prague 177 one line
+- **8 Nov:** "Could we make 177 one simutrans line? I like it more" → since 28 Oct the card had 177A (Mazurská, 21 buses) and 177B
+  (the Chodov – Volha shuttle, 2 buses, "a line to build") and called keeping the save's extension an owner choice. v24: one circuit
+  in 100177, which the save already runs that way, at 24 buses (one more). A clear request with a known cost needs no question back:
+  build it, and put the cost and the real-life difference (the shuttle's own two buses) on the card.
