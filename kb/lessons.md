@@ -231,6 +231,13 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
 - **3 Nov (via the fleet desk):** "If something exists in the real PID, it should be modeled... include more liveries where
   needed" → no bus is out of scope for its paint (9034 Arriva City red included); the PID regional builder had put buses with a
   known non-PID paint (DÚK green, DPP city scheme, wraps) on the grey-red object, now they are requested.
+- **3 Nov evening:** the owner asked about 402 after the branch re-check (Roztyly → Zruč 15:20, 17:35, 18:20, filed as buses
+  going home). The verdict was right: read at Zruč 3 out and 1 back off the slot, and on the live map the three buses left Zruč
+  that morning and end their day there. Designer and Fable reviewer both had the passing times at Zruč and two of the plates, but the reason
+  they wrote was about where trips start ("Zruč starts 4:24, 6:29 only"), the 381 mistake in words, after the rule had been changed. A changed rule did not change
+  how agents reason, so the check is now mechanical: `plates_check.py` looks up the next trip of each off-pattern trip's bus.
+  Over the 39 "going home / sleep" cards it found no wrong model, but four cards described the buses wrongly (340, 370 and 371:
+  the buses come back empty; 360: it is the :45 buses that go on as local lines, not the :15).
 
 ## 2 Nov — Prague 130, lines moved to the 2 Nov network
 - **2 Nov:** "Decide based on the timetable - is it fair to do the full run or not? As always - are there some stops without
@@ -297,6 +304,7 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   against 312's trips. Then "yes, please, model these two properly (and potentially remove them from the regional sheet)" → both on
   the 26 Oct timetables (v23): 161 every 30 at :10/:20; 312 one circuit, hourly to škola and to Špejchar, 3 buses; 312 was not on any
   regional sheet. Before explaining why a line skips a stop, check PID's notices for a diversion.
+
 ## 8 Nov — Prague 177 one line
 - **8 Nov:** "Could we make 177 one simutrans line? I like it more" → since 28 Oct the card had 177A (Mazurská, 21 buses) and 177B
   (the Chodov – Volha shuttle, 2 buses, "a line to build") and called keeping the save's extension an owner choice. v24: one circuit

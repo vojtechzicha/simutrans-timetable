@@ -31,6 +31,14 @@ Second read of the five reviewer-made changes (`second-read-2026-11-03.md`): all
 removed and its row put on owner_checks (one slot saves 3 buses) — Mělnicko republished. Praha-západ republished with 340's two
 spare buses on 340 Masarykova. `roster_published.json` = what is published now.
 
+## Tuesday 3 Nov, evening, before the build (owner asked about 402)
+402's Zruč trips are true buses going home (3 out, 1 back at Zruč; 7925, 7671, 7672 start and end their day there), but the
+reason had been written from where trips start. New `scripts/plates_check.py` (run by `run_oblast.py`, `audit-plates.txt`):
+the next trip of each off-pattern trip's bus on the live map. Over the 39 "going home / sleep" cards: no model change; card
+wording fixed on 402, 340, 370, 371, 360 (`plates-check-2026-11-03.md`, the six CHECK lines that stay have verdicts there).
+Fleet desk (pak c6f4b44): objects for every requested bus, ČSAD Liberec white = IDOL, Příbram red-black pinned, VZ-VDV-bus
+added to `pak.packages` (config `pak.by_vehicle`, 40 entries). All in tonight's build; the change list will show the swaps.
+
 ## Tuesday 3 Nov
 1. The poller (`01_live_poll.py 2026-11-03T20:15`, started 20:03 Mon, logs `data/raw/live/poll2.log`) and `keep_awake.py`
    (until 20:20) run. It now also records trolleybuses (route type 11) and Prague city line 232 for the Prague session.

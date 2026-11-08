@@ -24,6 +24,12 @@ Version 4 (25 Oct 2026): the rules below from the hand check of the Hlučínsko 
   extras (14:30–17:30) looked like garage buses going home because one trip starts at Zásmuky towards Prague, but the
   Kutná Hora → Háje 13:40 and 14:40 pass Zásmuky at 14:21 and 15:21: 4 out and 3 back, a branch with its own line
   (owner, 3 Nov 2026: "That is not off the pattern … I clearly see 381 runs Zásmuky/Čáslav switching").
+  **Write the reason from those counts and the plates, never from where trips start.** "Going home" needs both: read at the
+  turning point, the trips back that no slot passes are fewer than 3, and on the live map the buses of the extra trips end
+  their day there or run on to another line (PID: `scripts/plates_check.py`, `audit-plates.txt`). 402 (3 Nov) is the true
+  case: at Zruč 3 out, 1 back off the slot, and 7925, 7671, 7672 left Zruč that morning and end their day there. Buses
+  that come back empty for their next run (340's :23 / :53, 371's Astrapark extras) are peak extras, not buses going home:
+  off the pattern all the same (no empty returns), but the card says which.
 - **No empty-return lines just for frequency** (owner: "Unless those empty runs add something really needed and specific,
   don't add them just for frequency"). In the game a line repeats all day, so an empty return shuttles back every period.
   Add one only for something specific, such as a stop that has no other service (387, 543B, 553 Orlová kept their reasons).

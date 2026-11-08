@@ -69,7 +69,7 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   originally it was two lines and you suggest collapsing, do it when there is bus saved and something more (closer to reality, only
   one additional loop, limited spaces at terminal, etc.)"). A 4-entry circuit (each bus alternates the two branches) counts as one
   additional loop: 139, 197 and 226 keep theirs, and the card says what the merge gains. 138 (1 bus saved, 8 entries) and 161 + 312
-  (no bus saved; pooled in real life, the owner chose to split) went back to separate lines (state `simlines.separate`). A through
+  (no bus saved; pooled in real life, the owner chose on 5 Nov to split) went back to separate lines (state `simlines.separate`). A through
   line (186 → 396 at Vinoř, every trip, 0 min) is not a circuit and stays. Lines below 138 keep the 20 Oct rule.
   The owner can still ask for one line where real buses pool: 195 + 158 (owner, 7 Nov: "I see 158 uses 195 buses - design these
   together then", then "I meant as one line") is one circuit Sídliště Letňany → Jesenická → Sídliště Letňany → Letňany, 19 buses,
@@ -77,6 +77,11 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   The owner can also ask for one line where the save already runs it so: 177 (owner, 8 Nov: "Could we make 177 one simutrans line?
   I like it more") is one circuit Poliklinika Mazurská → Chodov → Volha → Chodov in game line 100177, 24 buses against 21 + 2, although
   the real Volha shuttle has two buses of its own. Do it, and say the cost and the difference from real life on the card.
+- **Prague: DPP's X lines are city buses** (owner, 5 Nov: "All X lines are consider bprague buses (ignore existing lines)"). Every
+  bus route named X… with a DPP licence 101001–101999 that runs on the current export's day gets a card after the others, as a line to
+  build: no game check, buses from that week's deployment records, never moving a bus another card was given. Regional X lines and the
+  ČD rail replacements (XS, XR) are not city lines. They are temporary; re-check them with every new export.
+  The IKEA shuttle (Černý Most – IKEA – Černý Most, ARRIVA STŘEDNÍ ČECHY) is a city line too (owner, 5 Nov: "Do include the IKEA line").
 
 ## Splits, branches, pools
 - Where course (kurz) numbers mark a branch, split by range (Brno 5S = kurzy 21–27; Prague 17 = 1–17 / 21–37).

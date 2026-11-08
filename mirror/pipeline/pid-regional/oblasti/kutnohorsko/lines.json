@@ -106,7 +106,7 @@
     "Zbraslavice, náměstí",
     "Čáslav, autobusové stanoviště"
    ],
-   "note": "Praha, Roztyly – Trhový Štěpánov – Zruč nad Sázavou – Zbraslavice – Červené Janovice – Čáslav. Every 2 h all day: Roztyly :20 of even hours (8:20–14:20), Čáslav :36 of odd hours (9:36–17:36). Modelled at the line's own pattern, 14:00–16:00 (set by hand): the 16:00 window holds only the 16:35 from Roztyly, 15 min off its :20. Off the pattern: Roztyly 16:35, 20:25; Čáslav 14:36; the Roztyly – Zruč trips 15:20, 17:35, 18:20 (buses going home to Zruč, all stops on the line).",
+   "note": "Praha, Roztyly – Trhový Štěpánov – Zruč nad Sázavou – Zbraslavice – Červené Janovice – Čáslav. Every 2 h all day: Roztyly :20 of even hours (8:20–14:20), Čáslav :36 of odd hours (9:36–17:36). Modelled at the line's own pattern, 14:00–16:00 (set by hand): the 16:00 window holds only the 16:35 from Roztyly, 15 min off its :20. Off the pattern: Roztyly 16:35, 20:25; Čáslav 14:36; the Roztyly – Zruč trips 15:20, 17:35, 18:20 (all stops on the line), which are buses going home: read at Zruč nad Sázavou 13:00–19:00, the trips no slot passes are 15:20, 16:35 (15 min after the slot) and 17:35 out, and back only 15:19 (the 14:36 from Čáslav; every trip towards Prague comes from Čáslav and the slot passes 14:19, 16:19, 18:19): 3 out against 1 back, not a branch (the 18:20 runs on the slot); on the 3 Nov live map 7925, 7671 and 7672 left Zruč at 4:24, 4:36 and 6:29 and ended their day there on the 15:20, 17:35 and 18:20 (on 2 Nov too).",
    "anchor": "14:30",
    "sim": [
     {

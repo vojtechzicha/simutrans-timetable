@@ -116,7 +116,7 @@ def pak_of(ty, paint, town, op='', num=None):
     if not tok: return dict(ok=False, core='?', liv='', obj=None, want=f'{ty} ({paint or "paint unknown"})')
     # a town pack holds only the town's own paint (fleet desk, 2 Nov 2026); a town-line bus in PID paint uses the PID object
     if town and 'pid' not in (paint or '').lower():
-        pk = SH['pak']['towns'].get(town, town); ns = [n for n in INST if n.startswith(f"VZ-MHD{pk}-{tok}-")]
+        pk = SH['pak']['towns'].get(town, town); ns = sorted(n for n in INST if n.startswith(f"VZ-MHD{pk}-{tok}-"))  # sorted: a town pack may hold two paints (Příbram, 3 Nov); pak.by_vehicle pins each bus
         if ns:
             liv = ns[0][len(f"VZ-MHD{pk}-{tok}-"):].split('-')[0]
             return found(objs(f"VZ-MHD{pk}-{tok}-{liv}-"), tok, liv)

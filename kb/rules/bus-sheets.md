@@ -65,6 +65,12 @@ No every 1440 / 720 — max 480 ("we can bend the reality a bit"). Shift-change 
   (381 Zásmuky every 60). The outstation rule applies only to what is left after this reading; ≥ 3 each way at a repeating
   minute is a branch (the 20/30 Oct rule). `pipeline/audit/passing_check.py` (run by PID `run_oblast.py`) lists, per line,
   the afternoon trips no slot passes, read at every stop; every EACH WAY flag gets a model change or a reason on the card.
+- **"Buses going home" needs the counts and the plates** (3 Nov 2026, the owner asking about 402): write the reason as the
+  counts at the turning point (out N, back M that no slot passes) plus what the buses did on the live map (they end their
+  day there or run on to another line), never as where trips start. 402's Roztyly → Zruč trips are the true case (at Zruč 3
+  out, 1 back; 7925, 7671 and 7672 left Zruč that morning and end their day there). Buses that come back empty for their
+  next run are peak extras (340 :23 / :53, 371, 370): still off the pattern, but the card says so. PID: `scripts/plates_check.py`
+  (run by `run_oblast.py`, `audit-plates.txt`); every CHECK line gets a verdict.
 - **Forks past the reading point:** a leg read at a midpoint (`core_to` short of the terminal, or a `knot`) counts trips
   wherever they end, so Step 4 can pass on another branch's trips. 292 was read at Píšť, Mýto and its two Ostrava slots were
   Strahovice trips on a line that ended at Chuchelná (owner, 25 Oct 2026: "half of the services going to Chuchelná, half

@@ -377,7 +377,7 @@
     "Chvatěruby",
     "Kralupy nad Vltavou, železniční stanice"
    ],
-   "note": "Praha, Kobylisy – Zdiby – Klecany – Odolena Voda – Postřižín – Veltrusy or Chvatěruby – Kralupy nad Vltavou. Modelled at its anchor 14:40 (window 14:10–16:10). To Kralupy :20 and :58, all via Veltrusy; from Kralupy :16 and :56, all via Chvatěruby: so 370 is one circuit, out via Veltrusy and back via Chvatěruby. The Odolena Voda and Postřižín, u kapličky trips are 370 Postřižín, an outstation row (8 out and 4 back in the window; the buses sleep at Odolena Voda). Off (Kralupy): out 12:36, 13:00, 13:35, 13:43, 16:15, 18:25, 19:15, 19:45; back 12:31, 13:25, 13:49 (the express via Klecany, D8 Park), 15:25, 16:25, 17:25 (the hourly trips back via Veltrusy).",
+   "note": "Praha, Kobylisy – Zdiby – Klecany – Odolena Voda – Postřižín – Veltrusy or Chvatěruby – Kralupy nad Vltavou. Modelled at its anchor 14:40 (window 14:10–16:10). To Kralupy :20 and :58, all via Veltrusy; from Kralupy :16 and :56, all via Chvatěruby: so 370 is one circuit, out via Veltrusy and back via Chvatěruby. The Odolena Voda and Postřižín, u kapličky trips are 370 Postřižín, an outstation row (8 out and 4 back in the window), timed at the inbound rate. The extra buses mostly come back to Kobylisy empty and go out again (on 2 and 3 Nov 8198 after the 14:45, 1241 after the 16:45), not buses going home; no empty returns just for frequency. Off (Kralupy): out 12:36, 13:00, 13:35, 13:43, 16:15, 18:25, 19:15, 19:45; back 12:31, 13:25, 13:49 (the express via Klecany, D8 Park), 15:25, 16:25, 17:25 (the hourly trips back via Veltrusy).",
    "sim": [
     {
      "name": "370",

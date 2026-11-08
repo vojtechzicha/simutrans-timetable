@@ -76,3 +76,9 @@ No stop of any line has uncovered trips repeating three times each way at one mi
 
 Buses: 70 → 70 (67 of v1 + 3 for 381 Zásmuky). Audits after the rerun: Step 4 86 of 86 ok; branch 4 legs ok; path 2 (481, 746,
 as in v1); passing 3 EACH WAY (805, 781, 742) and 3 ONE WAY (533, 402, 782), each with the verdict above.
+
+## Addendum, 3 Nov evening (coordinator, after the owner asked about 402)
+The 402 verdict (D) stands. Both files have the passing times at Zruč, but the reason sentence is about where trips start
+("Zruč starts 4:24, 6:29 only") rather than the count off the slot. The reason by the passing reading and the plates: at Zruč the every-120 slot passes 14:19, 16:19, 18:19
+towards Prague, leaving only 15:19, against 15:20, 16:35, 17:35 out (3 out, 1 back), and on the 3 Nov live map 7925, 7671, 7672 left Zruč at 4:24, 4:36,
+6:29 and ended their day there on the 15:20, 17:35, 18:20. The card now says so. See `../../plates-check-2026-11-03.md`.

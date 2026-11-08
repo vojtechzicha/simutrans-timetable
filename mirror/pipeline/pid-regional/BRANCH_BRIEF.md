@@ -55,6 +55,10 @@ within 3 min in the same direction (a trip that meets a slot somewhere on a leg 
   names them.
 - **D — true outstation:** read at the stop, the other direction really has far fewer trips (count trips that start further out
   and pass it). Keep; the card's reason must be right.
+  - *Added 3 Nov evening, after 402:* write a D as counts at the stop (out N, back M off the slot) **and the plates**
+    (`audit-plates.txt`: the buses end their day there or run on). A sentence about where trips start ("Zruč starts 4:24,
+    6:29 only") is not a reason, even when the verdict happens to be right. Buses that come back empty are peak extras, not
+    buses going home: the card says so.
 - **E — other** (carried by another number, a scan artefact, rail replacement…): say what.
 
 Then the ONE WAY flags: check each card's claim the same way, and look hardest at those with 2 each way. A third trip 4–6 min off

@@ -8,7 +8,8 @@
    coverage check (Step 9) -> data/derived/schedule.json
 5. audits (written to oblasti/<id>/data/derived/audit-*.txt and printed in short): audit/step4_regional.py (Step 4: window
    slots vs real departures), audit/branch_check.py (legs read at a midpoint), audit/path_check.py (each slot's trip
-   against the modelled stops), audit/passing_check.py (afternoon trips off every slot, read at the stops they pass). Every flag must be fixed in lines.json or explained on the card / in the method check.
+   against the modelled stops), audit/passing_check.py (afternoon trips off every slot, read at the stops they pass), plates_check.py (what the
+   buses of those trips did next on the live map; CHECK where a "going home" card has buses that came back). Every flag must be fixed in lines.json or explained on the card / in the method check.
 """
 import os, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); HOME = os.path.dirname(HERE); PIPE = os.path.dirname(HOME)
@@ -67,6 +68,9 @@ if '--no-audit' not in sys.argv:
     # trips off every slot, read at the stops they pass (3 Nov 2026, after 381 Zásmuky): each EACH WAY flag is a branch to
     # model or a reason on the card
     run([os.path.join(PIPE, 'audit', 'passing_check.py'), PIPE], PIPE, out='audit-passing.txt', env={'AUDIT_SHEETS': rel})
+    # the buses of those trips on the live map (3 Nov 2026, after 402): a "going home" card needs buses that end their day
+    # there or run on, not buses that come back on the line (it writes audit-plates.txt itself)
+    run([os.path.join(HERE, 'plates_check.py'), oid], HERE)
     for f in ('audit-step4.txt', 'audit-branch.txt', 'audit-path.txt', 'audit-passing.txt'):
         t = open(os.path.join(der, f), encoding='utf-8').read()
         print(f'--- {f}:', '\n'.join(l for l in t.splitlines() if l.strip())[:2500])
