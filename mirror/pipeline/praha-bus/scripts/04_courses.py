@@ -260,17 +260,24 @@ def main():
         n0 = len(picks)
         if n0 < short:            # no (or too little) line history: free active cars of the operator's usual city-line types
             op = next((o for o in (reg_op(x) for x in p['operators']) if o), None)
-            types = [ty for ty, _ in tfreq.most_common()]           # the line's own types first, then the operator's
+            # state observed_buses[L].prefer_types (BB1 + BB2, 18 Nov 2026): the types the live map showed on the line come first
+            types = list(s.get('observed_buses', {}).get(L, {}).get('prefer_types', []))
+            types += [ty for ty, _ in tfreq.most_common() if ty not in types]   # the line's own types first, then the operator's
             types += [ty for ty, _ in by_op.get(op, collections.Counter()).most_common() if ty not in types]
             if L in regional:      # a companion with no record at all (318): the operator's most common active type, numbered cars only
                 types += [ty for ty, _ in collections.Counter(v['maker_type'] for v in V.values() if v['operator'] == op and v['state'] == 'zar').most_common() if ty not in types]
             garages = collections.Counter(x['garage'] for c in got.values() for x in c['chain'][-1]['cars'] if x['garage'])
             garages.update(V[e['id']]['garage'] for e in R.values())
             rank = lambda cid: (types.index(V[cid]['maker_type']) if V[cid]['maker_type'] in types else len(types), -garages.get(V[cid]['garage'], 0), V[cid]['num'])
-            pool = sorted((cid for cid, v in V.items() if v['operator'] == op and v['state'] == 'zar' and cid not in taken
+            # a line with prefer_types (BB1 + BB2, 18 Nov 2026; a November line): a car of a preferred type that was out on the 25 Sep
+            # vehicle date may still be picked, as that day says nothing about November, but never a car on another card
+            pref = set(s.get('observed_buses', {}).get(L, {}).get('prefer_types', []))
+            incard = {x['id'] for c in out for ch in c['chain'] for x in ch['cars'] if x['id']} if pref else set()
+            free_ = lambda cid: cid not in taken or (V[cid]['maker_type'] in pref and cid not in incard and cid in busy)
+            pool = sorted((cid for cid, v in V.items() if v['operator'] == op and v['state'] == 'zar' and free_(cid)
                            and BT['length_m'].get(v['maker_type']) and (v['num'] or L not in regional)), key=rank)   # any city-sized type last, if its usual types are all out
             for i, cid in enumerate(pool[:short - n0]):
-                taken.add(cid); out.append(designed_car(L, n0 + i, dict(num=V[cid]['num'], id=cid), 'fleet', []))
+                taken.add(cid); out.append(designed_car(L, n0 + i, dict(num=V[cid]['num'], id=cid), 'fleet_seen_type' if cid in busy and pref else 'fleet', []))
         for e in free:
             if e not in picks and e['id'] not in taken: out.append(spare_car(L, e, 'not needed'))
     # logged surplus (user, 29 Sep, confirmed via the Brno session): where more courses are logged than the line needs, keep exactly

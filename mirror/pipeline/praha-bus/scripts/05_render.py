@@ -51,10 +51,18 @@ def main():
     XLN = sorted([L for L in LATER.get('lines', []) if xline(s, L)], key=lkey); LATER = dict(LATER, lines=[L for L in LATER.get('lines', []) if not xline(s, L)]) if LATER else LATER
     XN = [L for L in XLN if L not in s['x_lines'].get('also', [])]; XA = [L for L in XLN if L in s['x_lines'].get('also', [])]
     XL_ = s.get('x_lines', {})
+    # the extra city lines the save already has (state x_lines.game_lines; owner, 18 Nov 2026: "yes, add AE and similar prague bus
+    # lines"): checked against the save; BB2 is on BB1's card (one circuit), so only the card lines are named
+    XGL = list(XL_.get('game_lines', {}).items()); XGset = {L for _, L in XGL}
+    XG = [L for L in XLN if L in XGset and L in P]; XA = [L for L in XA if L not in XGset]
+    XGc = [L for L in XLN if L in XGset]
     x_txt = (f' DPP’s replacement lines {", ".join(XN)} (owner, 5 November: "All X lines are consider bprague buses")'
              + (f' and the {" and ".join(XA)} line' if XA else '') + ' follow at the end, '
              f'from the timetable of {day(G["later"]["service_date"])} ' + (XL_['buses_note'] if XL_.get('buses_note') else f'with the buses logged on {" and ".join(dm_(d) for d in XL_.get("days", []))}') + '; they are '
              f'lines to build, not checked against the save.') if XLN else ''
+    if XG: x_txt += (f' After them come {" and ".join(", ".join(XGc).rsplit(", ", 1))} (owner, 18 November: "add AE and similar prague bus lines"), '
+                     f'the other daytime city lines of PID’s 103xxx block, on the same timetable with the buses the PID live map showed on them; '
+                     f'they are checked against the save’s lines {" and ".join(", ".join(g for g, _ in XGL).rsplit(", ", 1))}.')
     # state gtfs_lines_from.same: lines read from the later export only to go with a line pooled into them (195 with 158, 7 Nov 2026)
     SAME = [L for L in LATER.get('lines', []) if L in (s.get('gtfs_lines_from') or {}).get('same', [])] if LATER else []
     if SAME: LATER = dict(LATER, lines=[L for L in LATER['lines'] if L not in SAME])
@@ -66,7 +74,9 @@ def main():
                     f'{esc(LATER["service_date"])} (the lines that changed; owner, 2 Nov 2026)') if LATER.get('lines') else ''
     if XLN: method_later += (f'; DPP’s X lines {esc(", ".join(XN))} from the same export (licence '
                              f'{XL_["licence_range"][0]}–{XL_["licence_range"][1]}, route type 3; owner, 5 Nov 2026)'
-                             + (f' and line {esc(", ".join(XA))} (owner, 5 Nov 2026: "Do include the IKEA line")' if XA else ''))
+                             + (f' and line {esc(", ".join(XA))} (owner, 5 Nov 2026: "Do include the IKEA line")' if XA else '')
+                             + (f'; lines {esc(", ".join(XGc))} from the same export (licence ' + esc(" and ".join(", ".join(XL_.get('licences', {}).get(L, '') for L in XGc).rsplit(", ", 1)))
+                                + '; owner, 18 Nov 2026)' if XG else ''))
     CMP = load(os.path.join(DER, s['name'], 'compare.json'))
     CO = load(os.path.join(DER, s['name'], 'courses.json'))
     OBJ = load(os.path.join(ASSETS, 'pak_objects.json'))
@@ -163,7 +173,7 @@ def main():
     def game_block(L):
         rs = game_by.get(L, [])
         p = P[L]
-        if xline(s, L):   # owner, 5 Nov 2026: "All X lines are consider bprague buses (ignore existing lines)" / "Do include the IKEA line"
+        if xline(s, L) and not rs:   # owner, 5 Nov 2026: "All X lines are consider bprague buses (ignore existing lines)" / "Do include the IKEA line"
             kind = 'DPP replacement line' if L[:1] == 'X' else 'Line'
             return ('<div class="game"><h4>In the game</h4><p><span class="chip st-warn">a line to build</span> ' + kind + ' from the '
                     '4 November timetable; the save is not checked for it.</p></div>') if p.get('peak') else ''
@@ -319,7 +329,7 @@ def main():
         p = P[L]; out = []
         if p.get('companions'):
             ls = [c['line'] for c in p['companions']]
-            kind = 'city' if all(c.isdigit() and s['licence_range'][0] - 100000 <= int(c) <= s['licence_range'][1] - 100000 for c in ls) else 'regional'   # 195 + 158 (7 Nov 2026): a city line pooled into another
+            kind = 'city' if all(xline(s, c) or (c.isdigit() and s['licence_range'][0] - 100000 <= int(c) <= s['licence_range'][1] - 100000) for c in ls) else 'regional'   # BB2 into BB1 (18 Nov 2026) too   # 195 + 158 (7 Nov 2026): a city line pooled into another
             out.append(f'<p class="callout info"><b>With {kind} line{"s" if len(ls) > 1 else ""} {esc(" and ".join(ls))}.</b> {esc(RG.get("notes", {}).get(L, ""))}</p>')
         def stretches(rr):      # one entry per shared stretch and direction: its stops and the two lines' merged spacing at its first stop
             u = collections.OrderedDict()
@@ -376,6 +386,9 @@ def main():
                 notes.append(f'{nlog} courses are logged against {p.get("need")} needed at 16:00, and the line history has no free car left'
                              f'{"" if hist_any.get(L) else " (no record of the line since January 2025)"}. A free active bus of the line\'s type from the operator, '
                              f'not out anywhere in PID on {int(vd[8:])} Sep.')
+            if des and c.get('why') == 'fleet_seen_type':   # BB1 + BB2 (18 Nov 2026): a November line, so 25 Sep does not bar a car
+                notes.append(f'{nlog} course{"s are" if nlog != 1 else " is"} seen against {p.get("need")} needed at 16:00. A free active bus of a type seen on the line, '
+                             f'on no other card; it was out on {int(vd[8:])} Sep, which says nothing about the line’s November day.')
             if spare == 'surplus':
                 notes.append(f'Logged on {dm(c["source"])}; not needed at 16:00 (the line needs {p.get("need")}). Not counted.')
             if c.get('observed'): notes.append(c['observed'])
@@ -555,11 +568,13 @@ def main():
     n_diff = sum(1 for r in CMP['lines'] if r['status'] == 'stops differ')
     n_notpid = sum(1 for r in CMP['lines'] if r['status'].startswith('not in'))
     n_absent_peak = sum(1 for a in absent if a.get('peak'))
-    inside_ls = [R for how in ('through', 'pooled') for Rs in RG.get(how, {}).values() for R in Rs]
+    inside_ls = [R for how in ('through', 'pooled') for Rs in RG.get(how, {}).values() for R in Rs if not xline(s, R)]   # BB2 (18 Nov 2026) is no regional line
     reg_lede = (f' ({", ".join(sorted(inside_ls, key=int))} are part of their city line\'s card; {", ".join(sorted(inter, key=int))} have their own card after it)'
                 if RG else '')
     rsrc = CMP.get('regional_source')
-    n_reg_game = sum(1 for r in CMP['lines'] if r.get('regional'))
+    n_reg_game = sum(1 for r in CMP['lines'] if r.get('regional') and not xline(s, r['regional']))
+    n_x_game = sum(1 for r in CMP['lines'] if xline(s, r.get('regional') or r['pid']))   # AE, BB1, BB2 (18 Nov 2026)
+    x_game = (f' The {n_x_game} game lines of {" and ".join(", ".join(XGc).rsplit(", ", 1))} come from the same second export.' if n_x_game else '')
     reg_game = (f' The {n_reg_game} game lines of the regional companions come from a second export of {esc(os.path.basename(rsrc["save_file"]))} '
                 f'(saved {esc(rsrc["save_file_mtime"][:16].replace("T", " "))}).' if rsrc else '')
     body = f'''<title>{esc(s["title"])}</title>
@@ -580,7 +595,7 @@ def main():
 {ctrl}
 
 <h2 id="check">Game check</h2>
-<p class="lede" style="margin-bottom:6px">Save {esc(os.path.basename(gsrc["save_file"]))} (saved {esc(gsrc["save_file_mtime"][:16].replace("T", " "))}), exported with {esc(gsrc["exported_with"].split(",")[0])}. {n_lines_game - n_reg_game} game lines are numbered 100100–100299.{reg_game} Of all {n_lines_game}, {n_zero} ha{"s" if n_zero == 1 else "ve"} no vehicles, {n_diff} serve stops that differ from PID, and {n_notpid} {"is" if n_notpid == 1 else "are"} no longer in the PID timetable. {len(absent)} PID bus lines have no game line, {n_absent_peak} of them with afternoon-peak trips. Stops: the game counts entries on its round trip and distinct halts; PID counts the stops of each direction's main pattern.</p>
+<p class="lede" style="margin-bottom:6px">Save {esc(os.path.basename(gsrc["save_file"]))} (saved {esc(gsrc["save_file_mtime"][:16].replace("T", " "))}), exported with {esc(gsrc["exported_with"].split(",")[0])}. {n_lines_game - n_reg_game - n_x_game} game lines are numbered 100100–100299.{reg_game}{x_game} Of all {n_lines_game}, {n_zero} ha{"s" if n_zero == 1 else "ve"} no vehicles, {n_diff} serve stops that differ from PID, and {n_notpid} {"is" if n_notpid == 1 else "are"} no longer in the PID timetable. {len(absent)} PID bus lines have no game line, {n_absent_peak} of them with afternoon-peak trips. Stops: the game counts entries on its round trip and distinct halts; PID counts the stops of each direction's main pattern.</p>
 <div class="filter"><label><input type="checkbox" id="onlyfix" checked> Only lines to fix ({nfix})</label><span class="muted small">To fix: no vehicles, stops that differ from PID, a line no longer in PID, or a PID line with peak trips that is not built. Stop names the game abbreviates are listed but do not count as a difference.</span></div>
 <div class="tw sumt"><table class="gc onlyfix" id="gct"><thead><tr><th>Line</th><th>Game line</th><th class="num">Buses</th><th class="num">Game stops / halts</th><th class="num">PID stops</th><th>Status</th><th>Difference</th></tr></thead><tbody>{"".join(gc_rows)}</tbody></table></div>
 

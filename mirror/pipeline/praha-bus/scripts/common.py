@@ -247,6 +247,7 @@ def xline(s, L):
     XL = s.get('x_lines') or {}
     return bool(XL) and ((L.startswith(XL.get('prefix', 'X')) and L[len(XL.get('prefix', 'X')):].isdigit()) or L in XL.get('also', []))
 def lkey(L):
-    """Line sort key: numbered lines by number, then X lines by number, then named lines (IKEA)."""
+    """Line sort key: numbered lines by number, then X lines by number, then named lines (AE, BB1, IKEA) by name."""
     d = ''.join(ch for ch in L if ch.isdigit())
+    if not L.isdigit() and not xline({'x_lines': {'prefix': 'X'}}, L): return (2, 0, L)   # named lines (AE, BB1, IKEA) by name
     return (0 if L.isdigit() else 1 if d else 2, int(d) if d else 0, L)

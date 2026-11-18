@@ -204,13 +204,10 @@
     "file": "PID Rakovnicko.html"
    }
   },
-  "other_city": {
-   "AE": "Airport Express (DPP): not on the Prague bus sheet, which holds lines 100-299",
-   "BB1": "shopping shuttle Budějovická - Delta: not modelled",
-   "BB2": "shopping shuttle Budějovická - Filadelfie: not modelled",
-   "IKEA": "shopping shuttle Černý Most - IKEA: not modelled"
-  },
-  "url": "https://claude.ai/artifact/KSHcamNtjkpPVahiQvbfVU"
+  "other_city": {},
+  "url": "https://claude.ai/artifact/KSHcamNtjkpPVahiQvbfVU",
+  "prague_bus_lines": "praha-bus/data/derived/2026-09-29/gtfs_lines.json",
+  "_prague_bus_lines_why": "The Prague bus sheet's lines outside 100-299 (X lines and IKEA from 5 Nov 2026; AE, BB1 and BB2 from 18 Nov 2026) are read from its own derived data, so the index follows the sheet."
  },
  "pak": {
   "repo": "C:/Users/vojte/Developer/simutrans-custom-czech-pak128",

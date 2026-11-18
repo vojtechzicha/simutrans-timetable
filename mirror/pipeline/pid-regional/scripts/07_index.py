@@ -2,7 +2,7 @@
 
 The owner, 1 Nov 2026: "all PID lines should be in". Every route of the PID GTFS (data/derived/lines.json, all modes) is
 listed with where it is modelled: an oblast sheet of this pipeline (modelled, or listed with the reason), the Prague bus
-sheet (city lines 100-299 and its regional companions), the Prague tram sheet (trams, metro, ferries, funicular), the
+sheet (city lines 100-299, its regional companions, and its extra city lines: X lines, IKEA, AE, BB1, BB2), the Prague tram sheet (trams, metro, ferries, funicular), the
 Prague trolleybus sheet, a rail sheet (a line is taken as on a rail sheet when the sheet's page names it), or no sheet,
 with the reason. Sheet links are the artifact URLs in config.index.sheets.
 """
@@ -19,6 +19,15 @@ for oid in OB:
     if os.path.exists(os.path.join(d, 'data', 'derived', 'schedule.json')):
         sched[oid] = json.load(open(os.path.join(d, 'data', 'derived', 'schedule.json'), encoding='utf-8'))
     if os.path.exists(os.path.join(d, 'config.json')): conf[oid] = json.load(open(os.path.join(d, 'config.json'), encoding='utf-8'))
+# the Prague bus sheet's lines beyond 100-299 (owner, 5 Nov 2026: X lines and IKEA; 18 Nov 2026: AE, BB1, BB2), read from its own
+# derived data (config.index.prague_bus_lines): a card line, or a line on another line's card (BB2 on BB1's)
+PB = {}
+if IX.get('prague_bus_lines'):
+    _pb = json.load(open(os.path.join(PIPE, IX['prague_bus_lines']), encoding='utf-8'))['lines']
+    for k, v in _pb.items():
+        if not (k.isdigit() and 100 <= int(k) < 300): PB[k] = 'Prague city line on the bus sheet'
+        for c in v.get('companions', []):
+            if not (c['line'].isdigit()): PB[c['line']] = f"on line {k}'s card (one Simutrans line with it)"
 # rail sheets: the PID rail lines their page text names
 rail_on = collections.defaultdict(list)
 for name, sh in IX['sheets'].items():
@@ -43,6 +52,7 @@ def where(v):
             if k in c.get('unmodelled', {}): return 'listed', f"PID {OB[oid]['name']}", c['unmodelled'][k]
             return 'pending', f"PID {OB[oid]['name']}", 'not designed yet'
         if v['why'] == 'a Prague city line':
+            if sn in PB: return 'modelled', 'Prague Bus Lines Check', PB[sn]
             if v['night']: return 'out', None, 'Prague night line: the sheets model the weekday afternoon (no night lines)'
             if sn.isdigit() and 100 <= int(sn) < 300: return 'modelled', 'Prague Bus Lines Check', 'Prague city bus line'
             if v['substitute'] or sn.startswith('X'): return 'out', None, 'replacement bus for engineering works: short works are modelled as the regular network'

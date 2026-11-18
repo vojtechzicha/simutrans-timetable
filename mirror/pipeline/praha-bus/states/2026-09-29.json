@@ -1535,6 +1535,59 @@
      "why": "158 back from Letňany at :06, :13, :21, :28 … every 7–8 min (14:43–18:28)."
     }
    ]
+  },
+  "BB1": {
+   "_why": "Owner, 18 Nov 2026: BB1 + BB2 as one circuit. Both shuttles run every 7 min 15:46–18:00 (every 10–15 before); 7 does not divide 1440, so every 48 with 7 slots (6 gaps of 7, one of 6) is the closest, within 1 min of every 7-min departure from about 15:45 (up to 3 min off the 10-min trips before). The three slot sets are chosen together so every bus makes its next slot (2 min at Delta, 2 and 5 at Budějovická): 3 buses on a 21 min round, as in the timetable; the separate fits of each row needed 4. Simpler option (owner check): every 15 with 2 slots (8 an hour instead of 8.6), up to 4 min off.",
+   "rows": [
+    {
+     "o": "Budějovická",
+     "d": "Delta",
+     "every": 48,
+     "real": [
+      1,
+      8,
+      15,
+      22,
+      28,
+      35,
+      42
+     ],
+     "approx": true,
+     "why": "BB1 to Delta every 7 min from 15:46 (:46, :53, :00, :07 …; every 10 before); every 48 with 7 slots is within 1 min 15:46–17:59, up to 3 min off the earlier trips."
+    },
+    {
+     "o": "Delta",
+     "d": "Budějovická",
+     "every": 48,
+     "real": [
+      6,
+      13,
+      20,
+      27,
+      33,
+      40,
+      47
+     ],
+     "approx": true,
+     "why": "BB1 back from Delta every 7 min from 15:37 (:37, :44, :51, :58 …; every 10 before); every 48 with 7 slots is within 1 min 15:44–17:57, up to 3 min off the earlier trips."
+    },
+    {
+     "o": "Budějovická",
+     "d": "Budějovická",
+     "every": 48,
+     "real": [
+      4,
+      11,
+      18,
+      25,
+      32,
+      38,
+      45
+     ],
+     "approx": true,
+     "why": "BB2 round Filadelfie every 7 min from 15:42 (:42, :49, :56, :03 …; every 10 before); every 48 with 7 slots is within 1 min 15:49–17:55, up to 3 min off the earlier trips."
+    }
+   ]
   }
  },
  "simlines": {
@@ -1551,6 +1604,11 @@
     2,
     3,
     1
+   ],
+   "BB1": [
+    0,
+    1,
+    2
    ]
   },
   "auto": [
@@ -1612,6 +1670,9 @@
    },
    "195": {
     "0": "one line in place of 100195 + 100158 (100158 is then not needed)"
+   },
+   "BB1": {
+    "0": "one line in place of 100921 + 100922 (100922 is then not needed)"
    }
   },
   "groups": {
@@ -1674,7 +1735,8 @@
     "auto"
    ],
    "_why": "161 + 312 (owner, 7 Nov 2026): 161 its own line (owner, 5 Nov: split); 312's two hourly variants (škola :00, Špejchar :30) sized by the auto rule within game line 100312."
-  }
+  },
+  "_circuit_BB1_why": "Owner, 18 Nov 2026 (asked: one line or two): one circuit Budějovická → Delta → Budějovická → Filadelfie → Budějovická in place of 100921 + 100922, as the real bus switches between the shuttles."
  },
  "regional": {
   "_why": "Owner, 30 Oct 2026: \"Now could you do the companion PID lines ...\" / \"Definitley include those that share buses so we have a full list. Also those that are \"proložené\" like 113/333.\" / \"I am 100% sure 301/352 are continuations of 174\" / \"Pool if they pool in real live\" / \"Include if they are interleaved in the real timetiable\". through: every trip of the regional line starts or ends at the minute a city trip ends or starts at the same stop (GTFS, 30 Sep): one through trip. pooled: the city line's courses also run the regional line (vehicle records, 25 Sep: 111 courses 2, 3, 4, 6, 7 -> 329; 161 courses 1, 2, 3, 5, 6 -> 312; 229 courses 1-9, 11 -> 364 and 366): the regional trips join the city card. interleaved: own buses, a shared stretch where the regional trips fall in the city line's gaps; own card after the city line. Left out (owner): 157/327, 157/331, 215/326 and 161/355 (one bus on one day).",
@@ -1701,6 +1763,9 @@
    ],
    "195": [
     "158"
+   ],
+   "BB1": [
+    "BB2"
    ]
   },
   "interleaved": {
@@ -1731,7 +1796,8 @@
    "111": "329 Skalka – Škvorec runs on 111's buses: on 25 Sep courses 2, 3, 4, 6 and 7 of 111 also ran 329 (přejezd na linku 329). Its trips are rows of this card and share its Simutrans lines.",
    "161": "312 Bořislavka – Tuchoměřice runs on 161's buses: on 25 Sep courses 1, 2, 3, 5 and 6 of 161 also ran 312, and on the PID live map of 3 Nov buses 4531–4541 switch between the two lines. Its :00 and :30 departures fill 161's gaps at Bořislavka (together every 10). Both are on the 26 Oct timetables (owner, 7 Nov 2026): 161 is diverted (its Bořislavka – Letiště route ends at Přední Kopanina), and 312 runs hourly to Tuchoměřice,škola at :00 and hourly to Tuchoměřice,Špejchar at :30.",
    "229": "364 (Doubek) and 366 (Doubek via Křenice; Mukařov) run on 229's buses: on 25 Sep ten of 229's eleven courses also ran 364 and 366. Their trips are rows of this card.",
-   "195": "158 (Sídliště Letňany – Letňany) runs on 195's buses: on 25 Sep 21 of 195's 24 logged courses go over to 158 (přejezd na linku 158), and 158 has no record of its own. Owner, 7 Nov 2026: \"design these together\" / \"I meant as one line\". So both are one Simutrans line: each bus runs 195 to Jesenická and back, then 158 to Letňany and back. It needs 19 buses (143 min round), the same as two separate lines (195 14 + 158 5; the published cards had 15 + 5); it replaces game lines 100195 and 100158."
+   "195": "158 (Sídliště Letňany – Letňany) runs on 195's buses: on 25 Sep 21 of 195's 24 logged courses go over to 158 (přejezd na linku 158), and 158 has no record of its own. Owner, 7 Nov 2026: \"design these together\" / \"I meant as one line\". So both are one Simutrans line: each bus runs 195 to Jesenická and back, then 158 to Letňany and back. It needs 19 buses (143 min round), the same as two separate lines (195 14 + 158 5; the published cards had 15 + 5); it replaces game lines 100195 and 100158.",
+   "BB1": "BB2 (Budějovická – Filadelfie – Budějovická) runs on BB1's buses: on the PID live map one ARRIVA CITY bus switches between the two shuttles all day (9043 on Mon 2 Nov, 9016 on Tue 3 Nov; the map tracked 43 of 134 BB1 and 26 of 73 BB2 trips). Owner, 18 Nov 2026: one Simutrans line (circuit) for both."
   },
   "_pooled_195_why": "Owner, 7 Nov 2026: \"I see 158 uses 195 buses - design these together then\". On 25 Sep 21 of 195's 24 logged courses are logged \"přejezd na linku 158\", and 158 has no record of its own. 158 (Sídliště Letňany – Letňany) runs on 195's first stretch from Sídliště Letňany, at the same 7–8 min headway, so its trips become rows of the 195 card and share its Simutrans lines."
  },
@@ -1876,6 +1942,68 @@
     }
    ],
    "not_needed": []
+  },
+  "AE": {
+   "day": "2026-11-02",
+   "seen": "PID live map, Mon 2 and Tue 3 Nov",
+   "source": "PID live map (mapa.pid.cz), polled by the PID regional session: pipeline/pid-regional/data/raw/live/2026-11-0{2,3}/polls.jsonl",
+   "_why": "AE has no deployment record that could be read (seznam-autobusu.cz refuses scripted requests since 1 Nov). On the PID live map four DPP Crossway LE CITY 14.5M buses ran AE all day on Mon 2 Nov (4605, 4606, 4608, 4609; courses 290/1–4) and on Tue 3 Nov (4605, 4607, 4608, 4609), and no other bus.",
+   "summary": "Buses seen on AE (PID live map): Mon 2 Nov 4605, 4606, 4608 and 4609, Tue 3 Nov 4605, 4607, 4608 and 4609, all DPP Iveco Crossway LE CITY 14.5M from Řepy, each on AE only, 05:00–23:00 (69 trips seen on Monday). The four of Monday are counted; 4607 is listed as not needed.",
+   "buses": [
+    {
+     "num": 4605,
+     "operator": "DPP",
+     "course": "AE/1",
+     "note": "Seen on AE all day on the PID live map on Mon 2 Nov and Tue 3 Nov, on no other line."
+    },
+    {
+     "num": 4606,
+     "operator": "DPP",
+     "course": "AE/2",
+     "note": "Seen on AE all day on the PID live map on Mon 2 Nov, on no other line."
+    },
+    {
+     "num": 4608,
+     "operator": "DPP",
+     "course": "AE/3",
+     "note": "Seen on AE all day on the PID live map on Mon 2 Nov and Tue 3 Nov, on no other line."
+    },
+    {
+     "num": 4609,
+     "operator": "DPP",
+     "course": "AE/4",
+     "note": "Seen on AE all day on the PID live map on Mon 2 Nov and Tue 3 Nov, on no other line."
+    }
+   ],
+   "not_needed": [
+    {
+     "num": 4607,
+     "operator": "DPP",
+     "course": "AE",
+     "note": "Seen on AE all day on Tue 3 Nov (in place of 4606)."
+    }
+   ]
+  },
+  "BB1": {
+   "day": "2026-11-02",
+   "seen": "PID live map, Mon 2 and Tue 3 Nov",
+   "source": "PID live map (mapa.pid.cz), polled by the PID regional session: pipeline/pid-regional/data/raw/live/2026-11-0{2,3}/polls.jsonl",
+   "_why": "BB1 and BB2 have no deployment record that could be read. On the PID live map one ARRIVA CITY bus ran both shuttles all day: 9043 (SOR BN 9.5, in an advert wrap, shown on the normal livery; owner, 3 Nov: no wraps) on Mon 2 Nov, 9016 (SOR ICN 9.5) on Tue 3 Nov. 9016 is already a designed bus of 220 and stays there; the other places are designed. The map also showed '92' and '93' (no type, not in the register) on single trips.",
+   "summary": "Buses seen on BB1 and BB2 (PID live map): Mon 2 Nov 9043 (SOR BN 9.5) on both shuttles 07:00–18:00, Tue 3 Nov 9016 (SOR ICN 9.5) the same; the map tracked only a third of the trips (43 of 134 BB1, 26 of 73 BB2 on Monday), so the other buses are not known. 9043 is counted; 9016 is already on 220's card, so it stays there.",
+   "buses": [
+    {
+     "num": 9043,
+     "operator": "ARRIVA CITY",
+     "course": "BB/1",
+     "note": "Seen on BB1 and BB2 all day on the PID live map on Mon 2 Nov (07:18–18:00, alternating). Advert wrap in real life; shown on the normal SOR BN 9.5 object (no wraps)."
+    }
+   ],
+   "not_needed": [],
+   "prefer_types": [
+    "SOR BN 9,5",
+    "SOR ICN 9,5"
+   ],
+   "_prefer_types_why": "The designed places take free ARRIVA CITY buses of the two types seen on the shuttles (9043 SOR BN 9.5, 9016 SOR ICN 9.5) first."
   }
  },
  "x_lines": {
@@ -1891,9 +2019,23 @@
   ],
   "_days_why": "Their buses come from the deployment records of Wed 4 Nov (the timetable day), then Tue 3 Nov; the 25 Sep records predate X9, X95 and X98.",
   "also": [
-   "IKEA"
+   "IKEA",
+   "AE",
+   "BB1",
+   "BB2"
   ],
-  "_also_why": "Owner, 5 Nov 2026: \"Do include the IKEA line\": Černý Most – IKEA Černý Most – Černý Most (ARRIVA STŘEDNÍ ČECHY, licence 103116), read like the X lines.",
-  "buses_note": "on designed buses: seznam-autobusu.cz refuses scripted requests since 1 November, so the records of their days could not be read, and each card takes free active buses of its line's type, not out on 25 September; the IKEA line runs on its own bus, 9501, seen on it on the PID live map on 1 and 2 November"
+  "_also_why": "Owner, 5 Nov 2026: \"Do include the IKEA line\": Černý Most – IKEA Černý Most – Černý Most (ARRIVA STŘEDNÍ ČECHY, licence 103116), read like the X lines. Owner, 18 Nov 2026 (\"yes, add AE and similar prague bus lines\"): AE (Airport Express, Hlavní nádraží – Letiště, DPP, licence 103120), BB1 (Budějovická – Delta, ARRIVA CITY, 103123) and BB2 (Budějovická – Filadelfie – Budějovická, ARRIVA CITY, 103103): the other daytime city bus lines of PID's 103xxx block, read like the X lines. Night lines (9xx) stay out (city rule: no night lines).",
+  "buses_note": "on designed buses: seznam-autobusu.cz refuses scripted requests since 1 November, so the records of their days could not be read, and each card takes free active buses of its line's type, not out on 25 September; the IKEA line runs on its own bus, 9501, seen on it on the PID live map on 1 and 2 November",
+  "game_lines": {
+   "100890": "AE",
+   "100921": "BB1",
+   "100922": "BB2"
+  },
+  "_game_lines_why": "Owner, 18 Nov 2026: AE, BB1 and BB2 are already game lines in the save (regional export of 30 Oct: 100890 [AE], 100921 [BB1], 100922 [BB2], all without buses), so their cards check the save like the city lines, unlike the X lines (\"ignore existing lines\") and IKEA.",
+  "licences": {
+   "AE": "103120",
+   "BB1": "103123",
+   "BB2": "103103"
+  }
  }
 }

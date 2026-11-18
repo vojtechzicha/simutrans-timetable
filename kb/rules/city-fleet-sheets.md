@@ -82,6 +82,17 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   build: no game check, buses from that week's deployment records, never moving a bus another card was given. Regional X lines and the
   ČD rail replacements (XS, XR) are not city lines. They are temporary; re-check them with every new export.
   The IKEA shuttle (Černý Most – IKEA – Černý Most, ARRIVA STŘEDNÍ ČECHY) is a city line too (owner, 5 Nov: "Do include the IKEA line").
+- **Prague: AE, BB1 and BB2 are city buses too** (owner, 18 Nov 2026: "yes, add AE and similar prague bus lines"): every daytime
+  bus line of PID's 103xxx licence block (AE Hlavní nádraží – Letiště 103120, BB1 103123, BB2 103103, IKEA 103116) has a card after
+  the X lines. Night lines (9xx) stay out. Unlike the X lines, a line the save already has is checked against its game line, not
+  shown as "a line to build" (AE → 100890, BB1 → 100921, BB2 → 100922; state `x_lines.game_lines`). Where no deployment record can be
+  read, the buses are the ones the PID live map showed on the line. A designed place takes a type seen on the line first, and a
+  November line may take a car that was out on the 25 Sep vehicle day, but never a car on another card. BB1 + BB2 is one circuit
+  (asked, owner: "One line (circuit)"): one bus switches between the two shuttles all day. Before adding lines outside 100–299,
+  list the PID licence blocks and say which lines count as "similar"; the PID index reads the bus sheet's lines, so it follows.
+- **A headway that divides neither 60 nor 1440** (BB1/BB2 every 7 min): use the 1440-divisor with ≤ 8 slots that stays closest
+  (every 48 with 7 slots: within 1 min). On a circuit, pick the slot sets of all entries together, so each bus makes its next slot
+  at the turn (separate fits put the one 6-min gap on Delta's 2-min turn and needed 4 buses for the timetable's 3).
 
 ## Splits, branches, pools
 - Where course (kurz) numbers mark a branch, split by range (Brno 5S = kurzy 21–27; Prague 17 = 1–17 / 21–37).

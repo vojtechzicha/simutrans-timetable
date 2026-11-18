@@ -310,3 +310,13 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   (the Chodov – Volha shuttle, 2 buses, "a line to build") and called keeping the save's extension an owner choice. v24: one circuit
   in 100177, which the save already runs that way, at 24 buses (one more). A clear request with a known cost needs no question back:
   build it, and put the cost and the real-life difference (the shuttle's own two buses) on the card.
+
+## 18 Nov — Prague AE, BB1, BB2
+- **18 Nov:** "In prague bus, do we have the AE?" → no: the sheet takes PID licences 100100–100299 and the AE is 103120, so the
+  pipeline never saw it; the PID index listed it as "not on the Prague bus sheet". Then "yes, add AE and similar prague bus lines"
+  → "similar" read as the other daytime lines of the 103xxx block (BB1, BB2; IKEA was already in), not night lines. v25: the save
+  already had all three as empty game lines (100890, 100921, 100922) in the regional export, so they are checked against it
+  instead of copying the X lines' "a line to build". AE: 4 Crossway LE CITY 14.5M from the live map. BB1 + BB2: the live map
+  showed one bus switching between both all day; asked, the owner chose one circuit. Fitting each row of the circuit on its own
+  gave 4 buses where the timetable runs 3; choosing the three every-48 slot sets together gave 3. The index's "not modelled"
+  entries for the X lines and IKEA had been stale since 5 Nov; the index now reads the bus sheet's line list.

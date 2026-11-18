@@ -111,12 +111,17 @@ def main():
     if RG.get('game_raw'):
         G2 = load(os.path.join(RAW, 'game', RG['game_raw'], 'lines.json'))
         glines += [dict(gl, _src='regional') for gl in G2['lines'] if str(gl.get('pid_number')) in home]
+        # the extra city lines the save already has (state x_lines.game_lines, licence -> PID line; owner, 18 Nov 2026: AE, BB1,
+        # BB2 as 100890, 100921, 100922): checked like the city lines; a pooled one (BB2) goes on its host card
+        XG = (s.get('x_lines') or {}).get('game_lines', {})
+        glines += [dict(gl, _src='xline') for gl in G2['lines'] if str(gl['licence_number']) in XG]
     res = []
     for gl in glines:
         gl['licence_number'] = str(gl['licence_number'])
         pid = str(gl['pid_number']) if gl.get('pid_number') is not None else gl['licence_number'][3:].lstrip('0')
+        if gl['_src'] == 'xline': pid = s['x_lines']['game_lines'][gl['licence_number']]
         # a pooled city line (195 + 158, owner 7 Nov 2026) has its game line in the main export: it goes on its host card too
-        regional = pid if gl['_src'] == 'regional' or (pid in home and home[pid] != pid) else None
+        regional = pid if (gl['_src'] == 'regional' or (pid in home and home[pid] != pid)) and pid in home else None
         if regional: pid = home[regional]
         base = gl['name'].split(' ')[0] == gl['licence_number']
         halts = [e['halt_name'] for e in gl['entries'] if e.get('halt_name')]

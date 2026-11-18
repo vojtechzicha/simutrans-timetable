@@ -11,8 +11,9 @@ each `oblasti/<id>/lines.json` → `artifact_url` and in the repo's `data/catalo
 
 ## Scope and the division into oblasti
 - **Every bus route of the PID GTFS** (`data/derived/lines.json`) is placed: a regional line on exactly one oblast sheet; the
-  Prague city lines 100–299 are the Prague bus sheet's; night lines, replacement buses (X…), PID Haló on-demand lines, the
-  airport express and shopping shuttles are listed with the reason on the index. Trams, metro, ferries, trolleybuses and
+  Prague city lines 100–299 are the Prague bus sheet's, and so are DPP's X lines, IKEA, AE, BB1 and BB2 (the index reads
+  them from that sheet's derived data, config `index.prague_bus_lines`; owner, 5 and 18 Nov 2026); night lines, other
+  replacement buses and PID Haló on-demand lines are listed with the reason on the index. Trams, metro, ferries, trolleybuses and
   trains are listed on the index with the sheet they are on (or "no sheet yet").
 - **Oblast = okres.** The Středočeský kraj licenses each district's lines with its own prefix (first two digits of the
   six-digit licence): 20 Benešov, 21 Beroun, 22 Kladno, 23 Kolín, 24 Kutná Hora, 25 Mělník, 26 Mladá Boleslav, 27 Nymburk,

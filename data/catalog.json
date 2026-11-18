@@ -241,7 +241,13 @@
     {
      "name": "Save-game line export, regional",
      "role": "other",
-     "note": "From session simutrans-122-0-d1, 30 Oct: lines 100300–100960 of FORK-CZR-VZ.sve; only the sheet's regional lines are read"
+     "note": "From session simutrans-122-0-d1, 30 Oct: lines 100300–100960 of FORK-CZR-VZ.sve; only the sheet's regional lines are read; also 100890 [AE], 100921 [BB1], 100922 [BB2] (18 Nov)"
+    },
+    {
+     "name": "PID live map (polled by the PID regional session)",
+     "url": "https://mapa.pid.cz",
+     "role": "vehicles",
+     "note": "2–3 Nov 2026 polls: buses for 318, IKEA, AE and BB1 + BB2, which have no readable deployment record"
     }
    ],
    "vehicleDay": "Fri 25 Sep 2026 (fill-ins from 21–24 and 29 Sep)",
@@ -362,6 +368,11 @@
      "at": "2026-11-08T09:35:00.000Z",
      "version": 24,
      "note": "177 as one Simutrans line (owner, 8 Nov: \"Could we make 177 one simutrans line? I like it more\"): one circuit Poliklinika Mazurská – Chodov – Volha – Chodov in game line 100177, as the save already runs it; 24 buses against 21 + 2 as two lines (6885 counted again); 177B \"a line to build\" withdrawn; cards 100–108 unchanged"
+    },
+    {
+     "at": "2026-11-18T20:15:00+01:00",
+     "version": 25,
+     "note": "AE, BB1 and BB2 added (owner, 18 Nov: \"add AE and similar prague bus lines\"), the other daytime city lines of PID's 103xxx block; checked against the save's 100890, 100921, 100922. AE every 30, 4 buses seen on the live map (4605, 4606, 4608, 4609). BB1 + BB2 one circuit (owner's choice) in 100921, every 48 with 7 slots, 3 buses (9043 seen, 9018 and 8711 designed); 100922 not needed. Every other card unchanged."
     }
    ]
   },
@@ -4018,6 +4029,11 @@
      "at": "2026-11-03T07:29:01+01:00",
      "version": 2,
      "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
+    },
+    {
+     "at": "2026-11-18T20:15:00+01:00",
+     "version": 3,
+     "note": "The Prague bus sheet's extra lines (X lines and IKEA since 5 Nov, AE, BB1, BB2 since 18 Nov) read from its derived data and shown as modelled there; 744 → 754 modelled"
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/KSHcamNtjkpPVahiQvbfVU"
