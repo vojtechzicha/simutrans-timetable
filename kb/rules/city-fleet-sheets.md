@@ -87,7 +87,7 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   the X lines. Night lines (9xx) stay out. Unlike the X lines, a line the save already has is checked against its game line, not
   shown as "a line to build" (AE → 100890, BB1 → 100921, BB2 → 100922; state `x_lines.game_lines`). Where no deployment record can be
   read, the buses are the ones the PID live map showed on the line. A designed place takes a type seen on the line first, and a
-  November line may take a car that was out on the 25 Sep vehicle day, but never a car on another card. BB1 + BB2 is one circuit
+  November line may take a car that was out on the 25 Sep vehicle day, but never a car on another card or on a PID regional sheet (8711, 8713 are on 858). BB1 + BB2 is one circuit
   (asked, owner: "One line (circuit)"): one bus switches between the two shuttles all day. Before adding lines outside 100–299,
   list the PID licence blocks and say which lines count as "similar"; the PID index reads the bus sheet's lines, so it follows.
 - **A headway that divides neither 60 nor 1440** (BB1/BB2 every 7 min): use the 1440-divisor with ≤ 8 slots that stays closest

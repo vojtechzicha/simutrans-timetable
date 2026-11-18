@@ -372,7 +372,12 @@
     {
      "at": "2026-11-18T20:15:00+01:00",
      "version": 25,
-     "note": "AE, BB1 and BB2 added (owner, 18 Nov: \"add AE and similar prague bus lines\"), the other daytime city lines of PID's 103xxx block; checked against the save's 100890, 100921, 100922. AE every 30, 4 buses seen on the live map (4605, 4606, 4608, 4609). BB1 + BB2 one circuit (owner's choice) in 100921, every 48 with 7 slots, 3 buses (9043 seen, 9018 and 8711 designed); 100922 not needed. Every other card unchanged."
+     "note": "AE, BB1 and BB2 added (owner, 18 Nov: \"add AE and similar prague bus lines\"), the other daytime city lines of PID's 103xxx block; checked against the save's 100890, 100921, 100922. AE every 30, 4 buses seen on the live map (4605, 4606, 4608, 4609). BB1 + BB2 one circuit (owner's choice) in 100921, every 48 with 7 slots, 3 buses (9043 seen, 9018 and 8712 designed); 100922 not needed. Every other card unchanged."
+    },
+    {
+     "at": "2026-11-18T20:40:00+01:00",
+     "version": 26,
+     "note": "BB1's second designed bus 8711 → 8712: 8711 is on the PID Kladensko sheet (858, same November live map); designed November picks now skip every bus on a PID regional roster"
     }
    ]
   },

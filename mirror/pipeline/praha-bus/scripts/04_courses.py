@@ -23,7 +23,7 @@ the operator is not part of the name, operators share an object per type and liv
 Usage: python 04_courses.py --state 2026-09-29
 """
 import argparse, collections, datetime, glob, json, os, re
-from common import state, load, save, RAW, DER, ASSETS, _txt, parse_vypis, xline
+from common import state, load, save, RAW, DER, ASSETS, BASE, _txt, parse_vypis, xline
 
 LIVERY_NAMES = {'pidsedocervena': 'PID grey-red', 'pidcervenomodrobila': 'PID red-white-blue', 'dppcervenobila': 'DPP red-white',
                 'mestskacervenobila': 'city red-white', 'veoliacervenoseda': 'Veolia red-grey', 'bila': 'white',
@@ -273,7 +273,19 @@ def main():
             # vehicle date may still be picked, as that day says nothing about November, but never a car on another card
             pref = set(s.get('observed_buses', {}).get(L, {}).get('prefer_types', []))
             incard = {x['id'] for c in out for ch in c['chain'] for x in ch['cars'] if x['id']} if pref else set()
-            free_ = lambda cid: cid not in taken or (V[cid]['maker_type'] in pref and cid not in incard and cid in busy)
+            # nor a bus a PID regional sheet already has: those rosters come from the same November live map (8711, 8713 on 858)
+            onreg = set()
+            if pref:
+                def walk(o):
+                    if isinstance(o, dict):
+                        if 'num' in o and 'operator' in o: onreg.add((str(o['num']), o['operator']))
+                        for v_ in o.values(): walk(v_)
+                    elif isinstance(o, list):
+                        for v_ in o: walk(v_)
+                for f_ in glob.glob(os.path.join(os.path.dirname(BASE), 'pid-regional', 'oblasti', '*', 'data', 'derived', 'roster_published.json')):
+                    walk(load(f_))
+            free_ = lambda cid: cid not in taken or (V[cid]['maker_type'] in pref and cid not in incard and cid in busy
+                                                     and (V[cid]['num'], V[cid]['operator']) not in onreg)
             pool = sorted((cid for cid, v in V.items() if v['operator'] == op and v['state'] == 'zar' and free_(cid)
                            and BT['length_m'].get(v['maker_type']) and (v['num'] or L not in regional)), key=rank)   # any city-sized type last, if its usual types are all out
             for i, cid in enumerate(pool[:short - n0]):

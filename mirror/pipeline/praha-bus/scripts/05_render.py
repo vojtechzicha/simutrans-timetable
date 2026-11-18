@@ -60,7 +60,7 @@ def main():
              + (f' and the {" and ".join(XA)} line' if XA else '') + ' follow at the end, '
              f'from the timetable of {day(G["later"]["service_date"])} ' + (XL_['buses_note'] if XL_.get('buses_note') else f'with the buses logged on {" and ".join(dm_(d) for d in XL_.get("days", []))}') + '; they are '
              f'lines to build, not checked against the save.') if XLN else ''
-    if XG: x_txt += (f' After them come {" and ".join(", ".join(XGc).rsplit(", ", 1))} (owner, 18 November: "add AE and similar prague bus lines"), '
+    if XG: x_txt += (f' With them at the end come {" and ".join(", ".join(XGc).rsplit(", ", 1))} (owner, 18 November: "add AE and similar prague bus lines"), '
                      f'the other daytime city lines of PID’s 103xxx block, on the same timetable with the buses the PID live map showed on them; '
                      f'they are checked against the save’s lines {" and ".join(", ".join(g for g, _ in XGL).rsplit(", ", 1))}.')
     # state gtfs_lines_from.same: lines read from the later export only to go with a line pooled into them (195 with 158, 7 Nov 2026)
@@ -388,7 +388,7 @@ def main():
                              f'not out anywhere in PID on {int(vd[8:])} Sep.')
             if des and c.get('why') == 'fleet_seen_type':   # BB1 + BB2 (18 Nov 2026): a November line, so 25 Sep does not bar a car
                 notes.append(f'{nlog} course{"s are" if nlog != 1 else " is"} seen against {p.get("need")} needed at 16:00. A free active bus of a type seen on the line, '
-                             f'on no other card; it was out on {int(vd[8:])} Sep, which says nothing about the line’s November day.')
+                             f'on no other card and on no PID regional sheet (their buses come from the same November live map); it was out on {int(vd[8:])} Sep, which says nothing about the line’s November day.')
             if spare == 'surplus':
                 notes.append(f'Logged on {dm(c["source"])}; not needed at 16:00 (the line needs {p.get("need")}). Not counted.')
             if c.get('observed'): notes.append(c['observed'])
