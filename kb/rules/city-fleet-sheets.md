@@ -159,6 +159,11 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   other line's surplus courses logged going over to it; never mark real buses "not needed" on one card while inventing buses on
   the next (owner, 30 Oct, Prague 117 → 203: "isn't there something to consider?"). Check whether pooling the two into one
   Simutrans line saves a bus; if not, keep the schedules and move only the buses.
+  Check it per line, not per pair: every line with no records of its own, and any přejezd course going into it, even one
+  course out of three (Prague 242 → 243 was missed because the 30 Oct check listed only pairs where every course went over;
+  owner, 21 Nov: "i have in game 242 243 connected, why don't you?"). A game line named for two lines (`100242/243`) is a hint
+  too. Asked, the owner chose one card with two Simutrans lines, and the save's combined game line is checked against the line
+  whose route it mostly runs (state `game_pid`).
 - **Shared pools** (one Simutrans line for two real lines, e.g. Prague 5 + 6; or two lines from one pool, Olomouc 3 + 5) are the
   owner's modelling choice: mark them, with the real share that runs through. Don't pool silently; offer it.
 

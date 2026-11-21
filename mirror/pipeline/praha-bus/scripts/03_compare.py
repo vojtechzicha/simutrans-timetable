@@ -120,6 +120,8 @@ def main():
         gl['licence_number'] = str(gl['licence_number'])
         pid = str(gl['pid_number']) if gl.get('pid_number') is not None else gl['licence_number'][3:].lstrip('0')
         if gl['_src'] == 'xline': pid = s['x_lines']['game_lines'][gl['licence_number']]
+        # state game_pid: a game line checked against another PID line than its licence says (owner, 21 Nov 2026: 100242/243 → 243)
+        pid = s.get('game_pid', {}).get(gl['name'].split(' ')[0], pid)
         # a pooled city line (195 + 158, owner 7 Nov 2026) has its game line in the main export: it goes on its host card too
         regional = pid if (gl['_src'] == 'regional' or (pid in home and home[pid] != pid)) and pid in home else None
         if regional: pid = home[regional]
@@ -134,6 +136,8 @@ def main():
             r.update(status='not in the current PID timetable' if not p else 'no PID trips on the service date', aligned=False); res.append(r); continue
         pats = p['patterns']
         if regional and regional != pid: pats = [pt for pt in pats if pt.get('via') == regional] or pats   # a companion: its own trips
+        elif pid in s.get('game_pid_own', []):   # the host's own game line, not a companion's trips (242: 100242L, 21 Nov 2026)
+            pats = [pt for pt in pats if not pt.get('via')] or pats
         pid_names = {re.sub(r',\s+', ',', x): x for pt in pats for x in pt['stops']}
         gseq, name_fix, unknown = [], {}, []
         stands = s.get('layover_stand_words', ['odstav'])

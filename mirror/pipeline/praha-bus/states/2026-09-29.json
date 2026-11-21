@@ -1588,6 +1588,47 @@
      "why": "BB2 round Filadelfie every 7 min from 15:42 (:42, :49, :56, :03 …; every 10 before); every 48 with 7 slots is within 1 min 15:49–17:55, up to 3 min off the earlier trips."
     }
    ]
+  },
+  "242": {
+   "_why": "Owner, 21 Nov 2026: 242 + 243 on one card, two Simutrans lines (\"One card, two lines\"). 243 runs on 242's buses (course 1 goes over to 243 every recorded day; live map 2–3 Nov: 1108 on 243 all afternoon). Rows as on the separate cards of v27.",
+   "rows": [
+    {
+     "o": "Zbraslavské náměstí",
+     "d": "Dolní Černošice",
+     "every": 30,
+     "real": [
+      21
+     ],
+     "why": "242 to Dolní Černošice every 30 at :21 and :51 (14:21–17:21)."
+    },
+    {
+     "o": "Dolní Černošice",
+     "d": "Zbraslavské náměstí",
+     "every": 30,
+     "real": [
+      27
+     ],
+     "why": "242 from Dolní Černošice every 30 at :27 and :57 (13:57–17:27)."
+    },
+    {
+     "o": "Radotínská lávka",
+     "d": "Kazín",
+     "every": 30,
+     "real": [
+      1
+     ],
+     "why": "243 to Kazín every 30 at :01 and :31 (14:01–17:01; 13 min)."
+    },
+    {
+     "o": "Kazín",
+     "d": "Radotínská lávka",
+     "every": 30,
+     "real": [
+      14
+     ],
+     "why": "243 from Kazín every 30 at :14 and :44 (14:14–16:44; 13 min)."
+    }
+   ]
   }
  },
  "simlines": {
@@ -1631,7 +1672,8 @@
    "229",
    "318",
    "363",
-   "333"
+   "333",
+   "242"
   ],
   "terminus_alias": {
    "138": {
@@ -1703,13 +1745,15 @@
    ]
   },
   "bus_by_record": [
-   "111"
+   "111",
+   "242"
   ],
   "_bus_by_record_why": "Cards whose buses go on their Simutrans lines by the records first: a course logged \"přejezd na linku R\" goes on the line that runs R's trips (owner, 30 Oct 2026, 329: \"I don't think NB 12s are so used on 329\"; 329 ran on 111's SOR BN 12s 4516, 4517, 4522, 4523, 4528).",
   "_separate_why": "Owner, 3 Nov 2026, for 138 and above: \"if originally it was two lines and you suggest collapsing, do it when there is bus saved and something more (closer to reality, only one additional loop, limited spaces at terminal, etc.)\". 138: one circuit saved 1 bus (12 -> 11) but ran 8 entries (three extra loops) -> two lines again. 161 + 312: the circuit saved nothing (7 = 4 + 3) -> two lines again (owner, 5 Nov: split). 139, 197, 226 keep their circuits (merge_why). 186 + 396 stays one through line (owner, 5 Nov: keep; every Vinoř trip runs on as 396). 318 and 363 extend one game line, so nothing is collapsed.",
   "separate": [
    "138",
-   "161"
+   "161",
+   "242"
   ],
   "merge_why": {
    "139": "saves 1 bus (17 → 16) with only one additional loop: each bus alternates the two branches",
@@ -1766,6 +1810,9 @@
    ],
    "BB1": [
     "BB2"
+   ],
+   "242": [
+    "243"
    ]
   },
   "interleaved": {
@@ -1797,9 +1844,11 @@
    "161": "312 Bořislavka – Tuchoměřice runs on 161's buses: on 25 Sep courses 1, 2, 3, 5 and 6 of 161 also ran 312, and on the PID live map of 3 Nov buses 4531–4541 switch between the two lines. Its :00 and :30 departures fill 161's gaps at Bořislavka (together every 10). Both are on the 26 Oct timetables (owner, 7 Nov 2026): 161 is diverted (its Bořislavka – Letiště route ends at Přední Kopanina), and 312 runs hourly to Tuchoměřice,škola at :00 and hourly to Tuchoměřice,Špejchar at :30.",
    "229": "364 (Doubek) and 366 (Doubek via Křenice; Mukařov) run on 229's buses: on 25 Sep ten of 229's eleven courses also ran 364 and 366. Their trips are rows of this card.",
    "195": "158 (Sídliště Letňany – Letňany) runs on 195's buses: on 25 Sep 21 of 195's 24 logged courses go over to 158 (přejezd na linku 158), and 158 has no record of its own. Owner, 7 Nov 2026: \"design these together\" / \"I meant as one line\". So both are one Simutrans line: each bus runs 195 to Jesenická and back, then 158 to Letňany and back. It needs 19 buses (143 min round), the same as two separate lines (195 14 + 158 5; the published cards had 15 + 5); it replaces game lines 100195 and 100158.",
-   "BB1": "BB2 (Budějovická – Filadelfie – Budějovická) runs on BB1's buses: on the PID live map one ARRIVA CITY bus switches between the two shuttles all day (9043 on Mon 2 Nov, 9016 on Tue 3 Nov; the map tracked 43 of 134 BB1 and 26 of 73 BB2 trips). Owner, 18 Nov 2026: one Simutrans line (circuit) for both."
+   "BB1": "BB2 (Budějovická – Filadelfie – Budějovická) runs on BB1's buses: on the PID live map one ARRIVA CITY bus switches between the two shuttles all day (9043 on Mon 2 Nov, 9016 on Tue 3 Nov; the map tracked 43 of 134 BB1 and 26 of 73 BB2 trips). Owner, 18 Nov 2026: one Simutrans line (circuit) for both.",
+   "242": "243 Radotínská lávka – Lipence – Kazín runs on 242's buses: it has no records of its own, and on every recorded day (21–29 Sep) course 1 of 242 is logged going over to 243 (přejezd na linku 243). On the PID live map of 2 and 3 Nov one bus, 1108, ran 243 all afternoon while two ran 242. The two lines share only Lipence – U Kapličky and no terminus, so they stay two Simutrans lines on one card (owner, 21 Nov 2026: \"One card, two lines\")."
   },
-  "_pooled_195_why": "Owner, 7 Nov 2026: \"I see 158 uses 195 buses - design these together then\". On 25 Sep 21 of 195's 24 logged courses are logged \"přejezd na linku 158\", and 158 has no record of its own. 158 (Sídliště Letňany – Letňany) runs on 195's first stretch from Sídliště Letňany, at the same 7–8 min headway, so its trips become rows of the 195 card and share its Simutrans lines."
+  "_pooled_195_why": "Owner, 7 Nov 2026: \"I see 158 uses 195 buses - design these together then\". On 25 Sep 21 of 195's 24 logged courses are logged \"přejezd na linku 158\", and 158 has no record of its own. 158 (Sídliště Letňany – Letňany) runs on 195's first stretch from Sídliště Letňany, at the same 7–8 min headway, so its trips become rows of the 195 card and share its Simutrans lines.",
+  "_pooled_242_why": "Owner, 21 Nov 2026: \"i have in game 242 243 connected, why don't you?\" -> asked, \"One card, two lines\". 243 has no records of its own; on every recorded day 21-29 Sep course 1 of 242 (1108; 1109 on 29 Sep) is logged going over to 243, and on the PID live map of 2 and 3 Nov 1108 runs 243 alone all afternoon while 1109 and 1912 run 242. Not every 242 course goes over, so the 30 Oct pair check did not list it."
  },
  "observed_buses": {
   "318": {
@@ -2126,5 +2175,13 @@
    "X9": "100009"
   },
   "_in_game_why": "Owner, 21 Nov 2026 (screenshot): the save has line 100009 (X9) Praha,Voz.Žižkov – Praha,Nákl.nádraží Žižkov with 5 buses. The save export predates it, so the card says it is built but does not check its stops or schedule."
- }
+ },
+ "game_pid": {
+  "100242/243": "243"
+ },
+ "_game_pid_why": "Game line -> PID line where the licence number says otherwise (owner, 21 Nov 2026, 242 + 243 one card, two lines): 100242/243 runs Zbraslavské náměstí – Lipence – Kazín, which is 243's Kazín end, so it is checked against 243 (its Zbraslav end becomes Radotínská lávka); 100242L against 242.",
+ "game_pid_own": [
+  "242"
+ ],
+ "_game_pid_own_why": "Cards whose own game lines are compared only with the card line's own trips, not a pooled companion's (242: 100242L had matched 243's Kazín – Lipence short trips; 21 Nov 2026)."
 }

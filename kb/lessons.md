@@ -333,3 +333,9 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   "Standard, as seen". For X9 the owner sent the game line (100009, five buses): "please follow if possible - if not, use yours" →
   followed, although each bus is also on a 25 Sep card. Fallback picks need a type check against whatever evidence exists before
   publishing; "designed" must not mean "the operator's commonest bus".
+- **21 Nov:** "i have in game 242 243 connected, why don't you?" → 243 has no records; 242's course 1 is logged going over to 243
+  every day and the live map shows 1108 on 243 all afternoon. The sheet had 243 on two designed minibuses while 242's third
+  course (1106) sat "not needed" — the 117 → 203 mistake of 30 Oct again, because the pair check only looked for lines where
+  every course goes over. Asked, the owner chose one card, two lines (v28). The save's 100242/243 (Zbraslav – Kazín, 243's old
+  route) is checked against 243. 243 still needs 2 buses on the sheet (0-min turn at Kazín against the 2-min game minimum)
+  though one bus runs it in real life; said so rather than bending the rule.
