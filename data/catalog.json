@@ -259,7 +259,7 @@
     "Run python scripts/run.py --state <new> --fetch.",
     "Check printed counts (courses by source, designed lines, requested objects) and republish to https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF."
    ],
-   "notes": "Checks game lines vs PID stops. Need = max(cycle_need, buses on road). Designed buses from line history (roster coverage), then operator fleet; 213 logged surplus not needed, 797 counted. Pak hand-off via 06_pak_request.py; missing objects shown 'requested', no stand-ins. Branch cards (state simlines.auto) are split into Simutrans lines by simlines.py, each sized on its own; cards 100-108 frozen (owner, 30 Oct). Regional companions (state regional, owner 30 Oct): through (0-min trip chains), pooled (vehicle records), interleaved (shared stretch, real gaps); their non-DPP buses map to VZ-PID-bus. 195 + 158 (owner, 7 Nov): one circuit line on 195's card (regional.pooled + simlines.circuit), 19 buses, keep_buses keeps 100158's five. X9 on game line 100009's five buses + 1 designed, X25 on 3739 + 4103 seen + 3 designed, X130 3 designed, all 12 m (owner, 21 Nov; designed places take the types seen on the live map); IKEA on 9501 from the live map. 161 + 312 on the 26 Oct timetables (owner, 7 Nov): 161 4 buses, 312 one circuit škola/Špejchar 3 buses (simlines.group_modes). 242 + 243 (owner, 21 Nov): one card, two lines (regional.pooled + simlines.separate); game_pid maps 100242/243 to 243.",
+   "notes": "Checks game lines vs PID stops. Need = max(cycle_need, buses on road). Designed buses from line history (roster coverage), then operator fleet; 213 logged surplus not needed, 797 counted. Pak hand-off via 06_pak_request.py; missing objects shown 'requested', no stand-ins. Branch cards (state simlines.auto) are split into Simutrans lines by simlines.py, each sized on its own; cards 100-108 frozen (owner, 30 Oct). Regional companions (state regional, owner 30 Oct): through (0-min trip chains), pooled (vehicle records), interleaved (shared stretch, real gaps); their non-DPP buses map to VZ-PID-bus. 195 + 158 (owner, 7 Nov): one circuit line on 195's card (regional.pooled + simlines.circuit), 19 buses, keep_buses keeps 100158's five. X9 on game line 100009's five buses + 1 designed, X25 on 3739 + 4103 seen + 3 designed, X130 3 designed, all 12 m (owner, 21 Nov; designed places take the types seen on the live map); IKEA on 9501 from the live map. 161 + 312 on the 26 Oct timetables (owner, 7 Nov): 161 4 buses, 312 one circuit škola/Špejchar 3 buses (simlines.group_modes). 242 / 243 (owner, 21 Nov): separate cards; 242's course 1 (1108) is the 243 bus (records_move_first); game_pid checks 100242/243 on 243.",
    "rawSnapshots": [
     "game/2026-09-29",
     "gtfs/2026-09-29",
@@ -388,6 +388,11 @@
      "at": "2026-11-21T11:23:00+01:00",
      "version": 28,
      "note": "242 + 243 on one card, two Simutrans lines (owner, 21 Nov: \"i have in game 242 243 connected, why don't you?\" → \"One card, two lines\"): 243 runs on 242's course 1 (1108); the save's 100242/243 is checked against 243, 100242L against 242. 242: 1910, 1106; 243: 1108 + designed 1907 (2 buses: 0-min turn at Kazín). Every other card unchanged."
+    },
+    {
+     "at": "2026-11-21T12:38:00+01:00",
+     "version": 29,
+     "note": "242 and 243 on separate cards again (owner, 21 Nov: \"no bus switches lines, no continuation? if yes, split the cards\"; the live map of 2–3 Nov shows none): only 242's course 1 (1108), the 243 bus, moves to 243 (records_move_first). The save's 100242/243 is checked on 243's card. 242: 1910, 1106; 243: 1108 + designed 1908. Every other card as in v27."
     }
    ]
   },

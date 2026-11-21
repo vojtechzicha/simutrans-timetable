@@ -308,7 +308,10 @@ def main():
         # state simlines.keep_buses[L] (owner, 7 Nov 2026, 195 + 158 on one card): the courses a Simutrans line already runs in the
         # game are kept first, so pooling two published cards moves no bus that can stay
         kept = {str(x) for v in s.get('simlines', {}).get('keep_buses', {}).get(L, {}).values() if isinstance(v, list) for x in v}
-        order = sorted(cs, key=lambda c: (str(c['course']) not in kept, c['source'] != vd, ckey(c['course'])))      # best to keep first
+        # state records_move_first[L] (owner, 21 Nov 2026, 242 → 243): courses that are another line's bus, released first so the
+        # přejezd rule below moves them there
+        out1 = {str(x) for x in s.get('records_move_first', {}).get(L, [])}
+        order = sorted(cs, key=lambda c: (str(c['course']) in out1, str(c['course']) not in kept, c['source'] != vd, ckey(c['course'])))      # best to keep first
         keep = []
         for ty, _ in collections.Counter(typ(c) for c in cs).most_common():
             if len(keep) >= need: break

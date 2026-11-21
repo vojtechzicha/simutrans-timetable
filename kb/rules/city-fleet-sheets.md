@@ -162,8 +162,10 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   Check it per line, not per pair: every line with no records of its own, and any přejezd course going into it, even one
   course out of three (Prague 242 → 243 was missed because the 30 Oct check listed only pairs where every course went over;
   owner, 21 Nov: "i have in game 242 243 connected, why don't you?"). A game line named for two lines (`100242/243`) is a hint
-  too. Asked, the owner chose one card with two Simutrans lines, and the save's combined game line is checked against the line
-  whose route it mostly runs (state `game_pid`).
+  too. A course logged going over every day is not yet a shared pool: check the live map whether any bus actually switches lines
+  or any trip continues. 242 → 243 is just 242's course 1 being the 243 bus all day, so the cards stay separate and only that
+  bus moves (owner, 21 Nov: "no bus switches lines, no continuation? if yes, split the cards"; state `records_move_first`). The
+  save's combined game line is checked on the card of the line whose route it mostly runs (state `game_pid`).
 - **Shared pools** (one Simutrans line for two real lines, e.g. Prague 5 + 6; or two lines from one pool, Olomouc 3 + 5) are the
   owner's modelling choice: mark them, with the real share that runs through. Don't pool silently; offer it.
 

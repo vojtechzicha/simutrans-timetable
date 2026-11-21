@@ -339,3 +339,7 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   every course goes over. Asked, the owner chose one card, two lines (v28). The save's 100242/243 (Zbraslav – Kazín, 243's old
   route) is checked against 243. 243 still needs 2 buses on the sheet (0-min turn at Kazín against the 2-min game minimum)
   though one bus runs it in real life; said so rather than bending the rule.
+- **21 Nov (later):** "so on 242/243 no bus switches lines, no continuation? if yes, split the cards" → right: over the whole of
+  2 and 3 Nov 1108 stayed on 243 and the others on 242; the daily přejezd only says which course is the 243 bus. v29 splits the
+  cards again and moves just that bus. Asking "one line or two lines on one card" skipped the first question: is there any
+  sharing at all? Check the whole day on the live map before offering to pool.
