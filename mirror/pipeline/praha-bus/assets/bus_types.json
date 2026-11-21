@@ -1,5 +1,5 @@
 {
- "_doc": "Bus types as the seznam-autobusu.cz register names them (maker + type) -> nominal length in metres (blank where the register gives none and the type name does not say); 'garages': the register's garage codes (DPP and the other operators; Stenbus's 'PID' is its PID division, not a garage, so blank). Pak objects are not mapped here: 04_courses.py names each car's object from pak_requested.json and checks it against pak_objects.json (no stand-ins from DPP or other cities). Suburban types the PID regional companions use, added 30 Oct 2026 (Setra S 415 LE business and S 515 LE, Citaro C2 GÜ, Iveco Crossway LE LINE 12M, SOR ICN 10,5; manufacturer lengths, rounded), and Solaris Urbino 18 IV on 2 Nov for 318 (Martin Uher 1161, seen on the live map). Only those: a length makes a type eligible as a designed fleet bus, and other types would change existing cards' picks (226).",
+ "_doc": "Bus types as the seznam-autobusu.cz register names them (maker + type) -> nominal length in metres (blank where the register gives none and the type name does not say); 'garages': the register's garage codes (DPP and the other operators; Stenbus's 'PID' is its PID division, not a garage, so blank). 'garages_by_operator' (21 Nov 2026): each operator's own codes, which win over 'garages' ('Kla' is Kladno at Arriva City but Klatovy at Arriva Střední Čechy); names from each operator's depot list on seznam-autobusu.cz (dopravce_<slug>.html, 'Pracoviště dopravce'). A code in neither is shown as is with a hover note and 02_register.py warns (still unmapped: DPP 'A Host' and 'TV', Arriva Střední Čechy 'Zbi', which are in no depot list). Pak objects are not mapped here: 04_courses.py names each car's object from pak_requested.json and checks it against pak_objects.json (no stand-ins from DPP or other cities). Suburban types the PID regional companions use, added 30 Oct 2026 (Setra S 415 LE business and S 515 LE, Citaro C2 GÜ, Iveco Crossway LE LINE 12M, SOR ICN 10,5; manufacturer lengths, rounded), and Solaris Urbino 18 IV on 2 Nov for 318 (Martin Uher 1161, seen on the live map). Only those: a length makes a type eligible as a designed fleet bus, and other types would change existing cards' picks (226).",
  "length_m": {
   "Mercedes-Benz Conecto LF II": 12,
   "SOR NB 18": 18.75,
@@ -62,5 +62,15 @@
   "BnL": "Brandýs nad Labem",
   "Kla": "Kladno",
   "PID": ""
+ },
+ "garages_by_operator": {
+  "ARRIVA CITY": {"Tep": "Teplice", "JuP": "Jílové u Prahy"},
+  "ARRIVA STŘEDNÍ ČECHY": {"Dom": "Domažlice", "Hoř": "Hořovice", "Kla": "Klatovy", "Kos": "Kosmonosy", "Kra": "Kralovice",
+                           "KD": "Králův Dvůr", "Nep": "Nepomuk", "Plz": "Plzeň", "Pře": "Přeštice", "Pří": "Příbram",
+                           "Rok": "Rokycany", "Stř": "Stříbro", "Suš": "Sušice", "Tach": "Tachov"},
+  "ČSAD Benešov": {"Ben": "Benešov", "MpB": "Mníšek pod Brdy", "Vla": "Vlašim"},
+  "ČSAD Střední Čechy": {"Měl": "Mělník"},
+  "STENBUS": {"ost": "Bystrá (other lines)", "mVL": "Velká Lečice (museum)", "?": "?"},
+  "UMBRELLA CITY LINES": {"Cho": "Chomutov", "Pra": "Praha"}
  }
 }

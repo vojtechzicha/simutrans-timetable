@@ -38,7 +38,9 @@ vehicle category per line. Accessibility is not wanted.
 - Swaps: notes carry no time — resolve from where cars turned up later that day, else list the replacement and name the replaced.
 
 ## Vehicle display (owner, 28 Sep 2026: "Don't use cryptic")
-- Full type names, full stop and depot names; **no abbreviations anywhere**.
+- Full type names, full stop and depot names; **no abbreviations anywhere**. The seznam-autobusu.cz register gives depots as short
+  codes per operator ("Kos", "MpB"; "Kla" is Kladno at Arriva City but Klatovy at Arriva Střední Čechy): expand them from each
+  operator's depot list, per operator, and make the build warn on any code left unexpanded (21 Nov 2026: "Kos" on the IKEA bus).
 - Coupled set = `A + B`, numbers and types in the same order. Never collapse a recorded coupled pair to a single.
 - Every vehicle is a **3-line cell**: (1) numbers · depot, (2) full types · length, (3) pak core.
 - The type must be **visible next to every vehicle** — never only in a tooltip or a summary count ("I can't tell the type from
@@ -81,6 +83,11 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   bus route named X… with a DPP licence 101001–101999 that runs on the current export's day gets a card after the others, as a line to
   build: no game check, buses from that week's deployment records, never moving a bus another card was given. Regional X lines and the
   ČD rail replacements (XS, XR) are not city lines. They are temporary; re-check them with every new export.
+  With no readable records (since 1 Nov), an X line takes the buses the PID live map showed on it that no other card has, and its
+  designed places take the **types seen on it**, never the operator's most common type (that gave 14 articulated buses to X9, X25
+  and X130, which run 12 m buses; owner, 21 Nov 2026). Where the owner has built an X line, its card follows the game line's buses
+  (X9 = 100009, owner, 21 Nov: "please follow if possible"), even when a 25 Sep card also lists them: the owner picked them, and
+  the never-on-another-card rule is for places the sheet picks. The card says which other cards list them.
   The IKEA shuttle (Černý Most – IKEA – Černý Most, ARRIVA STŘEDNÍ ČECHY) is a city line too (owner, 5 Nov: "Do include the IKEA line").
 - **Prague: AE, BB1 and BB2 are city buses too** (owner, 18 Nov 2026: "yes, add AE and similar prague bus lines"): every daytime
   bus line of PID's 103xxx licence block (AE Hlavní nádraží – Letiště 103120, BB1 103123, BB2 103103, IKEA 103116) has a card after

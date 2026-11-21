@@ -2,7 +2,8 @@
 
 Sources (seznam-autobusu.cz, in-service buses, trakce=autobus): DPP (dpp_bus_*.html) and the other PID city operators
 (op_<slug>_*.html); single car pages (vuz_<id>.html) fill in cars the lists miss (e.g. DPP electric buses).
-Per car: number, maker_type, type, operator, garage (the register's short code expanded by bus_types.json "garages"),
+Per car: number, maker_type, type, operator, garage (the register's short code expanded by bus_types.json
+"garages_by_operator", then "garages"; a code in neither stays as is, with garage_code=True, and is printed as a warning),
 paint (current), year, state.
 
 Usage: python 02_register.py --state 2026-09-29
@@ -14,7 +15,10 @@ OPS = {'dpp': 'DPP', 'arriva-city': 'ARRIVA CITY', 'stenbus': 'STENBUS', 'about-
        'martin-uher': 'MARTIN UHER', 'csad-polkost': 'ČSAD POLKOST', 'vega-tour': 'Vega Tour', 'arriva-stredni-cechy': 'ARRIVA STŘEDNÍ ČECHY',
        'umbrella-city-lines': 'UMBRELLA CITY LINES', 'csad-benesov': 'ČSAD Benešov'}
 
+UNMAPPED = collections.Counter()   # (operator, code) of depot codes in neither garage map: shown as is, with a hover note
+
 def parse_list(t, operator, garages):
+    garages = {**garages['all'], **garages['by_operator'].get(operator, {})}   # the operator's own codes win ('Kla')
     out = {}
     for b in re.split(r'(?=<tr class="car-line [^"]*first-line" data-car-id)', t)[1:]:
         cid = re.search(r'data-car-id="(\d+)"', b).group(1)
@@ -24,9 +28,11 @@ def parse_list(t, operator, garages):
         pm = re.search(r'<span class="label">nátěr:</span>(.*?)</span>', b, re.S)
         yr = re.search(r'<td class="font085">(\d{4})', b)
         code = _txt(dp.group(1)).rstrip('*').strip() if dp else ''
+        if code and code not in garages: UNMAPPED[(operator, code)] += 1
         out[cid] = dict(num=num.group(1) if num else '', maker_type=_txt(mt.group(1)) if mt else '', operator=operator,
                         garage=garages[code] if code in garages else code, paint=_txt(pm.group(1)).rstrip('*').strip() if pm else '',
                         year=yr.group(1) if yr else '', state=re.search(r'<tr class="car-line (\w+)', b).group(1), source='list')
+        if code and code not in garages: out[cid]['garage_code'] = True   # 05_render.py: raw code with a hover note
     return out
 
 def parse_car(t):
@@ -44,7 +50,7 @@ def parse_car(t):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--state', required=True); s = state(ap.parse_args().state)
-    garages = load(os.path.join(ASSETS, 'bus_types.json'))['garages']
+    bt = load(os.path.join(ASSETS, 'bus_types.json')); garages = dict(all=bt['garages'], by_operator=bt['garages_by_operator'])
     d = os.path.join(RAW, 'register', s['register_raw'])
     veh = {}
     for p in sorted(glob.glob(os.path.join(d, 'dpp_bus_*.html'))):
@@ -57,6 +63,8 @@ def main():
         if cid not in veh: veh[cid] = parse_car(open(p, encoding='utf-8').read())
     save(veh, os.path.join(DER, f'vehicles_{s["register_raw"]}.json'))
     print(len(veh), 'vehicles', collections.Counter(v['operator'] for v in veh.values()))
+    if UNMAPPED: print('WARNING depot codes not in bus_types.json garages / garages_by_operator (shown as is, hover note):',
+                       ', '.join(f'{op} {code!r} ({n})' for (op, code), n in sorted(UNMAPPED.items())))
 
 if __name__ == '__main__':
     main()

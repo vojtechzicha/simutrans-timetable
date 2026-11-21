@@ -2004,6 +2004,91 @@
     "SOR ICN 9,5"
    ],
    "_prefer_types_why": "The designed places take free ARRIVA CITY buses of the two types seen on the shuttles (9043 SOR BN 9.5, 9016 SOR ICN 9.5) first."
+  },
+  "X9": {
+   "day": "2026-11-21",
+   "src_label": "in game 100009",
+   "seen": "the buses of game line 100009 (X9)",
+   "source": "Owner's screenshot of game line 100009 (X9), 21 Nov 2026: 4058, 3723, 3672 (Kačerov), 3959, 4157 (Hostivař)",
+   "_why": "Owner, 21 Nov 2026: \"but X9 please follow if possible - if not, use yours\" (with a screenshot of the game line). The five game buses are all 12 m and in the register, so the card follows the game, although each is also on a card from the 25 Sep records (those cards stay as they are). The timetable needs 6 at 16:00: the sixth is designed from the types seen on X9.",
+   "summary": "X9 follows the game: line 100009 (X9) runs 4058, 3723 and 3672 from Kačerov and 3959 and 4157 from Hostivař, all 12 m (owner, 21 Nov: “X9 please follow if possible”). Each of them is also on another card from the 25 September records (4058 on 134, 3723 on 244, 3672 on 232, 3959 on 133, 4157 on 207); those cards are left as they are. The timetable needs 6 buses at 16:00, one more than the game line has: the sixth is a free bus of a type the PID live map showed on X9 on 2 and 3 November (SOR NB 12, Iveco Streetway 12M; only 12 m buses were seen on it).",
+   "buses": [
+    {
+     "num": 4058,
+     "operator": "DPP",
+     "course": "X9/1",
+     "note": "In game line 100009 (X9) (owner’s screenshot, 21 Nov). Also on line 134’s card from the 25 Sep records."
+    },
+    {
+     "num": 3723,
+     "operator": "DPP",
+     "course": "X9/2",
+     "note": "In game line 100009 (X9) (owner’s screenshot, 21 Nov). Also on line 244’s card from the 25 Sep records."
+    },
+    {
+     "num": 3672,
+     "operator": "DPP",
+     "course": "X9/3",
+     "note": "In game line 100009 (X9) (owner’s screenshot, 21 Nov). Also on line 232’s card from the 25 Sep records."
+    },
+    {
+     "num": 3959,
+     "operator": "DPP",
+     "course": "X9/4",
+     "note": "In game line 100009 (X9) (owner’s screenshot, 21 Nov). Also on line 133’s card from the 25 Sep records."
+    },
+    {
+     "num": 4157,
+     "operator": "DPP",
+     "course": "X9/5",
+     "note": "In game line 100009 (X9) (owner’s screenshot, 21 Nov). Also on line 207’s card from the 25 Sep records."
+    }
+   ],
+   "not_needed": [],
+   "prefer_types": [
+    "SOR NB 12",
+    "Iveco Streetway 12M"
+   ]
+  },
+  "X25": {
+   "day": "2026-11-02",
+   "seen": "PID live map, Mon 2 and Tue 3 Nov",
+   "source": "PID live map (mapa.pid.cz), polled by the PID regional session: pipeline/pid-regional/data/raw/live/2026-11-0{2,3}/polls.jsonl",
+   "_why": "Owner, 21 Nov 2026: \"X25 uses standard buses, not articulated\". The live map showed only 12 m buses on X25. A seen bus is counted only where no other card has it (city rule: never a car on another card).",
+   "summary": "Buses seen on X25 on the PID live map in 15:00–17:59: Mon 2 Nov 3981, 3975, 3986, 4104, 3803, 4094, 4096, 3739; Tue 3 Nov 3815, 3887, 3901, 4103, 3991, 3954, 3971, 4098. All are 12 m (SOR NB 12, Iveco Streetway 12M; owner, 21 Nov: “X25 uses standard buses, not articulated”). Counted are the two that are on no other card, 3739 and 4103; the others are on cards from the 25 September records and stay there. The other places are designed: free buses of the types seen.",
+   "buses": [
+    {
+     "num": 3739,
+     "operator": "DPP",
+     "course": "X25/1",
+     "note": "Seen on X25 on Mon 2 Nov (3 trips in 15:00–17:59)."
+    },
+    {
+     "num": 4103,
+     "operator": "DPP",
+     "course": "X25/2",
+     "note": "Seen on X25 on Tue 3 Nov (6 trips in 15:00–17:59).",
+     "day": "2026-11-03"
+    }
+   ],
+   "not_needed": [],
+   "prefer_types": [
+    "SOR NB 12",
+    "Iveco Streetway 12M"
+   ]
+  },
+  "X130": {
+   "day": "2026-11-02",
+   "seen": "PID live map, Mon 2 and Tue 3 Nov",
+   "source": "PID live map (mapa.pid.cz), polled by the PID regional session: pipeline/pid-regional/data/raw/live/2026-11-0{1,2,3}/polls.jsonl",
+   "_why": "Owner, 21 Nov 2026, on X130 being articulated (\"I'm pretty sure X130 is midibus\") and, shown the live map, chose \"Standard, as seen\". All four weekday buses are on other cards, so the places are designed from the seen type.",
+   "summary": "Buses seen on X130 on the PID live map: Mon 2 Nov 3854 and 3825, Tue 3 Nov 3824 and 3742, all SOR NB 12 (12 m), two at a time all day; on Sunday evening, 1 Nov, a midibus (Solaris Urbino 8,9 LE 2060). All four weekday buses are on cards from the 25 September records (105, 154, 126, 213) and stay there, so the places are designed: free buses of the type seen (owner, 21 Nov: standard, as seen).",
+   "buses": [],
+   "not_needed": [],
+   "prefer_types": [
+    "SOR NB 12",
+    "Iveco Streetway 12M"
+   ]
   }
  },
  "x_lines": {
@@ -2025,7 +2110,7 @@
    "BB2"
   ],
   "_also_why": "Owner, 5 Nov 2026: \"Do include the IKEA line\": Černý Most – IKEA Černý Most – Černý Most (ARRIVA STŘEDNÍ ČECHY, licence 103116), read like the X lines. Owner, 18 Nov 2026 (\"yes, add AE and similar prague bus lines\"): AE (Airport Express, Hlavní nádraží – Letiště, DPP, licence 103120), BB1 (Budějovická – Delta, ARRIVA CITY, 103123) and BB2 (Budějovická – Filadelfie – Budějovická, ARRIVA CITY, 103103): the other daytime city bus lines of PID's 103xxx block, read like the X lines. Night lines (9xx) stay out (city rule: no night lines).",
-  "buses_note": "on designed buses: seznam-autobusu.cz refuses scripted requests since 1 November, so the records of their days could not be read, and each card takes free active buses of its line's type, not out on 25 September; the IKEA line runs on its own bus, 9501, seen on it on the PID live map on 1 and 2 November",
+  "buses_note": "on the buses below: X9 on the five buses of its game line 100009 (owner, 21 November) and one more, X25 and X130 on the buses the PID live map showed on them on 2 and 3 November where no other card has them, and every other place on free buses of the types seen on the line (12 m SOR NB 12 and Iveco Streetway 12M; owner, 21 November: “X25 uses standard buses, not articulated”); the deployment records of their days could not be read (seznam-autobusu.cz refuses scripted requests since 1 November); the IKEA line runs on its own bus, 9501, seen on it on the PID live map on 1 and 2 November",
   "game_lines": {
    "100890": "AE",
    "100921": "BB1",
@@ -2036,6 +2121,10 @@
    "AE": "103120",
    "BB1": "103123",
    "BB2": "103103"
-  }
+  },
+  "in_game": {
+   "X9": "100009"
+  },
+  "_in_game_why": "Owner, 21 Nov 2026 (screenshot): the save has line 100009 (X9) Praha,Voz.Žižkov – Praha,Nákl.nádraží Žižkov with 5 buses. The save export predates it, so the card says it is built but does not check its stops or schedule."
  }
 }

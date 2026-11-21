@@ -3,7 +3,8 @@
 Sections: game check (every game line against the current PID timetable, filterable to the lines to fix), network (every
 PID bus line 100-299), pak128 objects, one card per line (routes, game comparison, Simutrans schedule, courses with
 vehicles, PID stop lists), operators and garages, how it was built.
-Vehicle cell (shared rule): 1) number · garage (other operators: operator · garage)  2) full type · length  3) pak core
+Vehicle cell (shared rule): 1) number · garage (other operators: operator · garage; a register depot code with no full name
+in bus_types.json is shown as is with a hover note)  2) full type · length  3) pak core
 with livery where the type has more than one; "requested" = the object is not in the pak yet (VZ pak session is making it).
 
 Usage: python 05_render.py --state 2026-09-29
@@ -24,6 +25,7 @@ LIV = {'pidsedocervena': 'PID grey-red', 'pidcervenomodrobila': 'PID red-white-b
 CLASSES = [('ART', 'Articulated', '18 m'), ('LONG', 'Long', '13.5–15 m'), ('STD', 'Standard', '12–13 m'),
            ('MIDI', 'Midibus', '9–11 m'), ('MINI', 'Minibus', 'under 9 m'), ('UNK', 'Not known', '')]
 CN = {k: n for k, n, _ in CLASSES}
+UNNAMED = collections.Counter()   # (operator, depot code) shown on the page without a full name (hover note)
 
 def ucls(length):
     if not length: return 'UNK'
@@ -59,7 +61,8 @@ def main():
     x_txt = (f' DPP’s replacement lines {", ".join(XN)} (owner, 5 November: "All X lines are consider bprague buses")'
              + (f' and the {" and ".join(XA)} line' if XA else '') + ' follow at the end, '
              f'from the timetable of {day(G["later"]["service_date"])} ' + (XL_['buses_note'] if XL_.get('buses_note') else f'with the buses logged on {" and ".join(dm_(d) for d in XL_.get("days", []))}') + '; they are '
-             f'lines to build, not checked against the save.') if XLN else ''
+             f'lines to build' + ''.join(f' ({esc(L)} is built since the export, as game line {esc(g)})' for L, g in XL_.get('in_game', {}).items() if L in XLN)
+             + ', not checked against the save.') if XLN else ''
     if XG: x_txt += (f' With them at the end come {" and ".join(", ".join(XGc).rsplit(", ", 1))} (owner, 18 November: "add AE and similar prague bus lines"), '
                      f'the other daytime city lines of PID’s 103xxx block, on the same timetable with the buses the PID live map showed on them; '
                      f'they are checked against the save’s lines {" and ".join(", ".join(g for g, _ in XGL).rsplit(", ", 1))}.')
@@ -120,11 +123,16 @@ def main():
     def unit_html(x, designed=False):
         cl = ucls(x['length'])
         op = '' if x['operator'] == 'DPP' else OPN.get(x['operator'], x['operator'].title())
-        where = ' · '.join(w for w in (op, x['garage']) if w and w != '?')
+        gar = x['garage'] if x['garage'] != '?' else ''
+        if gar and x.get('garage_code'):   # register depot code with no full name in bus_types.json (02_register.py warns)
+            UNNAMED[(x['operator'], gar)] += 1
+            gar = f'<abbr title="Depot code in the seznam-autobusu.cz register; full name not known">{esc(gar)}</abbr>'
+        else: gar = esc(gar)
+        where = ' · '.join(w for w in (esc(op) if op != '?' else '', gar) if w)
         if designed and not x.get('num'):
-            first = f'<span class="ds">designed, not recorded</span>' + (f' <span class="dp">· {esc(where)}</span>' if where else '')
+            first = f'<span class="ds">designed, not recorded</span>' + (f' <span class="dp">· {where}</span>' if where else '')
         else:
-            first = f'<span class="veh" data-v="{esc(x["num"])}">{esc(x["num"])}' + (f' <span class="dp">· {esc(where)}</span>' if where else '') + '</span>'
+            first = f'<span class="veh" data-v="{esc(x["num"])}">{esc(x["num"])}' + (f' <span class="dp">· {where}</span>' if where else '') + '</span>'
         ln = f' · {x["length"]:g} m' if x['length'] else ''
         typ = x['type'] if x['type'] != '?' else 'type not known'
         return f'<div class="unit u-{cl}">{first}<span class="vt">{esc(typ)}{ln}</span><span class="pk">{core_html(x)}</span></div>'
@@ -175,6 +183,12 @@ def main():
         p = P[L]
         if xline(s, L) and not rs:   # owner, 5 Nov 2026: "All X lines are consider bprague buses (ignore existing lines)" / "Do include the IKEA line"
             kind = 'DPP replacement line' if L[:1] == 'X' else 'Line'
+            gl = XL_.get('in_game', {}).get(L)   # X9 (owner, 21 Nov 2026, screenshot): built since the save export
+            if gl and p.get('peak'):
+                nb = len(OBS.get(L, {}).get('buses', []))
+                return (f'<div class="game"><h4>In the game</h4><p><span class="chip st-info">built since the export</span> Game line {esc(gl)} ({esc(L)}), '
+                        f'{nb} buses (owner’s screenshot, 21 November); the save export predates it, so its stops and schedule are not checked. '
+                        f'Its buses are counted below.</p></div>')
             return ('<div class="game"><h4>In the game</h4><p><span class="chip st-warn">a line to build</span> ' + kind + ' from the '
                     '4 November timetable; the save is not checked for it.</p></div>') if p.get('peak') else ''
         if not rs:
@@ -382,7 +396,11 @@ def main():
             if des and c.get('why') == 'history':
                 notes.append(f'{nlog} courses are logged against {p.get("need")} needed at 16:00. This bus ran line {L} on {dd(c["hist"])} '
                              f'and was not out anywhere in PID on {int(vd[8:])} Sep (day overview).')
-            if des and c.get('why') == 'fleet':
+            if des and c.get('why') == 'fleet' and L[:1] == 'X' and OBS.get(L, {}).get('prefer_types'):   # X9, X25, X130 (21 Nov 2026)
+                how_ = 'from its game line' if OBS[L].get('src_label') else 'seen on the PID live map'
+                notes.append(f'{nlog} bus{"es" if nlog != 1 else ""} {how_} against {p.get("need")} needed at 16:00. A free active bus of a type seen on the line, '
+                             f'on no other card and on no PID regional sheet, not out anywhere in PID on {int(vd[8:])} Sep.')
+            elif des and c.get('why') == 'fleet':
                 notes.append(f'{nlog} courses are logged against {p.get("need")} needed at 16:00, and the line history has no free car left'
                              f'{"" if hist_any.get(L) else " (no record of the line since January 2025)"}. A free active bus of the line\'s type from the operator, '
                              f'not out anywhere in PID on {int(vd[8:])} Sep.')
@@ -405,6 +423,7 @@ def main():
             if c['split']: flag += '<span class="flag pm">PM part</span>'
             src = '' if des or spare == 'not needed' or c['source'] == vd else f'<span class="src">logged {dm(c["source"])}</span> '
             if c.get('observed') is not None: src = f'<span class="src">seen {int(c["source"][8:10])} {MONTHS[int(c["source"][5:7])][:3]}</span> '
+            if c.get('src_label'): src = f'<span class="src">{esc(c["src_label"])}</span> '   # X9 (21 Nov 2026): from its game line
             rows.append(f'<tr class="{"sp" if spare else ("unc" if (des or c["am_only"] or c["swap"]) else "")}"><td class="k">{esc(c["course"] if not des else "")}</td><td class="v">{chain}</td>'
                         f'<td class="n">{flag}{src}<span class="nt">{esc(" ".join(notes))}</span></td></tr>')
             rowc.append(c)
@@ -643,6 +662,8 @@ def main():
     out = os.path.join(PROJECT, s['output_html'])
     open(out, 'w', encoding='utf-8').write(body)
     print('wrote', out, '| lines', len(bus), '| buses', tot, dict(per_class_total), '| to fix', nfix, '| requested', n_req)
+    if UNNAMED: print('WARNING depot codes on the page without a full name (add them to assets/bus_types.json):',
+                      ', '.join(f'{op} {code!r} ({n})' for (op, code), n in sorted(UNNAMED.items())))
 
 if __name__ == '__main__':
     main()

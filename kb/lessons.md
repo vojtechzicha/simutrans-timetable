@@ -320,3 +320,16 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   showed one bus switching between both all day; asked, the owner chose one circuit. Fitting each row of the circuit on its own
   gave 4 buses where the timetable runs 3; choosing the three every-48 slot sets together gave 3. The index's "not modelled"
   entries for the X lines and IKEA had been stale since 5 Nov; the index now reads the bus sheet's line list.
+
+## 21 Nov — Prague bus garage codes and X-line buses
+- **21 Nov:** "The IKEA says "Kos"?" → a seznam-autobusu.cz depot code (Kosmonosy) that the garage map did not know, printed as
+  is; MpB, Vla and Pra were on the sheet too. The map was DPP-centric and global, and "Kla" means a different depot for each
+  Arriva company. Then "can you expand those or mark them on hover across all prague/pid sheets?" → only the bus sheet had codes
+  (tram and trolleybus show full names, PID regional sheets show no garages). v27: per-operator codes from each operator's depot
+  list, a hover note plus a build warning for any code still unknown. Unknown text in a vehicle cell should fail loudly, not ship.
+- **21 Nov:** "I'm pretty sure X130 is midibus not articulated", "X25 uses standard buses, not articulated" → the X lines had no
+  records, so their designed places fell back to DPP's most common type (SOR NB 18). The live map of 2–3 Nov, polled weeks
+  earlier, showed 12 m buses on X9, X25 and X130; on X130 the midibus was a Sunday-evening one, and asked, the owner chose
+  "Standard, as seen". For X9 the owner sent the game line (100009, five buses): "please follow if possible - if not, use yours" →
+  followed, although each bus is also on a 25 Sep card. Fallback picks need a type check against whatever evidence exists before
+  publishing; "designed" must not mean "the operator's commonest bus".

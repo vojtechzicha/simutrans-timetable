@@ -259,7 +259,7 @@
     "Run python scripts/run.py --state <new> --fetch.",
     "Check printed counts (courses by source, designed lines, requested objects) and republish to https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF."
    ],
-   "notes": "Checks game lines vs PID stops. Need = max(cycle_need, buses on road). Designed buses from line history (roster coverage), then operator fleet; 213 logged surplus not needed, 797 counted. Pak hand-off via 06_pak_request.py; missing objects shown 'requested', no stand-ins. Branch cards (state simlines.auto) are split into Simutrans lines by simlines.py, each sized on its own; cards 100-108 frozen (owner, 30 Oct). Regional companions (state regional, owner 30 Oct): through (0-min trip chains), pooled (vehicle records), interleaved (shared stretch, real gaps); their non-DPP buses map to VZ-PID-bus. 195 + 158 (owner, 7 Nov): one circuit line on 195's card (regional.pooled + simlines.circuit), 19 buses, keep_buses keeps 100158's five. X9/X25/X130 on designed buses (no records since the 1 Nov block); IKEA on 9501 from the live map. 161 + 312 on the 26 Oct timetables (owner, 7 Nov): 161 4 buses, 312 one circuit škola/Špejchar 3 buses (simlines.group_modes).",
+   "notes": "Checks game lines vs PID stops. Need = max(cycle_need, buses on road). Designed buses from line history (roster coverage), then operator fleet; 213 logged surplus not needed, 797 counted. Pak hand-off via 06_pak_request.py; missing objects shown 'requested', no stand-ins. Branch cards (state simlines.auto) are split into Simutrans lines by simlines.py, each sized on its own; cards 100-108 frozen (owner, 30 Oct). Regional companions (state regional, owner 30 Oct): through (0-min trip chains), pooled (vehicle records), interleaved (shared stretch, real gaps); their non-DPP buses map to VZ-PID-bus. 195 + 158 (owner, 7 Nov): one circuit line on 195's card (regional.pooled + simlines.circuit), 19 buses, keep_buses keeps 100158's five. X9 on game line 100009's five buses + 1 designed, X25 on 3739 + 4103 seen + 3 designed, X130 3 designed, all 12 m (owner, 21 Nov; designed places take the types seen on the live map); IKEA on 9501 from the live map. 161 + 312 on the 26 Oct timetables (owner, 7 Nov): 161 4 buses, 312 one circuit škola/Špejchar 3 buses (simlines.group_modes).",
    "rawSnapshots": [
     "game/2026-09-29",
     "gtfs/2026-09-29",
@@ -378,6 +378,11 @@
      "at": "2026-11-18T20:40:00+01:00",
      "version": 26,
      "note": "BB1's second designed bus 8711 → 8712: 8711 is on the PID Kladensko sheet (858, same November live map); designed November picks now skip every bus on a PID regional roster"
+    },
+    {
+     "at": "2026-11-21T10:55:00+01:00",
+     "version": 27,
+     "note": "Garage codes expanded per operator (owner, 21 Nov: \"The IKEA says \\\"Kos\\\"?\"): Kos → Kosmonosy, MpB → Mníšek pod Brdy, Vla → Vlašim, Pra → Praha; unknown codes get a hover note and a build warning. X9, X25, X130 on 12 m buses instead of designed SOR NB 18 (owner: X25 standard; X130 standard as seen on the live map): X9 follows game line 100009 (4058, 3723, 3672, 3959, 4157) plus one designed; X25 3739 and 4103 seen, 3 designed; X130 3 designed. Every other card unchanged."
     }
    ]
   },

@@ -94,7 +94,8 @@ def main():
         v = V.get(cid) if cid else None
         if not v: return dict(num=num, id=cid, type='?', length=None, operator='?', garage='?', paint='', year='', pak=None)
         return dict(num=num, id=cid, type=v['maker_type'], length=BT['length_m'].get(v['maker_type']), operator=v['operator'],
-                    garage=v['garage'], paint=v['paint'], year=v.get('year', ''), pak=pak(v))
+                    garage=v['garage'], paint=v['paint'], year=v.get('year', ''), pak=pak(v),
+                    **({'garage_code': True} if v.get('garage_code') else {}))   # depot code with no full name (02_register.py)
     def courses_of(recs):
         by = collections.defaultdict(list)
         for r in recs: by[r['course']].append(r)
@@ -215,7 +216,8 @@ def main():
         for i, b in enumerate(ob['buses'] + ob.get('not_needed', [])):
             spare = i >= len(ob['buses']); num = str(b['num'])
             c = dict(course=b['course'], chain=[dict(set=num, cars=[car(num, byn.get((num, b['operator'])))], note='')], swap=False,
-                     split=False, am=[], am_only=spare, source=ob['day'], observed=b['note'])
+                     split=False, am=[], am_only=spare, source=b.get('day', ob['day']), observed=b['note'])   # a bus's own day (X25 4103: 3 Nov)
+            if ob.get('src_label'): c['src_label'] = ob['src_label']   # X9 (21 Nov 2026): the buses of its game line, not seen ones
             if spare: c['spare'] = 'seen'
             got[f'{b["course"]}#{num}'] = c; out.append(dict(line=L, **c))
         logged[L] = got
@@ -278,7 +280,8 @@ def main():
             if pref:
                 def walk(o):
                     if isinstance(o, dict):
-                        if 'num' in o and 'operator' in o: onreg.add((str(o['num']), o['operator']))
+                        if 'num' in o and 'operator' in o:   # the PID rosters name DPP in full; the register says 'DPP' (21 Nov 2026)
+                            onreg.add((str(o['num']), 'DPP' if o['operator'] == 'Dopravní podnik hl. m. Prahy' else o['operator']))
                         for v_ in o.values(): walk(v_)
                     elif isinstance(o, list):
                         for v_ in o: walk(v_)
