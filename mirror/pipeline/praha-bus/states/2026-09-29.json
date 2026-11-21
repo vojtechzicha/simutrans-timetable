@@ -1606,6 +1606,39 @@
      "why": "BB2 round Filadelfie every 7 min from 15:42 (:42, :49, :56, :03 …; every 10 before); every 48 with 7 slots is within 1 min 15:49–17:55, up to 3 min off the earlier trips."
     }
    ]
+  },
+  "236": {
+   "_why": "235 + 236 one circuit (owner, 21 Nov 2026), typed with departures only at Zámky and Nemocnice Bohnice (see simlines._circuit_236_why). Both lines every 30 all afternoon.",
+   "rows": [
+    {
+     "o": "Zámky",
+     "d": "Nemocnice Bohnice",
+     "every": 30,
+     "real": [
+      8
+     ],
+     "match": [
+      "Zámky",
+      "Podhoří"
+     ],
+     "rt": 32,
+     "why": "236 from Zámky every 30 at :08 and :38 to Podhoří (14 min, arrives :22 / :52), then on as 235 to Nemocnice Bohnice (real 235 departure Podhoří :23 / :53, 17 min; arrives :40 / :10). No departure time at Podhoří: the bus goes straight on."
+    },
+    {
+     "o": "Nemocnice Bohnice",
+     "d": "Zámky",
+     "every": 30,
+     "real": [
+      23
+     ],
+     "match": [
+      "Nemocnice Bohnice",
+      "Podhoří"
+     ],
+     "rt": 28,
+     "why": "235 from Nemocnice Bohnice every 30 at :23 and :53 to Podhoří (14 min, arrives :37 / :07), then on as 236 to Zámky (real 236 departure Podhoří :38 / :08, 13 min; arrives :51 / :21). No departure time at Podhoří."
+    }
+   ]
   }
  },
  "simlines": {
@@ -1650,7 +1683,8 @@
    "318",
    "363",
    "333",
-   "232"
+   "232",
+   "236"
   ],
   "terminus_alias": {
    "138": {
@@ -1695,6 +1729,9 @@
    },
    "232": {
     "1": "a new line: one-way Smíchovské nádraží → Na Knížecí in service, back empty (owner, 21 Nov 2026); not in the game yet"
+   },
+   "236": {
+    "0": "one line in place of 100236 + 100235: Zámky – Podhoří – Nemocnice Bohnice, the circuit as it runs (owner, 21 Nov 2026)"
    }
   },
   "groups": {
@@ -1759,7 +1796,8 @@
    ],
    "_why": "161 + 312 (owner, 7 Nov 2026): 161 its own line (owner, 5 Nov: split); 312's two hourly variants (škola :00, Špejchar :30) sized by the auto rule within game line 100312."
   },
-  "_circuit_BB1_why": "Owner, 18 Nov 2026 (asked: one line or two): one circuit Budějovická → Delta → Budějovická → Filadelfie → Budějovická in place of 100921 + 100922, as the real bus switches between the shuttles."
+  "_circuit_BB1_why": "Owner, 18 Nov 2026 (asked: one line or two): one circuit Budějovická → Delta → Budějovická → Filadelfie → Budějovická in place of 100921 + 100922, as the real bus switches between the shuttles.",
+  "_circuit_236_why": "Owner, 21 Nov 2026: 235 + 236 as one circuit, as they run. Typed as one line Zámky – Podhoří – Nemocnice Bohnice with departures only at the outer ends: in real life the bus changes line at Podhoří within 1 min, which the 2-min game minimum cannot drive if Podhoří is timed (150 min round, 5 buses); untimed there it is the same round, 90 min, 3 buses, as the live map shows. Podhoří is passed twice per round (to and from each end), so it is the circuit Podhoří → Zámky → Podhoří → Nemocnice Bohnice → Podhoří."
  },
  "regional": {
   "_why": "Owner, 30 Oct 2026: \"Now could you do the companion PID lines ...\" / \"Definitley include those that share buses so we have a full list. Also those that are \"proložené\" like 113/333.\" / \"I am 100% sure 301/352 are continuations of 174\" / \"Pool if they pool in real live\" / \"Include if they are interleaved in the real timetiable\". through: every trip of the regional line starts or ends at the minute a city trip ends or starts at the same stop (GTFS, 30 Sep): one through trip. pooled: the city line's courses also run the regional line (vehicle records, 25 Sep: 111 courses 2, 3, 4, 6, 7 -> 329; 161 courses 1, 2, 3, 5, 6 -> 312; 229 courses 1-9, 11 -> 364 and 366): the regional trips join the city card. interleaved: own buses, a shared stretch where the regional trips fall in the city line's gaps; own card after the city line. Left out (owner): 157/327, 157/331, 215/326 and 161/355 (one bus on one day).",
@@ -1789,6 +1827,9 @@
    ],
    "BB1": [
     "BB2"
+   ],
+   "236": [
+    "235"
    ]
   },
   "interleaved": {
@@ -1820,9 +1861,11 @@
    "161": "312 Bořislavka – Tuchoměřice runs on 161's buses: on 25 Sep courses 1, 2, 3, 5 and 6 of 161 also ran 312, and on the PID live map of 3 Nov buses 4531–4541 switch between the two lines. Its :00 and :30 departures fill 161's gaps at Bořislavka (together every 10). Both are on the 26 Oct timetables (owner, 7 Nov 2026): 161 is diverted (its Bořislavka – Letiště route ends at Přední Kopanina), and 312 runs hourly to Tuchoměřice,škola at :00 and hourly to Tuchoměřice,Špejchar at :30.",
    "229": "364 (Doubek) and 366 (Doubek via Křenice; Mukařov) run on 229's buses: on 25 Sep ten of 229's eleven courses also ran 364 and 366. Their trips are rows of this card.",
    "195": "158 (Sídliště Letňany – Letňany) runs on 195's buses: on 25 Sep 21 of 195's 24 logged courses go over to 158 (přejezd na linku 158), and 158 has no record of its own. Owner, 7 Nov 2026: \"design these together\" / \"I meant as one line\". So both are one Simutrans line: each bus runs 195 to Jesenická and back, then 158 to Letňany and back. It needs 19 buses (143 min round), the same as two separate lines (195 14 + 158 5; the published cards had 15 + 5); it replaces game lines 100195 and 100158.",
-   "BB1": "BB2 (Budějovická – Filadelfie – Budějovická) runs on BB1's buses: on the PID live map one ARRIVA CITY bus switches between the two shuttles all day (9043 on Mon 2 Nov, 9016 on Tue 3 Nov; the map tracked 43 of 134 BB1 and 26 of 73 BB2 trips). Owner, 18 Nov 2026: one Simutrans line (circuit) for both."
+   "BB1": "BB2 (Budějovická – Filadelfie – Budějovická) runs on BB1's buses: on the PID live map one ARRIVA CITY bus switches between the two shuttles all day (9043 on Mon 2 Nov, 9016 on Tue 3 Nov; the map tracked 43 of 134 BB1 and 26 of 73 BB2 trips). Owner, 18 Nov 2026: one Simutrans line (circuit) for both.",
+   "236": "235 Nemocnice Bohnice – Podhoří runs on 236's buses: every 236 course is logged going over to 235, 235 has no records of its own, and on the PID live map of 2 and 3 Nov each of three Solaris Urbino 8,9 LE midibuses alternates a 236 round trip to Zámky and a 235 round trip to Nemocnice Bohnice, turning at Podhoří, all day. One circuit line (owner, 21 Nov 2026: \"One circuit line\")."
   },
-  "_pooled_195_why": "Owner, 7 Nov 2026: \"I see 158 uses 195 buses - design these together then\". On 25 Sep 21 of 195's 24 logged courses are logged \"přejezd na linku 158\", and 158 has no record of its own. 158 (Sídliště Letňany – Letňany) runs on 195's first stretch from Sídliště Letňany, at the same 7–8 min headway, so its trips become rows of the 195 card and share its Simutrans lines."
+  "_pooled_195_why": "Owner, 7 Nov 2026: \"I see 158 uses 195 buses - design these together then\". On 25 Sep 21 of 195's 24 logged courses are logged \"přejezd na linku 158\", and 158 has no record of its own. 158 (Sídliště Letňany – Letňany) runs on 195's first stretch from Sídliště Letňany, at the same 7–8 min headway, so its trips become rows of the 195 card and share its Simutrans lines.",
+  "_pooled_236_why": "Owner, 21 Nov 2026 (\"why would on 235 be a 18m bus?\" → asked, \"One circuit line\"): 235 has no records of its own; every 236 course is logged going over to 235, and on the PID live map of 2 and 3 Nov each of three Solaris Urbino 8,9 LE alternates a 236 round trip (Podhoří ⇄ Zámky) and a 235 round trip (Podhoří ⇄ Nemocnice Bohnice) all day."
  },
  "observed_buses": {
   "318": {
@@ -2161,10 +2204,27 @@
  },
  "_records_move_first_why": "Owner, 21 Nov 2026: \"so on 242/243 no bus switches lines, no continuation? if yes, split the cards\". Yes: on the PID live map of 2 and 3 Nov 1108 ran 243 all day (04:40 – about 21:00; one late 242 trip on Monday) and 1106, 1109, 1912 only 242. 242's course 1, logged every day going over to 243, is the 243 bus, so it is the course released first when 242 has more courses than it needs, and the přejezd rule moves it onto 243 in place of a designed bus. Separate cards, as before v28.",
  "hold_from_picks": {
-  "_why": "Fewest moves (owner, 2 Nov 2026: \"do not move vehicles in lines not affected if possible\"). 232 needs 2 buses, not 5, since 21 Nov 2026 (one-way line): its former designed buses 3670 and 3676 stay out of every other card's designed picks, so X9 (3681) and X130 (3688, 3689, 3691) keep theirs.",
+  "_why": "Fewest moves (owner, 2 Nov 2026: \"do not move vehicles in lines not affected if possible\"). 232 needs 2 buses, not 5, since 21 Nov 2026 (one-way line): its former designed buses 3670 and 3676 stay out of every other card's designed picks, so X9 (3681) and X130 (3688, 3689, 3691) keep theirs. 235's designed SOR NB 18 5033 likewise, since 235 + 236 are one circuit (21 Nov 2026).",
   "DPP": [
    "3670",
-   "3676"
+   "3676",
+   "5033"
+  ]
+ },
+ "fallback_types": {
+  "_why": "Owner, 21 Nov 2026 (\"why would on 235 be a 18m bus?\" → fix \"Only the clear ones\"): designed buses on a line with no history took the operator's most common type; these take the types the PID live map showed on the line on 2–3 Nov first.",
+  "378": [
+   "SOR BN 12",
+   "Iveco Streetway 12M"
+  ],
+  "243": [
+   "Dekstra LF 38",
+   "SOR NB 12",
+   "SOR BN 12",
+   "Iveco Crossway LE LINE 12M"
+  ],
+  "236": [
+   "Solaris Urbino 8,9 LE"
   ]
  }
 }

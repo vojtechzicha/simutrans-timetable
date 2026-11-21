@@ -224,8 +224,9 @@ def main():
     taken = busy | {x['id'] for c in out if not isx(c['line']) for ch in c['chain'] for x in ch['cars'] if x['id']}
     x_ids = {x['id'] for c in out if isx(c['line']) for ch in c['chain'] for x in ch['cars'] if x['id']}   # joins taken at the X lines' turn
     # state hold_from_picks (fewest moves; owner, 2 Nov 2026: "do not move vehicles in lines not affected if possible"): buses a
-    # card no longer needs stay out of every designed pick, so freeing them moves no other card's buses (232's, 21 Nov 2026)
-    taken |= {byn[(str(n), op)] for op, ns in s.get('hold_from_picks', {}).items() if not op.startswith('_') for n in ns if (str(n), op) in byn}
+    # card no longer needs stay out of every designed pick, so freeing them moves no other card's buses (232's, 21 Nov 2026);
+    # they are still listed as "not needed" where a card did so before
+    held = {byn[(str(n), op)] for op, ns in s.get('hold_from_picks', {}).items() if not op.startswith('_') for n in ns if (str(n), op) in byn}
     # the operators' city-line types (fallback for lines without any history)
     by_op = collections.defaultdict(collections.Counter)
     for c in out:
@@ -255,11 +256,11 @@ def main():
         for ty, _ in tfreq.most_common():
             if len(picks) >= short: break
             if ty in have: continue
-            e = next((e for e in free if e['type'] == ty and e not in picks), None)
+            e = next((e for e in free if e['type'] == ty and e not in picks and e['id'] not in held), None)
             if e: picks.append(e); have.add(ty)
         for e in free:
             if len(picks) >= short: break
-            if e not in picks: picks.append(e)
+            if e not in picks and e['id'] not in held: picks.append(e)
         for i, e in enumerate(picks):
             taken.add(e['id']); out.append(designed_car(L, i, e, 'history', e['dates'][:3]))
         n0 = len(picks)
@@ -267,6 +268,9 @@ def main():
             op = next((o for o in (reg_op(x) for x in p['operators']) if o), None)
             # state observed_buses[L].prefer_types (BB1 + BB2, 18 Nov 2026): the types the live map showed on the line come first
             types = list(s.get('observed_buses', {}).get(L, {}).get('prefer_types', []))
+            # state fallback_types[L] (owner, 21 Nov 2026): the types the PID live map showed on a line with no history come before
+            # the operator's most common ones (378 had 2 articulated buses on a 12 m line, 243 a 7.8 m one on a 12 m line)
+            types += [ty for ty in s.get('fallback_types', {}).get(L, []) if ty not in types]
             types += [ty for ty, _ in tfreq.most_common() if ty not in types]   # the line's own types first, then the operator's
             types += [ty for ty, _ in by_op.get(op, collections.Counter()).most_common() if ty not in types]
             if L in regional:      # a companion with no record at all (318): the operator's most common active type, numbered cars only
@@ -290,7 +294,7 @@ def main():
                         for v_ in o: walk(v_)
                 for f_ in glob.glob(os.path.join(os.path.dirname(BASE), 'pid-regional', 'oblasti', '*', 'data', 'derived', 'roster_published.json')):
                     walk(load(f_))
-            free_ = lambda cid: cid not in taken or (V[cid]['maker_type'] in pref and cid not in incard and cid in busy
+            free_ = lambda cid: cid not in held and cid not in taken or (cid not in held and V[cid]['maker_type'] in pref and cid not in incard and cid in busy
                                                      and (V[cid]['num'], V[cid]['operator']) not in onreg)
             pool = sorted((cid for cid, v in V.items() if v['operator'] == op and v['state'] == 'zar' and free_(cid)
                            and BT['length_m'].get(v['maker_type']) and (v['num'] or L not in regional)), key=rank)   # any city-sized type last, if its usual types are all out
@@ -330,6 +334,9 @@ def main():
     # (not into an X line: its buses come from its own November days, and a 25 Sep přejezd onto it belongs to another timetable)
     for B in sorted({c['line'] for c in out if c['source'] == 'designed' and not isx(c['line'])}, key=ckey):
         des = [c for c in out if c['line'] == B and c['source'] == 'designed']
+        # a line with state fallback_types (21 Nov 2026, 243): the real bus replaces a designed one not of the line's seen types first
+        ft = set(s.get('fallback_types', {}).get(B, []))
+        if ft: des.sort(key=lambda c: c['chain'][-1]['cars'][0]['type'] in ft)
         donors = [c for c in out if c.get('spare') == 'surplus' and c['line'] != B
                   and any(re.search(r'přejezd na link\S* [^.]*\b' + B + r'\b', ch['note']) for ch in c['chain'])]
         donors.sort(key=lambda c: (ckey(c['line']), ckey(c['course'])))

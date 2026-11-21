@@ -314,6 +314,9 @@ def main():
                         'so a 0–1 min timetabled turn cannot be driven in the game. Running times are the median of the 15:00–17:59 trips.</td></tr>')
         others = [x for x in p.get('patterns', []) if not any(x['stops'] == m['stops'] for m in p['main'])]
         handod = {(m['o'], m['d']) for m in (hand or [])}
+        # a row through two lines' trips (state row "match", 235 + 236 through Podhoří, 21 Nov 2026): both its legs are in the table
+        for r_ in s.get('schedule_overrides', {}).get(L, {}).get('rows', []):
+            if r_.get('match'): handod |= {tuple(r_['match']), (r_['match'][1], r_['d'])}
         pat = ''
         if others:
             pat = ('<details class="pats"><summary>Other stop patterns in 15:00–17:59 (' + str(len(others)) + ')</summary><ul>' +

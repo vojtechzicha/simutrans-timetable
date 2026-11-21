@@ -348,3 +348,7 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   out; the regular 232 is one bus, one course on every recorded day. Say plainly when a number is a bug. Then "could we model the
   one direction trips (by returning empty)?" → v30: a second line 232B every 30 at :01 with an empty return, 1 bus; 232's freed
   designed buses are held out of other cards' picks so X9 and X130 do not move.
+- **21 Nov:** "why would on 235 be a 18m bus?" → no reason: 235 has no records, so the fallback took DPP's commonest bus. The
+  live map showed 235 and 236 as one pool (three Urbino 8,9 LE alternate the lines at Podhoří every trip); asked, one circuit line
+  (v31), 3 buses, timed only at Zámky and Nemocnice Bohnice. The same fallback had 378, 243 and 220 on types they do not run; the
+  owner chose to fix the clear ones. Third type complaint in a day (X lines, 235): a designed bus is only as good as its type check.

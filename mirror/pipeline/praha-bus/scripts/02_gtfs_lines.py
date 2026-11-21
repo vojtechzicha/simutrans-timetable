@@ -178,7 +178,9 @@ def main():
             for o_ in ents:
                 I, R = o_['every'], o_['real']; skip = {mins(x) for x in o_.get('extra', [])}
                 sib = [e for e in ents if e is not o_ and (e['o'], e['d']) == (o_['o'], o_['d'])]
-                deps = sorted(t['dep'] for t in ts if (t['o'], t['d']) == (o_['o'], o_['d']) and t['dep'] not in skip
+                # a row through two lines' trips (235 + 236 through Podhoří, 21 Nov 2026) is checked against its first leg's trips
+                mo, md = o_.get('match', [o_['o'], o_['d']])
+                deps = sorted(t['dep'] for t in ts if (t['o'], t['d']) == (mo, md) and t['dep'] not in skip
                               and all(near(t['dep'], I, R) <= near(t['dep'], e['every'], e['real']) for e in sib))
                 S = set(deps); pk = [x for x in deps if WIN[0] <= x < WIN[1]]
                 runs, a = [], None
@@ -191,7 +193,7 @@ def main():
                 dev = max((min(abs(x - k * I - y) for y in R for k in range(-1, 1440 // I + 2)) for x in pk), default=0)
                 rows.append(dict(o=o_['o'], d=o_['d'], schedule=dict(every=I, real=R, set=loop_shift(I, R, True), exact=False, override=o_['why'], approx=bool(o_.get('approx')),
                                  max_dev=dev, first=run[0] if run else None, last=run[-1] if run else None, n=len(run)), sl=o_.get('sl')))
-                via = collections.Counter(t.get('via') for t in ts if (t['o'], t['d']) == (o_['o'], o_['d'])).most_common(1)
+                via = collections.Counter(t.get('via') for t in ts if (t['o'], t['d']) == (mo, md)).most_common(1)
                 if via and via[0][0]: rows[-1]['via'] = via[0][0]    # the row's trips are a companion's (state "regional")
             rec['schedule_rows'] = rows
             if sls:

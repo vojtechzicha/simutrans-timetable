@@ -62,6 +62,11 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
   Smíchov → Na Knížecí made it 5 buses against 1). Either leave them out of the need with the rows, or, as the owner chose
   (21 Nov 2026: "could we model the one direction trips (by returning empty)?"), give them their own Simutrans line with an
   empty return row, sized on its own. When a card needs more buses than its rows' own sizing, find out why before publishing.
+- **Designed buses take the line's real type**, never just the operator's most common one: with no history, use the types the live
+  map showed on the line (state `fallback_types`; owner, 21 Nov 2026: "why would on 235 be a 18m bus?" — 235 runs 8.9 m midibuses;
+  378 had 2 articulated on a 12 m line, 243 a 7.8 m one on a 12 m line). Before publishing, compare every designed type with the
+  live map or the line's other buses. A line with no records may be one pool with another: 235 + 236 share three midibuses that
+  change line at Podhoří every trip (one line, timed only at the outer ends, since the 1-min change is below the game minimum).
 - Tram cities: `cycle_need` (`brno|plzen|praha|olomouc/scripts/common.py`): follow a vehicle leaving ~16:00 round its trip, taking
   at each end the first departure ≥ layover later (3 min default, or the terminus's own shorter turnaround, e.g. Prague 31 at
   Vysočanská 1 min). **Don't size by FIFO trip chaining** — depot pull-outs make it miscount (Brno 10: 7 instead of 4–5).

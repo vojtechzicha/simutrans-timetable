@@ -47,11 +47,14 @@ def build(L, ts, rows, s):
     lay = {k: max(LAY_FLOOR, v) for k, v in lay.items()}
     ly = lambda x: lay.get(A(x), 3)
 
+    # a row's own running time (state row "rt"): a row through two lines' trips has no trips of its own (235 + 236 through
+    # Podhoří, 21 Nov 2026: the two legs' medians plus the 1 min at Podhoří)
+    ert = lambda e: e.get('rt') or rt(e['o'], e['d'])
     def plain(ents):
         P = math.lcm(*[e['every'] for e in ents])
-        legs = [(A(e['o']), A(e['d']), sorted({x + k * e['every'] for x in e['real'] for k in range(P // e['every'])}), rt(e['o'], e['d']), ly(e['d'])) for e in ents]
+        legs = [(A(e['o']), A(e['d']), sorted({x + k * e['every'] for x in e['real'] for k in range(P // e['every'])}), ert(e), ly(e['d'])) for e in ents]
         n, w = obl.slot_need(P, legs)
-        return dict(kind='plain', entries=ents, need=n, waits={k: v for k, v in w.items()}, rts=[rt(e['o'], e['d']) for e in ents], period=P,
+        return dict(kind='plain', entries=ents, need=n, waits={k: v for k, v in w.items()}, rts=[ert(e) for e in ents], period=P,
                     cycle=sum(l[3] * len(l[2]) for l in legs) + sum(sum(v) for v in w.values()))
     def circuit(ents):
         n, cyc, w = obl.pattern_need([dict(every=e['every'], real=e['real']) for e in ents], [rt(e['o'], e['d']) for e in ents], [ly(e['o']) for e in ents])
@@ -76,7 +79,7 @@ def build(L, ts, rows, s):
     if (L in cfg.get('separate', []) and s.get('_group_mode') != 'auto') or s.get('_group_mode') == 'separate': return seps
     # circuitize on synthetic trips at the typed slots with the median running time (its own rt takes the max of the trips)
     R = [dict(fr=A(r['o']), to=A(r['d']), every=r['every'], real=r['real']) for r in rows]
-    syn = [dict(o=A(r['o']), d=A(r['d']), dep=t, arr=t + rt(r['o'], r['d'])) for r in rows for t in range(840, 1140) if t % r['every'] in r['real']]
+    syn = [dict(o=A(r['o']), d=A(r['d']), dep=t, arr=t + ert(r)) for r in rows for t in range(840, 1140) if t % r['every'] in r['real']]
     brs = [dict(a=A(p[0]['o']), b=A(p[0]['d']), need=sp['need']) for p, sp in zip(pairs, seps)]
     circ = obl.circuitize(brs, R, syn, lay, 960, lambda x: x)
     if not circ: return seps
