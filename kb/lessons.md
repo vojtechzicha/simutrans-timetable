@@ -343,3 +343,8 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   2 and 3 Nov 1108 stayed on 243 and the others on 242; the daily přejezd only says which course is the 243 bus. v29 splits the
   cards again and moves just that bus. Asking "one line or two lines on one card" skipped the first question: is there any
   sharing at all? Check the whole day on the live map before offering to pool.
+- **21 Nov:** "can you without me losing faith in you explain, why 232 needs 5 buses?" → it didn't: the round-trip count took
+  232's five one-way peak trips (Smíchov → Na Knížecí, no trip back) as buses that return, while the card's own rows left them
+  out; the regular 232 is one bus, one course on every recorded day. Say plainly when a number is a bug. Then "could we model the
+  one direction trips (by returning empty)?" → v30: a second line 232B every 30 at :01 with an empty return, 1 bus; 232's freed
+  designed buses are held out of other cards' picks so X9 and X130 do not move.

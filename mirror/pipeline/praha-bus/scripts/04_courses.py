@@ -223,6 +223,9 @@ def main():
         logged[L] = got
     taken = busy | {x['id'] for c in out if not isx(c['line']) for ch in c['chain'] for x in ch['cars'] if x['id']}
     x_ids = {x['id'] for c in out if isx(c['line']) for ch in c['chain'] for x in ch['cars'] if x['id']}   # joins taken at the X lines' turn
+    # state hold_from_picks (fewest moves; owner, 2 Nov 2026: "do not move vehicles in lines not affected if possible"): buses a
+    # card no longer needs stay out of every designed pick, so freeing them moves no other card's buses (232's, 21 Nov 2026)
+    taken |= {byn[(str(n), op)] for op, ns in s.get('hold_from_picks', {}).items() if not op.startswith('_') for n in ns if (str(n), op) in byn}
     # the operators' city-line types (fallback for lines without any history)
     by_op = collections.defaultdict(collections.Counter)
     for c in out:

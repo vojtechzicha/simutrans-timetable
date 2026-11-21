@@ -1152,7 +1152,7 @@
    ]
   },
   "232": {
-   "_why": "Method check 25 Oct 2026: the fit counted the peak extras at Smíchovské nádraží into every 30 with 2 slots (4 an hour) against every 30 from Na Knížecí (2 an hour).",
+   "_why": "Method check 25 Oct 2026: the fit counted the peak extras at Smíchovské nádraží into every 30 with 2 slots (4 an hour) against every 30 from Na Knížecí (2 an hour). Owner, 21 Nov 2026 (\"could we model the one direction trips (by returning empty)?\"): the one-way peak trips Smíchovské nádraží → Na Knížecí are their own Simutrans line, every 30 at :01 (asked: \"Every 30 at :01\"), back to Smíchovské nádraží empty; the owner sets the empty return up in the game (\"I know how in my fork\"). Two lines, each sized on its own (the card had said 5 buses: the round-trip count took the one-way trips as buses that come back).",
    "rows": [
     {
      "o": "Smíchovské nádraží",
@@ -1161,13 +1161,9 @@
      "real": [
       8
      ],
-     "why": "Every 30 at :08 and :38, the line's all-day pattern. The 5 extra peak trips (15:01, 15:46, 16:01, 16:31, 17:01) have no trip back in the timetable, so they are listed, not modelled.",
+     "why": "Every 30 at :08 and :38, the line's all-day pattern. The one-way peak trips (15:01, 16:01, 16:31, 17:01) are the one-way line below; 15:46 is left out (listed, not modelled).",
      "extra": [
-      "15:01",
-      "15:46",
-      "16:01",
-      "16:31",
-      "17:01"
+      "15:46"
      ]
     },
     {
@@ -1178,6 +1174,28 @@
       26
      ],
      "why": "Every 30 at :26 and :56, as the timetable all day."
+    },
+    {
+     "o": "Smíchovské nádraží",
+     "d": "Na Knížecí",
+     "every": 30,
+     "real": [
+      1
+     ],
+     "extra": [
+      "15:46"
+     ],
+     "why": "One-way peak trips Smíchovské nádraží → Na Knížecí every 30 at :01 and :31 (real 15:01, 16:01, 16:31, 17:01; owner, 21 Nov 2026: \"Every 30 at :01\"). The fit adds 15:31, which does not run, and leaves out 15:46. They have no trip back in the timetable."
+    },
+    {
+     "o": "Na Knížecí",
+     "d": "Smíchovské nádraží",
+     "every": 30,
+     "real": [
+      14
+     ],
+     "approx": true,
+     "why": "Back to Smíchovské nádraží empty, no stops (the owner sets up the empty run in the game): leaves Na Knížecí 3 min after arriving, 10 min like 232, and waits at Smíchovské nádraží for the next :01 / :31."
     }
    ]
   },
@@ -1631,7 +1649,8 @@
    "229",
    "318",
    "363",
-   "333"
+   "333",
+   "232"
   ],
   "terminus_alias": {
    "138": {
@@ -1673,6 +1692,9 @@
    },
    "BB1": {
     "0": "one line in place of 100921 + 100922 (100922 is then not needed)"
+   },
+   "232": {
+    "1": "a new line: one-way Smíchovské nádraží → Na Knížecí in service, back empty (owner, 21 Nov 2026); not in the game yet"
    }
   },
   "groups": {
@@ -1709,7 +1731,8 @@
   "_separate_why": "Owner, 3 Nov 2026, for 138 and above: \"if originally it was two lines and you suggest collapsing, do it when there is bus saved and something more (closer to reality, only one additional loop, limited spaces at terminal, etc.)\". 138: one circuit saved 1 bus (12 -> 11) but ran 8 entries (three extra loops) -> two lines again. 161 + 312: the circuit saved nothing (7 = 4 + 3) -> two lines again (owner, 5 Nov: split). 139, 197, 226 keep their circuits (merge_why). 186 + 396 stays one through line (owner, 5 Nov: keep; every Vinoř trip runs on as 396). 318 and 363 extend one game line, so nothing is collapsed.",
   "separate": [
    "138",
-   "161"
+   "161",
+   "232"
   ],
   "merge_why": {
    "139": "saves 1 bus (17 → 16) with only one additional loop: each bus alternates the two branches",
@@ -2136,5 +2159,12 @@
    "1"
   ]
  },
- "_records_move_first_why": "Owner, 21 Nov 2026: \"so on 242/243 no bus switches lines, no continuation? if yes, split the cards\". Yes: on the PID live map of 2 and 3 Nov 1108 ran 243 all day (04:40 – about 21:00; one late 242 trip on Monday) and 1106, 1109, 1912 only 242. 242's course 1, logged every day going over to 243, is the 243 bus, so it is the course released first when 242 has more courses than it needs, and the přejezd rule moves it onto 243 in place of a designed bus. Separate cards, as before v28."
+ "_records_move_first_why": "Owner, 21 Nov 2026: \"so on 242/243 no bus switches lines, no continuation? if yes, split the cards\". Yes: on the PID live map of 2 and 3 Nov 1108 ran 243 all day (04:40 – about 21:00; one late 242 trip on Monday) and 1106, 1109, 1912 only 242. 242's course 1, logged every day going over to 243, is the 243 bus, so it is the course released first when 242 has more courses than it needs, and the přejezd rule moves it onto 243 in place of a designed bus. Separate cards, as before v28.",
+ "hold_from_picks": {
+  "_why": "Fewest moves (owner, 2 Nov 2026: \"do not move vehicles in lines not affected if possible\"). 232 needs 2 buses, not 5, since 21 Nov 2026 (one-way line): its former designed buses 3670 and 3676 stay out of every other card's designed picks, so X9 (3681) and X130 (3688, 3689, 3691) keep theirs.",
+  "DPP": [
+   "3670",
+   "3676"
+  ]
+ }
 }

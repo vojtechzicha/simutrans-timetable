@@ -58,6 +58,10 @@ Verify in a real browser (Playwright, `channel='msedge'`) at 1400 px and 390 px.
 - **Size from the pattern the sheet suggests**, for every line (owner, 20 Oct: "You should always size it from the pattern you are
   suggesting - for all lines"). Follow a vehicle round the suggested slots with real running times and the minimum layover
   (`ostrava/scripts/lib.py` `pattern_need`). No "variant extra" vehicles for unmodelled variants.
+  One-way trips break the round-trip count: it takes each departure as a bus that comes back (Prague 232: 5 one-way peak trips
+  Smíchov → Na Knížecí made it 5 buses against 1). Either leave them out of the need with the rows, or, as the owner chose
+  (21 Nov 2026: "could we model the one direction trips (by returning empty)?"), give them their own Simutrans line with an
+  empty return row, sized on its own. When a card needs more buses than its rows' own sizing, find out why before publishing.
 - Tram cities: `cycle_need` (`brno|plzen|praha|olomouc/scripts/common.py`): follow a vehicle leaving ~16:00 round its trip, taking
   at each end the first departure ≥ layover later (3 min default, or the terminus's own shorter turnaround, e.g. Prague 31 at
   Vysočanská 1 min). **Don't size by FIFO trip chaining** — depot pull-outs make it miscount (Brno 10: 7 instead of 4–5).
