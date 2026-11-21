@@ -2204,15 +2204,18 @@
  },
  "_records_move_first_why": "Owner, 21 Nov 2026: \"so on 242/243 no bus switches lines, no continuation? if yes, split the cards\". Yes: on the PID live map of 2 and 3 Nov 1108 ran 243 all day (04:40 – about 21:00; one late 242 trip on Monday) and 1106, 1109, 1912 only 242. 242's course 1, logged every day going over to 243, is the 243 bus, so it is the course released first when 242 has more courses than it needs, and the přejezd rule moves it onto 243 in place of a designed bus. Separate cards, as before v28.",
  "hold_from_picks": {
-  "_why": "Fewest moves (owner, 2 Nov 2026: \"do not move vehicles in lines not affected if possible\"). 232 needs 2 buses, not 5, since 21 Nov 2026 (one-way line): its former designed buses 3670 and 3676 stay out of every other card's designed picks, so X9 (3681) and X130 (3688, 3689, 3691) keep theirs. 235's designed SOR NB 18 5033 likewise, since 235 + 236 are one circuit (21 Nov 2026).",
+  "_why": "Fewest moves (owner, 2 Nov 2026: \"do not move vehicles in lines not affected if possible\"). 232 needs 2 buses, not 5, since 21 Nov 2026 (one-way line): its former designed buses 3670 and 3676 stay out of every other card's designed picks, so X9 (3681) and X130 (3688, 3689, 3691) keep theirs. 235's designed SOR NB 18 5033 likewise, since 235 + 236 are one circuit (21 Nov 2026). Arriva City 9016, which 220 no longer needs after the 220/211 swap (21 Nov 2026), so 146 and BB1 keep 9017 and 8712.",
   "DPP": [
    "3670",
    "3676",
    "5033"
+  ],
+  "ARRIVA CITY": [
+   "9016"
   ]
  },
  "fallback_types": {
-  "_why": "Owner, 21 Nov 2026 (\"why would on 235 be a 18m bus?\" → fix \"Only the clear ones\"): designed buses on a line with no history took the operator's most common type; these take the types the PID live map showed on the line on 2–3 Nov first.",
+  "_why": "Owner, 21 Nov 2026 (\"why would on 235 be a 18m bus?\" → fix \"Only the clear ones\"): designed buses on a line with no history took the operator's most common type; these take the types the PID live map showed on the line on 2–3 Nov first. Owner, 21 Nov 2026 (\"swap 220/221\", read as 220/211, the pair named in the question): 211 takes the 12 m types it runs on the live map (SOR NS 12, MAN Lion’s City 12C hybrid), so its two MAN Lion’s City L go to 220, which runs only those.",
   "378": [
    "SOR BN 12",
    "Iveco Streetway 12M"
@@ -2225,6 +2228,13 @@
   ],
   "236": [
    "Solaris Urbino 8,9 LE"
+  ],
+  "211": [
+   "SOR NS 12",
+   "MAN NL 280 Lion’s City 12C EfficientHybrid"
+  ],
+  "220": [
+   "MAN NL 323 Lion’s City L"
   ]
  }
 }

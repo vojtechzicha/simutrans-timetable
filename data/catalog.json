@@ -403,6 +403,11 @@
      "at": "2026-11-21T22:39:00+01:00",
      "version": 31,
      "note": "235 + 236 one line (owner, 21 Nov: \"why would on 235 be a 18m bus?\" → \"One circuit line\"): Zámky – Podhoří – Nemocnice Bohnice timed only at the ends, 3 Urbino 8,9 LE (2040, 2032, 2031) in place of 100236 + 100235 (4 buses, one articulated). Designed buses take the live map's types on lines with no history (fallback_types): 378 SOR BN 12 4524, 4526 (were 2 × NB 18); 243 SOR NB 12 1963 (was Isuzu 1908). 220 unchanged (its Lion's City L are all on cards)."
+    },
+    {
+     "at": "2026-11-21T22:46:00+01:00",
+     "version": 32,
+     "note": "220 / 211 swap (owner, 21 Nov: \"swap 220/221\", read as 220/211): 220 takes the two MAN Lion's City L it runs on the live map (9287, 9289 + 9015), 211 the 12 m types it runs (9191 SOR NS 12, 9152 Lion's City 12C hybrid, 9484). Every other card unchanged."
     }
    ]
   },

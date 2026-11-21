@@ -352,3 +352,8 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   live map showed 235 and 236 as one pool (three Urbino 8,9 LE alternate the lines at Podhoří every trip); asked, one circuit line
   (v31), 3 buses, timed only at Zámky and Nemocnice Bohnice. The same fallback had 378, 243 and 220 on types they do not run; the
   owner chose to fix the clear ones. Third type complaint in a day (X lines, 235): a designed bus is only as good as its type check.
+- **21 Nov:** "the 229 since the vehicles are not shared it seem, split into separate cards" → the card showed three separate lines
+  with their own buses, but the live map shows the three lines sharing about ten buses all day. Said so with the evidence instead
+  of splitting; asked, the owner wanted to know whether sharing saves buses: 364 + 366 as one circuit gives 8 instead of 9. Then
+  "swap 220/221 and publish something sometime" → too many questions in a row; read "221" as 211 (the pair in the question),
+  did the swap and published.
