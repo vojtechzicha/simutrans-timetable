@@ -408,6 +408,11 @@
      "at": "2026-11-21T22:46:00+01:00",
      "version": 32,
      "note": "220 / 211 swap (owner, 21 Nov: \"swap 220/221\", read as 220/211): 220 takes the two MAN Lion's City L it runs on the live map (9287, 9289 + 9015), 211 the 12 m types it runs (9191 SOR NS 12, 9152 Lion's City 12C hybrid, 9484). Every other card unchanged."
+    },
+    {
+     "at": "2026-11-21T23:09:00+01:00",
+     "version": 33,
+     "note": "235 + 236 with four rows like every combined line (owner: \"why does it not have four rows like all the other combine lines?\"): Zámky :08, Podhoří → Nemocnice Bohnice :24 (timetable :23), Nemocnice Bohnice :23, Podhoří → Zámky :09 (timetable :08); 3 buses as before."
     }
    ]
   },

@@ -1608,35 +1608,43 @@
    ]
   },
   "236": {
-   "_why": "235 + 236 one circuit (owner, 21 Nov 2026), typed with departures only at Zámky and Nemocnice Bohnice (see simlines._circuit_236_why). Both lines every 30 all afternoon.",
+   "_why": "235 + 236 one circuit (owner, 21 Nov 2026), four rows in running order from Zámky; both lines every 30 all afternoon. Podhoří departures 1 min after the timetable (see simlines._circuit_236_why).",
    "rows": [
     {
      "o": "Zámky",
-     "d": "Nemocnice Bohnice",
+     "d": "Podhoří",
      "every": 30,
      "real": [
       8
      ],
-     "match": [
-      "Zámky",
-      "Podhoří"
+     "why": "236 from Zámky every 30 at :08 and :38 (14 min, at Podhoří :22 / :52)."
+    },
+    {
+     "o": "Podhoří",
+     "d": "Nemocnice Bohnice",
+     "every": 30,
+     "real": [
+      24
      ],
-     "rt": 32,
-     "why": "236 from Zámky every 30 at :08 and :38 to Podhoří (14 min, arrives :22 / :52), then on as 235 to Nemocnice Bohnice (real 235 departure Podhoří :23 / :53, 17 min; arrives :40 / :10). No departure time at Podhoří: the bus goes straight on."
+     "why": "235 to Nemocnice Bohnice every 30 at :24 and :54, 1 min after the timetable's :23 / :53: the bus arrives from Zámky at :22 / :52 and needs 2 min in the game (17 min)."
     },
     {
      "o": "Nemocnice Bohnice",
-     "d": "Zámky",
+     "d": "Podhoří",
      "every": 30,
      "real": [
       23
      ],
-     "match": [
-      "Nemocnice Bohnice",
-      "Podhoří"
+     "why": "235 from Nemocnice Bohnice every 30 at :23 and :53 (14 min, at Podhoří :37 / :07)."
+    },
+    {
+     "o": "Podhoří",
+     "d": "Zámky",
+     "every": 30,
+     "real": [
+      9
      ],
-     "rt": 28,
-     "why": "235 from Nemocnice Bohnice every 30 at :23 and :53 to Podhoří (14 min, arrives :37 / :07), then on as 236 to Zámky (real 236 departure Podhoří :38 / :08, 13 min; arrives :51 / :21). No departure time at Podhoří."
+     "why": "236 to Zámky every 30 at :09 and :39, 1 min after the timetable's :08 / :38: the bus arrives from Nemocnice Bohnice at :07 / :37 and needs 2 min in the game (13 min)."
     }
    ]
   }
@@ -1660,6 +1668,12 @@
     0,
     1,
     2
+   ],
+   "236": [
+    0,
+    1,
+    2,
+    3
    ]
   },
   "auto": [
@@ -1683,8 +1697,7 @@
    "318",
    "363",
    "333",
-   "232",
-   "236"
+   "232"
   ],
   "terminus_alias": {
    "138": {
@@ -1729,9 +1742,6 @@
    },
    "232": {
     "1": "a new line: one-way Smíchovské nádraží → Na Knížecí in service, back empty (owner, 21 Nov 2026); not in the game yet"
-   },
-   "236": {
-    "0": "one line in place of 100236 + 100235: Zámky – Podhoří – Nemocnice Bohnice, the circuit as it runs (owner, 21 Nov 2026)"
    }
   },
   "groups": {
@@ -1797,7 +1807,7 @@
    "_why": "161 + 312 (owner, 7 Nov 2026): 161 its own line (owner, 5 Nov: split); 312's two hourly variants (škola :00, Špejchar :30) sized by the auto rule within game line 100312."
   },
   "_circuit_BB1_why": "Owner, 18 Nov 2026 (asked: one line or two): one circuit Budějovická → Delta → Budějovická → Filadelfie → Budějovická in place of 100921 + 100922, as the real bus switches between the shuttles.",
-  "_circuit_236_why": "Owner, 21 Nov 2026: 235 + 236 as one circuit, as they run. Typed as one line Zámky – Podhoří – Nemocnice Bohnice with departures only at the outer ends: in real life the bus changes line at Podhoří within 1 min, which the 2-min game minimum cannot drive if Podhoří is timed (150 min round, 5 buses); untimed there it is the same round, 90 min, 3 buses, as the live map shows. Podhoří is passed twice per round (to and from each end), so it is the circuit Podhoří → Zámky → Podhoří → Nemocnice Bohnice → Podhoří."
+  "_circuit_236_why": "Owner, 21 Nov 2026: 235 + 236 as one circuit, as they run (\"One circuit line\"), with four rows like every other combined line (owner: \"why does it not have four rows like all the other combine lines?\"). In the timetable the bus changes line at Podhoří within 1 min, below the 2-min game minimum: with the timetable minutes there the round takes 150 min (5 buses). The two Podhoří departures are set 1 min after the timetable (235 :24 / :54 for :23 / :53, 236 :09 / :39 for :08 / :38), which keeps the 90-min round and 3 buses, as real life."
  },
  "regional": {
   "_why": "Owner, 30 Oct 2026: \"Now could you do the companion PID lines ...\" / \"Definitley include those that share buses so we have a full list. Also those that are \"proložené\" like 113/333.\" / \"I am 100% sure 301/352 are continuations of 174\" / \"Pool if they pool in real live\" / \"Include if they are interleaved in the real timetiable\". through: every trip of the regional line starts or ends at the minute a city trip ends or starts at the same stop (GTFS, 30 Sep): one through trip. pooled: the city line's courses also run the regional line (vehicle records, 25 Sep: 111 courses 2, 3, 4, 6, 7 -> 329; 161 courses 1, 2, 3, 5, 6 -> 312; 229 courses 1-9, 11 -> 364 and 366): the regional trips join the city card. interleaved: own buses, a shared stretch where the regional trips fall in the city line's gaps; own card after the city line. Left out (owner): 157/327, 157/331, 215/326 and 161/355 (one bus on one day).",

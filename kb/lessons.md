@@ -357,3 +357,6 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   of splitting; asked, the owner wanted to know whether sharing saves buses: 364 + 366 as one circuit gives 8 instead of 9. Then
   "swap 220/221 and publish something sometime" → too many questions in a row; read "221" as 211 (the pair in the question),
   did the swap and published.
+- **21 Nov:** "why does it not have four rows like all the other combine lines? WHYY" → v31 had quietly typed 235 + 236 as one
+  line timed only at its outer ends, a layout no other card uses, to keep 3 buses. Keep the sheet's conventions; when a rule
+  forces a deviation, take the smallest one (here 1 min at Podhoří, v33) and put it in the row, or ask first.
