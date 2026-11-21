@@ -360,3 +360,7 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
 - **21 Nov:** "why does it not have four rows like all the other combine lines? WHYY" → v31 had quietly typed 235 + 236 as one
   line timed only at its outer ends, a layout no other card uses, to keep 3 buses. Keep the sheet's conventions; when a rule
   forces a deviation, take the smallest one (here 1 min at Podhoří, v33) and put it in the row, or ask first.
+- **21 Nov:** "229 still shows three curcites? WHY I ALWAYS HAVE TO REMIND YOU to finish your work?" → the owner had asked to
+  check whether sharing saves buses; it did (9 → 8 with 364 + 366 as one circuit), and I stopped at "say do 364+366". When the
+  owner's question has a clear answer under the standing rules (saves a bus, closer to reality), apply it and publish; offer the
+  alternative afterwards. v34: 229 own card, 364 + 366 one circuit right after.

@@ -357,9 +357,14 @@ def main():
         by = collections.OrderedDict()
         for r in p.get('interleaved_by', []): by.setdefault(r['line'], []).append(r)
         for Rl, rr in by.items():
+            # state regional.own_card[R] (229 / 364 + 366, 21 Nov 2026): a line that shares the city line's buses but has its own card
+            if RG.get('own_card', {}).get(Rl):
+                out.append(f'<p class="callout info"><b>Own card: <a href="#l{Rl}">{Rl}</a></b> {esc(RG["own_card"][Rl]["city"])}</p>'); continue
             out.append(f'<p class="callout info"><b>Proložené with <a href="#l{Rl}">{Rl}</a></b> {esc(rr[0]["long_name"])} ({esc(", ".join(gtfs_op(o) for o in rr[0]["operators"]))}, '
                        f'its own buses). Shared stretch and the two lines together, real departures in 15:00–17:59: {stretches(rr)}. Its card follows this line’s.</p>')
-        if p.get('interleave'):
+        if p.get('interleave') and RG.get('own_card', {}).get(L):
+            out.append(f'<p class="callout info"><b>Regional line, own card</b> {esc(RG["own_card"][L]["own"])}</p>')
+        elif p.get('interleave'):
             cs = collections.OrderedDict()
             for r in p['interleave']: cs.setdefault(r['city'], []).append(r)
             bits = []

@@ -1261,7 +1261,7 @@
    ]
   },
   "229": {
-   "_why": "Owner, 30 Oct 2026: 364 and 366 run on 229's buses (pooled in real life), so their trips are rows of this card, each fitted to its own minutes.",
+   "_why": "Owner, 21 Nov 2026: 229 on its own card and its own line; 364 and 366 are one circuit on the next card.",
    "rows": [
     {
      "o": "Depo Hostivař",
@@ -1280,42 +1280,6 @@
       16
      ],
      "why": "229 from Královice, every 30 at :16 and :46 (14:46–18:16)."
-    },
-    {
-     "o": "Depo Hostivař",
-     "d": "Doubek",
-     "every": 60,
-     "real": [
-      19
-     ],
-     "why": "364 to Doubek, hourly at :19 (14:19–17:19)."
-    },
-    {
-     "o": "Doubek",
-     "d": "Depo Hostivař",
-     "every": 60,
-     "real": [
-      41
-     ],
-     "why": "364 from Doubek, hourly at :41 (14:41–17:41; 17:12 is 366's)."
-    },
-    {
-     "o": "Depo Hostivař",
-     "d": "Doubek",
-     "every": 60,
-     "real": [
-      49
-     ],
-     "why": "366 to Doubek via Křenice, hourly at :49 (15:49–17:49; 14:49 runs on to Mukařov)."
-    },
-    {
-     "o": "Doubek",
-     "d": "Depo Hostivař",
-     "every": 60,
-     "real": [
-      12
-     ],
-     "why": "366 from Doubek via Křenice, hourly at :12 (17:12, 18:12; the 15:04 and 16:04 trips start at Mukařov and leave Doubek at 15:12 and 16:12)."
     }
    ]
   },
@@ -1647,6 +1611,47 @@
      "why": "236 to Zámky every 30 at :09 and :39, 1 min after the timetable's :08 / :38: the bus arrives from Nemocnice Bohnice at :07 / :37 and needs 2 min in the game (13 min)."
     }
    ]
+  },
+  "364": {
+   "_why": "364 + 366 one circuit (owner, 21 Nov 2026), rows in running order from Depo Hostivař: out on 364 and back, out on 366 and back.",
+   "rows": [
+    {
+     "o": "Depo Hostivař",
+     "d": "Doubek",
+     "every": 60,
+     "real": [
+      19
+     ],
+     "why": "364 to Doubek, hourly at :19 (14:19–17:19)."
+    },
+    {
+     "o": "Doubek",
+     "d": "Depo Hostivař",
+     "every": 60,
+     "real": [
+      41
+     ],
+     "why": "364 from Doubek, hourly at :41 (14:41–17:41; 17:12 is 366's)."
+    },
+    {
+     "o": "Depo Hostivař",
+     "d": "Doubek",
+     "every": 60,
+     "real": [
+      49
+     ],
+     "why": "366 to Doubek via Křenice, hourly at :49 (15:49–17:49; 14:49 runs on to Mukařov)."
+    },
+    {
+     "o": "Doubek",
+     "d": "Depo Hostivař",
+     "every": 60,
+     "real": [
+      12
+     ],
+     "why": "366 from Doubek via Křenice, hourly at :12 (17:12, 18:12; the 15:04 and 16:04 trips start at Mukařov and leave Doubek at 15:12 and 16:12)."
+    }
+   ]
   }
  },
  "simlines": {
@@ -1674,6 +1679,12 @@
     1,
     2,
     3
+   ],
+   "364": [
+    0,
+    1,
+    2,
+    3
    ]
   },
   "auto": [
@@ -1693,7 +1704,6 @@
    "221",
    "226",
    "161",
-   "229",
    "318",
    "363",
    "333",
@@ -1709,11 +1719,11 @@
    "191": {
     "Terminál 1": "Letiště"
    },
-   "229": {
-    "Mukařov": "Doubek"
-   },
    "161": {
     "Lichoceves": "Tuchoměřice,Špejchar"
+   },
+   "364": {
+    "Mukařov": "Doubek"
    }
   },
   "game_label": {
@@ -1724,10 +1734,6 @@
    "186": {
     "Černý Most → Přezletice,Vinořská": "one line in place of 100186 + 100396: every Vinoř trip runs on as 396",
     "Černý Most → Nádraží Satalice": "game line 100186S"
-   },
-   "229": {
-    "Depo Hostivař → Doubek :19": "game line 100364",
-    "Depo Hostivař → Doubek :49": "game line 100366 (the save runs it on to Mukařov)"
    },
    "161": {
     "Bořislavka → Přední Kopanina": "game line 100161P; 100161 (Bořislavka – Letiště, 1 bus) is not needed while 161 is diverted: its trips run on 161 and 312",
@@ -1828,10 +1834,6 @@
    "161": [
     "312"
    ],
-   "229": [
-    "364",
-    "366"
-   ],
    "195": [
     "158"
    ],
@@ -1840,6 +1842,9 @@
    ],
    "236": [
     "235"
+   ],
+   "364": [
+    "366"
    ]
   },
   "interleaved": {
@@ -1862,6 +1867,9 @@
    "378": [
     "182",
     "209"
+   ],
+   "364": [
+    "229"
    ]
   },
   "notes": {
@@ -1869,13 +1877,20 @@
    "186": "396 continues 186's Vinoř trips: every 396 trip leaves Vinoř (or Nádraží Satalice) the minute a 186 bus arrives, and returns into a 186 trip (35 trips on 30 Sep, no exception). The Vinoř trips are modelled as one through line Černý Most – Přezletice.",
    "111": "329 Skalka – Škvorec runs on 111's buses: on 25 Sep courses 2, 3, 4, 6 and 7 of 111 also ran 329 (přejezd na linku 329). Its trips are rows of this card and share its Simutrans lines.",
    "161": "312 Bořislavka – Tuchoměřice runs on 161's buses: on 25 Sep courses 1, 2, 3, 5 and 6 of 161 also ran 312, and on the PID live map of 3 Nov buses 4531–4541 switch between the two lines. Its :00 and :30 departures fill 161's gaps at Bořislavka (together every 10). Both are on the 26 Oct timetables (owner, 7 Nov 2026): 161 is diverted (its Bořislavka – Letiště route ends at Přední Kopanina), and 312 runs hourly to Tuchoměřice,škola at :00 and hourly to Tuchoměřice,Špejchar at :30.",
-   "229": "364 (Doubek) and 366 (Doubek via Křenice; Mukařov) run on 229's buses: on 25 Sep ten of 229's eleven courses also ran 364 and 366. Their trips are rows of this card.",
    "195": "158 (Sídliště Letňany – Letňany) runs on 195's buses: on 25 Sep 21 of 195's 24 logged courses go over to 158 (přejezd na linku 158), and 158 has no record of its own. Owner, 7 Nov 2026: \"design these together\" / \"I meant as one line\". So both are one Simutrans line: each bus runs 195 to Jesenická and back, then 158 to Letňany and back. It needs 19 buses (143 min round), the same as two separate lines (195 14 + 158 5; the published cards had 15 + 5); it replaces game lines 100195 and 100158.",
    "BB1": "BB2 (Budějovická – Filadelfie – Budějovická) runs on BB1's buses: on the PID live map one ARRIVA CITY bus switches between the two shuttles all day (9043 on Mon 2 Nov, 9016 on Tue 3 Nov; the map tracked 43 of 134 BB1 and 26 of 73 BB2 trips). Owner, 18 Nov 2026: one Simutrans line (circuit) for both.",
-   "236": "235 Nemocnice Bohnice – Podhoří runs on 236's buses: every 236 course is logged going over to 235, 235 has no records of its own, and on the PID live map of 2 and 3 Nov each of three Solaris Urbino 8,9 LE midibuses alternates a 236 round trip to Zámky and a 235 round trip to Nemocnice Bohnice, turning at Podhoří, all day. One circuit line (owner, 21 Nov 2026: \"One circuit line\")."
+   "236": "235 Nemocnice Bohnice – Podhoří runs on 236's buses: every 236 course is logged going over to 235, 235 has no records of its own, and on the PID live map of 2 and 3 Nov each of three Solaris Urbino 8,9 LE midibuses alternates a 236 round trip to Zámky and a 235 round trip to Nemocnice Bohnice, turning at Podhoří, all day. One circuit line (owner, 21 Nov 2026: \"One circuit line\").",
+   "364": "366 (Doubek via Křenice) runs on the same buses as 364: on the PID live map of 2 and 3 Nov the buses alternate 364 and 366 trips (and 229 trips) at Depo Hostivař all day, and on 25 Sep ten of 229's eleven courses are logged going over to 364 and 366. One circuit line in place of 100364 + 100366 (owner, 21 Nov 2026)."
   },
   "_pooled_195_why": "Owner, 7 Nov 2026: \"I see 158 uses 195 buses - design these together then\". On 25 Sep 21 of 195's 24 logged courses are logged \"přejezd na linku 158\", and 158 has no record of its own. 158 (Sídliště Letňany – Letňany) runs on 195's first stretch from Sídliště Letňany, at the same 7–8 min headway, so its trips become rows of the 195 card and share its Simutrans lines.",
-  "_pooled_236_why": "Owner, 21 Nov 2026 (\"why would on 235 be a 18m bus?\" → asked, \"One circuit line\"): 235 has no records of its own; every 236 course is logged going over to 235, and on the PID live map of 2 and 3 Nov each of three Solaris Urbino 8,9 LE alternates a 236 round trip (Podhoří ⇄ Zámky) and a 235 round trip (Podhoří ⇄ Nemocnice Bohnice) all day."
+  "_pooled_236_why": "Owner, 21 Nov 2026 (\"why would on 235 be a 18m bus?\" → asked, \"One circuit line\"): 235 has no records of its own; every 236 course is logged going over to 235, and on the PID live map of 2 and 3 Nov each of three Solaris Urbino 8,9 LE alternates a 236 round trip (Podhoří ⇄ Zámky) and a 235 round trip (Podhoří ⇄ Nemocnice Bohnice) all day.",
+  "own_card": {
+   "_why": "Owner, 21 Nov 2026: \"the 229 since the vehicles are not shared it seem, split into separate cards (the 36x being listed right after 229)\"; the live map shows 229, 364 and 366 sharing buses, and asked, the owner wanted to know whether sharing saves buses (\"Check if sharing saves buses\"): 9 as three lines, 8 with 364 + 366 as one circuit and 229 apart, 8 with all three in one 8-entry circuit. Then \"229 still shows three curcites?\": done as 229 alone and 364 + 366 one circuit on the next card.",
+   "364": {
+    "city": "364 and 366 run on 229’s buses in real life (the live map of 2–3 Nov shows the buses switching between the three lines at Depo Hostivař). On the sheet 229 is its own line and 364 + 366 are one circuit line on the next card: 3 + 5 buses, against 9 as three separate lines (owner, 21 November).",
+    "own": "364 and 366 share their buses, and in real life 229’s too (the PID live map of 2–3 Nov shows the buses switching between the three lines at Depo Hostivař). Here 364 + 366 are one circuit line, out on 364 and back, then out on 366 and back, and 229 is its own line on its card: 3 + 5 buses, against 9 as three separate lines; one circuit of all three would also need 8 with eight entries (owner, 21 November)."
+   }
+  }
  },
  "observed_buses": {
   "318": {

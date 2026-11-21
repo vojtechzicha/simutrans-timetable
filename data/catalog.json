@@ -259,7 +259,7 @@
     "Run python scripts/run.py --state <new> --fetch.",
     "Check printed counts (courses by source, designed lines, requested objects) and republish to https://claude.ai/artifact/BvCHHf2Wb56SsjMuQgA9ZF."
    ],
-   "notes": "Checks game lines vs PID stops. Need = max(cycle_need, buses on road). Designed buses from line history (roster coverage), then operator fleet; 213 logged surplus not needed, 797 counted. Pak hand-off via 06_pak_request.py; missing objects shown 'requested', no stand-ins. Branch cards (state simlines.auto) are split into Simutrans lines by simlines.py, each sized on its own; cards 100-108 frozen (owner, 30 Oct). Regional companions (state regional, owner 30 Oct): through (0-min trip chains), pooled (vehicle records), interleaved (shared stretch, real gaps); their non-DPP buses map to VZ-PID-bus. 195 + 158 (owner, 7 Nov): one circuit line on 195's card (regional.pooled + simlines.circuit), 19 buses, keep_buses keeps 100158's five. X9 on game line 100009's five buses + 1 designed, X25 on 3739 + 4103 seen + 3 designed, X130 3 designed, all 12 m (owner, 21 Nov; designed places take the types seen on the live map); IKEA on 9501 from the live map. 161 + 312 on the 26 Oct timetables (owner, 7 Nov): 161 4 buses, 312 one circuit škola/Špejchar 3 buses (simlines.group_modes). 242 / 243 (owner, 21 Nov): separate cards; 242's course 1 (1108) is the 243 bus (records_move_first); game_pid checks 100242/243 on 243. 232 (owner, 21 Nov): 232A regular + 232B one-way peak trips with an empty return, 1 + 1 buses; hold_from_picks keeps freed buses from moving other cards. 235 + 236 (owner, 21 Nov): one line timed at Zámky and Nemocnice Bohnice, 3 midibuses; fallback_types for lines with no history (378, 243, 236).",
+   "notes": "Checks game lines vs PID stops. Need = max(cycle_need, buses on road). Designed buses from line history (roster coverage), then operator fleet; 213 logged surplus not needed, 797 counted. Pak hand-off via 06_pak_request.py; missing objects shown 'requested', no stand-ins. Branch cards (state simlines.auto) are split into Simutrans lines by simlines.py, each sized on its own; cards 100-108 frozen (owner, 30 Oct). Regional companions (state regional, owner 30 Oct): through (0-min trip chains), pooled (vehicle records), interleaved (shared stretch, real gaps); their non-DPP buses map to VZ-PID-bus. 195 + 158 (owner, 7 Nov): one circuit line on 195's card (regional.pooled + simlines.circuit), 19 buses, keep_buses keeps 100158's five. X9 on game line 100009's five buses + 1 designed, X25 on 3739 + 4103 seen + 3 designed, X130 3 designed, all 12 m (owner, 21 Nov; designed places take the types seen on the live map); IKEA on 9501 from the live map. 161 + 312 on the 26 Oct timetables (owner, 7 Nov): 161 4 buses, 312 one circuit škola/Špejchar 3 buses (simlines.group_modes). 242 / 243 (owner, 21 Nov): separate cards; 242's course 1 (1108) is the 243 bus (records_move_first); game_pid checks 100242/243 on 243. 232 (owner, 21 Nov): 232A regular + 232B one-way peak trips with an empty return, 1 + 1 buses; hold_from_picks keeps freed buses from moving other cards. 235 + 236 (owner, 21 Nov): one line timed at Zámky and Nemocnice Bohnice, 3 midibuses; fallback_types for lines with no history (378, 243, 236). 229 / 364 + 366 (owner, 21 Nov): separate cards, 364 + 366 one circuit (regional.own_card).",
    "rawSnapshots": [
     "game/2026-09-29",
     "gtfs/2026-09-29",
@@ -413,6 +413,11 @@
      "at": "2026-11-21T23:09:00+01:00",
      "version": 33,
      "note": "235 + 236 with four rows like every combined line (owner: \"why does it not have four rows like all the other combine lines?\"): Zámky :08, Podhoří → Nemocnice Bohnice :24 (timetable :23), Nemocnice Bohnice :23, Podhoří → Zámky :09 (timetable :08); 3 buses as before."
+    },
+    {
+     "at": "2026-11-21T23:24:00+01:00",
+     "version": 34,
+     "note": "229 on its own card; 364 + 366 one circuit line on the next card (owner, 21 Nov: split the cards, check whether sharing saves buses → 8 against 9). 229: 4520, 4518, 3752; 364 + 366: 4519, 4521, 4511, 4525, 4512; 4515 parked."
     }
    ]
   },
