@@ -42,6 +42,12 @@ LIVN = {'pidsedocervena': 'PID grey-red', 'pidcervenomodrobila': 'PID red-white-
         'mestskacervenobila': 'city red-white', 'veoliacervenoseda': 'Veolia red-grey', 'bila': 'white', 'tyrkysovozluta': 'turquoise-yellow',
         'dppcervena': 'DPP coach red', 'bilofialova': '90 years white-purple', 'ikea': 'IKEA wrap'}
 UNNAMED = collections.Counter()      # (operator, garage code) printed without a full name: a build warning, as on the Prague sheet
+_R2 = os.path.join(HOME, 'data', 'derived', 'register_2026-11-22.json')
+REG2 = json.load(open(_R2, encoding='utf-8')) if os.path.exists(_R2) else {}
+def _norm_op(o):
+    o = re.sub(r',?\s*(spol\. s r\.\s*o\.|s\.\s*r\.\s*o\.|a\.\s*s\.|s\.r\.o\.|a\.s\.)\s*$', '', (o or '').strip(), flags=re.I)
+    return re.sub(r'\W+', '', OPN.get(o, o).lower())
+def _same_op(a, b): a, b = _norm_op(a), _norm_op(b); return bool(a) and (a == b or a.startswith(b) or b.startswith(a))
 def garage(v):
     """(garage text, is a raw code, the register lists the bus): ('', False, True) = in the register with no garage (an
     operator with one site lists none)"""
@@ -50,6 +56,11 @@ def garage(v):
         if r.get('garage') and r['garage'] != '?':
             return r['garage'], bool(r.get('garage_code')), True
         return '', False, True
+    # the operators the 29 Sep register lacks, read on 22 Nov 2026 in the owner's browser (scripts/register_2026_11_22.py)
+    r2 = REG2.get(str(v.get('car_id') or '')) if v.get('car_id') else REG2.get(f"num:{v.get('operator', '')}|{v.get('num', '')}")
+    # also a bus whose 29 Sep entry names another operator (sold or moved since): its 22 Nov card
+    if r2 and _same_op(r2['operator'], v.get('operator', '')):
+        return (r2['garage'], False, True) if r2.get('garage') else ('', False, True)
     code = (v.get('garage') or '').strip()   # roster's own code (04_vehicles), only when the car id is not in the register
     if not code or r: return '', False, False
     m = {**_BT['garages'], **_BT['garages_by_operator'].get(v.get('operator', ''), {})}
@@ -325,7 +336,7 @@ page = f'''{style}
 {cov_html}
 
 <h2 id="depots">Operators</h2>
-<p class="sub">Buses by operator (the live map's "Dopravce"), garage and type. A seen bus counts at its operator; a designed bus too. Garages are from the seznam-autobusu.cz register of 29 September 2026 (the Prague city operators: Arriva City, Arriva Střední Čechy, ČSAD Benešov, ČSAD Střední Čechy, DPP and others), matched by the car id on the live map's vehicle card; a bus of an operator the register does not cover says "garage not in the register".</p>
+<p class="sub">Buses by operator (the live map's "Dopravce"), garage and type. A seen bus counts at its operator; a designed bus too. Garages are from the seznam-autobusu.cz register of 29 September 2026 (the Prague city operators: Arriva City, Arriva Střední Čechy, ČSAD Benešov, ČSAD Střední Čechy, DPP and others), matched by the car id on the live map's vehicle card, and for the other operators from their seznam-autobusu.cz lists and vehicle cards read on 22 November 2026; a garage is shown only where the register's operator is the live map's, and an operator that lists no depots shows none.</p>
 <div class="depots">{dep_html}</div>
 
 <h2 id="pak">Pak128 objects</h2>

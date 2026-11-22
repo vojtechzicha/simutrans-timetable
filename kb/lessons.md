@@ -383,4 +383,10 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   register never covered (OAD Kolín, Arriva autobusy, Transdev, ČSAD Slaný, ZDAR …) and say so until a register for them can be
   read. Five sheets' derived data had drifted from what was published (designed-bus wording; Kutnohorsko's 402 card from the 3 Nov
   evening plates check, never published); checked line by line before rendering, no bus or timetable value differed.
-
+- **22 Nov (evening):** "seznam autobusu should work now through CiC?" → it did: the owner's Chrome loads the register normally. Read
+  there: 32 operators' lists (operator ids from one vehicle card each), one card per depot code for its full name, cards for
+  buses no list holds, and fleet-number matches for buses whose live-map card had no register link. 1,581 of 2,060 bus entries
+  now name a garage (was 1,126). Left: 35 MHD Kolín buses (no register link, PID numbers not in OAD Kolín's list), hired buses
+  whose register owner is not the live map's operator (ČSAD Střední Čechy buses running for EKOSERVIS / AD Střední Čechy), and
+  operators that list no depots. When a source is blocked for scripts, ask whether the owner's browser can read it before
+  writing "not available".

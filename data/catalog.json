@@ -3020,7 +3020,7 @@
      "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
-     "name": "seznam-autobusu.cz registers (stored 29 Sep)",
+     "name": "seznam-autobusu.cz registers (stored 29 Sep; other operators read 22 Nov)",
      "role": "fleet register",
      "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
@@ -3084,6 +3084,11 @@
      "at": "2026-11-22T20:50:00+01:00",
      "version": 4,
      "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T21:40:00+01:00",
+     "version": 5,
+     "note": "Garages for the other operators: their seznam-autobusu.cz lists and vehicle cards read on 22 Nov in the owner’s Chrome (OAD Kolín, ARRIVA autobusy, ZDAR, AKV, Lutan, ČSAD AUTOBUSY ČB, BusLine, ČSAD Liberec / Česká Lípa, DSÚK …); 1,581 of 2,060 bus entries now name a garage, operators that list no depots show none. No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/LHA5oGkvV95SvhwYH77ekU"
@@ -3115,7 +3120,7 @@
      "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
-     "name": "seznam-autobusu.cz registers (stored 29 Sep)",
+     "name": "seznam-autobusu.cz registers (stored 29 Sep; other operators read 22 Nov)",
      "role": "fleet register",
      "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
@@ -3179,6 +3184,11 @@
      "at": "2026-11-22T20:50:00+01:00",
      "version": 4,
      "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T21:40:00+01:00",
+     "version": 5,
+     "note": "Garages for the other operators: their seznam-autobusu.cz lists and vehicle cards read on 22 Nov in the owner’s Chrome (OAD Kolín, ARRIVA autobusy, ZDAR, AKV, Lutan, ČSAD AUTOBUSY ČB, BusLine, ČSAD Liberec / Česká Lípa, DSÚK …); 1,581 of 2,060 bus entries now name a garage, operators that list no depots show none. No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/6574bcYazwXHe3zKYKyE6h"
@@ -3210,7 +3220,7 @@
      "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
-     "name": "seznam-autobusu.cz registers (stored 29 Sep)",
+     "name": "seznam-autobusu.cz registers (stored 29 Sep; other operators read 22 Nov)",
      "role": "fleet register",
      "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
@@ -3274,6 +3284,11 @@
      "at": "2026-11-22T20:50:00+01:00",
      "version": 4,
      "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T21:40:00+01:00",
+     "version": 5,
+     "note": "Garages for the other operators: their seznam-autobusu.cz lists and vehicle cards read on 22 Nov in the owner’s Chrome (OAD Kolín, ARRIVA autobusy, ZDAR, AKV, Lutan, ČSAD AUTOBUSY ČB, BusLine, ČSAD Liberec / Česká Lípa, DSÚK …); 1,581 of 2,060 bus entries now name a garage, operators that list no depots show none. No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/USfta9raPAmHs8RXHibiwi"
@@ -3305,7 +3320,7 @@
      "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
-     "name": "seznam-autobusu.cz registers (stored 29 Sep)",
+     "name": "seznam-autobusu.cz registers (stored 29 Sep; other operators read 22 Nov)",
      "role": "fleet register",
      "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
@@ -3369,6 +3384,11 @@
      "at": "2026-11-22T20:50:00+01:00",
      "version": 4,
      "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T21:40:00+01:00",
+     "version": 5,
+     "note": "Garages for the other operators: their seznam-autobusu.cz lists and vehicle cards read on 22 Nov in the owner’s Chrome (OAD Kolín, ARRIVA autobusy, ZDAR, AKV, Lutan, ČSAD AUTOBUSY ČB, BusLine, ČSAD Liberec / Česká Lípa, DSÚK …); 1,581 of 2,060 bus entries now name a garage, operators that list no depots show none. No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/DwZ6PwMMR5qwPwcsd3FrcH"
@@ -3400,7 +3420,7 @@
      "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
-     "name": "seznam-autobusu.cz registers (stored 29 Sep)",
+     "name": "seznam-autobusu.cz registers (stored 29 Sep; other operators read 22 Nov)",
      "role": "fleet register",
      "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
@@ -3464,6 +3484,11 @@
      "at": "2026-11-22T20:50:00+01:00",
      "version": 4,
      "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T21:40:00+01:00",
+     "version": 5,
+     "note": "Garages for the other operators: their seznam-autobusu.cz lists and vehicle cards read on 22 Nov in the owner’s Chrome (OAD Kolín, ARRIVA autobusy, ZDAR, AKV, Lutan, ČSAD AUTOBUSY ČB, BusLine, ČSAD Liberec / Česká Lípa, DSÚK …); 1,581 of 2,060 bus entries now name a garage, operators that list no depots show none. No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/9tUWDoKxLkKS7y5wT22THk"
@@ -3495,7 +3520,7 @@
      "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
-     "name": "seznam-autobusu.cz registers (stored 29 Sep)",
+     "name": "seznam-autobusu.cz registers (stored 29 Sep; other operators read 22 Nov)",
      "role": "fleet register",
      "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
@@ -3564,6 +3589,11 @@
      "at": "2026-11-22T20:50:00+01:00",
      "version": 5,
      "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T21:40:00+01:00",
+     "version": 6,
+     "note": "Garages for the other operators: their seznam-autobusu.cz lists and vehicle cards read on 22 Nov in the owner’s Chrome (OAD Kolín, ARRIVA autobusy, ZDAR, AKV, Lutan, ČSAD AUTOBUSY ČB, BusLine, ČSAD Liberec / Česká Lípa, DSÚK …); 1,581 of 2,060 bus entries now name a garage, operators that list no depots show none. No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/2PM9ugvAGcmiXr1QaT6CMR"
@@ -3595,7 +3625,7 @@
      "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
-     "name": "seznam-autobusu.cz registers (stored 29 Sep)",
+     "name": "seznam-autobusu.cz registers (stored 29 Sep; other operators read 22 Nov)",
      "role": "fleet register",
      "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
@@ -3659,6 +3689,11 @@
      "at": "2026-11-22T20:50:00+01:00",
      "version": 4,
      "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T21:40:00+01:00",
+     "version": 5,
+     "note": "Garages for the other operators: their seznam-autobusu.cz lists and vehicle cards read on 22 Nov in the owner’s Chrome (OAD Kolín, ARRIVA autobusy, ZDAR, AKV, Lutan, ČSAD AUTOBUSY ČB, BusLine, ČSAD Liberec / Česká Lípa, DSÚK …); 1,581 of 2,060 bus entries now name a garage, operators that list no depots show none. No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/XnWc4U9zu5gWhBw2UZmeyj"
@@ -3690,7 +3725,7 @@
      "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
-     "name": "seznam-autobusu.cz registers (stored 29 Sep)",
+     "name": "seznam-autobusu.cz registers (stored 29 Sep; other operators read 22 Nov)",
      "role": "fleet register",
      "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
@@ -3754,6 +3789,11 @@
      "at": "2026-11-22T20:50:00+01:00",
      "version": 4,
      "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T21:40:00+01:00",
+     "version": 5,
+     "note": "Garages for the other operators: their seznam-autobusu.cz lists and vehicle cards read on 22 Nov in the owner’s Chrome (OAD Kolín, ARRIVA autobusy, ZDAR, AKV, Lutan, ČSAD AUTOBUSY ČB, BusLine, ČSAD Liberec / Česká Lípa, DSÚK …); 1,581 of 2,060 bus entries now name a garage, operators that list no depots show none. No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/RKJK8GTGiQz7tjVLnQpbPA"
@@ -3785,7 +3825,7 @@
      "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
-     "name": "seznam-autobusu.cz registers (stored 29 Sep)",
+     "name": "seznam-autobusu.cz registers (stored 29 Sep; other operators read 22 Nov)",
      "role": "fleet register",
      "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
@@ -3849,6 +3889,11 @@
      "at": "2026-11-22T20:50:00+01:00",
      "version": 4,
      "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T21:40:00+01:00",
+     "version": 5,
+     "note": "Garages for the other operators: their seznam-autobusu.cz lists and vehicle cards read on 22 Nov in the owner’s Chrome (OAD Kolín, ARRIVA autobusy, ZDAR, AKV, Lutan, ČSAD AUTOBUSY ČB, BusLine, ČSAD Liberec / Česká Lípa, DSÚK …); 1,581 of 2,060 bus entries now name a garage, operators that list no depots show none. No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/HGUoRK7t8C3PzT9qDq77x6"
@@ -3880,7 +3925,7 @@
      "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
-     "name": "seznam-autobusu.cz registers (stored 29 Sep)",
+     "name": "seznam-autobusu.cz registers (stored 29 Sep; other operators read 22 Nov)",
      "role": "fleet register",
      "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
@@ -3949,6 +3994,11 @@
      "at": "2026-11-22T20:50:00+01:00",
      "version": 5,
      "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T21:40:00+01:00",
+     "version": 6,
+     "note": "Garages for the other operators: their seznam-autobusu.cz lists and vehicle cards read on 22 Nov in the owner’s Chrome (OAD Kolín, ARRIVA autobusy, ZDAR, AKV, Lutan, ČSAD AUTOBUSY ČB, BusLine, ČSAD Liberec / Česká Lípa, DSÚK …); 1,581 of 2,060 bus entries now name a garage, operators that list no depots show none. No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/CDDnFgXhcNaKqBa9BuLbmJ"
@@ -3980,7 +4030,7 @@
      "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
-     "name": "seznam-autobusu.cz registers (stored 29 Sep)",
+     "name": "seznam-autobusu.cz registers (stored 29 Sep; other operators read 22 Nov)",
      "role": "fleet register",
      "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
@@ -4044,6 +4094,11 @@
      "at": "2026-11-22T20:50:00+01:00",
      "version": 4,
      "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T21:40:00+01:00",
+     "version": 5,
+     "note": "Garages for the other operators: their seznam-autobusu.cz lists and vehicle cards read on 22 Nov in the owner’s Chrome (OAD Kolín, ARRIVA autobusy, ZDAR, AKV, Lutan, ČSAD AUTOBUSY ČB, BusLine, ČSAD Liberec / Česká Lípa, DSÚK …); 1,581 of 2,060 bus entries now name a garage, operators that list no depots show none. No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/RAWhd2p3iFLibqfRhP9LFH"
@@ -4075,7 +4130,7 @@
      "note": "getData.php every minute 12:00–20:00 on Mon 2 Nov 2026; Tue 3 Nov so far 5:00–7:20 (the evening version adds the rest); getVehicleWindow.php per bus: operator, type, course"
     },
     {
-     "name": "seznam-autobusu.cz registers (stored 29 Sep)",
+     "name": "seznam-autobusu.cz registers (stored 29 Sep; other operators read 22 Nov)",
      "role": "fleet register",
      "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
@@ -4139,6 +4194,11 @@
      "at": "2026-11-22T20:50:00+01:00",
      "version": 4,
      "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T21:40:00+01:00",
+     "version": 5,
+     "note": "Garages for the other operators: their seznam-autobusu.cz lists and vehicle cards read on 22 Nov in the owner’s Chrome (OAD Kolín, ARRIVA autobusy, ZDAR, AKV, Lutan, ČSAD AUTOBUSY ČB, BusLine, ČSAD Liberec / Česká Lípa, DSÚK …); 1,581 of 2,060 bus entries now name a garage, operators that list no depots show none. No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/3cugFHCZkHEaNjpFymVHfH"
