@@ -3079,6 +3079,11 @@
      "at": "2026-11-22T20:15:00+01:00",
      "version": 3,
      "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register, operator names as on the Prague bus sheet, livery in words, measured lengths (SOR NB 18 18.75 m, Lion’s City 18C 18 m); Operators section split by garage. No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T20:50:00+01:00",
+     "version": 4,
+     "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/LHA5oGkvV95SvhwYH77ekU"
@@ -3169,6 +3174,11 @@
      "at": "2026-11-22T20:35:00+01:00",
      "version": 3,
      "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T20:50:00+01:00",
+     "version": 4,
+     "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/6574bcYazwXHe3zKYKyE6h"
@@ -3259,6 +3269,11 @@
      "at": "2026-11-22T20:35:00+01:00",
      "version": 3,
      "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T20:50:00+01:00",
+     "version": 4,
+     "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/USfta9raPAmHs8RXHibiwi"
@@ -3349,6 +3364,11 @@
      "at": "2026-11-22T20:35:00+01:00",
      "version": 3,
      "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T20:50:00+01:00",
+     "version": 4,
+     "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/DwZ6PwMMR5qwPwcsd3FrcH"
@@ -3439,6 +3459,11 @@
      "at": "2026-11-22T20:35:00+01:00",
      "version": 3,
      "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes. Also the 402 card wording of 3 Nov (buses going home to Zruč, counted at Zruč with their plates) that had not been published."
+    },
+    {
+     "at": "2026-11-22T20:50:00+01:00",
+     "version": 4,
+     "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/9tUWDoKxLkKS7y5wT22THk"
@@ -3534,6 +3559,11 @@
      "at": "2026-11-22T20:35:00+01:00",
      "version": 4,
      "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T20:50:00+01:00",
+     "version": 5,
+     "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/2PM9ugvAGcmiXr1QaT6CMR"
@@ -3624,6 +3654,11 @@
      "at": "2026-11-22T20:35:00+01:00",
      "version": 3,
      "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T20:50:00+01:00",
+     "version": 4,
+     "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/XnWc4U9zu5gWhBw2UZmeyj"
@@ -3714,6 +3749,11 @@
      "at": "2026-11-22T20:35:00+01:00",
      "version": 3,
      "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T20:50:00+01:00",
+     "version": 4,
+     "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/RKJK8GTGiQz7tjVLnQpbPA"
@@ -3804,6 +3844,11 @@
      "at": "2026-11-22T20:35:00+01:00",
      "version": 3,
      "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T20:50:00+01:00",
+     "version": 4,
+     "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/HGUoRK7t8C3PzT9qDq77x6"
@@ -3899,6 +3944,11 @@
      "at": "2026-11-22T20:35:00+01:00",
      "version": 4,
      "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T20:50:00+01:00",
+     "version": 5,
+     "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/CDDnFgXhcNaKqBa9BuLbmJ"
@@ -3989,6 +4039,11 @@
      "at": "2026-11-22T20:35:00+01:00",
      "version": 3,
      "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T20:50:00+01:00",
+     "version": 4,
+     "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/RAWhd2p3iFLibqfRhP9LFH"
@@ -4079,6 +4134,11 @@
      "at": "2026-11-22T20:35:00+01:00",
      "version": 3,
      "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
+    },
+    {
+     "at": "2026-11-22T20:50:00+01:00",
+     "version": 4,
+     "note": "No guessed lengths: types whose name and register give no length (Setra S 418 / S 419, Rošero First XL, Lion’s City 10E, NOVO Citi Life II and others) say \"length not known\" instead of 12 m; untyped buses say \"type not known\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/3cugFHCZkHEaNjpFymVHfH"

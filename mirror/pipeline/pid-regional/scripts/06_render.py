@@ -70,7 +70,15 @@ def blen(v):
     ty = v.get('type') or ''
     if ty in _BT['length_m']: return f"{_BT['length_m'][ty]:g} m"
     if re.search(r"\b18\s?C\b|Lion’s City G\b|Lion's City G\b|Citaro\b.*\bG(Ü)?\b", ty): return '18 m'
-    return v.get('len', '')
+    # 04_vehicles' tlen falls back to "12 m" when the type name holds no length; print only a length the name states
+    named = (re.search(r'(\d+)[,._](\d)\s*M\b', ty, re.I) or re.search(r'\b(\d{2})\s*M\b', ty, re.I)
+             or re.search(r'\b(?:NB|NBG|CN|BN|C|ICN|CNG|NS|NC|ICNG|EBN)\s+(\d{1,2})(?:[,.](\d))?\b', ty)
+             or re.search(r'\bLE\s+(\d{2})\b', ty) or re.search(r'Urbino\s+(\d{2})', ty)
+             or re.search(r'Dekstra|Stratos|Midi|Sprinter|Master|Rosero|Neocity', ty, re.I))
+    return v.get('len', '') if named else 'length not known'
+def btype(v):
+    t = v.get('full') or v.get('type') or '?'
+    return 'type not known (the live map names none)' if t.strip() == '?' else t
 
 def slot_clock(P, r):
     if 60 % P == 0: return ':%02d' % (r % 60)
@@ -133,7 +141,7 @@ def vcell(v, kind):
            f'<span class="addn">{E(v.get("why", "").replace("kept from the published sheet: kept from the published sheet", "kept from the published sheet"))}</span>' if kind == 'designed' else
            f'<span class="addn">not needed here: seen on {E(v.get("seen", ""))}' + (f'; counted on {E(v["elsewhere"])}' if v.get('elsewhere') else '') + '</span>')
     return (f'<li class="{cls}"><span class="num veh" data-v="{E(v["num"])}"><b>{E(v["num"])}</b> · {E(opname(v))}{gar_html(v)}</span>'
-            f'<span class="vt">{E(v.get("full") or v.get("type"))} · {E(blen(v))}</span>{paks}{why}</li>')
+            f'<span class="vt">{E(btype(v))}{"" if (v.get("type") or "?").strip() == "?" else " · " + E(blen(v))}</span>{paks}{why}</li>')
 
 def game_block(L, sims):
     g = GM.get(L) or {}; rows = g.get('game', [])
