@@ -232,7 +232,7 @@ def parse_register(paths, depot_name, depot_codes=None):
         yr = re.search(r'<td class="font085">(\d{4})', b)
         dep = depot_name
         if depot_codes:   # one list for all depots: the register's depot cell holds a short code ("Klí", "Řep", "Stře *")
-            dc = re.search(r'<td class="depots">(.*?)</td>', b, re.S)
+            dc = re.search(r'<td class="(?:no-mobile )?depots">(.*?)</td>', b, re.S)   # some register pages write class="no-mobile depots" (22 Nov 2026: 100 Arriva City Kladno buses had lost their garage)
             code = _txt(dc.group(1)).rstrip('*').strip() if dc else ''
             dep = depot_codes.get(code, code or '?')
         mk = _txt(mt.group(1)) if mt else ''

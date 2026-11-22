@@ -3112,7 +3112,7 @@
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
+     "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3164,6 +3164,11 @@
      "at": "2026-11-03T07:29:01+01:00",
      "version": 2,
      "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
+    },
+    {
+     "at": "2026-11-22T20:35:00+01:00",
+     "version": 3,
+     "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/6574bcYazwXHe3zKYKyE6h"
@@ -3197,7 +3202,7 @@
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
+     "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3249,6 +3254,11 @@
      "at": "2026-11-03T07:29:01+01:00",
      "version": 2,
      "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
+    },
+    {
+     "at": "2026-11-22T20:35:00+01:00",
+     "version": 3,
+     "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/USfta9raPAmHs8RXHibiwi"
@@ -3282,7 +3292,7 @@
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
+     "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3334,6 +3344,11 @@
      "at": "2026-11-03T07:29:01+01:00",
      "version": 2,
      "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
+    },
+    {
+     "at": "2026-11-22T20:35:00+01:00",
+     "version": 3,
+     "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/DwZ6PwMMR5qwPwcsd3FrcH"
@@ -3367,7 +3382,7 @@
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
+     "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3419,6 +3434,11 @@
      "at": "2026-11-03T07:29:01+01:00",
      "version": 2,
      "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
+    },
+    {
+     "at": "2026-11-22T20:35:00+01:00",
+     "version": 3,
+     "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes. Also the 402 card wording of 3 Nov (buses going home to Zruč, counted at Zruč with their plates) that had not been published."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/9tUWDoKxLkKS7y5wT22THk"
@@ -3452,7 +3472,7 @@
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
+     "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3509,6 +3529,11 @@
      "at": "2026-11-03T07:56:53+01:00",
      "version": 3,
      "note": "Second read: 369's two-slot row on the owner checks (one slot saves 3 buses); no typed value changed"
+    },
+    {
+     "at": "2026-11-22T20:35:00+01:00",
+     "version": 4,
+     "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/2PM9ugvAGcmiXr1QaT6CMR"
@@ -3542,7 +3567,7 @@
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
+     "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3594,6 +3619,11 @@
      "at": "2026-11-03T07:29:01+01:00",
      "version": 2,
      "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
+    },
+    {
+     "at": "2026-11-22T20:35:00+01:00",
+     "version": 3,
+     "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/XnWc4U9zu5gWhBw2UZmeyj"
@@ -3627,7 +3657,7 @@
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
+     "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3679,6 +3709,11 @@
      "at": "2026-11-03T07:29:01+01:00",
      "version": 2,
      "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
+    },
+    {
+     "at": "2026-11-22T20:35:00+01:00",
+     "version": 3,
+     "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/RKJK8GTGiQz7tjVLnQpbPA"
@@ -3712,7 +3747,7 @@
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
+     "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3764,6 +3799,11 @@
      "at": "2026-11-03T07:29:01+01:00",
      "version": 2,
      "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
+    },
+    {
+     "at": "2026-11-22T20:35:00+01:00",
+     "version": 3,
+     "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/HGUoRK7t8C3PzT9qDq77x6"
@@ -3797,7 +3837,7 @@
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
+     "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3854,6 +3894,11 @@
      "at": "2026-11-03T07:37:08+01:00",
      "version": 3,
      "note": "340 Masarykova takes 340's two spare buses (1469, 1896) instead of two others"
+    },
+    {
+     "at": "2026-11-22T20:35:00+01:00",
+     "version": 4,
+     "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/CDDnFgXhcNaKqBa9BuLbmJ"
@@ -3887,7 +3932,7 @@
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
+     "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3939,6 +3984,11 @@
      "at": "2026-11-03T07:29:01+01:00",
      "version": 2,
      "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
+    },
+    {
+     "at": "2026-11-22T20:35:00+01:00",
+     "version": 3,
+     "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/RAWhd2p3iFLibqfRhP9LFH"
@@ -3972,7 +4022,7 @@
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
+     "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -4024,6 +4074,11 @@
      "at": "2026-11-03T07:29:01+01:00",
      "version": 2,
      "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
+    },
+    {
+     "at": "2026-11-22T20:35:00+01:00",
+     "version": 3,
+     "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register as on the Prague bus sheet (Arriva City Kladno restored: the register parser had dropped it), operator names as on the Prague bus sheet, livery in words, register lengths (articulated 18C / Lion’s City G / Citaro GÜ were shown as 12 m); Operators split by garage; operators the register does not cover say \"garage not in the register\". No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/3cugFHCZkHEaNjpFymVHfH"

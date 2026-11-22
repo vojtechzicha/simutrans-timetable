@@ -24,7 +24,7 @@ def parse_list(t, operator, garages):
         cid = re.search(r'data-car-id="(\d+)"', b).group(1)
         num = re.search(r'<span class="bold 1 number"><!--\s*-->([\w-]+)', b)
         mt = re.search(r'<td class="manufacturer-type">(.*?)</td>', b, re.S)
-        dp = re.search(r'<td class="depots">(.*?)</td>', b, re.S)
+        dp = re.search(r'<td class="(?:no-mobile )?depots">(.*?)</td>', b, re.S)   # some register pages write class="no-mobile depots" (22 Nov 2026: 100 Arriva City Kladno buses had lost their garage)
         pm = re.search(r'<span class="label">nátěr:</span>(.*?)</span>', b, re.S)
         yr = re.search(r'<td class="font085">(\d{4})', b)
         code = _txt(dp.group(1)).rstrip('*').strip() if dp else ''

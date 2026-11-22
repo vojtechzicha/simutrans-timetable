@@ -130,7 +130,7 @@ def vcell(v, kind):
     paks = (f'<span class="pak">{E(p.get("core", "?"))} · {E(LIVN.get(p.get("liv"), p.get("liv", "?")))}</span>' if p.get('ok') else
             f'<span class="pak subst">requested: {E(p.get("want") or p.get("core") or "?")}</span>')
     why = (f'<span class="addn" style="color:var(--ok)">seen on {E(v["seen"])}</span>' if kind == 'seen' else
-           f'<span class="addn">{E(v.get("why", ""))}</span>' if kind == 'designed' else
+           f'<span class="addn">{E(v.get("why", "").replace("kept from the published sheet: kept from the published sheet", "kept from the published sheet"))}</span>' if kind == 'designed' else
            f'<span class="addn">not needed here: seen on {E(v.get("seen", ""))}' + (f'; counted on {E(v["elsewhere"])}' if v.get('elsewhere') else '') + '</span>')
     return (f'<li class="{cls}"><span class="num veh" data-v="{E(v["num"])}"><b>{E(v["num"])}</b> · {E(opname(v))}{gar_html(v)}</span>'
             f'<span class="vt">{E(v.get("full") or v.get("type"))} · {E(blen(v))}</span>{paks}{why}</li>')

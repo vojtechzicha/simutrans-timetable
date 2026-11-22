@@ -376,4 +376,11 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   Prahy, 382 / 383 from Malešice. The register (29 Sep) covers only the Prague city operators and seznam-autobusu still answers 429,
   so OAD Kolín, Arriva autobusy, Transdev, ZDAR and the other regional operators show "garage not in the register". Information
   the pipeline already holds belongs on the page: check what a step loads and drops before calling a sheet complete.
+- **22 Nov (later):** the same render on the other eleven PID sheets. The register parser (praha-bus `02_register.py`) read only
+  `<td class="depots">`; Arriva City's third register page writes `class="no-mobile depots"`, so 100 Kladno buses (87xx–89xx,
+  Kladno MHD 03–27) had no garage on any sheet. Fixed and the register rebuilt: exactly those 100 gained "Kladno", nothing else
+  changed, and no Prague bus sheet course uses them. 1,126 of 2,060 PID buses now show a garage; 776 are operators the 29 Sep
+  register never covered (OAD Kolín, Arriva autobusy, Transdev, ČSAD Slaný, ZDAR …) and say so until a register for them can be
+  read. Five sheets' derived data had drifted from what was published (designed-bus wording; Kutnohorsko's 402 card from the 3 Nov
+  evening plates check, never published); checked line by line before rendering, no bus or timetable value differed.
 
