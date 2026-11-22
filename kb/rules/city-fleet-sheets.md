@@ -41,6 +41,11 @@ vehicle category per line. Accessibility is not wanted.
 - Full type names, full stop and depot names; **no abbreviations anywhere**. The seznam-autobusu.cz register gives depots as short
   codes per operator ("Kos", "MpB"; "Kla" is Kladno at Arriva City but Klatovy at Arriva Střední Čechy): expand them from each
   operator's depot list, per operator, and make the build warn on any code left unexpanded (21 Nov 2026: "Kos" on the IKEA bus).
+- **Every sheet with buses of several garages says which garage** (owner, 22 Nov 2026: "The PID files do not say which Arriva City -
+  only arriva city. Look at prague local buses, do it everywhere"): number · operator · garage, as on the Prague bus sheet. The PID
+  regional sheets read the garage at render time from the 29 Sep register by the live map's car id, only where the register's
+  operator is the live map's (a sold bus keeps its old garage in the register); an operator the register does not cover says
+  "garage not in the register", never a guess. The Operators section has one block per operator and garage.
 - Coupled set = `A + B`, numbers and types in the same order. Never collapse a recorded coupled pair to a single.
 - Every vehicle is a **3-line cell**: (1) numbers · depot, (2) full types · length, (3) pak core.
 - The type must be **visible next to every vehicle** — never only in a tooltip or a summary count ("I can't tell the type from

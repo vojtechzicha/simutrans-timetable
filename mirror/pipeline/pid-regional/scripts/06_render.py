@@ -4,7 +4,8 @@ schedule.json (05_schedule of odis-regional-hko), roster.json (04_vehicles), gam
 config.json. The page is the ODIS regional sheets' (style.html, copied from odis-regional-hko/templates), with the shared
 sticky bar (line badges, section links, a vehicle search over every [data-v]); the display helpers slot_clock, leg_rows,
 day_line and knot_text are those of odis-regional-hko/scripts/06_render.py (a script, so not importable).
-Every bus is a 3-line cell: PID number · operator / full type · length / pak core · livery.
+Every bus is a 3-line cell, as on the Prague bus sheet: PID number · operator · garage / full type · length / pak core · livery
+(garage from the 29 Sep register by car id, at render time; 22 Nov 2026).
 """
 import collections, html, json, os, re, sys
 from common import HOME, DER, PIPE
@@ -21,6 +22,55 @@ LOOP = CF['all_termini_are_loops']
 hm = lambda t: '%d:%02d' % (t // 60 % 24, t % 60)
 LAB = lambda L: C[L].get('label', L) if L in C else L
 def lkey(L): lab = LAB(L); return (0 if lab.isdigit() else 1, int(lab) if lab.isdigit() else 0, lab)
+
+# ---------------------------------------------------------------- vehicle cell: operator · garage, type · length, pak (22 Nov 2026)
+# Owner, 22 Nov 2026: "The PID files do not say which Arriva City - only arriva city. Look at prague local buses, do it everywhere
+# with the proper amount of information." -> the Prague bus sheet's cell: number · operator · garage / full type · length /
+# pak core · livery. The garage is read here, at render time, from the seznam-autobusu register of 29 Sep (praha-bus
+# vehicles_<date>.json, codes expanded per operator by praha-bus assets/bus_types.json) by the bus's car id, so no bus moves.
+# It is shown only when the register's operator is the live map's operator (a car id of a bus sold since names the old
+# operator's garage); operators the register does not cover show "garage not in the register".
+_PB = os.path.join(PIPE, 'praha-bus')
+REG = json.load(open(os.path.join(_PB, 'data', 'derived', 'vehicles_2026-09-29.json'), encoding='utf-8'))
+_BT = json.load(open(os.path.join(_PB, 'assets', 'bus_types.json'), encoding='utf-8'))
+REG_OPS = {v['operator'] for v in REG.values()}
+OPN = {'ARRIVA CITY': 'Arriva City', 'ARRIVA STŘEDNÍ ČECHY': 'Arriva Střední Čechy', 'STENBUS': 'Stenbus', 'ABOUT ME': 'About Me',
+       'MARTIN UHER': 'Martin Uher', 'ČSAD POLKOST': 'ČSAD Polkost', 'UMBRELLA CITY LINES': 'Umbrella City Lines', 'ARANEA': 'Aranea',
+       'DPP': 'Dopravní podnik hl. m. Prahy'}   # the Prague bus sheet's spellings (praha-bus 05_render OPN)
+def _opk(o): return OPN.get(o, o).lower()
+LIVN = {'pidsedocervena': 'PID grey-red', 'pidcervenomodrobila': 'PID red-white-blue', 'dppcervenobila': 'DPP red-white',
+        'mestskacervenobila': 'city red-white', 'veoliacervenoseda': 'Veolia red-grey', 'bila': 'white', 'tyrkysovozluta': 'turquoise-yellow',
+        'dppcervena': 'DPP coach red', 'bilofialova': '90 years white-purple', 'ikea': 'IKEA wrap'}
+UNNAMED = collections.Counter()      # (operator, garage code) printed without a full name: a build warning, as on the Prague sheet
+def garage(v):
+    """(garage text, is a raw code, the register lists the bus): ('', False, True) = in the register with no garage (an
+    operator with one site lists none)"""
+    r = REG.get(str(v.get('car_id') or ''))
+    if r and _opk(r['operator']) == _opk(v.get('operator', '')):
+        if r.get('garage') and r['garage'] != '?':
+            return r['garage'], bool(r.get('garage_code')), True
+        return '', False, True
+    code = (v.get('garage') or '').strip()   # roster's own code (04_vehicles), only when the car id is not in the register
+    if not code or r: return '', False, False
+    m = {**_BT['garages'], **_BT['garages_by_operator'].get(v.get('operator', ''), {})}
+    return (m[code], False, True) if m.get(code) else (code, True, True)
+def gar_html(v):
+    g, raw, listed = garage(v)
+    if not g:
+        return '' if listed else ' <small style="color:var(--muted);font-family:var(--font-body)">· garage not in the register</small>'
+    if raw:
+        UNNAMED[(v.get('operator', ''), g)] += 1
+        return f' · <abbr title="Depot code in the seznam-autobusu.cz register; full name not known">{E(g)}</abbr>'
+    return f' · {E(g)}'
+def opname(v): return OPN.get(v.get('operator', ''), v.get('operator', '')) or '?'
+def blen(v):
+    """length: the register's measured length of the type (praha-bus bus_types.json length_m), else 04_vehicles' (from the
+    type name); articulated types whose name carries no length (18C, Lion's City G, Citaro G / GÜ) are 18 m, not the 12 m
+    04_vehicles falls back to"""
+    ty = v.get('type') or ''
+    if ty in _BT['length_m']: return f"{_BT['length_m'][ty]:g} m"
+    if re.search(r"\b18\s?C\b|Lion’s City G\b|Lion's City G\b|Citaro\b.*\bG(Ü)?\b", ty): return '18 m'
+    return v.get('len', '')
 
 def slot_clock(P, r):
     if 60 % P == 0: return ':%02d' % (r % 60)
@@ -77,13 +127,13 @@ def knot_text(g, P):
 def vcell(v, kind):
     p = v.get('pak') or {}
     cls = {'seen': 'v seen', 'designed': 'v added', 'nn': 'v spare'}[kind]
-    paks = (f'<span class="pak">{E(p.get("core", "?"))} · {E(p.get("liv", "?"))}</span>' if p.get('ok') else
+    paks = (f'<span class="pak">{E(p.get("core", "?"))} · {E(LIVN.get(p.get("liv"), p.get("liv", "?")))}</span>' if p.get('ok') else
             f'<span class="pak subst">requested: {E(p.get("want") or p.get("core") or "?")}</span>')
     why = (f'<span class="addn" style="color:var(--ok)">seen on {E(v["seen"])}</span>' if kind == 'seen' else
            f'<span class="addn">{E(v.get("why", ""))}</span>' if kind == 'designed' else
            f'<span class="addn">not needed here: seen on {E(v.get("seen", ""))}' + (f'; counted on {E(v["elsewhere"])}' if v.get('elsewhere') else '') + '</span>')
-    return (f'<li class="{cls}"><span class="num veh" data-v="{E(v["num"])}"><b>{E(v["num"])}</b> · {E(v.get("operator", ""))}</span>'
-            f'<span class="vt">{E(v.get("full") or v.get("type"))} · {E(v.get("len", ""))}</span>{paks}{why}</li>')
+    return (f'<li class="{cls}"><span class="num veh" data-v="{E(v["num"])}"><b>{E(v["num"])}</b> · {E(opname(v))}{gar_html(v)}</span>'
+            f'<span class="vt">{E(v.get("full") or v.get("type"))} · {E(blen(v))}</span>{paks}{why}</li>')
 
 def game_block(L, sims):
     g = GM.get(L) or {}; rows = g.get('game', [])
@@ -187,26 +237,29 @@ for L in mod:
 units = []
 for L, rs in R['lines'].items():
     for r in rs:
-        for v in r['seen']: units.append((v.get('operator') or '?', L, r['name'], v, 'seen'))
-        for v in r['designed']: units.append((v.get('operator') or '?', L, r['name'], v, 'designed'))
+        # one block per operator and garage (22 Nov 2026: "do not say which Arriva City")
+        for v in r['seen']: units.append(((opname(v), garage(v)[0]), L, r['name'], v, 'seen'))
+        for v in r['designed']: units.append(((opname(v), garage(v)[0]), L, r['name'], v, 'designed'))
 dep = collections.defaultdict(list)
 for u in units: dep[u[0]].append(u)
 dep_html = ''; depnav = []
-for b in sorted(dep, key=lambda b: (-len(dep[b]), b)):
-    k = re.sub(r'\W+', '', b.lower())
-    depnav.append(f'<a href="#d-{k}" data-dep="{k}">{E(b)} <b>{len(dep[b])}</b></a>')
+for b in sorted(dep, key=lambda b: (-sum(len(dep[x]) for x in dep if x[0] == b[0]), b[0], -len(dep[b]), b[1])):
+    k = re.sub(r'\W+', '', (b[0] + ' ' + b[1]).lower())
+    lab = b[0] + (f' · {b[1]}' if b[1] else (' · garage not known' if any(x[0] == b[0] and x[1] for x in dep) else ''))
+    sub = f'garage {b[1]}' if b[1] else ('operator; the register names no garage' if any(garage(u[3])[2] for u in dep[b]) else 'garage not in the register')
+    depnav.append(f'<a href="#d-{k}" data-dep="{k}">{E(lab)} <b>{len(dep[b])}</b></a>')
     byt = collections.defaultdict(list)
     for u in dep[b]: byt[u[3].get('full') or u[3].get('type')].append(u)
     rows = ''.join(f'<div class="dl"><span class="dc">{len(us)}</span><span></span><div><p class="mixline">{E(ty)}</p><ul class="vs">'
                    + ''.join(f'<li class="v {"seen" if kd == "seen" else "added"}"><span class="num veh" data-v="{E(v["num"])}"><b>{E(v["num"])}</b> · line {E(nm_)}</span><span class="pak">{E((v.get("pak") or {}).get("core", "?"))}</span></li>'
                              for _, L, nm_, v, kd in sorted(us, key=lambda u: str(u[3]['num']))) + '</ul></div></div>'
                    for ty, us in sorted(byt.items(), key=lambda x: -len(x[1])))
-    dep_html += f'<div class="depot" id="d-{k}" data-depot="{k}"><header><h3>{E(b)}<small>operator</small></h3><b class="core">{len(dep[b])}</b></header>{rows}</div>'
+    dep_html += f'<div class="depot" id="d-{k}" data-depot="{k}"><header><h3>{E(b[0])}<small>{E(sub)}</small></h3><b class="core">{len(dep[b])}</b></header>{rows}</div>'
 pk = collections.Counter(); pinfo = {}
 for _, L, nm_, v, kd in units:
     p = v.get('pak') or {}; kk = (v.get('full') or v.get('type'), v.get('paint', ''), p.get('obj') or p.get('want'))
     pk[kk] += 1; pinfo[kk] = p
-pak_rows = ''.join(f'<tr><td>{E(t)}<br><span class="pak">{E(paint or "paint not in the register")}</span></td><td class="mono">{"" if pinfo[k]["ok"] else "requested: "}{E(o or "none")}</td><td>{E(pinfo[k].get("liv", ""))}</td><td class="n">{pinfo[k].get("length") or ""}</td><td class="n">{n}</td></tr>'
+pak_rows = ''.join(f'<tr><td>{E(t)}<br><span class="pak">{E(paint or "paint not in the register")}</span></td><td class="mono">{"" if pinfo[k]["ok"] else "requested: "}{E(o or "none")}</td><td>{E(LIVN.get(pinfo[k].get("liv", ""), pinfo[k].get("liv", "")))}</td><td class="n">{pinfo[k].get("length") or ""}</td><td class="n">{n}</td></tr>'
                    for k, n in sorted(pk.items(), key=lambda x: -x[1]) for t, paint, o in [k])
 
 cov_html = (f'<h2 id="coverage">Coverage</h2><p class="sub">Every stop this sheet\'s lines serve in 13:00–19:00 on {E(CF["vehicle_day_label_en"])} is on a modelled Simutrans line '
@@ -264,7 +317,7 @@ page = f'''{style}
 {cov_html}
 
 <h2 id="depots">Operators</h2>
-<p class="sub">Buses by operator (the live map's "Dopravce") and type. A seen bus counts at its operator; a designed bus too.</p>
+<p class="sub">Buses by operator (the live map's "Dopravce"), garage and type. A seen bus counts at its operator; a designed bus too. Garages are from the seznam-autobusu.cz register of 29 September 2026 (the Prague city operators: Arriva City, Arriva Střední Čechy, ČSAD Benešov, ČSAD Střední Čechy, DPP and others), matched by the car id on the live map's vehicle card; a bus of an operator the register does not cover says "garage not in the register".</p>
 <div class="depots">{dep_html}</div>
 
 <h2 id="pak">Pak128 objects</h2>
@@ -304,4 +357,5 @@ page = f'''{style}
 '''
 out = os.path.join(PROJECT, CF['output_html'])
 open(out, 'w', encoding='utf-8').write(page)
+if UNNAMED: print('WARNING garage codes on the page without a full name (add them to praha-bus assets/bus_types.json):', dict(UNNAMED))
 print('wrote', out, len(page), 'bytes;', tot_need, 'buses,', tot_seen, 'seen,', tot_des, 'designed;', len(checks), 'rows to check')

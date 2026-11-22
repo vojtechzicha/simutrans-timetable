@@ -3022,7 +3022,7 @@
     {
      "name": "seznam-autobusu.cz registers (stored 29 Sep)",
      "role": "fleet register",
-     "note": "Paint of a bus by the vehicle card id (praha-bus pipeline); where it has none, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
+     "note": "Paint and garage of a bus by the vehicle card id (praha-bus pipeline; garage shown since 22 Nov 2026, only where the register operator is the live map operator); where it has no paint, the fleet desk’s operator-page reading (config pak.paint_by_vehicle)"
     },
     {
      "name": "Save-game line export, regional",
@@ -3074,6 +3074,11 @@
      "at": "2026-11-03T07:29:01+01:00",
      "version": 2,
      "note": "Branch re-check (owner on 381 Zásmuky): 14 new Simutrans lines, 6 changed, 1155 → 1184 buses; published buses kept; Tue 3 Nov 5:00–7:20 fill-ins"
+    },
+    {
+     "at": "2026-11-22T20:15:00+01:00",
+     "version": 3,
+     "note": "Garages on every bus (owner: \"which Arriva City\"): number · operator · garage from the 29 Sep register, operator names as on the Prague bus sheet, livery in words, measured lengths (SOR NB 18 18.75 m, Lion’s City 18C 18 m); Operators section split by garage. No timetable or bus changes."
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/LHA5oGkvV95SvhwYH77ekU"

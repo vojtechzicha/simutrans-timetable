@@ -364,3 +364,16 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   check whether sharing saves buses; it did (9 → 8 with 364 + 366 as one circuit), and I stopped at "say do 364+366". When the
   owner's question has a clear answer under the standing rules (saves a bus, closer to reality), apply it and publish; offer the
   alternative afterwards. v34: 229 own card, 364 + 366 one circuit right after.
+
+## 22 Nov — which Arriva City (PID regional garages)
+- **22 Nov:** "The PID files do not say which Arriva City - only arriva city. Look at prague local buses, do it everywhere with the
+  proper amount of information. Start very urgently on 332" → the PID regional builder had each bus's garage from the register
+  (by the live map's car id) but never printed it; the cell was number · operator only, the operator in the live map's capitals,
+  the livery as a slug (pidsedocervena) and the length from a type-name guess (MAN Lion's City 18C and Citaro C2 GÜ as 12 m, SOR NB
+  18 as 18 m against the register's 18.75). Benešovsko v3: the Prague bus sheet's cell (number · operator · garage), garage
+  checked against the operator (a sold bus keeps its old garage), livery in words, the register's measured lengths, Operators split
+  by garage; a render-only change, every timetable value and bus proved unchanged against v2. 332 / 337 / 339 run from Jílové u
+  Prahy, 382 / 383 from Malešice. The register (29 Sep) covers only the Prague city operators and seznam-autobusu still answers 429,
+  so OAD Kolín, Arriva autobusy, Transdev, ZDAR and the other regional operators show "garage not in the register". Information
+  the pipeline already holds belongs on the page: check what a step loads and drops before calling a sheet complete.
+
