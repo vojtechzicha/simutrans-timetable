@@ -17,6 +17,8 @@ trips through the same `nm` + terminus alias; GTFS sheets (PID, no `jdf` in conf
 - **905 → Jindřichův Hradec (EMPTY):** the slot moves from :39 to :34 at 16:34 ("the afternoon wins"): the passing :34 is used.
 - **905 Nová Včelnice (EMPTY):** the 17:27 turns at Jarošov, rozcestí: the leg is read there (`core_to`); passes.
 
+- **MHD 2 and 4** (added later the same evening at the owner's request): all five legs pass; no path or passing flag.
+
 ## Verdicts on the legs that still fail Step 4
 
 - **1, both legs (FEWER):** one bus's real circuit every 120; the window also holds two other buses' shift trips at no repeating

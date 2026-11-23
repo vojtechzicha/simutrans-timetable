@@ -44,7 +44,9 @@ with `keep_awake.py <end>` beside it.
 - **Line 3**: a loop from the bus station run both ways; each way its own Simutrans line. First designed as one line every 60
   alternating the ways (:15 / :45), which failed Step 4; the passing patterns are used: via the railway station every 180 at
   16:15 / 16:50, via Pod Floriánem every 240 at 15:45 / 16:57. Paths: via Křemešnická and via Skrýšov, so every stop is on a line.
-- **Lines 2 and 4**: shift/school lines whose stops are all on 1 and 3; not modelled (Step 8).
+- **Lines 2 and 4** (owner: "i meant the mhd lines 2 and 4", 23 Nov 2026): modelled although their stops are on 1 and 3. 2 every
+  240 (silo 14:15 → Táborská via the hospital, Táborská 14:45 → bus station), 4 one shift circuit every 480 (bus station 14:31 →
+  silo, silo 14:40 → Osvobození I, Osvobození I 15:04 → bus station); one bus each, all slots exact.
 - **250**: hourly, Pelhřimov :43 / Havlíčkův Brod :12, 3 buses. **250 Humpolec** (short trips to Humpolec, Poliklinika) is an
   outstation line at its inbound rate, every 240 (13:18 / 17:18 out, 14:07 / 18:07 back); it runs via Kojčice, Vadčice,
   Dehtáře and Velký Rybník, obec, village stops only detour trips serve (every place served).
@@ -52,7 +54,7 @@ with `keep_awake.py <end>` beside it.
   side hourly, Pacov side hourly; not every bus runs through Pacov → Jihlava); 925 as three Ex4 lines meeting at Počátky (Pelhřimov
   hourly; Stojčín and Popelín every 120); 280 and 281 as destination variants; 259 Mysletín, 321 Jankov, 302 and 905 Nová Včelnice
   are lines for places only they serve; 301, 320, 290, 258, 305, 324 every 120; 325 every 60 at its inbound rate; 326 every 480.
-- Need 44 (MHD 3, VDV 41). Coverage: 332 afternoon stops, 331 on a line; Vyskytná, rozcestí is an exception (roadside stop of a
+- Need 46 (MHD 5, VDV 41). Coverage: 332 afternoon stops, 331 on a line; Vyskytná, rozcestí is an exception (roadside stop of a
   covered village). Audits: `method-check-2026-11-23.md`.
 
 ## Vehicles

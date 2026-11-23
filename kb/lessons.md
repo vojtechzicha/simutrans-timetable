@@ -420,3 +420,7 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   covers every line. `audit/passing_check.py` gave 14 false EACH WAY flags on this JDF sheet: it compared the schedule's expanded
   stop names with the raw JDF names; it now reads a JDF sheet's trips through the sheet's own `nm` + alias (GTFS/PID unchanged).
   When an audit flags a slot's own trip as off the pattern, suspect the audit before the model.
+- **23 Nov (later still):** "Keep it, it's okay - but i meant the mhd lines 2 and 4 :D" → "the other Pelhřimov lines" meant the
+  two town lines left out by Step 8 (stops all on 1 and 3), not the VDV lines (kept). The owner wants a town's every line number
+  on the sheet even when its stops are covered: 2 every 240 and 4 a shift circuit every 480, one bus each. When a request can mean
+  the sheet's own listed-but-not-modelled lines, start there.

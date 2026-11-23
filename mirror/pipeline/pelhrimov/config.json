@@ -1081,12 +1081,81 @@
     }
    ],
    "note": "Pelhřimov – Krasíkovice – Hodějovice – Pelhřimov, a loop run twice a day (7:22, 14:02): the only service of Hodějovice, so its own line every 480 at 14:02."
+  },
+  "2": {
+   "core": [
+    "Pelhřimov, silo",
+    "Pelhřimov, autobusové nádraží",
+    "Pelhřimov, nem.II",
+    "Pelhřimov, Táborská"
+   ],
+   "sim": [
+    {
+     "name": "2",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Pelhřimov, silo",
+       "to": "Pelhřimov, Táborská",
+       "via": [
+        "Pelhřimov, nem.II"
+       ],
+       "at": [
+        "14:15"
+       ]
+      },
+      {
+       "fr": "Pelhřimov, Táborská",
+       "to": "Pelhřimov, silo",
+       "core_to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "14:45"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Shift and school line silo – bus station – hospital (nemocnice II) – Táborská, 20 trips: silo → Táborská 5:45, 8:30, 10:40, 13:00, 14:15; back 5:27, 6:05, 8:05, 9:58 to the silo and 9:00, 11:00, 14:45 to the bus station (read there). Its afternoon is one bus: bus station 12:45 → silo, 13:00 → Táborská, …, silo 14:15 → Táborská, Táborská 14:45 → bus station (direct, 5 min). Every 240 at 14:15 / 14:45, exact; 13:00 is off the pattern (the same bus an hour earlier). Every stop is also on 1 or 3."
+  },
+  "4": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Pelhřimov, silo",
+    "Pelhřimov, Osvobození I"
+   ],
+   "sim": [
+    {
+     "name": "4",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Pelhřimov, silo",
+       "at": [
+        "14:31"
+       ]
+      },
+      {
+       "fr": "Pelhřimov, silo",
+       "to": "Pelhřimov, Osvobození I",
+       "at": [
+        "14:40"
+       ]
+      },
+      {
+       "fr": "Pelhřimov, Osvobození I",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "15:04"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Shift line for the silo (industrial zone): 5:03–6:51 in the morning, then one afternoon run, bus station 14:31 → silo, silo 14:40 → bus station → Architekta Janáka → Osvobození I, Osvobození I 15:04 → bus station, and 22:45 from Starý Pelhřimov. One circuit every 480 (shift lines repeat every 8 h, method v4) at the afternoon run's real minutes, one bus; the morning trips are off the pattern."
   }
  },
- "unmodelled": {
-  "2": "Shift and school line silo – bus station – hospital – Táborská (20 trips, 4 in the afternoon: 13:00, 13:30, 14:15, 14:45, and 22:15). Every stop it serves is on lines 1 and 3, so it gets no line of its own (method Step 8: a long-interval line only where it is a place's only service).",
-  "4": "Shift line bus station – silo – Osvobození / Starý Pelhřimov (12 trips: 5:03–6:51, 14:31–15:10, 22:45). Every stop is on lines 1 and 3; not modelled (Step 8)."
- },
+ "unmodelled": {},
  "network_state": [
   [
    "in",
@@ -1158,7 +1227,7 @@
   "buses": "The VDV live map (mapavdv.kr-vysocina.cz, Kraj Vysočina) polled every minute on Tuesday 24 Nov 2026 gives every bus's licence and trip number (the JDF trip) and its VDV vehicle number; the ČSAD buses also show their number plate, which joins them to the seznam-autobusu.cz register (read on 23 Nov 2026 in the owner's browser). The register lists no fleet numbers for ICOM or ČSAD, so a bus is named by its VDV vehicle number with its plate; a town bus the map shows without a plate keeps its VDV number and its type stays unknown. A bus fills one Simutrans line it ran in that line's window, by matching.",
   "depots": "ICOM transport, provozovna Pelhřimov (the town buses; its four Isuzu Novociti Life run MHD Pelhřimov) and ČSAD AUTOBUSY České Budějovice, provozovny Oblast Pelhřimovsko and Oblast Humpolecko (the VDV lines; the register files their buses at Pelhřimov and Humpolec).",
   "search_example": "64-10021",
-  "status_html": "<p class=\"sub\"><b>Version 2, 23 Nov 2026: every VDV line from Pelhřimov added; the buses come in version 3.</b> The VDV live map keeps no history, so it is polled all day on Tuesday 24 Nov; version 3 names the real bus on every Simutrans line. The lines, typed values and bus counts here stand unless that day shows buses pairing lines in a way the timetable hides.</p>"
+  "status_html": "<p class=\"sub\"><b>Version 3, 23 Nov 2026: MHD 2 and 4 and every VDV line from Pelhřimov added; the buses come in version 4.</b> The VDV live map keeps no history, so it is polled all day on Tuesday 24 Nov; version 4 names the real bus on every Simutrans line. The lines, typed values and bus counts here stand unless that day shows buses pairing lines in a way the timetable hides.</p>"
  },
  "hubs": [
   "Pelhřimov, autobusové nádraží"

@@ -38,10 +38,22 @@ c['lines']['250']['note'] = (
  "the other out trips are off the pattern (buses going home; to be confirmed by the plates on Tue 24 Nov). Kojčice, Dehtáře (with Vadčice) and Velký Rybník, obec "
  "are village stops off the main road that only a few trips serve (15:13 out; 15:12 and 13:02 in from Havlíčkův Brod); every place is served, so the short line runs "
  "through them, 6 min longer than its slot trips take.")
-c['unmodelled'] = {
- '2': ("Shift and school line silo – bus station – hospital – Táborská (20 trips, 4 in the afternoon: 13:00, 13:30, 14:15, 14:45, and 22:15). Every stop it serves "
-       "is on lines 1 and 3, so it gets no line of its own (method Step 8: a long-interval line only where it is a place's only service)."),
- '4': "Shift line bus station – silo – Osvobození / Starý Pelhřimov (12 trips: 5:03–6:51, 14:31–15:10, 22:45). Every stop is on lines 1 and 3; not modelled (Step 8)."}
+# MHD 2 and 4 (owner, 23 Nov 2026: "i meant the mhd lines 2 and 4"): modelled, though every stop is on 1 and 3
+AN, SILO, TAB = 'Pelhřimov, autobusové nádraží', 'Pelhřimov, silo', 'Pelhřimov, Táborská'
+OSV = 'Pelhřimov, Osvobození I'
+c['lines']['2'] = dict(core=[SILO, AN, 'Pelhřimov, nem.II', TAB], sim=[dict(name='2', every=240, legs=[
+    dict(fr=SILO, to=TAB, via=['Pelhřimov, nem.II'], at=['14:15']),
+    dict(fr=TAB, to=SILO, core_to=AN, at=['14:45'])])],
+  note=("Shift and school line silo – bus station – hospital (nemocnice II) – Táborská, 20 trips: silo → Táborská 5:45, 8:30, 10:40, 13:00, 14:15; back "
+        "5:27, 6:05, 8:05, 9:58 to the silo and 9:00, 11:00, 14:45 to the bus station (read there). Its afternoon is one bus: bus station 12:45 → silo, "
+        "13:00 → Táborská, …, silo 14:15 → Táborská, Táborská 14:45 → bus station (direct, 5 min). Every 240 at 14:15 / 14:45, exact; 13:00 is off the pattern (the "
+        "same bus an hour earlier). Every stop is also on 1 or 3."))
+c['lines']['4'] = dict(core=[AN, SILO, OSV], sim=[dict(name='4', every=480, legs=[
+    dict(fr=AN, to=SILO, at=['14:31']), dict(fr=SILO, to=OSV, at=['14:40']), dict(fr=OSV, to=AN, at=['15:04'])])],
+  note=("Shift line for the silo (industrial zone): 5:03–6:51 in the morning, then one afternoon run, bus station 14:31 → silo, silo 14:40 → bus station "
+        "→ Architekta Janáka → Osvobození I, Osvobození I 15:04 → bus station, and 22:45 from Starý Pelhřimov. One circuit every 480 (shift lines repeat "
+        "every 8 h, method v4) at the afternoon run's real minutes, one bus; the morning trips are off the pattern."))
+c['unmodelled'] = {}
 c['network_state'] = [
  ['in', 'MHD Pelhřimov, regular timetable', c['regular_not_diversion']['355003'].replace('of MHD 3', 'of MHD 3 and 4')],
  ['in', 'VDV 250, timetable valid 28 Sep – 12 Dec 2026', 'The version of 28 Sep 2026 (CIS JŘ export of 23 Nov).'],
@@ -62,8 +74,8 @@ c['texts'] = dict(
  depots=('ICOM transport, provozovna Pelhřimov (the town buses; its four Isuzu Novociti Life run MHD Pelhřimov) and ČSAD AUTOBUSY České Budějovice, provozovny '
          'Oblast Pelhřimovsko and Oblast Humpolecko (the VDV lines; the register files their buses at Pelhřimov and Humpolec).'),
  search_example='64-10021',
- status_html=('<p class="sub"><b>Version 2, 23 Nov 2026: every VDV line from Pelhřimov added; the buses come in version 3.</b> The VDV live map keeps no '
-              'history, so it is polled all day on Tuesday 24 Nov; version 3 names the real bus on every Simutrans line. The lines, typed values and bus counts '
+ status_html=('<p class="sub"><b>Version 3, 23 Nov 2026: MHD 2 and 4 and every VDV line from Pelhřimov added; the buses come in version 4.</b> The VDV live map keeps no '
+              'history, so it is polled all day on Tuesday 24 Nov; version 4 names the real bus on every Simutrans line. The lines, typed values and bus counts '
               'here stand unless that day shows buses pairing lines in a way the timetable hides.</p>'))
 json.dump(c, open(P, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('config texts written')
