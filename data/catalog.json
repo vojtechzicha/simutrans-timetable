@@ -4262,6 +4262,80 @@
     }
    ],
    "artifactUrl": "https://claude.ai/artifact/KSHcamNtjkpPVahiQvbfVU"
+  },
+  {
+   "file": "MHD Pelhrimov.html",
+   "name": "MHD Pelhřimov + VDV 250",
+   "status": "active",
+   "modes": [
+    "bus"
+   ],
+   "region": "Pelhřimov · Vysočina",
+   "kind": "fleet",
+   "summary": "Pelhřimov town lines 1–4 (ICOM transport) and VDV line 250 Pelhřimov – Humpolec – Havlíčkův Brod (ČSAD AUTOBUSY ČB), on the small-town method; buses from the VDV live map of Tue 24 Nov (version 2).",
+   "pipeline": "pipeline/pelhrimov",
+   "build": "python -X utf8 scripts/run.py (sheet-local 01_live, 01c_fleet, 06_render; the ODIS regional 02/03/05/04 with --base pelhrimov)",
+   "fetch": "Detached poller on the vehicle day: Start-Process python -ArgumentList '-X','utf8','01_live_poll.py','<end>' -WorkingDirectory <scripts> -WindowStyle Hidden (with keep_awake.py); JDF: curl https://portal.cisjr.cz/pub/jdf/JDF.zip into data/raw/jdf/<date>/",
+   "sources": [
+    {
+     "name": "CIS JŘ bus JDF export",
+     "url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
+     "role": "timetable",
+     "note": "Export of 23 Nov 2026; licences 355001–355004 (MHD Pelhřimov, ICOM) and 357250 (VDV 250, ČSAD AUTOBUSY ČB)"
+    },
+    {
+     "name": "VDV live map (Kraj Vysočina)",
+     "url": "https://mapavdv.kr-vysocina.cz/",
+     "role": "live positions",
+     "note": "Ajax/GetPoints + Ajax/OpenInfoWindow?id=: licence / trip and VDV vehicle number; ČSAD buses also show their plate; no history"
+    },
+    {
+     "name": "seznam-autobusu.cz registers (ICOM transport 602, ČSAD AUTOBUSY ČB 232)",
+     "url": "https://seznam-autobusu.cz/seznam?prov=1&trakce=autobus&iddopravce=602",
+     "role": "fleet register",
+     "note": "Read in the owner's Chrome on 23 Nov 2026 (scripts get 429); plates, types, paints; no fleet numbers"
+    },
+    {
+     "name": "local pak128 repo VZ-VDV-bus, VZ-MHDPelhrimov-bus",
+     "role": "other",
+     "note": "Crossway LE LINE 12M (VDV) and Novociti Life (ICOM blue) asked from the art session on 23 Nov 2026"
+    }
+   ],
+   "vehicleDay": "Tue 24 Nov 2026 (VDV live map, polled 05:00–20:00; buses in version 2)",
+   "networkDate": "24 Nov 2026 (regular timetable; MHD 3/4 diversion to 30 Nov not modelled)",
+   "updateRecipe": [
+    "Start the detached poller (01_live_poll.py + keep_awake.py) on a weekday before the morning.",
+    "Fetch a new JDF into data/raw/jdf/<date>/; set jdf.zip, snapshot, vehicle_day and labels in config.json.",
+    "python -X utf8 scripts/run.py; check To check and the audits (step4_regional.py pelhrimov; AUDIT_SHEETS=pelhrimov for branch/path/passing checks).",
+    "pnpm sync in the repo, commit and push (the site is where it is published); send new pak needs to the art session (simutrans-122-0-c1)."
+   ],
+   "notes": "Line 1 is one bus's real afternoon circuit every 120; line 3's two loop directions are their own lines (every 180 / 240, Step 4 passing); 2 and 4 not modelled (stops on 1 and 3); 250 hourly + 250 Humpolec every 240 via the villages. Need 7.",
+   "dependsOn": [
+    "pipeline/odis-regional-hko",
+    "pipeline/ostrava",
+    "pipeline/ostrava-bus",
+    "pipeline/brno-trolleybus"
+   ],
+   "rawSnapshots": [
+    "jdf/2026-11-23",
+    "live/2026-11-23",
+    "live/2026-11-24",
+    "register/2026-11-23"
+   ],
+   "sync": "Rebuilt from stored raw data by pipeline/pelhrimov in the working folder (runs the ODIS regional scripts with --base); copied here by pnpm sync, committed and pushed (the site is where it is published).",
+   "kbNotes": [],
+   "refreshTriggers": [
+    "13 Dec 2026 timetable change (JR2027): every version in the export ends 12 Dec.",
+    "Vehicles come from a live map with no history: a refresh needs a new poll on a weekday."
+   ],
+   "created": "2026-11-23",
+   "publishes": [
+    {
+     "at": "2026-11-23T19:32:30+01:00",
+     "version": 1,
+     "note": "Lines and typed values; buses come with the Tue 24 Nov poll (version 2)."
+    }
+   ]
   }
  ]
 }

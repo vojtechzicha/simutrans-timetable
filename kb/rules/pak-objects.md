@@ -27,9 +27,14 @@ city and show me clearly which."
 - Trams: Praha/Brno/Ostrava trams are VZ objects only (native pak trams uninstalled 28 Sep).
 
 ## Who to ask
+- **New or missing objects (art): the art session** (announced 23 Nov 2026 as `simutrans-122-0-c1`; find the current one with
+  ListAgents). Owner, 23 Nov 2026: "ask the art session, I saw you doing the nearest match - that's what it is in there for".
+  A nearest-match stand-in (≈) is only a placeholder until the object is drawn, never the answer: request the object when the
+  sheet is built, and name the requested object in the sheet's pak rules so the mark clears when it is built. The request
+  says: object name(s) and use, the makeobj keys, the image layout (8 directions, unlit empty + lit freight), an existing object to
+  match in size and look, where it goes (the pakset repo) and whether to install it.
 - **Fleet desk session** (announced 21 Oct as `simutrans-custom-czech-pak128-35`; names change — find the current one with
-  ListAgents): which objects exist, and requests for missing vehicles/liveries. **Never message a drawing session directly.**
-  Send one inventory per sheet: type × paint × area kind × count, with operator and where it runs.
+  ListAgents): which objects exist. Send one inventory per sheet: type × paint × area kind × count, with operator and where it runs.
 - Each pipeline keeps its open requests in `pak_request.md` (type × livery × car numbers); `pak_objects.json` files are read from
   the pak build so "requested" marks clear by themselves.
 - Impossible sets (missing objects, couplings that don't work) are the pak's job to fix: ask, don't work around.

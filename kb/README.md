@@ -32,7 +32,7 @@ Full method documents (verbatim, synced from the working folder):
 |---|---|---|
 | City tram peak fleet | Praha, Brno (closure + from 29 Sep), Plzeň, Olomouc, Ostrava, Most–Litvínov | `pipeline/<city>` |
 | City trolleybus / bus | Praha (trolleybus + bus lines check), Brno, Plzeň, Ostrava, Olomouc bus, Most bus, Pardubice (both modes) | `pipeline/<city>-<mode>` |
-| Small towns | Havířov / Karviná / Orlová (Transdev MHD) | `pipeline/havirov-karvina-orlova` |
+| Small towns | Havířov / Karviná / Orlová (Transdev MHD); MHD Pelhřimov + VDV 250 (ICOM, ČSAD AUTOBUSY ČB; 23 Nov 2026) | `pipeline/havirov-karvina-orlova`; `pipeline/pelhrimov` (ODIS regional scripts via `--base`) |
 | ODIS regional | Havířovsko-Karvinsko-Orlovsko, Těšínsko-Třinecko-Frýdecko, Opavsko (+ Opava trolleybuses), Novojičínsko, Bruntálsko | `pipeline/odis-regional-*` (shared scripts in `-hko`) |
 | PID regional | Benešovsko, Berounsko, Kladensko, Kolínsko, Kutnohorsko, Mělnicko, Mladoboleslavsko, Nymbursko, Praha-východ, Praha-západ, Příbramsko, Rakovnicko (+ "PID: all lines" index) | `pipeline/pid-regional` (ODIS scheduler via `--base`) |
 | Rail (active) | S9/S2/R17/R49/Ex7, S75, S5→S4, S4→S3, Ex7+R17 Veselí | `pipeline/local-rail/build_*.py` |

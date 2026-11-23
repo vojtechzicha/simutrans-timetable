@@ -399,3 +399,17 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   in the whole window) from the artifact URLs in the catalogue and publish history, and lists any it cannot map; the sheet page
   dropped its Artifact row; old artifact links in the KB render as links to the sheet's page, or as plain text. Catalogue
   update recipes say "pnpm sync, commit and push" instead of "republish to <artifact>".
+
+## 23 Nov — MHD Pelhřimov + VDV 250
+- **23 Nov:** "create MHD Pelhřimov sheet with 250 VDV line extra" → new pipeline `pelhrimov`: CIS JŘ JDF (MHD 355001–355004,
+  ICOM transport; 357250, ČSAD AUTOBUSY ČB), the Kraj Vysočina live map found that evening (mapavdv.kr-vysocina.cz, no history),
+  and the ICOM / ČSAD registers read in the owner's Chrome. The schedule, roster and coverage run on the ODIS regional scripts
+  with `--base pelhrimov`; the only shared change is `config.jdf.line_numbers` (town lines 1–4 instead of 001–004; other
+  sheets unchanged). A town network whose few buses rotate over all line numbers: line 1 became one bus's real afternoon
+  circuit (1 bus, not 2); line 3's loop runs both ways, and the first design (one line every 60 alternating :15 / :45) failed
+  Step 4 while passing patterns existed, so each way is its own line (every 180 / every 240, 5 exact departures instead of 2).
+  Run Step 4 before writing the cards, not after. The poll started at 19:12 on Mon 23 Nov, too late for that day's peak;
+  version 1 has the lines, version 2 the buses of Tue 24 Nov.
+- **23 Nov:** "ask the art session, I saw you doing the nearest match - that's what it is in there for" → the sheet used
+  nearest-match stand-ins (IREDO Novociti, Brno Crossway 12M) for two missing objects. New objects go to the art session
+  (simutrans-122-0-c1) when the sheet is built; a stand-in is a placeholder, not the answer (`rules/pak-objects.md`).

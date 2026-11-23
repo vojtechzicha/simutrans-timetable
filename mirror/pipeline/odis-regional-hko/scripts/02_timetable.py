@@ -3,7 +3,7 @@
 Lines: every licence whose number starts with an area prefix (config.areas, e.g. 912 Havířovsko, 873 Karvinsko,
 874 Orlovsko) and whose operator is the area's (area ic, default config.jdf.operator_ic: Transdev Slezsko). Found by scanning the export, so new versions need no config edit.
 One ODIS line can hold licences of two areas (553 = 873553 + 874553): trips are merged by ODIS number (the last three
-digits) and keep their licence in 'lic'. config.jdf.extra_lics {licence: area id} reads a licence of another sheet's area
+digits; config.jdf.line_numbers maps a town network's licences to its own numbers) and keep their licence in 'lic'. config.jdf.extra_lics {licence: area id} reads a licence of another sheet's area
 into this sheet's line of the same number (TFJ: 883980 and 883985, Z-Group's trips of 980 and 985), whatever its operator.
 Version rule (shared): among a licence's versions valid on the day, the latest "valid from" wins; ties go to the shortest
 validity. Diversion versions (Linky field 6 = 1) are noted for the network state.
@@ -18,6 +18,9 @@ d = day(CONFIG['vehicle_day']); J = CONFIG['jdf']
 # (Opava 905201-905204, traction T), which the bus export leaves out; same licence numbers, same version rule
 outers = [jdf_open(rel(z)) for z in [J['zip']] + J.get('extra_zips', [])]
 XL = J.get('extra_lics', {}); AID = {a['id']: a for a in CONFIG['areas']}
+# the line number: the last three digits (ODIS numbers), or config.jdf.line_numbers {licence: number} for a town network
+# numbered 1, 2, 3 … (MHD Pelhřimov, licences 355001-355004)
+LNO = lambda code: J.get('line_numbers', {}).get(code, code[-3:])
 area = lambda code, ic=None: area_of(code, ic) or (AID[XL[code]] if code in XL else None)
 vers = []
 for zi, outer in enumerate(outers):
@@ -33,7 +36,7 @@ for zi, outer in enumerate(outers):
                          diversion=len(r) > 5 and r[5] == '1', **({'zip': zi, 'traction': r[4] if len(r) > 4 else ''} if zi else {})))
 trips, chosen, cls = {}, {}, {}
 for code in sorted({v['lic'] for v in vers}):
-    L = code[-3:]
+    L = LNO(code)
     vs = [x for x in vers if x['lic'] == code]
     if code in CONFIG.get('regular_not_diversion', {}): vs = [x for x in vs if not x['diversion']]   # a short diversion: the regular route
     v = pick_version(vs, d)
@@ -60,7 +63,7 @@ for L, tr in trips.items():
     tr.sort(key=lambda t: t['dep'])
     deps = [t['dep'] for t in tr]
     c = 'afternoon' if any(780 <= x < 1140 for x in deps) else 'day' if deps else 'none'
-    lics = sorted({c_ for c_, v in chosen.items() if c_[-3:] == L})
+    lics = sorted({c_ for c_, v in chosen.items() if LNO(c_) == L})
     cls[L] = dict(cls=c, lics=lics, areas=sorted({chosen[x]['area'] for x in lics}), name=chosen[lics[0]]['name'], traction=chosen[lics[0]].get('traction') or 'A',
                   trips=len(tr), first=hm(deps[0]) if deps else None, last=hm(deps[-1]) if deps else None,
                   afternoon=sum(1 for x in deps if 780 <= x < 1140))
