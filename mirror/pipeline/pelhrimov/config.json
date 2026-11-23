@@ -392,7 +392,7 @@
    "VZ-VDV-bus",
    "VZ-MHDPelhrimov-bus"
   ],
-  "why": "VDV regional buses (white with the green VDV chevrons) take VZ-VDV-bus, which has the Crossway LE LINE 10,8M and 14,5M; the ICOM town buses take the town package VZ-MHDPelhrimov-bus. The Crossway LE LINE 12M in VDV paint and the Isuzu Novociti Life in ICOM blue with a white fade were asked from the art session (simutrans-122-0-c1) on 23 Nov 2026; until they are built they show \"≈\" and are listed in pak_request.md.",
+  "why": "VDV regional buses (white with the green VDV chevrons) take VZ-VDV-bus, which has the Crossway LE LINE 10,8M and 14,5M; the ICOM town buses take the town package VZ-MHDPelhrimov-bus. The Crossway LE LINE 12M in VDV paint and the Isuzu Novociti Life in ICOM blue with a white fade were drawn for this sheet by the art session (simutrans-122-0-c1, pakset main 03e77e8, 23 Nov 2026) from photos of 7J0 8266; any further type goes there.",
   "types": {},
   "paints": [],
   "special": {},
