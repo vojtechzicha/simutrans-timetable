@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import {
-  artifactUrl, createdAt, fmtDate, getSheet, MODE_LABEL, repoFileUrl, sheetName, sheets, STATUS_LABEL, type Mode, type Status,
+  createdAt, fmtDate, getSheet, MODE_LABEL, repoFileUrl, sheetName, sheets, STATUS_LABEL, type Mode, type Status,
 } from '@/lib/data';
 import { docHref, listDocs } from '@/lib/docs';
 import Frame from './frame';
@@ -24,7 +24,6 @@ export default async function SheetPage({ params }: PageProps<'/sheet/[slug]'>) 
   const docIds = new Set(docs.map((d) => d.id));
   const readme = s.pipeline ? `mirror/${s.pipeline}/README` : null;
   const notes = (s.kbNotes ?? []).filter((n) => docIds.has(`kb/notes/${n}`));
-  const url = artifactUrl(s);
   const superseded = s.supersededBy ? sheets.find((x) => x.slug === s.supersededBy) : null;
   const h = s.history;
 
@@ -50,7 +49,7 @@ export default async function SheetPage({ params }: PageProps<'/sheet/[slug]'>) 
           <dd className="mono">{fmtDate(createdAt(s))}{s.createdNote && <small>{s.createdNote}</small>}</dd>
           <dt>Published</dt>
           <dd className="mono">
-            {h?.firstPublished ? <>{fmtDate(h.firstPublished)} → {fmtDate(h.lastPublished)}<small>{h.publishCount} publishes, artifact v{h.latestVersion}</small></> : url ? 'published as an artifact; no publish record on this machine' : 'never published'}
+            {h?.firstPublished ? <>{fmtDate(h.firstPublished)} → {fmtDate(h.lastPublished)}<small>{h.publishCount} publishes{h.latestVersion ? `, v${h.latestVersion}` : ''}</small></> : 'no publish record'}
           </dd>
           <dt>File</dt>
           <dd className="mono">{fmtDate(s.sourceModified, true)}<small>{s.location === 'archive' ? 'archive/' : ''}{s.file} · {(s.bytes / 1024).toFixed(0)} kB</small></dd>
@@ -88,8 +87,6 @@ export default async function SheetPage({ params }: PageProps<'/sheet/[slug]'>) 
           {!!s.dependsOn?.length && (<><dt>Shares</dt><dd className="mono">{s.dependsOn.join(', ')}</dd></>)}
           {!!s.rawSnapshots?.length && (<><dt>Raw data</dt><dd className="mono">{s.rawSnapshots.join(' · ')}<small>stored in the working folder, not in this repo</small></dd></>)}
           {s.builtBy && (<><dt>Built by</dt><dd>{s.builtBy}</dd></>)}
-          <dt>Artifact</dt>
-          <dd>{url ? <a href={url} target="_blank" rel="noreferrer" className="mono">{url.replace('https://', '')}</a> : '—'}</dd>
         </dl>
         {!!s.updateRecipe?.length && (
           <ol className={styles.recipe}>{s.updateRecipe.map((step, i) => <li key={i}>{step}</li>)}</ol>

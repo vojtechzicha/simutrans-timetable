@@ -390,3 +390,12 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
   whose register owner is not the live map's operator (ČSAD Střední Čechy buses running for EKOSERVIS / AD Střední Čechy), and
   operators that list no depots. When a source is blocked for scripts, ask whether the owner's browser can read it before
   writing "not available".
+
+## 23 Nov — no more artifacts
+- **23 Nov:** "from now no longer any artifacts please, only automaticall commit and publish on the website, make sure the website
+  does not link any artifact" → publishing a sheet is now `pnpm sync`, commit, push, done without asking; nothing goes to claude.ai
+  artifacts. The site showed each sheet's artifact URL and 9 sheets cross-linked each other through artifact URLs (877 links:
+  PID all lines, Praha-východ/-západ → Prague bus, ODIS ↔ Ostrava bus). `pnpm sync` now rewrites those to `/sheet/<slug>` (opened
+  in the whole window) from the artifact URLs in the catalogue and publish history, and lists any it cannot map; the sheet page
+  dropped its Artifact row; old artifact links in the KB render as links to the sheet's page, or as plain text. Catalogue
+  update recipes say "pnpm sync, commit and push" instead of "republish to <artifact>".

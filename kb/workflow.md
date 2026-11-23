@@ -10,7 +10,7 @@
 | Publish history mined from transcripts | `data/provenance.json` (`python -I tools/mine_transcripts.py`) | yes |
 | What the app shows (generated) | `data/sheets.json` (`pnpm sync`) | yes |
 | Rules, lessons, notes | `kb/` | yes |
-| The owner's view of each sheet | its claude.ai artifact (URL in the catalog) **and** this web app | — |
+| The owner's view of each sheet | this web app only (no claude.ai artifacts since 23 Nov 2026) | — |
 
 The working folder is the source of truth for pipelines and data; this repo is the source of truth for rules and the catalogue.
 **Sync is one-way: working folder → repo.** Never edit `public/sheets/*.html` or `mirror/` by hand; change the pipeline and rebuild.
@@ -26,8 +26,10 @@ The working folder is the source of truth for pipelines and data; this repo is t
 5. Compare the "What changes" table and schedules against the previous state. For a sheet already in the game: **rebase, fewest
    moves** (`04b_rebase.py`), not a fresh roster.
 6. Hand-review (bus sheets: every approximate row; coverage check; bunching scans), then publish:
-   - republish to the **same artifact URL** (Artifact tool: `read` the URL first in a new conversation, then publish with `url`);
-   - `pnpm sync` here, check the report, commit, push → Vercel redeploys.
+   - `pnpm sync` here, check the report, commit, push → Vercel redeploys. That push **is** the publish: do it without asking.
+   - No claude.ai artifacts (owner, 23 Nov 2026): never publish a sheet, report or anything else with the Artifact tool, and never
+     link one from the site. Old artifact links inside sheets are rewritten to `/sheet/<slug>` by `pnpm sync` (it lists any it
+     cannot map); old ones in the KB render as links to the sheet's page or as plain text.
 7. Tell the owner what changed **and the in-game change list**: line, entry, old → new Every/Offset/Also at, vehicles in/out.
 8. Update `data/catalog.json` (dataDay, status, notes) and, if a rule changed, `kb/rules/*` + an entry in `kb/lessons.md`.
    A publish made from a session in this repo is not mined (the miner skips this project folder): append it to the sheet's
@@ -48,7 +50,7 @@ Known refresh triggers:
    `data/derived/`.
 3. Inventory first (every trip / every train / every stop), then design, size from the pattern, assign real vehicles, pak objects
    (ask the fleet desk), sticky header (fleet sheets) or plain tables (rail design pages).
-4. Run the publish checklist below, publish as a claude.ai artifact, add a `data/catalog.json` entry, `pnpm sync`, commit, push.
+4. Run the publish checklist below, add a `data/catalog.json` entry, `pnpm sync`, commit, push (no artifact).
 
 ## Publish checklist
 - [ ] Every line/train/stop of the scope is modelled or listed under Not modelled with a reason.
@@ -65,7 +67,7 @@ Known refresh triggers:
 - `pnpm dev` — local preview; `pnpm build` — static build (Next.js App Router, all pages prerendered).
 - `pnpm sync` — copy sheets + pipeline code from the working folder, rebuild `data/sheets.json`; prints new/changed/removed sheets and
   sheets missing a catalogue entry. `SIMUTRANS_SOURCE=<path>` overrides the folder; `pnpm sync -- --dry` reports only.
-- `python -I tools/mine_transcripts.py` — refresh `data/provenance.json` (first/last publish, artifact URLs) from local transcripts;
+- `python -I tools/mine_transcripts.py` — refresh `data/provenance.json` (first/last publish, and the artifact URLs of the old publishes, used to map old links) from local transcripts;
   run before `pnpm sync` when sheets were published from another folder's sessions.
 - Deploy: push to `main` on GitHub → Vercel builds automatically.
 - The repo is **public**: never commit raw downloads, transcripts, user messages, credentials or the owner's email.

@@ -93,7 +93,6 @@ function main() {
     const cat = byFile.get(s.file);
     const slug = cat?.slug ?? slugify(s.file);
     const hash = sha(s.buf);
-    if (!DRY) fs.writeFileSync(path.join(SHEETS_DIR, `${slug}.html`), s.buf);
     const prev = prevByFile.get(s.file);
     if (!prev) report.added.push(s.file);
     else if (prev.sha256 !== hash) report.changed.push(s.file);
@@ -134,6 +133,24 @@ function main() {
       ...(cat ?? {}),
     });
   }
+  // Sheets used to cross-link each other through claude.ai artifact URLs. The site links to no artifact (owner, 23 Nov 2026):
+  // every such link in the copy becomes the sheet's page here, opened in the whole window, not inside the frame.
+  const artifactToSlug = new Map();
+  for (const pass of ['catalog', 'history']) for (const x of sheets) {
+    const urls = pass === 'catalog' ? [x.artifactUrl] : x.history?.artifactUrls ?? [];
+    for (const u of urls.filter(Boolean)) { const id = u.split('/').pop(); if (!artifactToSlug.has(id)) artifactToSlug.set(id, x.slug); }
+  }
+  const unlinked = [];
+  for (const [i, s] of found.entries()) {
+    let html = s.buf.toString('utf8');
+    html = html.replace(/<a ([^>]*?)href="https?:\/\/claude\.ai\/(?:code\/)?artifact\/([A-Za-z0-9-]+)(#[^"]*)?"([^>]*)>/g, (_, pre, id, frag, post) => {
+      const target = artifactToSlug.get(id);
+      if (!target) { unlinked.push(`${s.file}: ${id}`); return `<a ${pre}${post}>`; }
+      return `<a ${pre}href="/sheet/${target}${frag ?? ''}" target="_top"${post}>`;
+    });
+    if (/claude\.ai\/(?:code\/)?artifact/.test(html)) unlinked.push(`${s.file}: artifact URL left outside a link`);
+    if (!DRY) fs.writeFileSync(path.join(SHEETS_DIR, `${sheets[i].slug}.html`), html);
+  }
   const foundFiles = new Set(found.map((s) => s.file));
   report.removed = previous.sheets.filter((s) => !foundFiles.has(s.file)).map((s) => s.file);
   const missing = catalog.sheets.filter((c) => !foundFiles.has(c.file)).map((c) => c.file);
@@ -162,6 +179,7 @@ function main() {
   for (const f of report.removed) console.log(`  - ${f}`);
   if (report.uncatalogued.length) console.log(`Not in data/catalog.json (add an entry):\n  ${report.uncatalogued.join('\n  ')}`);
   if (missing.length) console.log(`In catalog.json but no file in the source:\n  ${missing.join('\n  ')}`);
+  if (unlinked.length) console.log(`Artifact links with no sheet here (link removed):\n  ${[...new Set(unlinked)].join('\n  ')}`);
   console.log(`Pipeline mirror: ${stats.files} files${stats.skipped.length ? `, skipped large: ${stats.skipped.join(', ')}` : ''}`);
 }
 

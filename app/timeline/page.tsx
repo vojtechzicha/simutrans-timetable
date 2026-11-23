@@ -27,7 +27,7 @@ export default function Timeline() {
         <h1 className="display">Timeline</h1>
         <p>
           Each bar runs from the day a sheet first appeared (first write or publish in a recorded session, or the catalogue date) to its
-          last publish. The number on a bar is the artifact&apos;s latest version. Faded bars are archived sheets.
+          last publish. The number on a bar is the sheet&apos;s latest version. Faded bars are archived sheets.
         </p>
       </header>
       <div className={styles.chart}>

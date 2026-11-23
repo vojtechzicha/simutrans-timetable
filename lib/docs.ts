@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { Marked, type Tokens } from 'marked';
+import { sheetName, sheets } from './data';
 
 const ROOT = process.cwd();
 // Documents the app renders: the KB and the pipeline docs mirrored from the working folder.
@@ -40,6 +41,23 @@ function groupOf(file: string) {
   if (file.startsWith('kb/')) return 'Knowledge base';
   if (/^mirror\/pipeline\/[^/]+\.md$/.test(file)) return 'Methods';
   return 'Pipelines';
+}
+
+// The site links to no claude.ai artifact (owner, 23 Nov 2026). Old notes still name the artifact a sheet was published as:
+// such a link points to the sheet's page here, or becomes plain text when no sheet here was published there.
+const ARTIFACT_RE = /^https?:\/\/claude\.ai\/(?:code\/)?artifact\/([A-Za-z0-9-]+)/;
+let artifactMap: Map<string, (typeof sheets)[number]> | null = null;
+function sheetForArtifact(href: string) {
+  const id = ARTIFACT_RE.exec(href)?.[1];
+  if (!id) return undefined;
+  if (!artifactMap) {
+    artifactMap = new Map();
+    for (const pass of ['catalog', 'history'] as const) for (const x of sheets) {
+      const urls = pass === 'catalog' ? [x.artifactUrl] : x.history?.artifactUrls ?? [];
+      for (const u of urls) { const k = u ? ARTIFACT_RE.exec(u)?.[1] : null; if (k && !artifactMap.has(k)) artifactMap.set(k, x); }
+    }
+  }
+  return artifactMap.get(id) ?? null;
 }
 
 let cache: Doc[] | null = null;
@@ -88,6 +106,9 @@ export function renderDoc(id: string) {
       link(this: { parser: { parseInline: (t: Tokens.Generic[]) => string } }, token: Tokens.Link) {
         const text = this.parser.parseInline(token.tokens);
         const href = token.href;
+        const viaArtifact = sheetForArtifact(href);
+        if (viaArtifact === null) return text;
+        if (viaArtifact) return `<a href="/sheet/${viaArtifact.slug}">${text === href || text.startsWith('https://claude.ai') ? sheetName(viaArtifact) : text}</a>`;
         if (/^https?:/.test(href)) return `<a href="${href}" target="_blank" rel="noreferrer">${text}</a>`;
         const id = resolveDoc(href.replace(/^\//, ''), doc.file);
         if (id) return `<a href="${docHref(id)}${href.includes('#') ? href.slice(href.indexOf('#')) : ''}">${text}</a>`;

@@ -10,7 +10,7 @@ dates, and a knowledge base (`kb/`) holding every rule and lesson from the sessi
 - The pipelines and their 1.1 GB of raw data live in the **working folder**
   `D:/OneDrive/Documents/Personal/Transport Fun/Simutrans-Timetable/` (= `~/Documents/personal/transport fun/Simutrans-Timetable`).
   Run pipelines there, never from `mirror/` (it has no data). Then `pnpm sync` here.
-- Per-sheet facts (sources, data day, pipeline, build command, artifact URL, status) are in `data/catalog.json`; generated
+- Per-sheet facts (sources, data day, pipeline, build command, status) are in `data/catalog.json`; generated
   `data/sheets.json` adds file hashes and publish history.
 
 ## Layout
@@ -35,3 +35,5 @@ dates, and a knowledge base (`kb/`) holding every rule and lesson from the sessi
 - Engine repo `simutrans-122.0`: hands off, ask an engine session. Pak objects: ask the fleet desk session. Save renames: the engine's
   rename service only. Find live sessions with ListAgents.
 - When a rule changes, update `kb/rules/*` and append to `kb/lessons.md` in the same commit.
+- No claude.ai artifacts (owner, 23 Nov 2026): publishing = `pnpm sync`, commit, push, done without asking. The site links no
+  artifact; `pnpm sync` rewrites old artifact links in sheets to `/sheet/<slug>`.

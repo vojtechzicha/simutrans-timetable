@@ -71,7 +71,7 @@ export const sheetName = (s: Sheet) => s.name ?? s.title ?? s.file.replace(/\.ht
 
 /** When the sheet first existed: explicit catalogue date, else the first time a session wrote or published it. */
 export const createdAt = (s: Sheet) => s.created ?? s.history?.firstSeen ?? null;
-/** Catalogue date if set, else the last artifact publish, else the file's own modification time. */
+/** Catalogue date if set, else the last publish, else the file's own modification time. */
 export const updatedAt = (s: Sheet) => s.lastUpdated ?? s.history?.lastPublished ?? s.sourceModified;
 
 const DAY_RE = /(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\s+)?(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*(?:\s+(\d{4}))?/;
@@ -81,7 +81,6 @@ export function shortDay(text: string | null | undefined) {
   const m = DAY_RE.exec(text);
   return m ? [m[1], m[2], m[3]].filter(Boolean).join(' ') : text.length > 24 ? null : text;
 }
-export const artifactUrl = (s: Sheet) => s.artifactUrl ?? s.history?.artifactUrls.at(-1) ?? null;
 
 export const REGION_ORDER = [
   'Praha',
