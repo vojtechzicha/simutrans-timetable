@@ -15,7 +15,10 @@ import ctypes, datetime, gzip, html, json, os, re, sys, time, urllib.request
 BASE = 'https://mapavdv.kr-vysocina.cz/'
 HEAD = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36',
         'X-Requested-With': 'XMLHttpRequest', 'Referer': BASE, 'Accept-Language': 'cs,en;q=0.8'}
-LICENCES = {'355001', '355002', '355003', '355004', '357250'}
+# the sheet's licences: MHD Pelhřimov, every VDV regional licence of the Humpolecko/Pelhřimovsko areas (357xxx, 358xxx) and the
+# other lines that serve Pelhřimov (Jindřichův Hradec 340905, Počátky – Praha 350410, Kamenice – Praha 350804); widened on 23 Nov
+# 2026 at 19:40 when the owner asked for the other Pelhřimov lines
+WANT = lambda lic: lic.startswith(('3550', '357', '358')) or lic in {'340905', '350410', '350804'}
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'raw', 'live')
 REFETCH = 15 * 60
 
@@ -50,7 +53,7 @@ while datetime.datetime.now() < until:
         with gzip.open(os.path.join(day, 'points', now.strftime('%H%M%S') + '.json.gz'), 'wt', encoding='utf-8') as f:
             f.write(json.dumps(dict(fetched=now.isoformat(timespec='seconds'), points=pts), ensure_ascii=False))
         for p in pts:
-            if p.get('text') not in LICENCES: continue
+            if not WANT(p.get('text') or ''): continue
             if time.time() - seen.get(p['id'], 0) < REFETCH: continue
             try:
                 info = parse_info(get('Ajax/OpenInfoWindow?id=%d' % p['id']))

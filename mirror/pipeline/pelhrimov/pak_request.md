@@ -1,3 +1,3 @@
-# Pak requests from the MHD Pelhřimov + VDV 250 sheet
+# Pak requests from the Pelhřimov: MHD and VDV lines sheet
 
 None: every bus has its exact pak object.

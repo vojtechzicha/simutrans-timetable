@@ -1,16 +1,20 @@
-# MHD Pelhřimov + VDV 250 (vypravenost sheet)
+# Pelhřimov: MHD and VDV lines (vypravenost sheet)
 
 Output: `MHD Pelhrimov.html` in the project root, published on the site (no artifact). Built on 23 Nov 2026 at the owner's
-request: "create MHD Pelhřimov sheet with 250 VDV line extra". Small-town network + one regional line, so the whole sheet uses
-the bus schedule method (`../bus-schedule-method.md`, v4).
+request: "create MHD Pelhřimov sheet with 250 VDV line extra"; the same evening widened to every VDV line serving Pelhřimov ("could we
+model the other pelhřimov lines, please try to figure it out"). Small-town network + regional lines, so the whole sheet uses the bus
+schedule method (`../bus-schedule-method.md`, v4).
 
 ## Scope
 
 - **MHD Pelhřimov**: licences 355001–355004 (lines 1–4), ICOM transport a.s., provozovna Pelhřimov (JDF line type A, town).
   `config.jdf.line_numbers` maps them to 1–4 (the shared `02_timetable.py` would otherwise number them 001–004).
-- **VDV 250** Pelhřimov – Humpolec – Havlíčkův Brod, Dopravní terminál: licence 357250, ČSAD AUTOBUSY České Budějovice a.s.,
-  provozovna Oblast Humpolecko.
-- Two areas in `config.areas`, each with its operator's IČO (ICOM 46346040, ČSAD ČB 26060451).
+- **VDV lines**: every regional licence of ČSAD AUTOBUSY České Budějovice a.s. (IČO 26060451; VDV contract areas Humpolecko
+  357xxx and Pelhřimovsko 358xxx) with a stop in Pelhřimov, plus its Jindřichův Hradec line 340905 (Jihočeský licence, numbered
+  905 here): 250, 259, 280, 281, 290, 300, 301, 302, 305, 320, 321, 324, 325, 326, 905, 925. Read into one area `vdv` through
+  `config.jdf.extra_lics` (the area's own prefix matches nothing), so the other 357/358 lines (Pacov, Kamenice, Počátky locals)
+  stay out. Not here: 358401 (PID 401, on the PID Benešovsko sheet) and the long-distance lines to Praha 350410 and 350804.
+- Line designs: `authoring/set_vdv_lines.py` (VDV) and `config.json` (MHD); texts and pak rules: `authoring/set_texts.py`.
 
 ## Sources
 
@@ -44,7 +48,12 @@ with `keep_awake.py <end>` beside it.
 - **250**: hourly, Pelhřimov :43 / Havlíčkův Brod :12, 3 buses. **250 Humpolec** (short trips to Humpolec, Poliklinika) is an
   outstation line at its inbound rate, every 240 (13:18 / 17:18 out, 14:07 / 18:07 back); it runs via Kojčice, Vadčice,
   Dehtáře and Velký Rybník, obec, village stops only detour trips serve (every place served).
-- Need 7 (MHD 3, VDV 4). Coverage complete (65 afternoon stops). Audits: `method-check-2026-11-23.md`.
+- **The other VDV lines** (each line's reading is on its card and in `authoring/set_vdv_lines.py`): 300 split at Pelhřimov (Jihlava
+  side hourly, Pacov side hourly; not every bus runs through Pacov → Jihlava); 925 as three Ex4 lines meeting at Počátky (Pelhřimov
+  hourly; Stojčín and Popelín every 120); 280 and 281 as destination variants; 259 Mysletín, 321 Jankov, 302 and 905 Nová Včelnice
+  are lines for places only they serve; 301, 320, 290, 258, 305, 324 every 120; 325 every 60 at its inbound rate; 326 every 480.
+- Need 44 (MHD 3, VDV 41). Coverage: 332 afternoon stops, 331 on a line; Vyskytná, rozcestí is an exception (roadside stop of a
+  covered village). Audits: `method-check-2026-11-23.md`.
 
 ## Vehicles
 

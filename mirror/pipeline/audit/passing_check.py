@@ -19,6 +19,16 @@ for sh in SHEETS:
     if not os.path.exists(os.path.join(der, 'schedule.json')): continue
     S = json.load(open(os.path.join(der, 'schedule.json'), encoding='utf-8')); S.pop('_coverage', None)
     T = json.load(open(os.path.join(der, 'trips.json'), encoding='utf-8'))
+    # a JDF-based sheet (config.jdf: the ODIS-style sheets, MHD Pelhřimov) keeps raw JDF names in trips.json ("Rohozná,obec",
+    # "aut.nádr."), while its schedule.json stops went through the sheet's nm + terminus alias: read the trips the same way, or
+    # every stop reads as off the pattern (found 23 Nov 2026 on the Pelhřimov sheet). GTFS sheets (PID) are compared as before.
+    cfg = json.load(open(os.path.join(PIPE, sh, 'config.json'), encoding='utf-8'))
+    if 'jdf' in cfg:
+        import importlib
+        sys.path.insert(0, os.path.join(PIPE, 'odis-regional-hko', 'scripts')); os.environ['ODIS_BASE'] = os.path.join(PIPE, sh)
+        import lib; importlib.reload(lib)
+        for ts in T.values():
+            for t in ts: t['stops'] = [lib.AL(lib.nm(x)) for x in t['stops']]
     legs_for = defaultdict(list)
     for L, v in S.items():
         for sm in v.get('sim', []):

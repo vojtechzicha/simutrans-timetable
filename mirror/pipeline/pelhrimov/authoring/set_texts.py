@@ -47,21 +47,23 @@ c['network_state'] = [
  ['in', 'VDV 250, timetable valid 28 Sep – 12 Dec 2026', 'The version of 28 Sep 2026 (CIS JŘ export of 23 Nov).'],
  ['out', 'Timetable change 13 Dec 2026', 'The export holds no versions from 13 Dec yet (every version here ends on 12 Dec); refresh the sheet when the JR2027 timetables are published.']]
 c['texts'] = dict(
- eyebrow='MHD Pelhřimov · VDV 250 Pelhřimov – Humpolec – Havlíčkův Brod · vypravenost',
- lede_who='The town buses of Pelhřimov (MHD lines 1–4, ICOM transport) and VDV line 250 Pelhřimov – Humpolec – Havlíčkův Brod (ČSAD AUTOBUSY České Budějovice)',
+ eyebrow='MHD Pelhřimov · VDV lines from Pelhřimov · vypravenost',
+ lede_who=('The town buses of Pelhřimov (MHD lines 1–4, ICOM transport) and every VDV regional line serving Pelhřimov (ČSAD AUTOBUSY České Budějovice: '
+           '250, 259, 280, 281, 290, 300, 301, 302, 305, 320, 321, 324, 325, 326, 905, 925)'),
  lede_buses='Buses are the ones seen on each line on the VDV live map on Tuesday 24 Nov 2026.',
- swap_places='the Pelhřimov bus station and the silo',
- scope=('MHD Pelhřimov licences 355001–355004 (ICOM transport a.s., provozovna Pelhřimov) and VDV line 250, licence 357250 (ČSAD AUTOBUSY České Budějovice a.s., '
-        'provozovna Oblast Humpolecko)'),
+ swap_places='the Pelhřimov bus station, Počátky and Humpolec',
+ scope=('MHD Pelhřimov licences 355001–355004 (ICOM transport a.s., provozovna Pelhřimov) and every regional licence of ČSAD AUTOBUSY České Budějovice with a '
+        'stop in Pelhřimov (VDV areas Humpolecko 357xxx and Pelhřimovsko 358xxx, and the Jindřichův Hradec line 340905, numbered 905 here). Not here: 401 '
+        '(358401, a PID line, on the PID Benešovsko sheet) and the long-distance lines to Praha (350410, 350804; 4 trips a day each), which are not regional'),
  buses=("The VDV live map (mapavdv.kr-vysocina.cz, Kraj Vysočina) polled every minute on Tuesday 24 Nov 2026 gives every bus's licence and trip number (the JDF "
         "trip) and its VDV vehicle number; the ČSAD buses also show their number plate, which joins them to the seznam-autobusu.cz register (read on 23 Nov 2026 in "
         "the owner's browser). The register lists no fleet numbers for ICOM or ČSAD, so a bus is named by its VDV vehicle number with its plate; a town bus the map "
         "shows without a plate keeps its VDV number and its type stays unknown. A bus fills one Simutrans line it ran in that line's window, by matching."),
- depots=('ICOM transport, provozovna Pelhřimov (the town buses; its four Isuzu Novociti Life run MHD Pelhřimov) and ČSAD AUTOBUSY České Budějovice, provozovna '
-         'Oblast Humpolecko (line 250; the register files its buses at Pelhřimov and Humpolec).'),
+ depots=('ICOM transport, provozovna Pelhřimov (the town buses; its four Isuzu Novociti Life run MHD Pelhřimov) and ČSAD AUTOBUSY České Budějovice, provozovny '
+         'Oblast Pelhřimovsko and Oblast Humpolecko (the VDV lines; the register files their buses at Pelhřimov and Humpolec).'),
  search_example='64-10021',
- status_html=('<p class="sub"><b>Version 1, 23 Nov 2026: the buses come in version 2.</b> The VDV live map keeps no history, so it is polled all day on '
-              'Tuesday 24 Nov; version 2 names the real bus on every Simutrans line. The lines, typed values and bus counts here stand unless that day shows '
-              'buses pairing lines in a way the timetable hides.</p>'))
+ status_html=('<p class="sub"><b>Version 2, 23 Nov 2026: every VDV line from Pelhřimov added; the buses come in version 3.</b> The VDV live map keeps no '
+              'history, so it is polled all day on Tuesday 24 Nov; version 3 names the real bus on every Simutrans line. The lines, typed values and bus counts '
+              'here stand unless that day shows buses pairing lines in a way the timetable hides.</p>'))
 json.dump(c, open(P, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('config texts written')

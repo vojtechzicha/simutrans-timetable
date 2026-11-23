@@ -413,3 +413,10 @@ The rules themselves are folded into `kb/rules/`; this log keeps the *why*. Deta
 - **23 Nov:** "ask the art session, I saw you doing the nearest match - that's what it is in there for" → the sheet used
   nearest-match stand-ins (IREDO Novociti, Brno Crossway 12M) for two missing objects. New objects go to the art session
   (simutrans-122-0-c1) when the sheet is built; a stand-in is a placeholder, not the answer (`rules/pak-objects.md`).
+- **23 Nov (later):** "could we model the other pelhřimov lines, please try to figure it out" → scope chosen as every regional
+  line with a stop in Pelhřimov: the ČSAD AUTOBUSY ČB licences 357xxx / 358xxx and its Jindřichův Hradec line 340905 (17 lines,
+  read into one area through `jdf.extra_lics`); 401 stays on the PID Benešovsko sheet and the two long-distance lines to Praha are
+  left out. The live poller was widened first (it read bus numbers only for MHD and 250) and restarted at 19:46, so Tuesday's poll
+  covers every line. `audit/passing_check.py` gave 14 false EACH WAY flags on this JDF sheet: it compared the schedule's expanded
+  stop names with the raw JDF names; it now reads a JDF sheet's trips through the sheet's own `nm` + alias (GTFS/PID unchanged).
+  When an audit flags a slot's own trip as off the pattern, suspect the audit before the model.

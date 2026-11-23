@@ -4265,14 +4265,14 @@
   },
   {
    "file": "MHD Pelhrimov.html",
-   "name": "MHD Pelhřimov + VDV 250",
+   "name": "Pelhřimov: MHD and VDV lines",
    "status": "active",
    "modes": [
     "bus"
    ],
-   "region": "Pelhřimov · Vysočina",
+   "region": "Pelhřimov · Pelhřimovsko · Vysočina",
    "kind": "fleet",
-   "summary": "Pelhřimov town lines 1–4 (ICOM transport) and VDV line 250 Pelhřimov – Humpolec – Havlíčkův Brod (ČSAD AUTOBUSY ČB), on the small-town method; buses from the VDV live map of Tue 24 Nov (version 2).",
+   "summary": "Pelhřimov town lines 1–4 (ICOM transport) and every VDV regional line serving Pelhřimov (ČSAD AUTOBUSY ČB: 250, 259, 280, 281, 290, 300, 301, 302, 305, 320, 321, 324, 325, 326, 905, 925), on the small-town / regional method; buses from the VDV live map of Tue 24 Nov (version 3).",
    "pipeline": "pipeline/pelhrimov",
    "build": "python -X utf8 scripts/run.py (sheet-local 01_live, 01c_fleet, 06_render; the ODIS regional 02/03/05/04 with --base pelhrimov)",
    "fetch": "Detached poller on the vehicle day: Start-Process python -ArgumentList '-X','utf8','01_live_poll.py','<end>' -WorkingDirectory <scripts> -WindowStyle Hidden (with keep_awake.py); JDF: curl https://portal.cisjr.cz/pub/jdf/JDF.zip into data/raw/jdf/<date>/",
@@ -4281,7 +4281,7 @@
      "name": "CIS JŘ bus JDF export",
      "url": "https://portal.cisjr.cz/pub/jdf/JDF.zip",
      "role": "timetable",
-     "note": "Export of 23 Nov 2026; licences 355001–355004 (MHD Pelhřimov, ICOM) and 357250 (VDV 250, ČSAD AUTOBUSY ČB)"
+     "note": "Export of 23 Nov 2026; MHD 355001–355004 (ICOM) and the ČSAD AUTOBUSY ČB licences 357xxx / 358xxx / 340905 with a stop in Pelhřimov"
     },
     {
      "name": "VDV live map (Kraj Vysočina)",
@@ -4309,7 +4309,7 @@
     "python -X utf8 scripts/run.py; check To check and the audits (step4_regional.py pelhrimov; AUDIT_SHEETS=pelhrimov for branch/path/passing checks).",
     "pnpm sync in the repo, commit and push (the site is where it is published); send new pak needs to the art session (simutrans-122-0-c1)."
    ],
-   "notes": "Line 1 is one bus's real afternoon circuit every 120; line 3's two loop directions are their own lines (every 180 / 240, Step 4 passing); 2 and 4 not modelled (stops on 1 and 3); 250 hourly + 250 Humpolec every 240 via the villages. Need 7.",
+   "notes": "MHD: line 1 is one bus's real circuit every 120; line 3's loop directions are their own lines; 2 and 4 not modelled. VDV: 300 split at Pelhřimov; 925 as three Ex4 lines meeting at Počátky; 280/281 destination variants; small lines for places only they serve (259 Mysletín, 321 Jankov, 302, 905 Nová Včelnice). Need 44. Coverage 331 of 332 (one roadside exception).",
    "dependsOn": [
     "pipeline/odis-regional-hko",
     "pipeline/ostrava",
@@ -4334,6 +4334,11 @@
      "at": "2026-11-23T19:32:30+01:00",
      "version": 1,
      "note": "Lines and typed values; buses come with the Tue 24 Nov poll (version 2)."
+    },
+    {
+     "at": "2026-11-23T19:57:07+01:00",
+     "version": 2,
+     "note": "Every VDV line serving Pelhřimov added (17 lines, 41 buses); buses come with the Tue 24 Nov poll (version 3)."
     }
    ]
   }

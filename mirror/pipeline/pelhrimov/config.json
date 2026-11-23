@@ -1,5 +1,5 @@
 {
- "title": "MHD Pelhřimov + VDV 250",
+ "title": "Pelhřimov: MHD and VDV lines",
  "output_html": "MHD Pelhrimov.html",
  "snapshot": "2026-11-24",
  "vehicle_day": "2026-11-24",
@@ -134,12 +134,31 @@
   "zip": "data/raw/jdf/2026-11-23/JDF.zip",
   "export_label": "CIS JŘ bus JDF export of 23 Nov 2026",
   "operator_ic": "46346040",
-  "why": "MHD Pelhřimov is licences 355001–355004 (ICOM transport a.s., provozovna Pelhřimov; JDF line type A = town). VDV line 250 is licence 357250 (ČSAD AUTOBUSY České Budějovice, provozovna Oblast Humpolecko).",
+  "why": "MHD Pelhřimov is licences 355001–355004 (ICOM transport a.s., provozovna Pelhřimov; JDF line type A = town). The VDV lines are every regional licence of ČSAD AUTOBUSY České Budějovice (VDV contract areas Humpolecko 357xxx and Pelhřimovsko 358xxx, and its Jindřichův Hradec line 340905) with a stop in Pelhřimov; line number = the last three digits. Not here: 358401 (PID 401, on the PID Benešovsko sheet) and the long-distance lines to Praha 350410 and 350804.",
   "line_numbers": {
    "355001": "1",
    "355002": "2",
    "355003": "3",
    "355004": "4"
+  },
+  "extra_lics": {
+   "357250": "vdv",
+   "357259": "vdv",
+   "357301": "vdv",
+   "357305": "vdv",
+   "358258": "vdv",
+   "358280": "vdv",
+   "358281": "vdv",
+   "358290": "vdv",
+   "358300": "vdv",
+   "358302": "vdv",
+   "358320": "vdv",
+   "358321": "vdv",
+   "358324": "vdv",
+   "358325": "vdv",
+   "358326": "vdv",
+   "358925": "vdv",
+   "340905": "vdv"
   }
  },
  "areas": [
@@ -158,17 +177,17 @@
    "licences": "Licences 355001–355004"
   },
   {
-   "id": "vdv250",
-   "name": "VDV 250",
-   "prefix": "357250",
+   "id": "vdv",
+   "name": "VDV lines from Pelhřimov",
+   "prefix": "NONE",
    "kind": "regional",
    "ic": "26060451",
    "operator": "ČSAD AUTOBUSY České Budějovice",
    "operator_short": "ČSAD AUTOBUSY ČB",
-   "branch": "ČSAD AUTOBUSY ČB, Oblast Humpolecko",
-   "depot": "provozovna Oblast Humpolecko",
+   "branch": "ČSAD AUTOBUSY ČB, Oblast Pelhřimovsko / Humpolecko",
+   "depot": "provozovna Oblast Pelhřimovsko and Oblast Humpolecko",
    "fleet": [],
-   "licences": "Licence 357250"
+   "licences": "Licences 357250, 357259, 357301, 357305, 358258, 358280, 358281, 358290, 358300, 358302, 358320, 358321, 358324, 358325, 358326, 358925, 340905"
   }
  ],
  "towns": [
@@ -355,6 +374,713 @@
     }
    ],
    "note": "VDV regional line Pelhřimov – Humpolec – Havlíčkův Brod, Dopravní terminál: hourly through the day, leaving Pelhřimov at :43 (13:53 and 17:48 are 10 and 5 min off) and Havlíčkův Brod at :12 (13:02 is 10 min off; 18:15 and 19:15 wait for trains), 64 min, 3 buses. Short trips Pelhřimov – Humpolec, Poliklinika: out at 13:18, 15:13, 17:18 and 18:43 (and 14:10 from the silo), back at 14:07 and 18:07. Read at the Poliklinika, 5 go out and 2 come back in the afternoon: the buses sleep at the Humpolec garage (provozovna Oblast Humpolecko), so the short line runs at its inbound rate, every 240 (13:18 / 17:18 out, 14:07 / 18:07 back), and the other out trips are off the pattern (buses going home; to be confirmed by the plates on Tue 24 Nov). Kojčice, Dehtáře (with Vadčice) and Velký Rybník, obec are village stops off the main road that only a few trips serve (15:13 out; 15:12 and 13:02 in from Havlíčkův Brod); every place is served, so the short line runs through them, 6 min longer than its slot trips take."
+  },
+  "259": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Humpolec, autobusové nádraží",
+    "Humpolec, Kuchařov",
+    "Mysletín"
+   ],
+   "sim": [
+    {
+     "name": "259",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Humpolec, autobusové nádraží",
+       "at": [
+        "9:37"
+       ]
+      },
+      {
+       "fr": "Humpolec, autobusové nádraží",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "13:32"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "259 Mysletín",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Mysletín",
+       "to": "Humpolec, Kuchařov",
+       "at": [
+        "14:02"
+       ],
+       "notvia": [
+        "Pelhřimov, autobusové nádraží"
+       ]
+      },
+      {
+       "fr": "Humpolec, Kuchařov",
+       "to": "Mysletín",
+       "at": [
+        "14:29"
+       ],
+       "notvia": [
+        "Pelhřimov, autobusové nádraží"
+       ],
+       "stops_via": [
+        "Bystrá"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Humpolec – Zachotín – Pelhřimov, a few trips a day: Pelhřimov → Humpolec 5:37, 9:37, 12:30, 14:38, 17:37; back 6:34, 9:32, 13:29, 15:32 (read at Humpolec, autobusové nádraží; some trips start or end at Humpolec, Kuchařov). Every 240: out 9:37 / 13:37 / 17:37 (5:37, 9:37 and 17:37 exact), back 13:32 (9:32 exact, 13:29 3 min). 12:30 and 14:38 are off the pattern. 259 Mysletín is the Humpolec end's own run through Bystrá (Mysletín 14:02 → Humpolec, Kuchařov, back 14:29), every 480, the only service of Bystrá and Bystrá, Březina."
+  },
+  "301": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Lukavec"
+   ],
+   "sim": [
+    {
+     "name": "301",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Lukavec",
+       "at": [
+        "14:33"
+       ],
+       "stops_via": [
+        "Dubovice"
+       ]
+      },
+      {
+       "fr": "Lukavec",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "14:23"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Pelhřimov – Červená Řečice – Hořepník – Lukavec, every 120 both ways all day: Pelhřimov at :33 in even hours (10:33, 14:30, 16:33, 18:33), Lukavec at :23 (4:23 … 16:23). Out via Dubovice, as the 14:30 runs (the only trips into the village)."
+  },
+  "305": {
+   "core": [
+    "Pacov, autobusové nádraží",
+    "Nová Cerekev, náměstí"
+   ],
+   "sim": [
+    {
+     "name": "305",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pacov, autobusové nádraží",
+       "to": "Nová Cerekev, náměstí",
+       "at": [
+        "15:18"
+       ]
+      },
+      {
+       "fr": "Nová Cerekev, náměstí",
+       "to": "Pacov, autobusové nádraží",
+       "at": [
+        "16:03"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Pacov – Leskovice – Nová Cerekev: Pacov 13:18 and 15:18, Nová Cerekev 14:03 and 16:03 (and 6:22 / 7:03 in the morning). Every 120, one bus; modelled at 14:30, where the pattern runs (it ends with the 16:03; 17:33 to Litohošť is a bus going home).",
+   "anchor": "14:30"
+  },
+  "258": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Želiv, restaurace Na Želivce",
+    "Želiv, Lhotice"
+   ],
+   "sim": [
+    {
+     "name": "258",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Želiv, Lhotice",
+       "at": [
+        "14:37"
+       ],
+       "core_to": "Želiv, restaurace Na Želivce"
+      },
+      {
+       "fr": "Želiv, Lhotice",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "15:37"
+       ],
+       "core_to": "Pelhřimov, autobusové nádraží"
+      }
+     ]
+    }
+   ],
+   "note": "Pelhřimov – Svépravice – Želiv: out at :37 in even hours (12:37, 14:37 to Lhotice; 16:37, 18:37 end at Želiv, restaurace), back from Lhotice at :37 in odd hours (13:37, 15:37; 17:55 from the restaurant). Every 120, read at Želiv, restaurace so the short trips count."
+  },
+  "280": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Nová Cerekev, náměstí",
+    "Černovice, náměstí"
+   ],
+   "sim": [
+    {
+     "name": "280 Černovice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Černovice, náměstí",
+       "at": [
+        "14:38"
+       ]
+      },
+      {
+       "fr": "Černovice, náměstí",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "14:37"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "280 Nová Cerekev",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Nová Cerekev, náměstí",
+       "at": [
+        "15:38"
+       ],
+       "notvia": [
+        "Černovice, náměstí"
+       ]
+      },
+      {
+       "fr": "Nová Cerekev, náměstí",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "16:00"
+       ],
+       "notvia": [
+        "Černovice, náměstí"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Pelhřimov – Nová Cerekev – Černovice, hourly from Pelhřimov at :38: even hours to Černovice (12:38, 14:38, 16:38, 18:38), odd hours to Nová Cerekev (13:38, 15:38). Back from Černovice at :37 (even hours) and from Nová Cerekev at :00 (14:00, 16:00). Ex4: two Simutrans lines every 120, all slots exact."
+  },
+  "281": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Libkova Voda",
+    "Kamenice n.Lipou, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "281 Kamenice",
+     "every": 240,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Kamenice n.Lipou, autobusové nádraží",
+       "at": [
+        "14:57"
+       ]
+      },
+      {
+       "fr": "Kamenice n.Lipou, autobusové nádraží",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "10:22"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "281 Libkova Voda",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Libkova Voda",
+       "at": [
+        "14:40"
+       ],
+       "notvia": [
+        "Kamenice n.Lipou, autobusové nádraží"
+       ]
+      },
+      {
+       "fr": "Libkova Voda",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "15:01"
+       ],
+       "notvia": [
+        "Kamenice n.Lipou, autobusové nádraží"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Pelhřimov – Božejov – Kamenice nad Lipou: Kamenice trips are few (out 10:57, 14:57, 16:57; back 4:37, 6:22, 10:22): every 240 (10:57 / 14:57 out, 6:22 / 10:22 back); 16:57 is a bus going to Kamenice for the night. Afternoon shuttles to Libkova Voda at :40 (13:40, 14:40, 15:40), back at :01: 281 Libkova Voda every 60, modelled at 15:00 inside its run.",
+   "anchor": "15:00"
+  },
+  "290": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Žirovnice, náměstí",
+    "Počátky, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "290",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Počátky, autobusové nádraží",
+       "at": [
+        "14:34"
+       ],
+       "core_to": "Žirovnice, náměstí"
+      },
+      {
+       "fr": "Počátky, autobusové nádraží",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "14:31"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Pelhřimov – Mezná – Častrov – Žirovnice – Počátky: Pelhřimov at :34 in even hours (12:34, 14:34 to Počátky; 16:34, 18:34 to Žirovnice, read there), Počátky at :31 (12:31, 14:31, 16:31). Every 120."
+  },
+  "300": {
+   "core": [
+    "Jihlava, autobusové nádraží",
+    "Pelhřimov, autobusové nádraží",
+    "Pacov, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "300 Jihlava",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Jihlava, autobusové nádraží",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "15:40"
+       ],
+       "core_to": "Pelhřimov, autobusové nádraží"
+      },
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Jihlava, autobusové nádraží",
+       "at": [
+        "15:34"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "300 Pacov",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Pacov, autobusové nádraží",
+       "at": [
+        "15:31"
+       ]
+      },
+      {
+       "fr": "Pacov, autobusové nádraží",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "15:50"
+       ],
+       "stops_via": [
+        "Dobrá Voda u Pacova"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Jihlava – Vyskytná – Pelhřimov – Pacov. Jihlava → Pacov runs through hourly (Jihlava :40, Pelhřimov :31, Pacov :10); the other way not every bus runs through (Pacov :50 → Pelhřimov, some ending there; Pelhřimov :34 → Jihlava, some starting there), so the line is split at Pelhřimov: 300 Jihlava every 60 (Jihlava :40, Pelhřimov :34; 16 and 11 exact) and 300 Pacov every 60 (Pelhřimov :31, Pacov :50; 14:36 is 5 min late, the one slot off). The Jihlava :10 extras (13:10, 14:10, 15:10, via Vyskytná, rozcestí and Opatov) have one trip back (14:04): buses going to the Pelhřimov garage, off the pattern. Back from Pacov via Dobrá Voda u Pacova, as the 15:47 runs (its only afternoon trip)."
+  },
+  "320": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Rohozná"
+   ],
+   "sim": [
+    {
+     "name": "320",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Rohozná",
+       "at": [
+        "14:35"
+       ],
+       "stops_via": [
+        "Nový Rychnov, Losy samota"
+       ]
+      },
+      {
+       "fr": "Rohozná",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "15:25"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Pelhřimov – Nový Rychnov – Rohozná, every 120 all afternoon: Pelhřimov :35 in even hours, Rohozná :25 in odd hours, all exact. Out via Losy samota, as the 14:35 runs (its only trip)."
+  },
+  "321": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Nový Rychnov",
+    "Vyskytná"
+   ],
+   "sim": [
+    {
+     "name": "321",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Nový Rychnov",
+       "at": [
+        "15:35"
+       ]
+      },
+      {
+       "fr": "Nový Rychnov",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "14:55"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "321 Jankov",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Nový Rychnov",
+       "to": "Jankov, obec",
+       "at": [
+        "14:24"
+       ],
+       "notvia": [
+        "Pelhřimov, autobusové nádraží"
+       ]
+      },
+      {
+       "fr": "Jankov, obec",
+       "to": "Nový Rychnov",
+       "untimed": true,
+       "rt": 17
+      }
+     ]
+    }
+   ],
+   "note": "Pelhřimov – Vyskytná – Nový Rychnov: Pelhřimov :35 in odd hours (13:35, 15:35, 17:35), Nový Rychnov :55 in even hours (12:55, 14:55). Every 120. 321 Jankov is the Nový Rychnov bus's loop by Opatov and Jankov (14:24, back to Nový Rychnov 14:54), every 480, the only service of Jankov, obec."
+  },
+  "324": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Horní Cerekev, náměstí",
+    "Horní Cerekev, železniční stanice"
+   ],
+   "sim": [
+    {
+     "name": "324",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Horní Cerekev, železniční stanice",
+       "at": [
+        "14:40"
+       ],
+       "core_to": "Horní Cerekev, náměstí"
+      },
+      {
+       "fr": "Horní Cerekev, železniční stanice",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "15:32"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Pelhřimov – Pavlov – Černov – Horní Cerekev: out 12:40 and 17:40 (to the square), 14:40 (to the station); back from the station 13:32 and 15:32. Every 120 (Pelhřimov :40 even hours, read at the square; station :32 odd hours), modelled at 14:30; 17:40 is a bus going to Horní Cerekev for the night.",
+   "anchor": "14:30"
+  },
+  "325": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Horní Cerekev, náměstí"
+   ],
+   "sim": [
+    {
+     "name": "325",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Horní Cerekev, náměstí",
+       "at": [
+        "15:38"
+       ],
+       "notvia": [
+        "Horní Cerekev, železniční stanice"
+       ],
+       "stops_via": [
+        "Vokov",
+        "Dobrá Voda, obec"
+       ]
+      },
+      {
+       "fr": "Horní Cerekev, náměstí",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "15:59"
+       ],
+       "notvia": [
+        "Horní Cerekev, železniční stanice"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Pelhřimov – Rynárec – Horní Cerekev: out hourly at :38 (13:38–16:38), back at 14:57 and 15:59 (and Horní Ves 12:50). Read at Horní Cerekev, 4 out and 2 back: buses sleep at Horní Cerekev / Horní Ves. Every 60 at the inbound rate, modelled at 15:00 (14:38, 15:38 out; 14:59, 15:59 back); 13:38 and 16:38 are off the pattern. Out through Vokov and Dobrá Voda, as the 15:38 runs (the villages' only afternoon trip); the 14:38 goes by the road past Rynárecká and ACHP, which the town lines serve.",
+   "anchor": "15:00"
+  },
+  "326": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Žirov"
+   ],
+   "sim": [
+    {
+     "name": "326",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Žirov",
+       "at": [
+        "14:42"
+       ]
+      },
+      {
+       "fr": "Žirov",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "15:15"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Pelhřimov – Střítež pod Křemešníkem – Žirov: out 6:17, 14:42, 16:32; back 4:50, 6:50, 15:15. Every 480 (14:42 / 15:15), one bus; 16:32 is the bus going to Žirov for the night."
+  },
+  "925": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Počátky, autobusové nádraží",
+    "Žirovnice, náměstí",
+    "Stojčín, železniční stanice",
+    "Popelín"
+   ],
+   "sim": [
+    {
+     "name": "925",
+     "every": 60,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Počátky, autobusové nádraží",
+       "at": [
+        "14:35"
+       ]
+      },
+      {
+       "fr": "Počátky, autobusové nádraží",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "14:50"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "925 Stojčín",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Počátky, autobusové nádraží",
+       "to": "Stojčín, železniční stanice",
+       "at": [
+        "15:00"
+       ],
+       "notvia": [
+        "Popelín"
+       ]
+      },
+      {
+       "fr": "Stojčín, železniční stanice",
+       "to": "Počátky, autobusové nádraží",
+       "at": [
+        "15:30"
+       ],
+       "notvia": [
+        "Popelín"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "925 Popelín",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Počátky, autobusové nádraží",
+       "to": "Popelín",
+       "at": [
+        "14:10"
+       ]
+      },
+      {
+       "fr": "Popelín",
+       "to": "Počátky, autobusové nádraží",
+       "at": [
+        "14:36"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Pelhřimov – Počátky – Žirovnice – Stojčín / Popelín. Pelhřimov → Počátky hourly at :35 (even hours end at Počátky, odd hours go on), and every bus back passes Počátky at :50: 925 every 60, exact both ways. Beyond Počátky, Ex4 lines: 925 Stojčín (Počátky :00 in odd hours to Stojčín, the railway station; back :30) every 120, and 925 Popelín (on from the odd-hour Pelhřimov trips, Počátky :10; back from Popelín :36) every 120. 14:10 to Žirovnice is off the pattern."
+  },
+  "905": {
+   "core": [
+    "Pelhřimov, autobusové nádraží",
+    "Kamenice n.Lipou, autobusové nádraží",
+    "Nová Včelnice, náměstí",
+    "Jindřichův Hradec, Pravdova"
+   ],
+   "sim": [
+    {
+     "name": "905",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Jindřichův Hradec, Pravdova",
+       "at": [
+        "16:34",
+        "15:49"
+       ],
+       "stops_via": [
+        "Pelhřimov, Myslotín"
+       ]
+      },
+      {
+       "fr": "Jindřichův Hradec, Pravdova",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "14:12",
+        "15:07"
+       ],
+       "stops_via": [
+        "Jindřichův Hradec, Průmyslová"
+       ]
+      }
+     ]
+    },
+    {
+     "name": "905 Nová Včelnice",
+     "every": 120,
+     "legs": [
+      {
+       "fr": "Jindřichův Hradec, Pravdova",
+       "to": "Nová Včelnice, náměstí",
+       "at": [
+        "13:27",
+        "14:32"
+       ],
+       "notvia": [
+        "Pelhřimov, autobusové nádraží"
+       ],
+       "core_to": "Jarošov n.Než., rozcestí",
+       "stops_via": [
+        "Jarošov n.Než., Lovětín"
+       ]
+      },
+      {
+       "fr": "Nová Včelnice, náměstí",
+       "to": "Jindřichův Hradec, Pravdova",
+       "at": [
+        "13:02",
+        "14:02"
+       ],
+       "notvia": [
+        "Pelhřimov, autobusové nádraží"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Jindřichův Hradec – Nová Včelnice – Kamenice nad Lipou – Pelhřimov (Jihočeský licence, ČSAD AUTOBUSY ČB). Hourly: Pelhřimov at :49 in odd hours and :34 in even hours in the late afternoon (12:39, 14:39 earlier: the afternoon wins), Jindřichův Hradec at :07 / :12. Every 120 with two slots each way. The :34 trips run through Ondřejov and Myslotín, the :49 ones by the Ondřejov bypass: the line follows the village path (Myslotín's only service). Back via Jindřichův Hradec, Průmyslová, as the 14:12 runs. 905 Nová Včelnice is the hourly Jindřichův Hradec – Nová Včelnice shuttle (13:27, 14:32 … back :02), every 120 with two slots, through Jarošov, Lovětín as the 13:27 and 15:27 run."
+  },
+  "302": {
+   "core": [
+    "Pelhřimov, autobusové nádraží"
+   ],
+   "sim": [
+    {
+     "name": "302",
+     "every": 480,
+     "legs": [
+      {
+       "fr": "Pelhřimov, autobusové nádraží",
+       "to": "Pelhřimov, autobusové nádraží",
+       "at": [
+        "14:02"
+       ]
+      }
+     ]
+    }
+   ],
+   "note": "Pelhřimov – Krasíkovice – Hodějovice – Pelhřimov, a loop run twice a day (7:22, 14:02): the only service of Hodějovice, so its own line every 480 at 14:02."
   }
  },
  "unmodelled": {
@@ -424,17 +1150,20 @@
   ]
  },
  "texts": {
-  "eyebrow": "MHD Pelhřimov · VDV 250 Pelhřimov – Humpolec – Havlíčkův Brod · vypravenost",
-  "lede_who": "The town buses of Pelhřimov (MHD lines 1–4, ICOM transport) and VDV line 250 Pelhřimov – Humpolec – Havlíčkův Brod (ČSAD AUTOBUSY České Budějovice)",
+  "eyebrow": "MHD Pelhřimov · VDV lines from Pelhřimov · vypravenost",
+  "lede_who": "The town buses of Pelhřimov (MHD lines 1–4, ICOM transport) and every VDV regional line serving Pelhřimov (ČSAD AUTOBUSY České Budějovice: 250, 259, 280, 281, 290, 300, 301, 302, 305, 320, 321, 324, 325, 326, 905, 925)",
   "lede_buses": "Buses are the ones seen on each line on the VDV live map on Tuesday 24 Nov 2026.",
-  "swap_places": "the Pelhřimov bus station and the silo",
-  "scope": "MHD Pelhřimov licences 355001–355004 (ICOM transport a.s., provozovna Pelhřimov) and VDV line 250, licence 357250 (ČSAD AUTOBUSY České Budějovice a.s., provozovna Oblast Humpolecko)",
+  "swap_places": "the Pelhřimov bus station, Počátky and Humpolec",
+  "scope": "MHD Pelhřimov licences 355001–355004 (ICOM transport a.s., provozovna Pelhřimov) and every regional licence of ČSAD AUTOBUSY České Budějovice with a stop in Pelhřimov (VDV areas Humpolecko 357xxx and Pelhřimovsko 358xxx, and the Jindřichův Hradec line 340905, numbered 905 here). Not here: 401 (358401, a PID line, on the PID Benešovsko sheet) and the long-distance lines to Praha (350410, 350804; 4 trips a day each), which are not regional",
   "buses": "The VDV live map (mapavdv.kr-vysocina.cz, Kraj Vysočina) polled every minute on Tuesday 24 Nov 2026 gives every bus's licence and trip number (the JDF trip) and its VDV vehicle number; the ČSAD buses also show their number plate, which joins them to the seznam-autobusu.cz register (read on 23 Nov 2026 in the owner's browser). The register lists no fleet numbers for ICOM or ČSAD, so a bus is named by its VDV vehicle number with its plate; a town bus the map shows without a plate keeps its VDV number and its type stays unknown. A bus fills one Simutrans line it ran in that line's window, by matching.",
-  "depots": "ICOM transport, provozovna Pelhřimov (the town buses; its four Isuzu Novociti Life run MHD Pelhřimov) and ČSAD AUTOBUSY České Budějovice, provozovna Oblast Humpolecko (line 250; the register files its buses at Pelhřimov and Humpolec).",
+  "depots": "ICOM transport, provozovna Pelhřimov (the town buses; its four Isuzu Novociti Life run MHD Pelhřimov) and ČSAD AUTOBUSY České Budějovice, provozovny Oblast Pelhřimovsko and Oblast Humpolecko (the VDV lines; the register files their buses at Pelhřimov and Humpolec).",
   "search_example": "64-10021",
-  "status_html": "<p class=\"sub\"><b>Version 1, 23 Nov 2026: the buses come in version 2.</b> The VDV live map keeps no history, so it is polled all day on Tuesday 24 Nov; version 2 names the real bus on every Simutrans line. The lines, typed values and bus counts here stand unless that day shows buses pairing lines in a way the timetable hides.</p>"
+  "status_html": "<p class=\"sub\"><b>Version 2, 23 Nov 2026: every VDV line from Pelhřimov added; the buses come in version 3.</b> The VDV live map keeps no history, so it is polled all day on Tuesday 24 Nov; version 3 names the real bus on every Simutrans line. The lines, typed values and bus counts here stand unless that day shows buses pairing lines in a way the timetable hides.</p>"
  },
  "hubs": [
   "Pelhřimov, autobusové nádraží"
- ]
+ ],
+ "coverage_exceptions": {
+  "Vyskytná, rozcestí": "A roadside stop of Vyskytná (whose village stop is on 300 and 321), served in the afternoon only by 300's Jihlava :10 extras (13:10, 14:10, 15:10; one back, 14:04), which are off the pattern: three one way and one back is no branch."
+ }
 }

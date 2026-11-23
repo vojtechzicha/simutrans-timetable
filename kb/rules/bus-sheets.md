@@ -8,7 +8,7 @@ its "Checks before publishing" list must pass. A worked example: `mirror/pipelin
 
 | | **Big-city local lines** | **Regional lines + small-town networks** |
 |---|---|---|
-| Where | Ostrava DPO, Prague, Olomouc, Brno, Plzeň, Pardubice (all trams/trolleybuses too) | ODIS regional (all `odis-regional-*` sheets), Havířov / Karviná / Orlová town lines, MHD Pelhřimov + VDV 250 |
+| Where | Ostrava DPO, Prague, Olomouc, Brno, Plzeň, Pardubice (all trams/trolleybuses too) | ODIS regional (all `odis-regional-*` sheets), Havířov / Karviná / Orlová town lines, Pelhřimov (MHD + VDV lines) |
 | Model | the afternoon peak + the line's unique stops | the whole day read at core points, repeating interval |
 | Off-peak single trips | listed, **not** modelled (Ostrava 22 evening run "would be a mistake to model") | bent onto a repeating slot ≤ 480, or folded into the line they belong to |
 | Exceptions | ask the owner, with trips, interval, bus cost and coverage effect (Ostrava 57 every 480 was an approved one-off) | — |
